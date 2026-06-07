@@ -950,42 +950,97 @@ function loadRhythmNew(preset) {
             }
           });
         }
-        
-        // Restore standard steps on any swapped djembe accompaniment tracks
-        state.tracks.forEach(track => {
-          if (track.preSoloAccompanimentSteps) {
-            track.steps = [...track.preSoloAccompanimentSteps];
-            track.subdivisionSteps[track.subdivision] = [...track.steps];
-            if (track.standardSteps) {
-              track.standardSteps = [...track.steps];
-            }
-            delete track.preSoloAccompanimentSteps;
-          }
-        });
-        
-        if (wasActive) {
-          state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
-          state.callIntroActive = false;
-          renderGrid();
-        } else {
+
+        if (!wasActive) {
           btn.classList.add("special-active", "btn-primary");
           btn.style.background = "";
           btn.style.borderColor = "";
+        }
+
+        const action = () => {
+          // Restore standard steps on any swapped djembe accompaniment tracks
+          state.tracks.forEach(track => {
+            if (track.preSoloAccompanimentSteps) {
+              track.steps = [...track.preSoloAccompanimentSteps];
+              track.subdivisionSteps[track.subdivision] = [...track.steps];
+              if (track.standardSteps) {
+                track.standardSteps = [...track.steps];
+              }
+              delete track.preSoloAccompanimentSteps;
+            }
+          });
           
-          if (accompPart) {
-            const djembeTrack = state.tracks.find(t => t.type === "djembe" && t.id !== "solo_djembe");
-            if (djembeTrack) {
-              djembeTrack.preSoloAccompanimentSteps = [...djembeTrack.steps];
-              const accompSteps = convertPatternToSteps(accompPart.drum_pattern, state.timeSignature, djembeTrack.name);
-              djembeTrack.steps = accompSteps;
-              djembeTrack.subdivisionSteps[djembeTrack.subdivision] = [...accompSteps];
-              if (djembeTrack.standardSteps) {
-                djembeTrack.standardSteps = [...accompSteps];
+          if (wasActive) {
+            state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
+            state.callIntroActive = false;
+          } else {
+            if (accompPart) {
+              const djembeTrack = state.tracks.find(t => t.type === "djembe" && t.id !== "solo_djembe");
+              if (djembeTrack) {
+                djembeTrack.preSoloAccompanimentSteps = [...djembeTrack.steps];
+                const accompSteps = convertPatternToSteps(accompPart.drum_pattern, state.timeSignature, djembeTrack.name);
+                djembeTrack.steps = accompSteps;
+                djembeTrack.subdivisionSteps[djembeTrack.subdivision] = [...accompSteps];
+                if (djembeTrack.standardSteps) {
+                  djembeTrack.standardSteps = [...accompSteps];
+                }
               }
             }
+            
+            // Inline playSpecialPart action logic to avoid double-queueing
+            let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
+            if (!soloTrack) {
+              soloTrack = {
+                id: "solo_djembe",
+                name: sp.name,
+                type: "djembe",
+                instrument: "djembe1",
+                volume: 0.85,
+                pitch: 0,
+                muted: false,
+                soloed: false
+              };
+              state.tracks.push(soloTrack);
+              sortTracks();
+            } else {
+              soloTrack.name = sp.name;
+            }
+            
+            soloTrack.subdivision = getSubdivisionForTiming(state.timeSignature);
+            const steps = convertPatternToSteps(sp.drum_pattern, state.timeSignature, "Djembé");
+            soloTrack.steps = steps;
+            soloTrack.originalSteps = [...steps];
+            soloTrack.originalSubdivision = soloTrack.subdivision;
+            soloTrack.subdivisionSteps = {
+              [soloTrack.subdivision]: [...steps]
+            };
+            
+            if (sp.type === "Intro" || sp.type === "Call" || sp.type === "Break") {
+              state.callIntroActive = true;
+            } else {
+              state.callIntroActive = false;
+            }
+            
+            // Unmute call tracks
+            state.tracks.forEach(t => {
+              const isCall = t.id === "solo_djembe" ||
+                             t.id.startsWith("special") || 
+                             t.name.toLowerCase().includes("call") || 
+                             t.name.toLowerCase().includes("break") || 
+                             t.name.toLowerCase().includes("intro");
+              if (isCall) t.muted = false;
+            });
           }
-          
-          playSpecialPart(sp, btn);
+          renderGrid();
+        };
+
+        if (state.isPlaying) {
+          state.queuedActions.push(action);
+        } else {
+          action();
+          if (!wasActive) {
+            togglePlay();
+          }
         }
       });
       
@@ -5761,12 +5816,7 @@ function openVariationsMenu(track, stepIdx, cellElement, event) {
       iconWrapper.className = "variation-btn-icon";
       iconWrapper.innerHTML = getSoundIcon(track, p.val);
       
-      const lbl = document.createElement("span");
-      lbl.className = "variation-btn-label";
-      lbl.textContent = p.label;
-      
       btn.appendChild(iconWrapper);
-      btn.appendChild(lbl);
       
       btn.addEventListener("click", () => {
         applyValue(p.val);

@@ -1126,18 +1126,12 @@ body.light-theme .step-cell.beat-start-empty {
     box-sizing: border-box;
   }
   .variation-btn {
-    height: 38px !important;
-    padding: 0.1rem 0.15rem !important;
-    font-size: 0.65rem !important;
+    height: 36px !important;
+    padding: 0.1rem !important;
   }
   .variation-btn-icon {
-    height: 18px !important;
-    margin-top: -1px !important;
-    margin-bottom: -1px !important;
-    transform: scale(0.75) !important;
-  }
-  .variation-btn-label {
-    font-size: 0.55rem !important;
+    height: 24px !important;
+    transform: scale(1.3) !important;
   }
   .variations-grid {
     gap: 0.25rem !important;
