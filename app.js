@@ -3392,7 +3392,7 @@ let activeSwingSubdiv = 4;
 
 
 function openCustomSwingModal() {
-  activeSwingSubdiv = state.globalSubdivision;
+  activeSwingSubdiv = getSubdivisionForTiming(state.timeSignature);
   
   // Set tab classes
   document.querySelectorAll(".swing-tab-btn").forEach(btn => {
