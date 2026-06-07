@@ -14,54 +14,72 @@ function getNoiseBuffer(ctx) {
   return noiseBuffer;
 }
 
-// Map of all samples to load (.bin extension avoids IDM/FDM browser interception)
+// Map of all samples to load from djembeloops_samples (MP3 format)
 const SAMPLES = {
   // Dununs Head Hits (Primary)
-  "kenkeni_O": "samples/circAfrique v4/Kenkeni1 Head Hit.bin",
-  "kenkeni_X": "samples/circAfrique v4/Kenkeni1 Head Mute.bin",
-  "sangban_O": "samples/circAfrique v4/Sangban1 Head Hit.bin",
-  "sangban_X": "samples/circAfrique v4/Sangban1 Head Mute.bin",
-  "dundunba_O": "samples/circAfrique v4/Dununba1 Head Hit.bin",
-  "dundunba_X": "samples/circAfrique v4/Dununba1 Head Mute.bin",
+  "kenkeni_O": "samples/djembeloops_samples/Kenkeni_Open.mp3",
+  "kenkeni_X": "samples/djembeloops_samples/Kenkeni_Muffled.mp3",
+  "sangban_O": "samples/djembeloops_samples/Sangban_Open.mp3",
+  "sangban_X": "samples/djembeloops_samples/Sangban_Muffled.mp3",
+  "dundunba_O": "samples/djembeloops_samples/Doundoun_Open.mp3",
+  "dundunba_X": "samples/djembeloops_samples/Doundoun_Muffled.mp3",
   
-  // Dununs Head Hits (Secondary)
-  "kenkeni2_O": "samples/circAfrique v4/Kenkeni2 Head Hit.bin",
-  "kenkeni2_X": "samples/circAfrique v4/Kenkeni2 Head Mute.bin",
-  "sangban2_O": "samples/circAfrique v4/Sangban2 Head Hit.bin",
-  "sangban2_X": "samples/circAfrique v4/Sangban2 Head Mute.bin",
-  "dundunba2_O": "samples/circAfrique v4/Dununba2 Head Hit.bin",
-  "dundunba2_X": "samples/circAfrique v4/Dununba2 Head Mute.bin",
+  // Dununs Head Hits (Secondary) - map to same files as they represent the instruments
+  "kenkeni2_O": "samples/djembeloops_samples/Kenkeni_Open.mp3",
+  "kenkeni2_X": "samples/djembeloops_samples/Kenkeni_Muffled.mp3",
+  "sangban2_O": "samples/djembeloops_samples/Sangban_Open.mp3",
+  "sangban2_X": "samples/djembeloops_samples/Sangban_Muffled.mp3",
+  "dundunba2_O": "samples/djembeloops_samples/Doundoun_Open.mp3",
+  "dundunba2_X": "samples/djembeloops_samples/Doundoun_Muffled.mp3",
   
   // Dununs Bells (Primary)
-  "kenkeni_bell_O": "samples/circAfrique v4/Kenkeni1 Bell Hit.bin",
-  "kenkeni_bell_X": "samples/circAfrique v4/Kenkeni1 Bell Mute.bin",
-  "sangban_bell_O": "samples/circAfrique v4/Sangban1 Bell Hit.bin",
-  "sangban_bell_X": "samples/circAfrique v4/Sangban1 Bell Mute.bin",
-  "dundunba_bell_O": "samples/circAfrique v4/Dununba1 Bell.bin",
-  "dundunba_bell_X": "samples/circAfrique v4/Dununba1 Bell Mute.bin",
+  "kenkeni_bell_O": "samples/djembeloops_samples/Kenkeni_Bell_Open.mp3",
+  "kenkeni_bell_X": "samples/djembeloops_samples/Kenkeni_Muffled.mp3",
+  "sangban_bell_O": "samples/djembeloops_samples/Sangban_Bell_Open.mp3",
+  "sangban_bell_X": "samples/djembeloops_samples/Sangban_Muffled.mp3",
+  "dundunba_bell_O": "samples/djembeloops_samples/Doundoun_Bell_Open.mp3",
+  "dundunba_bell_X": "samples/djembeloops_samples/Doundoun_Muffled.mp3",
 
   // Dununs Bells (Secondary)
-  "kenkeni_bell2_O": "samples/circAfrique v4/Kenkeni2 Bell Hit.bin",
-  "kenkeni_bell2_X": "samples/circAfrique v4/Kenkeni2 Bell Mute.bin",
-  "sangban_bell2_O": "samples/circAfrique v4/Sangban2 Bell Hit.bin",
-  "sangban_bell2_X": "samples/circAfrique v4/Sangban2 Bell Mute.bin",
-  "dundunba_bell2_O": "samples/circAfrique v4/Dununba2 Bell.bin",
-  "dundunba_bell2_X": "samples/circAfrique v4/Dununba2 Bell Mute.bin",
+  "kenkeni_bell2_O": "samples/djembeloops_samples/Kenkeni_Bell_Open.mp3",
+  "kenkeni_bell2_X": "samples/djembeloops_samples/Kenkeni_Muffled.mp3",
+  "sangban_bell2_O": "samples/djembeloops_samples/Sangban_Bell_Open.mp3",
+  "sangban_bell2_X": "samples/djembeloops_samples/Sangban_Muffled.mp3",
+  "dundunba_bell2_O": "samples/djembeloops_samples/Doundoun_Bell_Open.mp3",
+  "dundunba_bell2_X": "samples/djembeloops_samples/Doundoun_Muffled.mp3",
 
   // Shekere Rattles (Shake & Tap)
-  "shekere_O": "samples/circAfrique v4/shekere.bin",
-  "shekere_X": "samples/circAfrique v4/shekere.bin",
+  "shekere_O": "samples/djembeloops_samples/Shekere.mp3",
+  "shekere_X": "samples/djembeloops_samples/ShekereB.mp3",
 
-  // Agogo Bells (High & Low)
-  "agogo_O": "samples/circAfrique v4/Agogo High.bin",
-  "agogo_X": "samples/circAfrique v4/Agogo Low.bin"
+  // Agogo Bells (High & Low) - fallback mapping
+  "agogo_O": "samples/djembeloops_samples/Kenkeni_Bell_Open.mp3",
+  "agogo_X": "samples/djembeloops_samples/Sangban_Bell_Open.mp3"
 };
 
-// Add Djembe 1-5 Bass/Tone/Slap
-for (let i = 1; i <= 5; i++) {
-  SAMPLES[`djembe${i}_B`] = `samples/circAfrique v4/Djembe${i} Bass.bin`;
-  SAMPLES[`djembe${i}_T`] = `samples/circAfrique v4/Djembe${i} Tone.bin`;
-  SAMPLES[`djembe${i}_S`] = `samples/circAfrique v4/Djembe${i} Slap.bin`;
+// Add Djembe 1-7 Bass/Tone/Slap/Mute (both normal and Left hand samples)
+const DJEMBE_MAP = {
+  1: "DjembeOne",
+  2: "DjembeTwo",
+  3: "DjembeThree",
+  4: "DjembeSolo", // map djembe 4 to Solo since DjembeFour doesn't exist on disk
+  5: "DjembeFive",
+  6: "DjembeSix",
+  7: "DjembeSeven"
+};
+for (let i = 1; i <= 7; i++) {
+  const name = DJEMBE_MAP[i];
+  // Normal/Right Hand samples
+  SAMPLES[`djembe${i}_B`] = `samples/djembeloops_samples/${name}_Bass.mp3`;
+  SAMPLES[`djembe${i}_T`] = `samples/djembeloops_samples/${name}_Open.mp3`;
+  SAMPLES[`djembe${i}_S`] = `samples/djembeloops_samples/${name}_Slap.mp3`;
+  SAMPLES[`djembe${i}_M`] = `samples/djembeloops_samples/${name}_Mute.mp3`;
+  
+  // Left Hand samples
+  SAMPLES[`djembe${i}_LB`] = `samples/djembeloops_samples/${name}_BassL.mp3`;
+  SAMPLES[`djembe${i}_LT`] = `samples/djembeloops_samples/${name}_OpenL.mp3`;
+  SAMPLES[`djembe${i}_LS`] = `samples/djembeloops_samples/${name}_SlapL.mp3`;
+  SAMPLES[`djembe${i}_LM`] = `samples/djembeloops_samples/${name}_MuteL.mp3`;
 }
 
 export class DrumSynth {
@@ -390,30 +408,22 @@ export class DrumSynth {
     }
     const match = instKey.match(/\d+/);
     let drumNum = match ? parseInt(match[0]) : 1;
-    if (drumNum < 1 || drumNum > 5) {
-      drumNum = ((drumNum - 1) % 5) + 1;
+    if (drumNum < 1 || drumNum > 7) {
+      drumNum = ((drumNum - 1) % 7) + 1;
     }
     const finalInst = `djembe${drumNum}`;
     
     const settings = this.settings.djembe;
     const instVolume = settings.volume * velocity;
     
-    let bufferType = type; // B, T, S, M
-    let isMuffled = false;
-    let filterFreq = null;
-    
-    if (type === "M") {
-      bufferType = "S";
-      isMuffled = true;
-      filterFreq = 750;
-    }
-    
-    const bufferKey = `${finalInst}_${bufferType}`;
+    const prefix = hand === "L" ? "L" : "";
+    const bufferKey = `${finalInst}_${prefix}${type}`;
     
     let pitchOffset = settings.pitch + trackPitch;
     
     if (this.isLoaded && this.buffers[bufferKey]) {
-      this.playSample(bufferKey, time, instVolume, pitchOffset, settings.reverb, filterFreq, isMuffled, settings.delay, settings.delaySubdiv, "djembe", hand);
+      // Pass hand = null to playSample because we are already playing the dedicated Left/Right sample file.
+      this.playSample(bufferKey, time, instVolume, pitchOffset, settings.reverb, null, type === "M", settings.delay, settings.delaySubdiv, "djembe", null);
     } else {
       this.playSynthesizedDjembe(type, time, velocity, pitchOffset, hand);
     }

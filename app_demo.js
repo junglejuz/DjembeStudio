@@ -2590,7 +2590,7 @@ function setupEventListeners() {
       }
     }
     if (lastId === 0) return 1;
-    return (lastId % 5) + 1;
+    return (lastId % 7) + 1;
   }
 
   function getNextDunId(baseType) {
