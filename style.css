@@ -1561,7 +1561,6 @@ select option {
 .flam-note-container svg,
 .roll-note-container svg,
 .triplet-note-container svg {
-  color: #fff !important;
   filter: drop-shadow(0px 1px 0.8px rgba(0, 0, 0, 0.95)) drop-shadow(0px 0px 1.5px rgba(0, 0, 0, 0.95));
 }
 
@@ -1586,10 +1585,10 @@ select option {
 .variations-popup {
   position: absolute;
   z-index: 10000;
-  background: rgba(255, 255, 255, 0.08);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
+  background: rgba(255, 255, 255, 0.08) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  backdrop-filter: blur(25px) !important;
+  -webkit-backdrop-filter: blur(25px) !important;
   border-radius: 16px;
   padding: 0.7rem;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
@@ -2110,8 +2109,7 @@ select option {
 @media (max-width: 768px) {
 
   .glass-panel,
-  .modal-overlay,
-  .variations-popup {
+  .modal-overlay {
     backdrop-filter: none !important;
     -webkit-backdrop-filter: none !important;
   }
@@ -2172,8 +2170,10 @@ body.light-theme .step-cell.beat-start-empty {
     max-width: 300px !important;
     max-height: 85vh !important;
     box-sizing: border-box;
-    background: rgba(15, 23, 42, 0.96) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
     border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
     padding: 0.6rem !important;
     gap: 0.35rem !important;
   }

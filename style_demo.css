@@ -1124,8 +1124,10 @@ body.light-theme .step-cell.beat-start-empty {
     max-width: 300px !important;
     max-height: 85vh !important;
     box-sizing: border-box;
-    background: rgba(15, 23, 42, 0.96) !important;
+    background: rgba(255, 255, 255, 0.08) !important;
     border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(25px) !important;
+    -webkit-backdrop-filter: blur(25px) !important;
     padding: 0.6rem !important;
     gap: 0.35rem !important;
   }

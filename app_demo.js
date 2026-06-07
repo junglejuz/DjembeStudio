@@ -211,47 +211,49 @@ function getHitGlowColor(type, hit, instrument = "") {
 function getSoundIcon(track, val) {
   if (!val) return "";
   
+  const trackType = typeof track === "string" ? track : track.type;
+  const instrument = (track && track.instrument) ? track.instrument : "";
+  
+  const musicNoteSVG = `<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><ellipse cx="9" cy="17" rx="5" ry="3.5" transform="rotate(-25 9 17)" /><rect x="12" y="4" width="2.5" height="13.5" rx="0.5" /></svg>`;
+
   if (val.includes("/")) {
     const [h1, h2] = val.split("/");
-    const icon1 = getSoundIcon(track, h1);
-    const icon2 = getSoundIcon(track, h2);
+    const c1 = getHitColor(trackType, h1, instrument);
+    const c2 = getHitColor(trackType, h2, instrument);
     return `
       <div class="flam-note-container">
-        <div class="flam-grace-note">${icon1}</div>
-        <div class="flam-main-note">${icon2}</div>
+        <div class="flam-grace-note" style="color: ${c1} !important;">${musicNoteSVG}</div>
+        <div class="flam-main-note" style="color: ${c2} !important;">${musicNoteSVG}</div>
       </div>
     `;
   }
   
   if (val.includes("-")) {
     const [h1, h2] = val.split("-");
-    const icon1 = getSoundIcon(track, h1);
-    const icon2 = getSoundIcon(track, h2);
+    const c1 = getHitColor(trackType, h1, instrument);
+    const c2 = getHitColor(trackType, h2, instrument);
     return `
       <div class="roll-note-container">
-        <div class="roll-first-note">${icon1}</div>
-        <div class="roll-second-note">${icon2}</div>
+        <div class="roll-first-note" style="color: ${c1} !important;">${musicNoteSVG}</div>
+        <div class="roll-second-note" style="color: ${c2} !important;">${musicNoteSVG}</div>
       </div>
     `;
   }
 
   if (val.includes("*")) {
     const [h1, h2, h3] = val.split("*");
-    const icon1 = getSoundIcon(track, h1);
-    const icon2 = getSoundIcon(track, h2);
-    const icon3 = getSoundIcon(track, h3);
+    const c1 = getHitColor(trackType, h1, instrument);
+    const c2 = getHitColor(trackType, h2, instrument);
+    const c3 = getHitColor(trackType, h3, instrument);
     return `
       <div class="triplet-note-container">
         <span class="triplet-badge">3</span>
-        <div class="triplet-sub-note">${icon1}</div>
-        <div class="triplet-sub-note">${icon2}</div>
-        <div class="triplet-sub-note">${icon3}</div>
+        <div class="triplet-sub-note" style="color: ${c1} !important;">${musicNoteSVG}</div>
+        <div class="triplet-sub-note" style="color: ${c2} !important;">${musicNoteSVG}</div>
+        <div class="triplet-sub-note" style="color: ${c3} !important;">${musicNoteSVG}</div>
       </div>
     `;
   }
-  
-  const trackType = typeof track === "string" ? track : track.type;
-  const instrument = (track && track.instrument) ? track.instrument : "";
   
   if (trackType === "djembe") {
     if (val === "B") { // Bass: capital letter B
