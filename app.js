@@ -4467,7 +4467,19 @@ function renderLibraryItems(searchQuery, filterSig) {
     if (Array.isArray(rhythm.tracks)) {
       instNames = rhythm.tracks.map(t => t.part.replace(/ Drum| Bell/g, ""));
     } else if (rhythm.tracks) {
-      instNames = Object.values(rhythm.tracks).map(t => t.name.replace(/ Drum| Bell/g, ""));
+      const tracksObj = rhythm.tracks;
+      if (tracksObj["1_djembe"]) {
+        Object.keys(tracksObj["1_djembe"]).forEach(subKey => {
+          instNames.push(formatTrackSubKeyName(subKey));
+        });
+      }
+      if (tracksObj["2_kenkeni"] !== undefined) instNames.push("Kenkeni");
+      if (tracksObj["3_kenkeni_bell"] !== undefined) instNames.push("Kenkeni Bell");
+      if (tracksObj["4_sangban"] !== undefined) instNames.push("Sangban");
+      if (tracksObj["5_sangban_bell"] !== undefined) instNames.push("Sangban Bell");
+      if (tracksObj["6_dun_dun"] !== undefined) instNames.push("Dun Dun");
+      if (tracksObj["7_dun_dun_bell"] !== undefined) instNames.push("Dun Dun Bell");
+      if (tracksObj["8_shekere"] !== undefined) instNames.push("Shekere");
     }
     const uniqueInsts = [...new Set(instNames)];
     
