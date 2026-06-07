@@ -1127,6 +1127,7 @@ body.light-theme .step-cell.beat-start-empty {
   }
   .variation-btn {
     height: 36px !important;
+    width: 42px !important;
     padding: 0.1rem !important;
   }
   .variation-btn-icon {
@@ -1135,6 +1136,7 @@ body.light-theme .step-cell.beat-start-empty {
   }
   .variations-grid {
     gap: 0.25rem !important;
+    justify-items: center !important;
   }
   #variations-presets-flam.variations-grid {
     grid-template-columns: repeat(4, 1fr) !important;

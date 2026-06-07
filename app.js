@@ -3931,12 +3931,14 @@ function renderGrid() {
         
         let pressTimer = null;
         let isLongPress = false;
+        let hasMoved = false;
         let startX = 0;
         let startY = 0;
         
         const startPress = (e) => {
           if (e.type === "mousedown" && e.button !== 0) return;
           isLongPress = false;
+          hasMoved = false;
           const touch = e.touches ? e.touches[0] : e;
           startX = touch.clientX;
           startY = touch.clientY;
@@ -3954,11 +3956,11 @@ function renderGrid() {
         };
 
         const handleMove = (e) => {
-          if (!pressTimer) return;
           const touch = e.touches ? e.touches[0] : e;
           const diffX = Math.abs(touch.clientX - startX);
           const diffY = Math.abs(touch.clientY - startY);
           if (diffX > 8 || diffY > 8) {
+            hasMoved = true;
             cancelPress();
           }
         };
@@ -3967,7 +3969,7 @@ function renderGrid() {
         cell.addEventListener("mousemove", handleMove);
         cell.addEventListener("mouseup", (e) => {
           cancelPress();
-          if (!isLongPress && e.button === 0) {
+          if (!isLongPress && !hasMoved && e.button === 0) {
             cycleStepHit(track, stepIdx, cell);
           }
         });
@@ -3978,7 +3980,7 @@ function renderGrid() {
         cell.addEventListener("touchend", (e) => {
           e.preventDefault();
           cancelPress();
-          if (!isLongPress) {
+          if (!isLongPress && !hasMoved) {
             cycleStepHit(track, stepIdx, cell);
           }
         }, { passive: false });
@@ -5122,7 +5124,7 @@ function loadRhythmNew(preset) {
   const specialRow = document.getElementById("special-parts-control-row");
   const specialContainer = document.getElementById("special-parts-buttons-container");
   
-  const nonSoloSpecialParts = (preset.special_parts || []).filter(sp => sp.type !== "Solo");
+  const nonSoloSpecialParts = (preset.special_parts || []).filter(sp => sp.type !== "Solo" && sp.type !== "Call");
   if (nonSoloSpecialParts.length > 0 && specialRow && specialContainer) {
     specialRow.style.display = "flex";
     specialContainer.innerHTML = "";
