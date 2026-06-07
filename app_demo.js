@@ -1222,6 +1222,7 @@ function injectLargeSliderOverlay() {
 
 function setupLargeSlider(originalSlider, options = {}) {
   if (!originalSlider) return;
+  originalSlider.style.touchAction = "none";
   originalSlider.addEventListener("pointerdown", (e) => {
     e.stopPropagation();
     e.preventDefault();
@@ -4657,12 +4658,13 @@ function renderGrid() {
         cell.addEventListener("mouseleave", cancelPress);
         
         cell.addEventListener("touchstart", startPress, { passive: true });
-        cell.addEventListener("touchend", () => {
+        cell.addEventListener("touchend", (e) => {
+          e.preventDefault();
           cancelPress();
           if (!isLongPress) {
             cycleStepHit(track, stepIdx, cell);
           }
-        }, { passive: true });
+        }, { passive: false });
         cell.addEventListener("touchcancel", cancelPress, { passive: true });
         
         stepsContainer.appendChild(cell);
