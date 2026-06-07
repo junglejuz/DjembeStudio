@@ -644,9 +644,30 @@ function injectLargeSliderOverlay() {
 function setupLargeSlider(originalSlider, options = {}) {
   if (!originalSlider) return;
   originalSlider.style.touchAction = "none";
+  
+  let isCustomDragging = false;
+  
+  // Intercept native browser drag events to prevent them from overriding our custom math on release
+  const blockNative = (e) => {
+    if (isCustomDragging && !e.isCustomUpdate) {
+      e.stopImmediatePropagation();
+      e.preventDefault();
+      // Force native visual thumb back to our intended value instantly
+      const overlay = document.getElementById("large-slider-overlay");
+      if (overlay) {
+        const largeInput = overlay.querySelector(".large-slider-input");
+        if (largeInput) originalSlider.value = largeInput.value;
+      }
+    }
+  };
+  
+  originalSlider.addEventListener("input", blockNative, true);
+  originalSlider.addEventListener("change", blockNative, true);
+  
   originalSlider.addEventListener("pointerdown", (e) => {
     e.stopPropagation();
     e.preventDefault();
+    isCustomDragging = true;
     
     injectLargeSliderOverlay();
     const overlay = document.getElementById("large-slider-overlay");
@@ -672,7 +693,9 @@ function setupLargeSlider(originalSlider, options = {}) {
       let clickVal = min + clickFraction * (max - min);
       clickVal = Math.round(clickVal / step) * step;
       originalSlider.value = clickVal;
-      originalSlider.dispatchEvent(new Event("input"));
+      const ev = new Event("input");
+      ev.isCustomUpdate = true;
+      originalSlider.dispatchEvent(ev);
     }
     
     largeInput.min = originalSlider.min || "0";
@@ -768,7 +791,9 @@ function setupLargeSlider(originalSlider, options = {}) {
       if (largeInput.value !== String(val)) {
         largeInput.value = val;
         originalSlider.value = largeInput.value;
-        originalSlider.dispatchEvent(new Event("input"));
+        const ev = new Event("input");
+        ev.isCustomUpdate = true;
+        originalSlider.dispatchEvent(ev);
         updateLabelAndValue();
       }
     };
@@ -790,11 +815,21 @@ function setupLargeSlider(originalSlider, options = {}) {
       // Force sync native slider on release to fix DOM/visual mismatches
       if (largeInput && originalSlider) {
         originalSlider.value = largeInput.value;
-        originalSlider.dispatchEvent(new Event("input"));
-        originalSlider.dispatchEvent(new Event("change"));
+        const evInp = new Event("input");
+        evInp.isCustomUpdate = true;
+        originalSlider.dispatchEvent(evInp);
+        
+        const evChg = new Event("change");
+        evChg.isCustomUpdate = true;
+        originalSlider.dispatchEvent(evChg);
       }
       
       overlay.style.display = "none";
+      
+      // Delay releasing the lock to catch late-firing native browser events
+      setTimeout(() => {
+        isCustomDragging = false;
+      }, 100);
     };
     
     window.addEventListener("pointermove", onPointerMove, { passive: false });
