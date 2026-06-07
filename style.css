@@ -2165,3 +2165,37 @@ body.light-theme .step-cell.beat-start-empty {
   background: rgba(0, 0, 0, 0.16) !important;
   border-color: rgba(0, 0, 0, 0.3) !important;
 }
+
+/* Responsive overrides for note variations popover on mobile viewports */
+@media (max-width: 768px) {
+  .variations-popup {
+    position: fixed !important;
+    top: 50% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    width: 90% !important;
+    max-width: 330px !important;
+    max-height: 85vh !important;
+    box-sizing: border-box;
+  }
+  .variation-btn {
+    height: 38px !important;
+    padding: 0.1rem 0.15rem !important;
+    font-size: 0.65rem !important;
+  }
+  .variation-btn-icon {
+    height: 18px !important;
+    margin-top: -1px !important;
+    margin-bottom: -1px !important;
+    transform: scale(0.75) !important;
+  }
+  .variation-btn-label {
+    font-size: 0.55rem !important;
+  }
+  .variations-grid {
+    gap: 0.25rem !important;
+  }
+  #variations-presets-flam.variations-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}

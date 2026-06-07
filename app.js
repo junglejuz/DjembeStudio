@@ -833,6 +833,56 @@ function updateRhythmNameDisplay() {
   }
 }
 
+function updateSpecialButtonsState(preset) {
+  const btnTriggerCall = document.getElementById("btn-trigger-call");
+  const btnTriggerEchauffement = document.getElementById("btn-trigger-echauffement");
+  
+  if (!preset) {
+    if (btnTriggerCall) {
+      btnTriggerCall.disabled = true;
+      btnTriggerCall.style.opacity = "0.3";
+      btnTriggerCall.style.pointerEvents = "none";
+    }
+    if (btnTriggerEchauffement) {
+      btnTriggerEchauffement.disabled = true;
+      btnTriggerEchauffement.style.opacity = "0.3";
+      btnTriggerEchauffement.style.pointerEvents = "none";
+    }
+    return;
+  }
+  
+  const isNewFormat = !!(preset.rhythm_name || Array.isArray(preset.tracks));
+  
+  let hasCall = false;
+  let hasEchauffement = false;
+  
+  if (isNewFormat) {
+    hasCall = (preset.special_parts || []).some(sp => sp.type === "Call" || sp.type === "Intro");
+    hasEchauffement = (preset.tracks || []).some(track => track.echauffement && track.echauffement.drum_pattern);
+  } else {
+    hasCall = Object.keys(preset.tracks || {}).some(key => {
+      const trackData = preset.tracks[key];
+      return key === "special_0" || (trackData.name || "").toLowerCase().includes("call");
+    });
+    hasEchauffement = (preset.solos || []).some(s => 
+      s.name.toLowerCase().includes("echauffement") || 
+      s.name.toLowerCase().includes("échauffement")
+    );
+  }
+  
+  if (btnTriggerCall) {
+    btnTriggerCall.disabled = !hasCall;
+    btnTriggerCall.style.opacity = hasCall ? "" : "0.3";
+    btnTriggerCall.style.pointerEvents = hasCall ? "" : "none";
+  }
+  
+  if (btnTriggerEchauffement) {
+    btnTriggerEchauffement.disabled = !hasEchauffement;
+    btnTriggerEchauffement.style.opacity = hasEchauffement ? "" : "0.3";
+    btnTriggerEchauffement.style.pointerEvents = hasEchauffement ? "" : "none";
+  }
+}
+
 // Global subdivision factor is now handled track-specifically
 
 // Stable-sort tracks: call parts at the very top, standard djembe next, others in the middle, special djembe sections (solos/echauffements) at the bottom, and solo djembe at the absolute bottom.
@@ -2258,6 +2308,7 @@ function loadRhythm(preset) {
   }
   
   renderGrid();
+  updateSpecialButtonsState(preset);
 }
 
 // Rebuild steps array preserving contents where possible
@@ -3880,10 +3931,15 @@ function renderGrid() {
         
         let pressTimer = null;
         let isLongPress = false;
+        let startX = 0;
+        let startY = 0;
         
         const startPress = (e) => {
           if (e.type === "mousedown" && e.button !== 0) return;
           isLongPress = false;
+          const touch = e.touches ? e.touches[0] : e;
+          startX = touch.clientX;
+          startY = touch.clientY;
           pressTimer = setTimeout(() => {
             isLongPress = true;
             openVariationsMenu(track, stepIdx, cell, e);
@@ -3896,8 +3952,19 @@ function renderGrid() {
             pressTimer = null;
           }
         };
+
+        const handleMove = (e) => {
+          if (!pressTimer) return;
+          const touch = e.touches ? e.touches[0] : e;
+          const diffX = Math.abs(touch.clientX - startX);
+          const diffY = Math.abs(touch.clientY - startY);
+          if (diffX > 8 || diffY > 8) {
+            cancelPress();
+          }
+        };
         
         cell.addEventListener("mousedown", startPress);
+        cell.addEventListener("mousemove", handleMove);
         cell.addEventListener("mouseup", (e) => {
           cancelPress();
           if (!isLongPress && e.button === 0) {
@@ -3907,6 +3974,7 @@ function renderGrid() {
         cell.addEventListener("mouseleave", cancelPress);
         
         cell.addEventListener("touchstart", startPress, { passive: true });
+        cell.addEventListener("touchmove", handleMove, { passive: true });
         cell.addEventListener("touchend", (e) => {
           e.preventDefault();
           cancelPress();
@@ -4319,6 +4387,7 @@ function loadSavedPattern(save) {
   }));
   
   renderGrid();
+  updateSpecialButtonsState(null);
   if (savesModal) {
     savesModal.classList.remove("active");
   }
@@ -4828,6 +4897,22 @@ function loadRhythmNew(preset) {
   state.activeVariation = null;
   state.callIntroActive = false;
   
+  // Extract and populate state.presetCallData from special_parts if type === "Call"
+  const callPart = (preset.special_parts || []).find(sp => sp.type === "Call" || sp.type === "Intro");
+  if (callPart) {
+    const timing = preset.timing || "12/8";
+    const timingSubdiv = getSubdivisionForTiming(timing);
+    const steps = convertPatternToSteps(callPart.drum_pattern, timing, "Djembé");
+    state.presetCallData = {
+      id: "special_call",
+      name: callPart.name || "Call",
+      steps: steps,
+      subdivision: timingSubdiv
+    };
+  } else {
+    state.presetCallData = null;
+  }
+  
   // Hide old solos/breaks control rows
   if (solosControlRow) solosControlRow.style.display = "none";
   if (breaksControlRow) breaksControlRow.style.display = "none";
@@ -4991,34 +5076,45 @@ function loadRhythmNew(preset) {
           triggerEchauffement(); // toggle off
         }
         
-        if (wasActive) {
-          state.activeVariation = null;
-          state.tracks.forEach(track => {
-            if (track.standardSteps) {
-              track.steps = [...track.standardSteps];
-              track.subdivisionSteps[track.subdivision] = [...track.steps];
-              delete track.standardSteps;
-            }
-          });
-        } else {
+        if (!wasActive) {
           btn.classList.add("btn-primary");
-          state.activeVariation = i;
-          
-          state.tracks.forEach(track => {
-            const presetTrack = state.currentPreset.tracks.find(pt => cleanTrackName(pt.part) === cleanTrackName(track.name));
-            if (presetTrack) {
-              if (!track.standardSteps) track.standardSteps = [...track.steps];
-              
-              if (presetTrack.variations && presetTrack.variations[i]) {
-                track.steps = convertPatternToSteps(presetTrack.variations[i].drum_pattern, state.timeSignature, track.name);
-              } else {
-                track.steps = [...track.standardSteps];
-              }
-              track.subdivisionSteps[track.subdivision] = [...track.steps];
-            }
-          });
         }
-        renderGrid();
+
+        const action = () => {
+          if (wasActive) {
+            state.activeVariation = null;
+            state.tracks.forEach(track => {
+              if (track.standardSteps) {
+                track.steps = [...track.standardSteps];
+                track.subdivisionSteps[track.subdivision] = [...track.steps];
+                delete track.standardSteps;
+              }
+            });
+          } else {
+            state.activeVariation = i;
+            
+            state.tracks.forEach(track => {
+              const presetTrack = state.currentPreset.tracks.find(pt => cleanTrackName(pt.part) === cleanTrackName(track.name));
+              if (presetTrack) {
+                if (!track.standardSteps) track.standardSteps = [...track.steps];
+                
+                if (presetTrack.variations && presetTrack.variations[i]) {
+                  track.steps = convertPatternToSteps(presetTrack.variations[i].drum_pattern, state.timeSignature, track.name);
+                } else {
+                  track.steps = [...track.standardSteps];
+                }
+                track.subdivisionSteps[track.subdivision] = [...track.steps];
+              }
+            });
+          }
+          renderGrid();
+        };
+
+        if (state.isPlaying) {
+          state.queuedActions.push(action);
+        } else {
+          action();
+        }
       });
       
       variationsContainer.appendChild(btn);
@@ -5221,6 +5317,7 @@ function loadRhythmNew(preset) {
   }
   
   renderGrid();
+  updateSpecialButtonsState(preset);
 }
 
 function toggleEchauffementNew() {
