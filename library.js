@@ -108,5 +108,91 @@ export const RHYTHM_LIBRARY = [
         "drum_pattern": "SSSSSSSSSSSSSSSSSSSTS..."
       }
     ]
+  },
+  {
+    "rhythm_name": "Balakulandyan / Söli lent",
+    "time_signature": "4/4",
+    "step_count": 16,
+    "tracks": {
+      "1_djembe": {
+        "djembe_1_json": "B . T T . . S . B . T T . . S .",
+        "djembe_2_json": "S . . S S . T T S . . S S . T T",
+        "djembe_1_pdf": "S . S S . . T T S . . . S S . T T",
+        "djembe_2_pdf": "B . T T . S T T . . . B S . . S",
+        "djembe_solo_acc_pdf": "S S . S S . T . S . T T S S . ."
+      },
+      "2_kenkeni": "O . . . O . . . O . . . O . . .",
+      "3_kenkeni_bell": "X . X . X . X . X . X . X . X .",
+      "4_sangban": "C . . . C . . . C . O . O . . .",
+      "5_sangban_bell": "X . X . X . X . X . X . X . X .",
+      "6_dun_dun": "O . . . . . O . O . . . . . O .",
+      "7_dun_dun_bell": "X . X X . X X . X . X X . X X .",
+      "8_shekere": "X . . . X . . . X . . . X . . ."
+    },
+    "echauffement": {
+      "1_djembe": "Missing Data",
+      "4_sangban": "O O . O O . . . O O . O . . . .",
+      "5_sangban_bell": "X . X X X . X X . X . X X . X .",
+      "6_dun_dun": "O . O O . O . . O O . O . O . O",
+      "7_dun_dun_bell": "X . X X . X . . X X . X . X . X"
+    },
+    "special_parts": [
+      {
+        "part_id": "Call_PDF",
+        "type": "Call",
+        "sequence": "T . T T . T . . T T . T . . T .",
+        "accompaniment_link": "Standard_Accompaniment"
+      },
+      {
+        "part_id": "Sangban_Variation_1_PDF",
+        "type": "Variation",
+        "sequence": ". . O . . . . . O . . O . . . .",
+        "accompaniment_link": "Standard_Accompaniment"
+      },
+      {
+        "part_id": "DunDun_Variation_1_PDF",
+        "type": "Variation",
+        "sequence": "O . . . . . O O . . . . O . O .",
+        "accompaniment_link": "Standard_Accompaniment"
+      },
+      {
+        "part_id": "Solo1_JSON",
+        "type": "Solo",
+        "sequence": ". . . rt rs S S S S S T S S T S S",
+        "accompaniment_link": "djembe_solo_acc_pdf"
+      },
+      {
+        "part_id": "Solo2_JSON",
+        "type": "Solo",
+        "sequence": "S S . rs rt S S T T S T T S T T S",
+        "accompaniment_link": "djembe_solo_acc_pdf"
+      },
+      {
+        "part_id": "Solo4_JSON",
+        "type": "Solo",
+        "sequence": "rs rs rs rs rs rs rs rs T . fs . T T . S",
+        "accompaniment_link": "djembe_solo_acc_pdf"
+      },
+      {
+        "part_id": "Solo7_JSON",
+        "type": "Solo",
+        "sequence": "S S . T ts . S S . T ts . S S . T",
+        "accompaniment_link": "djembe_solo_acc_pdf"
+      }
+    ],
+    "practice_section": {
+      "exercises": "Missing Data"
+    },
+    "ui_elements": {
+      "intro_button": "Missing Data",
+      "call_button": "Call_PDF",
+      "break_button": "Missing Data",
+      "solo_button": [
+        "Solo1_JSON",
+        "Solo2_JSON",
+        "Solo4_JSON",
+        "Solo7_JSON"
+      ]
+    }
   }
 ];

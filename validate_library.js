@@ -13,54 +13,98 @@ RHYTHM_LIBRARY.forEach((rhythm, idx) => {
     errorsCount++;
   }
   
-  if (!rhythm.timing) {
-    console.error(`Error: Rhythm '${name}' is missing 'timing'`);
+  const timing = rhythm.timing || rhythm.time_signature;
+  if (!timing) {
+    console.error(`Error: Rhythm '${name}' is missing 'timing' or 'time_signature'`);
     errorsCount++;
-  } else if (!validTimings.includes(rhythm.timing)) {
-    console.error(`Error: Rhythm '${name}' has invalid timing '${rhythm.timing}'. Allowed: ${validTimings.join(', ')}`);
+  } else if (!validTimings.includes(timing)) {
+    console.error(`Error: Rhythm '${name}' has invalid timing '${timing}'. Allowed: ${validTimings.join(', ')}`);
     errorsCount++;
   }
   
-  if (!rhythm.tracks || !Array.isArray(rhythm.tracks) || rhythm.tracks.length === 0) {
-    console.error(`Error: Rhythm '${name}' is missing 'tracks' array or it is empty`);
+  if (!rhythm.tracks) {
+    console.error(`Error: Rhythm '${name}' is missing 'tracks'`);
     errorsCount++;
-  } else {
-    rhythm.tracks.forEach((track, tIdx) => {
-      const part = track.part || `Track at index ${tIdx}`;
-      if (!track.part) {
-        console.error(`Error in rhythm '${name}': track at index ${tIdx} is missing 'part'`);
-        errorsCount++;
-      }
-      if (typeof track.drum_pattern !== 'string') {
-        console.error(`Error in rhythm '${name}': track '${part}' is missing 'drum_pattern' string`);
+  } else if (Array.isArray(rhythm.tracks)) {
+    // Old format
+    if (rhythm.tracks.length === 0) {
+      console.error(`Error: Rhythm '${name}' has empty 'tracks' array`);
+      errorsCount++;
+    } else {
+      rhythm.tracks.forEach((track, tIdx) => {
+        const part = track.part || `Track at index ${tIdx}`;
+        if (!track.part) {
+          console.error(`Error in rhythm '${name}': track at index ${tIdx} is missing 'part'`);
+          errorsCount++;
+        }
+        if (typeof track.drum_pattern !== 'string') {
+          console.error(`Error in rhythm '${name}': track '${part}' is missing 'drum_pattern' string`);
+          errorsCount++;
+        }
+        
+        if (track.variations) {
+          if (!Array.isArray(track.variations)) {
+            console.error(`Error in rhythm '${name}': track '${part}' 'variations' should be an array`);
+            errorsCount++;
+          } else {
+            track.variations.forEach((v, vIdx) => {
+              if (!v.name) {
+                console.error(`Error in rhythm '${name}' track '${part}': variation at index ${vIdx} is missing 'name'`);
+                errorsCount++;
+              }
+              if (typeof v.drum_pattern !== 'string') {
+                console.error(`Error in rhythm '${name}' track '${part}': variation '${v.name || vIdx}' is missing 'drum_pattern'`);
+                errorsCount++;
+              }
+            });
+          }
+        }
+        
+        if (track.echauffement) {
+          if (typeof track.echauffement.drum_pattern !== 'string') {
+            console.error(`Error in rhythm '${name}': track '${part}' echauffement is missing 'drum_pattern'`);
+            errorsCount++;
+          }
+        }
+      });
+    }
+  } else if (typeof rhythm.tracks === 'object') {
+    // New format
+    const trackKeys = Object.keys(rhythm.tracks);
+    const validHierarchyKeys = [
+      '1_djembe', '2_kenkeni', '3_kenkeni_bell', '4_sangban', 
+      '5_sangban_bell', '6_dun_dun', '7_dun_dun_bell', '8_shekere'
+    ];
+    
+    trackKeys.forEach(key => {
+      if (!validHierarchyKeys.includes(key)) {
+        console.error(`Error in rhythm '${name}': invalid tracks key '${key}'`);
         errorsCount++;
       }
       
-      if (track.variations) {
-        if (!Array.isArray(track.variations)) {
-          console.error(`Error in rhythm '${name}': track '${part}' 'variations' should be an array`);
+      const val = rhythm.tracks[key];
+      if (key === '1_djembe') {
+        if (typeof val !== 'object' || Array.isArray(val)) {
+          console.error(`Error in rhythm '${name}': '1_djembe' track must be an object of sub-keys`);
           errorsCount++;
         } else {
-          track.variations.forEach((v, vIdx) => {
-            if (!v.name) {
-              console.error(`Error in rhythm '${name}' track '${part}': variation at index ${vIdx} is missing 'name'`);
-              errorsCount++;
-            }
-            if (typeof v.drum_pattern !== 'string') {
-              console.error(`Error in rhythm '${name}' track '${part}': variation '${v.name || vIdx}' is missing 'drum_pattern'`);
+          Object.keys(val).forEach(subKey => {
+            if (typeof val[subKey] !== 'string') {
+              console.error(`Error in rhythm '${name}': '1_djembe' subkey '${subKey}' must be a sequence string`);
               errorsCount++;
             }
           });
         }
-      }
-      
-      if (track.echauffement) {
-        if (typeof track.echauffement.drum_pattern !== 'string') {
-          console.error(`Error in rhythm '${name}': track '${part}' echauffement is missing 'drum_pattern'`);
+      } else {
+        if (typeof val !== 'string') {
+          console.error(`Error in rhythm '${name}': track '${key}' must be a sequence string`);
           errorsCount++;
         }
       }
     });
+  } else {
+    console.error(`Error: Rhythm '${name}' has invalid 'tracks' field type`);
+    errorsCount++;
   }
   
   if (rhythm.special_parts) {
@@ -69,17 +113,18 @@ RHYTHM_LIBRARY.forEach((rhythm, idx) => {
       errorsCount++;
     } else {
       rhythm.special_parts.forEach((sp, spIdx) => {
-        const spName = sp.name || `Special part at index ${spIdx}`;
+        const spName = sp.name || sp.part_id || `Special part at index ${spIdx}`;
         if (!sp.type) {
           console.error(`Error in rhythm '${name}': special part '${spName}' is missing 'type'`);
           errorsCount++;
         }
-        if (!sp.name) {
-          console.error(`Error in rhythm '${name}': special part at index ${spIdx} is missing 'name'`);
+        if (!sp.name && !sp.part_id) {
+          console.error(`Error in rhythm '${name}': special part at index ${spIdx} is missing 'name' or 'part_id'`);
           errorsCount++;
         }
-        if (typeof sp.drum_pattern !== 'string') {
-          console.error(`Error in rhythm '${name}': special part '${spName}' is missing 'drum_pattern'`);
+        const pattern = sp.drum_pattern || sp.sequence;
+        if (typeof pattern !== 'string') {
+          console.error(`Error in rhythm '${name}': special part '${spName}' is missing sequence/drum_pattern string`);
           errorsCount++;
         }
       });
