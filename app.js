@@ -208,22 +208,25 @@ function getHitGlowColor(type, hit, instrument = "") {
 }
 
 // Helper to return clean visual SVGs for different sound strikes
-function getSoundIcon(track, val) {
+function getSoundIcon(track, val, useOriginalIcons = false) {
   if (!val) return "";
   
   const trackType = typeof track === "string" ? track : track.type;
   const instrument = (track && track.instrument) ? track.instrument : "";
   
-  const musicNoteSVG = `<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><ellipse cx="9" cy="17" rx="5" ry="3.5" transform="rotate(-25 9 17)" /><rect x="12" y="4" width="2.5" height="13.5" rx="0.5" /></svg>`;
+  // Single rounded square SVG for grid composite notes
+  const squareNoteSVG = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect width="14" height="14" rx="3.5" fill="currentColor" /></svg>`;
 
   if (val.includes("/")) {
     const [h1, h2] = val.split("/");
     const c1 = getHitColor(trackType, h1, instrument);
     const c2 = getHitColor(trackType, h2, instrument);
+    const icon1 = useOriginalIcons ? getSoundIcon(track, h1, true) : squareNoteSVG;
+    const icon2 = useOriginalIcons ? getSoundIcon(track, h2, true) : squareNoteSVG;
     return `
       <div class="flam-note-container">
-        <div class="flam-grace-note" style="color: ${c1} !important;">${musicNoteSVG}</div>
-        <div class="flam-main-note" style="color: ${c2} !important;">${musicNoteSVG}</div>
+        <div class="flam-grace-note" style="color: ${c1} !important;">${icon1}</div>
+        <div class="flam-main-note" style="color: ${c2} !important;">${icon2}</div>
       </div>
     `;
   }
@@ -232,10 +235,12 @@ function getSoundIcon(track, val) {
     const [h1, h2] = val.split("-");
     const c1 = getHitColor(trackType, h1, instrument);
     const c2 = getHitColor(trackType, h2, instrument);
+    const icon1 = useOriginalIcons ? getSoundIcon(track, h1, true) : squareNoteSVG;
+    const icon2 = useOriginalIcons ? getSoundIcon(track, h2, true) : squareNoteSVG;
     return `
       <div class="roll-note-container">
-        <div class="roll-first-note" style="color: ${c1} !important;">${musicNoteSVG}</div>
-        <div class="roll-second-note" style="color: ${c2} !important;">${musicNoteSVG}</div>
+        <div class="roll-first-note" style="color: ${c1} !important;">${icon1}</div>
+        <div class="roll-second-note" style="color: ${c2} !important;">${icon2}</div>
       </div>
     `;
   }
@@ -245,12 +250,15 @@ function getSoundIcon(track, val) {
     const c1 = getHitColor(trackType, h1, instrument);
     const c2 = getHitColor(trackType, h2, instrument);
     const c3 = getHitColor(trackType, h3, instrument);
+    const icon1 = useOriginalIcons ? getSoundIcon(track, h1, true) : squareNoteSVG;
+    const icon2 = useOriginalIcons ? getSoundIcon(track, h2, true) : squareNoteSVG;
+    const icon3 = useOriginalIcons ? getSoundIcon(track, h3, true) : squareNoteSVG;
     return `
       <div class="triplet-note-container">
         <span class="triplet-badge">3</span>
-        <div class="triplet-sub-note" style="color: ${c1} !important;">${musicNoteSVG}</div>
-        <div class="triplet-sub-note" style="color: ${c2} !important;">${musicNoteSVG}</div>
-        <div class="triplet-sub-note" style="color: ${c3} !important;">${musicNoteSVG}</div>
+        <div class="triplet-sub-note" style="color: ${c1} !important;">${icon1}</div>
+        <div class="triplet-sub-note" style="color: ${c2} !important;">${icon2}</div>
+        <div class="triplet-sub-note" style="color: ${c3} !important;">${icon3}</div>
       </div>
     `;
   }
@@ -4682,7 +4690,7 @@ function openVariationsMenu(track, stepIdx, cellElement, event) {
       
       const iconWrapper = document.createElement("div");
       iconWrapper.className = "variation-btn-icon";
-      iconWrapper.innerHTML = getSoundIcon(track, p.val);
+      iconWrapper.innerHTML = getSoundIcon(track, p.val, true);
       
       btn.appendChild(iconWrapper);
       
