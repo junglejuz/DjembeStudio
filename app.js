@@ -213,36 +213,51 @@ function getSoundIcon(track, val, useOriginalIcons = false) {
   
   const trackType = typeof track === "string" ? track : track.type;
   const instrument = (track && track.instrument) ? track.instrument : "";
-  
-  // Single rounded square SVG for grid composite notes
-  const squareNoteSVG = `<svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect width="14" height="14" rx="3.5" fill="currentColor" /></svg>`;
 
   if (val.includes("/")) {
     const [h1, h2] = val.split("/");
     const c1 = getHitColor(trackType, h1, instrument);
     const c2 = getHitColor(trackType, h2, instrument);
-    const icon1 = useOriginalIcons ? getSoundIcon(track, h1, true) : squareNoteSVG;
-    const icon2 = useOriginalIcons ? getSoundIcon(track, h2, true) : squareNoteSVG;
-    return `
-      <div class="flam-note-container">
-        <div class="flam-grace-note" style="color: ${c1} !important;">${icon1}</div>
-        <div class="flam-main-note" style="color: ${c2} !important;">${icon2}</div>
-      </div>
-    `;
+    const icon1 = getSoundIcon(track, h1, true);
+    const icon2 = getSoundIcon(track, h2, true);
+    if (useOriginalIcons) {
+      return `
+        <div class="flam-note-container">
+          <div class="flam-grace-note" style="color: ${c1} !important;">${icon1}</div>
+          <div class="flam-main-note" style="color: ${c2} !important;">${icon2}</div>
+        </div>
+      `;
+    } else {
+      return `
+        <div class="flam-note-container">
+          <div class="flam-grace-note sub-note-square" style="background: ${c1} !important; border-color: ${c1} !important;">${icon1}</div>
+          <div class="flam-main-note sub-note-square" style="background: ${c2} !important; border-color: ${c2} !important;">${icon2}</div>
+        </div>
+      `;
+    }
   }
   
   if (val.includes("-")) {
     const [h1, h2] = val.split("-");
     const c1 = getHitColor(trackType, h1, instrument);
     const c2 = getHitColor(trackType, h2, instrument);
-    const icon1 = useOriginalIcons ? getSoundIcon(track, h1, true) : squareNoteSVG;
-    const icon2 = useOriginalIcons ? getSoundIcon(track, h2, true) : squareNoteSVG;
-    return `
-      <div class="roll-note-container">
-        <div class="roll-first-note" style="color: ${c1} !important;">${icon1}</div>
-        <div class="roll-second-note" style="color: ${c2} !important;">${icon2}</div>
-      </div>
-    `;
+    const icon1 = getSoundIcon(track, h1, true);
+    const icon2 = getSoundIcon(track, h2, true);
+    if (useOriginalIcons) {
+      return `
+        <div class="roll-note-container">
+          <div class="roll-first-note" style="color: ${c1} !important;">${icon1}</div>
+          <div class="roll-second-note" style="color: ${c2} !important;">${icon2}</div>
+        </div>
+      `;
+    } else {
+      return `
+        <div class="roll-note-container">
+          <div class="roll-first-note sub-note-square" style="background: ${c1} !important; border-color: ${c1} !important;">${icon1}</div>
+          <div class="roll-second-note sub-note-square" style="background: ${c2} !important; border-color: ${c2} !important;">${icon2}</div>
+        </div>
+      `;
+    }
   }
 
   if (val.includes("*")) {
@@ -250,17 +265,28 @@ function getSoundIcon(track, val, useOriginalIcons = false) {
     const c1 = getHitColor(trackType, h1, instrument);
     const c2 = getHitColor(trackType, h2, instrument);
     const c3 = getHitColor(trackType, h3, instrument);
-    const icon1 = useOriginalIcons ? getSoundIcon(track, h1, true) : squareNoteSVG;
-    const icon2 = useOriginalIcons ? getSoundIcon(track, h2, true) : squareNoteSVG;
-    const icon3 = useOriginalIcons ? getSoundIcon(track, h3, true) : squareNoteSVG;
-    return `
-      <div class="triplet-note-container">
-        <span class="triplet-badge">3</span>
-        <div class="triplet-sub-note" style="color: ${c1} !important;">${icon1}</div>
-        <div class="triplet-sub-note" style="color: ${c2} !important;">${icon2}</div>
-        <div class="triplet-sub-note" style="color: ${c3} !important;">${icon3}</div>
-      </div>
-    `;
+    const icon1 = getSoundIcon(track, h1, true);
+    const icon2 = getSoundIcon(track, h2, true);
+    const icon3 = getSoundIcon(track, h3, true);
+    if (useOriginalIcons) {
+      return `
+        <div class="triplet-note-container">
+          <span class="triplet-badge">3</span>
+          <div class="triplet-sub-note" style="color: ${c1} !important;">${icon1}</div>
+          <div class="triplet-sub-note" style="color: ${c2} !important;">${icon2}</div>
+          <div class="triplet-sub-note" style="color: ${c3} !important;">${icon3}</div>
+        </div>
+      `;
+    } else {
+      return `
+        <div class="triplet-note-container">
+          <span class="triplet-badge">3</span>
+          <div class="triplet-sub-note sub-note-square" style="background: ${c1} !important; border-color: ${c1} !important;">${icon1}</div>
+          <div class="triplet-sub-note sub-note-square" style="background: ${c2} !important; border-color: ${c2} !important;">${icon2}</div>
+          <div class="triplet-sub-note sub-note-square" style="background: ${c3} !important; border-color: ${c3} !important;">${icon3}</div>
+        </div>
+      `;
+    }
   }
   
   if (trackType === "djembe") {
