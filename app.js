@@ -2519,6 +2519,9 @@ function triggerCall() {
     
     // Activate call intro
     state.callIntroActive = true;
+    if (state.isPlaying) {
+      nextTickToSchedule = 0;
+    }
     
     // Unmute call tracks at the start so they play during the intro
     state.tracks.forEach(t => {
@@ -2746,11 +2749,29 @@ function calculatePitchBrightness(track, stepIdx, epoch) {
 function getSwungStepTime(beatIndex, stepInBeat, subdivision, beatDuration, swingPercent) {
   let relativeBeatOffset = stepInBeat / subdivision;
   
+  // Intelligent Dynamic Swing Scaling (attenuate swing at high BPMs)
+  // At 120 BPM, attenuation is 1.0. At 200 BPM, it scales down to ~0.6
+  const attenuation = Math.min(1.0, 120 / Math.max(120, state.bpm));
+  const activeSwingPercent = swingPercent * attenuation;
+  
   // Apply custom step offsets (which now represent both global swing and custom adjustments)
   if (state.customSwingOffsets && state.customSwingOffsets[subdivision]) {
     const offsets = state.customSwingOffsets[subdivision];
-    if (offsets[stepInBeat] !== undefined) {
-      const offsetPercent = offsets[stepInBeat]; // value from -50 to +50
+    const baseStep = Math.floor(stepInBeat);
+    const fraction = stepInBeat - baseStep;
+    
+    let offsetPercent = 0;
+    if (offsets[baseStep] !== undefined) {
+      offsetPercent = offsets[baseStep];
+      // Interpolate with the next step if fractional
+      if (fraction > 0) {
+        const nextStep = (baseStep + 1) % subdivision;
+        const nextOffset = offsets[nextStep] !== undefined ? offsets[nextStep] : 0;
+        offsetPercent = offsetPercent * (1 - fraction) + nextOffset * fraction;
+      }
+      
+      offsetPercent *= attenuation;
+      
       const stepWidth = 1 / subdivision;
       relativeBeatOffset += (offsetPercent / 100) * stepWidth;
     }
@@ -2762,8 +2783,19 @@ function getSwungStepTime(beatIndex, stepInBeat, subdivision, beatDuration, swin
   if (state.currentPreset && state.currentPreset.groove_modifiers && state.currentPreset.groove_modifiers.swing_offsets) {
     const offsets = state.currentPreset.groove_modifiers.swing_offsets;
     if (offsets.length > 0) {
-      const offsetIndex = stepInBeat % offsets.length;
-      const offsetVal = offsets[offsetIndex] || 0;
+      const baseStep = Math.floor(stepInBeat);
+      const fraction = stepInBeat - baseStep;
+      
+      const offsetIndex = baseStep % offsets.length;
+      let offsetVal = offsets[offsetIndex] || 0;
+      
+      if (fraction > 0) {
+        const nextOffsetIndex = (baseStep + 1) % offsets.length;
+        const nextOffsetVal = offsets[nextOffsetIndex] || 0;
+        offsetVal = offsetVal * (1 - fraction) + nextOffsetVal * fraction;
+      }
+      
+      offsetVal *= attenuation;
       
       // Convert offsetVal (ms) to beats
       const secondsPerBeat = getSecondsPerBeat();
@@ -2893,7 +2925,14 @@ function scheduleTick(tickIndex, time) {
           const stepDuration = secondsPerBeat / track.subdivision;
           // Alternate Left and Right hand samples on successive steps
           const hand = (stepIndex % 2 === 0) ? "L" : "R";
-          triggerSynthHit(track.type, track.instrument, val, hitTime, velocity, pitch, stepDuration, hand);
+          const timingContext = {
+            beatStartTime,
+            stepInBeat,
+            subdivision: track.subdivision,
+            secondsPerBeat,
+            swingPercent: state.swing
+          };
+          triggerSynthHit(track.type, track.instrument, val, hitTime, velocity, pitch, stepDuration, hand, timingContext);
         }
         
         // Schedule visual flash on step grid cell
@@ -2907,26 +2946,37 @@ function scheduleTick(tickIndex, time) {
 }
 
 // Sound triggering routing
-function triggerSynthHit(type, instrument, hitVal, playTime, trackVol, trackPitch = 0, stepDuration = 0.15, hand = "L") {
+function triggerSynthHit(type, instrument, hitVal, playTime, trackVol, trackPitch = 0, stepDuration = 0.15, hand = "L", timingContext = null) {
   if (hitVal.includes("/")) {
     const [h1, h2] = hitVal.split("/");
-    triggerSynthHit(type, instrument, h1, playTime, trackVol * 0.6, trackPitch, stepDuration, hand);
-    triggerSynthHit(type, instrument, h2, playTime + 0.025, trackVol, trackPitch, stepDuration, hand === "L" ? "R" : "L");
+    const flamGap = Math.min(0.040, stepDuration * 0.22);
+    triggerSynthHit(type, instrument, h1, playTime, trackVol * 0.6, trackPitch, stepDuration, hand, timingContext);
+    triggerSynthHit(type, instrument, h2, playTime + flamGap, trackVol, trackPitch, stepDuration, hand === "L" ? "R" : "L", timingContext);
     return;
   }
   
   if (hitVal.includes("-")) {
     const [h1, h2] = hitVal.split("-");
-    triggerSynthHit(type, instrument, h1, playTime, trackVol, trackPitch, stepDuration, hand);
-    triggerSynthHit(type, instrument, h2, playTime + stepDuration / 2, trackVol, trackPitch, stepDuration, hand === "L" ? "R" : "L");
+    let innerHitTime = playTime + stepDuration / 2;
+    if (timingContext) {
+      innerHitTime = timingContext.beatStartTime + getSwungStepTime(0, timingContext.stepInBeat + 0.5, timingContext.subdivision, timingContext.secondsPerBeat, timingContext.swingPercent);
+    }
+    triggerSynthHit(type, instrument, h1, playTime, trackVol, trackPitch, stepDuration, hand, timingContext);
+    triggerSynthHit(type, instrument, h2, innerHitTime, trackVol, trackPitch, stepDuration, hand === "L" ? "R" : "L", timingContext);
     return;
   }
 
   if (hitVal.includes("*")) {
     const [h1, h2, h3] = hitVal.split("*");
-    triggerSynthHit(type, instrument, h1, playTime, trackVol, trackPitch, stepDuration, hand);
-    triggerSynthHit(type, instrument, h2, playTime + stepDuration / 3, trackVol, trackPitch, stepDuration, hand === "L" ? "R" : "L");
-    triggerSynthHit(type, instrument, h3, playTime + (2 * stepDuration) / 3, trackVol, trackPitch, stepDuration, hand);
+    let innerHit1 = playTime + stepDuration / 3;
+    let innerHit2 = playTime + (2 * stepDuration) / 3;
+    if (timingContext) {
+      innerHit1 = timingContext.beatStartTime + getSwungStepTime(0, timingContext.stepInBeat + 0.3333, timingContext.subdivision, timingContext.secondsPerBeat, timingContext.swingPercent);
+      innerHit2 = timingContext.beatStartTime + getSwungStepTime(0, timingContext.stepInBeat + 0.6667, timingContext.subdivision, timingContext.secondsPerBeat, timingContext.swingPercent);
+    }
+    triggerSynthHit(type, instrument, h1, playTime, trackVol, trackPitch, stepDuration, hand, timingContext);
+    triggerSynthHit(type, instrument, h2, innerHit1, trackVol, trackPitch, stepDuration, hand === "L" ? "R" : "L", timingContext);
+    triggerSynthHit(type, instrument, h3, innerHit2, trackVol, trackPitch, stepDuration, hand, timingContext);
     return;
   }
 
@@ -4261,8 +4311,77 @@ function createNewCustomRhythm() {
   newRhythmModal.classList.remove("active");
 }
 
-// LocalStorage Saving Routines
-function saveCurrentPattern() {
+// IndexedDB Saving Routines
+const DBManager = {
+  dbName: "DjembeStudioDB",
+  storeName: "custom_rhythms",
+  version: 1,
+  
+  init() {
+    return new Promise((resolve, reject) => {
+      const request = indexedDB.open(this.dbName, this.version);
+      
+      request.onerror = (e) => reject(e.target.error);
+      request.onsuccess = (e) => resolve(e.target.result);
+      
+      request.onupgradeneeded = (e) => {
+        const db = e.target.result;
+        if (!db.objectStoreNames.contains(this.storeName)) {
+          db.createObjectStore(this.storeName, { keyPath: "name" });
+        }
+      };
+    });
+  },
+  
+  async save(rhythm) {
+    const db = await this.init();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(this.storeName, "readwrite");
+      const store = tx.objectStore(this.storeName);
+      store.put(rhythm);
+      tx.oncomplete = () => resolve();
+      tx.onerror = (e) => reject(e.target.error);
+    });
+  },
+  
+  async getAll() {
+    const db = await this.init();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(this.storeName, "readonly");
+      const store = tx.objectStore(this.storeName);
+      const req = store.getAll();
+      req.onsuccess = () => resolve(req.result || []);
+      req.onerror = (e) => reject(e.target.error);
+    });
+  },
+  
+  async delete(name) {
+    const db = await this.init();
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(this.storeName, "readwrite");
+      const store = tx.objectStore(this.storeName);
+      store.delete(name);
+      tx.oncomplete = () => resolve();
+      tx.onerror = (e) => reject(e.target.error);
+    });
+  },
+  
+  async migrateFromLocalStorage() {
+    try {
+      const existing = JSON.parse(localStorage.getItem("djembe_studio_saves") || "[]");
+      if (existing.length > 0) {
+        for (const save of existing) {
+          await this.save(save);
+        }
+        localStorage.removeItem("djembe_studio_saves");
+      }
+    } catch (e) {
+      console.warn("Migration failed:", e);
+    }
+  }
+};
+
+async function saveCurrentPattern() {
   const rawName = saveNameInput.value.trim();
   if (!rawName) {
     alert("Please enter a name for the pattern.");
@@ -4298,20 +4417,21 @@ function saveCurrentPattern() {
     timestamp: Date.now()
   };
   
-  const existing = JSON.parse(localStorage.getItem("djembe_studio_saves") || "[]");
-  // Overwrite if same name
-  const filtered = existing.filter(x => x.name !== rawName);
-  filtered.push(savedData);
-  localStorage.setItem("djembe_studio_saves", JSON.stringify(filtered));
-  
-  saveNameInput.value = "";
-  loadCustomSaves();
+  try {
+    await DBManager.save(savedData);
+    saveNameInput.value = "";
+    loadCustomSaves();
+  } catch (err) {
+    console.error("Error saving pattern to IndexedDB:", err);
+    alert("Failed to save. Storage might be full or blocked.");
+  }
 }
 
-// Load custom saves from LocalStorage to UI
-function loadCustomSaves() {
+// Load custom saves from IndexedDB to UI
+async function loadCustomSaves() {
   try {
-    const saves = JSON.parse(localStorage.getItem("djembe_studio_saves") || "[]");
+    await DBManager.migrateFromLocalStorage();
+    const saves = await DBManager.getAll();
     savesList.innerHTML = "";
     
     if (saves.length === 0) {
@@ -4461,11 +4581,15 @@ function loadSavedPattern(save) {
 }
 
 // Delete custom pattern details
-function deleteSavedPattern(name) {
-  const existing = JSON.parse(localStorage.getItem("djembe_studio_saves") || "[]");
-  const filtered = existing.filter(x => x.name !== name);
-  localStorage.setItem("djembe_studio_saves", JSON.stringify(filtered));
-  loadCustomSaves();
+async function deleteSavedPattern(name) {
+  if (confirm(`Are you sure you want to delete "${name}"?`)) {
+    try {
+      await DBManager.delete(name);
+      loadCustomSaves();
+    } catch (e) {
+      console.error("Error deleting pattern:", e);
+    }
+  }
 }
 
 // Render filtered rhythm cards in the Rhythm Library browser
@@ -6128,6 +6252,9 @@ function loadRhythmNew(preset) {
               
               if (sp.type === "Intro" || sp.type === "Call" || sp.type === "Break") {
                 state.callIntroActive = true;
+                if (state.isPlaying) {
+                  nextTickToSchedule = 0;
+                }
               } else {
                 state.callIntroActive = false;
               }
