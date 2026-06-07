@@ -786,6 +786,14 @@ function setupLargeSlider(originalSlider, options = {}) {
       window.removeEventListener("pointermove", onPointerMove);
       window.removeEventListener("pointerup", onRelease);
       window.removeEventListener("pointercancel", onRelease);
+      
+      // Force sync native slider on release to fix DOM/visual mismatches
+      if (largeInput && originalSlider) {
+        originalSlider.value = largeInput.value;
+        originalSlider.dispatchEvent(new Event("input"));
+        originalSlider.dispatchEvent(new Event("change"));
+      }
+      
       overlay.style.display = "none";
     };
     
@@ -2895,7 +2903,8 @@ function scheduleTick(tickIndex, time) {
         let hitTime = beatStartTime + swungOffset;
         
         // Intelligent Dynamic Humanisation Scaling
-        const attenuation = Math.min(1.0, 120 / Math.max(120, state.bpm));
+        let attenuation = Math.min(1.0, 120 / Math.max(120, state.bpm));
+        attenuation = Math.pow(attenuation, 2); // Tighten even more at high tempos
         
         // Apply humanise micro-timing offsets (deterministic per note to match visual grid)
         if (state.humaniseTime > 0) {
