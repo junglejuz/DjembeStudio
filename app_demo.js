@@ -1,6 +1,6 @@
-import { DrumSynth } from './audio.js?v=1.0.6';
-import { RHYTHM_PRESETS, TIME_SIGNATURE_DEFAULTS } from './rhythms.js?v=1.0.6';
-import { RHYTHM_LIBRARY } from './library.js?v=1.0.6';
+import { DrumSynth } from './audio.js?v=1.0.7';
+import { RHYTHM_PRESETS, TIME_SIGNATURE_DEFAULTS } from './rhythms.js?v=1.0.7';
+import { RHYTHM_LIBRARY } from './library.js?v=1.0.7';
 
 // Application State
 const state = {

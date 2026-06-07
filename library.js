@@ -113,6 +113,10 @@ export const RHYTHM_LIBRARY = [
     "rhythm_name": "Balakulandyan / Söli lent",
     "time_signature": "4/4",
     "step_count": 16,
+    "groove_modifiers": {
+      "swing_factor": 35,
+      "swing_offsets": [0, -5, 0, 5]
+    },
     "tracks": {
       "1_djembe": {
         "djembe_1_json": "B . T T . . S . B . T T . . S .",
@@ -130,7 +134,6 @@ export const RHYTHM_LIBRARY = [
       "8_shekere": "X . . . X . . . X . . . X . . ."
     },
     "echauffement": {
-      "1_djembe": "Missing Data",
       "4_sangban": "O O . O O . . . O O . O . . . .",
       "5_sangban_bell": "X . X X X . X X . X . X X . X .",
       "6_dun_dun": "O . O O . O . . O O . O . O . O",
@@ -147,12 +150,6 @@ export const RHYTHM_LIBRARY = [
         "part_id": "Sangban_Variation_1_PDF",
         "type": "Variation",
         "sequence": ". . O . . . . . O . . O . . . .",
-        "accompaniment_link": "Standard_Accompaniment"
-      },
-      {
-        "part_id": "DunDun_Variation_1_PDF",
-        "type": "Variation",
-        "sequence": "O . . . . . O O . . . . O . O .",
         "accompaniment_link": "Standard_Accompaniment"
       },
       {
@@ -192,6 +189,9 @@ export const RHYTHM_LIBRARY = [
         "Solo2_JSON",
         "Solo4_JSON",
         "Solo7_JSON"
+      ],
+      "variation_button": [
+        "Sangban_Variation_1_PDF"
       ]
     }
   }
