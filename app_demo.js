@@ -1,6 +1,6 @@
-import { DrumSynth } from './audio.js?v=1.0.7';
-import { RHYTHM_PRESETS, TIME_SIGNATURE_DEFAULTS } from './rhythms.js?v=1.0.7';
-import { RHYTHM_LIBRARY } from './library.js?v=1.0.7';
+import { DrumSynth } from './audio.js?v=1.0.8';
+import { RHYTHM_PRESETS, TIME_SIGNATURE_DEFAULTS } from './rhythms.js?v=1.0.8';
+import { RHYTHM_LIBRARY } from './library.js?v=1.0.8';
 
 // Application State
 const state = {
@@ -830,7 +830,11 @@ function loadRhythmNew(preset) {
   }
   
   state.bpm = preset.tempo || 110;
-  state.swing = preset.swing || 0;
+  if (preset.groove_modifiers && preset.groove_modifiers.swing_factor !== undefined) {
+    state.swing = preset.groove_modifiers.swing_factor;
+  } else {
+    state.swing = preset.swing || 0;
+  }
   
   state.customSwingOffsets = {
     2: [0, 0],
@@ -922,7 +926,10 @@ function loadRhythmNew(preset) {
     Object.keys(djembeObj).forEach(subKey => {
       djembeCounter++;
       const val = djembeObj[subKey];
-      const isMuted = val === "Missing Data";
+      let isMuted = val === "Missing Data";
+      if (subKey.includes("acc") || subKey.includes("accomp") || subKey.includes("solo")) {
+        isMuted = true;
+      }
       const steps = convertSpaceDelimitedPatternToSteps(val, "djembe", patternLen);
       const cleanName = formatTrackSubKeyName(subKey);
       
@@ -4378,7 +4385,23 @@ function getSwungStepTime(beatIndex, stepInBeat, subdivision, beatDuration, swin
     }
   }
   
-  return (beatIndex + relativeBeatOffset) * beatDuration;
+  let timeInBeats = beatIndex + relativeBeatOffset;
+  
+  // Apply swing offsets from groove_modifiers
+  if (state.currentPreset && state.currentPreset.groove_modifiers && state.currentPreset.groove_modifiers.swing_offsets) {
+    const offsets = state.currentPreset.groove_modifiers.swing_offsets;
+    if (offsets.length > 0) {
+      const offsetIndex = stepInBeat % offsets.length;
+      const offsetVal = offsets[offsetIndex] || 0;
+      
+      // Convert offsetVal (ms) to beats
+      const secondsPerBeat = getSecondsPerBeat();
+      const offsetInBeats = (offsetVal / 1000) / secondsPerBeat;
+      timeInBeats += offsetInBeats;
+    }
+  }
+  
+  return timeInBeats * beatDuration;
 }
 
 // Filter track audits (Mute/Solo logic)
@@ -6725,3 +6748,5 @@ init();
 // Expose for testing/debugging
 window.loadRhythm = loadRhythm;
 window.state = state;
+window.getSwungStepTime = getSwungStepTime;
+window.getSecondsPerBeat = getSecondsPerBeat;
