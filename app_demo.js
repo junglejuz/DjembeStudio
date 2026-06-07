@@ -281,9 +281,9 @@ function getSoundIcon(track, val, useOriginalIcons = false) {
       return `
         <div class="triplet-note-container">
           <span class="triplet-badge">3</span>
-          <div class="triplet-sub-note sub-note-square" style="background: ${c1} !important; border-color: ${c1} !important;">${icon1}</div>
-          <div class="triplet-sub-note sub-note-square" style="background: ${c2} !important; border-color: ${c2} !important;">${icon2}</div>
-          <div class="triplet-sub-note sub-note-square" style="background: ${c3} !important; border-color: ${c3} !important;">${icon3}</div>
+          <div class="triplet-first-note sub-note-square" style="background: ${c1} !important; border-color: ${c1} !important;">${icon1}</div>
+          <div class="triplet-second-note sub-note-square" style="background: ${c2} !important; border-color: ${c2} !important;">${icon2}</div>
+          <div class="triplet-third-note sub-note-square" style="background: ${c3} !important; border-color: ${c3} !important;">${icon3}</div>
         </div>
       `;
     }

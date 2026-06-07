@@ -1496,10 +1496,7 @@ select option {
 
 /* Sub-note small colored square container inside composite grid notes */
 .sub-note-square {
-  width: 13px !important;
-  height: 13px !important;
   flex: none !important;
-  border-radius: 3px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -1509,21 +1506,19 @@ select option {
 
 .sub-note-square svg {
   color: #fff !important;
-  width: 8px !important;
-  height: 8px !important;
 }
 
 /* Flams, Rolls & Triplets note styling */
 .flam-note-container {
   position: relative;
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
 }
 
 .flam-grace-note {
   position: absolute;
   left: 0px;
-  bottom: 0px;
+  top: 0px;
   transform: scale(0.7);
   opacity: 0.85;
   z-index: 1;
@@ -1532,9 +1527,29 @@ select option {
 .flam-main-note {
   position: absolute;
   right: 0px;
-  top: 0px;
+  bottom: 0px;
   transform: scale(0.85);
   z-index: 2;
+}
+
+.flam-grace-note.sub-note-square {
+  left: 2px !important;
+  top: 2px !important;
+  bottom: auto !important;
+  width: 12px !important;
+  height: 12px !important;
+  border-radius: 3px !important;
+  transform: none !important;
+}
+
+.flam-main-note.sub-note-square {
+  right: 2px !important;
+  bottom: 2px !important;
+  top: auto !important;
+  width: 16px !important;
+  height: 16px !important;
+  border-radius: 4px !important;
+  transform: none !important;
 }
 
 .roll-note-container {
@@ -1557,6 +1572,23 @@ select option {
   margin: -2px;
 }
 
+.roll-first-note.sub-note-square {
+  width: 13px !important;
+  height: 13px !important;
+  border-radius: 3px !important;
+  margin-right: -4px !important;
+  transform: none !important;
+  z-index: 1;
+}
+
+.roll-second-note.sub-note-square {
+  width: 16px !important;
+  height: 16px !important;
+  border-radius: 4px !important;
+  transform: none !important;
+  z-index: 2;
+}
+
 .triplet-note-container {
   position: relative;
   display: flex;
@@ -1575,6 +1607,47 @@ select option {
   transform: scale(0.58);
   flex: 1;
   margin: -4px;
+}
+
+.triplet-first-note.sub-note-square {
+  width: 11px !important;
+  height: 11px !important;
+  border-radius: 3px !important;
+  margin-right: -3px !important;
+  transform: none !important;
+  z-index: 1;
+}
+
+.triplet-second-note.sub-note-square {
+  width: 11px !important;
+  height: 11px !important;
+  border-radius: 3px !important;
+  margin-right: -3px !important;
+  transform: none !important;
+  z-index: 2;
+}
+
+.triplet-third-note.sub-note-square {
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 4px !important;
+  transform: none !important;
+  z-index: 3;
+}
+
+.flam-grace-note svg,
+.roll-first-note svg,
+.triplet-first-note svg,
+.triplet-second-note svg {
+  width: 8px !important;
+  height: 8px !important;
+}
+
+.flam-main-note svg,
+.roll-second-note svg,
+.triplet-third-note svg {
+  width: 10px !important;
+  height: 10px !important;
 }
 
 .flam-note-container svg,
