@@ -29,7 +29,8 @@ const state = {
   currentEpoch: 0,
   currentRhythmName: "Kuku",
   currentVariations: null,
-  focusedTrackId: null
+  focusedTrackId: null,
+  queuedActions: []
 };
 
 // Synth Engine Instance
@@ -976,103 +977,146 @@ function toggleEchauffementNew() {
   
   if (state.echauffementActive) {
     if (echBtn) echBtn.classList.add("btn-primary");
-    state.tracks.forEach(track => {
-      const presetTrack = state.currentPreset.tracks.find(pt => cleanTrackName(pt.part) === cleanTrackName(track.name));
-      if (presetTrack && presetTrack.echauffement) {
-        if (!track.standardSteps) track.standardSteps = [...track.steps];
-        track.steps = convertPatternToSteps(presetTrack.echauffement.drum_pattern, state.timeSignature, track.name);
-        track.subdivisionSteps[track.subdivision] = [...track.steps];
-      }
-    });
+    
+    const action = () => {
+      state.tracks.forEach(track => {
+        const presetTrack = state.currentPreset.tracks.find(pt => cleanTrackName(pt.part) === cleanTrackName(track.name));
+        if (presetTrack && presetTrack.echauffement) {
+          if (!track.standardSteps) track.standardSteps = [...track.steps];
+          track.steps = convertPatternToSteps(presetTrack.echauffement.drum_pattern, state.timeSignature, track.name);
+          track.subdivisionSteps[track.subdivision] = [...track.steps];
+        }
+      });
+      renderGrid();
+    };
+    
+    if (!state.isPlaying) {
+      action();
+      togglePlay();
+    } else {
+      state.queuedActions.push(action);
+    }
   } else {
     if (echBtn) echBtn.classList.remove("btn-primary");
-    state.tracks.forEach(track => {
-      if (track.standardSteps) {
-        track.steps = [...track.standardSteps];
-        track.subdivisionSteps[track.subdivision] = [...track.steps];
-        delete track.standardSteps;
-      }
-    });
-  }
-  renderGrid();
-  
-  if (state.echauffementActive && !state.isPlaying) {
-    togglePlay();
+    
+    const action = () => {
+      state.tracks.forEach(track => {
+        if (track.standardSteps) {
+          track.steps = [...track.standardSteps];
+          track.subdivisionSteps[track.subdivision] = [...track.steps];
+          delete track.standardSteps;
+        }
+      });
+      renderGrid();
+    };
+    
+    if (!state.isPlaying) {
+      action();
+    } else {
+      state.queuedActions.push(action);
+    }
   }
 }
 
 function playSpecialPart(sp, btn) {
-  let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
-  if (!soloTrack) {
-    soloTrack = {
-      id: "solo_djembe",
-      name: sp.name,
-      type: "djembe",
-      instrument: "djembe1",
-      volume: 0.85,
-      pitch: 0,
-      muted: false,
-      soloed: false
+  const action = () => {
+    let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
+    if (!soloTrack) {
+      soloTrack = {
+        id: "solo_djembe",
+        name: sp.name,
+        type: "djembe",
+        instrument: "djembe1",
+        volume: 0.85,
+        pitch: 0,
+        muted: false,
+        soloed: false
+      };
+      state.tracks.push(soloTrack);
+      sortTracks();
+    } else {
+      soloTrack.name = sp.name;
+    }
+    
+    soloTrack.subdivision = getSubdivisionForTiming(state.timeSignature);
+    const steps = convertPatternToSteps(sp.drum_pattern, state.timeSignature, "Djembé");
+    soloTrack.steps = steps;
+    soloTrack.originalSteps = [...steps];
+    soloTrack.originalSubdivision = soloTrack.subdivision;
+    soloTrack.subdivisionSteps = {
+      [soloTrack.subdivision]: [...steps]
     };
-    state.tracks.push(soloTrack);
-    sortTracks();
-  } else {
-    soloTrack.name = sp.name;
-  }
-  
-  soloTrack.subdivision = getSubdivisionForTiming(state.timeSignature);
-  const steps = convertPatternToSteps(sp.drum_pattern, state.timeSignature, "Djembé");
-  soloTrack.steps = steps;
-  soloTrack.originalSteps = [...steps];
-  soloTrack.originalSubdivision = soloTrack.subdivision;
-  soloTrack.subdivisionSteps = {
-    [soloTrack.subdivision]: [...steps]
+    
+    if (sp.type === "Intro" || sp.type === "Call" || sp.type === "Break") {
+      state.callIntroActive = true;
+    } else {
+      state.callIntroActive = false;
+    }
+    
+    // Unmute call tracks
+    state.tracks.forEach(t => {
+      const isCall = t.id === "solo_djembe" ||
+                     t.id.startsWith("special") || 
+                     t.name.toLowerCase().includes("call") || 
+                     t.name.toLowerCase().includes("break") || 
+                     t.name.toLowerCase().includes("intro");
+      if (isCall) t.muted = false;
+    });
+
+    renderGrid();
   };
-  
-  if (sp.type === "Intro" || sp.type === "Call" || sp.type === "Break") {
-    state.callIntroActive = true;
-  } else {
-    state.callIntroActive = false;
-  }
-  
-  renderGrid();
-  
+
   if (!state.isPlaying) {
+    action();
     togglePlay();
   } else {
-    nextTickToSchedule = 0;
-    playbackStartTime = synth.ctx.currentTime + 0.05;
-    nextTickTime = playbackStartTime;
+    state.queuedActions.push(action);
   }
 }
 
 function playBreak(brk, btn) {
-  let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
-  if (!soloTrack) {
-    soloTrack = {
-      id: "solo_djembe",
-      name: brk.name,
-      type: "djembe",
-      instrument: "djembe1",
-      volume: 0.85,
-      pitch: 0,
-      muted: false,
-      soloed: false
+  const action = () => {
+    let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
+    if (!soloTrack) {
+      soloTrack = {
+        id: "solo_djembe",
+        name: brk.name,
+        type: "djembe",
+        instrument: "djembe1",
+        volume: 0.85,
+        pitch: 0,
+        muted: false,
+        soloed: false
+      };
+      state.tracks.push(soloTrack);
+      sortTracks();
+    } else {
+      soloTrack.name = brk.name;
+    }
+    
+    soloTrack.subdivision = brk.subdivision;
+    soloTrack.steps = [...brk.steps];
+    soloTrack.originalSteps = [...brk.steps];
+    soloTrack.originalSubdivision = brk.subdivision;
+    soloTrack.subdivisionSteps = {
+      [soloTrack.subdivision]: [...soloTrack.steps]
     };
-    state.tracks.push(soloTrack);
-    sortTracks();
-  } else {
-    soloTrack.name = brk.name;
-  }
-  
-  soloTrack.subdivision = brk.subdivision;
-  soloTrack.steps = [...brk.steps];
-  soloTrack.originalSteps = [...brk.steps];
-  soloTrack.originalSubdivision = brk.subdivision;
-  soloTrack.subdivisionSteps = {
-    [soloTrack.subdivision]: [...soloTrack.steps]
+    
+    state.callIntroActive = true;
+
+    // Unmute call tracks
+    state.tracks.forEach(t => {
+      const isCall = t.id === "solo_djembe" ||
+                     t.id.startsWith("special") || 
+                     t.name.toLowerCase().includes("call") || 
+                     t.name.toLowerCase().includes("break") || 
+                     t.name.toLowerCase().includes("intro");
+      if (isCall) t.muted = false;
+    });
+
+    renderGrid();
   };
-  
+
   const breaksContainer = document.getElementById("breaks-buttons-container");
   if (breaksContainer) {
     Array.from(breaksContainer.children).forEach(child => {
@@ -1087,15 +1131,11 @@ function playBreak(brk, btn) {
     btn.style.borderColor = "rgba(245, 158, 11, 0.8)";
   }
 
-  state.callIntroActive = true;
-  
   if (!state.isPlaying) {
+    action();
     togglePlay();
   } else {
-    nextTickToSchedule = 0;
-    playbackStartTime = synth.ctx.currentTime + 0.05;
-    nextTickTime = playbackStartTime;
-    renderGrid();
+    state.queuedActions.push(action);
   }
 }
 
@@ -1547,7 +1587,7 @@ function setupEventListeners() {
   swingRange.addEventListener("input", (e) => {
     state.swing = parseInt(e.target.value);
     swingVal.textContent = state.swing + "%";
-    applyGlobalSwingToOffsets(activeSwingSubdiv, state.swing);
+    [2, 3, 4, 6].forEach(s => applyGlobalSwingToOffsets(s, state.swing));
     renderSwingSliders(activeSwingSubdiv);
     updateStepPositions();
   });
@@ -2901,59 +2941,80 @@ function loadRhythm(preset) {
           
           if (wasActive) {
             // Toggle off: remove the solo_djembe track
-            state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
-            renderGrid();
+            const removeSolo = () => {
+              state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
+              renderGrid();
+            };
+            if (state.isPlaying) {
+              state.queuedActions.push(removeSolo);
+            } else {
+              removeSolo();
+            }
           } else {
             // Toggle on: highlight button
             btn.classList.add("btn-primary");
             
-            // Check if solo track exists, if not create and add it
-            let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
-            if (!soloTrack) {
-              soloTrack = {
-                id: "solo_djembe",
-                name: "Solo Djembe",
-                type: "djembe",
-                instrument: "djembe1",
-                subdivision: solo.subdivision,
-                steps: [...solo.steps],
-                originalSteps: [...solo.steps],
-                originalSubdivision: solo.subdivision,
-                subdivisionSteps: {
-                  [solo.subdivision]: [...solo.steps]
-                },
-                volume: 0.85,
-                pitch: 0,
-                muted: false,
-                soloed: false
-              };
-              state.tracks.push(soloTrack);
-              sortTracks();
+            const addSolo = () => {
+              // Check if solo track exists, if not create and add it
+              let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
+              if (!soloTrack) {
+                soloTrack = {
+                  id: "solo_djembe",
+                  name: "Solo Djembe",
+                  type: "djembe",
+                  instrument: "djembe1",
+                  subdivision: solo.subdivision,
+                  steps: [...solo.steps],
+                  originalSteps: [...solo.steps],
+                  originalSubdivision: solo.subdivision,
+                  subdivisionSteps: {
+                    [solo.subdivision]: [...solo.steps]
+                  },
+                  volume: 0.85,
+                  pitch: 0,
+                  muted: false,
+                  soloed: false
+                };
+                state.tracks.push(soloTrack);
+                sortTracks();
+              } else {
+                // Update existing track steps and subdivision
+                soloTrack.subdivision = solo.subdivision;
+                soloTrack.steps = [...solo.steps];
+                soloTrack.originalSteps = [...solo.steps];
+                soloTrack.originalSubdivision = solo.subdivision;
+                soloTrack.subdivisionSteps = {
+                  [soloTrack.subdivision]: [...solo.steps]
+                };
+              }
+              renderGrid();
+            };
+            if (state.isPlaying) {
+              state.queuedActions.push(addSolo);
             } else {
-              // Update existing track steps and subdivision
+              addSolo();
+            }
+          }
+        });
+        
+        btn.addEventListener("dblclick", () => {
+          const updateSolo = () => {
+            const soloTrack = state.tracks.find(t => t.id === "solo_djembe");
+            if (soloTrack) {
               soloTrack.subdivision = solo.subdivision;
               soloTrack.steps = [...solo.steps];
               soloTrack.originalSteps = [...solo.steps];
               soloTrack.originalSubdivision = solo.subdivision;
               soloTrack.subdivisionSteps = {
-                [solo.subdivision]: [...solo.steps]
+                [soloTrack.subdivision]: [...solo.steps]
               };
+              renderGrid();
             }
-            renderGrid();
-          }
-        });
-        
-        btn.addEventListener("dblclick", () => {
-          const soloTrack = state.tracks.find(t => t.id === "solo_djembe");
-          if (soloTrack) {
-            soloTrack.subdivision = solo.subdivision;
-            soloTrack.steps = [...solo.steps];
-            soloTrack.originalSteps = [...solo.steps];
-            soloTrack.originalSubdivision = solo.subdivision;
-            soloTrack.subdivisionSteps = {
-              [solo.subdivision]: [...solo.steps]
-            };
-            renderGrid();
+          };
+          if (state.isPlaying) {
+            state.queuedActions.push(updateSolo);
+          } else {
+            updateSolo();
           }
         });
         
@@ -3098,6 +3159,7 @@ function togglePlay() {
     // STOP
     state.isPlaying = false;
     state.callIntroActive = false;
+    state.queuedActions = [];
     clearInterval(timerId);
     btnPlay.innerHTML = `<svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 21 12 5 21 5 3"/></svg>`;
     btnPlay.classList.remove("btn-danger-round");
@@ -3159,44 +3221,55 @@ function triggerCall() {
     console.log("No call data for this rhythm.");
     return;
   }
-  
-  // Ensure the solo_djembe track exists in state.tracks
-  let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
-  if (!soloTrack) {
-    soloTrack = {
-      id: "solo_djembe",
-      name: "Solo Djembe",
-      type: "djembe",
-      instrument: "djembe1",
-      volume: 0.85,
-      pitch: 0,
-      muted: false,
-      soloed: false
+
+  const action = () => {
+    // Ensure the solo_djembe track exists in state.tracks
+    let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
+    if (!soloTrack) {
+      soloTrack = {
+        id: "solo_djembe",
+        name: "Solo Djembe",
+        type: "djembe",
+        instrument: "djembe1",
+        volume: 0.85,
+        pitch: 0,
+        muted: false,
+        soloed: false
+      };
+      state.tracks.push(soloTrack);
+      sortTracks();
+    }
+    
+    // Set the Call steps and subdivision
+    soloTrack.subdivision = state.presetCallData.subdivision;
+    soloTrack.steps = [...state.presetCallData.steps];
+    soloTrack.originalSteps = [...state.presetCallData.steps];
+    soloTrack.originalSubdivision = state.presetCallData.subdivision;
+    soloTrack.subdivisionSteps = {
+      [soloTrack.subdivision]: [...soloTrack.steps]
     };
-    state.tracks.push(soloTrack);
-    sortTracks();
-  }
-  
-  // Set the Call steps and subdivision
-  soloTrack.subdivision = state.presetCallData.subdivision;
-  soloTrack.steps = [...state.presetCallData.steps];
-  soloTrack.originalSteps = [...state.presetCallData.steps];
-  soloTrack.originalSubdivision = state.presetCallData.subdivision;
-  soloTrack.subdivisionSteps = {
-    [soloTrack.subdivision]: [...soloTrack.steps]
+    
+    // Activate call intro
+    state.callIntroActive = true;
+    
+    // Unmute call tracks at the start so they play during the intro
+    state.tracks.forEach(t => {
+      const isCall = t.id === "solo_djembe" ||
+                     t.id.startsWith("special") || 
+                     t.name.toLowerCase().includes("call") || 
+                     t.name.toLowerCase().includes("break") || 
+                     t.name.toLowerCase().includes("intro");
+      if (isCall) t.muted = false;
+    });
+
+    renderGrid();
   };
-  
-  // Activate call intro
-  state.callIntroActive = true;
-  
+
   if (!state.isPlaying) {
+    action();
     togglePlay(); // This starts the sequencer playhead
   } else {
-    // Already playing: reset playhead immediately to start call intro
-    nextTickToSchedule = 0;
-    playbackStartTime = synth.ctx.currentTime + 0.05;
-    nextTickTime = playbackStartTime;
-    renderGrid();
+    state.queuedActions.push(action);
   }
 }
 
@@ -3246,43 +3319,54 @@ function triggerEchauffement() {
 
   if (isCurrentlyPlayingThis) {
     // Toggle off: remove solo track
-    state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
     if (echBtn) echBtn.classList.remove("btn-primary");
-    renderGrid();
-  } else {
-    // Toggle on: load the echauffement phrase on solo_djembe
-    if (!soloTrack) {
-      soloTrack = {
-        id: "solo_djembe",
-        name: "Échauffement",
-        type: "djembe",
-        instrument: "djembe1",
-        volume: 0.85,
-        pitch: 0,
-        muted: false,
-        soloed: false
-      };
-      state.tracks.push(soloTrack);
-      sortTracks();
-    } else {
-      soloTrack.name = "Échauffement";
-    }
-    
-    soloTrack.subdivision = echSolo.subdivision;
-    soloTrack.steps = [...echSolo.steps];
-    soloTrack.originalSteps = [...echSolo.steps];
-    soloTrack.originalSubdivision = echSolo.subdivision;
-    soloTrack.subdivisionSteps = {
-      [soloTrack.subdivision]: [...soloTrack.steps]
+    const action = () => {
+      state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
+      renderGrid();
     };
-    
+    if (state.isPlaying) {
+      state.queuedActions.push(action);
+    } else {
+      action();
+    }
+  } else {
+    // Toggle on: highlight button
     if (echBtn) echBtn.classList.add("btn-primary");
     
-    // If sequencer not playing, start it
+    const action = () => {
+      let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
+      if (!soloTrack) {
+        soloTrack = {
+          id: "solo_djembe",
+          name: "Échauffement",
+          type: "djembe",
+          instrument: "djembe1",
+          volume: 0.85,
+          pitch: 0,
+          muted: false,
+          soloed: false
+        };
+        state.tracks.push(soloTrack);
+        sortTracks();
+      } else {
+        soloTrack.name = "Échauffement";
+      }
+      
+      soloTrack.subdivision = echSolo.subdivision;
+      soloTrack.steps = [...echSolo.steps];
+      soloTrack.originalSteps = [...echSolo.steps];
+      soloTrack.originalSubdivision = echSolo.subdivision;
+      soloTrack.subdivisionSteps = {
+        [soloTrack.subdivision]: [...soloTrack.steps]
+      };
+      renderGrid();
+    };
+    
     if (!state.isPlaying) {
+      action();
       togglePlay();
     } else {
-      renderGrid();
+      state.queuedActions.push(action);
     }
   }
 }
@@ -3458,6 +3542,16 @@ function updateMuteSoloVisuals() {
 
 // Schedule audio hits for specific ticks
 function scheduleTick(tickIndex, time) {
+  if (state.queuedActions && state.queuedActions.length > 0) {
+    const maxLines = Math.max(1, ...state.tracks.map(t => Math.ceil(t.steps.length / (state.beats * t.subdivision))));
+    const totalBeatsInLoop = maxLines * state.beats;
+    if (tickIndex % (totalBeatsInLoop * 12) === 0) {
+      while (state.queuedActions.length > 0) {
+        const action = state.queuedActions.shift();
+        action();
+      }
+    }
+  }
   const secondsPerBeat = getSecondsPerBeat();
   const tickInBeat = tickIndex % 12;
   const beatIndex = Math.floor(tickIndex / 12);
@@ -4386,23 +4480,39 @@ function renderGrid() {
       defaultBtn.style.fontSize = "0.7rem";
       defaultBtn.style.minWidth = "32px";
       defaultBtn.addEventListener("click", () => {
-        if (track.originalSteps) {
-          track.steps = [...track.originalSteps];
-          if (track.originalSubdivision !== undefined) track.subdivision = track.originalSubdivision;
-          track.subdivisionSteps = {
-            [track.subdivision]: [...track.steps]
-          };
-        }
-        const bellTrack = state.tracks.find(t => t.instrument === track.instrument + "_bell");
-        if (bellTrack && bellTrack.originalSteps) {
-          bellTrack.steps = [...bellTrack.originalSteps];
-          if (bellTrack.originalSubdivision !== undefined) bellTrack.subdivision = bellTrack.originalSubdivision;
-          bellTrack.subdivisionSteps = {
-            [bellTrack.subdivision]: [...bellTrack.steps]
-          };
-        }
+        // Highlight button immediately
         track.activeVariation = null;
-        renderGrid();
+        const container = defaultBtn.parentElement;
+        if (container) {
+          Array.from(container.children).forEach(btn => {
+            if (btn !== defaultBtn) btn.classList.remove("btn-primary");
+          });
+        }
+        defaultBtn.classList.add("btn-primary");
+
+        const action = () => {
+          if (track.originalSteps) {
+            track.steps = [...track.originalSteps];
+            if (track.originalSubdivision !== undefined) track.subdivision = track.originalSubdivision;
+            track.subdivisionSteps = {
+              [track.subdivision]: [...track.steps]
+            };
+          }
+          const bellTrack = state.tracks.find(t => t.instrument === track.instrument + "_bell");
+          if (bellTrack && bellTrack.originalSteps) {
+            bellTrack.steps = [...bellTrack.originalSteps];
+            if (bellTrack.originalSubdivision !== undefined) bellTrack.subdivision = bellTrack.originalSubdivision;
+            bellTrack.subdivisionSteps = {
+              [bellTrack.subdivision]: [...bellTrack.steps]
+            };
+          }
+          renderGrid();
+        };
+        if (state.isPlaying) {
+          state.queuedActions.push(action);
+        } else {
+          action();
+        }
       });
       varsContainer.appendChild(defaultBtn);
       
@@ -4415,43 +4525,59 @@ function renderGrid() {
         vbtn.style.fontSize = "0.7rem";
         vbtn.style.minWidth = "24px";
         vbtn.addEventListener("click", () => {
-          track.steps = [...vari.steps];
-          if (vari.subdivision) track.subdivision = vari.subdivision;
-          track.subdivisionSteps = {
-            [track.subdivision]: [...track.steps]
-          };
-          
-          if (vari.bellSteps) {
-            const bellTrack = state.tracks.find(t => t.instrument === track.instrument + "_bell");
-            if (bellTrack) {
-              bellTrack.steps = [...vari.bellSteps];
-              bellTrack.subdivisionSteps = {
-                [bellTrack.subdivision]: [...bellTrack.steps]
-              };
-            }
-          }
-          
-          if (vari.compoundTracks) {
-            Object.keys(vari.compoundTracks).forEach(compInst => {
-              const compTrack = state.tracks.find(t => t.instrument === compInst);
-              if (compTrack) {
-                compTrack.steps = [...vari.compoundTracks[compInst].steps];
-                compTrack.subdivisionSteps = {
-                  [compTrack.subdivision]: [...compTrack.steps]
-                };
-              }
-              const compBellTrack = state.tracks.find(t => t.instrument === compInst + "_bell");
-              if (compBellTrack && vari.compoundTracks[compInst].bellSteps) {
-                compBellTrack.steps = [...vari.compoundTracks[compInst].bellSteps];
-                compBellTrack.subdivisionSteps = {
-                  [compBellTrack.subdivision]: [...compBellTrack.steps]
-                };
-              }
+          // Highlight button immediately
+          track.activeVariation = idx;
+          const container = vbtn.parentElement;
+          if (container) {
+            Array.from(container.children).forEach(btn => {
+              if (btn !== defaultBtn) btn.classList.remove("btn-primary");
             });
           }
-          
-          track.activeVariation = idx;
-          renderGrid();
+          vbtn.classList.add("btn-primary");
+          if (defaultBtn) defaultBtn.classList.remove("btn-primary");
+
+          const action = () => {
+            track.steps = [...vari.steps];
+            if (vari.subdivision) track.subdivision = vari.subdivision;
+            track.subdivisionSteps = {
+              [track.subdivision]: [...track.steps]
+            };
+            
+            if (vari.bellSteps) {
+              const bellTrack = state.tracks.find(t => t.instrument === track.instrument + "_bell");
+              if (bellTrack) {
+                bellTrack.steps = [...vari.bellSteps];
+                bellTrack.subdivisionSteps = {
+                  [bellTrack.subdivision]: [...bellTrack.steps]
+                };
+              }
+            }
+            
+            if (vari.compoundTracks) {
+              Object.keys(vari.compoundTracks).forEach(compInst => {
+                const compTrack = state.tracks.find(t => t.instrument === compInst);
+                if (compTrack) {
+                  compTrack.steps = [...vari.compoundTracks[compInst].steps];
+                  compTrack.subdivisionSteps = {
+                    [compTrack.subdivision]: [...compTrack.steps]
+                  };
+                }
+                const compBellTrack = state.tracks.find(t => t.instrument === compInst + "_bell");
+                if (compBellTrack && vari.compoundTracks[compInst].bellSteps) {
+                  compBellTrack.steps = [...vari.compoundTracks[compInst].bellSteps];
+                  compBellTrack.subdivisionSteps = {
+                    [compBellTrack.subdivision]: [...compBellTrack.steps]
+                  };
+                }
+              });
+            }
+            renderGrid();
+          };
+          if (state.isPlaying) {
+            state.queuedActions.push(action);
+          } else {
+            action();
+          }
         });
         varsContainer.appendChild(vbtn);
       });
