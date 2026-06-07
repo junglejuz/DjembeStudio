@@ -3533,7 +3533,7 @@ function renderGrid() {
       else if (track.instrument.includes("dundunba")) iconSpan.style.color = "hsl(229, 94%, 43%)";
       else iconSpan.style.color = "hsl(189, 94%, 43%)";
     }
-    if (track.type === "shekere") iconSpan.style.color = "#eab308";
+    if (track.type === "shekere") iconSpan.style.color = "#f97316";
     iconSpan.innerHTML = instIconSVG;
     iconSpan.style.cursor = "pointer";
     iconSpan.title = "Click to focus this track / toggle forefront mode";

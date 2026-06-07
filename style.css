@@ -37,10 +37,10 @@
   --color-bell-mute: #0891b2;
   --color-bell-mute-glow: rgba(8, 145, 178, 0.2);
 
-  --color-shekere-open: #f59e0b;
-  --color-shekere-open-glow: rgba(245, 158, 11, 0.15);
-  --color-shekere-tap: #d97706;
-  --color-shekere-tap-glow: rgba(217, 119, 6, 0.1);
+  --color-shekere-open: #f97316;
+  --color-shekere-open-glow: rgba(249, 115, 22, 0.15);
+  --color-shekere-tap: #ea580c;
+  --color-shekere-tap-glow: rgba(234, 88, 12, 0.1);
 }
 
 /* ============================================================
@@ -1586,16 +1586,17 @@ select option {
 .variations-popup {
   position: absolute;
   z-index: 10000;
-  background: rgba(17, 24, 39, 0.96);
-  backdrop-filter: blur(16px);
-  border: 1px solid var(--border-color);
-  border-radius: 12px;
-  padding: 0.8rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-radius: 16px;
+  padding: 0.7rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   display: none;
   flex-direction: column;
-  gap: 0.55rem;
-  width: 390px;
+  gap: 0.4rem;
+  width: 320px;
   max-height: 680px;
   overflow-y: auto;
   animation: fadeIn 0.15s cubic-bezier(0.16, 1, 0.3, 1);
@@ -1668,10 +1669,10 @@ select option {
 }
 
 .variations-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 0.35rem;
-  justify-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+  justify-content: center;
 }
 
 .variation-btn {
@@ -1944,9 +1945,6 @@ select option {
 }
 
 /* Flam Presets Grid width optimization - 4 across */
-#variations-presets-flam.variations-grid {
-  grid-template-columns: repeat(4, 1fr);
-}
 
 /* Instrument-specific Dunun Drum colors */
 /* Kenkeni: Less green, shifted towards bell color hsl(175, 84%, 39%) */
@@ -2171,9 +2169,13 @@ body.light-theme .step-cell.beat-start-empty {
     left: 50% !important;
     transform: translate(-50%, -50%) !important;
     width: 90% !important;
-    max-width: 330px !important;
+    max-width: 300px !important;
     max-height: 85vh !important;
     box-sizing: border-box;
+    background: rgba(15, 23, 42, 0.96) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    padding: 0.6rem !important;
+    gap: 0.35rem !important;
   }
   .variation-btn {
     height: 36px !important;
@@ -2186,9 +2188,6 @@ body.light-theme .step-cell.beat-start-empty {
   }
   .variations-grid {
     gap: 0.25rem !important;
-    justify-items: center !important;
-  }
-  #variations-presets-flam.variations-grid {
-    grid-template-columns: repeat(4, 1fr) !important;
+    justify-content: center !important;
   }
 }
