@@ -2894,9 +2894,12 @@ function scheduleTick(tickIndex, time) {
         const swungOffset = getSwungStepTime(0, stepInBeat, track.subdivision, secondsPerBeat, state.swing);
         let hitTime = beatStartTime + swungOffset;
         
+        // Intelligent Dynamic Humanisation Scaling
+        const attenuation = Math.min(1.0, 120 / Math.max(120, state.bpm));
+        
         // Apply humanise micro-timing offsets (deterministic per note to match visual grid)
         if (state.humaniseTime > 0) {
-          const maxOffset = 0.0175; // max 17.5ms offset (looser, musical feel at 100%)
+          const maxOffset = 0.0175 * attenuation; // max 17.5ms offset (looser, musical feel at 100%)
           const seedOffset = getCellRandomSeed(track.id, stepIndex, seedEpoch);
           const randomOffset = seedOffset * (state.humaniseTime / 100) * maxOffset;
           hitTime += randomOffset;
@@ -2906,17 +2909,17 @@ function scheduleTick(tickIndex, time) {
         let velocity = track.volume;
         if (state.humaniseVolume > 0) {
           const seedOffset = getCellRandomSeed(track.id, stepIndex, seedEpoch);
-          const volOffset = seedOffset * (state.humaniseVolume / 100) * 0.65;
+          const volOffset = seedOffset * (state.humaniseVolume / 100) * 0.65 * attenuation;
           velocity = Math.max(0.05, Math.min(1.2, velocity + volOffset));
         }
         
         let pitch = track.pitch || 0;
         if (state.humanisePitch > 0) {
           const seedOffset = getCellRandomSeed(track.id, stepIndex, seedEpoch);
-          let scaleMultiplier = 0.8;
-          if (track.type === "dunun") scaleMultiplier = 0.6;
-          else if (track.type === "bell") scaleMultiplier = 0.25;
-          else if (track.type === "shekere") scaleMultiplier = 0.4;
+          let scaleMultiplier = 0.8 * attenuation;
+          if (track.type === "dunun") scaleMultiplier = 0.6 * attenuation;
+          else if (track.type === "bell") scaleMultiplier = 0.25 * attenuation;
+          else if (track.type === "shekere") scaleMultiplier = 0.4 * attenuation;
           
           pitch += seedOffset * (state.humanisePitch / 100) * scaleMultiplier;
         }
