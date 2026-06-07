@@ -1,0 +1,1114 @@
+@import url("style.css");
+
+/* Simulated Mobile Viewport container */
+body {
+  background-color: #0c0f17;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1rem;
+  min-height: 100vh;
+}
+
+/* Device simulation frame */
+.demo-device-frame {
+  width: 390px;
+  height: 800px;
+  /* Simulated portrait phone height */
+  background: #080a0f;
+  border: 10px solid #1e293b;
+  border-radius: 36px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 40px rgba(99, 102, 241, 0.1);
+  position: relative;
+  overflow: hidden !important;
+  /* Keep controls pinned and prevent outer scroll */
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 0.6rem;
+}
+
+/* Hide scrollbars for the phone simulation screen */
+.demo-device-frame::-webkit-scrollbar,
+.app-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Mobile Banner Info */
+.demo-banner {
+  margin-bottom: 1.25rem;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  background: rgba(99, 102, 241, 0.1);
+  border: 1px solid rgba(99, 102, 241, 0.25);
+  color: #818cf8;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  text-align: center;
+  max-width: 390px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+/* --- Mobile Overrides (Refined) --- */
+
+/* Scale down containers */
+.app-container {
+  width: 100%;
+  height: 100%;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
+  gap: 0.5rem;
+  /* Tight gap to save vertical space */
+  padding-bottom: 85px !important;
+  /* Leave space so bottom sticky controls don't overlap grid contents */
+  box-sizing: border-box !important;
+}
+
+.glass-panel {
+  padding: 0.6rem;
+  border-radius: 10px;
+}
+
+/* Simulated Image Title Bar */
+.mobile-header {
+  display: flex !important;
+  flex-direction: row !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 0.45rem 0.5rem !important;
+  background: #080a0f !important;
+  /* Extremely dark solid background */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-radius: 0px !important;
+  margin-bottom: 0.4rem !important;
+  position: relative !important;
+  width: 100% !important;
+  overflow: visible !important;
+  /* Ensure dropdown menu is visible and not clipped */
+  z-index: 100001 !important;
+  /* Force hamburger menu and header controls to front */
+}
+
+/* Custom styled selector dropdown for Rhythm Library meter filtering */
+#library-filter-sig {
+  appearance: none !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 0.5rem center !important;
+  background-size: 1.1rem !important;
+  padding-right: 1.85rem !important;
+  /* Move text left to fit arrow cleanly */
+  padding-left: 0.55rem !important;
+}
+
+.logo-title {
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 700 !important;
+  font-size: 1.45rem !important;
+  background: linear-gradient(to right, #ffffff, #93c5fd) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: 0 0 12px rgba(147, 197, 253, 0.4) !important;
+  /* glowing title matching image */
+  margin: 0 !important;
+  letter-spacing: -0.01em !important;
+  text-align: center !important;
+  cursor: default !important;
+  /* App name is no longer clickable */
+}
+
+/* Style the rhythm name grid header in the African cursive font */
+#sequencer-grid-title {
+  text-align: center !important;
+  font-family: 'Trade Winds', 'Macondo', cursive !important;
+  font-weight: normal !important;
+  font-size: 1.45rem !important;
+  background: linear-gradient(135deg, var(--color-tone) 0%, var(--color-slap) 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: 0 0 15px rgba(245, 158, 11, 0.25) !important;
+  margin-top: 0.2rem !important;
+  margin-bottom: 0.75rem !important;
+  letter-spacing: 0.05em !important;
+  text-transform: none !important;
+  /* Preserve mixed/lowercase values in font */
+  cursor: pointer !important;
+  transition: opacity 0.2s ease !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+#sequencer-grid-title:hover {
+  opacity: 0.8 !important;
+}
+
+.btn-title-icon {
+  background: none !important;
+  border: none !important;
+  color: #9ca3af !important;
+  cursor: pointer !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0.3rem !important;
+  transition: color 0.15s !important;
+}
+
+.btn-title-icon:hover {
+  color: #ffffff !important;
+}
+
+
+/* Hamburger Dropdown Menu Modal Overlay - FIXED Z-INDEX */
+.hamburger-menu {
+  display: none;
+  position: absolute !important;
+  top: 2.85rem !important;
+  left: 0.5rem !important;
+  background: rgba(8, 10, 15, 0.98) !important;
+  /* solid glassmorphic dark bg */
+  border: 1px solid rgba(255, 255, 255, 0.15) !important;
+  /* visible border */
+  border-radius: 8px !important;
+  padding: 0.35rem !important;
+  flex-direction: column !important;
+  gap: 0.2rem !important;
+  z-index: 99999 !important;
+  /* floats above everything, including step-cells */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.8), 0 0 20px rgba(99, 102, 241, 0.15) !important;
+  backdrop-filter: blur(12px) !important;
+}
+
+.hamburger-menu.active {
+  display: flex !important;
+}
+
+.menu-item-btn {
+  background: transparent !important;
+  border: none !important;
+  color: var(--text-muted) !important;
+  padding: 0.45rem 1rem !important;
+  font-size: 0.75rem !important;
+  text-align: left !important;
+  cursor: pointer !important;
+  border-radius: 4px !important;
+  font-family: 'Outfit', sans-serif !important;
+  font-weight: 600 !important;
+  width: 100% !important;
+  white-space: nowrap !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 0.6rem !important;
+}
+
+.menu-item-btn svg.menu-icon {
+  flex-shrink: 0 !important;
+  opacity: 0.8 !important;
+  transition: opacity 0.15s ease !important;
+}
+
+.menu-item-btn:hover {
+  background: rgba(99, 102, 241, 0.15) !important;
+  color: #ffffff !important;
+}
+
+.menu-item-btn:hover svg.menu-icon {
+  opacity: 1 !important;
+}
+
+/* STICKY BOTTOM CONTROLS BAR (Grid Restructuring) */
+.demo-device-frame .controls-bar {
+  position: absolute !important;
+  bottom: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  background: rgba(8, 10, 15, 0.98) !important;
+  /* extremely solid dark base */
+  border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-radius: 0px !important;
+  padding: 0.5rem 0.75rem !important;
+  margin: 0 !important;
+  z-index: 1000 !important;
+  display: flex !important;
+  /* Use simple horizontal layout instead of grid */
+  flex-direction: row !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  /* Side-by-side justification */
+  flex-wrap: nowrap !important;
+  gap: 1.25rem !important;
+  box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.6) !important;
+  backdrop-filter: blur(20px) !important;
+  -webkit-backdrop-filter: blur(20px) !important;
+  box-sizing: border-box !important;
+}
+
+/* Play button and tempo wrapper */
+.controls-group-center {
+  flex: 0 0 auto !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 1.25rem !important;
+  width: 100% !important;
+}
+
+.btn-play-large {
+  width: 64px !important;
+  height: 64px !important;
+  border-radius: 50% !important;
+  background: var(--accent) !important;
+  box-shadow: 0 0 15px rgba(16, 185, 129, 0.3) !important;
+}
+
+.btn-play-large svg {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+.tempo-control-wrapper {
+  width: 140px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 0.2rem !important;
+}
+
+.tempo-display {
+  font-size: 1.45rem !important;
+  font-weight: 800 !important;
+  color: var(--text-main) !important;
+  line-height: 1.1 !important;
+  display: flex !important;
+  align-items: baseline !important;
+  gap: 0.15rem !important;
+}
+
+/* Display controls correctly on mobile */
+.controls-group-left {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-start !important;
+  flex: 0 0 auto !important;
+  gap: 2rem !important;
+}
+
+.controls-group-right {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: flex-end !important;
+  flex: 0 0 auto !important;
+  gap: 0.5rem !important;
+  width: auto !important;
+}
+
+.controls-group-right .btn {
+  width: 44px !important;
+  height: 44px !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 10px !important;
+  flex-shrink: 0 !important;
+  -webkit-tap-highlight-color: transparent !important;
+  outline: none !important;
+}
+
+.controls-group-right svg {
+  margin: 0 !important;
+  width: 18px !important;
+  height: 18px !important;
+}
+
+/* Eliminate tap highlight border and outline focus rings on mobile demo */
+.btn-play-large,
+.btn {
+  outline: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+}
+
+.btn-play-large:focus,
+.btn-play-large:active,
+.btn:focus,
+.btn:active {
+  outline: none !important;
+}
+
+.btn-play-large.btn-danger-round {
+  background: #ef4444 !important;
+  box-shadow: 0 4px 14px 0 rgba(239, 68, 68, 0.4) !important;
+}
+
+.btn-settings {
+  display: none !important;
+  /* Hide settings cog inside sliders */
+}
+
+/* Sequencer Grid Mobile Overrides */
+.sequencer-container {
+  gap: 0.15rem !important;
+  /* Spacing between track rows reduced by 50% */
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling */
+}
+
+.track-lines-container {
+  gap: 0.27rem !important;
+  /* Vertical spacing between stacked lines inside a single track increased by 50% */
+}
+
+/* Beat marker vertical extension override for mobile */
+.beat-marker {
+  top: -4px !important;
+  bottom: -4px !important;
+  border-left-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Track Row - Glassy & Premium (matches user mockup) */
+.track-row {
+  padding: 0.18rem 0.25rem !important;
+  /* Padding between track borders and notes reduced by 50% */
+  border-radius: 14px !important;
+  position: relative;
+  display: flex !important;
+  flex-wrap: wrap !important;
+  flex-direction: row !important;
+  align-items: center !important;
+  margin-bottom: 0.18rem !important;
+  /* Spacing between glassy blocks reduced by 50% */
+
+  /* Dual gradients for overlay and border, respecting border-radius */
+  background:
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.1) 0%, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.015) 100%) padding-box,
+    linear-gradient(rgba(10, 13, 20, 0.55), rgba(10, 13, 20, 0.55)) padding-box,
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.35) 0%, rgba(120, 120, 120, 0.12) 100%) border-box !important;
+  border: 1px solid transparent !important;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05),
+    0 0 6px hsla(var(--part-color-hsl, 243, 75%, 59%), 0.05) !important;
+
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.3s ease !important;
+}
+
+.track-row:hover {
+  background:
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.1) 0%, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.02) 100%) padding-box,
+    linear-gradient(rgba(15, 20, 30, 0.65), rgba(15, 20, 30, 0.65)) padding-box,
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.5) 0%, rgba(140, 140, 140, 0.25) 100%) border-box !important;
+}
+
+.track-row.focused-track {
+  background:
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.15) 0%, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.03) 100%) padding-box,
+    linear-gradient(rgba(15, 20, 32, 0.75), rgba(15, 20, 32, 0.75)) padding-box,
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.75) 0%, rgba(160, 160, 160, 0.38) 100%) border-box !important;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 0 12px hsla(var(--part-color-hsl, 243, 75%, 59%), 0.3) !important;
+  filter: brightness(1.1) !important;
+}
+
+.track-row.dimmed-track {
+  opacity: 0.35 !important;
+  filter: brightness(0.6) grayscale(0.2) !important;
+}
+
+/* Muted & Solo track dimming styling */
+.track-row.muted-track {
+  opacity: 0.35 !important;
+  filter: brightness(0.6) saturate(0.4) !important;
+  transition: opacity 0.25s ease, filter 0.25s ease;
+}
+
+.sequencer-container.has-solo .track-row:not(.soloed-track) {
+  opacity: 0.35 !important;
+  filter: brightness(0.6) saturate(0.4) !important;
+  transition: opacity 0.25s ease, filter 0.25s ease;
+}
+
+.sequencer-container.has-solo .track-row.muted-track:not(.soloed-track) {
+  opacity: 0.22 !important;
+  filter: brightness(0.45) saturate(0.3) !important;
+}
+
+/* Hide track options: subdivision select, mute/solo buttons, and row addition tools */
+.track-controls,
+.track-line-actions,
+.track-actions-right {
+  display: none !important;
+}
+
+/* Make track-meta extremely narrow: display ONLY instrument SVG icons */
+.track-meta {
+  width: 44px !important;
+  min-width: 44px !important;
+  border-right: none !important;
+  padding-right: 0px !important;
+  justify-content: center !important;
+}
+
+.track-info {
+  justify-content: center !important;
+  width: 100%;
+}
+
+/* Force the vector SVGs to show up and hide the text names */
+/* Style track icon wrapper as a glassy squircle button (matches user mockup) */
+.track-icon-wrapper {
+  display: inline-flex !important;
+  width: 28px !important;
+  height: 28px !important;
+  justify-content: center !important;
+  align-items: center !important;
+  background: rgba(0, 0, 0, 0.35) !important;
+  border: 1px solid hsla(var(--part-color-hsl, 243, 75%, 59%), 0.25) !important;
+  border-radius: 8px !important;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.05),
+    0 0 8px hsla(var(--part-color-hsl, 243, 75%, 59%), 0.25) !important;
+  transition: all 0.2s ease !important;
+}
+
+.track-icon-wrapper svg {
+  display: block !important;
+  width: 18px !important;
+  height: 18px !important;
+}
+
+.track-name {
+  display: none !important;
+  /* Hide words entirely */
+}
+
+/* Steps Container auto-fits screen width */
+.steps-container {
+  margin-left: 0.15rem !important;
+  min-width: 0 !important;
+  width: calc(100% - 8px) !important;
+  height: 18px !important;
+  overflow: visible !important;
+  padding-left: 6px !important;
+  padding-right: 6px !important;
+}
+
+/* Note cells: Uniform squares of the exact same size */
+.step-cell {
+  width: 11px !important;
+  height: 11px !important;
+  border-radius: 2px !important;
+  border-width: 0.5px !important;
+  transform: translateY(-50%) scale(1);
+  transition: left 0.35s cubic-bezier(0.25, 1, 0.5, 1) !important;
+}
+
+/* Hide interior SVG path icons inside cells */
+.step-cell svg {
+  display: none !important;
+}
+
+/* Scale + brightness flash animation for mobile — matches desktop behaviour */
+.step-cell.strike-flash {
+  animation: mobileStrikeFlash 0.28s cubic-bezier(0.1, 0.8, 0.3, 1) forwards !important;
+}
+
+@keyframes mobileStrikeFlash {
+  0% {
+    transform: translateY(-50%) scale(calc(var(--current-scale, 1) * 1.5));
+    filter: brightness(calc(var(--pitch-brightness, 1.0) * 2.2));
+  }
+
+  100% {
+    transform: translateY(-50%) scale(var(--current-scale, 1));
+    filter: brightness(var(--pitch-brightness, 1.0));
+  }
+}
+
+/* Playhead adjustment */
+.playhead-line {
+  top: -2px !important;
+  bottom: -2px !important;
+}
+
+/* Hide variation buttons inside track names list on mobile for simplicity */
+.track-meta button {
+  display: none !important;
+}
+
+/* Simulated overlay positions for modals inside the phone screen */
+.demo-device-frame .modal-overlay {
+  position: absolute !important;
+  z-index: 100;
+}
+
+.demo-device-frame .modal-content {
+  width: 95% !important;
+  padding: 1rem !important;
+}
+
+/* Push secondary options (Solos/Breaks, Live Pads, Notation) below the grid fold */
+#solos-control-row,
+#breaks-control-row {
+  margin-top: 0.5rem !important;
+}
+
+.add-track-row {
+  display: none !important;
+  /* Removed from bottom of screen */
+}
+
+/* Accordion Drawer styling */
+.track-drawer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-top: 0;
+  padding: 0 !important;
+  box-sizing: border-box;
+  gap: 0.5rem;
+  transition: height 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    margin-top 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    padding 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.track-row.focused-track .track-drawer {
+  height: 32px;
+  opacity: 1;
+  margin-top: 0.18rem;
+  padding: 0 0.2rem !important;
+}
+
+/* Subdivision selector dropdown under the track icon */
+.drawer-subdiv-select {
+  width: 38px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  color: var(--text-light);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  padding: 0 0.1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.drawer-subdiv-select option {
+  background: #080a0f;
+  color: var(--text-light);
+}
+
+/* Group container for subdiv selection and left buttons */
+.drawer-left-group {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-shrink: 0;
+}
+
+/* Left button group */
+.drawer-left {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+.drawer-center {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.5rem;
+  min-width: 0;
+}
+
+.drawer-right {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex-shrink: 0;
+}
+
+/* Drawer Buttons */
+.drawer-btn {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: var(--text-muted);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.drawer-btn:active {
+  transform: scale(0.9);
+}
+
+.drawer-btn.btn-add-part {
+  background: rgba(16, 185, 129, 0.1);
+  border-color: rgba(16, 185, 129, 0.25);
+  color: #10b981;
+}
+
+.drawer-btn.btn-add-part:hover {
+  background: rgba(16, 185, 129, 0.2);
+  border-color: rgba(16, 185, 129, 0.4);
+}
+
+.drawer-btn.btn-mute.active {
+  background: rgba(239, 68, 68, 0.2) !important;
+  border-color: rgba(239, 68, 68, 0.4) !important;
+  color: #ef4444 !important;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.3) !important;
+}
+
+.drawer-btn.btn-solo.active {
+  background: rgba(245, 158, 11, 0.2) !important;
+  border-color: rgba(245, 158, 11, 0.4) !important;
+  color: #f59e0b !important;
+  box-shadow: 0 0 8px rgba(245, 158, 11, 0.3) !important;
+}
+
+.drawer-btn.btn-add-row {
+  background: rgba(99, 102, 241, 0.1);
+  border-color: rgba(99, 102, 241, 0.25);
+  color: #818cf8;
+}
+
+.drawer-btn.btn-add-row:hover {
+  background: rgba(99, 102, 241, 0.2);
+  border-color: rgba(99, 102, 241, 0.4);
+}
+
+.drawer-btn.btn-remove-row {
+  background: rgba(239, 68, 68, 0.08);
+  border-color: rgba(239, 68, 68, 0.2);
+  color: #f87171;
+}
+
+.drawer-btn.btn-remove-row:hover {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: rgba(239, 68, 68, 0.3);
+}
+
+/* Volume Slider inside drawer */
+.drawer-vol-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  max-width: 80px;
+  /* Bounding box height to fit the thumb cleanly and improve tap targets */
+  height: 16px;
+  background: transparent !important;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+.drawer-vol-slider::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.drawer-vol-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: hsl(var(--part-color-hsl, 243, 75%, 59%)) !important;
+  cursor: pointer;
+  margin-top: -4px;
+  /* Centered relative to the 4px track height: (4 - 12) / 2 = -4 */
+  box-shadow: 0 0 6px hsla(var(--part-color-hsl, 243, 75%, 59%), 0.6) !important;
+  transition: transform 0.1s ease;
+  border: none;
+}
+
+.drawer-vol-slider::-webkit-slider-thumb:active {
+  transform: scale(1.25);
+}
+
+.drawer-vol-slider::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.drawer-vol-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border: none;
+  border-radius: 50%;
+  background: hsl(var(--part-color-hsl, 243, 75%, 59%)) !important;
+  cursor: pointer;
+  box-shadow: 0 0 6px hsla(var(--part-color-hsl, 243, 75%, 59%), 0.6) !important;
+  transition: transform 0.1s ease;
+}
+
+.drawer-vol-slider::-moz-range-thumb:active {
+  transform: scale(1.25);
+}
+
+/* Push the pads and notation panel way down so you have to scroll to see them */
+.lower-sections-grid {
+  grid-template-columns: 1fr !important;
+  gap: 1rem;
+  margin-top: 3.5rem !important;
+  /* Pushes pads/notation below the initial fold */
+  border-top: 1.5px dashed var(--border-color);
+  padding-top: 1.5rem;
+}
+
+.pads-grid {
+  grid-template-columns: repeat(3, 1fr) !important;
+  /* 3 columns fit nicely on portrait screen */
+  gap: 0.45rem;
+}
+
+.drum-pad {
+  aspect-ratio: 1.25;
+}
+
+.drum-pad-key {
+  display: none !important;
+  /* Hide keyboard keys on mobile touch screen simulation */
+}
+
+.drum-pad-name {
+  font-size: 0.72rem !important;
+}
+
+.drum-pad-type {
+  font-size: 0.58rem !important;
+}
+
+/* Notation Textbox */
+.notation-output {
+  min-height: 120px !important;
+  font-size: 0.7rem !important;
+}
+
+/* Active, dimmed, and disabled state styling for header buttons when modals/menus are open */
+body:has(#library-modal.active) .btn-title-icon:not(#btn-library-icon),
+body:has(#custom-swing-modal.active) .btn-title-icon:not(#btn-swing-settings),
+body:has(#custom-humanise-modal.active) .btn-title-icon:not(#btn-humanise-settings),
+body:has(#hamburger-menu.active) .btn-title-icon:not(#btn-hamburger),
+body:has(.modal-overlay.active:not(#library-modal):not(#custom-swing-modal):not(#custom-humanise-modal)) .btn-title-icon {
+  opacity: 0.35 !important;
+  pointer-events: none !important;
+  transition: all 0.2s ease !important;
+}
+
+/* Highlight the active settings header buttons when open */
+body:has(#library-modal.active) #btn-library-icon,
+body:has(#custom-swing-modal.active) #btn-swing-settings,
+body:has(#custom-humanise-modal.active) #btn-humanise-settings,
+body:has(#hamburger-menu.active) #btn-hamburger {
+  opacity: 1 !important;
+  color: #ffffff !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05) !important;
+  transition: all 0.2s ease !important;
+}
+
+/* Override step cell colors for Sangban drum midway HSL (199, 94%, 43%) */
+.step-cell.sangban-O {
+  background: hsl(199, 94%, 43%) !important;
+  border-color: hsl(199, 94%, 43%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(199, 94%, 43%, 0.25) !important;
+}
+
+.step-cell.sangban-X,
+.step-cell.sangban-C {
+  background: hsl(199, 20%, 43%) !important;
+  border-color: hsl(199, 20%, 43%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(199, 20%, 43%, 0.2) !important;
+}
+
+/* Override step cell colors for Dundunba drum midway HSL (219, 94%, 43%) */
+.step-cell.dundunba-O {
+  background: hsl(219, 94%, 43%) !important;
+  border-color: hsl(219, 94%, 43%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(219, 94%, 43%, 0.25) !important;
+}
+
+.step-cell.dundunba-X,
+.step-cell.dundunba-C {
+  background: hsl(219, 20%, 43%) !important;
+  border-color: hsl(219, 20%, 43%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(219, 20%, 43%, 0.2) !important;
+}
+
+/* ============================================================
+   LIGHT THEME — Mobile Demo Overrides
+   ============================================================ */
+body.light-theme {
+  background-color: #e8eaf2;
+}
+
+body.light-theme .demo-device-frame {
+  background: #f0f2f7;
+  border-color: #c5cae0;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2), 0 0 20px rgba(99, 102, 241, 0.08);
+}
+
+body.light-theme .track-row {
+  background:
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.08) 0%, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.04) 100%) padding-box,
+    linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)) padding-box,
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.25) 0%, rgba(200, 200, 200, 0.12) 100%) border-box !important;
+  border: 1px solid transparent !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+}
+
+body.light-theme .step-cell {
+  background: rgba(0, 0, 0, 0.08) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+body.light-theme .beat-marker {
+  border-left-color: rgba(0, 0, 0, 0.18) !important;
+}
+
+body.light-theme .mobile-header,
+body.light-theme .glass-panel {
+  background: rgba(255, 255, 255, 0.82) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1) !important;
+}
+
+body.light-theme .hamburger-menu.glass-panel {
+  background: rgba(240, 242, 247, 0.97) !important;
+}
+
+body.light-theme .menu-item-btn {
+  color: #374151 !important;
+}
+
+body.light-theme .menu-item-btn:hover {
+  background: rgba(99, 102, 241, 0.1) !important;
+}
+
+/* Mobile performance optimization & Fullscreen Layout on actual mobile devices */
+@media (max-width: 768px),
+(pointer: coarse) and (max-width: 1024px) {
+  body {
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    width: 100vw !important;
+    height: 100vh !important;
+  }
+
+  .demo-banner {
+    display: none !important;
+  }
+
+  .demo-device-frame {
+    width: 100% !important;
+    height: 100% !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    padding: 0.5rem 0.4rem !important;
+    margin: 0 !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    right: 0 !important;
+  }
+
+  .glass-panel,
+  .modal-overlay,
+  .hamburger-menu {
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+  }
+
+  /* Fixed controls bar at the absolute bottom of the mobile viewport */
+  .demo-device-frame .controls-bar {
+    position: fixed !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    width: 100% !important;
+    padding: 0.65rem 0.9rem !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    border: none !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.6) !important;
+    background: rgba(8, 10, 15, 0.98) !important;
+    z-index: 100000 !important;
+    justify-content: space-between !important;
+    flex-wrap: nowrap !important;
+    box-sizing: border-box !important;
+    min-height: 86px !important;
+  }
+
+  /* Make sure elements scale down to fit small screens */
+  .controls-group-left {
+    width: auto !important;
+    justify-content: flex-start !important;
+    gap: 1.8rem !important;
+  }
+
+  .controls-group-right {
+    width: auto !important;
+    justify-content: flex-end !important;
+    gap: 0.5rem !important;
+  }
+
+  .btn-play-large {
+    width: 66px !important;
+    height: 66px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .btn-play-large svg {
+    width: 32px !important;
+    height: 32px !important;
+  }
+
+  .tempo-control-wrapper {
+    width: 120px !important;
+    flex-shrink: 1 !important;
+  }
+
+  .tempo-display {
+    font-size: 1.5rem !important;
+  }
+
+  .controls-group-right .btn {
+    width: 44px !important;
+    height: 44px !important;
+    padding: 0 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    border-radius: 10px !important;
+    flex-shrink: 0 !important;
+  }
+
+  .controls-group-right svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+
+  .app-container {
+    padding-bottom: 110px !important;
+    /* Give room for fixed controls bar */
+  }
+
+  /* Extra small screens overrides to prevent overflow/wrap below 360px */
+  @media (max-width: 360px) {
+    .demo-device-frame .controls-bar {
+      padding: 0.5rem 0.65rem !important;
+      min-height: 76px !important;
+    }
+
+    .btn-play-large {
+      width: 58px !important;
+      height: 58px !important;
+    }
+
+    .btn-play-large svg {
+      width: 22px !important;
+      height: 22px !important;
+    }
+
+    .tempo-control-wrapper {
+      width: 105px !important;
+    }
+
+    .tempo-display {
+      font-size: 1.3rem !important;
+    }
+
+    .controls-group-right .btn {
+      padding: 0.45rem 0.65rem !important;
+      font-size: 0.8rem !important;
+      height: 38px !important;
+    }
+
+    .controls-group-right svg {
+      width: 14px !important;
+      height: 14px !important;
+    }
+
+    .app-container {
+      padding-bottom: 96px !important;
+    }
+  }
+}
+
+/* Play button pop click animation */
+@keyframes play-btn-pop {
+  0% {
+    transform: scale(1);
+  }
+
+  30% {
+    transform: scale(1.18);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.play-btn-pop {
+  animation: play-btn-pop 0.25s cubic-bezier(0.25, 0.8, 0.25, 1.25) !important;
+}
+
+/* Brighter start of beat empty cells */
+.step-cell.beat-start-empty {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.10) !important;
+}
+
+body.light-theme .step-cell.beat-start-empty {
+  background: rgba(0, 0, 0, 0.16) !important;
+  border-color: rgba(0, 0, 0, 0.3) !important;
+}

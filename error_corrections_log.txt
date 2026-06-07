@@ -1,0 +1,281 @@
+Rhythm: Abioueka | Corrected track patterns (Kenkeni, Sangban, Dun, Bells) to exactly 2 rows/24 steps (beats=2 in UI for 12/8). Restored 4 djembe accompaniment parts. Set swing=35 and customSwingOffsets=[10,10,10,10,10,10].
+Rhythm: /Wasulunke /Bubuninca | Trimmed inflated track 'Sangban (keypattern for one drum)' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: /Wasulunke /Bubuninca | Trimmed inflated track 'Sangban (keypattern for one drum) Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Abondan | Trimmed inflated track 'Kenkeni (drum 1 and 2)' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Abondan | Trimmed inflated track 'Kenkeni (drum 1 and 2) Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Abondan | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Abondan | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Abondan | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Abondan | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Balan Sondé | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Balan Sondé | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Balan Sondé | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Balan Sondé | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Balan Sondé | Trimmed inflated track 'Dundun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Balan Sondé | Trimmed inflated track 'Dundun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Bandogialli / Bando Djeï | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Bandogialli / Bando Djeï | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Bandogialli / Bando Djeï | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Bandogialli / Bando Djeï | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Bandogialli / Bando Djeï | Trimmed inflated track 'Dundun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Bandogialli / Bando Djeï | Trimmed inflated track 'Dundun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Bolokonondo | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Bolokonondo | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Dalfo | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Dalfo | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Dalfo | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Dalfo | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Dalfo | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Dalfo | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Damba | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Damba | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Damba | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Damba | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Damba | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Damba | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Demosoni Kelen | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Demosoni Kelen | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Demosoni Kelen | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Demosoni Kelen | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Demosoni Kelen | Trimmed inflated track 'Dundun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Demosoni Kelen | Trimmed inflated track 'Dundun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Djaa Kouroussa | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Djaa Kouroussa | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Djaa Kouroussa | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Djaa Kouroussa | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Djaa Kouroussa | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Djaa Kouroussa | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Djaa Siguiri | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Djaa Siguiri | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Djaa Siguiri | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Djaa Siguiri | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Djaa Siguiri | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Djaa Siguiri | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Djabara | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Djabara | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Djabara | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Djabara | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Djabara | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Djabara | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Donaba | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Donaba | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Donaba | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Donaba | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Donaba | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Donaba | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Dunumbè | Trimmed inflated track 'Kenkeni : The kenkeni-drum-pattern is typical for the Dunumba-family, and always the same.' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Dunumbè | Trimmed inflated track 'Kenkeni : The kenkeni-drum-pattern is typical for the Dunumba-family, and always the same. Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Dunumbè | Trimmed inflated track 'Sangban / Dun Dun' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Dunumbè | Trimmed inflated track 'Sangban / Dun Dun Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Foro-Bingé | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Foro-Bingé | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Foro-Bingé | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Foro-Bingé | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Foro-Bingé | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Foro-Bingé | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: G' Beredu | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: G' Beredu | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: G' Beredu | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: G' Beredu | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Garankedon | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Garankedon | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Garankedon | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Garankedon | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Garankedon | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Garankedon | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Gidamba / Somba Koro | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Gidamba / Somba Koro | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Gidamba / Somba Koro | Trimmed inflated track 'Sangban (Famoudou Kanate)' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Gidamba / Somba Koro | Trimmed inflated track 'Sangban (Famoudou Kanate) Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Gidamba / Somba Koro | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Gidamba / Somba Koro | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Kadan | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Kadan | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Kadan | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Kadan | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Kadan | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Kadan | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Kakilambé | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Kakilambé | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Kakilambé | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Kakilambé | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Kakilambé | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Kakilambé | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Kemoba | Trimmed inflated track 'Kenkeni 1' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Kemoba | Trimmed inflated track 'Kenkeni 1 Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Kemoba | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Kemoba | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Kemoba | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Kemoba | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Kennefoli | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Kennefoli | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Kennefoli | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Kennefoli | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Kennefoli | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Kennefoli | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Konden I | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Konden I | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Konden I | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Konden I | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Konden I | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Konden I | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Konden II | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Konden II | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Konden II | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Konden II | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Konden II | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Konden II | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Konkoba III | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Konkoba III | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Konkoba III | Trimmed inflated track 'Dundun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Konkoba III | Trimmed inflated track 'Dundun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Kurabadon | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Kurabadon | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Kurabadon | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Kurabadon | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Kurabadon | Trimmed inflated track 'Dundun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Kurabadon | Trimmed inflated track 'Dundun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Könöwoulen I | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Könöwoulen I | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Könöwoulen I | Trimmed inflated track 'Sangban (first line 3x, second line 1x)' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Könöwoulen I | Trimmed inflated track 'Sangban (first line 3x, second line 1x) Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Könöwoulen I | Trimmed inflated track 'Dundun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Könöwoulen I | Trimmed inflated track 'Dundun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Könöwoulen II | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Könöwoulen II | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Könöwoulen II | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Könöwoulen II | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Könöwoulen II | Trimmed inflated track 'Dundun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Könöwoulen II | Trimmed inflated track 'Dundun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Lengjen | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Lengjen | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Lengjen | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Lengjen | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Liberté I | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Liberté I | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Liberté I | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Liberté I | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Liberté I | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Liberté I | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Maane | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Maane | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Maane | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Maane | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Maane | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Maane | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Mamaya | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Mamaya | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Mamaya | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Mamaya | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Mamaya | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Mamaya | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Marakadon | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Marakadon | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Marakadon | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Marakadon | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Marakadon | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Marakadon | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Mendiani | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Mendiani | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Mendiani | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Mendiani | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Mendiani | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Mendiani | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Mola | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Mola | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Mola | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Mola | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Molekanimani Djou Jee | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Molekanimani Djou Jee | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Molekanimani Djou Jee | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Molekanimani Djou Jee | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Molekanimani Djou Jee | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Molekanimani Djou Jee | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Namani | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Namani | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Namani | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Namani | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Namani | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Namani | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Nantalomba | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Nantalomba | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Nantalomba | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Nantalomba | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Nantalomba | Trimmed inflated track 'Dundun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Nantalomba | Trimmed inflated track 'Dundun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Saa | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Saa | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Saa | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Saa | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Siwé | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Siwé | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Siwé | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Siwé | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Siwé | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Siwé | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Sorsornet | Trimmed inflated track 'Kenkeni A' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Sorsornet | Trimmed inflated track 'Kenkeni A Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Sorsornet | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Sorsornet | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Sorsornet | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Sorsornet | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Sökö | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Sökö | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Sökö | Trimmed inflated track 'Kenkeni; Faranah-style' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Sökö | Trimmed inflated track 'Kenkeni; Faranah-style Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Sökö | Trimmed inflated track 'Dun Dun; Faranah-style' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Sökö | Trimmed inflated track 'Dun Dun; Faranah-style Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Söli | Trimmed inflated track 'Kenkeni high (h) and low (l)' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Söli | Trimmed inflated track 'Kenkeni high (h) and low (l) Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Söli | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Söli | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Söli | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Söli | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Söli des Manían | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Söli des Manían | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Söli des Manían | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Söli des Manían | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Söli des Manían | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Söli des Manían | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Taama | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Taama | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Taama | Trimmed inflated track 'Sangban / Doun doun: first line:' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Taama | Trimmed inflated track 'Sangban / Doun doun: first line: Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Takonany | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Takonany | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Takonany | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Takonany | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Takonany | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Takonany | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Takosaba | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Takosaba | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Takosaba | Trimmed inflated track 'Sangban 1st - 8th beat' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Takosaba | Trimmed inflated track 'Sangban 1st - 8th beat Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Tiriba | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Tiriba | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Tiriba | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Tiriba | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Tiriba | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Tiriba | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Wolosodon / Djondon | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Wolosodon / Djondon | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Wolosodon / Djondon | Trimmed inflated track 'kenkeni / Sjekere / Doun doun A' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Wolosodon / Djondon | Trimmed inflated track 'kenkeni / Sjekere / Doun doun A Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Wonde | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Wonde | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Wonde | Trimmed inflated track 'Sangban / Doundoun (also possible to play by one person)' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Wonde | Trimmed inflated track 'Sangban / Doundoun (also possible to play by one person) Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Yankadi A (ternary) | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Yankadi A (ternary) | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Yankadi A (ternary) | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Yankadi A (ternary) | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Yankadi A (ternary) | Trimmed inflated track 'Dundun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Yankadi A (ternary) | Trimmed inflated track 'Dundun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Yogui | Trimmed inflated track 'Kenkeni' (Key: kenkeni) from 48 to 24 steps (2 UI rows).
+Rhythm: Yogui | Trimmed inflated track 'Kenkeni Bell' (Key: kenkeni_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Yogui | Trimmed inflated track 'Sangban' (Key: sangban) from 48 to 24 steps (2 UI rows).
+Rhythm: Yogui | Trimmed inflated track 'Sangban Bell' (Key: sangban_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Yogui | Trimmed inflated track 'Dun Dun' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Yogui | Trimmed inflated track 'Dun Dun Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
+Rhythm: Zeichenerklärung Legende | Trimmed inflated track 'Dun Dun-patterns' (Key: dundunba) from 48 to 24 steps (2 UI rows).
+Rhythm: Zeichenerklärung Legende | Trimmed inflated track 'Dun Dun-patterns Bell' (Key: dundunba_bell) from 48 to 24 steps (2 UI rows).
