@@ -300,7 +300,7 @@ export class DrumSynth {
   }
 
   // --- Sample Player Logic ---
-  playSample(bufferKey, time, volume, pitchOffset, reverbSend, filterFreq = null, isMuffled = false, delaySend = 0, delaySubdiv = 0.25, instKey = "") {
+  playSample(bufferKey, time, volume, pitchOffset, reverbSend, filterFreq = null, isMuffled = false, delaySend = 0, delaySubdiv = 0.25, instKey = "", hand = null) {
     if (!this.buffers[bufferKey]) {
       return null;
     }
@@ -311,13 +311,32 @@ export class DrumSynth {
     const source = ctx.createBufferSource();
     source.buffer = buffer;
     
+    // Hand detuning, volume, and filter adjustments (humanisation)
+    let pitchAdjustment = 0;
+    let volumeScale = 1.0;
+    let extraFilterFreq = null;
+    
+    if (hand === "L") {
+      pitchAdjustment = -0.35; // -35 cents (clearly audible hand detune)
+      volumeScale = 0.90;     // Left hand is slightly softer (1dB difference)
+      if (filterFreq) {
+        extraFilterFreq = filterFreq * 0.82; // noticeably darker lowpass filter
+      } else {
+        extraFilterFreq = 6500; // apply clear high-cut lowpass filter to make it warmer
+      }
+    } else if (hand === "R") {
+      pitchAdjustment = 0.35;  // +35 cents
+    }
+    
     // Pitch shift (playbackRate.value = 2^(semitones / 12))
-    const playbackRate = Math.pow(2, pitchOffset / 12);
+    const finalPitchOffset = pitchOffset + pitchAdjustment;
+    const playbackRate = Math.pow(2, finalPitchOffset / 12);
     source.playbackRate.setValueAtTime(playbackRate, time);
     
+    const finalVolume = volume * volumeScale;
     const gainNode = ctx.createGain();
     gainNode.gain.setValueAtTime(0.001, time);
-    gainNode.gain.linearRampToValueAtTime(volume, time + 0.003);
+    gainNode.gain.linearRampToValueAtTime(finalVolume, time + 0.003);
     
     // Fix decay duration at 1.0 multiplier (natural sample decay) or 0.25 if muffled
     const decayScale = isMuffled ? 0.25 : 1.0;
@@ -329,14 +348,15 @@ export class DrumSynth {
     }
     
     // Smooth envelope release to avoid pop clicks
-    gainNode.gain.setValueAtTime(volume, time + Math.max(0.002, decayDuration - 0.015));
+    gainNode.gain.setValueAtTime(finalVolume, time + Math.max(0.002, decayDuration - 0.015));
     gainNode.gain.exponentialRampToValueAtTime(0.001, time + decayDuration);
     
     let lastNode = source;
-    if (filterFreq) {
+    const activeFilterFreq = extraFilterFreq || filterFreq;
+    if (activeFilterFreq) {
       const filter = ctx.createBiquadFilter();
       filter.type = "lowpass";
-      filter.frequency.setValueAtTime(filterFreq, time);
+      filter.frequency.setValueAtTime(activeFilterFreq, time);
       source.connect(filter);
       lastNode = filter;
     }
@@ -361,7 +381,7 @@ export class DrumSynth {
   }
 
   // --- Djembe Sample Playback with Synthesizer Fallback ---
-  playDjembe(type, time, velocity = 1.0, instrument = "djembe1", trackPitch = 0) {
+  playDjembe(type, time, velocity = 1.0, instrument = "djembe1", trackPitch = 0, hand = "L") {
     this.resume();
     
     let instKey = instrument.toLowerCase();
@@ -393,14 +413,14 @@ export class DrumSynth {
     let pitchOffset = settings.pitch + trackPitch;
     
     if (this.isLoaded && this.buffers[bufferKey]) {
-      this.playSample(bufferKey, time, instVolume, pitchOffset, settings.reverb, filterFreq, isMuffled, settings.delay, settings.delaySubdiv, "djembe");
+      this.playSample(bufferKey, time, instVolume, pitchOffset, settings.reverb, filterFreq, isMuffled, settings.delay, settings.delaySubdiv, "djembe", hand);
     } else {
-      this.playSynthesizedDjembe(type, time, velocity, pitchOffset);
+      this.playSynthesizedDjembe(type, time, velocity, pitchOffset, hand);
     }
   }
 
   // --- Dunun Sample Playback with Synthesizer Fallback ---
-  playDunun(type, hitType, time, velocity = 1.0, trackPitch = 0) {
+  playDunun(type, hitType, time, velocity = 1.0, trackPitch = 0, hand = "L") {
     this.resume();
     
     const settings = this.settings[type] || { volume: 0.8, pitch: 0, reverb: 0.15, delay: 0, delaySubdiv: 0.25 };
@@ -412,9 +432,9 @@ export class DrumSynth {
     let pitchOffset = settings.pitch + trackPitch;
     
     if (this.isLoaded && this.buffers[bufferKey]) {
-      this.playSample(bufferKey, time, instVolume, pitchOffset, settings.reverb, null, sampleHitType === "X", settings.delay, settings.delaySubdiv, type);
+      this.playSample(bufferKey, time, instVolume, pitchOffset, settings.reverb, null, sampleHitType === "X", settings.delay, settings.delaySubdiv, type, hand);
     } else {
-      this.playSynthesizedDunun(type, sampleHitType, time, velocity, pitchOffset);
+      this.playSynthesizedDunun(type, sampleHitType, time, velocity, pitchOffset, hand);
     }
   }
 
@@ -468,11 +488,24 @@ export class DrumSynth {
   // ================= FALLBACK SYNTHESIS ENGINE =================
 
   // --- Synthesized Djembe ---
-  playSynthesizedDjembe(type, time, velocity = 1.0, pitchOverride = null) {
+  playSynthesizedDjembe(type, time, velocity = 1.0, pitchOverride = null, hand = "L") {
     const ctx = this.ctx;
     const settings = this.settings.djembe;
-    const instVolume = settings.volume * velocity;
-    const activePitch = pitchOverride !== null ? pitchOverride : settings.pitch;
+    
+    // Hand humanisation adjustments
+    let pitchAdjustment = 0;
+    let volumeScale = 1.0;
+    let filterScale = 1.0;
+    if (hand === "L") {
+      pitchAdjustment = -0.35; // -35 cents
+      volumeScale = 0.90;
+      filterScale = 0.82;      // warmer filter cutoff
+    } else if (hand === "R") {
+      pitchAdjustment = 0.35;  // +35 cents
+    }
+    
+    const instVolume = settings.volume * velocity * volumeScale;
+    const activePitch = (pitchOverride !== null ? pitchOverride : settings.pitch) + pitchAdjustment;
     
     if (type === "B") { // Bass
       const osc = ctx.createOscillator();
@@ -486,7 +519,7 @@ export class DrumSynth {
       osc.frequency.exponentialRampToValueAtTime(baseFreq, time + 0.05);
       
       filter.type = "lowpass";
-      filter.frequency.setValueAtTime(140, time);
+      filter.frequency.setValueAtTime(140 * filterScale, time);
       
       const decay = 0.22;
       gain.gain.setValueAtTime(0.001, time);
@@ -526,7 +559,7 @@ export class DrumSynth {
       osc2.frequency.exponentialRampToValueAtTime(baseFreq * 2.8, time + 0.04);
       
       filter.type = "lowpass";
-      filter.frequency.setValueAtTime(800, time);
+      filter.frequency.setValueAtTime(800 * filterScale, time);
       
       const decay = 0.12;
       gain.gain.setValueAtTime(0.001, time);
@@ -571,7 +604,7 @@ export class DrumSynth {
       
       noise.buffer = getNoiseBuffer(ctx);
       noiseFilter.type = "bandpass";
-      noiseFilter.frequency.setValueAtTime(1200, time);
+      noiseFilter.frequency.setValueAtTime(1200 * filterScale, time);
       noiseFilter.Q.setValueAtTime(6, time);
       
       const decay = 0.06;
@@ -618,7 +651,7 @@ export class DrumSynth {
       
       noise.buffer = getNoiseBuffer(ctx);
       noiseFilter.type = "bandpass";
-      noiseFilter.frequency.setValueAtTime(800, time);
+      noiseFilter.frequency.setValueAtTime(800 * filterScale, time);
       noiseFilter.Q.setValueAtTime(3, time);
       
       const decay = 0.035;
@@ -654,11 +687,24 @@ export class DrumSynth {
   }
 
   // --- Synthesized Dunun ---
-  playSynthesizedDunun(type, hitType, time, velocity = 1.0, pitchOverride = null) {
+  playSynthesizedDunun(type, hitType, time, velocity = 1.0, pitchOverride = null, hand = "L") {
     const ctx = this.ctx;
     const settings = this.settings[type] || { volume: 0.8, pitch: 0, reverb: 0.15, delay: 0, delaySubdiv: 0.25 };
-    const instVolume = settings.volume * velocity;
-    const activePitch = pitchOverride !== null ? pitchOverride : settings.pitch;
+    
+    // Hand humanisation adjustments
+    let pitchAdjustment = 0;
+    let volumeScale = 1.0;
+    let filterScale = 1.0;
+    if (hand === "L") {
+      pitchAdjustment = -0.35; // -35 cents
+      volumeScale = 0.90;
+      filterScale = 0.82;      // warmer filter cutoff
+    } else if (hand === "R") {
+      pitchAdjustment = 0.35;  // +35 cents
+    }
+    
+    const instVolume = settings.volume * velocity * volumeScale;
+    const activePitch = (pitchOverride !== null ? pitchOverride : settings.pitch) + pitchAdjustment;
     
     let baseFreq = 72;
     let decayVal = 0.45;
@@ -684,7 +730,7 @@ export class DrumSynth {
       osc.frequency.exponentialRampToValueAtTime(baseFreq, time + 0.08);
       
       lowpass.type = "lowpass";
-      lowpass.frequency.setValueAtTime(350, time);
+      lowpass.frequency.setValueAtTime(350 * filterScale, time);
       
       gain.gain.setValueAtTime(0.001, time);
       gain.gain.linearRampToValueAtTime(instVolume, time + 0.006);
@@ -695,7 +741,7 @@ export class DrumSynth {
       osc.frequency.exponentialRampToValueAtTime(baseFreq * 1.05, time + 0.03);
       
       lowpass.type = "lowpass";
-      lowpass.frequency.setValueAtTime(250, time);
+      lowpass.frequency.setValueAtTime(250 * filterScale, time);
       
       const mDecay = decay * 0.3;
       gain.gain.setValueAtTime(0.001, time);

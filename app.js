@@ -1753,17 +1753,23 @@ function parseAndLoadNotation(text) {
   renderGrid();
 }
 
+// Toggle/alternate hand for live hits
+let lastLiveHand = "R";
+
 // Trigger a hit from virtual pads or keyboard
 function triggerLiveHit(inst, hit, padElement) {
+  // Toggle hand for each live hit
+  lastLiveHand = (lastLiveHand === "L") ? "R" : "L";
+  
   // Sound
   if (inst === "djembe") {
-    synth.playDjembe(hit, synth.ctx.currentTime, 0.9);
+    synth.playDjembe(hit, synth.ctx.currentTime, 0.9, "djembe1", 0, lastLiveHand);
   } else if (inst.endsWith("_bell")) {
     synth.playBell(inst, hit, synth.ctx.currentTime, 0.85);
   } else if (inst === "shekere") {
     synth.playShekere(hit, synth.ctx.currentTime, 0.85);
   } else {
-    synth.playDunun(inst, hit, synth.ctx.currentTime, 0.9);
+    synth.playDunun(inst, hit, synth.ctx.currentTime, 0.9, 0, lastLiveHand);
   }
   
   // Visual Flash
@@ -2885,7 +2891,9 @@ function scheduleTick(tickIndex, time) {
         
         if (isTrackAudible(track)) {
           const stepDuration = secondsPerBeat / track.subdivision;
-          triggerSynthHit(track.type, track.instrument, val, hitTime, velocity, pitch, stepDuration);
+          // Alternate Left and Right hand samples on successive steps
+          const hand = (stepIndex % 2 === 0) ? "L" : "R";
+          triggerSynthHit(track.type, track.instrument, val, hitTime, velocity, pitch, stepDuration, hand);
         }
         
         // Schedule visual flash on step grid cell
@@ -2899,37 +2907,37 @@ function scheduleTick(tickIndex, time) {
 }
 
 // Sound triggering routing
-function triggerSynthHit(type, instrument, hitVal, playTime, trackVol, trackPitch = 0, stepDuration = 0.15) {
+function triggerSynthHit(type, instrument, hitVal, playTime, trackVol, trackPitch = 0, stepDuration = 0.15, hand = "L") {
   if (hitVal.includes("/")) {
     const [h1, h2] = hitVal.split("/");
-    triggerSynthHit(type, instrument, h1, playTime, trackVol * 0.6, trackPitch, stepDuration);
-    triggerSynthHit(type, instrument, h2, playTime + 0.025, trackVol, trackPitch, stepDuration);
+    triggerSynthHit(type, instrument, h1, playTime, trackVol * 0.6, trackPitch, stepDuration, hand);
+    triggerSynthHit(type, instrument, h2, playTime + 0.025, trackVol, trackPitch, stepDuration, hand === "L" ? "R" : "L");
     return;
   }
   
   if (hitVal.includes("-")) {
     const [h1, h2] = hitVal.split("-");
-    triggerSynthHit(type, instrument, h1, playTime, trackVol, trackPitch, stepDuration);
-    triggerSynthHit(type, instrument, h2, playTime + stepDuration / 2, trackVol, trackPitch, stepDuration);
+    triggerSynthHit(type, instrument, h1, playTime, trackVol, trackPitch, stepDuration, hand);
+    triggerSynthHit(type, instrument, h2, playTime + stepDuration / 2, trackVol, trackPitch, stepDuration, hand === "L" ? "R" : "L");
     return;
   }
 
   if (hitVal.includes("*")) {
     const [h1, h2, h3] = hitVal.split("*");
-    triggerSynthHit(type, instrument, h1, playTime, trackVol, trackPitch, stepDuration);
-    triggerSynthHit(type, instrument, h2, playTime + stepDuration / 3, trackVol, trackPitch, stepDuration);
-    triggerSynthHit(type, instrument, h3, playTime + (2 * stepDuration) / 3, trackVol, trackPitch, stepDuration);
+    triggerSynthHit(type, instrument, h1, playTime, trackVol, trackPitch, stepDuration, hand);
+    triggerSynthHit(type, instrument, h2, playTime + stepDuration / 3, trackVol, trackPitch, stepDuration, hand === "L" ? "R" : "L");
+    triggerSynthHit(type, instrument, h3, playTime + (2 * stepDuration) / 3, trackVol, trackPitch, stepDuration, hand);
     return;
   }
 
   if (type === "djembe") {
-    synth.playDjembe(hitVal, playTime, trackVol, instrument, trackPitch);
+    synth.playDjembe(hitVal, playTime, trackVol, instrument, trackPitch, hand);
   } else if (type === "bell") {
     synth.playBell(instrument, hitVal, playTime, trackVol * 0.95, trackPitch);
   } else if (type === "shekere") {
     synth.playShekere(hitVal, playTime, trackVol, trackPitch);
   } else {
-    synth.playDunun(instrument, hitVal, playTime, trackVol, trackPitch);
+    synth.playDunun(instrument, hitVal, playTime, trackVol, trackPitch, hand);
   }
 }
 
@@ -4163,7 +4171,8 @@ function cycleStepHit(track, idx, cellElement) {
     cellElement.style.setProperty("--vel-scale", track.volume);
     cellElement.style.transform = `translateY(-50%) scale(${currentScale})`;
     
-    triggerSynthHit(track.type, track.instrument, val, synth.ctx.currentTime, track.volume, track.pitch);
+    const hand = (idx % 2 === 0) ? "L" : "R";
+    triggerSynthHit(track.type, track.instrument, val, synth.ctx.currentTime, track.volume, track.pitch, 0.15, hand);
   } else {
     const currentScale = 1.0 * subdivFactor;
     cellElement.style.setProperty("--current-scale", currentScale);
@@ -4842,7 +4851,8 @@ function openVariationsMenu(track, stepIdx, cellElement, event) {
       cellElement.style.setProperty("--vel-scale", track.volume);
       cellElement.style.transform = `translateY(-50%) scale(${currentScale})`;
       
-      triggerSynthHit(track.type, track.instrument, newVal, synth.ctx.currentTime, track.volume, track.pitch);
+      const hand = (stepIdx % 2 === 0) ? "L" : "R";
+      triggerSynthHit(track.type, track.instrument, newVal, synth.ctx.currentTime, track.volume, track.pitch, 0.15, hand);
     } else {
       const currentScale = 1.0 * subdivFactor;
       cellElement.style.setProperty("--current-scale", currentScale);
