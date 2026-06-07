@@ -1496,10 +1496,10 @@ select option {
 
 /* Sub-note small colored square container inside composite grid notes */
 .sub-note-square {
-  width: 18px !important;
-  height: 18px !important;
+  width: 13px !important;
+  height: 13px !important;
   flex: none !important;
-  border-radius: 4px !important;
+  border-radius: 3px !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
@@ -1509,8 +1509,8 @@ select option {
 
 .sub-note-square svg {
   color: #fff !important;
-  width: 11px !important;
-  height: 11px !important;
+  width: 8px !important;
+  height: 8px !important;
 }
 
 /* Flams, Rolls & Triplets note styling */
@@ -1523,7 +1523,7 @@ select option {
 .flam-grace-note {
   position: absolute;
   left: 0px;
-  top: 0px;
+  bottom: 0px;
   transform: scale(0.7);
   opacity: 0.85;
   z-index: 1;
@@ -1532,7 +1532,7 @@ select option {
 .flam-main-note {
   position: absolute;
   right: 0px;
-  bottom: 0px;
+  top: 0px;
   transform: scale(0.85);
   z-index: 2;
 }
