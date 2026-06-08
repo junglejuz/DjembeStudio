@@ -3786,7 +3786,11 @@ function renderGrid() {
     muteBtn.textContent = "M";
     muteBtn.addEventListener("click", () => {
       track.muted = !track.muted;
-      muteBtn.classList.toggle("active");
+      muteBtn.classList.toggle("active", track.muted);
+      if (track.muted && track.soloed) {
+        track.soloed = false;
+        soloBtn.classList.remove("active");
+      }
       updateMuteSoloVisuals();
     });
     
@@ -3795,7 +3799,11 @@ function renderGrid() {
     soloBtn.textContent = "S";
     soloBtn.addEventListener("click", () => {
       track.soloed = !track.soloed;
-      soloBtn.classList.toggle("active");
+      soloBtn.classList.toggle("active", track.soloed);
+      if (track.soloed && track.muted) {
+        track.muted = false;
+        muteBtn.classList.remove("active");
+      }
       updateMuteSoloVisuals();
     });
     
