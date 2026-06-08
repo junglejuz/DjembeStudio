@@ -140,42 +140,26 @@ export const RHYTHM_LIBRARY = [
       "7_dun_dun_bell": "X . X X . X . . X X . X . X . X"
     },
     "special_parts": [
-      {
-        "part_id": "Call_PDF",
-        "type": "Call",
-        "sequence": "T . T T . T . . T T . T . . T .",
-        "accompaniment_link": "Standard_Accompaniment"
-      },
-      {
-        "part_id": "Sangban_Variation_1_PDF",
-        "type": "Variation",
-        "sequence": ". . O . . . . . O . . O . . . .",
-        "accompaniment_link": "Standard_Accompaniment"
-      },
-      {
-        "part_id": "Solo1_JSON",
-        "type": "Solo",
-        "sequence": ". . . rt rs S S S S S T S S T S S",
-        "accompaniment_link": "djembe_solo_acc_pdf"
-      },
-      {
-        "part_id": "Solo2_JSON",
-        "type": "Solo",
-        "sequence": "S S . rs rt S S T T S T T S T T S",
-        "accompaniment_link": "djembe_solo_acc_pdf"
-      },
-      {
-        "part_id": "Solo4_JSON",
-        "type": "Solo",
-        "sequence": "rs rs rs rs rs rs rs rs T . fs . T T . S",
-        "accompaniment_link": "djembe_solo_acc_pdf"
-      },
-      {
-        "part_id": "Solo7_JSON",
-        "type": "Solo",
-        "sequence": "S S . T ts . S S . T ts . S S . T",
-        "accompaniment_link": "djembe_solo_acc_pdf"
-      }
+      { "part_id": "Call_PDF", "type": "Call", "sequence": "T . T T . T . . T T . T . . T .", "accompaniment_link": "Standard_Accompaniment" },
+      { "part_id": "Sangban_Variation_1_PDF", "type": "Variation", "sequence": ". . O . . . . . O . . O . . . .", "accompaniment_link": "Standard_Accompaniment" },
+      { "part_id": "Solo1", "type": "Solo", "sequence": ". . . rt rs S S S S S T S S T S S", "accompaniment_link": "djembe_solo_acc_pdf" },
+      { "part_id": "Solo2", "type": "Solo", "sequence": "S S . rs rt S S T T S T T S T T S", "accompaniment_link": "djembe_solo_acc_pdf" },
+      { "part_id": "Solo3", "type": "Solo", "sequence": "T . T . S . S . T . T . S . S .", "accompaniment_link": "djembe_solo_acc_pdf" },
+      { "part_id": "Solo4", "type": "Solo", "sequence": "rs rs rs rs rs rs rs rs T . fs . T T . S", "accompaniment_link": "djembe_solo_acc_pdf" },
+      { "part_id": "Solo5", "type": "Solo", "sequence": "S . S . T T S T T S T T S T T S", "accompaniment_link": "djembe_solo_acc_pdf" },
+      { "part_id": "Solo6", "type": "Solo", "sequence": "rs rs T T S . S . rs rs T T S . S .", "accompaniment_link": "djembe_solo_acc_pdf" },
+      { "part_id": "Solo7", "type": "Solo", "sequence": "S S . T ts . S S . T ts . S S . T", "accompaniment_link": "djembe_solo_acc_pdf" },
+      { "part_id": "Solo8", "type": "Solo", "sequence": "T T S S T T S S T T S S T T S S", "accompaniment_link": "djembe_solo_acc_pdf" },
+      { "part_id": "Solo9", "type": "Solo", "sequence": "rs rs rs rs S . S . rs rs rs rs S . S .", "accompaniment_link": "djembe_solo_acc_pdf" },
+      { "part_id": "Solo10", "type": "Solo", "sequence": "S . T . S . T . S . T . S . T .", "accompaniment_link": "djembe_solo_acc_pdf" },
+      { "part_id": "Solo11", "type": "Solo", "sequence": "T T . . S S . . T T . . S S . .", "accompaniment_link": "djembe_solo_acc_pdf" },
+      { "part_id": "Solo12", "type": "Solo", "sequence": "rs T rs T rs T rs T S S S S S S S S", "accompaniment_link": "djembe_solo_acc_pdf" },
+      { "part_id": "Solo13", "type": "Solo", "sequence": "S S S S T T T T S S S S T T T T", "accompaniment_link": "djembe_solo_acc_pdf" },
+      { "part_id": "Solo14", "type": "Solo", "sequence": "fs fs fs fs S S S S fs fs fs fs S S S S", "accompaniment_link": "djembe_solo_acc_pdf" },
+      { "part_id": "Solo15", "type": "Solo", "sequence": "T T T T S S S S T T T T S S S S", "accompaniment_link": "djembe_solo_acc_pdf" },
+      { "part_id": "Solo16", "type": "Solo", "sequence": "rs rs rs rs rt rt rt rt S S S S S S S S", "accompaniment_link": "djembe_solo_acc_pdf" },
+      { "part_id": "Solo17", "type": "Solo", "sequence": "S . S . S . S . T . T . T . T .", "accompaniment_link": "djembe_solo_acc_pdf" },
+      { "part_id": "Solo18", "type": "Solo", "sequence": "ts ts ts ts S S S S ts ts ts ts S S S S", "accompaniment_link": "djembe_solo_acc_pdf" }
     ],
     "practice_section": {
       "exercises": "Missing Data"
@@ -185,10 +169,24 @@ export const RHYTHM_LIBRARY = [
       "call_button": "Call_PDF",
       "break_button": "Missing Data",
       "solo_button": [
-        "Solo1_JSON",
-        "Solo2_JSON",
-        "Solo4_JSON",
-        "Solo7_JSON"
+        "Solo1",
+        "Solo2",
+        "Solo3",
+        "Solo4",
+        "Solo5",
+        "Solo6",
+        "Solo7",
+        "Solo8",
+        "Solo9",
+        "Solo10",
+        "Solo11",
+        "Solo12",
+        "Solo13",
+        "Solo14",
+        "Solo15",
+        "Solo16",
+        "Solo17",
+        "Solo18"
       ],
       "variation_button": [
         "Sangban_Variation_1_PDF"
