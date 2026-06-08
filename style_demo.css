@@ -1145,3 +1145,17 @@ body.light-theme .step-cell.beat-start-empty {
     justify-content: center !important;
   }
 }
+
+/* Solo Button Queue Animation */
+@keyframes blinking {
+  0% { opacity: 1; transform: scale(1); filter: brightness(1.2); }
+  50% { opacity: 0.5; transform: scale(0.95); filter: brightness(0.8); }
+  100% { opacity: 1; transform: scale(1); filter: brightness(1.2); }
+}
+.blinking {
+  animation: blinking 0.8s infinite cubic-bezier(0.4, 0, 0.2, 1);
+  border-color: var(--primary) !important;
+  color: #fff !important;
+  background: var(--primary) !important;
+  box-shadow: 0 0 10px var(--primary-glow) !important;
+}

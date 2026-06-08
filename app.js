@@ -2238,46 +2238,40 @@ function loadRhythm(preset) {
       preset.solos.forEach((solo, idx) => {
         const btn = document.createElement("button");
         btn.className = "btn";
+        btn.dataset.type = "solo";
         btn.textContent = idx + 1;
         btn.title = solo.name;
-        btn.style.minWidth = "36px";
-        btn.style.height = "36px";
+        btn.style.minWidth = "28px";
+        btn.style.height = "28px";
         btn.style.display = "flex";
         btn.style.alignItems = "center";
         btn.style.justifyContent = "center";
         btn.style.fontWeight = "bold";
-        btn.style.borderRadius = "8px";
+        btn.style.borderRadius = "6px";
+        btn.style.fontSize = "0.75rem";
+        btn.style.padding = "0";
+        btn.style.flex = "0 0 28px";
+        btn.style.cursor = "pointer";
+        
+        btn.style.background = "rgba(168, 85, 247, 0.15)";
+        btn.style.border = "1px solid rgba(168, 85, 247, 0.35)";
+        btn.style.color = "#a855f7";
         
         btn.addEventListener("click", () => {
-          const wasActive = btn.classList.contains("btn-primary");
-          
-          // Clear active class on all buttons
-          Array.from(solosButtonsContainer.children).forEach(child => {
-            child.classList.remove("btn-primary");
-          });
-          
-          if (wasActive) {
-            // Toggle off: remove the solo_djembe track
-            const removeSolo = () => {
-              state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
-              renderGrid();
-            };
-            if (state.isPlaying) {
-              state.queuedActions.push(removeSolo);
-            } else {
-              removeSolo();
-            }
-          } else {
-            // Toggle on: highlight button
-            btn.classList.add("btn-primary");
-            
-            const addSolo = () => {
+          const wasActive = btn.classList.contains("btn-primary") || btn.classList.contains("special-active");
+          const action = () => {
+            deactivateAllSpecialButtons();
+            if (!wasActive) {
+              btn.classList.add("btn-primary", "special-active");
+              btn.style.background = "";
+              btn.style.borderColor = "";
+              
               // Check if solo track exists, if not create and add it
               let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
               if (!soloTrack) {
                 soloTrack = {
                   id: "solo_djembe",
-                  name: "Solo Djembe",
+                  name: solo.name || "Solo Djembe",
                   type: "djembe",
                   instrument: "djembe1",
                   subdivision: solo.subdivision,
@@ -2296,6 +2290,7 @@ function loadRhythm(preset) {
                 sortTracks();
               } else {
                 // Update existing track steps and subdivision
+                soloTrack.name = solo.name || "Solo Djembe";
                 soloTrack.subdivision = solo.subdivision;
                 soloTrack.steps = [...solo.steps];
                 soloTrack.originalSteps = [...solo.steps];
@@ -2304,12 +2299,18 @@ function loadRhythm(preset) {
                   [soloTrack.subdivision]: [...solo.steps]
                 };
               }
-              renderGrid();
-            };
-            if (state.isPlaying) {
-              state.queuedActions.push(addSolo);
             } else {
-              addSolo();
+              state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
+            }
+            renderGrid();
+          };
+          
+          if (state.isPlaying) {
+            queueSpecialAction(action, btn);
+          } else {
+            action();
+            if (!wasActive) {
+              togglePlay();
             }
           }
         });
@@ -5163,6 +5164,31 @@ function convertSpaceDelimitedPatternToSteps(pattern, trackType, stepCount) {
   return steps;
 }
 
+function queueSpecialAction(action, btn) {
+  if (state.isPlaying) {
+    state.queuedActions = [];
+    const containers = [
+      document.getElementById("solos-buttons-container"),
+      document.getElementById("breaks-buttons-container"),
+      document.getElementById("variations-buttons-container"),
+      document.getElementById("special-parts-buttons-container")
+    ];
+    containers.forEach(c => {
+      if (c) {
+        Array.from(c.children).forEach(child => {
+          child.classList.remove("blinking");
+        });
+      }
+    });
+    if (btn) {
+      btn.classList.add("blinking");
+    }
+    state.queuedActions.push(action);
+  } else {
+    action();
+  }
+}
+
 function deactivateAllSpecialButtons() {
   state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
   state.callIntroActive = false;
@@ -5252,25 +5278,11 @@ function handleSoloToggle(sp, isActive) {
       
       state.tracks.forEach(track => {
         if (track.subKey) {
-          if (isLinkMatched) {
-            if (track.subKey === link) {
-              if (track.preSoloMutedState === undefined) {
-                track.preSoloMutedState = track.muted;
-              }
-              track.muted = false;
-            } else {
-              if (track.preSoloMutedState === undefined) {
-                track.preSoloMutedState = track.muted;
-              }
-              track.muted = true;
+          if (isLinkMatched && track.subKey === link) {
+            if (track.preSoloMutedState === undefined) {
+              track.preSoloMutedState = track.muted;
             }
-          } else {
-            if (track.subKey.includes("acc") || track.subKey.includes("accomp")) {
-              if (track.preSoloMutedState === undefined) {
-                track.preSoloMutedState = track.muted;
-              }
-              track.muted = true;
-            }
+            track.muted = false;
           }
         }
       });
@@ -5697,16 +5709,16 @@ function loadRhythmNew(preset) {
           btn.dataset.type = "solo";
           btn.textContent = idx + 1;
           btn.title = sp.name || sp.part_id;
-          btn.style.minWidth = "32px";
-          btn.style.height = "32px";
+          btn.style.minWidth = "28px";
+          btn.style.height = "28px";
           btn.style.display = "flex";
           btn.style.alignItems = "center";
           btn.style.justifyContent = "center";
           btn.style.fontWeight = "bold";
-          btn.style.borderRadius = "8px";
-          btn.style.fontSize = "0.8rem";
+          btn.style.borderRadius = "6px";
+          btn.style.fontSize = "0.75rem";
           btn.style.padding = "0";
-          btn.style.flex = "0 0 32px";
+          btn.style.flex = "0 0 28px";
           btn.style.cursor = "pointer";
           
           btn.style.background = "rgba(168, 85, 247, 0.15)";
@@ -5714,11 +5726,10 @@ function loadRhythmNew(preset) {
           btn.style.color = "#a855f7";
           
           btn.addEventListener("click", () => {
-            const wasActive = btn.classList.contains("btn-primary");
+            const wasActive = btn.classList.contains("btn-primary") || btn.classList.contains("special-active");
             const action = () => {
               deactivateAllSpecialButtons();
               if (!wasActive) {
-                btn.classList.remove("blinking");
                 btn.classList.add("btn-primary", "special-active");
                 btn.style.background = "";
                 btn.style.borderColor = "";
@@ -5730,12 +5741,7 @@ function loadRhythmNew(preset) {
             };
             
             if (state.isPlaying) {
-              if (!wasActive) {
-                btn.classList.add("blinking");
-              } else {
-                btn.classList.add("blinking");
-              }
-              state.queuedActions.push(action);
+              queueSpecialAction(action, btn);
             } else {
               action();
               if (!wasActive) {
@@ -5773,7 +5779,7 @@ function loadRhythmNew(preset) {
           btn.style.color = "#10b981";
           
           btn.addEventListener("click", () => {
-            const wasActive = btn.classList.contains("btn-primary");
+            const wasActive = btn.classList.contains("btn-primary") || btn.classList.contains("special-active");
             const action = () => {
               deactivateAllSpecialButtons();
               if (!wasActive) {
@@ -5788,7 +5794,7 @@ function loadRhythmNew(preset) {
             };
             
             if (state.isPlaying) {
-              state.queuedActions.push(action);
+              queueSpecialAction(action, btn);
             } else {
               action();
             }
@@ -5823,14 +5829,14 @@ function loadRhythmNew(preset) {
           btn.style.color = "#f59e0b";
           
           btn.addEventListener("click", () => {
-            const wasActive = btn.classList.contains("btn-primary");
+            const wasActive = btn.classList.contains("btn-primary") || btn.classList.contains("special-active");
             const action = () => {
               deactivateAllSpecialButtons();
               if (!wasActive) {
                 btn.classList.add("btn-primary", "special-active");
                 btn.style.background = "";
                 btn.style.borderColor = "";
-                playSpecialPart(sp, btn);
+                playSpecialPart(sp);
               } else {
                 state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
                 state.callIntroActive = false;
@@ -5839,7 +5845,7 @@ function loadRhythmNew(preset) {
             };
             
             if (state.isPlaying) {
-              state.queuedActions.push(action);
+              queueSpecialAction(action, btn);
             } else {
               action();
             }
@@ -5884,14 +5890,14 @@ function loadRhythmNew(preset) {
           }
           
           btn.addEventListener("click", () => {
-            const wasActive = btn.classList.contains("btn-primary");
+            const wasActive = btn.classList.contains("btn-primary") || btn.classList.contains("special-active");
             const action = () => {
               deactivateAllSpecialButtons();
               if (!wasActive) {
                 btn.classList.add("btn-primary", "special-active");
                 btn.style.background = "";
                 btn.style.borderColor = "";
-                playSpecialPart(sp, btn);
+                playSpecialPart(sp);
               } else {
                 state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
                 state.callIntroActive = false;
@@ -5900,7 +5906,7 @@ function loadRhythmNew(preset) {
             };
             
             if (state.isPlaying) {
-              state.queuedActions.push(action);
+              queueSpecialAction(action, btn);
             } else {
               action();
             }
@@ -6207,17 +6213,19 @@ function loadRhythmNew(preset) {
       soloParts.forEach((sp, idx) => {
         const btn = document.createElement("button");
         btn.className = "btn";
+        btn.dataset.type = "solo";
         btn.textContent = idx + 1;
         btn.title = sp.name;
-        btn.style.minWidth = "32px";
-        btn.style.height = "32px";
+        btn.style.minWidth = "28px";
+        btn.style.height = "28px";
         btn.style.display = "flex";
         btn.style.alignItems = "center";
         btn.style.justifyContent = "center";
         btn.style.fontWeight = "bold";
-        btn.style.borderRadius = "8px";
-        btn.style.fontSize = "0.8rem";
+        btn.style.borderRadius = "6px";
+        btn.style.fontSize = "0.75rem";
         btn.style.padding = "0";
+        btn.style.flex = "0 0 28px";
         btn.style.cursor = "pointer";
         
         btn.style.background = "rgba(168, 85, 247, 0.15)";
@@ -6226,38 +6234,9 @@ function loadRhythmNew(preset) {
         
         btn.addEventListener("click", () => {
           const wasActive = btn.classList.contains("btn-primary") || btn.classList.contains("special-active");
-          
-          Array.from(solosContainer.children).forEach(child => {
-            child.classList.remove("btn-primary", "special-active");
-            child.style.background = "rgba(168, 85, 247, 0.15)";
-            child.style.borderColor = "rgba(168, 85, 247, 0.35)";
-          });
-          
-          const specialContainer = document.getElementById("special-parts-buttons-container");
-          if (specialContainer) {
-            Array.from(specialContainer.children).forEach(child => {
-              child.classList.remove("btn-primary", "special-active");
-              const title = child.title.split(":")[0];
-              if (title === "Intro") {
-                child.style.background = "rgba(59, 130, 246, 0.15)";
-                child.style.borderColor = "rgba(59, 130, 246, 0.35)";
-              } else if (title === "Call") {
-                child.style.background = "rgba(99, 102, 241, 0.15)";
-                child.style.borderColor = "rgba(99, 102, 241, 0.35)";
-              } else if (title === "Break") {
-                child.style.background = "rgba(245, 158, 11, 0.15)";
-                child.style.borderColor = "rgba(245, 158, 11, 0.35)";
-              }
-            });
-          }
-
-          if (!wasActive) {
-            btn.classList.add("special-active", "btn-primary");
-            btn.style.background = "";
-            btn.style.borderColor = "";
-          }
-
           const action = () => {
+            deactivateAllSpecialButtons();
+            
             state.tracks.forEach(track => {
               if (track.preSoloAccompanimentSteps) {
                 track.steps = [...track.preSoloAccompanimentSteps];
@@ -6269,10 +6248,11 @@ function loadRhythmNew(preset) {
               }
             });
             
-            if (wasActive) {
-              state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
-              state.callIntroActive = false;
-            } else {
+            if (!wasActive) {
+              btn.classList.add("special-active", "btn-primary");
+              btn.style.background = "";
+              btn.style.borderColor = "";
+              
               if (accompPart) {
                 const djembeTrack = state.tracks.find(t => t.type === "djembe" && t.id !== "solo_djembe");
                 if (djembeTrack) {
@@ -6315,9 +6295,6 @@ function loadRhythmNew(preset) {
               
               if (sp.type === "Intro" || sp.type === "Call" || sp.type === "Break") {
                 state.callIntroActive = true;
-                if (state.isPlaying) {
-                  nextTickToSchedule = 0;
-                }
               } else {
                 state.callIntroActive = false;
               }
@@ -6330,12 +6307,15 @@ function loadRhythmNew(preset) {
                                t.name.toLowerCase().includes("intro");
                 if (isCall) t.muted = false;
               });
+            } else {
+              state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
+              state.callIntroActive = false;
             }
             renderGrid();
           };
 
           if (state.isPlaying) {
-            state.queuedActions.push(action);
+            queueSpecialAction(action, btn);
           } else {
             action();
             if (!wasActive) {
@@ -6419,130 +6399,112 @@ function toggleEchauffementNew() {
   }
 }
 
-function playSpecialPart(sp, btn) {
+function playSpecialPart(sp) {
   const isNewFormat = state.currentPreset && (state.currentPreset.step_count !== undefined || (state.currentPreset.tracks && !Array.isArray(state.currentPreset.tracks)));
   
-  const action = () => {
-    let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
-    if (!soloTrack) {
-      soloTrack = {
-        id: "solo_djembe",
-        name: sp.name || sp.part_id || "Solo Djembe",
-        type: "djembe",
-        instrument: "djembe1",
-        volume: 0.85,
-        pitch: 0,
-        muted: false,
-        soloed: false
-      };
-      state.tracks.push(soloTrack);
-      sortTracks();
-    } else {
-      soloTrack.name = sp.name || sp.part_id || "Solo Djembe";
-    }
-    
-    soloTrack.subdivision = getSubdivisionForTiming(state.timeSignature);
-    let steps;
-    if (isNewFormat) {
-      steps = convertSpaceDelimitedPatternToSteps(sp.sequence, "djembe", state.currentPreset.step_count);
-    } else {
-      steps = convertPatternToSteps(sp.drum_pattern, state.timeSignature, "Djembé");
-    }
-    
-    soloTrack.steps = steps;
-    soloTrack.originalSteps = [...steps];
-    soloTrack.originalSubdivision = soloTrack.subdivision;
-    soloTrack.subdivisionSteps = {
-      [soloTrack.subdivision]: [...steps]
+  let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
+  if (!soloTrack) {
+    soloTrack = {
+      id: "solo_djembe",
+      name: sp.name || sp.part_id || "Solo Djembe",
+      type: "djembe",
+      instrument: "djembe1",
+      volume: 0.85,
+      pitch: 0,
+      muted: false,
+      soloed: false
     };
-    
-    if (sp.type === "Intro" || sp.type === "Call" || sp.type === "Break") {
-      state.callIntroActive = true;
-    } else {
-      state.callIntroActive = false;
-    }
-    
-    state.tracks.forEach(t => {
-      const isCall = t.id === "solo_djembe" ||
-                     t.id.startsWith("special") || 
-                     t.name.toLowerCase().includes("call") || 
-                     t.name.toLowerCase().includes("break") || 
-                     t.name.toLowerCase().includes("intro");
-      if (isCall) t.muted = false;
-    });
-
-    renderGrid();
-  };
-
-  if (!state.isPlaying) {
-    action();
-    togglePlay();
+    state.tracks.push(soloTrack);
+    sortTracks();
   } else {
-    state.queuedActions.push(action);
+    soloTrack.name = sp.name || sp.part_id || "Solo Djembe";
   }
+  
+  soloTrack.subdivision = getSubdivisionForTiming(state.timeSignature);
+  let steps;
+  if (isNewFormat) {
+    steps = convertSpaceDelimitedPatternToSteps(sp.sequence, "djembe", state.currentPreset.step_count);
+  } else {
+    steps = convertPatternToSteps(sp.drum_pattern, state.timeSignature, "Djembé");
+  }
+  
+  soloTrack.steps = steps;
+  soloTrack.originalSteps = [...steps];
+  soloTrack.originalSubdivision = soloTrack.subdivision;
+  soloTrack.subdivisionSteps = {
+    [soloTrack.subdivision]: [...steps]
+  };
+  
+  if (sp.type === "Intro" || sp.type === "Call" || sp.type === "Break") {
+    state.callIntroActive = true;
+  } else {
+    state.callIntroActive = false;
+  }
+  
+  state.tracks.forEach(t => {
+    const isCall = t.id === "solo_djembe" ||
+                   t.id.startsWith("special") || 
+                   t.name.toLowerCase().includes("call") || 
+                   t.name.toLowerCase().includes("break") || 
+                   t.name.toLowerCase().includes("intro");
+    if (isCall) t.muted = false;
+  });
+
+  renderGrid();
 }
 
 function playBreak(brk, btn) {
+  const wasActive = btn ? (btn.classList.contains("break-active") || btn.classList.contains("btn-primary")) : false;
+  
   const action = () => {
-    let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
-    if (!soloTrack) {
-      soloTrack = {
-        id: "solo_djembe",
-        name: brk.name,
-        type: "djembe",
-        instrument: "djembe1",
-        volume: 0.85,
-        pitch: 0,
-        muted: false,
-        soloed: false
+    deactivateAllSpecialButtons();
+    if (!wasActive) {
+      let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
+      if (!soloTrack) {
+        soloTrack = {
+          id: "solo_djembe",
+          name: brk.name,
+          type: "djembe",
+          instrument: "djembe1",
+          volume: 0.85,
+          pitch: 0,
+          muted: false,
+          soloed: false
+        };
+        state.tracks.push(soloTrack);
+        sortTracks();
+      } else {
+        soloTrack.name = brk.name;
+      }
+      
+      soloTrack.subdivision = brk.subdivision;
+      soloTrack.steps = [...brk.steps];
+      soloTrack.originalSteps = [...brk.steps];
+      soloTrack.originalSubdivision = brk.subdivision;
+      soloTrack.subdivisionSteps = {
+        [soloTrack.subdivision]: [...soloTrack.steps]
       };
-      state.tracks.push(soloTrack);
-      sortTracks();
+      
+      state.callIntroActive = true;
+      if (btn) {
+        btn.classList.add("break-active", "btn-primary");
+        btn.style.background = "";
+        btn.style.borderColor = "";
+      }
     } else {
-      soloTrack.name = brk.name;
+      state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
+      state.callIntroActive = false;
     }
-    
-    soloTrack.subdivision = brk.subdivision;
-    soloTrack.steps = [...brk.steps];
-    soloTrack.originalSteps = [...brk.steps];
-    soloTrack.originalSubdivision = brk.subdivision;
-    soloTrack.subdivisionSteps = {
-      [soloTrack.subdivision]: [...soloTrack.steps]
-    };
-    
-    state.callIntroActive = true;
-
-    state.tracks.forEach(t => {
-      const isCall = t.id === "solo_djembe" ||
-                     t.id.startsWith("special") || 
-                     t.name.toLowerCase().includes("call") || 
-                     t.name.toLowerCase().includes("break") || 
-                     t.name.toLowerCase().includes("intro");
-      if (isCall) t.muted = false;
-    });
-
     renderGrid();
   };
 
-  const breaksContainer = document.getElementById("breaks-buttons-container");
-  if (breaksContainer) {
-    Array.from(breaksContainer.children).forEach(child => {
-      child.classList.remove("break-active");
-      child.style.background = "rgba(245, 158, 11, 0.15)";
-      child.style.borderColor = "rgba(245, 158, 11, 0.35)";
-    });
-  }
-  if (btn) {
-    btn.classList.add("break-active");
-    btn.style.background = "rgba(245, 158, 11, 0.35)";
-    btn.style.borderColor = "rgba(245, 158, 11, 0.8)";
-  }
-
-  if (!state.isPlaying) {
-    action();
-    togglePlay();
+  if (state.isPlaying) {
+    queueSpecialAction(action, btn);
   } else {
-    state.queuedActions.push(action);
+    action();
+    if (!wasActive) {
+      togglePlay();
+    }
   }
 }
 
