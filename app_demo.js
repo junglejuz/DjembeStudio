@@ -4363,14 +4363,15 @@ function calculatePitchBrightness(track, stepIdx, epoch) {
 }
 
 // Check swing timings
-function getSwungStepTime(beatIndex, stepInBeat, subdivision, beatDuration, swingPercent) {
+function getSwungStepTime(beatIndex, stepInBeat, subdivision, beatDuration, swingPercent, isVisual = false) {
   let relativeBeatOffset = stepInBeat / subdivision;
+  const visualScale = isVisual ? 0.5 : 1.0;
   
   // Apply custom step offsets (which now represent both global swing and custom adjustments)
   if (state.customSwingOffsets && state.customSwingOffsets[subdivision]) {
     const offsets = state.customSwingOffsets[subdivision];
     if (offsets[stepInBeat] !== undefined) {
-      const offsetPercent = offsets[stepInBeat]; // value from -50 to +50
+      const offsetPercent = offsets[stepInBeat] * visualScale; // value from -50 to +50 scaled visually
       const stepWidth = 1 / subdivision;
       relativeBeatOffset += (offsetPercent / 100) * stepWidth;
     }
@@ -4383,7 +4384,7 @@ function getSwungStepTime(beatIndex, stepInBeat, subdivision, beatDuration, swin
     const offsets = state.currentPreset.groove_modifiers.swing_offsets;
     if (offsets.length > 0) {
       const offsetIndex = stepInBeat % offsets.length;
-      const offsetVal = offsets[offsetIndex] || 0;
+      const offsetVal = (offsets[offsetIndex] || 0) * visualScale;
       
       // Convert offsetVal (ms) to beats
       const secondsPerBeat = getSecondsPerBeat();
@@ -4704,7 +4705,7 @@ function updateStepPositions() {
         const stepInLine = stepIdx % stepsPerLine;
         const beatIndex = Math.floor(stepInLine / track.subdivision);
         const stepInBeat = stepInLine % track.subdivision;
-        const swungBeat = getSwungStepTime(beatIndex, stepInBeat, track.subdivision, 1.0, state.swing);
+        const swungBeat = getSwungStepTime(beatIndex, stepInBeat, track.subdivision, 1.0, state.swing, true);
         
         let humaniseOffset = 0;
         if (state.humaniseTime > 0 && val !== "") {
@@ -4736,7 +4737,7 @@ function updateStepPositions() {
           for (let stepInLine = 0; stepInLine < stepsPerLine; stepInLine++) {
             const beatIndex = Math.floor(stepInLine / track.subdivision);
             const stepInBeat = stepInLine % track.subdivision;
-            stepTimes.push(getSwungStepTime(beatIndex, stepInBeat, track.subdivision, 1.0, state.swing));
+            stepTimes.push(getSwungStepTime(beatIndex, stepInBeat, track.subdivision, 1.0, state.swing, true));
           }
 
           boundaries.forEach((b, idx) => {
@@ -5560,7 +5561,7 @@ function renderGrid() {
       for (let stepInLine = 0; stepInLine < stepsPerLine; stepInLine++) {
         const beatIndex = Math.floor(stepInLine / track.subdivision);
         const stepInBeat = stepInLine % track.subdivision;
-        stepTimes.push(getSwungStepTime(beatIndex, stepInBeat, track.subdivision, 1.0, state.swing));
+        stepTimes.push(getSwungStepTime(beatIndex, stepInBeat, track.subdivision, 1.0, state.swing, true));
       }
 
       boundaries.forEach(b => {
@@ -5602,7 +5603,7 @@ function renderGrid() {
         const stepInLine = stepIdx % stepsPerLine;
         const beatIndex = Math.floor(stepInLine / track.subdivision);
         const stepInBeat = stepInLine % track.subdivision;
-        const swungBeat = getSwungStepTime(beatIndex, stepInBeat, track.subdivision, 1.0, state.swing);
+        const swungBeat = getSwungStepTime(beatIndex, stepInBeat, track.subdivision, 1.0, state.swing, true);
         const percent = (swungBeat / state.beats) * 100;
         cell.style.setProperty("--step-time-percent", `${percent}%`);
         
