@@ -670,6 +670,12 @@ function setupLargeSlider(originalSlider, options = {}) {
     e.preventDefault();
     isCustomDragging = true;
     
+    try {
+      if (originalSlider.hasPointerCapture(e.pointerId)) {
+        originalSlider.releasePointerCapture(e.pointerId);
+      }
+    } catch (err) {}
+    
     injectLargeSliderOverlay();
     const overlay = document.getElementById("large-slider-overlay");
     if (!overlay) return;
@@ -5197,6 +5203,7 @@ function deactivateAllSpecialButtons() {
         btn.style.background = "rgba(245, 158, 11, 0.15)";
         btn.style.borderColor = "rgba(245, 158, 11, 0.35)";
       } else if (type === 'solo') {
+        btn.classList.remove("blinking");
         btn.style.background = "rgba(168, 85, 247, 0.15)";
         btn.style.borderColor = "rgba(168, 85, 247, 0.35)";
       } else if (type === 'variation') {
@@ -5698,6 +5705,8 @@ function loadRhythmNew(preset) {
           btn.style.fontWeight = "bold";
           btn.style.borderRadius = "8px";
           btn.style.fontSize = "0.8rem";
+          btn.style.padding = "0";
+          btn.style.flex = "0 0 32px";
           btn.style.cursor = "pointer";
           
           btn.style.background = "rgba(168, 85, 247, 0.15)";
@@ -5709,6 +5718,7 @@ function loadRhythmNew(preset) {
             const action = () => {
               deactivateAllSpecialButtons();
               if (!wasActive) {
+                btn.classList.remove("blinking");
                 btn.classList.add("btn-primary", "special-active");
                 btn.style.background = "";
                 btn.style.borderColor = "";
@@ -5720,6 +5730,11 @@ function loadRhythmNew(preset) {
             };
             
             if (state.isPlaying) {
+              if (!wasActive) {
+                btn.classList.add("blinking");
+              } else {
+                btn.classList.add("blinking");
+              }
               state.queuedActions.push(action);
             } else {
               action();
