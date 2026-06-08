@@ -501,9 +501,12 @@ body {
   transition: left 0.35s cubic-bezier(0.25, 1, 0.5, 1) !important;
 }
 
-/* Hide interior SVG path icons inside cells */
+/* Make interior SVG path icons inside cells visible on mobile and scale them */
 .step-cell svg {
-  display: none !important;
+  display: flex !important;
+  width: 7px !important;
+  height: 7px !important;
+  pointer-events: none;
 }
 
 /* Scale + brightness flash animation for mobile — matches desktop behaviour */
