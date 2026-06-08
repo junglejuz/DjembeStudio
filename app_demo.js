@@ -5839,16 +5839,15 @@ function renderGrid() {
       
       if (baseName) {
         const isBell = track.instrument.includes("bell");
+        // 3 groups: Set 1 = djembeloops_samples, Set 2 = circAfrique v4 #1, Set 3 = circAfrique v4 #2
         if (isBell) {
           sampleOptions.push({ value: `${baseName}_bell`, text: "Set 1" });
-          sampleOptions.push({ value: `${baseName}_bell2`, text: "Set 2" });
-          sampleOptions.push({ value: `${baseName}3_bell`, text: "Set 3" });
-          sampleOptions.push({ value: `${baseName}4_bell`, text: "Set 4" });
+          sampleOptions.push({ value: `${baseName}3_bell`, text: "Set 2" });
+          sampleOptions.push({ value: `${baseName}4_bell`, text: "Set 3" });
         } else {
           sampleOptions.push({ value: baseName, text: "Set 1" });
-          sampleOptions.push({ value: `${baseName}2`, text: "Set 2" });
-          sampleOptions.push({ value: `${baseName}3`, text: "Set 3" });
-          sampleOptions.push({ value: `${baseName}4`, text: "Set 4" });
+          sampleOptions.push({ value: `${baseName}3`, text: "Set 2" });
+          sampleOptions.push({ value: `${baseName}4`, text: "Set 3" });
         }
       }
     }
