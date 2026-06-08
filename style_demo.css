@@ -588,7 +588,7 @@ body {
 /* Subdivision selector dropdown under the track icon */
 .drawer-subdiv-select {
   width: 42px;
-  height: 32px;
+  height: 28px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 4px;
@@ -612,7 +612,7 @@ body {
 /* Sample group selector dropdown */
 .drawer-sample-group-select {
   width: 70px;
-  height: 32px;
+  height: 28px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 4px;
@@ -637,7 +637,7 @@ body {
 .drawer-left-group {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.3rem;
   flex-shrink: 0;
 }
 
@@ -645,7 +645,7 @@ body {
 .drawer-left {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.2rem;
   flex-shrink: 0;
 }
 
@@ -654,27 +654,27 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 0.5rem;
+  padding: 0 0.25rem;
   min-width: 0;
 }
 
 .drawer-right {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.2rem;
   flex-shrink: 0;
 }
 
 /* Drawer Buttons */
 .drawer-btn {
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--text-muted);
   font-family: 'Outfit', sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.78rem;
   font-weight: 700;
   display: flex;
   align-items: center;
@@ -683,6 +683,7 @@ body {
   padding: 0;
   transition: all 0.2s ease;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
 }
 
 .drawer-btn:active {
@@ -736,71 +737,122 @@ body {
   border-color: rgba(239, 68, 68, 0.3);
 }
 
-/* Volume Slider inside drawer */
-.drawer-vol-slider {
-  -webkit-appearance: none;
-  appearance: none;
+/* Volume icon button */
+.drawer-btn.btn-volume {
+  background: rgba(139, 92, 246, 0.1);
+  border-color: rgba(139, 92, 246, 0.25);
+  color: #a78bfa;
+}
+
+.drawer-btn.btn-volume:hover {
+  background: rgba(139, 92, 246, 0.2);
+  border-color: rgba(139, 92, 246, 0.4);
+}
+
+/* Sample group picker button */
+.drawer-btn.btn-sample-group {
+  background: rgba(20, 184, 166, 0.1);
+  border-color: rgba(20, 184, 166, 0.25);
+  color: #2dd4bf;
+}
+
+.drawer-btn.btn-sample-group:hover {
+  background: rgba(20, 184, 166, 0.2);
+  border-color: rgba(20, 184, 166, 0.4);
+}
+
+/* Sample group popup overlay */
+.sample-group-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  max-width: 80px;
-  /* Bounding box height to fit the thumb cleanly and improve tap targets */
-  height: 16px;
-  background: transparent !important;
-  outline: none;
-  margin: 0;
-  padding: 0;
-  cursor: pointer;
-  display: inline-flex;
+  height: 100%;
+  background: rgba(8, 10, 15, 0.55);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: none;
+  z-index: 100000;
+  justify-content: center;
   align-items: center;
 }
 
-.drawer-vol-slider::-webkit-slider-runnable-track {
+.sample-group-overlay.active {
+  display: flex;
+}
+
+.sample-group-popup {
+  background: rgba(15, 18, 28, 0.92);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border-radius: 16px;
+  padding: 1.25rem;
+  width: calc(100% - 40px);
+  max-width: 280px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.sample-group-popup-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
+.sample-group-popup-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
   width: 100%;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 2px;
+}
+
+.sample-group-popup-btn {
+  min-width: 60px;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
   cursor: pointer;
+  transition: all 0.2s ease;
+  text-align: center;
 }
 
-.drawer-vol-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 12px;
-  height: 12px;
-  border-radius: 50%;
-  background: hsl(var(--part-color-hsl, 243, 75%, 59%)) !important;
-  cursor: pointer;
-  margin-top: -4px;
-  /* Centered relative to the 4px track height: (4 - 12) / 2 = -4 */
-  box-shadow: 0 0 6px hsla(var(--part-color-hsl, 243, 75%, 59%), 0.6) !important;
-  transition: transform 0.1s ease;
-  border: none;
+.sample-group-popup-btn:active {
+  transform: scale(0.95);
 }
 
-.drawer-vol-slider::-webkit-slider-thumb:active {
-  transform: scale(1.25);
+.sample-group-popup-btn.active {
+  background: rgba(20, 184, 166, 0.2);
+  border-color: rgba(20, 184, 166, 0.5);
+  color: #2dd4bf;
+  box-shadow: 0 0 10px rgba(20, 184, 166, 0.25);
 }
 
-.drawer-vol-slider::-moz-range-track {
-  width: 100%;
-  height: 4px;
-  background: rgba(255, 255, 255, 0.15);
-  border-radius: 2px;
-  cursor: pointer;
+.sample-group-popup-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
-.drawer-vol-slider::-moz-range-thumb {
-  width: 12px;
-  height: 12px;
-  border: none;
-  border-radius: 50%;
-  background: hsl(var(--part-color-hsl, 243, 75%, 59%)) !important;
-  cursor: pointer;
-  box-shadow: 0 0 6px hsla(var(--part-color-hsl, 243, 75%, 59%), 0.6) !important;
-  transition: transform 0.1s ease;
-}
-
-.drawer-vol-slider::-moz-range-thumb:active {
-  transform: scale(1.25);
+/* Hidden volume slider for overlay trigger (kept in DOM but not visible) */
+.drawer-vol-slider-hidden {
+  position: absolute;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  pointer-events: none;
+  overflow: hidden;
 }
 
 /* Push the pads and notation panel way down so you have to scroll to see them */

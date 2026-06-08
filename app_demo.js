@@ -5825,10 +5825,7 @@ function renderGrid() {
       e.stopPropagation(); // Prevent toggling collapse on select click
     });
 
-    // Sample Group dropdown
-    const sampleGroupSelect = document.createElement("select");
-    sampleGroupSelect.className = "drawer-sample-group-select";
-    
+    // Build sample group options (used by popup picker button)
     let sampleOptions = [];
     if (track.type === "djembe") {
       for (let i = 1; i <= 7; i++) {
@@ -5856,25 +5853,6 @@ function renderGrid() {
       }
     }
     
-    if (sampleOptions.length > 0) {
-      sampleOptions.forEach(opt => {
-        const o = document.createElement("option");
-        o.value = opt.value;
-        o.textContent = opt.text;
-        if (track.instrument === opt.value) o.selected = true;
-        sampleGroupSelect.appendChild(o);
-      });
-      sampleGroupSelect.addEventListener("change", (e) => {
-        track.instrument = e.target.value;
-        renderGrid();
-      });
-      sampleGroupSelect.addEventListener("click", (e) => {
-        e.stopPropagation();
-      });
-    } else {
-      sampleGroupSelect.style.display = "none";
-    }
-    
     // Group elements in a left-group container
     const leftGroup = document.createElement("div");
     leftGroup.className = "drawer-left-group";
@@ -5884,7 +5862,7 @@ function renderGrid() {
     
     const btnAddPart = document.createElement("button");
     btnAddPart.className = "drawer-btn btn-add-part";
-    btnAddPart.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>`;
+    btnAddPart.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>`;
     btnAddPart.title = "Add extra part";
     
     if (isCall) {
@@ -5970,15 +5948,25 @@ function renderGrid() {
     
     leftGroup.appendChild(drawerLeft);
     leftGroup.appendChild(subdivSelect);
-    leftGroup.appendChild(sampleGroupSelect);
     drawer.appendChild(leftGroup);
     
-    const drawerCenter = document.createElement("div");
-    drawerCenter.className = "drawer-center";
+    // Sample group picker button (opens popup overlay)
+    if (sampleOptions.length > 0) {
+      const btnSampleGroup = document.createElement("button");
+      btnSampleGroup.className = "drawer-btn btn-sample-group";
+      btnSampleGroup.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>`;
+      btnSampleGroup.title = "Change sound set";
+      btnSampleGroup.addEventListener("click", (e) => {
+        e.stopPropagation();
+        showSampleGroupPopup(track, sampleOptions, row);
+      });
+      drawer.appendChild(btnSampleGroup);
+    }
     
+    // Hidden volume slider (used by large slider overlay)
     const volSlider = document.createElement("input");
     volSlider.type = "range";
-    volSlider.className = "drawer-vol-slider";
+    volSlider.className = "drawer-vol-slider-hidden";
     volSlider.min = "0";
     volSlider.max = "1";
     volSlider.step = "0.01";
@@ -5991,15 +5979,35 @@ function renderGrid() {
       }
       updateCellScales();
     });
-    volSlider.addEventListener("click", (e) => {
-      e.stopPropagation();
-    });
     setupLargeSlider(volSlider, {
       label: `${cleanTrackName(track.name)} Volume`,
       getValueText: (val) => `${Math.round(parseFloat(val) * 100)}%`
     });
-    drawerCenter.appendChild(volSlider);
-    drawer.appendChild(drawerCenter);
+    drawer.appendChild(volSlider);
+    
+    // Volume icon button — triggers existing large slider overlay
+    const btnVolume = document.createElement("button");
+    btnVolume.className = "drawer-btn btn-volume";
+    btnVolume.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>`;
+    btnVolume.title = "Volume";
+    btnVolume.addEventListener("click", (e) => {
+      e.stopPropagation();
+      // Simulate a pointerdown on the hidden slider to trigger the large slider overlay
+      const rect = btnVolume.getBoundingClientRect();
+      const syntheticEvent = new PointerEvent("pointerdown", {
+        clientX: rect.left + rect.width / 2,
+        clientY: rect.top + rect.height / 2,
+        bubbles: true,
+        cancelable: true
+      });
+      volSlider.dispatchEvent(syntheticEvent);
+    });
+    drawer.appendChild(btnVolume);
+    
+    // Spacer to push right buttons to the edge
+    const drawerSpacer = document.createElement("div");
+    drawerSpacer.style.flex = "1";
+    drawer.appendChild(drawerSpacer);
     
     const drawerRight = document.createElement("div");
     drawerRight.className = "drawer-right";
@@ -6058,6 +6066,65 @@ function renderGrid() {
   updateStepPositions();
   updateCellScales();
   updateMuteSoloVisuals();
+}
+// Show the sample group picker popup overlay
+function showSampleGroupPopup(track, sampleOptions, trackRow) {
+  // Remove any existing overlay
+  const existing = document.querySelector(".sample-group-overlay");
+  if (existing) existing.remove();
+  
+  const container = document.querySelector(".demo-device-frame") || document.querySelector(".app-container") || document.body;
+  
+  const overlay = document.createElement("div");
+  overlay.className = "sample-group-overlay active";
+  
+  const popup = document.createElement("div");
+  popup.className = "sample-group-popup";
+  
+  // Determine instrument display name
+  let title = "Select Sound Set";
+  if (track.type === "djembe") {
+    title = "Djembe Sound";
+  } else {
+    const inst = track.instrument;
+    if (inst.includes("kenkeni")) title = inst.includes("bell") ? "Kenkeni Bell Sound" : "Kenkeni Sound";
+    else if (inst.includes("sangban")) title = inst.includes("bell") ? "Sangban Bell Sound" : "Sangban Sound";
+    else if (inst.includes("dundunba")) title = inst.includes("bell") ? "Dundunba Bell Sound" : "Dundunba Sound";
+  }
+  
+  const titleEl = document.createElement("div");
+  titleEl.className = "sample-group-popup-title";
+  titleEl.textContent = title;
+  popup.appendChild(titleEl);
+  
+  const grid = document.createElement("div");
+  grid.className = "sample-group-popup-grid";
+  
+  sampleOptions.forEach(opt => {
+    const btn = document.createElement("button");
+    btn.className = "sample-group-popup-btn";
+    if (track.instrument === opt.value) btn.classList.add("active");
+    btn.textContent = opt.text;
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      track.instrument = opt.value;
+      overlay.remove();
+      renderGrid();
+    });
+    grid.appendChild(btn);
+  });
+  
+  popup.appendChild(grid);
+  overlay.appendChild(popup);
+  
+  // Close on background click
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+      overlay.remove();
+    }
+  });
+  
+  container.appendChild(overlay);
 }
 
 // Cycles step click values (e.g. Empty -> Bass -> Tone -> Slap -> Muffled)
