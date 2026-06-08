@@ -402,26 +402,26 @@ body {
 }
 
 .track-row.dimmed-track {
-  opacity: 0.35 !important;
-  filter: brightness(0.6) grayscale(0.2) !important;
+  opacity: 0.55 !important;
+  filter: brightness(0.75) grayscale(0.15) !important;
 }
 
 /* Muted & Solo track dimming styling */
 .track-row.muted-track {
-  opacity: 0.35 !important;
-  filter: brightness(0.6) saturate(0.4) !important;
+  opacity: 0.55 !important;
+  filter: brightness(0.75) saturate(0.5) !important;
   transition: opacity 0.25s ease, filter 0.25s ease;
 }
 
 .sequencer-container.has-solo .track-row:not(.soloed-track) {
-  opacity: 0.35 !important;
-  filter: brightness(0.6) saturate(0.4) !important;
+  opacity: 0.55 !important;
+  filter: brightness(0.75) saturate(0.5) !important;
   transition: opacity 0.25s ease, filter 0.25s ease;
 }
 
 .sequencer-container.has-solo .track-row.muted-track:not(.soloed-track) {
-  opacity: 0.22 !important;
-  filter: brightness(0.45) saturate(0.3) !important;
+  opacity: 0.38 !important;
+  filter: brightness(0.6) saturate(0.4) !important;
 }
 
 /* Focused track override to ensure it stays fully visible while open, regardless of mute/solo status */
