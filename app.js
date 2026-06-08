@@ -649,8 +649,9 @@ function setupLargeSlider(originalSlider, options = {}) {
   
   // Intercept native browser drag events to prevent them from overriding our custom math on release
   const blockNative = (e) => {
-    if (isCustomDragging && !e.isCustomUpdate) {
+    if (e.target === originalSlider && isCustomDragging && !e.isCustomUpdate) {
       e.stopImmediatePropagation();
+      e.stopPropagation();
       e.preventDefault();
       // Force native visual thumb back to our intended value instantly
       const overlay = document.getElementById("large-slider-overlay");
@@ -661,8 +662,8 @@ function setupLargeSlider(originalSlider, options = {}) {
     }
   };
   
-  originalSlider.addEventListener("input", blockNative, true);
-  originalSlider.addEventListener("change", blockNative, true);
+  window.addEventListener("input", blockNative, true);
+  window.addEventListener("change", blockNative, true);
   
   originalSlider.addEventListener("pointerdown", (e) => {
     e.stopPropagation();
