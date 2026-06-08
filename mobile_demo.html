@@ -51,47 +51,6 @@
         <button id="btn-save-slot-top" style="display: none;"></button>
         <div id="sample-load-status" class="sample-load-status loaded" style="display: none;"></div>
 
-        <!-- RHYTHM MENU MODAL (HAMBURGER) -->
-        <div id="hamburger-menu" class="modal-overlay">
-          <div class="modal-content" style="max-width: 320px; width: 85%;">
-            <div class="modal-header" style="font-size: 1.3rem; margin-bottom: 1rem;">Menu</div>
-            
-            <div class="modal-body" style="display: flex; flex-direction: column; gap: 0.5rem; padding: 0.5rem 0;">
-              <button id="menu-btn-new" class="menu-item-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle><line x1="12" y1="9" x2="16" y2="9"></line><line x1="14" y1="7" x2="14" y2="11"></line></svg>
-                <span>New Rhythm</span>
-              </button>
-              <button id="menu-btn-save" class="menu-item-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
-                <span>Save Current Rhythm</span>
-              </button>
-              <button id="menu-btn-mixer" class="menu-item-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
-                <span>Tuning Mixer</span>
-              </button>
-              <button id="menu-btn-vol" class="menu-item-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
-                <span>Volume Mixer</span>
-              </button>
-              <button id="menu-btn-effects" class="menu-item-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
-                <span>Effects Mixer</span>
-              </button>
-              <button id="menu-btn-clear" class="menu-item-btn">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
-                <span>Clear Pattern</span>
-              </button>
-              <button id="menu-btn-theme" class="menu-item-btn">
-                <svg id="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
-                <svg id="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-                <span id="menu-theme-label">Light Theme</span>
-              </button>
-            </div>
-            <div class="modal-footer" style="margin-top: 1rem; padding-top: 0.5rem; display: flex; justify-content: flex-end;">
-              <button id="menu-btn-close" class="btn btn-primary" style="width: 100%;">Close</button>
-            </div>
-          </div>
-        </div>
       </header>
 
       <!-- SEQUENCER GRID -->
@@ -650,6 +609,48 @@
 
         <div style="margin-top: 0.25rem; display: flex; gap: 0.5rem;">
           <button id="variations-clear-btn" class="builder-apply-btn" style="flex: 1; background: #ef4444; border: none; border-radius: 6px; color: #fff; padding: 0.45rem; font-size: 0.8rem; font-weight: 600; cursor: pointer; text-align: center;">Clear Note</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- RHYTHM MENU MODAL (HAMBURGER) -->
+    <div id="hamburger-menu" class="modal-overlay">
+      <div class="modal-content" style="max-width: 320px; width: 85%;">
+        <div class="modal-header" style="font-size: 1.3rem; margin-bottom: 1rem;">Menu</div>
+        
+        <div class="modal-body" style="display: flex; flex-direction: column; gap: 0.5rem; padding: 0.5rem 0;">
+          <button id="menu-btn-new" class="menu-item-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle><line x1="12" y1="9" x2="16" y2="9"></line><line x1="14" y1="7" x2="14" y2="11"></line></svg>
+            <span>New Rhythm</span>
+          </button>
+          <button id="menu-btn-save" class="menu-item-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+            <span>Save Current Rhythm</span>
+          </button>
+          <button id="menu-btn-mixer" class="menu-item-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+            <span>Tuning Mixer</span>
+          </button>
+          <button id="menu-btn-vol" class="menu-item-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg>
+            <span>Volume Mixer</span>
+          </button>
+          <button id="menu-btn-effects" class="menu-item-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+            <span>Effects Mixer</span>
+          </button>
+          <button id="menu-btn-clear" class="menu-item-btn">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
+            <span>Clear Pattern</span>
+          </button>
+          <button id="menu-btn-theme" class="menu-item-btn">
+            <svg id="theme-icon-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+            <svg id="theme-icon-moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="menu-icon" style="display:none;"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+            <span id="menu-theme-label">Light Theme</span>
+          </button>
+        </div>
+        <div class="modal-footer" style="margin-top: 1rem; padding-top: 0.5rem; display: flex; justify-content: flex-end;">
+          <button id="menu-btn-close" class="btn btn-primary" style="width: 100%;">Close</button>
         </div>
       </div>
     </div>
