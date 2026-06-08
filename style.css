@@ -1511,8 +1511,14 @@ select option {
 /* Flams, Rolls & Triplets note styling */
 .flam-note-container {
   position: relative;
-  width: 32px;
-  height: 32px;
+  width: 28px;
+  height: 28px;
+  box-sizing: border-box;
+}
+
+.step-cell .flam-note-container {
+  width: 100% !important;
+  height: 100% !important;
 }
 
 .flam-grace-note {
@@ -1533,27 +1539,33 @@ select option {
 }
 
 .flam-grace-note.sub-note-square {
-  left: 2px !important;
-  top: 2px !important;
+  position: absolute !important;
+  left: 8% !important;
+  top: 8% !important;
+  right: auto !important;
   bottom: auto !important;
-  width: 18px !important;
-  height: 18px !important;
-  border-radius: 4px !important;
+  width: 52% !important;
+  height: 52% !important;
+  border-radius: 20% !important;
   transform: none !important;
-  border: 1.5px solid #080a0f !important;
+  border: 1px solid #080a0f !important;
   box-sizing: border-box !important;
+  z-index: 1 !important;
 }
 
 .flam-main-note.sub-note-square {
-  right: 2px !important;
-  bottom: 2px !important;
+  position: absolute !important;
+  right: 8% !important;
+  bottom: 8% !important;
+  left: auto !important;
   top: auto !important;
-  width: 18px !important;
-  height: 18px !important;
-  border-radius: 4px !important;
+  width: 52% !important;
+  height: 52% !important;
+  border-radius: 20% !important;
   transform: none !important;
-  border: 1.5px solid #080a0f !important;
+  border: 1px solid #080a0f !important;
   box-sizing: border-box !important;
+  z-index: 2 !important;
 }
 
 .roll-note-container {
