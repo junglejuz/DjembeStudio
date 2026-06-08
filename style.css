@@ -666,12 +666,12 @@ select option {
 
 /* Track Information Panel */
 .track-meta {
-  width: 260px;
-  min-width: 260px;
+  width: 190px;
+  min-width: 190px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-right: 1.25rem;
+  padding-right: 0.5rem;
   border-right: 1px solid var(--border-color);
   gap: 0.5rem;
 }
@@ -762,12 +762,12 @@ select option {
   display: block;
   flex: 1;
   position: relative;
-  margin-left: 3rem;
+  margin-left: 1.5rem;
   /* space away from track meta (instrument names) */
   padding: 0;
   /* NO PADDING - ensures alignment matches absolute pixel math */
-  height: 48px;
-  min-width: 680px;
+  height: 58px;
+  min-width: 880px;
   border-radius: 8px;
   border: 1px solid transparent;
   overflow: visible;
@@ -819,9 +819,9 @@ select option {
   top: 50%;
   transform: translateY(-50%);
   /* Left-edge aligned timing, vertical centering only */
-  width: 32px;
-  /* slightly smaller cells */
-  height: 32px;
+  width: 42px;
+  /* 30% bigger cells */
+  height: 42px;
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 8px;
@@ -1593,17 +1593,17 @@ select option {
 }
 
 .roll-first-note.sub-note-square {
-  width: 13px !important;
-  height: 13px !important;
+  width: 17px !important;
+  height: 17px !important;
   border-radius: 3px !important;
-  margin-right: -4px !important;
+  margin-right: -5px !important;
   transform: none !important;
   z-index: 1;
 }
 
 .roll-second-note.sub-note-square {
-  width: 16px !important;
-  height: 16px !important;
+  width: 21px !important;
+  height: 21px !important;
   border-radius: 4px !important;
   transform: none !important;
   z-index: 2;
@@ -1630,26 +1630,26 @@ select option {
 }
 
 .triplet-first-note.sub-note-square {
-  width: 11px !important;
-  height: 11px !important;
+  width: 14px !important;
+  height: 14px !important;
   border-radius: 3px !important;
-  margin-right: -3px !important;
+  margin-right: -4px !important;
   transform: none !important;
   z-index: 1;
 }
 
 .triplet-second-note.sub-note-square {
-  width: 11px !important;
-  height: 11px !important;
+  width: 14px !important;
+  height: 14px !important;
   border-radius: 3px !important;
-  margin-right: -3px !important;
+  margin-right: -4px !important;
   transform: none !important;
   z-index: 2;
 }
 
 .triplet-third-note.sub-note-square {
-  width: 14px !important;
-  height: 14px !important;
+  width: 18px !important;
+  height: 18px !important;
   border-radius: 4px !important;
   transform: none !important;
   z-index: 3;

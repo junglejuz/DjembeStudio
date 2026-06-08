@@ -3237,7 +3237,7 @@ function updateStepPositions() {
               const tFirst = stepTimes[idxFirst];
               const tMid = (tLast + tFirst) / 2;
               const leftPercent = (tMid / state.beats) * 100;
-              markers[idx].style.left = `calc(${leftPercent}% + 16px)`;
+              markers[idx].style.left = `calc(${leftPercent}% + 21px)`;
             }
           });
         }
@@ -4015,7 +4015,7 @@ function renderGrid() {
           
           const marker = document.createElement("div");
           marker.className = "beat-marker";
-          marker.style.left = `calc(${leftPercent}% + 16px)`;
+          marker.style.left = `calc(${leftPercent}% + 21px)`;
           stepsContainer.appendChild(marker);
         }
       });
