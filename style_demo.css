@@ -335,8 +335,8 @@ body {
 
 /* Sequencer Grid Mobile Overrides */
 .sequencer-container {
-  gap: 0.15rem !important;
-  /* Spacing between track rows reduced by 50% */
+  gap: 0.1rem !important;
+  /* Spacing between track rows reduced by a bit more */
   overflow-x: hidden;
   /* Prevent horizontal scrolling */
 }
@@ -363,8 +363,8 @@ body {
   flex-wrap: wrap !important;
   flex-direction: row !important;
   align-items: center !important;
-  margin-bottom: 0.18rem !important;
-  /* Spacing between glassy blocks reduced by 50% */
+  margin-bottom: 0.12rem !important;
+  /* Spacing between glassy blocks reduced slightly more */
 
   /* Dual gradients for overlay and border, respecting border-radius */
   background:
@@ -579,22 +579,22 @@ body {
 }
 
 .track-row.focused-track .track-drawer {
-  height: 32px;
+  height: 42px;
   opacity: 1;
-  margin-top: 0.18rem;
+  margin-top: 0.2rem;
   padding: 0 0.2rem !important;
 }
 
 /* Subdivision selector dropdown under the track icon */
 .drawer-subdiv-select {
-  width: 38px;
-  height: 24px;
+  width: 42px;
+  height: 32px;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 4px;
   color: var(--text-light);
   font-family: 'Outfit', sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   font-weight: 700;
   text-align: center;
   outline: none;
@@ -605,6 +605,30 @@ body {
 }
 
 .drawer-subdiv-select option {
+  background: #080a0f;
+  color: var(--text-light);
+}
+
+/* Sample group selector dropdown */
+.drawer-sample-group-select {
+  width: 70px;
+  height: 32px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 4px;
+  color: var(--text-light);
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-align: center;
+  outline: none;
+  cursor: pointer;
+  padding: 0 0.1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
+}
+
+.drawer-sample-group-select option {
   background: #080a0f;
   color: var(--text-light);
 }
@@ -643,14 +667,14 @@ body {
 
 /* Drawer Buttons */
 .drawer-btn {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   color: var(--text-muted);
   font-family: 'Outfit', sans-serif;
-  font-size: 0.72rem;
+  font-size: 0.85rem;
   font-weight: 700;
   display: flex;
   align-items: center;

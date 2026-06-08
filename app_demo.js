@@ -129,24 +129,31 @@ function cleanTrackName(name) {
 
 function getHitColor(type, hit, instrument = "") {
   if (instrument !== "") {
-    if (instrument.includes("kenkeni_bell")) {
-      if (hit === "O" || hit === "X") return "hsl(189, 94%, 43%)";
-      if (hit === "C") return "hsl(189, 20%, 43%)";
-    } else if (instrument.includes("sangban_bell")) {
-      if (hit === "O" || hit === "X") return "hsl(209, 94%, 43%)";
-      if (hit === "C") return "hsl(209, 20%, 43%)";
-    } else if (instrument.includes("dundunba_bell")) {
-      if (hit === "O" || hit === "X") return "hsl(229, 94%, 43%)";
-      if (hit === "C") return "hsl(229, 20%, 43%)";
-    } else if (instrument.includes("kenkeni")) {
-      if (hit === "O") return "hsl(175, 84%, 39%)";
-      if (hit === "C" || hit === "X") return "hsl(175, 20%, 39%)";
+    const isBell = instrument.includes("bell");
+    if (instrument.includes("kenkeni")) {
+      if (isBell) {
+        if (hit === "O" || hit === "X") return "hsl(189, 94%, 43%)";
+        if (hit === "C") return "hsl(189, 20%, 43%)";
+      } else {
+        if (hit === "O") return "hsl(175, 84%, 39%)";
+        if (hit === "C" || hit === "X") return "hsl(175, 20%, 39%)";
+      }
     } else if (instrument.includes("sangban")) {
-      if (hit === "O") return "hsl(199, 94%, 43%)";
-      if (hit === "C" || hit === "X") return "hsl(199, 20%, 43%)";
+      if (isBell) {
+        if (hit === "O" || hit === "X") return "hsl(209, 94%, 43%)";
+        if (hit === "C") return "hsl(209, 20%, 43%)";
+      } else {
+        if (hit === "O") return "hsl(199, 94%, 43%)";
+        if (hit === "C" || hit === "X") return "hsl(199, 20%, 43%)";
+      }
     } else if (instrument.includes("dundunba")) {
-      if (hit === "O") return "hsl(219, 94%, 43%)";
-      if (hit === "C" || hit === "X") return "hsl(219, 20%, 43%)";
+      if (isBell) {
+        if (hit === "O" || hit === "X") return "hsl(229, 94%, 43%)";
+        if (hit === "C") return "hsl(229, 20%, 43%)";
+      } else {
+        if (hit === "O") return "hsl(219, 94%, 43%)";
+        if (hit === "C" || hit === "X") return "hsl(219, 20%, 43%)";
+      }
     }
   }
   if (type === "djembe") {
@@ -170,24 +177,31 @@ function getHitColor(type, hit, instrument = "") {
 
 function getHitGlowColor(type, hit, instrument = "") {
   if (instrument !== "") {
-    if (instrument.includes("kenkeni_bell")) {
-      if (hit === "O" || hit === "X") return "hsla(189, 94%, 43%, 0.25)";
-      if (hit === "C") return "hsla(189, 20%, 43%, 0.2)";
-    } else if (instrument.includes("sangban_bell")) {
-      if (hit === "O" || hit === "X") return "hsla(209, 94%, 43%, 0.25)";
-      if (hit === "C") return "hsla(209, 20%, 43%, 0.2)";
-    } else if (instrument.includes("dundunba_bell")) {
-      if (hit === "O" || hit === "X") return "hsla(229, 94%, 43%, 0.25)";
-      if (hit === "C") return "hsla(229, 20%, 43%, 0.2)";
-    } else if (instrument.includes("kenkeni")) {
-      if (hit === "O") return "hsla(175, 84%, 39%, 0.25)";
-      if (hit === "C" || hit === "X") return "hsla(175, 20%, 39%, 0.2)";
+    const isBell = instrument.includes("bell");
+    if (instrument.includes("kenkeni")) {
+      if (isBell) {
+        if (hit === "O" || hit === "X") return "hsla(189, 94%, 43%, 0.25)";
+        if (hit === "C") return "hsla(189, 20%, 43%, 0.2)";
+      } else {
+        if (hit === "O") return "hsla(175, 84%, 39%, 0.25)";
+        if (hit === "C" || hit === "X") return "hsla(175, 20%, 39%, 0.2)";
+      }
     } else if (instrument.includes("sangban")) {
-      if (hit === "O") return "hsla(199, 94%, 43%, 0.25)";
-      if (hit === "C" || hit === "X") return "hsla(199, 20%, 43%, 0.2)";
+      if (isBell) {
+        if (hit === "O" || hit === "X") return "hsla(209, 94%, 43%, 0.25)";
+        if (hit === "C") return "hsla(209, 20%, 43%, 0.2)";
+      } else {
+        if (hit === "O") return "hsla(199, 94%, 43%, 0.25)";
+        if (hit === "C" || hit === "X") return "hsla(199, 20%, 43%, 0.2)";
+      }
     } else if (instrument.includes("dundunba")) {
-      if (hit === "O") return "hsla(219, 94%, 43%, 0.25)";
-      if (hit === "C" || hit === "X") return "hsla(219, 20%, 43%, 0.2)";
+      if (isBell) {
+        if (hit === "O" || hit === "X") return "hsla(229, 94%, 43%, 0.25)";
+        if (hit === "C") return "hsla(229, 20%, 43%, 0.2)";
+      } else {
+        if (hit === "O") return "hsla(219, 94%, 43%, 0.25)";
+        if (hit === "C" || hit === "X") return "hsla(219, 20%, 43%, 0.2)";
+      }
     }
   }
   if (type === "djembe") {
@@ -5810,18 +5824,67 @@ function renderGrid() {
     subdivSelect.addEventListener("click", (e) => {
       e.stopPropagation(); // Prevent toggling collapse on select click
     });
+
+    // Sample Group dropdown
+    const sampleGroupSelect = document.createElement("select");
+    sampleGroupSelect.className = "drawer-sample-group-select";
     
-    // Group subdivSelect and drawerLeft in a left-group container
+    let sampleOptions = [];
+    if (track.type === "djembe") {
+      for (let i = 1; i <= 7; i++) {
+        sampleOptions.push({ value: `djembe${i}`, text: `Group ${i}` });
+      }
+    } else if (track.type === "dunun" || track.type === "bell") {
+      let baseName = "";
+      if (track.instrument.includes("kenkeni")) baseName = "kenkeni";
+      else if (track.instrument.includes("sangban")) baseName = "sangban";
+      else if (track.instrument.includes("dundunba")) baseName = "dundunba";
+      
+      if (baseName) {
+        const isBell = track.instrument.includes("bell");
+        if (isBell) {
+          sampleOptions.push({ value: `${baseName}_bell`, text: "Set 1" });
+          sampleOptions.push({ value: `${baseName}_bell2`, text: "Set 2" });
+          sampleOptions.push({ value: `${baseName}3_bell`, text: "Set 3" });
+          sampleOptions.push({ value: `${baseName}4_bell`, text: "Set 4" });
+        } else {
+          sampleOptions.push({ value: baseName, text: "Set 1" });
+          sampleOptions.push({ value: `${baseName}2`, text: "Set 2" });
+          sampleOptions.push({ value: `${baseName}3`, text: "Set 3" });
+          sampleOptions.push({ value: `${baseName}4`, text: "Set 4" });
+        }
+      }
+    }
+    
+    if (sampleOptions.length > 0) {
+      sampleOptions.forEach(opt => {
+        const o = document.createElement("option");
+        o.value = opt.value;
+        o.textContent = opt.text;
+        if (track.instrument === opt.value) o.selected = true;
+        sampleGroupSelect.appendChild(o);
+      });
+      sampleGroupSelect.addEventListener("change", (e) => {
+        track.instrument = e.target.value;
+        renderGrid();
+      });
+      sampleGroupSelect.addEventListener("click", (e) => {
+        e.stopPropagation();
+      });
+    } else {
+      sampleGroupSelect.style.display = "none";
+    }
+    
+    // Group elements in a left-group container
     const leftGroup = document.createElement("div");
     leftGroup.className = "drawer-left-group";
-    leftGroup.appendChild(subdivSelect);
     
     const drawerLeft = document.createElement("div");
     drawerLeft.className = "drawer-left";
     
     const btnAddPart = document.createElement("button");
     btnAddPart.className = "drawer-btn btn-add-part";
-    btnAddPart.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>`;
+    btnAddPart.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 5v14M5 12h14"/></svg>`;
     btnAddPart.title = "Add extra part";
     
     if (isCall) {
@@ -5906,6 +5969,8 @@ function renderGrid() {
     drawerLeft.appendChild(btnSolo);
     
     leftGroup.appendChild(drawerLeft);
+    leftGroup.appendChild(subdivSelect);
+    leftGroup.appendChild(sampleGroupSelect);
     drawer.appendChild(leftGroup);
     
     const drawerCenter = document.createElement("div");

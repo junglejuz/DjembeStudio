@@ -129,24 +129,31 @@ function cleanTrackName(name) {
 
 function getHitColor(type, hit, instrument = "") {
   if (instrument !== "") {
-    if (instrument.includes("kenkeni_bell")) {
-      if (hit === "O" || hit === "X") return "hsl(189, 94%, 43%)";
-      if (hit === "C") return "hsl(189, 20%, 43%)";
-    } else if (instrument.includes("sangban_bell")) {
-      if (hit === "O" || hit === "X") return "hsl(209, 94%, 43%)";
-      if (hit === "C") return "hsl(209, 20%, 43%)";
-    } else if (instrument.includes("dundunba_bell")) {
-      if (hit === "O" || hit === "X") return "hsl(229, 94%, 43%)";
-      if (hit === "C") return "hsl(229, 20%, 43%)";
-    } else if (instrument.includes("kenkeni")) {
-      if (hit === "O") return "hsl(175, 84%, 39%)";
-      if (hit === "C" || hit === "X") return "hsl(175, 20%, 39%)";
+    const isBell = instrument.includes("bell");
+    if (instrument.includes("kenkeni")) {
+      if (isBell) {
+        if (hit === "O" || hit === "X") return "hsl(189, 94%, 43%)";
+        if (hit === "C") return "hsl(189, 20%, 43%)";
+      } else {
+        if (hit === "O") return "hsl(175, 84%, 39%)";
+        if (hit === "C" || hit === "X") return "hsl(175, 20%, 39%)";
+      }
     } else if (instrument.includes("sangban")) {
-      if (hit === "O") return "hsl(199, 94%, 43%)";
-      if (hit === "C" || hit === "X") return "hsl(199, 20%, 43%)";
+      if (isBell) {
+        if (hit === "O" || hit === "X") return "hsl(209, 94%, 43%)";
+        if (hit === "C") return "hsl(209, 20%, 43%)";
+      } else {
+        if (hit === "O") return "hsl(199, 94%, 43%)";
+        if (hit === "C" || hit === "X") return "hsl(199, 20%, 43%)";
+      }
     } else if (instrument.includes("dundunba")) {
-      if (hit === "O") return "hsl(219, 94%, 43%)";
-      if (hit === "C" || hit === "X") return "hsl(219, 20%, 43%)";
+      if (isBell) {
+        if (hit === "O" || hit === "X") return "hsl(229, 94%, 43%)";
+        if (hit === "C") return "hsl(229, 20%, 43%)";
+      } else {
+        if (hit === "O") return "hsl(219, 94%, 43%)";
+        if (hit === "C" || hit === "X") return "hsl(219, 20%, 43%)";
+      }
     }
   }
   if (type === "djembe") {
@@ -170,24 +177,31 @@ function getHitColor(type, hit, instrument = "") {
 
 function getHitGlowColor(type, hit, instrument = "") {
   if (instrument !== "") {
-    if (instrument.includes("kenkeni_bell")) {
-      if (hit === "O" || hit === "X") return "hsla(189, 94%, 43%, 0.25)";
-      if (hit === "C") return "hsla(189, 20%, 43%, 0.2)";
-    } else if (instrument.includes("sangban_bell")) {
-      if (hit === "O" || hit === "X") return "hsla(209, 94%, 43%, 0.25)";
-      if (hit === "C") return "hsla(209, 20%, 43%, 0.2)";
-    } else if (instrument.includes("dundunba_bell")) {
-      if (hit === "O" || hit === "X") return "hsla(229, 94%, 43%, 0.25)";
-      if (hit === "C") return "hsla(229, 20%, 43%, 0.2)";
-    } else if (instrument.includes("kenkeni")) {
-      if (hit === "O") return "hsla(175, 84%, 39%, 0.25)";
-      if (hit === "C" || hit === "X") return "hsla(175, 20%, 39%, 0.2)";
+    const isBell = instrument.includes("bell");
+    if (instrument.includes("kenkeni")) {
+      if (isBell) {
+        if (hit === "O" || hit === "X") return "hsla(189, 94%, 43%, 0.25)";
+        if (hit === "C") return "hsla(189, 20%, 43%, 0.2)";
+      } else {
+        if (hit === "O") return "hsla(175, 84%, 39%, 0.25)";
+        if (hit === "C" || hit === "X") return "hsla(175, 20%, 39%, 0.2)";
+      }
     } else if (instrument.includes("sangban")) {
-      if (hit === "O") return "hsla(199, 94%, 43%, 0.25)";
-      if (hit === "C" || hit === "X") return "hsla(199, 20%, 43%, 0.2)";
+      if (isBell) {
+        if (hit === "O" || hit === "X") return "hsla(209, 94%, 43%, 0.25)";
+        if (hit === "C") return "hsla(209, 20%, 43%, 0.2)";
+      } else {
+        if (hit === "O") return "hsla(199, 94%, 43%, 0.25)";
+        if (hit === "C" || hit === "X") return "hsla(199, 20%, 43%, 0.2)";
+      }
     } else if (instrument.includes("dundunba")) {
-      if (hit === "O") return "hsla(219, 94%, 43%, 0.25)";
-      if (hit === "C" || hit === "X") return "hsla(219, 20%, 43%, 0.2)";
+      if (isBell) {
+        if (hit === "O" || hit === "X") return "hsla(229, 94%, 43%, 0.25)";
+        if (hit === "C") return "hsla(229, 20%, 43%, 0.2)";
+      } else {
+        if (hit === "O") return "hsla(219, 94%, 43%, 0.25)";
+        if (hit === "C" || hit === "X") return "hsla(219, 20%, 43%, 0.2)";
+      }
     }
   }
   if (type === "djembe") {

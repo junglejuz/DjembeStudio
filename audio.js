@@ -82,6 +82,43 @@ for (let i = 1; i <= 7; i++) {
   SAMPLES[`djembe${i}_LM`] = `samples/djembeloops_samples/${name}_MuteL.mp3`;
 }
 
+// Add circAfrique v4 Dununs (Sets 1 & 2)
+// Dununba Set 1 (maps to dundunba3)
+SAMPLES["dundunba3_O"] = "samples/circAfrique v4/Dununba1 Head Hit.bin";
+SAMPLES["dundunba3_X"] = "samples/circAfrique v4/Dununba1 Head Mute.bin";
+SAMPLES["dundunba3_bell_O"] = "samples/circAfrique v4/Dununba1 Bell.bin";
+SAMPLES["dundunba3_bell_X"] = "samples/circAfrique v4/Dununba1 Bell Mute.bin";
+
+// Dununba Set 2 (maps to dundunba4)
+SAMPLES["dundunba4_O"] = "samples/circAfrique v4/Dununba2 Head Hit.bin";
+SAMPLES["dundunba4_X"] = "samples/circAfrique v4/Dununba2 Head Mute.bin";
+SAMPLES["dundunba4_bell_O"] = "samples/circAfrique v4/Dununba2 Bell.bin";
+SAMPLES["dundunba4_bell_X"] = "samples/circAfrique v4/Dununba2 Bell Mute.bin";
+
+// Sangban Set 1 (maps to sangban3)
+SAMPLES["sangban3_O"] = "samples/circAfrique v4/Sangban1 Head Hit.bin";
+SAMPLES["sangban3_X"] = "samples/circAfrique v4/Sangban1 Head Mute.bin";
+SAMPLES["sangban3_bell_O"] = "samples/circAfrique v4/Sangban1 Bell Hit.bin";
+SAMPLES["sangban3_bell_X"] = "samples/circAfrique v4/Sangban1 Bell Mute.bin";
+
+// Sangban Set 2 (maps to sangban4)
+SAMPLES["sangban4_O"] = "samples/circAfrique v4/Sangban2 Head Hit.bin";
+SAMPLES["sangban4_X"] = "samples/circAfrique v4/Sangban2 Head Mute.bin";
+SAMPLES["sangban4_bell_O"] = "samples/circAfrique v4/Sangban2 Bell Hit.bin";
+SAMPLES["sangban4_bell_X"] = "samples/circAfrique v4/Sangban2 Bell Mute.bin";
+
+// Kenkeni Set 1 (maps to kenkeni3)
+SAMPLES["kenkeni3_O"] = "samples/circAfrique v4/Kenkeni1 Head Hit.bin";
+SAMPLES["kenkeni3_X"] = "samples/circAfrique v4/Kenkeni1 Head Mute.bin";
+SAMPLES["kenkeni3_bell_O"] = "samples/circAfrique v4/Kenkeni1 Bell Hit.bin";
+SAMPLES["kenkeni3_bell_X"] = "samples/circAfrique v4/Kenkeni1 Bell Mute.bin";
+
+// Kenkeni Set 2 (maps to kenkeni4)
+SAMPLES["kenkeni4_O"] = "samples/circAfrique v4/Kenkeni2 Head Hit.bin";
+SAMPLES["kenkeni4_X"] = "samples/circAfrique v4/Kenkeni2 Head Mute.bin";
+SAMPLES["kenkeni4_bell_O"] = "samples/circAfrique v4/Kenkeni2 Bell Hit.bin";
+SAMPLES["kenkeni4_bell_X"] = "samples/circAfrique v4/Kenkeni2 Bell Mute.bin";
+
 export class DrumSynth {
   constructor() {
     this.ctx = null;
@@ -113,11 +150,25 @@ export class DrumSynth {
       sangban_bell2: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.2, volume: 0.7 },
       dundunba_bell2: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.2, volume: 0.7 },
       
+      kenkeni3: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.15, volume: 0.8 },
+      sangban3: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.15, volume: 0.8 },
+      dundunba3: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.15, volume: 0.8 },
+      kenkeni3_bell: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.2, volume: 0.7 },
+      sangban3_bell: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.2, volume: 0.7 },
+      dundunba3_bell: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.2, volume: 0.7 },
+      
+      kenkeni4: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.15, volume: 0.8 },
+      sangban4: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.15, volume: 0.8 },
+      dundunba4: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.15, volume: 0.8 },
+      kenkeni4_bell: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.2, volume: 0.7 },
+      sangban4_bell: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.2, volume: 0.7 },
+      dundunba4_bell: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.2, volume: 0.7 },
+      
       shekere: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.1, volume: 3.0 },
       agogo: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.15, volume: 0.75 }
     };
   }
-
+ 
   async init() {
     if (this.ctx) return;
     
@@ -146,6 +197,10 @@ export class DrumSynth {
         "kenkeni_bell", "sangban_bell", "dundunba_bell", 
         "kenkeni2", "sangban2", "dundunba2", 
         "kenkeni_bell2", "sangban_bell2", "dundunba_bell2", 
+        "kenkeni3", "sangban3", "dundunba3", 
+        "kenkeni3_bell", "sangban3_bell", "dundunba3_bell", 
+        "kenkeni4", "sangban4", "dundunba4", 
+        "kenkeni4_bell", "sangban4_bell", "dundunba4_bell", 
         "shekere", "agogo"
       ];
       instruments.forEach(inst => {
