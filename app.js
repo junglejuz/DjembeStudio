@@ -216,25 +216,20 @@ function getSoundIcon(track, val, useOriginalIcons = false) {
 
   if (val.includes("/")) {
     const [h1, h2] = val.split("/");
-    const c1 = getHitColor(trackType, h1, instrument);
-    const c2 = getHitColor(trackType, h2, instrument);
-    const icon1 = getSoundIcon(track, h1, true);
-    const icon2 = getSoundIcon(track, h2, true);
-    if (useOriginalIcons) {
-      return `
-        <div class="flam-note-container">
-          <div class="flam-grace-note" style="color: ${c1} !important;">${icon1}</div>
-          <div class="flam-main-note" style="color: ${c2} !important;">${icon2}</div>
-        </div>
-      `;
+    let c1, c2;
+    if (trackType === "djembe") {
+      c1 = h1 === "B" ? "#3b82f6" : (h1 === "T" ? "#eab308" : (h1 === "S" ? "#ef4444" : "#a855f7"));
+      c2 = h2 === "B" ? "#3b82f6" : (h2 === "T" ? "#f59e0b" : (h2 === "S" ? "#ef4444" : "#a855f7"));
     } else {
-      return `
-        <div class="flam-note-container">
-          <div class="flam-grace-note sub-note-square" style="background: ${c1} !important; border-color: ${c1} !important;">${icon1}</div>
-          <div class="flam-main-note sub-note-square" style="background: ${c2} !important; border-color: ${c2} !important;">${icon2}</div>
-        </div>
-      `;
+      c1 = getHitColor(trackType, h1, instrument);
+      c2 = getHitColor(trackType, h2, instrument);
     }
+    return `
+      <div class="flam-note-container">
+        <div class="flam-grace-note sub-note-square" style="background: ${c1} !important;"></div>
+        <div class="flam-main-note sub-note-square" style="background: ${c2} !important;"></div>
+      </div>
+    `;
   }
   
   if (val.includes("-")) {
