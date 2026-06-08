@@ -666,7 +666,7 @@ function deactivateAllSpecialButtons() {
   containers.forEach(container => {
     if (!container) return;
     Array.from(container.children).forEach(btn => {
-      btn.classList.remove("btn-primary", "special-active", "break-active");
+      btn.classList.remove("btn-primary", "special-active", "break-active", "blinking");
       
       const type = btn.dataset.type;
       if (type === 'intro') {
@@ -3166,7 +3166,7 @@ function setupEventListeners() {
   if (btnHamburger && hamburgerMenu) {
     btnHamburger.addEventListener("click", (e) => {
       e.stopPropagation();
-      const otherOpen = document.querySelector(".modal-overlay.active");
+      const otherOpen = document.querySelector(".modal-overlay.active:not(#hamburger-menu)");
       if (otherOpen) return;
       
       const isVisible = hamburgerMenu.classList.contains("active");
@@ -3177,10 +3177,20 @@ function setupEventListeners() {
       }
     });
     
-    // Close menu when clicking anywhere else
-    document.addEventListener("click", () => {
-      if (hamburgerMenu) hamburgerMenu.classList.remove("active");
+    // Close menu when clicking the overlay backdrop
+    hamburgerMenu.addEventListener("click", (e) => {
+      if (e.target === hamburgerMenu) {
+        hamburgerMenu.classList.remove("active");
+      }
     });
+
+    // Close menu when clicking Close button inside modal
+    const menuBtnClose = document.getElementById("menu-btn-close");
+    if (menuBtnClose) {
+      menuBtnClose.addEventListener("click", () => {
+        hamburgerMenu.classList.remove("active");
+      });
+    }
   }
   
   // Bind menu buttons to click existing buttons
@@ -3188,12 +3198,14 @@ function setupEventListeners() {
   if (menuBtnNew) {
     menuBtnNew.addEventListener("click", () => {
       btnNewRhythm.click();
+      if (hamburgerMenu) hamburgerMenu.classList.remove("active");
     });
   }
   const menuBtnSave = document.getElementById("menu-btn-save");
   if (menuBtnSave) {
     menuBtnSave.addEventListener("click", () => {
       if (savesModal) savesModal.classList.add("active");
+      if (hamburgerMenu) hamburgerMenu.classList.remove("active");
     });
   }
   const menuBtnMixer = document.getElementById("menu-btn-mixer");
@@ -3201,6 +3213,7 @@ function setupEventListeners() {
     menuBtnMixer.addEventListener("click", () => {
       renderMixer();
       mixerModal.classList.add("active");
+      if (hamburgerMenu) hamburgerMenu.classList.remove("active");
     });
   }
   const menuBtnVol = document.getElementById("menu-btn-vol");
@@ -3208,12 +3221,14 @@ function setupEventListeners() {
     menuBtnVol.addEventListener("click", () => {
       renderVolumeMixer();
       volMixerModal.classList.add("active");
+      if (hamburgerMenu) hamburgerMenu.classList.remove("active");
     });
   }
   const menuBtnEffects = document.getElementById("menu-btn-effects");
   if (menuBtnEffects) {
     menuBtnEffects.addEventListener("click", () => {
       openEffectsModal();
+      if (hamburgerMenu) hamburgerMenu.classList.remove("active");
     });
   }
   const menuBtnClear = document.getElementById("menu-btn-clear");
@@ -3221,6 +3236,7 @@ function setupEventListeners() {
     menuBtnClear.addEventListener("click", () => {
       if (confirm("Clear all steps?")) {
         clearGrid();
+        if (hamburgerMenu) hamburgerMenu.classList.remove("active");
       }
     });
   }
@@ -5290,6 +5306,7 @@ function renderGrid() {
       });
       
       updateCellScales();
+      updateMuteSoloVisuals();
     });
     
     const nameSpan = document.createElement("span");
@@ -5848,6 +5865,7 @@ function renderGrid() {
       
       const normalMute = row.querySelector(".track-btn.mute");
       if (normalMute) normalMute.classList.toggle("active", track.muted);
+      updateMuteSoloVisuals();
     });
     drawerLeft.appendChild(btnMute);
     
@@ -5862,6 +5880,7 @@ function renderGrid() {
       
       const normalSolo = row.querySelector(".track-btn.solo");
       if (normalSolo) normalSolo.classList.toggle("active", track.soloed);
+      updateMuteSoloVisuals();
     });
     drawerLeft.appendChild(btnSolo);
     

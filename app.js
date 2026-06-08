@@ -5216,7 +5216,7 @@ function deactivateAllSpecialButtons() {
   containers.forEach(container => {
     if (!container) return;
     Array.from(container.children).forEach(btn => {
-      btn.classList.remove("btn-primary", "special-active", "break-active");
+      btn.classList.remove("btn-primary", "special-active", "break-active", "blinking");
       
       const type = btn.dataset.type;
       if (type === 'intro') {
@@ -5229,7 +5229,6 @@ function deactivateAllSpecialButtons() {
         btn.style.background = "rgba(245, 158, 11, 0.15)";
         btn.style.borderColor = "rgba(245, 158, 11, 0.35)";
       } else if (type === 'solo') {
-        btn.classList.remove("blinking");
         btn.style.background = "rgba(168, 85, 247, 0.15)";
         btn.style.borderColor = "rgba(168, 85, 247, 0.35)";
       } else if (type === 'variation') {
