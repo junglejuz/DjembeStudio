@@ -848,30 +848,33 @@ select option {
   border-color: rgba(255, 255, 255, 0.15);
 }
 
-.step-cell svg {
-  width: 20px !important;
-  height: 20px !important;
-}
-
 /* Djembe Step Variations */
 .step-cell.djembe-B {
-  color: var(--color-bass);
-  box-shadow: none;
+  background: var(--color-bass);
+  border-color: var(--color-bass);
+  color: #fff;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) var(--color-bass-glow);
 }
 
 .step-cell.djembe-T {
-  color: var(--color-tone);
-  box-shadow: none;
+  background: var(--color-tone);
+  border-color: var(--color-tone);
+  color: #fff;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) var(--color-tone-glow);
 }
 
 .step-cell.djembe-S {
-  color: var(--color-slap);
-  box-shadow: none;
+  background: var(--color-slap);
+  border-color: var(--color-slap);
+  color: #fff;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) var(--color-slap-glow);
 }
 
 .step-cell.djembe-M {
-  color: var(--color-muffled);
-  box-shadow: none;
+  background: var(--color-muffled);
+  border-color: var(--color-muffled);
+  color: #fff;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) var(--color-muffled-glow);
 }
 
 /* Dunun Step Variations */
