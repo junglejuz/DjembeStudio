@@ -131,14 +131,14 @@ export class DrumSynth {
       
       kenkeni3: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.15, volume: 0.5 },
       sangban3: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.15, volume: 0.5 },
-      dundunba3: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.15, volume: 0.5 },
+      dundunba3: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.15, volume: 0.25 },
       kenkeni3_bell: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.2, volume: 0.45 },
       sangban3_bell: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.2, volume: 0.45 },
       dundunba3_bell: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.2, volume: 0.45 },
       
       kenkeni4: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.15, volume: 0.5 },
       sangban4: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.15, volume: 0.5 },
-      dundunba4: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.15, volume: 0.5 },
+      dundunba4: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.15, volume: 0.25 },
       kenkeni4_bell: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.2, volume: 0.45 },
       sangban4_bell: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.2, volume: 0.45 },
       dundunba4_bell: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.2, volume: 0.45 },

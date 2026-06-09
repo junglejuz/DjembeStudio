@@ -6107,13 +6107,13 @@ function renderGrid() {
         const instTitle = baseName.charAt(0).toUpperCase() + baseName.slice(1);
 
         if (isBell) {
-          sampleOptions.push({ value: `${baseName}_bell`, text: "Bell 1" });
-          sampleOptions.push({ value: `${baseName}3_bell`, text: "Bell 2" });
-          sampleOptions.push({ value: `${baseName}4_bell`, text: "Bell 3" });
+          sampleOptions.push({ value: `${baseName}_bell`, text: `${instTitle} Bell 1` });
+          sampleOptions.push({ value: `${baseName}3_bell`, text: `${instTitle} Bell 2` });
+          sampleOptions.push({ value: `${baseName}4_bell`, text: `${instTitle} Bell 3` });
         } else {
-          sampleOptions.push({ value: baseName, text: instTitle });
-          sampleOptions.push({ value: `${baseName}3`, text: `${instTitle} 3` });
-          sampleOptions.push({ value: `${baseName}4`, text: `${instTitle} 4` });
+          sampleOptions.push({ value: baseName, text: `${instTitle} 1` });
+          sampleOptions.push({ value: `${baseName}3`, text: `${instTitle} 2` });
+          sampleOptions.push({ value: `${baseName}4`, text: `${instTitle} 3` });
         }
       }
     }
