@@ -21,8 +21,8 @@ RHYTHM_LIBRARY.forEach((rhythm, idx) => {
     errorsCount++;
   }
   
-  if (!rhythm.tracks || !Array.isArray(rhythm.tracks)) {
-    console.error(`Error: Rhythm '${name}' is missing 'tracks' array`);
+  if (!rhythm.tracks || !Array.isArray(rhythm.tracks) || rhythm.tracks.length === 0) {
+    console.error(`Error: Rhythm '${name}' is missing 'tracks' array or it is empty`);
     errorsCount++;
   } else {
     rhythm.tracks.forEach((track, tIdx) => {
@@ -46,47 +46,8 @@ RHYTHM_LIBRARY.forEach((rhythm, idx) => {
               console.error(`Error in rhythm '${name}' track '${part}': variation at index ${vIdx} is missing 'name'`);
               errorsCount++;
             }
-            const vPattern = v.drum_pattern || v.pattern;
-            if (typeof vPattern !== 'string') {
-              console.error(`Error in rhythm '${name}' track '${part}': variation '${v.name || vIdx}' is missing 'drum_pattern' or 'pattern'`);
-              errorsCount++;
-            }
-          });
-        }
-      }
-      
-      if (track.solos) {
-        if (!Array.isArray(track.solos)) {
-          console.error(`Error in rhythm '${name}': track '${part}' 'solos' should be an array`);
-          errorsCount++;
-        } else {
-          track.solos.forEach((s, sIdx) => {
-            if (!s.name) {
-              console.error(`Error in rhythm '${name}' track '${part}': solo at index ${sIdx} is missing 'name'`);
-              errorsCount++;
-            }
-            const sPattern = s.drum_pattern || s.pattern || s.sequence;
-            if (typeof sPattern !== 'string') {
-              console.error(`Error in rhythm '${name}' track '${part}': solo '${s.name || sIdx}' is missing 'drum_pattern', 'pattern' or 'sequence'`);
-              errorsCount++;
-            }
-          });
-        }
-      }
-
-      if (track.specials) {
-        if (!Array.isArray(track.specials)) {
-          console.error(`Error in rhythm '${name}': track '${part}' 'specials' should be an array`);
-          errorsCount++;
-        } else {
-          track.specials.forEach((sp, spIdx) => {
-            if (!sp.name) {
-              console.error(`Error in rhythm '${name}' track '${part}': special at index ${spIdx} is missing 'name'`);
-              errorsCount++;
-            }
-            const spPattern = sp.drum_pattern || sp.pattern || sp.sequence;
-            if (typeof spPattern !== 'string') {
-              console.error(`Error in rhythm '${name}' track '${part}': special '${sp.name || spIdx}' is missing 'drum_pattern', 'pattern' or 'sequence'`);
+            if (typeof v.drum_pattern !== 'string') {
+              console.error(`Error in rhythm '${name}' track '${part}': variation '${v.name || vIdx}' is missing 'drum_pattern'`);
               errorsCount++;
             }
           });
@@ -94,9 +55,8 @@ RHYTHM_LIBRARY.forEach((rhythm, idx) => {
       }
       
       if (track.echauffement) {
-        const echPattern = track.echauffement.drum_pattern || track.echauffement.pattern;
-        if (typeof echPattern !== 'string') {
-          console.error(`Error in rhythm '${name}': track '${part}' echauffement is missing 'drum_pattern' or 'pattern'`);
+        if (typeof track.echauffement.drum_pattern !== 'string') {
+          console.error(`Error in rhythm '${name}': track '${part}' echauffement is missing 'drum_pattern'`);
           errorsCount++;
         }
       }
