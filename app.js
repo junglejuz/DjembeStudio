@@ -2846,7 +2846,57 @@ function togglePlay() {
   }
 }
 
+function toggleCallNew() {
+  const callBtn = document.getElementById("btn-trigger-call");
+  state.globalCallActive = !state.globalCallActive;
+
+  if (state.globalCallActive) {
+    if (callBtn) callBtn.classList.add("btn-primary");
+    deactivateAllSpecialButtons();
+    state.globalCallActive = true;
+    if (state.echauffementActive) {
+      state.echauffementActive = false;
+      const echBtn = document.getElementById("btn-trigger-echauffement");
+      if (echBtn) echBtn.classList.remove("btn-primary");
+    }
+
+    const action = () => {
+      state.tracks.forEach(track => {
+        const spec = (track.specials || []).find(s => s.name === state.primaryCallName);
+        if (spec) {
+          if (!track.standardSteps) track.standardSteps = [...track.steps];
+          track.steps = convertPatternToSteps(spec.pattern, state.timeSignature, track.name);
+          track.subdivisionSteps[track.subdivision] = [...track.steps];
+        }
+      });
+      renderGrid();
+    };
+
+    if (!state.isPlaying) {
+      action();
+      togglePlay();
+    } else {
+      state.queuedActions.push(action);
+    }
+  } else {
+    if (callBtn) callBtn.classList.remove("btn-primary");
+    const action = () => {
+      deactivateAllSpecialButtons();
+      renderGrid();
+    };
+    if (!state.isPlaying) {
+      action();
+    } else {
+      state.queuedActions.push(action);
+    }
+  }
+}
+
 function triggerCall() {
+  if (state.primaryCallName) {
+    toggleCallNew();
+    return;
+  }
   if (!state.presetCallData) {
     console.log("No call data for this rhythm.");
     return;
@@ -3314,16 +3364,38 @@ function scheduleTick(tickIndex, time) {
 
 // Sound triggering routing
 function triggerSynthHit(type, instrument, hitVal, playTime, trackVol, trackPitch = 0, stepDuration = 0.15, hand = "L", timingContext = null) {
-  if (hitVal.includes("/")) {
-    const [h1, h2] = hitVal.split("/");
+  const isDjembe = (type === "djembe");
+  let mappedHitVal = hitVal;
+  if (hitVal === "f" || hitVal === "fs") {
+    mappedHitVal = isDjembe ? "S/S" : "O/O";
+  } else if (hitVal === "tt" || hitVal === "ft") {
+    mappedHitVal = isDjembe ? "T/T" : "O/O";
+  } else if (hitVal === "fb") {
+    mappedHitVal = isDjembe ? "B/B" : "O/O";
+  } else if (hitVal === "Y") {
+    mappedHitVal = "B/T";
+  } else if (hitVal === "W") {
+    mappedHitVal = "B/S";
+  } else if (hitVal === "rs") {
+    mappedHitVal = isDjembe ? "S-S" : "O-O";
+  } else if (hitVal === "rt") {
+    mappedHitVal = isDjembe ? "T-T" : "O-O";
+  } else if (hitVal === "rb") {
+    mappedHitVal = isDjembe ? "B-B" : "O-O";
+  } else if (hitVal === "ts") {
+    mappedHitVal = isDjembe ? "S*S*S" : "O*O*O";
+  }
+
+  if (mappedHitVal.includes("/")) {
+    const [h1, h2] = mappedHitVal.split("/");
     const flamGap = Math.min(0.040, stepDuration * 0.22);
     triggerSynthHit(type, instrument, h1, playTime, trackVol * 0.6, trackPitch, stepDuration, hand, timingContext);
     triggerSynthHit(type, instrument, h2, playTime + flamGap, trackVol, trackPitch, stepDuration, hand === "L" ? "R" : "L", timingContext);
     return;
   }
 
-  if (hitVal.includes("-")) {
-    const [h1, h2] = hitVal.split("-");
+  if (mappedHitVal.includes("-")) {
+    const [h1, h2] = mappedHitVal.split("-");
     let innerHitTime = playTime + stepDuration / 2;
     if (timingContext) {
       innerHitTime = timingContext.beatStartTime + getSwungStepTime(0, timingContext.stepInBeat + 0.5, timingContext.subdivision, timingContext.secondsPerBeat, timingContext.swingPercent);
@@ -3333,8 +3405,8 @@ function triggerSynthHit(type, instrument, hitVal, playTime, trackVol, trackPitc
     return;
   }
 
-  if (hitVal.includes("*")) {
-    const [h1, h2, h3] = hitVal.split("*");
+  if (mappedHitVal.includes("*")) {
+    const [h1, h2, h3] = mappedHitVal.split("*");
     let innerHit1 = playTime + stepDuration / 3;
     let innerHit2 = playTime + (2 * stepDuration) / 3;
     if (timingContext) {
@@ -3348,13 +3420,13 @@ function triggerSynthHit(type, instrument, hitVal, playTime, trackVol, trackPitc
   }
 
   if (type === "djembe") {
-    synth.playDjembe(hitVal, playTime, trackVol, instrument, trackPitch, hand);
+    synth.playDjembe(mappedHitVal, playTime, trackVol, instrument, trackPitch, hand);
   } else if (type === "bell") {
-    synth.playBell(instrument, hitVal, playTime, trackVol * 0.95, trackPitch);
+    synth.playBell(instrument, mappedHitVal, playTime, trackVol * 0.95, trackPitch);
   } else if (type === "shekere") {
-    synth.playShekere(hitVal, playTime, trackVol, trackPitch);
+    synth.playShekere(mappedHitVal, playTime, trackVol, trackPitch);
   } else {
-    synth.playDunun(instrument, hitVal, playTime, trackVol, trackPitch, hand);
+    synth.playDunun(instrument, mappedHitVal, playTime, trackVol, trackPitch, hand);
   }
 }
 
@@ -4161,8 +4233,16 @@ function renderGrid() {
     controls.appendChild(btns);
     meta.appendChild(controls);
 
-    // Variations injection - placed under instrument name
-    if (state.currentVariations && state.currentVariations[track.instrument]) {
+    // Alt Parts Dropdowns (Solos, Specials, Variations) - placed under instrument name
+    const filteredSpecials = (track.specials || []).filter(sp => {
+      const name = sp.name || "";
+      return name !== state.primaryCallName && name !== state.primaryEchauffementName;
+    });
+    const hasAltParts = (track.solos && track.solos.length > 0) || 
+                         (filteredSpecials.length > 0) || 
+                         (track.variations && track.variations.length > 0);
+
+    if (hasAltParts) {
       const varsContainer = document.createElement("div");
       varsContainer.style.display = "flex";
       varsContainer.style.gap = "0.25rem";
@@ -4170,124 +4250,201 @@ function renderGrid() {
       varsContainer.style.flexWrap = "wrap";
       varsContainer.style.alignItems = "center";
 
-
-      // Default/Original button to restore non-variation pattern
-      const defaultBtn = document.createElement("button");
-      defaultBtn.className = `btn${track.activeVariation == null ? ' btn-primary' : ''}`;
-      defaultBtn.textContent = "Orig";
-      defaultBtn.title = "Restore original pattern";
-      defaultBtn.style.padding = "0.15rem 0.4rem";
-      defaultBtn.style.fontSize = "0.7rem";
-      defaultBtn.style.minWidth = "32px";
-      defaultBtn.addEventListener("click", () => {
-        // Highlight button immediately
-        track.activeVariation = null;
-        const container = defaultBtn.parentElement;
-        if (container) {
-          Array.from(container.children).forEach(btn => {
-            if (btn !== defaultBtn) btn.classList.remove("btn-primary");
-          });
+      const restoreTrackOriginal = (t) => {
+        if (t.standardSteps) {
+          t.steps = [...t.standardSteps];
+          delete t.standardSteps;
+        } else if (t.originalSteps) {
+          t.steps = [...t.originalSteps];
         }
-        defaultBtn.classList.add("btn-primary");
+        t.subdivisionSteps[t.subdivision] = [...t.steps];
+      };
 
-        const action = () => {
-          if (track.originalSteps) {
-            track.steps = [...track.originalSteps];
-            if (track.originalSubdivision !== undefined) track.subdivision = track.originalSubdivision;
-            track.subdivisionSteps = {
-              [track.subdivision]: [...track.steps]
-            };
-          }
-          const bellTrack = state.tracks.find(t => t.instrument === track.instrument + "_bell");
-          if (bellTrack && bellTrack.originalSteps) {
-            bellTrack.steps = [...bellTrack.originalSteps];
-            if (bellTrack.originalSubdivision !== undefined) bellTrack.subdivision = bellTrack.originalSubdivision;
-            bellTrack.subdivisionSteps = {
-              [bellTrack.subdivision]: [...bellTrack.steps]
-            };
-          }
-          renderGrid();
-        };
-        if (state.isPlaying) {
-          state.queuedActions.push(action);
-        } else {
-          action();
-        }
-      });
-      varsContainer.appendChild(defaultBtn);
+      // 1. Solos Dropdown
+      if (track.solos && track.solos.length > 0) {
+        const select = document.createElement("select");
+        select.className = "track-alt-select select-solos";
+        select.style.fontSize = "0.7rem";
+        select.style.padding = "0.1rem 0.2rem";
+        select.style.borderRadius = "4px";
+        select.style.background = "rgba(168, 85, 247, 0.15)";
+        select.style.border = "1px solid rgba(168, 85, 247, 0.35)";
+        select.style.color = "#a855f7";
+        select.style.cursor = "pointer";
 
-      state.currentVariations[track.instrument].forEach((vari, idx) => {
-        const vbtn = document.createElement("button");
-        vbtn.className = `btn${track.activeVariation === idx ? ' btn-primary' : ''}`;
-        vbtn.textContent = (idx + 1).toString();
-        vbtn.title = vari.name;
-        vbtn.style.padding = "0.15rem 0.4rem";
-        vbtn.style.fontSize = "0.7rem";
-        vbtn.style.minWidth = "24px";
-        vbtn.addEventListener("click", () => {
-          // Highlight button immediately
-          track.activeVariation = idx;
-          const container = vbtn.parentElement;
-          if (container) {
-            Array.from(container.children).forEach(btn => {
-              if (btn !== defaultBtn) btn.classList.remove("btn-primary");
-            });
+        const defOpt = document.createElement("option");
+        defOpt.value = "-1";
+        defOpt.textContent = "Solos";
+        if (track.activeSoloIndex === undefined || track.activeSoloIndex === -1) defOpt.selected = true;
+        select.appendChild(defOpt);
+
+        track.solos.forEach((item, idx) => {
+          const opt = document.createElement("option");
+          opt.value = idx;
+          opt.textContent = item.name || `Solo ${idx + 1}`;
+          if (track.activeSoloIndex === idx) opt.selected = true;
+          select.appendChild(opt);
+        });
+
+        select.addEventListener("change", (e) => {
+          const val = parseInt(e.target.value);
+          track.activeSoloIndex = val;
+          if (val !== -1) {
+            track.activeSpecialIndex = -1;
+            track.activeVariationIndex = -1;
+            // Sync DOM sibling dropdown selects
+            const specSel = select.parentElement.querySelector(".select-specials");
+            if (specSel) specSel.value = "-1";
+            const varSel = select.parentElement.querySelector(".select-variations");
+            if (varSel) varSel.value = "-1";
           }
-          vbtn.classList.add("btn-primary");
-          if (defaultBtn) defaultBtn.classList.remove("btn-primary");
 
           const action = () => {
-            track.steps = [...vari.steps];
-            if (vari.subdivision) track.subdivision = vari.subdivision;
-            track.subdivisionSteps = {
-              [track.subdivision]: [...track.steps]
-            };
-
-            if (vari.bellSteps) {
-              const bellTrack = state.tracks.find(t => t.instrument === track.instrument + "_bell");
-              if (bellTrack) {
-                bellTrack.steps = [...vari.bellSteps];
-                bellTrack.subdivisionSteps = {
-                  [bellTrack.subdivision]: [...bellTrack.steps]
-                };
-              }
-            }
-
-            if (vari.compoundTracks) {
-              Object.keys(vari.compoundTracks).forEach(compInst => {
-                const compTrack = state.tracks.find(t => t.instrument === compInst);
-                if (compTrack) {
-                  compTrack.steps = [...vari.compoundTracks[compInst].steps];
-                  compTrack.subdivisionSteps = {
-                    [compTrack.subdivision]: [...compTrack.steps]
-                  };
-                }
-                const compBellTrack = state.tracks.find(t => t.instrument === compInst + "_bell");
-                if (compBellTrack && vari.compoundTracks[compInst].bellSteps) {
-                  compBellTrack.steps = [...vari.compoundTracks[compInst].bellSteps];
-                  compBellTrack.subdivisionSteps = {
-                    [compBellTrack.subdivision]: [...compBellTrack.steps]
-                  };
-                }
-              });
+            if (val === -1) {
+              restoreTrackOriginal(track);
+            } else {
+              if (!track.standardSteps) track.standardSteps = [...track.steps];
+              const patternStr = track.solos[val].pattern || track.solos[val].drum_pattern;
+              track.steps = convertPatternToSteps(patternStr, state.timeSignature, track.name);
+              track.subdivisionSteps[track.subdivision] = [...track.steps];
             }
             renderGrid();
           };
+
           if (state.isPlaying) {
             state.queuedActions.push(action);
           } else {
             action();
           }
         });
-        varsContainer.appendChild(vbtn);
-      });
-      // Position absolutely below the instrument name so it doesn't affect centering
+        varsContainer.appendChild(select);
+      }
+
+      // 2. Specials Dropdown
+      if (filteredSpecials.length > 0) {
+        const select = document.createElement("select");
+        select.className = "track-alt-select select-specials";
+        select.style.fontSize = "0.7rem";
+        select.style.padding = "0.1rem 0.2rem";
+        select.style.borderRadius = "4px";
+        select.style.background = "rgba(245, 158, 11, 0.15)";
+        select.style.border = "1px solid rgba(245, 158, 11, 0.35)";
+        select.style.color = "#f59e0b";
+        select.style.cursor = "pointer";
+
+        const defOpt = document.createElement("option");
+        defOpt.value = "-1";
+        defOpt.textContent = "Specials";
+        if (track.activeSpecialIndex === undefined || track.activeSpecialIndex === -1) defOpt.selected = true;
+        select.appendChild(defOpt);
+
+        filteredSpecials.forEach((item, idx) => {
+          const opt = document.createElement("option");
+          opt.value = idx;
+          opt.textContent = item.name || `Special ${idx + 1}`;
+          if (track.activeSpecialIndex === idx) opt.selected = true;
+          select.appendChild(opt);
+        });
+
+        select.addEventListener("change", (e) => {
+          const val = parseInt(e.target.value);
+          track.activeSpecialIndex = val;
+          if (val !== -1) {
+            track.activeSoloIndex = -1;
+            track.activeVariationIndex = -1;
+            // Sync DOM sibling dropdown selects
+            const soloSel = select.parentElement.querySelector(".select-solos");
+            if (soloSel) soloSel.value = "-1";
+            const varSel = select.parentElement.querySelector(".select-variations");
+            if (varSel) varSel.value = "-1";
+          }
+
+          const action = () => {
+            if (val === -1) {
+              restoreTrackOriginal(track);
+            } else {
+              if (!track.standardSteps) track.standardSteps = [...track.steps];
+              const patternStr = filteredSpecials[val].pattern || filteredSpecials[val].drum_pattern || filteredSpecials[val].sequence;
+              track.steps = convertPatternToSteps(patternStr, state.timeSignature, track.name);
+              track.subdivisionSteps[track.subdivision] = [...track.steps];
+            }
+            renderGrid();
+          };
+
+          if (state.isPlaying) {
+            state.queuedActions.push(action);
+          } else {
+            action();
+          }
+        });
+        varsContainer.appendChild(select);
+      }
+
+      // 3. Variations Dropdown
+      if (track.variations && track.variations.length > 0) {
+        const select = document.createElement("select");
+        select.className = "track-alt-select select-variations";
+        select.style.fontSize = "0.7rem";
+        select.style.padding = "0.1rem 0.2rem";
+        select.style.borderRadius = "4px";
+        select.style.background = "rgba(16, 185, 129, 0.15)";
+        select.style.border = "1px solid rgba(16, 185, 129, 0.35)";
+        select.style.color = "#10b981";
+        select.style.cursor = "pointer";
+
+        const defOpt = document.createElement("option");
+        defOpt.value = "-1";
+        defOpt.textContent = "Variations";
+        if (track.activeVariationIndex === undefined || track.activeVariationIndex === -1) defOpt.selected = true;
+        select.appendChild(defOpt);
+
+        track.variations.forEach((item, idx) => {
+          const opt = document.createElement("option");
+          opt.value = idx;
+          opt.textContent = item.name || `Variation ${idx + 1}`;
+          if (track.activeVariationIndex === idx) opt.selected = true;
+          select.appendChild(opt);
+        });
+
+        select.addEventListener("change", (e) => {
+          const val = parseInt(e.target.value);
+          track.activeVariationIndex = val;
+          if (val !== -1) {
+            track.activeSoloIndex = -1;
+            track.activeSpecialIndex = -1;
+            // Sync DOM sibling dropdown selects
+            const soloSel = select.parentElement.querySelector(".select-solos");
+            if (soloSel) soloSel.value = "-1";
+            const specSel = select.parentElement.querySelector(".select-specials");
+            if (specSel) specSel.value = "-1";
+          }
+
+          const action = () => {
+            if (val === -1) {
+              restoreTrackOriginal(track);
+            } else {
+              if (!track.standardSteps) track.standardSteps = [...track.steps];
+              const patternStr = track.variations[val].pattern || track.variations[val].drum_pattern;
+              track.steps = convertPatternToSteps(patternStr, state.timeSignature, track.name);
+              track.subdivisionSteps[track.subdivision] = [...track.steps];
+            }
+            renderGrid();
+          };
+
+          if (state.isPlaying) {
+            state.queuedActions.push(action);
+          } else {
+            action();
+          }
+        });
+        varsContainer.appendChild(select);
+      }
+
       varsContainer.style.position = "absolute";
       varsContainer.style.top = "100%";
       varsContainer.style.left = "0";
       varsContainer.style.zIndex = "5";
       infoColumn.appendChild(varsContainer);
-      // Add extra bottom padding to the row to make room for variation buttons
       row.style.paddingBottom = "1.75rem";
     }
 
@@ -5432,7 +5589,7 @@ function convertPatternToSteps(pattern, timing, partName) {
     if (char === 'S') return 'S';
     if (char === 'T') return 'T';
     if (char === 'B') return 'B';
-    if (char === 'O') return 'O';
+    if (char === 'O') return isDjembe ? 'T' : 'O';
     if (char === 'C') return 'C';
     if (char === 'X') return 'X';
     if (char === 'x') return 'C'; // play closed/mute bell
@@ -5484,9 +5641,22 @@ function mapHitToSound(hit, trackType) {
       if (isDjembe) return 'S/S';
       if (isBell) return 'X/X';
       return 'O/O';
-    case 'fs': return 'S/S';
-    case 'ft': return 'T/T';
-    case 'fb': return 'B/B';
+    case 'tt':
+      if (isDjembe) return 'T/T';
+      if (isBell) return 'X/X';
+      return 'O/O';
+    case 'fs':
+      if (isDjembe) return 'S/S';
+      if (isBell) return 'X/X';
+      return 'O/O';
+    case 'ft':
+      if (isDjembe) return 'T/T';
+      if (isBell) return 'X/X';
+      return 'O/O';
+    case 'fb':
+      if (isDjembe) return 'B/B';
+      if (isBell) return 'X/X';
+      return 'O/O';
     case 'Y': return 'B/T';
     case 'W': return 'B/S';
 
@@ -5495,10 +5665,22 @@ function mapHitToSound(hit, trackType) {
       if (isDjembe) return 'S-S';
       if (isBell) return 'X-X';
       return 'O-O';
-    case 'rs': return 'S-S';
-    case 'rt': return 'T-T';
-    case 'rb': return 'B-B';
-    case 'ts': return 'S*S*S';
+    case 'rs':
+      if (isDjembe) return 'S-S';
+      if (isBell) return 'X-X';
+      return 'O-O';
+    case 'rt':
+      if (isDjembe) return 'T-T';
+      if (isBell) return 'X-X';
+      return 'O-O';
+    case 'rb':
+      if (isDjembe) return 'B-B';
+      if (isBell) return 'X-X';
+      return 'O-O';
+    case 'ts':
+      if (isDjembe) return 'S*S*S';
+      if (isBell) return 'X*X*X';
+      return 'O*O*O';
 
     default:
       return hit;
@@ -5550,6 +5732,13 @@ function deactivateAllSpecialButtons() {
   state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
   state.callIntroActive = false;
   state.activeVariation = null;
+  state.globalCallActive = false;
+  state.echauffementActive = false;
+
+  const echBtn = document.getElementById("btn-trigger-echauffement");
+  if (echBtn) echBtn.classList.remove("btn-primary");
+  const callBtn = document.getElementById("btn-trigger-call");
+  if (callBtn) callBtn.classList.remove("btn-primary");
 
   state.tracks.forEach(track => {
     if (track.standardSteps) {
@@ -6382,7 +6571,10 @@ function loadRhythmNew(preset) {
         volume: 0.8,
         pitch: 0,
         muted: false,
-        soloed: false
+        soloed: false,
+        variations: pt.variations || [],
+        solos: pt.solos || [],
+        specials: pt.specials || []
       });
     });
 
@@ -6408,7 +6600,10 @@ function loadRhythmNew(preset) {
       volume: 0.75,
       pitch: 0,
       muted: false,
-      soloed: false
+      soloed: false,
+      variations: [],
+      solos: [],
+      specials: []
     });
 
     // Populate Variations Row
@@ -6702,6 +6897,25 @@ function loadRhythmNew(preset) {
     }
   }
 
+  // Identify primary Call and Echauffement names from track specials
+  let primaryCallName = null;
+  let primaryEchauffementName = null;
+  state.tracks.forEach(track => {
+    if (track.specials) {
+      track.specials.forEach(sp => {
+        const nameLC = (sp.name || "").toLowerCase();
+        if (!primaryCallName && nameLC.includes("call")) {
+          primaryCallName = sp.name;
+        }
+        if (!primaryEchauffementName && (nameLC.includes("echauffement") || nameLC.includes("échauffement"))) {
+          primaryEchauffementName = sp.name;
+        }
+      });
+    }
+  });
+  state.primaryCallName = primaryCallName;
+  state.primaryEchauffementName = primaryEchauffementName;
+
   renderGrid();
   updateStepPositions();
   updateSpecialButtonsState(preset);
@@ -6710,6 +6924,50 @@ function loadRhythmNew(preset) {
 function toggleEchauffementNew() {
   const echBtn = document.getElementById("btn-trigger-echauffement");
   state.echauffementActive = !state.echauffementActive;
+
+  if (state.primaryEchauffementName) {
+    if (state.echauffementActive) {
+      if (echBtn) echBtn.classList.add("btn-primary");
+      deactivateAllSpecialButtons();
+      state.echauffementActive = true;
+      if (state.globalCallActive) {
+        state.globalCallActive = false;
+        const callBtn = document.getElementById("btn-trigger-call");
+        if (callBtn) callBtn.classList.remove("btn-primary");
+      }
+
+      const action = () => {
+        state.tracks.forEach(track => {
+          const spec = (track.specials || []).find(s => s.name === state.primaryEchauffementName);
+          if (spec) {
+            if (!track.standardSteps) track.standardSteps = [...track.steps];
+            track.steps = convertPatternToSteps(spec.pattern, state.timeSignature, track.name);
+            track.subdivisionSteps[track.subdivision] = [...track.steps];
+          }
+        });
+        renderGrid();
+      };
+
+      if (!state.isPlaying) {
+        action();
+        togglePlay();
+      } else {
+        state.queuedActions.push(action);
+      }
+    } else {
+      if (echBtn) echBtn.classList.remove("btn-primary");
+      const action = () => {
+        deactivateAllSpecialButtons();
+        renderGrid();
+      };
+      if (!state.isPlaying) {
+        action();
+      } else {
+        state.queuedActions.push(action);
+      }
+    }
+    return;
+  }
 
   const isNewFormat = state.currentPreset && (state.currentPreset.step_count !== undefined || (state.currentPreset.tracks && !Array.isArray(state.currentPreset.tracks)));
 
