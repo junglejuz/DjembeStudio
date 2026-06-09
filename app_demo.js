@@ -5781,10 +5781,10 @@ function renderGrid() {
       if (numLines === 1) {
         btnRemove.title = "Delete track";
         btnRemove.addEventListener("click", () => {
-          if (confirm(`Are you sure you want to delete track "${cleanTrackName(track.name)}"?`)) {
+          showDeleteTrackPopup(track, () => {
             state.tracks = state.tracks.filter(t => t.id !== track.id);
             renderGrid();
-          }
+          });
         });
       } else {
         btnRemove.title = "Remove these 4 bars";
@@ -6031,13 +6031,13 @@ function renderGrid() {
     btnRemoveRow.addEventListener("click", (e) => {
       e.stopPropagation();
       if (numLines === 1) {
-        if (confirm(`Are you sure you want to delete track "${cleanTrackName(track.name)}"?`)) {
+        showDeleteTrackPopup(track, () => {
           state.tracks = state.tracks.filter(t => t.id !== track.id);
           if (state.focusedTrackId === track.id) {
             state.focusedTrackId = null;
           }
           renderGrid();
-        }
+        });
       } else {
         const remSteps = state.beats * track.subdivision;
         track.steps.splice(track.steps.length - remSteps, remSteps);
@@ -6091,11 +6091,84 @@ function showSampleGroupPopup(track, sampleOptions, trackRow) {
   const grid = document.createElement("div");
   grid.className = "sample-group-popup-grid";
   
-  sampleOptions.forEach(opt => {
+  sampleOptions.forEach((opt, idx) => {
     const btn = document.createElement("button");
-    btn.className = "sample-group-popup-btn";
+    btn.className = "sample-group-popup-btn card-style";
     if (track.instrument === opt.value) btn.classList.add("active");
-    btn.textContent = opt.text;
+    
+    // Get appropriate SVG icon and color for this option
+    let iconSvg = "";
+    let color = "";
+    
+    if (track.type === "djembe") {
+      iconSvg = DJEMBE_SVG;
+      // 7 colors for 7 groups
+      const djembeColors = [
+        "hsl(342, 85%, 48%)", // crimson
+        "hsl(24, 95%, 50%)",  // orange
+        "hsl(48, 95%, 48%)",  // gold
+        "hsl(142, 76%, 45%)", // emerald
+        "hsl(189, 94%, 43%)", // cyan
+        "hsl(239, 84%, 59%)", // indigo
+        "hsl(280, 84%, 60%)"  // amethyst
+      ];
+      color = djembeColors[idx % djembeColors.length];
+      
+      // Slightly vary the look by changing fill-opacity and stroke-width
+      if (idx % 3 === 1) {
+        iconSvg = iconSvg.replace('fill-opacity="0.15"', 'fill-opacity="0.35"');
+      } else if (idx % 3 === 2) {
+        iconSvg = iconSvg.replace('stroke-width="2"', 'stroke-width="2.5"');
+      }
+    } else {
+      // Dunun or Bell
+      const isBell = track.instrument.includes("bell");
+      if (track.instrument.includes("kenkeni")) {
+        iconSvg = isBell ? KENKENI_BELL_SVG : KENKENI_SVG;
+      } else if (track.instrument.includes("sangban")) {
+        iconSvg = isBell ? SANGBAN_BELL_SVG : SANGBAN_SVG;
+      } else if (track.instrument.includes("dundunba")) {
+        iconSvg = isBell ? DUNDUNBA_BELL_SVG : DUNDUNBA_SVG;
+      } else {
+        iconSvg = DJEMBE_SVG;
+      }
+      
+      // 3 colors for 3 sets
+      const setColors = [
+        "hsl(175, 84%, 39%)", // set 1
+        "hsl(199, 94%, 43%)", // set 2
+        "hsl(239, 84%, 59%)"  // set 3
+      ];
+      color = setColors[idx % setColors.length];
+      
+      // Make them look slightly different
+      if (idx === 1) {
+        // Set 2: dashed line style
+        iconSvg = iconSvg.replace('stroke-width="2"', 'stroke-width="2" stroke-dasharray="2 1.5"');
+      } else if (idx === 2) {
+        // Set 3: filled style
+        iconSvg = iconSvg.replace('fill-opacity="0.15"', 'fill-opacity="0.4"');
+        iconSvg = iconSvg.replace('stroke-width="2"', 'stroke-width="2.5"');
+      }
+    }
+    
+    // Create an icon wrapper div
+    const iconWrap = document.createElement("div");
+    iconWrap.className = "popup-btn-icon-wrapper";
+    iconWrap.style.color = color;
+    iconWrap.innerHTML = iconSvg;
+    
+    const label = document.createElement("span");
+    label.className = "popup-btn-label";
+    label.textContent = opt.text;
+    
+    btn.appendChild(iconWrap);
+    btn.appendChild(label);
+    
+    // Set custom variables for hover styles
+    btn.style.setProperty("--theme-active-color", color);
+    btn.style.setProperty("--theme-active-glow", color.replace(")", ", 0.35)").replace("hsl", "hsla"));
+    
     btn.addEventListener("click", (e) => {
       e.stopPropagation();
       track.instrument = opt.value;
@@ -6109,6 +6182,12 @@ function showSampleGroupPopup(track, sampleOptions, trackRow) {
   overlay.appendChild(popup);
   
   // Close on background click
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+      overlay.remove();
+    }
+  });
+  
   container.appendChild(overlay);
 }
 
@@ -6149,6 +6228,80 @@ function showSubdivisionPopup(track) {
   });
   
   popup.appendChild(grid);
+  overlay.appendChild(popup);
+  
+  // Close on background click
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) {
+      overlay.remove();
+    }
+  });
+  
+  container.appendChild(overlay);
+}
+
+// Show the premium track deletion confirmation popup overlay
+function showDeleteTrackPopup(track, onConfirm) {
+  // Remove any existing overlay
+  const existing = document.querySelector(".sample-group-overlay");
+  if (existing) existing.remove();
+  
+  const container = document.querySelector(".demo-device-frame") || document.querySelector(".app-container") || document.body;
+  
+  const overlay = document.createElement("div");
+  overlay.className = "sample-group-overlay active";
+  
+  const popup = document.createElement("div");
+  popup.className = "sample-group-popup";
+  
+  const titleEl = document.createElement("div");
+  titleEl.className = "sample-group-popup-title";
+  titleEl.textContent = "Delete Track";
+  popup.appendChild(titleEl);
+  
+  const textEl = document.createElement("div");
+  textEl.style.fontSize = "0.85rem";
+  textEl.style.color = "rgba(255, 255, 255, 0.65)";
+  textEl.style.textAlign = "center";
+  textEl.style.margin = "0.5rem 0";
+  textEl.style.lineHeight = "1.4";
+  textEl.textContent = `Are you sure you want to delete track "${cleanTrackName(track.name)}"?`;
+  popup.appendChild(textEl);
+  
+  const btnGroup = document.createElement("div");
+  btnGroup.style.display = "flex";
+  btnGroup.style.gap = "0.75rem";
+  btnGroup.style.width = "100%";
+  btnGroup.style.marginTop = "0.5rem";
+  
+  const btnCancel = document.createElement("button");
+  btnCancel.className = "sample-group-popup-btn";
+  btnCancel.textContent = "Cancel";
+  btnCancel.style.flex = "1";
+  btnCancel.style.padding = "0.5rem 0";
+  btnCancel.addEventListener("click", (e) => {
+    e.stopPropagation();
+    overlay.remove();
+  });
+  
+  const btnDelete = document.createElement("button");
+  btnDelete.className = "sample-group-popup-btn active";
+  btnDelete.textContent = "Delete";
+  btnDelete.style.flex = "1";
+  btnDelete.style.padding = "0.5rem 0";
+  // Red/danger styling
+  btnDelete.style.background = "rgba(239, 68, 68, 0.2)";
+  btnDelete.style.borderColor = "rgba(239, 68, 68, 0.5)";
+  btnDelete.style.color = "#ef4444";
+  btnDelete.addEventListener("click", (e) => {
+    e.stopPropagation();
+    overlay.remove();
+    onConfirm();
+  });
+  
+  btnGroup.appendChild(btnCancel);
+  btnGroup.appendChild(btnDelete);
+  popup.appendChild(btnGroup);
   overlay.appendChild(popup);
   
   // Close on background click

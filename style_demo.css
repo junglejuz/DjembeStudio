@@ -813,7 +813,7 @@ body {
   border-radius: 16px;
   padding: 1.25rem;
   width: calc(100% - 40px);
-  max-width: 280px;
+  max-width: 300px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   display: flex;
   flex-direction: column;
@@ -867,6 +867,62 @@ body {
 .sample-group-popup-btn:hover {
   background: rgba(255, 255, 255, 0.1);
   border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Card layout switcher buttons for sound sets / instruments */
+.sample-group-popup-btn.card-style {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 0.4rem !important;
+  width: 76px !important;
+  height: 76px !important;
+  padding: 0.6rem !important;
+  border-radius: 12px !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25) !important;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+.sample-group-popup-btn.card-style:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  transform: translateY(-2px) !important;
+}
+
+.sample-group-popup-btn.card-style.active {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: var(--theme-active-color, #2dd4bf) !important;
+  box-shadow: 0 0 15px var(--theme-active-glow, rgba(20, 184, 166, 0.25)) !important;
+  transform: translateY(0) !important;
+}
+
+.popup-btn-icon-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 32px !important;
+  height: 32px !important;
+}
+
+.popup-btn-icon-wrapper svg {
+  width: 28px !important;
+  height: 28px !important;
+  display: block !important;
+}
+
+.popup-btn-label {
+  font-size: 0.72rem !important;
+  font-weight: 700 !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+}
+
+.sample-group-popup-btn.card-style.active .popup-btn-label {
+  color: #ffffff !important;
 }
 
 /* Hidden volume slider for overlay trigger (kept in DOM but not visible) */
