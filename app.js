@@ -1,6 +1,6 @@
 import { DrumSynth } from './audio.js?v=1.0.9';
 import { RHYTHM_PRESETS, TIME_SIGNATURE_DEFAULTS } from './rhythms.js?v=1.0.9';
-import { RHYTHM_LIBRARY } from './library_compiled.js?v=1.0.9';
+import { RHYTHM_LIBRARY } from './library.js?v=1.0.9';
 
 
 // Application State
@@ -5726,12 +5726,12 @@ function getTrackHierarchyKey(track) {
 
 function loadRhythmNew(preset) {
   state.focusedTrackId = null;
-  state.currentRhythmName = preset.rhythm_name || preset.name || "Untitled Rhythm";
+  state.currentRhythmName = preset.rhythm_name || "Untitled Rhythm";
   updateRhythmNameDisplay();
 
   state.currentRhythmDescription = preset.description || "";
   state.currentPreset = preset;
-  state.timeSignature = preset.timing || preset.timeSignature || preset.time_signature || "12/8";
+  state.timeSignature = preset.timing || preset.time_signature || "12/8";
 
   const subdivision = getSubdivisionForTiming(state.timeSignature);
   state.globalSubdivision = subdivision;
@@ -5747,10 +5747,8 @@ function loadRhythmNew(preset) {
     state.beats = 4; // 16 steps per line (4 beats of subdivision 4)
   }
 
-  state.bpm = preset.tempo || preset.bpm || 110;
-  if (preset.swingFactor !== undefined) {
-    state.swing = preset.swingFactor;
-  } else if (preset.groove_modifiers && preset.groove_modifiers.swing_factor !== undefined) {
+  state.bpm = preset.tempo || 110;
+  if (preset.groove_modifiers && preset.groove_modifiers.swing_factor !== undefined) {
     state.swing = preset.groove_modifiers.swing_factor;
   } else {
     state.swing = preset.swing || 0;
@@ -5763,19 +5761,6 @@ function loadRhythmNew(preset) {
     6: [0, 0, 0, 0, 0, 0]
   };
   [2, 3, 4, 6].forEach(s => applyGlobalSwingToOffsets(s, state.swing));
-
-  // Determine active subdivision based on timing and inject swingOffsets
-  const activeSubdiv = (state.timeSignature === "12/8" || state.timeSignature === "6/8") ? 6 : 4;
-  if (preset.swingOffsets && Array.isArray(preset.swingOffsets)) {
-    state.customSwingOffsets[activeSubdiv] = [...preset.swingOffsets];
-    if (state.customSwingOffsets[activeSubdiv].length < activeSubdiv) {
-      const diff = activeSubdiv - state.customSwingOffsets[activeSubdiv].length;
-      const lastVal = preset.swingOffsets[preset.swingOffsets.length - 1] || 0;
-      for (let j = 0; j < diff; j++) {
-        state.customSwingOffsets[activeSubdiv].push(lastVal);
-      }
-    }
-  }
 
   // Sync UI controls
   state.humaniseTime = 40;
@@ -6462,7 +6447,7 @@ function loadRhythmNew(preset) {
                   if (!track.standardSteps) track.standardSteps = [...track.steps];
 
                   if (presetTrack.variations && presetTrack.variations[i]) {
-                    track.steps = convertPatternToSteps(presetTrack.variations[i].drum_pattern || presetTrack.variations[i].pattern, state.timeSignature, track.name);
+                    track.steps = convertPatternToSteps(presetTrack.variations[i].drum_pattern, state.timeSignature, track.name);
                   } else {
                     track.steps = [...track.standardSteps];
                   }
@@ -6703,7 +6688,6 @@ function loadRhythmNew(preset) {
   }
 
   renderGrid();
-  updateStepPositions();
   updateSpecialButtonsState(preset);
 }
 

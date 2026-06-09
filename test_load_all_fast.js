@@ -7,7 +7,7 @@ const htmlContent = fs.readFileSync(path.join(__dirname, 'index.html'), 'utf8');
 // Load files
 let audioJs = fs.readFileSync(path.join(__dirname, 'audio.js'), 'utf8');
 let rhythmsJs = fs.readFileSync(path.join(__dirname, 'rhythms.js'), 'utf8');
-let libraryJs = fs.readFileSync(path.join(__dirname, 'library_compiled.js'), 'utf8');
+let libraryJs = fs.readFileSync(path.join(__dirname, 'library.js'), 'utf8');
 let appJs = fs.readFileSync(path.join(__dirname, 'app.js'), 'utf8');
 
 // Wrap in IIFE and set exports on window
