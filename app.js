@@ -332,13 +332,13 @@ function getInstrumentHSL(instrument, type, isCall) {
     const isBell = type === "bell" || instrument.includes("bell");
     if (instrument.includes("kenkeni")) {
       if (isBell) {
-        if (instrument.includes("3")) return "115, 84%, 36%"; // Bell 2 (Green)
-        if (instrument.includes("4")) return "105, 75%, 38%"; // Bell 3 (Green)
-        return "125, 78%, 37%"; // Bell 1 (Green)
+        if (instrument.includes("3")) return "125, 72%, 36%"; // Bell 2 (Shifted +10 deg, desaturated)
+        if (instrument.includes("4")) return "115, 63%, 38%"; // Bell 3 (Shifted +10 deg, desaturated)
+        return "135, 66%, 37%"; // Bell 1 (Shifted +10 deg, desaturated)
       } else {
-        if (instrument.includes("3")) return "130, 80%, 35%"; // Kenkeni 3 (Green)
-        if (instrument.includes("4")) return "140, 82%, 34%"; // Kenkeni 4 (Green)
-        return "120, 76%, 36%"; // Kenkeni 1 (Green)
+        if (instrument.includes("3")) return "140, 68%, 35%"; // Kenkeni 3 (Shifted +10 deg, desaturated)
+        if (instrument.includes("4")) return "150, 70%, 34%"; // Kenkeni 4 (Shifted +10 deg, desaturated)
+        return "130, 64%, 36%"; // Kenkeni 1 (Shifted +10 deg, desaturated)
       }
     }
     if (instrument.includes("sangban")) {
@@ -354,13 +354,13 @@ function getInstrumentHSL(instrument, type, isCall) {
     }
     if (instrument.includes("dundunba")) {
       if (isBell) {
-        if (instrument.includes("3")) return "235, 98%, 56%"; // Bell 2 (Blue)
-        if (instrument.includes("4")) return "225, 98%, 58%"; // Bell 3 (Blue)
-        return "245, 98%, 54%"; // Bell 1 (Blue)
+        if (instrument.includes("3")) return "232, 98%, 56%"; // Bell 2 (Blue, not exceeding 240)
+        if (instrument.includes("4")) return "224, 98%, 58%"; // Bell 3 (Blue, not exceeding 240)
+        return "238, 98%, 54%"; // Bell 1 (Blue, not exceeding 240)
       } else {
-        if (instrument.includes("3")) return "250, 98%, 60%"; // Dundunba 3 (Blue)
-        if (instrument.includes("4")) return "260, 98%, 62%"; // Dundunba 4 (Blue)
-        return "240, 98%, 52%"; // Dundunba 1 (Blue)
+        if (instrument.includes("3")) return "235, 98%, 60%"; // Dundunba 3 (Blue, not exceeding 240)
+        if (instrument.includes("4")) return "228, 98%, 62%"; // Dundunba 4 (Blue, not exceeding 240)
+        return "240, 98%, 52%"; // Dundunba 1 (Blue, not exceeding 240)
       }
     }
   }
