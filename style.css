@@ -398,6 +398,7 @@ input[type="range"]::-webkit-slider-thumb {
   background: var(--primary);
   box-shadow: 0 0 10px var(--primary-glow);
   cursor: pointer;
+  margin-top: -5px; /* Center thumb vertically on Webkit track */
   transition: transform 0.1s ease;
 }
 
@@ -2528,4 +2529,46 @@ body:has(.modal-overlay.active) .controls-group-center .btn {
   opacity: 0.35 !important;
   pointer-events: none !important;
   transition: all 0.2s ease !important;
+}
+
+/* Custom styling for the main UI BPM/tempo range slider to make it thin (4px) and centered */
+#bpm-range {
+  -webkit-appearance: none;
+  height: 4px !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-radius: 2px !important;
+  outline: none;
+}
+
+#bpm-range::-webkit-slider-runnable-track {
+  height: 4px !important;
+  background: transparent !important;
+}
+
+#bpm-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 10px var(--primary-glow);
+  cursor: pointer;
+  margin-top: -6px; /* Center 16px thumb on 4px track */
+  transition: transform 0.1s ease;
+}
+
+#bpm-range::-moz-range-track {
+  height: 4px !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-radius: 2px !important;
+}
+
+#bpm-range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: none;
+  box-shadow: 0 0 10px var(--primary-glow);
+  cursor: pointer;
 }

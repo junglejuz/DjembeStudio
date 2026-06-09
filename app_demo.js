@@ -2310,6 +2310,11 @@ function injectLargeSliderOverlay() {
 
   const style = document.createElement("style");
   style.textContent = `
+    .large-slider-input::-webkit-slider-runnable-track {
+      height: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+    }
     .large-slider-input::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
@@ -2320,9 +2325,28 @@ function injectLargeSliderOverlay() {
       cursor: pointer;
       box-shadow: 0 0 15px rgba(255,255,255,0.4);
       border: 2px solid #fff;
+      margin-top: -7px; /* Center thumb vertically on 10px track */
       transition: transform 0.1s ease;
     }
     .large-slider-input::-webkit-slider-thumb:active {
+      transform: scale(1.15);
+    }
+    .large-slider-input::-moz-range-track {
+      height: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+    }
+    .large-slider-input::-moz-range-thumb {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--accent-color, var(--primary, #6366f1)) !important;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255,255,255,0.4);
+      border: 2px solid #fff;
+      transition: transform 0.1s ease;
+    }
+    .large-slider-input::-moz-range-thumb:active {
       transform: scale(1.15);
     }
   `;
@@ -2436,6 +2460,63 @@ function setupLargeSlider(originalSlider, options = {}) {
       updateLabelAndValue();
     };
     largeInput.addEventListener("input", largeInput._onInputHandler);
+
+    // If it's a trusted drag event (BPM slider), support slide-anywhere behavior immediately
+    if (e.isTrusted) {
+      const origRect = originalSlider.getBoundingClientRect();
+      const origWidth = origRect.width;
+      if (origWidth > 0) {
+        let clickFraction = (clientX - origRect.left) / origWidth;
+        clickFraction = Math.max(0, Math.min(1, clickFraction));
+        let clickVal = min + clickFraction * (max - min);
+        clickVal = Math.round(clickVal / step) * step;
+        originalSlider.value = clickVal;
+        originalSlider.dispatchEvent(new Event("input"));
+      }
+
+      const startX = clientX;
+      const startVal = parseFloat(originalSlider.value) || 0;
+
+      const getSliderWidth = () => {
+        return (largeInput && largeInput.clientWidth) ? largeInput.clientWidth : 200;
+      };
+
+      const updateValue = (clientXCoord) => {
+        const deltaX = clientXCoord - startX;
+        const width = getSliderWidth();
+        const range = max - min;
+
+        let val = startVal + (deltaX / width) * range;
+        val = Math.round(val / step) * step;
+        val = Math.max(min, Math.min(max, val));
+
+        if (largeInput.value !== String(val)) {
+          largeInput.value = val;
+          originalSlider.value = largeInput.value;
+          originalSlider.dispatchEvent(new Event("input"));
+          updateLabelAndValue();
+        }
+      };
+
+      const onPointerMove = (moveEvent) => {
+        if (moveEvent.cancelable) {
+          moveEvent.preventDefault();
+        }
+        if (moveEvent.clientX !== undefined) {
+          updateValue(moveEvent.clientX);
+        }
+      };
+
+      const onRelease = () => {
+        window.removeEventListener("pointermove", onPointerMove);
+        window.removeEventListener("pointerup", onRelease);
+        window.removeEventListener("pointercancel", onRelease);
+      };
+
+      window.addEventListener("pointermove", onPointerMove, { passive: false });
+      window.addEventListener("pointerup", onRelease);
+      window.addEventListener("pointercancel", onRelease);
+    }
   });
 }
 
