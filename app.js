@@ -354,13 +354,13 @@ function getInstrumentHSL(instrument, type, isCall) {
     }
     if (instrument.includes("dundunba")) {
       if (isBell) {
-        if (instrument.includes("3")) return "230, 98%, 72%"; // Bell 2
-        if (instrument.includes("4")) return "238, 98%, 74%"; // Bell 3
-        return "222, 98%, 70%"; // Bell 1
+        if (instrument.includes("3")) return "230, 98%, 56%"; // Bell 2
+        if (instrument.includes("4")) return "238, 98%, 58%"; // Bell 3
+        return "222, 98%, 54%"; // Bell 1
       } else {
-        if (instrument.includes("3")) return "244, 98%, 75%";
-        if (instrument.includes("4")) return "252, 98%, 76%";
-        return "218, 98%, 68%";
+        if (instrument.includes("3")) return "244, 98%, 60%";
+        if (instrument.includes("4")) return "252, 98%, 62%";
+        return "218, 98%, 52%";
       }
     }
   }
@@ -3940,7 +3940,7 @@ function renderGrid() {
       opacityMultiplier = 1.4; // Red/Purple boost
     } else if (track.type === "dunun" || track.type === "bell") {
       if (track.instrument.includes("dundunba")) {
-        opacityMultiplier = 1.4; // Blue boost
+        opacityMultiplier = 1.85; // Blue boost (compensated for lower lightness)
       } else if (track.instrument.includes("kenkeni")) {
         opacityMultiplier = 0.8; // Green reduction
       }

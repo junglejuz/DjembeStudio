@@ -5465,7 +5465,7 @@ function renderGrid() {
       opacityMultiplier = 1.4; // Red/Purple boost
     } else if (track.type === "dunun" || track.type === "bell") {
       if (track.instrument.includes("dundunba")) {
-        opacityMultiplier = 1.4; // Blue boost
+        opacityMultiplier = 1.85; // Blue boost (compensated for lower lightness)
       } else if (track.instrument.includes("kenkeni")) {
         opacityMultiplier = 0.8; // Green reduction
       }
