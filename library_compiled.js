@@ -14,80 +14,61 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "T.T.SS.S.TT.T.T.SS.S.TT.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.O.SS.S.OO.O.O.SS.S.OO.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.S.TT.S.TT.S.S.TT.S.TT.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.S.OO.S.OO.S.S.OO.S.OO.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "B..BSSB.....B..BSSB.....",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "ROOOO.OO.O.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "B.B.SS.S.TT.B.B.SS.S.TT.B.B.SS.S.TT.BTTBTTBTTBTT"
+            "pattern": "B.B.SS.S.OO.B.B.SS.S.OO.B.B.SS.S.OO.BOOBOOBOOBOO"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "B.B.TTTS.TTTB.B.TTTT.TTTB.B.TTTS.TTTBTTBTTBTTBTT"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "B.B.OOOS.OOOB.B.OOOO.OOOB.B.OOOS.OOOBOOBOOBOOBOO"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "....OO.M.OO.....OO.M.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.OO.O.OO.O.O.OO.O.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O.........O.O.........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -106,71 +87,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TTB.SSB.TTB.SS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OOB.SSB.OOB.SS",
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "F.OO.O.OO.O.O..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "......O...O...O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.......O.O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O...........O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -189,27 +152,21 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B..T.SB...S.BTTTTSB...S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B..O.SB...S.BOOOOSB...S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B..T.SB.TTTTB..T.SB.TTTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B..O.SB.OOOOB..O.SB.OOOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "SS.S.S.SS.S..T.T.T....S."
+            "pattern": "SS.S.S.SS.S..O.O.O....S."
           },
           {
             "name": "Call 1",
@@ -218,66 +175,43 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Call 2",
             "pattern": "SS.S.S.SS.S.S.S."
-          },
-          {
-            "name": "Call 1",
-            "pattern": "SS.S.S.SS.S.S.S."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [
-          {
-            "name": "Kenkeni 2",
-            "pattern": "O...O...O...O..."
-          }
-        ],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O..O..O..O..O..O..O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..O.O..M.M..O.O.O..M.M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.O.OO.O.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.....O.....O.....O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -296,71 +230,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "SS.SS.TTSS.SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "SS.SS.OOSS.SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "..TT..S...TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "..OO..S...OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OOO.O.O.OOO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "..O...O.M.....O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..O.O..O.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -379,71 +295,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TT.SS.B.TT.SS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO.SS.B.OO.SS.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "BSTTBSS.BSTTBSS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "BSOOBSS.BSOOBSS.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OOO.O.O.OOO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "..O...O.M.....O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..O.O..O.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -462,22 +360,46 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "TT.STTS.TT.STTS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OO.SOOS.OO.SOOS.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "TT..B.S.TT..BS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OO..B.S.OO..BS..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT.SS.T.T...B.S.",
+        "drum_pattern": "OO.SS.O.O...B.S.",
         "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
+          {
+            "name": "Djembe solo #1",
+            "pattern": "B...B...B...B.S."
+          },
+          {
+            "name": "Djembe solo #2",
+            "pattern": "SS..B.S.OO..B.S."
+          },
+          {
+            "name": "Djembe solo #3",
+            "pattern": "B...B.S.B...B.S."
+          },
+          {
+            "name": "Djembe solo #4",
+            "pattern": "OO.SS.O.O...B.S."
+          },
+          {
+            "name": "Call",
+            "pattern": "T.TT.TT.T.SSS"
+          },
+          {
+            "name": "Break",
+            "pattern": "T.S.T.S.T.S.T.S.TS..T.S.SSS.....TT"
+          },
           {
             "name": "A",
             "pattern": "B.B.B.B.S."
@@ -493,105 +415,33 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "D",
             "pattern": "TT.SS.T.T.B.S."
-          },
-          {
-            "name": "Djembe 1; repeat",
-            "pattern": "TT..STTS....STTS"
-          }
-        ],
-        "solos": [
-          {
-            "name": "Djembe solo #1",
-            "pattern": "B...B...B...B.S."
-          },
-          {
-            "name": "Djembe solo #2",
-            "pattern": "SS..B.S.TT..B.S."
-          },
-          {
-            "name": "Djembe solo #3",
-            "pattern": "B...B.S.B...B.S."
-          },
-          {
-            "name": "Djembe solo #4",
-            "pattern": "TT.SS.T.T...B.S."
-          },
-          {
-            "name": "Djembe solo 1 A",
-            "pattern": "B...B...B...B.S."
-          },
-          {
-            "name": "Djembe solo 1 B",
-            "pattern": "TT..B.S.TT..B.S."
-          },
-          {
-            "name": "Djembe solo 1 C",
-            "pattern": "B...B.S.B...B.S."
-          },
-          {
-            "name": "Djembe solo 1 D",
-            "pattern": "TT.SS.T.T...B.S."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
-          },
-          {
-            "name": "Call",
-            "pattern": "T.TT.TT.T.SSS"
-          },
-          {
-            "name": "Break",
-            "pattern": "T.S.T.S.T.S.T.S.TS..T.S.SSS.....TT"
-          },
-          {
-            "name": "Call",
-            "pattern": "T..TT..TT..T.SSS"
-          },
-          {
-            "name": "Break",
-            "pattern": "T...S...T.S.T.S."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M.....O.M.....O.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Sangban echauffement",
             "pattern": "O.O."
-          },
-          {
-            "name": "Sangban echauffement",
-            "pattern": "O.O...O.O...O.O."
           }
         ]
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Sangban echauffement",
             "pattern": "X.X.X.X.X.X.X.X."
@@ -601,25 +451,17 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Dun Dun",
         "drum_pattern": "........O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Dundun echauffement",
             "pattern": "O.O.O.O.O.O."
-          },
-          {
-            "name": "Dundun echauffement",
-            "pattern": "O.O.OO.O.O.OO.O."
           }
         ]
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Dundun echauffement",
             "pattern": "X.X.X.XX.X.X.XX."
@@ -629,9 +471,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -650,71 +490,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "TTSSSSSSSSSSSSSS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOSSSSSSSSSSSSSS",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "T.S.T.S.T.S.T.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.S.O.S.O.S.O.S.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "F.OO.O.OO.O.O..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "OO.O.O.OO...M...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.O.O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "..........O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.O.O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -733,112 +555,93 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT....TTB.B.TT....TTB.B.",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "OO....OOB.B.OO....OOB.B.",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "SSOSSS......"
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "SSTSS.....TS"
+            "pattern": "SSOSS.....OS"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "TTSTTSSSSSTS"
+            "pattern": "OOSOOSSSSSOS"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "TTSSTTTTSSTT"
+            "pattern": "OOSSOOOOSSOO"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "TTSTTSSSSSTS"
+            "pattern": "OOSOOSSSSSOS"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "TTSTTSSSSSRT"
+            "pattern": "OOSOOSSSSSRO"
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "SRTSTSSSSSRT"
+            "pattern": "SROSOSSSSSRO"
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "SSSSRTSSSSRT"
+            "pattern": "SSSSROSSSSRO"
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "RRSSRTSSSSRT"
+            "pattern": "RRSSROSSSSRO"
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "SSTSSTSSTSSTSSTSSTSSTSS."
+            "pattern": "SSOSSOSSOSSOSSOSSOSSOSS."
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "BS.S.S.TT.F."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "SSTSSS......"
+            "pattern": "BS.S.S.OO.F."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O...O...O.M.O...O...O.M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".O.O.O.O.O.O.O.O.O.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".O.O.O.O.O.O.O.O.O.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -857,88 +660,69 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO..S.B.OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.O.O..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "S..TT.S..S..S..BS..TT.S........B"
+            "pattern": "S..OO.S..S..S..BS..OO.S........B"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "S..TT.S...S.S..BS..TT.S........B"
+            "pattern": "S..OO.S...S.S..BS..OO.S........B"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "F..TT.F..TT.F...F..TT.F........."
+            "pattern": "F..OO.F..OO.F...F..OO.F........."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "T.SSS.T.SSS.T.SSS..BT.SSS.SSS..B"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "O.SSS.O.SSS.O.SSS..BO.SSS.SSS..B"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO......OO....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "......O.......O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..OO...O.O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.OO.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -971,144 +755,125 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO..S.B.OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "...RRSSSSSTSSTSSTSSTSSTSSTSSTSS."
+            "pattern": "...RRSSSSSOSSOSSOSSOSSOSSOSSOSS."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "SS.RRSSTTSTTSTTSTTSF.S.SS.SS.SS."
+            "pattern": "SS.RRSSOOSOOSOOSOOSF.S.SS.SS.SS."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "SS.RTTRSSRTTRSSRTTRSSRTTRSSRRRRR"
+            "pattern": "SS.ROORSSROORSSROORSSROORSSRRRRR"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "RRRRRRRRT.F.TT.S"
+            "pattern": "RRRRRRRRO.F.OO.S"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "TT.RSSSS.SS.SS.TTS.RSSSS.TT.SS.TTS.F.S.SS.SS.SS."
+            "pattern": "OO.RSSSS.SS.SS.OOS.RSSSS.OO.SS.OOS.F.S.SS.SS.SS."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "TTSTTSTTSTTSTTSTTS.ST.SS.TT.SS.F.F.F.F.FF.TT.ST."
+            "pattern": "OOSOOSOOSOOSOOSOOS.ST.SS.OT.SS.F.F.F.F.FF.OO.SO."
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "SS.TT.SS.TT.SS.TT.SS.TTSTTSF.SS."
+            "pattern": "SS.OT.SS.OT.SS.OT.SS.OOSOOSF.SS."
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "TT.RSSSS.SS.SS.."
+            "pattern": "OO.RSSSS.SS.SS.."
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "..SS..SS..TSTTSS"
+            "pattern": "..SS..SS..OSOOSS"
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "S.SSB.SSB.TSTTSS"
+            "pattern": "S.SSB.SSB.OSOOSS"
           },
           {
             "name": "Djembe solo #11",
-            "pattern": "BS.STTS........."
+            "pattern": "BS.SOOS........."
           },
           {
             "name": "Djembe solo #12",
-            "pattern": "TS.TSS.TS.TS.TS."
+            "pattern": "OS.OSS.OS.OS.OS."
           },
           {
             "name": "Djembe solo #13",
-            "pattern": "TTSTTS.S........"
+            "pattern": "OOSOOS.S........"
           },
           {
             "name": "Djembe solo #14",
-            "pattern": "..S.TT..S.S.TT.."
+            "pattern": "..S.OO..S.S.OO.."
           },
           {
             "name": "Djembe solo #15",
-            "pattern": "SSSSTTSSS...B..B"
+            "pattern": "SSSSOOSSS...B..B"
           },
           {
             "name": "Djembe solo #16",
-            "pattern": "SSSSSTTSSSSSS..B"
+            "pattern": "SSSSSOOSSSSSS..B"
           },
           {
             "name": "Djembe solo #17",
-            "pattern": "SS.BSS.BSSTTSS.B"
+            "pattern": "SS.BSS.BSSOOSS.B"
           },
           {
             "name": "Djembe solo #18",
-            "pattern": "TTSS.BTTSS..F..."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "OOSS.BOOSS..F..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M...M...M.O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.....O.O.....O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -1127,96 +892,77 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO..S.B.OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "B.TT..STT.BS.BS.",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "B.OO..SOO.BS.BS.",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "B.SS.BSSB.SSTTSSB.SS.BSSB.T.TTSS"
+            "pattern": "B.SS.BSSB.SSOOSSB.SS.BSSB.O.OOSS"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "TTSTTSTTS.TSTTS.TTSTTSTTS......."
+            "pattern": "OOSOOSOOS.OSOOS.OOSOOSOOS......."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "BSSSTTSSS......."
+            "pattern": "BSSSOOSSS......."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "T.SS.S.TT.S.SS.T"
+            "pattern": "O.SS.S.OO.S.SS.O"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "RSSRTTSSS......."
+            "pattern": "RSSROOSSS......."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "BSSSTTS.BSSSTTS."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "BSSSOOS.BSSSOOS."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M...M...M.O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.....O.O.....O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -1236,44 +982,31 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S.SS.TTS.SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "B.TT.STT.BS.S",
-        "variations": [],
-        "solos": [
-          {
-            "name": "Solo accompagnement 1",
-            "pattern": "SS.SS.T.S.TTSS"
-          }
-        ],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "T.TT.T.TT.T.T."
           },
           {
-            "name": "Call",
-            "pattern": "T.TT.T.TT.T."
+            "name": "Solo accompagnement 1",
+            "pattern": "SS.SS.T.S.TTSS"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "X.X.X.X.X.X.X.X.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -1298,21 +1031,6 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Sangban variations line 5",
             "pattern": "O.O.O.O.O."
-          },
-          {
-            "name": "Sangban variation 1",
-            "pattern": "O..O..O..O.."
-          },
-          {
-            "name": "Sangban variation 2",
-            "pattern": "O.O.O.O.O.O."
-          }
-        ],
-        "solos": [],
-        "specials": [
-          {
-            "name": "Echauffement",
-            "pattern": "C.C.C.C.C.C."
           }
         ]
       },
@@ -1340,14 +1058,16 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban variations line 5",
             "pattern": "X.X.X.X."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O.O.",
         "variations": [
+          {
+            "name": "Echauffement",
+            "pattern": "O.O.O.O.O.O."
+          },
           {
             "name": "Dundun variations 1",
             "pattern": "O.O.O.O.O.O."
@@ -1377,27 +1097,8 @@ export const RHYTHM_LIBRARY = [
             "pattern": "O.O.O.O.O."
           },
           {
-            "name": "Dundun variation 1",
-            "pattern": "OO.O..OO.O.."
-          },
-          {
-            "name": "Dundun variation 2",
-            "pattern": "O.O.O.O.O.O."
-          }
-        ],
-        "solos": [],
-        "specials": [
-          {
-            "name": "Echauffement",
-            "pattern": "O.O.O.O.O.O."
-          },
-          {
             "name": "Dun Dun echauffement",
             "pattern": "O.O.O.O.O.O.O."
-          },
-          {
-            "name": "Dun Dun echauffement",
-            "pattern": "O.O.O.O.O.O."
           }
         ]
       },
@@ -1405,6 +1106,10 @@ export const RHYTHM_LIBRARY = [
         "part": "Dun Dun Bell",
         "drum_pattern": "X.X.X.X.X.X.X.X.",
         "variations": [
+          {
+            "name": "Echauffement",
+            "pattern": "X.X.X.X.X.X."
+          },
           {
             "name": "Dundun variations 1",
             "pattern": "X.X.X.X."
@@ -1432,13 +1137,6 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Dundun variations 7",
             "pattern": "X.X.X.X."
-          }
-        ],
-        "solos": [],
-        "specials": [
-          {
-            "name": "Echauffement",
-            "pattern": "X.X.X.X.X.X."
           },
           {
             "name": "Dun Dun echauffement",
@@ -1449,9 +1147,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -1471,32 +1167,22 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "SSTSSS"
-          },
-          {
-            "name": "Call",
-            "pattern": "S.S.T.S.S.S."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "XX.XX.XX.XX.XX.XX.X.X.XX",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -1511,6 +1197,10 @@ export const RHYTHM_LIBRARY = [
             "pattern": "O.C."
           },
           {
+            "name": "Sangban echauffement",
+            "pattern": "O.C.C.C."
+          },
+          {
             "name": "Sangban variation 1",
             "pattern": "O.O.C."
           },
@@ -1521,25 +1211,6 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Sangban variation 3",
             "pattern": "C.C.C.O.O.O.O.C."
-          },
-          {
-            "name": "Sangban basic 1",
-            "pattern": "C..O..C..O.."
-          },
-          {
-            "name": "Sangban basic 2",
-            "pattern": "O.C..O.C..O."
-          }
-        ],
-        "solos": [],
-        "specials": [
-          {
-            "name": "Sangban echauffement",
-            "pattern": "O.C.C.C."
-          },
-          {
-            "name": "Sangban echauffement",
-            "pattern": "C.C.C.C.C.C."
           }
         ]
       },
@@ -1556,6 +1227,10 @@ export const RHYTHM_LIBRARY = [
             "pattern": "X.X.XX.X."
           },
           {
+            "name": "Sangban echauffement",
+            "pattern": "XX.XX.X.X.XX.XX.X.X.X.X.X.X.X.X"
+          },
+          {
             "name": "Sangban variation 1",
             "pattern": "X.X.XX.X.X.X.XX.X.X.XX"
           },
@@ -1567,21 +1242,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban variation 3",
             "pattern": "X.X.XX.X.X.XX.X.XX.XX.X.X.X.X.X.X.X.X"
           }
-        ],
-        "solos": [],
-        "specials": [
-          {
-            "name": "Sangban echauffement",
-            "pattern": "XX.XX.X.X.XX.XX.X.X.X.X.X.X.X.X"
-          }
         ]
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Dundun echauffement",
             "pattern": "O.O.O.O.O.O.O.O.O."
@@ -1589,23 +1255,13 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Dundun ending the echauffement",
             "pattern": "O.O.O.O."
-          },
-          {
-            "name": "Dundun echauffement",
-            "pattern": "OO.OO.OO.OO."
-          },
-          {
-            "name": "Dundun ending the echauffement",
-            "pattern": "O.OO.O.OO.O."
           }
         ]
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "X.X.X.XX.XX.XX.XX.XX.XX",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Dundun echauffement",
             "pattern": "XX.XX.XX.XX.XX.XX.XX.XX"
@@ -1619,9 +1275,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -1640,92 +1294,73 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "..S.TS..S.TS..S.TS..S.TS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "..S.OS..S.OS..S.OS..S.OS",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "S.SSTSSBSSTSS...........",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "S.SSOSSBSSOSS...........",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "O.OO.OO.OO..SSS.SSS.OO.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "S.SSTSSBSSTSS..........."
+            "pattern": "S.SSOSSBSSOSS..........."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "TTSBSSTTSBSS............"
+            "pattern": "OOSBSSOOSBSS............"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "..........TTSS..TTSSB..."
+            "pattern": "..........OOSS..OOSSB..."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "SS...S.S..TTSS.........."
+            "pattern": "SS...S.S..OOSS.........."
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "SS...S.S..TTSS..TTSS...."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "T.TT.TT.TT..SSS.SSS.TT.."
+            "pattern": "SS...S.S..OOSS..OOSS...."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O..O..O..O..O..O..O..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..M..O.O.O.M..M..O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.O.OO.OO.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "..O....OO.....O....OO...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.OO.OO.O.O.O.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -1744,71 +1379,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT....TTB.B.TT....TTB.B.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "OO....OOB.B.OO....OOB.B.",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "SSTSSS......"
+            "pattern": "SSOSSS......"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.OO..O.O...M...M...M...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".O.O.O.OO.OO..........OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".O.O.O.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -1827,71 +1444,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT....TTB.B.TT....TTB.B.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "OO....OOB.B.OO....OOB.B.",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "SSTSSS......"
+            "pattern": "SSOSSS......"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": ".O.O....O...M.....M.O..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": ".O.O.O.OO.O.O.O.O.O.O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".OO.OO.OO.OO..........OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -1910,86 +1509,62 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TT..S...TT..SB",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OO..S...OO..SB",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "BTTTB..BB..STT..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "BOOOB..BB..SOO..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           },
           {
             "name": "Call",
             "pattern": "T.TT.T.TT.SSS"
-          },
-          {
-            "name": "Call",
-            "pattern": "T...TT.T.TT.SSS."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M.OO.O..O..O....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "....O..O..O.OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -2008,71 +1583,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT....TTB.B.TT....TTB.B.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "OO....OOB.B.OO....OOB.B.",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "SSTSSS......"
+            "pattern": "SSOSSS......"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": ".....O..O.O....M.M..O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.O.O.OO.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "....OO.OO.OO.......OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -2092,51 +1649,32 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "SSTSSS"
-          },
-          {
-            "name": "Call",
-            "pattern": "S.S.T.S.S.S."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O.O..O.O..O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "X.XX.X.XX.X.X.XX",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O.C.C.C.",
-        "variations": [],
-        "solos": [],
-        "specials": [
-          {
-            "name": "Sangban echauffement",
-            "pattern": "C.C.C.C.C.C."
-          }
-        ]
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "X.XX.XX.X.X.X.X.X.X.X",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Sangban echauffement",
             "pattern": "X.XX.X.XX.X.X.O.O.XX.X.XX.X"
@@ -2152,17 +1690,6 @@ export const RHYTHM_LIBRARY = [
             "pattern": "O.O.O.O.O.O."
           },
           {
-            "name": "Dundun variation",
-            "pattern": "OO.OO.OO.O.."
-          }
-        ],
-        "solos": [],
-        "specials": [
-          {
-            "name": "Dundun echauffement",
-            "pattern": "O.O.O.O.O.O."
-          },
-          {
             "name": "Dundun echauffement",
             "pattern": "O.O.O.O.O.O."
           }
@@ -2175,10 +1702,7 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Dundun variation",
             "pattern": "X.X.X.XX.XX.XX.XX.XX.X"
-          }
-        ],
-        "solos": [],
-        "specials": [
+          },
           {
             "name": "Dundun echauffement",
             "pattern": "X.XX.XX.XX.XX.XX.XX.XX"
@@ -2188,9 +1712,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -2209,92 +1731,73 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "SSTTSS.........B",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "SSOOSS.........B",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "TTTTS.S.S..BS.B.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOOOS.S.S..BS.B.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TTSTTSTTS..BS.B.",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "OOSOOSOOS..BS.B.",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.O.O..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "SSTTSS.........B"
+            "pattern": "SSOOSS.........B"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "TTTTS.S.S..BS.B."
+            "pattern": "OOOOS.S.S..BS.B."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "TTSTTSTTS..BS.B."
+            "pattern": "OOSOOSOOS..BS.B."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "TTSTTSTTSTTSTTS.TTSTTSTTS..BS.B."
+            "pattern": "OOSOOSOOSOOSOOS.OOSOOSOOS..BS.B."
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "TTTTS.S.B..BS.S.B..BS.S.B..BS.S."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "OOOOS.S.B..BS.S.B..BS.S.B..BS.S."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "M.M.OO..M.M.OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.OO.OO.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "OO..O.O.O...M...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.OO.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".O.O...OO.O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.O.O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -2313,92 +1816,73 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "TTSSBSTTSSBSTTSSBSTTSSBS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOSSBSOOSSBSOOSSBSOOSSBS",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TTSTTSTTSTTSS.SS.SS.SS.S",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "OOSOOSOOSOOSS.SS.SS.SS.S",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "O.OO..O.O.O.O.OO........"
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "TTSSBSTTSSBSTTSSBSTTSSBS"
+            "pattern": "OOSSBSOOSSBSOOSSBSOOSSBS"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "TTSTTSTTSTTSS.SS.SS.SS.S"
+            "pattern": "OOSOOSOOSOOSS.SS.SS.SS.S"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "TTTTSSTTTTSSTTTTSSSSSSSS"
+            "pattern": "OOOOSSOOOOSSOOOOSSSSSSSS"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "TTSTTSS..TTSTTSS..TTSS..S.TT.TT.TT.BS....BBSS..."
+            "pattern": "OOSOOSS..OOSOOSS..OOSS..S.OO.OO.OO.BS....BBSS..."
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "TS.SSTTSS.STTS.SSTTSS.ST"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "T.TT..T.T.T.T.TT........"
+            "pattern": "OS.SSOOSS.SOOS.SSOOSS.SO"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "....OO....OO....OO....OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": ".O.O..M.OO..M.OO..M.O..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": ".O.O.OO.OO.OO.OO.OO.O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".OO....OO.OO.......OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -2417,71 +1901,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "T.S.T.T.S.T.T.S.T.T.S.T.T.S.T.T.S.T.T.S.T.T.S.T.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.S.O.O.S.O.O.S.O.O.S.O.O.S.O.O.S.O.O.S.O.O.S.O.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "TS.BS.BS.BS.BS.BS.TT.TT.TS.BS.BS.BS.BS.BS.BS.BS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OS.BS.BS.BS.BS.BS.OO.OO.OS.BS.BS.BS.BS.BS.BS.BS.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "T.T.T.T..S.."
+            "pattern": "O.O.O.O..S.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "................................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M.OO..M.OO..M.OO..M.OO..M.OO..M.OO..M.OO..M.OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "................................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.MM.MM.MM.MM.MM.MM.MM.OO.MM.MM.MM.MM.OOO.OO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "................................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -2500,88 +1966,69 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "SSTTSS.BSSTTSS.BSSTTSS.BSSTTSS.B",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "SSOOSS.BSSOOSS.BSSOOSS.BSSOOSS.B",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": ".SB..SB..SB..SB..SB..BTTTTSSSS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": ".SB..SB..SB..SB..SB..BOOOOSSSS..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "FSB.FSB.FSB.FSB.FSB..BTTF.S..F.T"
+            "pattern": "FSB.FSB.FSB.FSB.FSB..BOOF.S..F.O"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "F.S..BTTF.S..F.TF.S..BTTF.S..F.T"
+            "pattern": "F.S..BOOF.S..F.OF.S..BOOF.S..F.O"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "T.T.T.T.T.TT.F.TF.S..BTTTTSSSS.."
+            "pattern": "T.T.T.T.T.OO.F.OF.S..BOOOOSSSS.."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "FSB.FSB.FSB.FSB.FSB..BTTTTSSSS.."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "FSB.FSB.FSB.FSB.FSB..BOOOOSSSS.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O.O.....O.O.....O.O.....O.O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O.O.O.O.OO.O.OO.O...M.M.MM.M.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.OO.O.OO.O.O.O.O.OO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "OO..OO..OO..OO..OO..OO..OO..OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "..OO..OO..OO..OO..OO..OO..OO..OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -2600,71 +2047,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT....TTB.B.TT....TTB.B.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "OO....OOB.B.OO....OOB.B.",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "SSTSSS......"
+            "pattern": "SSOSSS......"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..O.O......O.OO..O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.O.O.OO.OO.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "..O.......OO.O.O.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.O.OO.OO.O.O.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -2683,71 +2112,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "SSTTSS.BSSTTSS..SSTTSS.BSSTTSS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "SSOOSS.BSSOOSS..SSOOSS.BSSOOSS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "TTS..SS.TTS..SS.TTS..SS.TTS..SS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOS..SS.OOS..SS.OOS..SS.OOS..SS.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.T.T.T.T.TTSS.."
+            "pattern": "F.O.O.O.O.OOSS.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "M.O.O.O.M.OO.O..M.O.O.O.M.OO....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O.O.O.O.OO.O.OO.....M.M.MM.M.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.OO.O.OO.O.O.O.O.OO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "OO..OO..OO..OO..OO..OO..OO..OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO..OO..OO..OO..OO..OO..OO..OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -2766,26 +2177,25 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TT.SS...TT.SS.B.TT.SS...TT.SS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO.SS...OO.SS.B.OO.SS...OO.SS.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TTS..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OOS..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "B...B...B...B.TT.S.T.S.TT.S.F..."
+            "pattern": "B...B...B...B.OO.S.O.S.OO.S.F..."
           },
           {
             "name": "Djembe solo #2",
@@ -2797,65 +2207,47 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "TTSTTSTTSTTSTTSTTSTTSTTSF.F.....BB..BB..BB..BB.."
+            "pattern": "OOSOOSOOSOOSOOSOOSOOSOOSF.F.....BB..BB..BB..BB.."
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "T.ST.ST.ST.ST.ST.ST.ST.ST.ST.ST.ST.ST.ST.ST.ST.ST.ST.ST.T.T.S.F."
+            "pattern": "O.SO.SO.SO.SO.SO.SO.SO.SO.SO.SO.SO.SO.SO.SO.SO.SO.SO.SO.T.T.S.F."
           },
           {
             "name": "Djembe solo #6",
             "pattern": "B.......F.F.....BB..BB..BB..BB.."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..O...O....M...M..O...O....M...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.O.O.O.O.OO.O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "........O.O...OO.O.O....O.O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.O.OO.O.O.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -2874,71 +2266,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TSS.TTTSS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OSS.OOOSS.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.BST.S.BST.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.BSO.S.BSO.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "B.TSS.TTTSS.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "B.OSS.OOOSS.",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "SSTSSS......"
+            "pattern": "SSOSSS......"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "OOOOO.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.OO.O.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".......OOOOO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.OO.O.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -2958,32 +2332,22 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "SSTSSS"
-          },
-          {
-            "name": "Call",
-            "pattern": "S.S.T.S.S.S."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "XX.XX.XX.XX.XX.XX.XX.XX.XX",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -3000,22 +2364,8 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Sangban/ Dundun variation 3",
             "pattern": "CC.C..C..C..O.O"
-          },
-          {
-            "name": "Sangban / Dundun variation 1",
-            "pattern": "C.C.C.C.O.O."
-          },
-          {
-            "name": "Sangban/ Dundun variation 2",
-            "pattern": "C.C.C.O.O.C."
-          },
-          {
-            "name": "Sangban/ Dundun variation 3",
-            "pattern": "C.C.C.C.O.O."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban Bell",
@@ -3033,9 +2383,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban/ Dundun variation 3",
             "pattern": "X.XX.XX.XX.XX.XX.X...X"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun",
@@ -3052,22 +2400,8 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Sangban/ Dundun variation 3",
             "pattern": "O.O"
-          },
-          {
-            "name": "Sangban / Dundun variation 1",
-            "pattern": "00.00.00.00."
-          },
-          {
-            "name": "Sangban/ Dundun variation 2",
-            "pattern": "00.00.0.0.00"
-          },
-          {
-            "name": "Sangban/ Dundun variation 3",
-            "pattern": "00.00.00.00."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun Bell",
@@ -3085,16 +2419,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban/ Dundun variation 3",
             "pattern": "X.XX.XX.XX.XX.XX.XXX.X"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Shekere",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -3113,71 +2443,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "TTB.B.B.TT.SSS.B",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOB.B.B.OO.SSS.B",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "S.TTS.B.S..SS.B.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "S.OOS.B.S..SS.B.",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "F.OO.O.OO.O.O..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "......OO........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "..OO............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.........OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -3196,172 +2508,138 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "TT.S..S.TTB.B.B.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OO.S..S.OOB.B.B.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TTSS..SSTTSSB.SS",
+        "drum_pattern": "OOSS..SSOOSSB.SS",
         "variations": [
           {
-            "name": "Djembé 3",
-            "pattern": "TTSS............"
-          }
-        ],
-        "solos": [
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
             "pattern": "F.SSF.SS....F.SSF.SSF.SS........"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "RTTTSS..RTTTSS..RTTTSS..RTTTSS.."
+            "pattern": "ROOOSS..ROOOSS..ROOOSS..ROOOSS.."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "TTSTTSTTS.......T.SS.S.SS.S.S..."
+            "pattern": "OOSOOSOOS.......O.SS.S.SS.S.S..."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "RSTTS...........RSTTS..........."
+            "pattern": "RSOOS...........RSOOS..........."
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "F.TT.F.TT.F.TT..F.TT.F.TT......."
+            "pattern": "F.OO.F.OO.F.OO..F.OO.F.OO......."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "RTTFTTFSS.TSTTS.TTSS..S.B.TSTTS."
+            "pattern": "ROOFOOFSS.OSOOS.OOSS..S.B.OSOOS."
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "T.SST.SS....T.SS"
+            "pattern": "O.SSO.SS....O.SS"
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "T.SST.SS....T.SST.SST.SS........"
+            "pattern": "O.SSO.SS....O.SSO.SSO.SS........"
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "TTTTSS..TTTTSS.."
+            "pattern": "OOOOSS..OOOOSS.."
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "TTTTSS.TTSSS....TTTTSS.........."
+            "pattern": "OOOOSS.OOSSS....OOOOSS.........."
           },
           {
             "name": "Djembe solo #11",
-            "pattern": "TTSTTSTTS......."
+            "pattern": "OOSOOSOOS......."
           },
           {
             "name": "Djembe solo #12",
-            "pattern": "T.SS.S.SS.S.S...SSSTTS.........."
+            "pattern": "O.SS.S.SS.S.S...SSSOOS.........."
           },
           {
             "name": "Djembe solo #13",
-            "pattern": "S.TT.S.TT......."
+            "pattern": "S.OO.S.OO......."
           },
           {
             "name": "Djembe solo #14",
-            "pattern": "S.TT.S.TT.S.TT..S.TT.S.TT......."
+            "pattern": "S.OO.S.OO.S.OO..S.OO.S.OO......."
           },
           {
             "name": "Djembe solo #15",
-            "pattern": "SSSTTTSSS......."
+            "pattern": "SSSOOOSSS......."
           },
           {
             "name": "Djembe solo #16",
-            "pattern": "SSSTTTSSS.TSTTS."
+            "pattern": "SSSOOOSSS.OSOOS."
           },
           {
             "name": "Djembe solo #17",
-            "pattern": "TTSS..S.B......."
+            "pattern": "OOSS..S.B......."
           },
           {
             "name": "Djembe solo #18",
-            "pattern": "TTSS..S.B.TSTTS."
-          },
-          {
-            "name": "Solo 1",
-            "pattern": "SBTTSS.B.SB"
-          },
-          {
-            "name": "Solo 1",
-            "pattern": "SBTTSS.B.SB....."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "OOSS..S.B.OSOOS."
           },
           {
             "name": "Call",
             "pattern": "T.TT.T.TT.T.T."
           },
           {
-            "name": "Call",
-            "pattern": "T...TT..T...TT.."
+            "name": "Solo 1",
+            "pattern": "SBTTSS.B.SB"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "OO.M..M.OO.M..M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.O.OO.OO.O.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.........O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -3381,30 +2659,20 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "TTB.B.B.TT.SSS.B",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "S.SS.TTS.SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "S.TTS.B.S.SS.B",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "T.TT.T.TT.T.T.B"
-          },
-          {
-            "name": "Call",
-            "pattern": "T...TT..T...TT.."
           }
         ]
       },
@@ -3419,18 +2687,8 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Kenkeni, Sangban and Dundun; variatian 2",
             "pattern": "O.O"
-          },
-          {
-            "name": "Kenkeni, Sangban and Dundun; variation 1",
-            "pattern": "OO..OO..OO..OO.."
-          },
-          {
-            "name": "Kenkeni, Sangban and Dundun; variatian 2",
-            "pattern": "O...O...O...O..."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Kenkeni Bell",
@@ -3444,9 +2702,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Kenkeni, Sangban and Dundun; variatian 2",
             "pattern": "X.X.X.X.X.X.X.X.X"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban",
@@ -3459,18 +2715,8 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Kenkeni, Sangban and Dundun; variatian 2",
             "pattern": "O.O"
-          },
-          {
-            "name": "Kenkeni, Sangban and Dundun; variation 1",
-            "pattern": "O...O...O...O..."
-          },
-          {
-            "name": "Kenkeni, Sangban and Dundun; variatian 2",
-            "pattern": "O...O...O...O..."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban Bell",
@@ -3484,9 +2730,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Kenkeni, Sangban and Dundun; variatian 2",
             "pattern": "X.X.X.X.X.X.X.X.X"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun",
@@ -3499,18 +2743,8 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Kenkeni, Sangban and Dundun; variatian 2",
             "pattern": "O.O.O.O"
-          },
-          {
-            "name": "Kenkeni, Sangban and Dundun; variation 1",
-            "pattern": "O...OO..O...OO.."
-          },
-          {
-            "name": "Kenkeni, Sangban and Dundun; variatian 2",
-            "pattern": "OO..OO..OO..OO.."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun Bell",
@@ -3524,16 +2758,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Kenkeni, Sangban and Dundun; variatian 2",
             "pattern": "X.X.X.X.X.X.X.X.X"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -3552,24 +2782,18 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "BSSBT.BSSBT.BSSBT.BSSBT.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "BSSBO.BSSBO.BSSBO.BSSBO.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
             "pattern": "SSSSB.S.B..SS.B.S...S.B."
@@ -3579,44 +2803,32 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": ".M..O..M..O..M..O..M..O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..M..O..M..O..M..O..M..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.........O.O.........O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -3635,71 +2847,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TTB.T.BS.SB.T.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OOB.O.BS.SB.O.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TS.TS.TS.RSSS...",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "OS.OS.OS.RSSS...",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.TTT..."
+            "pattern": "F.OO.O.OO.OOO..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -3718,76 +2912,57 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "..S.TS..S.TS..S.TS..S.TS",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "..S.OS..S.OS..S.OS..S.OS",
+        "variations": [
           {
             "name": "DjembeSolo",
-            "pattern": "............F.TT.TT.TT.."
-          }
-        ],
-        "specials": [
+            "pattern": "............F.OO.OO.OO.."
+          },
           {
             "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "F.OO.OO.OO.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O....OO....OO....OO....O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "..O.....O.....OO....O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.O.OO.OO.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..O..O.O.O.O..O..O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.O.OO.OO.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -3806,84 +2981,65 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TTBS.BS.TTBS.BS.TTBS.BS.TTBS.BS.TTBS.BS.TTBS.BS.TTBS.BS.TTBS.B",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OOBS.BS.OOBS.BS.OOBS.BS.OOBS.BS.OOBS.BS.OOBS.BS.OOBS.BS.OOBS.B",
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "................................................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................................................",
         "variations": [
           {
+            "name": "Master Call",
+            "pattern": "OOO.OOO.OOO.OOO."
+          },
+          {
             "name": "Harouna Dembele phrase #1",
-            "pattern": "S..........BTTTTS.TT.S.........BTTSSTTSSTTSSTTSSS.............SS"
+            "pattern": "S..........BOOOOS.OO.S.........BOOSSOOSSOOSSOOSSS.............SS"
           },
           {
             "name": "Harouna Dembele phrase #2",
-            "pattern": "SS..........RTTTSS.............BSS..SS..SS..SS..S...........RSSS"
+            "pattern": "SS..........ROOOSS.............BSS..SS..SS..SS..S...........RSSS"
           },
           {
             "name": "Harouna Dembele phrase #3",
-            "pattern": "SS..RSSSSS..RTTTSS..............T.T.T.T.T.T.T.T.S...........RSSS"
-          }
-        ],
-        "solos": [],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "TTT.TTT.TTT.TTT."
+            "pattern": "SS..RSSSSS..ROOOSS..............T.T.T.T.T.T.T.T.S...........RSSS"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O.O..O..O.O..O..O.O..O..O.O..O..O.O..O..O.O..O..O.O..O..O.O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..O.O.O.O..O.O.O..O.O.O.O..O.O.O..O.O.O.O..O.O.O..O.O.O.O..O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.O.O.OO.O.O.OO.O.O.O.OO.O.O.OO.O.O.O.OO.O.O.OO.O.O.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O...M...M..OO.O.O...M...M...M..OO.O..O.O..O.O..OO...M...M...M..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.O..OO.O.O.O.O.O.O..OO.O.O.O..O.O..O.O..OO.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -3903,87 +3059,68 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "ROOOO.OO.O.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "SSTSSS......RTSS..RTSS..RTSS..RTS.RTSS.S.TTSTTS."
+            "pattern": "SSOSSS......ROSS..ROSS..ROSS..ROS.ROSS.S.OOSOOS."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "SSTSSS......RTSSS.RTSSS.RTSSS.RTSSS.TSTSTSTSTTS."
+            "pattern": "SSOSSS......ROSSS.ROSSS.ROSSS.ROSSS.OSOSOSOSOOS."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "SSTSSS.....TRSSS.TRSSS..TT.RSSTT.RSSTT.S.RTTT.F."
+            "pattern": "SSOSSS.....ORSSS.ORSSS..OO.RSSOO.RSSOO.S.ROOO.F."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "SSTSSS......BSF.BSF.BSF.BSF.BSF.BSF.BS...TTSTTS."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "SSOSSS......BSF.BSF.BSF.BSF.BSF.BSF.BS...OOSOOS."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "..O.OO..O.OO..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.....O.O......O.O..O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.O.OO.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "OO.O......OO.O.O.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.O.OO.O.OO.O.O.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -4002,84 +3139,65 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TTS..BS.TTS..BS.TTS..BS.TTS..B",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OOS..BS.OOS..BS.OOS..BS.OOS..B",
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.O.O..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "S.TTS..BS.TTS..BS.TTS..BS.TTS..B"
+            "pattern": "S.OOS..BS.OOS..BS.OOS..BS.OOS..B"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "STTSTTSTTSTTSTT.SS.....BTSTSS..."
+            "pattern": "SOOSOOSOOSOOSOO.SS.....BTSTSS..."
           },
           {
             "name": "Djembe solo #3",
             "pattern": "........T.T.S.B.S..BS.B........."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO......OO......OO......OO....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "OO.O..O...M...O.OO.O..O...M...O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.O.OO.O.O.O.O.OO.O.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "........O.O.O....O.O...OO.O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.OO.O.O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -4098,86 +3216,62 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TTT.S.B.TTT.S.B.TTT.S.B.TTT.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OOO.S.B.OOO.S.B.OOO.S.B.OOO.S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TTS..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OOS..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "B.TT..SSB.TT..SSB.TT..SSB.TT..SS",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "B.OO..SSB.OO..SSB.OO..SSB.OO..SS",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           },
           {
             "name": "Call",
             "pattern": "T.TT.T.TT.SSS"
-          },
-          {
-            "name": "Call",
-            "pattern": "T...TT..T...TT.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.OO....M...O.O.O.OO....M...M...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.O.O.O.O.OO.O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.....O.O.....O.O.....O.O.....O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -4197,42 +3291,32 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "ROOOO.OO.O.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O.O.OO..O.O.OO..O.O.OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.OO.OO.O.OO.OO.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -4253,10 +3337,7 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Sangban variation 2",
             "pattern": "...C......C..C.."
-          }
-        ],
-        "solos": [],
-        "specials": [
+          },
           {
             "name": "Sangban echauffement",
             "pattern": "................"
@@ -4286,10 +3367,7 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Sangban variation 2",
             "pattern": "X.X.X.X.X.X.X.X."
-          }
-        ],
-        "solos": [],
-        "specials": [
+          },
           {
             "name": "Sangban echauffement",
             "pattern": "X.X.X.OX.X.OX.X."
@@ -4323,10 +3401,7 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Dun Dun variation 3",
             "pattern": "C..O..CO.OC....."
-          }
-        ],
-        "solos": [],
-        "specials": [
+          },
           {
             "name": "Dun Dun echauffement",
             "pattern": "..O.O.O.O..O.O.O"
@@ -4360,10 +3435,7 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Dun Dun variation 3",
             "pattern": "X.X.X.XX.X.XX.X."
-          }
-        ],
-        "solos": [],
-        "specials": [
+          },
           {
             "name": "Dun Dun echauffement",
             "pattern": "X.X.X.XX.X.XX.X."
@@ -4391,27 +3463,21 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "..S.TS..S.TS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "..S.OS..S.OS",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "S..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "S..SOOS..SOO",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "F.OO.OO.OO.."
           },
           {
             "name": "Call",
@@ -4422,16 +3488,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -4457,9 +3519,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban variation: 5",
             "pattern": "C...O.O....."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban Bell",
@@ -4485,23 +3545,17 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban variation: 5",
             "pattern": "X.XX.XXXX.X."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "....OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO..OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -4520,71 +3574,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "TTSSB.SS..SS.BSS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOSSB.SS..SS.BSS",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO..M...OO..M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "..........O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..O..O.......O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -4603,34 +3639,33 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "TTSS..SSTTSS..SS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOSS..SSOOSS..SS",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "OOSOOSOOS.RSS.S."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": ".TB.TT....B.TT.."
+            "pattern": ".OB.OO....B.OO.."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": ".TB.TT..T.S.TT.."
+            "pattern": ".OB.OO..T.S.OO.."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "T.S.TT..T.S.TT.."
+            "pattern": "T.S.OO..T.S.OO.."
           },
           {
             "name": "Djembe solo #4",
@@ -4638,61 +3673,43 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "SSRTSSS........."
+            "pattern": "SSROSSS........."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "TTSSSSSSTTSSSSSSTTSSSSSSTTSSSSSSTTSTTSTTS.RSSSS."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "TTSTTSTTS.RSS.S."
+            "pattern": "OOSSSSSSOOSSSSSSOOSSSSSSOOSSSSSSOOSOOSOOS.RSSSS."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "M...OO..M...OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.OO.OO.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..O..O...M...O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.......M.M..O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O..OO.O.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -4712,16 +3729,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "O..O..O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "X.XX.XX.X.XX",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -4731,9 +3744,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban/ Dundun variation",
             "pattern": "O.O.C.C.O.O."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban Bell",
@@ -4743,9 +3754,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban/ Dundun variation",
             "pattern": "X.XX.XX.X..X"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun",
@@ -4755,9 +3764,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban/ Dundun variation",
             "pattern": "O.O.O.O.O.O."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun Bell",
@@ -4767,9 +3774,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban/ Dundun variation",
             "pattern": "X.XX.XX.X.XX"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       }
     ]
   },
@@ -4788,74 +3793,73 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT....TTB.B.TT....TTB.B.",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "OO....OOB.B.OO....OOB.B.",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "SSOSSS......"
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "RTSS..RTSS.."
+            "pattern": "ROSS..ROSS.."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "RTSS..RTS.RTSS.S.TTSTTS."
+            "pattern": "ROSS..ROS.ROSS.S.OOSOOS."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "RTSSS.RTSSS."
+            "pattern": "ROSSS.ROSSS."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "RTSSS.RTSSS.TSTSTSTSTTS."
+            "pattern": "ROSSS.ROSSS.OSOSOSOSOOS."
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "SSTSSS.....TRSSS.TRSSSS."
+            "pattern": "SSOSSS.....ORSSS.ORSSSS."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "TT.........TRSSS.TRSSS.."
+            "pattern": "OO.........ORSSS.ORSSS.."
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "TT.RSSTT.RSSTT.S.RTTT.S."
+            "pattern": "OO.RSSOO.RSSOO.S.ROOO.S."
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "BST.BST.BST."
+            "pattern": "BSO.BSO.BSO."
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "BST.BST.BST.BS.S.TTSTTS."
+            "pattern": "BSO.BSO.BSO.BS.S.OOSOOS."
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "SSTSSS.BS.S.S..........."
+            "pattern": "SSOSSS.BS.S.S..........."
           },
           {
             "name": "Djembe solo #11",
-            "pattern": "RTTS.SRTTTS.S..........."
+            "pattern": "ROOS.SROOOS.S..........."
           },
           {
             "name": "Djembe solo #12",
-            "pattern": "RTSRTSTSTTSSS..........."
+            "pattern": "ROSROSOSOOSSS..........."
           },
           {
             "name": "Djembe solo #13",
-            "pattern": "RTSRTSTSTTSSS..RTTSSS..."
+            "pattern": "ROSROSOSOOSSS..ROOSSS..."
           },
           {
             "name": "Djembe solo #14",
@@ -4863,73 +3867,55 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #15",
-            "pattern": "RSSS.RTTTSSS"
+            "pattern": "RSSS.ROOOSSS"
           },
           {
             "name": "Djembe solo #16",
-            "pattern": "RTSTTSTSTTSSS..RTSTS...S"
+            "pattern": "ROSOOSOSOOSSS..ROSOS...S"
           },
           {
             "name": "Djembe solo #17",
-            "pattern": "F..FTTTT...."
+            "pattern": "F..FOOOO...."
           },
           {
             "name": "Djembe solo #18",
-            "pattern": "F..RTTTT.RTTTS.RTTTS...."
+            "pattern": "F..ROOOO.ROOOS.ROOOS...."
           },
           {
             "name": "Djembe solo #19",
-            "pattern": "T.ST.ST.STT.S..RSSTTSS.."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "SSTSSS......"
+            "pattern": "O.SO.SO.SOO.S..RSSOOSS.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.....M.M......M.M..O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.O.OO.O..O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".O.O...............OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".O.O.O.OO.OOO.OO.O.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -4948,71 +3934,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "TT.S.BS.TTTS..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OO.S.BS.OOOS..S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.TT.SSSB.S.S.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO.SSSB.S.S.S.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT.....BTTB.....",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "OO.....BOOB.....",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO..M...OO..M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..M.M..O.O.OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O.O.O....M.M.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.O.OO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -5031,71 +3999,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TTS..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OOS..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "T.SS.BSST.SSBBSST.SS.BSST.SSBBSS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.SS.BSSO.SSBBSSO.SS.BSSO.SSBBSS",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO..M...OO..M...OO..M...OO..M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.....O.....O.O....O.O..M.M.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.OO.O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".O.O.O.OO...OO.OO.............OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".O.O.O.OO.O.OO.OO.O.OO.OO.O.O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -5114,71 +4064,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO..S.B.OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "F.OO.O.OO.O.O..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..M.M..O.O.OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".......OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.O.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -5198,16 +4130,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "SS.BT.T.SS.BT..T",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "S.SS.TTS...SS..T",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "T.TT.T..TT..SSS."
@@ -5217,23 +4145,17 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "O.O.O...........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "X.X.X.X.X.X.X.X.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "C.C.O.O.........",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Sangban echauffement",
             "pattern": "O.O.O.O.O..O...."
@@ -5243,9 +4165,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Sangban Bell",
         "drum_pattern": "X.X.X.X.X.X.X.X.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Sangban echauffement",
             "pattern": "X.XX.XX.X.XX.X.X"
@@ -5255,16 +4175,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Dun Dun",
         "drum_pattern": "O..O..O.O.O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "X.X.X.X.X.X.X.X.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -5283,71 +4199,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "T.SS.BSTT.SSB.STT.SS.BSTT.SSB.ST",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.SS.BSOO.SSB.SOO.SS.BSOO.SSB.SO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.TT..S.B.TT..S.B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO..S.B.OO..S.B.OO..S.B.OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.....O.O.....O.O.....O.O.....O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..O..O.M...O.O.M..M.M.M..M.M...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.O.OO.O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -5366,71 +4264,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TT..S.TT..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OO..S.OO..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "BS.TS.BS.TS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "BS.OS.BS.OS.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "S...........",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "ROOOO.OO.O.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "M..OO.M..OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.M.M.M.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.....O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -5449,96 +4329,77 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.O.O..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "TTSS..SS..SS..SS"
+            "pattern": "OOSS..SS..SS..SS"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "RSSS.S.SS.SSBBST"
+            "pattern": "RSSS.S.SS.SSBBSO"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "T.SS.BSTT.SSBBST"
+            "pattern": "O.SS.BSOO.SSBBSO"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "RSRTTS..RSRTT..."
+            "pattern": "RSROOS..RSROO..."
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "S..SS.TT.S.SS.T."
+            "pattern": "S..SS.OO.S.SS.O."
           },
           {
             "name": "Djembe solo #6",
             "pattern": "BS.BS.S.BS.BS.S."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.OO....O.O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "...O....O.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -5558,70 +4419,52 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.TT..S.S.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO..S.S.OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "F.OO.O.OO.O.O..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M.OO....M.O.M...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "...O....O.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -5640,46 +4483,45 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "BSSSTTSSTSSSTTSSBSSSTTSSTSSSTTSS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "BSSSOOSSOSSSOOSSBSSSOOSSOSSSOOSS",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TTS..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OOS..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
             "pattern": "SS.....BSSS....B"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "SS.....BSSS...TT"
+            "pattern": "SS.....BSSS...OO"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "SS....TTSSS...TT"
+            "pattern": "SS....OOSSS...OO"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "SS.TTSTTSTTSTTSB"
+            "pattern": "SS.OOSOOSOOSOOSB"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "TTSTTSTTS.RSSSS."
+            "pattern": "OOSOOSOOS.RSSSS."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "SS.SS.TTS.B.SBTT"
+            "pattern": "SS.SS.OOS.B.SBOO"
           },
           {
             "name": "Djembe solo #7",
@@ -5687,23 +4529,23 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "B.SS.BSSB.SSTTSS"
+            "pattern": "B.SS.BSSB.SSOOSS"
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "B.SS..SSB.SSTTSS"
+            "pattern": "B.SS..SSB.SSOOSS"
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "B.SS.BSSBTTSTTSS"
+            "pattern": "B.SS.BSSBOOSOOSS"
           },
           {
             "name": "Djembe solo #11",
-            "pattern": "B.SS..SSB.T.TTSS"
+            "pattern": "B.SS..SSB.O.OOSS"
           },
           {
             "name": "Djembe solo #12",
-            "pattern": "BSSSTTSSBSSSTTSS"
+            "pattern": "BSSSOOSSBSSSOOSS"
           },
           {
             "name": "Djembe solo #13",
@@ -5711,15 +4553,19 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #14",
-            "pattern": "SS....TTSSS...TT"
+            "pattern": "SS....OOSSS...OO"
           },
           {
             "name": "Djembe solo #15",
-            "pattern": "SS.TTSTTSTTSTTSB"
+            "pattern": "SS.OOSOOSOOSOOSB"
           },
           {
             "name": "Djembe solo #16",
-            "pattern": "SS.....BSSS...TT"
+            "pattern": "SS.....BSSS...OO"
+          },
+          {
+            "name": "Call",
+            "pattern": "T.TT.T.TT.SSS..."
           },
           {
             "name": "Solo accompagnement 1",
@@ -5732,16 +4578,6 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Solo 1; use the next elements:",
             "pattern": "SS.BSSS.B.SS.BSS"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
-          },
-          {
-            "name": "Call",
-            "pattern": "T.TT.T.TT.SSS..."
           }
         ]
       },
@@ -5757,9 +4593,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Kenkeni 3",
             "pattern": "O...O...O...O..."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Kenkeni Bell",
@@ -5773,23 +4607,17 @@ export const RHYTHM_LIBRARY = [
             "name": "Kenkeni 3",
             "pattern": "X.X.X.X.X.X.X.XX"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..O..O...M...O.O..O..O...M...O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
@@ -5798,10 +4626,7 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Dun Dun variation 1",
             "pattern": "O.O.O.O........."
-          }
-        ],
-        "solos": [],
-        "specials": [
+          },
           {
             "name": "Dun Dun echauffement",
             "pattern": "O.O.O.O........."
@@ -5815,10 +4640,7 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Dun Dun variation 1",
             "pattern": "X.X.X.X.X.X.X.X."
-          }
-        ],
-        "solos": [],
-        "specials": [
+          },
           {
             "name": "Dun Dun echauffement",
             "pattern": "X.X.X.X.X.X.X.X."
@@ -5842,46 +4664,45 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "TTSS..SSTTSS..SSTTSS..SSTTSS..SS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOSS..SSOOSS..SSOOSS..SSOOSS..SS",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TTS..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OOS..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "B.TT..S.B.TT..S.B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "B.OO..S.B.OO..S.B.OO..S.B.OO..S.",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
             "pattern": "SS.....BSSS....B"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "SS.....BSSS...TT"
+            "pattern": "SS.....BSSS...OO"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "SS....TTSSS...TT"
+            "pattern": "SS....OOSSS...OO"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "SS.TTSTTSTTSTTSB"
+            "pattern": "SS.OOSOOSOOSOOSB"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "TTSTTSTTS.RSSSS."
+            "pattern": "OOSOOSOOS.RSSSS."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "SS.SS.TTS.B.SBTT"
+            "pattern": "SS.SS.OOS.B.SBOO"
           },
           {
             "name": "Djembe solo #7",
@@ -5889,23 +4710,23 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "B.SS.BSSB.SSTTSS"
+            "pattern": "B.SS.BSSB.SSOOSS"
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "B.SS..SSB.SSTTSS"
+            "pattern": "B.SS..SSB.SSOOSS"
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "B.SS.BSSBTTSTTSS"
+            "pattern": "B.SS.BSSBOOSOOSS"
           },
           {
             "name": "Djembe solo #11",
-            "pattern": "B.SS..SSB.T.TTSS"
+            "pattern": "B.SS..SSB.O.OOSS"
           },
           {
             "name": "Djembe solo #12",
-            "pattern": "BSSSTTSSBSSSTTSS"
+            "pattern": "BSSSOOSSBSSSOOSS"
           },
           {
             "name": "Djembe solo #13",
@@ -5913,65 +4734,47 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #14",
-            "pattern": "SS....TTSSS...TT"
+            "pattern": "SS....OOSSS...OO"
           },
           {
             "name": "Djembe solo #15",
-            "pattern": "SS.TTSTTSTTSTTSB"
+            "pattern": "SS.OOSOOSOOSOOSB"
           },
           {
             "name": "Djembe solo #16",
-            "pattern": "SS.....BSSS...TT"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "SS.....BSSS...OO"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O..M.OO.O..M.OO.O..M.OO.O..M.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..O..O...M...O.O..O..O...M...O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO..O.O.O.O.O.O.OO..O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "M.......M.O.....M..O.O.O.OO.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.O.OO.O.O.OO.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -5990,71 +4793,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..BSSTTS..BSSTTS..BSSTTS..BSSTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..BSSOOS..BSSOOS..BSSOOS..BSSOO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "F.OO.O.OO.O.O..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O...O.O.O.O.O.O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..O..O....O..O.O.....M.M.....M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "..OO.OO...OO.OO.O.OO............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -6074,9 +4859,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "BSSTTS...BSSTTS.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "T.TT.T..TT.T.T.."
@@ -6091,9 +4874,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Kenkeni 2",
             "pattern": "O..C..O..C..O..C"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Kenkeni Bell",
@@ -6103,37 +4884,27 @@ export const RHYTHM_LIBRARY = [
             "name": "Kenkeni 2",
             "pattern": "X.XX.X.X.X.XX.X."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban",
         "drum_pattern": "C.O.O.O.O.O.C.C.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "X.X.X.X.X.X.X.X.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "X.X.X.X.X.X.X.X.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -6152,71 +4923,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "TTS..BS.TTS..BS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOS..BS.OOS..BS.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S...T.T.S...T.T.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S...O.O.S...O.O.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT.S.BS.TTSS.BS.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "OO.S.BS.OOSS.BS.",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "..OO.OO.....O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O...............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -6235,71 +4988,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.....T..T..S.....T..T..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.....O..O..S.....O..O..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "T.T..S..BS..T.TS.S..BS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.O..S..BS..O.OS.S..BS..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "B..S.S..ST.TS..S.S..ST.T",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "B..S.S..SO.OS..S.S..SO.O",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "ROOOO.OO.O.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "...O.O..O..OO.....O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..............O........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O..O.O..O..OO..O..O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -6318,71 +5053,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "TTSSB.F.TTSSB.F.TTSSB.F.TTSSB.F.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOSSB.F.OOSSB.F.OOSSB.F.OOSSB.F.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "S...F.F.S...F.F.S...F.F.S...F.F.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "B.TT..S.B.TT..S.B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "B.OO..S.B.OO..S.B.OO..S.B.OO..S.",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "OO.M..M.OO.M..M.OO.M..M.OO.M..M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.O.OO.OO.O.OO.OO.O.OO.OO.O.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": ".O.O.O.OO...M.M..O.O.O.OO...M.M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.O.O.OO.O.O.O.OO.O.O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..M.M.M..O.....O..M.M.M..O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.O.O..O.OO.OO.OO.O.O..O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -6401,38 +5118,37 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TT..S.S.TT...BS.TT..S.S.TT...B",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OO..S.S.OO...BS.OO..S.S.OO...B",
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "S...F.F.S.B.F.F.S...F.F.S.B.F.F.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F......OOOSOOSOOS......."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "TTSS..SSB.SS..SS"
+            "pattern": "OOSS..SSB.SS..SS"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "TTSS..SSB.SSTTSS"
+            "pattern": "OOSS..SSB.SSOOSS"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "TTSS..SS...BSSS."
+            "pattern": "OOSS..SS...BSSS."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": ".BSS.BSSS..BTTSTTS.TTSTTSTTSTTSS"
+            "pattern": ".BSS.BSSS..BOOSOOS.OOSOOSOOSOOSS"
           },
           {
             "name": "Djembe solo #5",
@@ -6440,65 +5156,47 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "SS...BSSBSSBTTST"
+            "pattern": "SS...BSSBSSBOOSO"
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "TS...BSSBSSBSSBS"
+            "pattern": "OS...BSSBSSBSSBS"
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "TS.TTSTTSTTSTTSS"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F......TTTSTTSTTS......."
+            "pattern": "OS.OOSOOSOOSOOSS"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O.OO..M.O.OO..M.O.OO..M.O.OO..M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..M..M...O.....OO.OO.O...O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.OO.OO.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "M..M..M.O.........OO.O.OO.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.O.OO.O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -6517,26 +5215,25 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "TTSSB.F.TTSSB.F.TTSSB.F.TTSSB.F.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOSSB.F.OOSSB.F.OOSSB.F.OOSSB.F.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "SSSSB.TTSSSSB.TTSSSSB.TTSSSSB.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "SSSSB.OOSSSSB.OOSSSSB.OOSSSSB.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [
+        "variations": [
           {
             "name": "DjembeSolo",
-            "pattern": "................F.TT.T.TT.SSS..."
+            "pattern": "................F.OO.O.OO.SSS..."
+          },
+          {
+            "name": "Master Call",
+            "pattern": "F......OOOSOOSOOS......."
           },
           {
             "name": "Djembe solo #1",
@@ -6544,69 +5241,51 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "SS.TTSTTSTTSTTST"
+            "pattern": "SS.OOSOOSOOSOOSO"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "SS.RTTRSS..RTTRS"
+            "pattern": "SS.ROORSS..ROORS"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "T.T.SSBT......TT"
+            "pattern": "T.T.SSBO......OO"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "TSTTSSB.T.T.SSB."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F......TTTSTTSTTS......."
+            "pattern": "OSOOSSB.T.T.SSB."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "OO.O.OO.OO.O.OO.OO.O.OO.OO.O.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.O.OO.OO.O.OO.OO.O.OO.OO.O.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "OO.O.O.OO...OO.OO..M.M.M..M.M.M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.O.O.OO.O.OO.OO.OO.O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.MM.M.MM.O.....O.MM.M.MM.O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.O.OO.O.O.O.O.OO.O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -6625,71 +5304,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": ".SS.TT.SS.TT.SS.TT.SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": ".SS.OO.SS.OO.SS.OO.SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "ROOOO.OO.O.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "M..OO.O..OO.M..OO.M..OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O...O....OO.....M..M.M..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.OO.OO.O.O.O.OO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "..O...OO...OO..........O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.OO.O.OO.O.O.OO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -6723,9 +5384,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S.TS.S..TS.S.TSS",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "T.TT.TT.TT......"
@@ -6735,30 +5394,22 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "XX.XX.XX.XX.XXXX",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O...............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "X.XX.XX..X.XX.XX",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
@@ -6772,9 +5423,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Dun Dun variation 2",
             "pattern": "O..O..O..O..O..O"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun Bell",
@@ -6788,9 +5437,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Dun Dun variation 2",
             "pattern": "X.X.X.XX.X.XX.XX"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       }
     ]
   },
@@ -6810,16 +5457,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S.TS..S.TS..S.TS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "S.SSTTS..SSTTS..",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "TTTTTTT.T......."
@@ -6829,44 +5472,32 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "O.C.O.C.O.C.O.C.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "XX.XX.X.X.XX.X.X",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "...C.C....C.C...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "X.X.X.XX.X.XX.X.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "X.XX.XX.XX.XX.XX",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -6885,30 +5516,29 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.SSTTS.SSTTS.SSTTS.SSTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.SSOOS.SSOOS.SSOOS.SSOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": ".SS.TT.SS.TT.SS.TT.SS.TT",
-        "variations": [],
-        "solos": [
+        "drum_pattern": ".SS.OO.SS.OO.SS.OO.SS.OO",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "ROOOO.OO.O.."
+          },
           {
             "name": "Djembe solo #1",
             "pattern": "....SS.S.S.."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "...............RTT.T..T."
+            "pattern": "...............ROO.O..O."
           },
           {
             "name": "Djembe solo #3",
@@ -6916,19 +5546,19 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "..SS.T.S...."
+            "pattern": "..SS.O.S...."
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "TT.TT.TT.TT."
+            "pattern": "OO.OO.OO.OO."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "TS.TS.TS.TS."
+            "pattern": "OS.OS.OS.OS."
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "...........BS.S.S.TT.SSTT..........."
+            "pattern": "...........BS.S.S.OO.SSOO..........."
           },
           {
             "name": "Djembe solo #8",
@@ -6936,101 +5566,83 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "S.S..BSS..TTSTTS.BS.S..B"
+            "pattern": "S.S..BSS..OOSOOS.BS.S..B"
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "SS...BS.S..BSS..TTSTTS.B"
+            "pattern": "SS...BS.S..BSS..OOSOOS.B"
           },
           {
             "name": "Djembe solo #11",
-            "pattern": "SBSBSBSBSB.BSSS.SS.TTSS."
+            "pattern": "SBSBSBSBSB.BSSS.SS.OOSS."
           },
           {
             "name": "Djembe solo #12",
-            "pattern": "B..SS.B..SS.B...F.TT.RSSS..RSSS..RSSS.TTF......."
+            "pattern": "B..SS.B..SS.B...F.OO.RSSS..RSSS..RSSS.OOF......."
           },
           {
             "name": "Djembe solo #13",
-            "pattern": "S.TS.BSTTS..S.TS.BSTTS.."
+            "pattern": "S.OS.BSOOS..S.OS.BSOOS.."
           },
           {
             "name": "Djembe solo #14",
-            "pattern": "S.TSTTSTTS..S.TS.BSTTS.."
+            "pattern": "S.OSOOSOOS..S.OS.BSOOS.."
           },
           {
             "name": "Djembe solo #15",
-            "pattern": "S.TS.BSTTS..S.TSTTSTTS.B"
+            "pattern": "S.OS.BSOOS..S.OSOOSOOS.B"
           },
           {
             "name": "Djembe solo #16",
-            "pattern": "SSS.SSS.SSS.SSS.RTSSS..."
+            "pattern": "SSS.SSS.SSS.SSS.ROSSS..."
           },
           {
             "name": "Djembe solo #17",
-            "pattern": "F.TT..F.TT..RSS........."
+            "pattern": "F.OO..F.OO..RSS........."
           },
           {
             "name": "Djembe solo #18",
-            "pattern": "FTTFSSFTTFSSRSS........."
+            "pattern": "FOOFSSFOOFSSRSS........."
           },
           {
             "name": "Djembe solo #19",
-            "pattern": "TSTSTS.RSSS.....TTSTTSSS"
+            "pattern": "OSOSOS.RSSS.....OOSOOSSS"
           },
           {
             "name": "Djembe solo #20",
-            "pattern": "SSSSTTSTTS.....RSSSS...B"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "SSSSOOSOOS.....RSSSS...B"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O..O..O..O..O..O..O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O...O....OO.....M..M....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.OO.OO.O.O.O.OO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "..O...OO...OO..........O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.OO.O.OO.O.OO.O.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -7049,71 +5661,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.SSTTS.SSTTS.SSTTS.SSTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.SSOOS.SSOOS.SSOOS.SSOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "ROOOO.OO.O.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "OO.M..OO.M..OO.M..OO.M..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O.O..M.M..O.O.O..M.M..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.OO.OO.O.O.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.OO....OO.OO.OO.......O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -7132,22 +5726,70 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TT..S.TT..S.TT..S.TT..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OO..S.OO..S.OO..S.OO..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "TS.BS.TS.BS.TS.BS.TS.BS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OS.BS.OS.BS.OS.BS.OS.BS.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
         "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "RSS.O.O.SS.SS....SS.SS.."
+          },
+          {
+            "name": "Djembe solo #1",
+            "pattern": "B..B..B..B..B..B..B.BRSS"
+          },
+          {
+            "name": "Djembe solo #2",
+            "pattern": "S..B..B..B.OO..B..B.ORSS"
+          },
+          {
+            "name": "Djembe solo #3",
+            "pattern": "S..B..B..B.SS..B..B.BRSS"
+          },
+          {
+            "name": "Djembe solo #4",
+            "pattern": "S..B..B.BRSSS..B..B.BRSS"
+          },
+          {
+            "name": "Djembe solo #5",
+            "pattern": "S.BRSSS.BRSSS.BRSSS..S.B"
+          },
+          {
+            "name": "Djembe solo #6",
+            "pattern": "ROOROOS.BRSSS..B..B..B.B"
+          },
+          {
+            "name": "Djembe solo #7",
+            "pattern": "ROOROOS..B.BROOROOS..B.B"
+          },
+          {
+            "name": "Djembe solo #8",
+            "pattern": "ROSRS.ROSRS.ROSRS.ROSRS."
+          },
+          {
+            "name": "Djembe solo #9",
+            "pattern": "ROOS.RSOSSS.SS...SS.SS.S"
+          },
+          {
+            "name": "Call",
+            "pattern": "SSS.T.T.SS.SS.SS"
+          },
+          {
+            "name": "Closing Break",
+            "pattern": "SSS.T.T.SS.SS.SS"
+          },
+          {
+            "name": "Solo 1; frase 1",
+            "pattern": "..B..B..B..B..B."
+          },
           {
             "name": "frase 2",
             "pattern": "BSSS.BSS"
@@ -7176,105 +5818,37 @@ export const RHYTHM_LIBRARY = [
             "name": "frase 8",
             "pattern": "STTS.TSTSSSSS.."
           }
-        ],
-        "solos": [
-          {
-            "name": "Djembe solo #1",
-            "pattern": "B..B..B..B..B..B..B.BRSS"
-          },
-          {
-            "name": "Djembe solo #2",
-            "pattern": "S..B..B..B.TT..B..B.TRSS"
-          },
-          {
-            "name": "Djembe solo #3",
-            "pattern": "S..B..B..B.SS..B..B.BRSS"
-          },
-          {
-            "name": "Djembe solo #4",
-            "pattern": "S..B..B.BRSSS..B..B.BRSS"
-          },
-          {
-            "name": "Djembe solo #5",
-            "pattern": "S.BRSSS.BRSSS.BRSSS..S.B"
-          },
-          {
-            "name": "Djembe solo #6",
-            "pattern": "RTTRTTS.BRSSS..B..B..B.B"
-          },
-          {
-            "name": "Djembe solo #7",
-            "pattern": "RTTRTTS..B.BRTTRTTS..B.B"
-          },
-          {
-            "name": "Djembe solo #8",
-            "pattern": "RTSRS.RTSRS.RTSRS.RTSRS."
-          },
-          {
-            "name": "Djembe solo #9",
-            "pattern": "RTTS.RSTSSS.SS...SS.SS.S"
-          },
-          {
-            "name": "Solo 1; frase 1",
-            "pattern": "..B..B..B..B..B."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "RSS.T.T.SS.SS....SS.SS.."
-          },
-          {
-            "name": "Call",
-            "pattern": "SSS.T.T.SS.SS.SS"
-          },
-          {
-            "name": "Closing Break",
-            "pattern": "SSS.T.T.SS.SS.SS"
-          }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "M..OO.M..OO.M..OO.M..OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.M.M.M.OO.OO.M.M.M.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..M..O..M..O..M..O..M..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -7293,71 +5867,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "BSTTS.BSTTS.BSTTS.BSTTS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "BSOOS.BSOOS.BSOOS.BSOOS.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TT..S.TT..S.TT..S.TT..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OO..S.OO..S.OO..S.OO..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "RTTTT.T.T.T."
+            "pattern": "ROOOO.O.O.O."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": ".O..O..O..O..O..O..O..O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..O..O..O..O..O..O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".O..O....OO..O..O....M..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -7376,84 +5932,79 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TT.BS.B.TT.BS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO.BS.B.OO.BS.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT.BSSB.SS.BSSB.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OO.BSSB.SS.BSSB.",
+        "variations": []
       },
       {
         "part": "Djembé 4",
         "drum_pattern": "S.SS.STTS....S.S",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 5",
         "drum_pattern": "B.TT...S.TT..S..",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": ".TTT.SSS.TTT.SSS"
+            "pattern": ".OOO.SSS.OOO.SSS"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "TTSS..SSB.SS..SS"
+            "pattern": "OOSS..SSB.SS..SS"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "RSSSS...TT..S..."
+            "pattern": "RSSSS...OO..S..."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "RT.RSSSSSS......"
+            "pattern": "RO.RSSSSSS......"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "...TTSSS.STTS.S."
+            "pattern": "...OOSSS.SOOS.S."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "RSSSTT..RSSSTT.."
+            "pattern": "RSSSOO..RSSSOO.."
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "S..TT.TT.TTSRSSS"
+            "pattern": "S..OO.OO.OOSRSSS"
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "SSTTSSS..STTSS.S"
+            "pattern": "SSOOSSS..SOOSS.S"
           },
           {
             "name": "Djembe solo #9",
-            "pattern": ".S.S.S.RTTSSS..."
+            "pattern": ".S.S.S.ROOSSS..."
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "SS..SS..SST.TT.."
+            "pattern": "SS..SS..SSO.OO.."
           },
           {
             "name": "Djembe solo #11",
-            "pattern": ".F.F.F.RTTSST..."
+            "pattern": ".F.F.F.ROOSSO..."
           },
           {
             "name": "Djembe solo #12",
-            "pattern": "B..T.STTS.S.S..."
+            "pattern": "B..O.SOOS.S.S..."
           },
           {
             "name": "Djembe solo #13",
@@ -7461,55 +6012,55 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #14",
-            "pattern": "T.SS.TT.SS..S..."
+            "pattern": "O.SS.OO.SS..S..."
           },
           {
             "name": "Djembe solo #15",
-            "pattern": "....B...B.RTSS.S"
+            "pattern": "....B...B.ROSS.S"
           },
           {
             "name": "Djembe solo #16",
-            "pattern": "..TTSS.S..TTSS.S"
+            "pattern": "..OOSS.S..OOSS.S"
           },
           {
             "name": "Djembe solo #17",
-            "pattern": "S.SS.SS.TTSSS..."
+            "pattern": "S.SS.SS.OOSSS..."
           },
           {
             "name": "Djembe solo #18",
-            "pattern": "RSSSS...TT..S..."
+            "pattern": "RSSSS...OO..S..."
           },
           {
             "name": "Djembe solo #19",
-            "pattern": "..RTSS.S..RTSS.S"
+            "pattern": "..ROSS.S..ROSS.S"
           },
           {
             "name": "Djembe solo #20",
-            "pattern": "S.SS.SS.RTSSS..."
+            "pattern": "S.SS.SS.ROSSS..."
           },
           {
             "name": "Djembe solo #21",
-            "pattern": "R.TT.T.TT.SSS..SS.SS.SS.SS.SS.SSS.SS.RTTTS......"
+            "pattern": "R.OO.O.OO.SSS..SS.SS.SS.SS.SS.SSS.SS.ROOOS......"
           },
           {
             "name": "Djembe solo #22",
-            "pattern": "..SS..SS..SS..STT.TT..SS..SS..ST"
+            "pattern": "..SS..SS..SS..SOO.OO..SS..SS..SO"
           },
           {
             "name": "Djembe solo #23",
-            "pattern": "..SS..SS..SS..STT.TT.....RSSSS.."
+            "pattern": "..SS..SS..SS..SOO.OO.....RSSSS.."
           },
           {
             "name": "Djembe solo #24",
-            "pattern": "T.SSTTSSS......S"
+            "pattern": "T.SSOOSSS......S"
           },
           {
             "name": "Djembe solo #25",
-            "pattern": "T.TTSSSSS......S"
+            "pattern": "T.OOSSSSS......S"
           },
           {
             "name": "Djembe solo #26",
-            "pattern": "S....TT.S....TT."
+            "pattern": "S....OT.S....OT."
           },
           {
             "name": "Djembe solo #27",
@@ -7517,39 +6068,39 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #28",
-            "pattern": ".F...F...F...F...F...F...F...S.T.T.S.T.T.S.T.T.S.T.S.T.S.RTTTS.."
+            "pattern": ".F...F...F...F...F...F...F...S.O.O.S.O.O.S.O.O.S.O.S.O.S.ROOOS.."
           },
           {
             "name": "Djembe solo #29",
-            "pattern": "T.T.T..........T"
+            "pattern": "T.T.T..........O"
           },
           {
             "name": "Djembe solo #30",
-            "pattern": "..SS..SS..SS..STT.TT..S.T.T.T.T.T.T............."
+            "pattern": "..SS..SS..SS..SOO.OO..S.T.T.T.T.T.T............."
           },
           {
             "name": "Djembe solo #31",
-            "pattern": ".RSBRTTRSBRTBSS."
+            "pattern": ".RSBROORSBROBSS."
           },
           {
             "name": "Djembe solo #32",
-            "pattern": "T.SS.T.SS.T.SS.T.SS.T.SS.T.SS.T.SS.T.SS.T.SS.T.SS.T.SS.RSS.SF.TT"
+            "pattern": "T.SS.T.SS.T.SS.T.SS.T.SS.T.SS.T.SS.T.SS.T.SS.T.SS.T.SS.RSS.SF.OO"
           },
           {
             "name": "Djembe solo #33",
-            "pattern": "S..BSSTTS..BSTTT"
+            "pattern": "S..BSSOOS..BSOOO"
           },
           {
             "name": "Djembe solo #34",
-            "pattern": ".S.S.S.S.SS.SS.T.T.S.T.S.SS.TT.S"
+            "pattern": ".S.S.S.S.SS.SS.O.O.S.O.S.SS.OO.S"
           },
           {
             "name": "Djembe solo #35",
-            "pattern": ".T.S.T.S.TT.ST.S.TTS.T.S.RSS.T.."
+            "pattern": ".O.S.O.S.OO.SO.S.OOS.O.S.RSS.O.."
           },
           {
             "name": "Djembe solo #36",
-            "pattern": ".SSSTTSSS......."
+            "pattern": ".SSSOOSSS......."
           },
           {
             "name": "Djembe solo #37",
@@ -7557,11 +6108,15 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #38",
-            "pattern": "S....TT.S...TT.S"
+            "pattern": "S....OT.S...OT.S"
           },
           {
             "name": "Djembe solo #39",
-            "pattern": "TSTTSSSSSSSSTSTSTSTTSSSSSSSSSSSSTSSTSSTSTTSSTSTSTTSSSSTTSSSSTSTS"
+            "pattern": "OSOOSSSSSSSSOSOSOSOOSSSSSSSSSSSSOSSOSSOSOOSSOSOSOOSSSSOOSSSSOSOS"
+          },
+          {
+            "name": "Call",
+            "pattern": "T.TT.T.TT.SSS..."
           },
           {
             "name": "Djembé solo accompagnement 1",
@@ -7575,38 +6130,22 @@ export const RHYTHM_LIBRARY = [
             "name": "Solo 1",
             "pattern": "A.S.B..STTSS..."
           }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
-          },
-          {
-            "name": "Call",
-            "pattern": "T.TT.T.TT.SSS..."
-          }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O.....O.O.....O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..O.O..O.O..M..",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Sangban echauffement",
             "pattern": "C.O.O.O..C.O.O.O"
@@ -7616,9 +6155,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Sangban echauffement",
             "pattern": "X.X.X.X.X.X.X.X."
@@ -7632,10 +6169,7 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Dun Dun variation",
             "pattern": "O....O..O......."
-          }
-        ],
-        "solos": [],
-        "specials": [
+          },
           {
             "name": "Dun Dun starting the echauffement",
             "pattern": "O....O..O......."
@@ -7657,10 +6191,7 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Dun Dun variation",
             "pattern": "X.XX.X.X.X.. ..X"
-          }
-        ],
-        "solos": [],
-        "specials": [
+          },
           {
             "name": "Dun Dun starting the echauffement",
             "pattern": "X.XX.X.X.X.X.X.X"
@@ -7692,25 +6223,65 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B..S..S.B.TTT.S.B..S..S.B.TTT.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B..S..S.B.OOO.S.B..S..S.B.OOO.S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "TTTTS.TTTTS.B.B.TTTTS.TTTTS.B.B.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOOOS.OOOOS.B.B.OOOOS.OOOOS.B.B.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TTTTS.TTTTS.TTTTS.TT.TT.S...S...",
+        "drum_pattern": "OOOOS.OOOOS.OOOOS.OO.OO.S...S...",
         "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
+          {
+            "name": "Djembe solo #1",
+            "pattern": "S.OO.OO.S...S..."
+          },
+          {
+            "name": "Djembe solo #2",
+            "pattern": "S.OO.OO.S.S.S.S."
+          },
+          {
+            "name": "Djembe solo #3",
+            "pattern": "S.OO.OO.S.S.RSS."
+          },
+          {
+            "name": "Djembe solo #4",
+            "pattern": "O.S.S.S.S.S.S.SO"
+          },
+          {
+            "name": "Djembe solo #5",
+            "pattern": "O.S.S..BB..BB.SO"
+          },
+          {
+            "name": "Djembe solo #6",
+            "pattern": "O.RSS..BB..BB.SO"
+          },
+          {
+            "name": "Djembe solo #7",
+            "pattern": "O.RSS.RSS.RSS.SO"
+          },
+          {
+            "name": "Call",
+            "pattern": "T..f..TT.T.TT.SSS."
+          },
+          {
+            "name": "Djembé solo 1 frase 1",
+            "pattern": "TTTTS.....TTTTS."
+          },
           {
             "name": "frase 2",
             "pattern": "TTTTS.TTTT.S.TT."
+          },
+          {
+            "name": "Djembé solo 2 frase 1",
+            "pattern": "STT.S.S.S.S.S.ST"
           },
           {
             "name": "frase 2",
@@ -7720,104 +6291,42 @@ export const RHYTHM_LIBRARY = [
             "name": "frase 3",
             "pattern": "T...SSS...SSS..."
           }
-        ],
-        "solos": [
-          {
-            "name": "Djembe solo #1",
-            "pattern": "S.TT.TT.S...S..."
-          },
-          {
-            "name": "Djembe solo #2",
-            "pattern": "S.TT.TT.S.S.S.S."
-          },
-          {
-            "name": "Djembe solo #3",
-            "pattern": "S.TT.TT.S.S.RSS."
-          },
-          {
-            "name": "Djembe solo #4",
-            "pattern": "T.S.S.S.S.S.S.ST"
-          },
-          {
-            "name": "Djembe solo #5",
-            "pattern": "T.S.S..BB..BB.ST"
-          },
-          {
-            "name": "Djembe solo #6",
-            "pattern": "T.RSS..BB..BB.ST"
-          },
-          {
-            "name": "Djembe solo #7",
-            "pattern": "T.RSS.RSS.RSS.ST"
-          },
-          {
-            "name": "Djembé solo 1 frase 1",
-            "pattern": "TTTTS.....TTTTS."
-          },
-          {
-            "name": "Djembé solo 2 frase 1",
-            "pattern": "STT.S.S.S.S.S.ST"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
-          },
-          {
-            "name": "Call",
-            "pattern": "T..f..TT.T.TT.SSS."
-          }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "OO......OO......OO......OO......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "......O.....O.O.......O.....O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -7836,60 +6345,55 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "TTS..SS.TTS..SS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOS..SS.OOS..SS.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "SS.BSS..SSTTSS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "SS.BSS..SSOOSS..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TSSSTSSTTSSSTSST",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OSSSOSSOOSSSOSSO",
+        "variations": []
       },
       {
         "part": "Djembé 4",
         "drum_pattern": "T.TSS.BSS..SS.BSS.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 5",
         "drum_pattern": "T.TS.BSS...T.TS.BSS.....",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.O.O.O.O.OOSS.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "TTSS..B...SS..B.TTSS..B...SS..B."
+            "pattern": "OOSS..B...SS..B.OOSS..B...SS..B."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "TTSS.BSS..SS.BSSTTSS.BSS..SS.BSS"
+            "pattern": "OOSS.BSS..SS.BSSOOSS.BSS..SS.BSS"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "TTS.BSS.TTS.BSS.TTS.BSS.TTS.BSS."
+            "pattern": "OOS.BSS.OOS.BSS.OOS.BSS.OOS.BSS."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "............F.F...TT..F........."
+            "pattern": "............F.F...OO..F........."
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "T.TT..F.....SS.SS.SS..F........."
+            "pattern": "O.OO..F.....SS.SS.SS..F........."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "............TTSSSSSS..F........."
+            "pattern": "............OOSSSSSS..F........."
           },
           {
             "name": "Djembe solo #7",
@@ -7900,26 +6404,20 @@ export const RHYTHM_LIBRARY = [
             "pattern": "............RSSSSS.S..R........."
           },
           {
-            "name": "Djembé solofrase 1",
-            "pattern": "TT..S..................."
-          },
-          {
-            "name": "Djembé solofrase 2",
-            "pattern": "S.S.f.f.TTSS............"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.T.T.T.T.TTSS.."
-          },
-          {
             "name": "Call (Ponda O'Bryan)",
             "pattern": "TTSTTSTTS..............."
           },
           {
             "name": "Call (Mamoudou \"Delmundo\" Keita)",
             "pattern": "S.f.T.T.T.T.T.T........."
+          },
+          {
+            "name": "Djembé solofrase 1",
+            "pattern": "TT..S..................."
+          },
+          {
+            "name": "Djembé solofrase 2",
+            "pattern": "S.S.f.f.TTSS............"
           }
         ]
       },
@@ -7935,9 +6433,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Kenkeni (Serge Blanc)",
             "pattern": "O.OO.O.O.OO.O..........."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Kenkeni Bell",
@@ -7951,9 +6447,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Kenkeni (Serge Blanc)",
             "pattern": "X.X.X.X.X.X.X.X.X.X....."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban",
@@ -7971,9 +6465,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Combination (Serge Blanc)",
             "pattern": "S.O.O.DO.O.O............"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban Bell",
@@ -7991,9 +6483,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Combination (Serge Blanc)",
             "pattern": "X.X.X.X.X.X.X.X.X.X....."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun",
@@ -8011,9 +6501,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Dundun (Larry Morris)",
             "pattern": "O.O.O.O..O.............."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun Bell",
@@ -8031,16 +6519,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Dundun (Larry Morris)",
             "pattern": "X.X.X.X.X.X.X.X........."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Shekere",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -8059,108 +6543,89 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "SSTTSS.BSSTTSS.BSSTTSS.BSSTTSS.B",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "SSOOSS.BSSOOSS.BSSOOSS.BSSOOSS.B",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "TTS.BSS.TTS.BSS.TTS.BSS.TTS.BSS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOS.BSS.OOS.BSS.OOS.BSS.OOS.BSS.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.O.O.O.O.OSOO.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "B...SS..B.TTSS.."
+            "pattern": "B...SS..B.OOSS.."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "SSB..BS.SSBTTS.B"
+            "pattern": "SSB..BS.SSBOOS.B"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "SS.TTS.BSS.TTS.B"
+            "pattern": "SS.OOS.BSS.OOS.B"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "SSSTTSSBSSSTTSSBF"
+            "pattern": "SSSOOSSBSSSOOSSBF"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "S.B.TT..S..BTT.."
+            "pattern": "S.B.OO..S..BOO.."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "F..T...BSS.T...."
+            "pattern": "F..O...BSS.O...."
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "T.T.S......BT.T.S...RSSTSSTSST.."
+            "pattern": "O.O.S......BO.O.S...RSSOSSOSSO.."
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "T.T.S...B.TTSS..T.T..BSTTSTTSS.B"
+            "pattern": "O.O.S...B.OOSS..O.O..BSOOSOOSS.B"
           },
           {
             "name": "Djembe solo #9",
             "pattern": "B...F..S..S..S.."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.T.T.T.T.TSTT.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "OO..OO..OO..OO..OO..OO..OO..OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OOO.OOO.OOO.OOO.OOO.OOO.OOO.OOO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O..OO.O.O..OO.O.O..OO.O.O..OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..........O....O......O.O.O.O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.....OOOO.OOOO.O.OOOOOOOO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -8179,88 +6644,69 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "TTSS..SSTTSSB.SSTTSS..SSTTSSB.SS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOSS..SSOOSSB.SSOOSS..SSOOSSB.SS",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.SSTTSSB.SSTTSSB.SSTTSSB.SSTTSS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.SSOOSSB.SSOOSSB.SSOOSSB.SSOOSS",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.O.O.O.O.OSOO.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "SSTS..F.....TTSS"
+            "pattern": "SSOS..F.....OOSS"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "T.TT..F.....SS.ST.TT..F.....TT.T"
+            "pattern": "O.OO..F.....SS.SO.OO..F.....OO.O"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "S..TS.TSTS..F.SSF.SS..F.....TS.T"
+            "pattern": "S..OS.OSOS..F.SSF.SS..F.....OS.O"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "TT..RSSSTT..RSSSTT.T..F.....RSSS"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.T.T.T.T.TSTT.."
+            "pattern": "OO..RSSSOO..RSSSOO.O..F.....RSSS"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O.O.O...O.O.O...O.O.O...O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..O..O.O..O..O.O..O..O.O..O..O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "...O..O.....O.O.O.OO..O.....O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -8279,51 +6725,42 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TTB.SSB.TTB.SS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OOB.SSB.OOB.SS",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B..TT...B...TTTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B..OO...B...OOOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "T.SSB.SSTTSSB.SS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.SSB.SSOOSSB.SS",
+        "variations": []
       },
       {
         "part": "Djembé 4",
         "drum_pattern": "TTT...SSB...SS..",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "TTT.SSB.SS.TTTTTTT..SSB.SS.TTTTT"
+            "pattern": "OOO.SSB.SS.OOOOOOO..SSB.SS.OOOOO"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "S.SS.STTS.S.SSTTS.SS.STTS.S.SSTT"
+            "pattern": "S.SS.SOOS.S.SSOOS.SS.SOOS.S.SSOO"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "S...S...F..TT.F.....TTTTTT.TT..."
+            "pattern": "S...S...F..OO.F.....OOOOOO.OO..."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "BS.BS.S.BS.BS.S.BS..TTTTTT.TT..."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "BS.BS.S.BS.BS.S.BS..OOOOOO.OO..."
           },
           {
             "name": "Call",
@@ -8339,9 +6776,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Kenkeni B",
             "pattern": "OO..OO..OO..OO.."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Kenkeni Bell",
@@ -8351,44 +6786,32 @@ export const RHYTHM_LIBRARY = [
             "name": "Kenkeni B",
             "pattern": "X.X.X.X.X.X.X.X."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban",
         "drum_pattern": "M...O...M...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.......O.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -8407,71 +6830,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.SS.STTS.S.SSTTS.SS.STTS.S.SSTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.SS.SOOS.S.SSOOS.SS.SOOS.S.SSOO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.TTB.SSB.TTB.SSB.TTB.SSB.TTB.SS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OOB.SSB.OOB.SSB.OOB.SSB.OOB.SS",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT.TT...B...B...B..TT...B...TTTT",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "OO.OO...B...B...B..OO...B...OOOO",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO..OO..OO..OO..OO..OO..OO..OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "..OO..OO..OO..OO..OO..OO..OO..OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O...M...O.O.M...O...M...O.O.M...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -8490,71 +6895,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TTB.SSB.TTB.SS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OOB.SSB.OOB.SS",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.SS.STTS.S.SSTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.SS.SOOS.S.SSOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.TTT.TT.S..."
+            "pattern": "F.OO.OOO.OO.S..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "......O.......O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": ".............O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.OO.OO.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -8573,84 +6960,65 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "..S.TS..S.TS..S.TS..S.TS",
+        "drum_pattern": "..S.OS..S.OS..S.OS..S.OS",
         "variations": [
           {
+            "name": "Master Call",
+            "pattern": "F.OO.OO.OO.."
+          },
+          {
             "name": "Harouna Dembele phrase #1",
-            "pattern": "TTSSBS..SSBSTTSSBS..SSBSTTSSBS..SSBSTTSSBTTSTTSS"
+            "pattern": "OOSSBS..SSBSOOSSBS..SSBSOOSSBS..SSBSOOSSBOOSOOSS"
           },
           {
             "name": "Harouna Dembele phrase #2",
-            "pattern": "S.SS.SS.RSS.T.TTS.S...BS"
+            "pattern": "S.SS.SS.RSS.T.OOS.S...BS"
           },
           {
             "name": "Harouna Dembele phrase #3",
-            "pattern": "TS.T.STTSSS.........RSS."
-          }
-        ],
-        "solos": [],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "OS.T.SOOSSS.........RSS."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O.OO..O.OO..O.OO..O.OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O...O...M.O.O...O...M.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.OO......OO.O.O.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.O.OO.OO.O.O.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -8669,71 +7037,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "T.SB.ST.SB.ST.SB.ST.SB.S",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.SB.SO.SB.SO.SB.SO.SB.S",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "T.T..SS.SS.ST.TT.SS.SS.S",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.O..SS.SS.SO.OO.SS.SS.S",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "T.TS.SB..S.TT.TS.T..SB.S",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "O.OS.SB..S.OO.OS.O..SB.S",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "ROOOO.OO.O.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O.O...O.O...O.O...O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O..M..O..OO..O..M..M.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O........OO..O........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -8753,70 +7103,52 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "................................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "................................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "ROOOO.OO.O.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": ".O..O..O..O..O..O..O..O..O..O..O..O..O..O..O..O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O..M.M.M..O.O..M.M.M..O.O..M.M.O..O.O..M.M.M..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.OO.O.O.OO.O.OO.O.O.OO.O.OO.O.O.OO.O.OO.O.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..O..O..O..O..O..O..O..O..O..O..O..O..O..O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -8835,27 +7167,21 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "SSTSSS......"
+            "pattern": "SSOSSS......"
           },
           {
             "name": "Call",
@@ -8866,51 +7192,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M....O.O.O..M.....M..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.OO.O.O.OO.O.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O...OO.O.O.OO.......OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.OO.O.O.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -8929,71 +7241,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TT.SS...TTB.S.B.TT.SS..BTTB.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO.SS...OOB.S.B.OO.SS..BOOB.S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STT.SS..STT.BS..STTSSS..STT.B",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOO.SS..SOO.BS..SOOSSS..SOO.B",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "T.TT.TTT.TT.TTT."
+            "pattern": "O.OO.OOO.OO.OOO."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "..OO..............OO...O..O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.O.O.O.O.OO.O.O.OO.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.........O.O.O.O....O...O..O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.O.OO.O.O.O.O.OO.O.O.OO.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -9012,71 +7306,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.BSTTS.BSTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.BSOOS.BSOO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "..S.TS..T.TS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "..S.OS..O.OS",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT....TTB.B.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "OO....OOB.B.",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "RSSS.RTTTSTT"
+            "pattern": "RSSS.ROOOSOO"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..O..M.M...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".......OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -9095,71 +7371,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT....TTB.B.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "OO....OOB.B.",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "SSTSSS......"
+            "pattern": "SSOSSS......"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M.......O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".......OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -9178,62 +7436,61 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "..S.TS..S.TS..S.TS..S.TS",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "..S.OS..S.OS..S.OS..S.OS",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "SSOSSS......"
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "RTSS..RTSS..T..........."
+            "pattern": "ROSS..ROSS..O..........."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "SSSSTTSSSSTTSSSSTTSSSSTT"
+            "pattern": "SSSSOOSSSSOOSSSSOOSSSSOO"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "RTSS..RTSS..RTSS..RTSS.."
+            "pattern": "ROSS..ROSS..ROSS..ROSS.."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "RTSRTSRTSRTSRTSRTSRTS..."
+            "pattern": "ROSROSROSROSROSROSROS..."
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "TTS..RTTSS..T..........."
+            "pattern": "OOS..ROOSS..O..........."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "TTSS.RTTSS.RTTSS.RTTSS.R"
+            "pattern": "OOSS.ROOSS.ROOSS.ROOSS.R"
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "SSTSSS......SSTSSS......"
+            "pattern": "SSOSSS......SSOSSS......"
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "SSTSSTSSTSSTSSTSSTSSTSST"
+            "pattern": "SSOSSOSSOSSOSSOSSOSSOSSO"
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "RSSS.RTTT.F............."
+            "pattern": "RSSS.ROOO.F............."
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "RTTRSS.................S"
+            "pattern": "ROORSS.................S"
           },
           {
             "name": "Djembe solo #11",
@@ -9241,15 +7498,15 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #12",
-            "pattern": ".F..F..F..F..FTF........"
+            "pattern": ".F..F..F..F..FOF........"
           },
           {
             "name": "Djembe solo #13",
-            "pattern": ".F.RTTS......F.RTTS....."
+            "pattern": ".F.ROOS......F.ROOS....."
           },
           {
             "name": "Djembe solo #14",
-            "pattern": ".FF.RTT......FF.RTT....."
+            "pattern": ".FF.ROO......FF.ROO....."
           },
           {
             "name": "Djembe solo #15",
@@ -9257,57 +7514,39 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #16",
-            "pattern": "SSRTSS..SSRTSS..SSRTSS.."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "SSTSSS......"
+            "pattern": "SSROSS..SSROSS..SSROSS.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M.......O...M.......O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.O.O.OO.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "....OO.OO.OO.......OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -9327,70 +7566,52 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "............................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "............................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "............................................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "ROOOO.OO.O.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O..O..O..O..O..O..O..O..O..O..O..O..O..O..O..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O.O..O.O........MM....O..O..O..O........MM",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.OO.O.OO.O.O.OO.O.OO.OO.OO.OO.OO.O.O.OO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O.OO.O.O.OO..........O..O..O..O..............O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.OO.O.O.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -9410,40 +7631,31 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "S.STTS..STTS..STTS..STT.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [
-          {
-            "name": "Djembé solo accompagnement",
-            "pattern": "SSSSTTSSSSTTSSSSTTSSSSTT"
-          }
-        ],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "SSTSSS.................."
+          },
+          {
+            "name": "Djembé solo accompagnement",
+            "pattern": "SSSSTTSSSSTTSSSSTTSSSSTT"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO..OO..OO..OO..OO..OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
@@ -9461,16 +7673,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Kenkeni 3",
             "pattern": "XX.XX.XX.XX.XX.XX.XX.XX."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban",
         "drum_pattern": "C..O..C..O..C..O..C..O..",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Echauffement",
             "pattern": "C..C..O.....C..C..O....."
@@ -9480,16 +7688,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Sangban Bell",
         "drum_pattern": "X.XXX.XXX.XXX.X.X.XXX.XX",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "OO.OO.......OO.OO.......",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Echauffement",
             "pattern": "OO.OO.......OO.OO......."
@@ -9499,16 +7703,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "XX.XX.XX.XX.XX.XX.XX.XX.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -9527,26 +7727,25 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "T.SS..STT.SS..ST",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.SS..SOO.SS..SO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "B.OO..S.B.OO..S.",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "S..SS..SS..SS..SS..SSTTSS..SS..S"
+            "pattern": "S..SS..SS..SS..SS..SSOOSS..SS..S"
           },
           {
             "name": "Djembe solo #2",
@@ -9554,65 +7753,47 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "S.SS.SS.SS..T.TTT.TT.T.TT.T.T.BS"
+            "pattern": "S.SS.SS.SS..T.OOO.OO.O.OO.O.O.BS"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "T.TTSS.SS.....SST.TTSS.SS.....SS"
+            "pattern": "T.OOSS.SS.....SST.OOSS.SS.....SS"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "BSSBSSBSSBS...T.BT.BSSBSSBSSBS.."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "BSSBSSBSSBS...O.BO.BSSBSSBSSBS.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O.....O.O.....O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..O....O.O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -9631,71 +7812,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.S.TTS.S.TTS.S.TTS.S.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.S.OOS.S.OOS.S.OOS.S.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "BSSBTTBSSBTTBSSBTTBSSBTT",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "BSSBOOBSSBOOBSSBOOBSSBOO",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "ROOOO.OO.O.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..M..OO.OO.M..M..M..OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..O..O..O..O..O..O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -9714,72 +7877,57 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.BB.BTTB..BB.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.BB.BOOB..BB.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "T..S.SS.T.T.SS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O..S.SS.O.O.SS..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "..SS..SS..SSTTSS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "..SS..SS..SSOOSS",
+        "variations": []
       },
       {
         "part": "Djembé 4",
         "drum_pattern": "B.T.TT...B.B.TT.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 5",
         "drum_pattern": "B.TTB...B.BTTB..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 6",
         "drum_pattern": "B.TT...B.BTT...B",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 7",
         "drum_pattern": "SS.SS.SS.SS.....",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "B..T.TT.B.B.TT.."
+            "pattern": "B..O.OO.B.B.OO.."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "B.TTB..B.BTTB.B."
+            "pattern": "B.OOB..B.BOOB.B."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "B.TT..B.BTTB..B."
+            "pattern": "B.OO..B.BOOB..B."
           },
           {
             "name": "Djembe solo #4",
             "pattern": "SS..SS..SS..SS.."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
           },
           {
             "name": "Break 3x",
@@ -9794,51 +7942,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O...M...O.O.M...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO..OO..OO..OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -9857,22 +7991,90 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.B.S.TTS.B.S..SS.B.S.TTS.B.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.B.S.OOS.B.S..SS.B.S.OOS.B.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TTS..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OOS..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TTS.TTS.TTS.TTS.TTS.TTS.TTS.TTS.",
+        "drum_pattern": "OOS.OOS.OOS.OOS.OOS.OOS.OOS.OOS.",
         "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.O.O..."
+          },
+          {
+            "name": "Djembe solo #1",
+            "pattern": "FOOOS.B.FOOOS.B."
+          },
+          {
+            "name": "Djembe solo #2",
+            "pattern": ".SS.OOS..SS.OOS."
+          },
+          {
+            "name": "Djembe solo #3",
+            "pattern": ".OOS.OOS.OOSS.S."
+          },
+          {
+            "name": "Djembe solo #4",
+            "pattern": "F.OO.O.OO.O.OBOO"
+          },
+          {
+            "name": "Djembe solo #5",
+            "pattern": "SBOOSBOOSBOOSBOO"
+          },
+          {
+            "name": "Djembe solo #6",
+            "pattern": "ROSROSROS.OOS.B."
+          },
+          {
+            "name": "Djembe solo #7",
+            "pattern": "ROS.ROS.ROS.ROS."
+          },
+          {
+            "name": "Djembe solo #8",
+            "pattern": "ROSS....ROSS...."
+          },
+          {
+            "name": "Djembe solo #9",
+            "pattern": "ROSSO...ROSSO..."
+          },
+          {
+            "name": "Djembe solo #10",
+            "pattern": "ROSS.ROSS.ROSS.R"
+          },
+          {
+            "name": "Djembe solo #11",
+            "pattern": "OSS.ROSS.ROSSO.."
+          },
+          {
+            "name": "Djembe solo #12",
+            "pattern": "O..SS.B.S.OOS..S"
+          },
+          {
+            "name": "Djembe solo #13",
+            "pattern": "ROSS.SROSS.SROSS"
+          },
+          {
+            "name": "Djembe solo #14",
+            "pattern": "OSSOOS.F........"
+          },
+          {
+            "name": "Call / Break",
+            "pattern": "T..TT..T..TT..T."
+          },
+          {
+            "name": "Djembé Solo 1",
+            "pattern": "TTTTS.B.S.SS...."
+          },
+          {
+            "name": "Djembé Solo 2a",
+            "pattern": "T.TT..T.TT.T...."
+          },
           {
             "name": "a",
             "pattern": "TTSTTSTTS......."
@@ -9893,97 +8095,17 @@ export const RHYTHM_LIBRARY = [
             "name": "e",
             "pattern": "TTSS.TTSS.TTSS.T"
           }
-        ],
-        "solos": [
-          {
-            "name": "Djembe solo #1",
-            "pattern": "FTTTS.B.FTTTS.B."
-          },
-          {
-            "name": "Djembe solo #2",
-            "pattern": ".SS.TTS..SS.TTS."
-          },
-          {
-            "name": "Djembe solo #3",
-            "pattern": ".TTS.TTS.TTSS.S."
-          },
-          {
-            "name": "Djembe solo #4",
-            "pattern": "F.TT.T.TT.T.TBTT"
-          },
-          {
-            "name": "Djembe solo #5",
-            "pattern": "SBTTSBTTSBTTSBTT"
-          },
-          {
-            "name": "Djembe solo #6",
-            "pattern": "RTSRTSRTS.TTS.B."
-          },
-          {
-            "name": "Djembe solo #7",
-            "pattern": "RTS.RTS.RTS.RTS."
-          },
-          {
-            "name": "Djembe solo #8",
-            "pattern": "RTSS....RTSS...."
-          },
-          {
-            "name": "Djembe solo #9",
-            "pattern": "RTSST...RTSST..."
-          },
-          {
-            "name": "Djembe solo #10",
-            "pattern": "RTSS.RTSS.RTSS.R"
-          },
-          {
-            "name": "Djembe solo #11",
-            "pattern": "TSS.RTSS.RTSST.."
-          },
-          {
-            "name": "Djembe solo #12",
-            "pattern": "T..SS.B.S.TTS..S"
-          },
-          {
-            "name": "Djembe solo #13",
-            "pattern": "RTSS.SRTSS.SRTSS"
-          },
-          {
-            "name": "Djembe solo #14",
-            "pattern": "TSSTTS.F........"
-          },
-          {
-            "name": "Djembé Solo 1",
-            "pattern": "TTTTS.B.S.SS...."
-          },
-          {
-            "name": "Djembé Solo 2a",
-            "pattern": "T.TT..T.TT.T...."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
-          },
-          {
-            "name": "Call / Break",
-            "pattern": "T..TT..T..TT..T."
-          }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "OO.M....OO.M....OO.M....OO.M....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.O.OO.OO.O.OO.OO.O.OO.OO.O.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -9993,9 +8115,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban / Dun Dun 2",
             "pattern": "O...O...OO......"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban Bell",
@@ -10005,9 +8125,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban / Dun Dun 2",
             "pattern": "X.X.X.X.X.X.X.X."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun",
@@ -10017,9 +8135,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban / Dun Dun 2",
             "pattern": "O..............."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun Bell",
@@ -10029,16 +8145,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban / Dun Dun 2",
             "pattern": "X.X.X.X.X.X.X.X."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -10057,71 +8169,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.B.S.TTS.B.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.B.S.OOS.B.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "OO..M...OO..M...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.O.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..M..O.O.OO..O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "......O.......O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -10140,71 +8234,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.T..TT.....S....TT....B",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.O..OO.....S....OO....B",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..TT.S..TT.S..TT.S..TT.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..OO.S..OO.S..OO.S..OO.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "TTT.SSS..TTTT.T.T.T.T..."
+            "pattern": "OOO.SSS..OOOO.O.O.O.O..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "...O.....O.....O..M..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O..O..O..O.OO..O..O..O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O....OO....OO....OO....O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O..O.OO..O.OO..O.OO..O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O......O..O.O......O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.OO.OO.O.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -10223,71 +8299,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "T.SB.TT.SB.TT.SB.TT.SB.T",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.SB.OO.SB.OO.SB.OO.SB.O",
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "F..F..B.SB..F..F..B.SS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "S.S.TTS.S.TTS.S.TTS.S.TT",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "S.S.OOS.S.OOS.S.OOS.S.OO",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "F.OO.OO.OO.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O.O...O.O...O.O...O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O.O...O.O.O...M...M...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..O..O..O..O..O..O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -10306,92 +8364,73 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..S..TTS..S..TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..S..OOS..S..OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "RTTSS...TS.S.ST."
+            "pattern": "ROOSS...OS.S.SO."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "TTS.S.SST...T.S."
+            "pattern": "OOS.S.SSO...O.S."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "TT.TT.BS.SB.SBS."
+            "pattern": "OO.OO.BS.SB.SBS."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "BTT.RTS.T.T.T.T."
+            "pattern": "BOO.ROS.O.O.O.O."
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "TTSSTTSSTTSSTTSS"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "OOSSOOSSOOSSOOSS"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..M..O.M..M..O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "........O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -10410,71 +8449,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "TTSSB.SSTTSSBBSS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOSSB.SSOOSSBBSS",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO..S.B.OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "....O.O.....O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..O..O.O.OO..M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "..OO.O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -10496,64 +8517,50 @@ export const RHYTHM_LIBRARY = [
         "drum_pattern": "BTBSB.BTBSB.BTBS.B.BTBSB",
         "variations": [
           {
-            "name": "Transition from part I to part II",
-            "pattern": "SS..SS..S..S..SS..SS...."
-          }
-        ],
-        "solos": [],
-        "specials": [
-          {
             "name": "Call",
             "pattern": "SSS..T..S..............."
           },
           {
             "name": "Break 1: Djembe and Duns (D)",
             "pattern": "SS..SS..S.S.SS..SS......"
+          },
+          {
+            "name": "Transition from part I to part II",
+            "pattern": "SS..SS..S..S..SS..SS...."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O..O....O..O............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "X.XX.XX..XX..XX.XX.XX..X",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "C..O....C.......C..O....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "X.X.X.X.X.X.X.X.X.X.X.X.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "OO...OO.......OO...OO...",
         "variations": [
           {
-            "name": "Transition from part I to part II",
-            "pattern": "00..00..O..O..00..00...."
-          }
-        ],
-        "solos": [],
-        "specials": [
-          {
             "name": "Break 1: Djembe and Duns (D)",
             "pattern": "00..00..O..00..00......."
+          },
+          {
+            "name": "Transition from part I to part II",
+            "pattern": "00..00..O..O..00..00...."
           }
         ]
       },
@@ -10562,14 +8569,11 @@ export const RHYTHM_LIBRARY = [
         "drum_pattern": "X.XX.XX.XX.XX.XX.XX.XX.X",
         "variations": [
           {
-            "name": "Transition from part I to part II",
-            "pattern": "........................"
-          }
-        ],
-        "solos": [],
-        "specials": [
-          {
             "name": "Break 1: Djembe and Duns (D)",
+            "pattern": "........................"
+          },
+          {
+            "name": "Transition from part I to part II",
             "pattern": "........................"
           }
         ]
@@ -10577,9 +8581,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Shekere",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -10599,51 +8601,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "OO..C...OOC.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "X.X.X.X.X.X.X.X.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O..O.O........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "X.X.X.X.X.X.X.X.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "X.X.X.X.X.X.X.X.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -10662,71 +8650,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "FTBSB.FTBSB.FTBSB.FTBSB.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "FOBSB.FOBSB.FOBSB.FOBSB.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "SSS.T.S....."
+            "pattern": "SSS.O.S....."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O..O..O..O..O..O..O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M.O.O.M.O.O.M.O.O.M.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OOOOOOOOOOOOOOOOOOOOOOOO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "OO..OO......OO..OO......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OOOOOOOOOOOOOOOOOOOOOOOO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -10745,26 +8715,25 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TS.TT.TS.TB.TS.TT.TS.TB.TS.TT.TS.TB.TS.TT.TS.T",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OS.OO.OS.OB.OS.OO.OS.OB.OS.OO.OS.OB.OS.OO.OS.O",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "T.TS.SB.TS.STTTS.SB.TS.S.B.B.B.B.B.STTTS.SB.TS.S",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.OS.SB.OS.SOOOS.SB.OS.S.B.B.B.B.B.SOOOS.SB.OS.S",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "T.TS.SB.TS.STTTS.SB.BB.B.B.B.B.B.B.B.B.BBBBBBB",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "O.OS.SB.OS.SOOOS.SB.BB.B.B.B.B.B.B.B.B.BBBBBBB",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "ROOOO.OO.O.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "T.TS.SB.TS.SFTTS.SB.BB.B"
+            "pattern": "O.OS.SB.OS.SFOOS.SB.BB.B"
           },
           {
             "name": "Djembe solo #2",
@@ -10772,57 +8741,39 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "T.TS.SB.TS.SFTTS.SB.BB.BBB.BBB.BBB.BBB.BBBBBBB.."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "O.OS.SB.OS.SFOOS.SB.BB.BBB.BBB.BBB.BBB.BBBBBBB.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "............................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "............................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "OO......OO..OO......OO..OO......OO..OO......OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.O.OO.OO.OOO.O.OO.OO.OOO.O.OO.OO.OOO.O.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "...O.O.........O.O.........O.O.........O.O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.O.OO.OO.OOO.O.OO.OO.OOO.O.OO.OO.OOO.O.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -10841,133 +8792,134 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.STTSTTS..SB.S..S..STTS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.SOOSOOS..SB.S..S..SOOS",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 4",
         "drum_pattern": "S..SB..SS..STTTS.SB.SS.STTT",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.OO.OO.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "SSS..TTSS..BSSS..TTSS..B"
+            "pattern": "SSS..OOSS..BSSS..OOSS..B"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "SSS..TTSS..BSSSRTSRTS..B"
+            "pattern": "SSS..OOSS..BSSSROSROS..B"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "SSSSSSTTSSSSSSSSSSTTSSSS"
+            "pattern": "SSSSSSOOSSSSSSSSSSOOSSSS"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "SSS..TTSS..BSSSTTSTTS..B"
+            "pattern": "SSS..OOSS..BSSSOOSOOS..B"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "SSS..TTSS..BSSSFTSFTS..B"
+            "pattern": "SSS..OOSS..BSSSFOSFOS..B"
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "SSS..TTSS..BSSSFTSFTSSSS"
+            "pattern": "SSS..OOSS..BSSSFOSFOSSSS"
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "TTSSSSSSSSSSTTSSSSSSSSSS"
+            "pattern": "OOSSSSSSSSSSOOSSSSSSSSSS"
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "B.......SS..B..TTSTTSS.."
+            "pattern": "B.......SS..B..OOSOOSS.."
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "B.......SS..B..TTSTTSBTS"
+            "pattern": "B.......SS..B..OOSOOSBOS"
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "B.S..S..SBSSB.STTSTTSBTS"
+            "pattern": "B.S..S..SBSSB.SOOSOOSBOS"
           },
           {
             "name": "Djembe solo #11",
-            "pattern": "B..TTSTTSBTSB.S..S..S..."
+            "pattern": "B..OOSOOSBOSB.S..S..S..."
           },
           {
             "name": "Djembe solo #12",
-            "pattern": "B.S..S..SF..F.TT.TT.TT.B"
+            "pattern": "B.S..S..SF..F.OO.OO.OO.B"
           },
           {
             "name": "Djembe solo #13",
-            "pattern": "B.SS.TT.SS.BB.SS.TT.SS.B"
+            "pattern": "B.SS.OO.SS.BB.SS.OO.SS.B"
           },
           {
             "name": "Djembe solo #14",
-            "pattern": "B.SS.TT.SS.BT.TT.TT.SS.B"
+            "pattern": "B.SS.OO.SS.BO.OO.OO.SS.B"
           },
           {
             "name": "Djembe solo #15",
-            "pattern": "B....B..SS.BB.STTSTTSS.B"
+            "pattern": "B....B..SS.BB.SOOSOOSS.B"
           },
           {
             "name": "Djembe solo #16",
-            "pattern": "SSS...TTS..BSSSTTSTTS..B"
+            "pattern": "SSS...OOS..BSSSOOSOOS..B"
           },
           {
             "name": "Djembe solo #17",
-            "pattern": "F.TT.F.TT.F......BSSS..."
+            "pattern": "F.OO.F.OO.F......BSSS..."
           },
           {
             "name": "Djembe solo #18",
-            "pattern": "B.S.TS..SBTSB.STTSTTSBTS"
+            "pattern": "B.S.OS..SBOSB.SOOSOOSBOS"
           },
           {
             "name": "Djembe solo #19",
-            "pattern": "FTTFTT..BB.BFTTFTT..BB.B"
+            "pattern": "FOOFOO..BB.BFOOFOO..BB.B"
           },
           {
             "name": "Djembe solo #20",
-            "pattern": "FTTFTT..B.B.B..TTB.B.SSB"
+            "pattern": "FOOFOO..B.B.B..OOB.B.SSB"
           },
           {
             "name": "Djembe solo #21",
-            "pattern": "S.STTBS.STTBS.STTBS.STTB"
+            "pattern": "S.SOOBS.SOOBS.SOOBS.SOOB"
           },
           {
             "name": "Djembe solo #22",
-            "pattern": "B.S..S..S..SB.STTSTTS..S"
+            "pattern": "B.S..S..S..SB.SOOSOOS..S"
           },
           {
             "name": "Djembe solo #23",
-            "pattern": "F.TT.TT.TRT.F.TT.TT.TRT."
+            "pattern": "F.OO.OO.ORO.F.OO.OO.ORO."
           },
           {
             "name": "Djembe solo #24",
-            "pattern": "S.......TSSTSSTSSTS..RT."
+            "pattern": "S.......OSSOSSOSSOS..RO."
           },
           {
             "name": "Djembe solo #25",
-            "pattern": "B.TSS...TSS...TSS...TSSB"
+            "pattern": "B.OSS...OSS...OSS...OSSB"
           },
           {
             "name": "Djembe solo #26",
-            "pattern": "SSS..TTSS..BSSSTTSTTS..B"
+            "pattern": "SSS..OOSS..BSSSOOSOOS..B"
+          },
+          {
+            "name": "Call",
+            "pattern": "T..TT..TT..TT..........."
           },
           {
             "name": "Djembé solo frase 1",
@@ -10989,31 +8941,17 @@ export const RHYTHM_LIBRARY = [
             "name": "Djembé solo frase 5",
             "pattern": "TTSSSSSSSSSSTTSSSSSSSS.."
           }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
-          },
-          {
-            "name": "Call",
-            "pattern": "T..TT..TT..TT..........."
-          }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O.OM..O.OM..O.O...O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -11023,16 +8961,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Combination",
             "pattern": "S..C...C...C...C........"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
@@ -11046,9 +8980,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Combination",
             "pattern": "DO...O...00...O...O....."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun Bell",
@@ -11058,16 +8990,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Dun Dun, alternative",
             "pattern": "X.XX.XX.XX.XX.XX.XX.XX.X"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Shekere",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -11086,71 +9014,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "SSTSSS......"
+            "pattern": "SSOSSS......"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.OO....O.O......M..M...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.O.O.OO.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".OO....OO.OO.OO.......OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -11170,70 +9080,52 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "................................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "................................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "SSTSSS......"
+            "pattern": "SSOSSS......"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO..O.OO..O.OO..O.OO..O.OO..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.....O..O..O........O..O....O.O.O..O...........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.OO.O.OO.O.O.O.OO.OO.O.OO.O.O.OO.O.O.O..O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".....OM.OM.OM.OM....OM.OO.O.OO.O.O.OO.O.....OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.OO.O.OO.O.O.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -11252,142 +9144,145 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "BST.S.BS.BS.BST.S.BS.BS.",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "BSO.S.BS.BS.BSO.S.BS.BS.",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "ROOOO.OO.O.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "S...TTSTTSTTS...SSSS.TSS"
+            "pattern": "S...OOSOOSOOS...SSSS.OSS"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "S.TTSTTS....S.TTSTTS...."
+            "pattern": "S.OOSOOS....S.OOSOOS...."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "S...SSTSSBSSTSS.SSTSSBSS"
+            "pattern": "S...SSOSSBSSOSS.SSOSSBSS"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "TSS.SSTSSBSSTSS.SSTSSB.."
+            "pattern": "OSS.SSOSSBSSOSS.SSOSSB.."
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "BSSBSSBSTTSSBSSBSTTST.SS"
+            "pattern": "BSSBSSBSOOSSBSSBSOOSO.SS"
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "T.SBS.BS.B.ST.SBS.BS.B.."
+            "pattern": "O.SBS.BS.B.SO.SBS.BS.B.."
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "SSS.TTSSSBTTSSS.TTSSSBTT"
+            "pattern": "SSS.OOSSSBOOSSS.OOSSSBOO"
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "S...TTSTTSTTS...SSSS.BSS"
+            "pattern": "S...OOSOOSOOS...SSSS.BSS"
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "S...TTSTTSTTS...SSSSBBSS"
+            "pattern": "S...OOSOOSOOS...SSSSBBSS"
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "....RTSRTSTTSSS........."
+            "pattern": "....ROSROSOOSSS........."
           },
           {
             "name": "Djembe solo #11",
-            "pattern": "T.RS.TT.RS.TT.RS.TT.RS.T"
+            "pattern": "O.RS.OO.RS.OO.RS.OO.RS.O"
           },
           {
             "name": "Djembe solo #12",
-            "pattern": "TSTSTSTSTTSSSSSSSSSSSSSS"
+            "pattern": "OSOSOSOSOOSSSSSSSSSSSSSS"
           },
           {
             "name": "Djembe solo #13",
-            "pattern": "F.SBTTBSSBT.F.SBTTBSSBT."
+            "pattern": "F.SBOOBSSBO.F.SBOOBSSBO."
           },
           {
             "name": "Djembe solo #14",
-            "pattern": "TSTTSSBSSBSTTSTTSSSSSSSS"
+            "pattern": "OSOOSSBSSBSOOSOOSSSSSSSS"
           },
           {
             "name": "Djembe solo #15",
-            "pattern": "TS.TS.TS.TS.RTTTT.SS.F.."
+            "pattern": "OS.OS.OS.OS.ROOOO.SS.F.."
           },
           {
             "name": "Djembe solo #16",
-            "pattern": "TTS.S..BSTTSTTS.S..BSTTS"
+            "pattern": "OOS.S..BSOOSOOS.S..BSOOS"
           },
           {
             "name": "Djembe solo #17",
-            "pattern": "STSTSSST..SBSTSTSSST..SB"
+            "pattern": "SOSOSSSO..SBSOSOSSSO..SB"
           },
           {
             "name": "Djembe solo #18",
-            "pattern": "TSTTS..BSSS...TTS..BSSS."
+            "pattern": "OSOOS..BSSS...OOS..BSSS."
           },
           {
             "name": "Djembe solo #19",
-            "pattern": "TTS.BSSS..TSTTS.BSSS...."
+            "pattern": "OOS.BSSS..OSOOS.BSSS...."
           },
           {
             "name": "Djembe solo #20",
-            "pattern": "SSS..S.SS.RTSSS..S.SS.RT"
+            "pattern": "SSS..S.SS.ROSSS..S.SS.RO"
           },
           {
             "name": "Djembe solo #21",
-            "pattern": "SSS.BSSSSTS.SSS.BSSSSTS."
+            "pattern": "SSS.BSSSSOS.SSS.BSSSSOS."
           },
           {
             "name": "Djembe solo #22",
-            "pattern": ".BSSS..RTTS..BSSS..RTTS."
+            "pattern": ".BSSS..ROOS..BSSS..ROOS."
           },
           {
             "name": "Djembe solo #23",
-            "pattern": "SSS.BSSS.TBSSSS.BSSS.TBS"
+            "pattern": "SSS.BSSS.OBSSSS.BSSS.OBS"
           },
           {
             "name": "Djembe solo #24",
-            "pattern": "SSSBS.SSS.TTSSSBS.SSS.TT"
+            "pattern": "SSSBS.SSS.OOSSSBS.SSS.OO"
           },
           {
             "name": "Djembe solo #25",
-            "pattern": "SSS.BSSS.STSTSS.BSSS.S.B"
+            "pattern": "SSS.BSSS.SOSOSS.BSSS.S.B"
           },
           {
             "name": "Djembe solo #26",
-            "pattern": "S...TTSTTSTTS...RSSS.TTS"
+            "pattern": "S...OOSOOSOOS...RSSS.OOS"
           },
           {
             "name": "Djembe solo #27",
-            "pattern": "SSS.RTSRTSTSSSS.RTSRTSTS"
+            "pattern": "SSS.ROSROSOSSSS.ROSROSOS"
           },
           {
             "name": "Djembe solo #28",
-            "pattern": "TST.S.BS.BS.TST.S.BS.BS."
+            "pattern": "OSO.S.BS.BS.OSO.S.BS.BS."
           },
           {
             "name": "Djembe solo #29",
-            "pattern": "RTSRTSTT.SSS.RSSSS......"
+            "pattern": "ROSROSOO.SSS.RSSSS......"
           },
           {
             "name": "Djembe solo #30",
-            "pattern": "SSSSS.SSS.TTSSSSS.SSS.TT"
+            "pattern": "SSSSS.SSS.OOSSSSS.SSS.OO"
+          },
+          {
+            "name": "Call",
+            "pattern": "TTTTT.TT.T.............."
           },
           {
             "name": "Djembé solo accompagnement",
@@ -11401,31 +9296,17 @@ export const RHYTHM_LIBRARY = [
             "name": "Djembé solo frase 2",
             "pattern": "SSTSSBSSTSS.SSTSSBSS.S.."
           }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
-          },
-          {
-            "name": "Call",
-            "pattern": "TTTTT.TT.T.............."
-          }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O.O.O..O.O..O.O.O..O.O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.OO.O.OO.O.O.OO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -11435,9 +9316,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban (Mamady Keita)",
             "pattern": "C...C..O...C..O..C..O..."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban Bell",
@@ -11447,16 +9326,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban (Mamady Keita)",
             "pattern": "XX.XX.XX.X.X.XX.XX.XX.X.X"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O........OO.O........O",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Dundun echauffement 1",
             "pattern": ".00.00.00.00.00.00.00.O."
@@ -11470,9 +9345,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.OO.O.OO.O.O.OO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Dundun echauffement 1",
             "pattern": "X.XX.XX.XX.XX.XX.XX.XX.X"
@@ -11486,9 +9359,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Shekere",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -11507,42 +9378,41 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "FSOO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "TTSS..B...SS..B."
+            "pattern": "OOSS..B...SS..B."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "TTSS.BSSTTST..SS"
+            "pattern": "OOSS.BSSOOSO..SS"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "TTSS..F...F.SS.S"
+            "pattern": "OOSS..F...F.SS.S"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "TTSS..B...TTRSRS"
+            "pattern": "OOSS..B...OORSRS"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "TTSS..F...F...F."
+            "pattern": "OOSS..F...F...F."
           },
           {
             "name": "Djembe solo #6",
@@ -11550,7 +9420,7 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "TTSS..F...SS..F."
+            "pattern": "OOSS..F...SS..F."
           },
           {
             "name": "Djembe solo #8",
@@ -11558,7 +9428,7 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "TTSS..SS..SS..SS"
+            "pattern": "OOSS..SS..SS..SS"
           },
           {
             "name": "Djembe solo #10",
@@ -11566,57 +9436,39 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #11",
-            "pattern": "TTSS..F...TTRSRS"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "FSTT.T.TT.SSS..."
+            "pattern": "OOSS..F...OORSRS"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.....O.....OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.....O.....OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -11635,71 +9487,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO..S.B.OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "F.OO.O.OO.O.O..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "OO..M...OO..M...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.O.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "....O.O.....O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "M..M..O.O.O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -11718,23 +9552,22 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TTS..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OOS..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B..SSS.BT.T.TT.TT..SSS..B...B...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B..SSS.BO.O.OO.OO..SSS..B...B...",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "FSOO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
             "pattern": "SSS.B.B.S.B.SSS."
@@ -11745,7 +9578,7 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "B.TTB.TTB.TTB.T."
+            "pattern": "B.OOB.OOB.OOB.O."
           },
           {
             "name": "Djembe solo #4",
@@ -11753,7 +9586,7 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "STTSTTS.S.S.SS.S"
+            "pattern": "SOOSOOS.S.S.SS.S"
           },
           {
             "name": "Djembe solo #6",
@@ -11761,65 +9594,47 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "S..F.F.BT.T.TT.T"
+            "pattern": "S..F.F.BO.O.OO.O"
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "T..SSS..B...B..."
+            "pattern": "O..SSS..B...B..."
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "TTTSSSSSSSSSSSSSTTTSSSSSSSSSS..."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "FSTT.T.TT.SSS..."
+            "pattern": "OOOSSSSSSSSSSSSSOOOSSSSSSSSSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O.O.OO.OO...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": ".O.O...............O..O..O.O..O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": ".O.O.OO.O.O.O.O.OO.O.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".......OO...O...O...............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.OO.OO.O.O.O.O.O..O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -11838,100 +9653,93 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT....TTB.B.",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "OO....OOB.B.",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "SSOSSS......"
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "RSSS......TT"
+            "pattern": "RSSS......OO"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "RSSRSSRSS.TTRSSS......TT"
+            "pattern": "RSSRSSRSS.OORSSS......OO"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "RTTTS......S"
+            "pattern": "ROOOS......S"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "TT..SSTT..SS"
+            "pattern": "OO..SSOO..SS"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "RTSRTSSS.SSS............"
+            "pattern": "ROSROSSS.SSS............"
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "RTTS.RSSSSS............."
+            "pattern": "ROOS.RSSSSS............."
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "TTSSTTSSTTSSTSSTSSTSSTSS"
+            "pattern": "OOSSOOSSOOSSOSSOSSOSSOSS"
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "TSSTSSTSSS..RTTS.RSSSSS."
+            "pattern": "OSSOSSOSSS..ROOS.RSSSSS."
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "..RSSSSTT..."
+            "pattern": "..RSSSSOO..."
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "..RSSSSTT.TT.TT.TT.TT.TT"
+            "pattern": "..RSSSSOO.OO.OO.OO.OO.OO"
           },
           {
             "name": "Djembe solo #11",
-            "pattern": "RTTTS...RTTTS..........."
+            "pattern": "ROOOS...ROOOS..........."
           },
           {
             "name": "Djembe solo #12",
-            "pattern": "TTSTTSTT.TTSTTSTT......."
+            "pattern": "OOSOOSOO.OOSOOSOO......."
           },
           {
             "name": "Djembe solo #13",
-            "pattern": "..RTTTTS...."
+            "pattern": "..ROOOOS...."
           },
           {
             "name": "Djembe solo #14",
-            "pattern": "RSSTT......."
+            "pattern": "RSSOO......."
           },
           {
             "name": "Djembe solo #15",
-            "pattern": "RSSTT...RTTTRSSTT...T.T."
+            "pattern": "RSSOO...ROOORSSOO...O.O."
           },
           {
             "name": "Djembe solo #16",
-            "pattern": "RTTRTTRTTS....RTTTT.S..."
-          },
-          {
-            "name": "Djembé solo accompagnement 1",
-            "pattern": "SSSSSSSSSSSSSSSSSSSTS..."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "SSTSSS......"
+            "pattern": "ROOROOROOS....ROOOO.S..."
           },
           {
             "name": "Call",
             "pattern": "SSSS...................."
+          },
+          {
+            "name": "Djembé solo accompagnement 1",
+            "pattern": "SSSSSSSSSSSSSSSSSSSTS..."
           },
           {
             "name": "Break 1 1A",
@@ -11946,16 +9754,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -11969,9 +9773,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban variation 2",
             "pattern": "O..C..O..C.OO..C..O..C.O"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban Bell",
@@ -11985,9 +9787,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban variation 2",
             "pattern": "..XX.X..XX.XX.XX.XX.XX.X"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun",
@@ -12004,10 +9804,7 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Dun Dun variation 3",
             "pattern": "....O..O.....OO..OO....."
-          }
-        ],
-        "solos": [],
-        "specials": [
+          },
           {
             "name": "Dun Dun echauffement 1; starting the echauffement",
             "pattern": "....OO........OO..OOO..."
@@ -12041,10 +9838,7 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Dun Dun variation 3",
             "pattern": "X..XX..XX..XX.XX.XX.XX.."
-          }
-        ],
-        "solos": [],
-        "specials": [
+          },
           {
             "name": "Dun Dun echauffement 1; starting the echauffement",
             "pattern": "X..XX..XX..X..X..X..X.XX"
@@ -12066,9 +9860,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Shekere",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -12087,70 +9879,55 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TTS.BT.TS.B.TTS.BT.TS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OOS.BO.OS.B.OOS.BO.OS.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TT..S.TT..S.TT..S.TT..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OO..S.OO..S.OO..S.OO..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "B...TTTT........TTTT....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B...OOOO........OOOO....",
+        "variations": []
       },
       {
         "part": "Djembé 4",
         "drum_pattern": "B..S..S..BT.TS.BS.S.BT.TS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 5",
         "drum_pattern": "B..BSSB..BSSB......BSSB..BSS",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "ROOOO.OO.O.."
+          },
           {
             "name": "Djembe solo #1",
             "pattern": "......SS.RSS......SS.RSS"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "S.TS..TS.T.S.TS.S.RSSRSS"
+            "pattern": "S.OS..OS.O.S.OS.S.RSSRSS"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "ST.TT.TT.RSSST.TT.TT.RSS"
+            "pattern": "SO.OO.OO.RSSSO.OO.OO.RSS"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "ST.TT.RSSST.ST.RSSST.TT."
+            "pattern": "SO.OO.RSSSO.SO.RSSSO.OO."
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "RSSST.TT.RSSST.RSSST.RSS"
+            "pattern": "RSSSO.OO.RSSSO.RSSSO.RSS"
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "ST.RSSRSSRSSST.RSSRSSRSS"
-          },
-          {
-            "name": "Djembé solo accompagnement (fingertips)",
-            "pattern": "SSSSTTSSSSTTSSSSTTSSSSTT"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "SO.RSSRSSRSSSO.RSSRSSRSS"
           },
           {
             "name": "Call 1",
@@ -12159,6 +9936,10 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Call 2",
             "pattern": "SSSSS.....TTTTT...S....."
+          },
+          {
+            "name": "Djembé solo accompagnement (fingertips)",
+            "pattern": "SSSSTTSSSSTTSSSSTTSSSSTT"
           },
           {
             "name": "Break 1",
@@ -12174,16 +9955,12 @@ export const RHYTHM_LIBRARY = [
             "name": "DUNS-COMBINATION 2",
             "pattern": "XX.XX.XX.00XX.XX.XX.XX.XX."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -12197,16 +9974,12 @@ export const RHYTHM_LIBRARY = [
             "name": "DUNS-COMBINATION 3",
             "pattern": "S.......00...00O......"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
@@ -12220,23 +9993,17 @@ export const RHYTHM_LIBRARY = [
             "name": "DUNS-COMBINATION 3",
             "pattern": "D.X.X.X.XX.X.OXX.XX.XX.X"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.OO.O.OO.O.O.OO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -12255,92 +10022,73 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TTS.BT.TS.B.TTS.BT.TS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OOS.BO.OS.B.OOS.BO.OS.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B..BTTB..BTTB..BTTB..BTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B..BOOB..BOOB..BOOB..BOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [
+        "variations": [
           {
             "name": "DjembeSolo",
-            "pattern": "............RTTTT.TT.T.."
+            "pattern": "............ROOOO.OO.O.."
+          },
+          {
+            "name": "Master Call",
+            "pattern": "F.OOF.SS.SS.ROOOO.OO.O.."
           },
           {
             "name": "Djembe solo #1",
-            "pattern": "SSS...SS...BSSTTTTSS...B"
+            "pattern": "SSS...SS...BSSOOOOSS...B"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "TTSSSSSSSSSSS...F.TT...."
+            "pattern": "OOSSSSSSSSSSS...F.OO...."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "S...F.TT.RSSSSS.F.TT...."
+            "pattern": "S...F.OO.RSSSSS.F.OO...."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "RTTSS.SS.SS."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TTF.SS.SS.RTTTT.TT.T.."
+            "pattern": "ROOSS.SS.SS."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "...OO....OO....OO....OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O...OO....O.O...OO....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.OO.OO.O.O.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O.O.......O...........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O..O.O.OO.O.O..O.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -12359,100 +10107,81 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TTS.BT.TS.B.TTS.BT.TS.B.TTS.BT.TS.B.TTS.BT.TS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OOS.BO.OS.B.OOS.BO.OS.B.OOS.BO.OS.B.OOS.BO.OS.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TT..S.TT..S.TT..S.TT..S.TT..S.TT..S.TT..S.TT..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OO..S.OO..S.OO..S.OO..S.OO..S.OO..S.OO..S.OO..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.SSS..O.OS.S...S.SS.S..ROOOO.OO.O..F........S.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "S.....SS.RTT"
+            "pattern": "S.....SS.ROO"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "S.T.S.SS.RTT"
+            "pattern": "S.O.S.SS.ROO"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "S.T.S.TS.T.S.TS.T.RSSRSS"
+            "pattern": "S.O.S.OS.O.S.OS.O.RSSRSS"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "ST.TT.TT.RSS"
+            "pattern": "SO.OO.OO.RSS"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "ST.TT.RSSST.TT.RSSST.TT.RSSST.TT.RSS"
+            "pattern": "SO.OO.RSSSO.OO.RSSSO.OO.RSSSO.OO.RSS"
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "ST.RSSST.RSS"
+            "pattern": "SO.RSSSO.RSS"
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "ST.RSSRSSRSS"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.SSS..T.TS.S...S.SS.S..RTTTT.TT.T..F........S.."
+            "pattern": "SO.RSSRSSRSS"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "...OO....OO....OO....OO....OO....OO....OO....OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": ".......O...........O...........O...........O....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "OOO....................OOOO....................O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.OO.O.OO.O.O.OO.O.OO.O.O.OO.O.OO.O.O.OO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -12471,71 +10200,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "T.S..TT.SB.TT.S..TT.SB.T",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.S..OO.SB.OO.S..OO.SB.O",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.S.TTS.S.TTS.S.TTS.S.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.S.OOS.S.OOS.S.OOS.S.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "FTTTTTTTTT.."
+            "pattern": "FOOOOOOOOO.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "....O.....O.....O.....O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O...O...O...M...M...M...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O...O.O...O.O...O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -12555,70 +10266,52 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "ROOOO.OO.O.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O...O....O.O......M..M..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.OO.O.OO.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "..O.....O....OO.........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.OO.O.OO.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -12638,70 +10331,52 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "ROOOO.OO.O.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..O..O.O.O.M..M..M..M..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.O.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".......OO.OO.OO.........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -12720,22 +10395,42 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "SS.BT.T.SS.BT.T.SS.BT.T.SS.BT.T.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "SS.BO.O.SS.BO.O.SS.BO.O.SS.BO.O.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "T.TT..F.T.TT..F.F.TT..S.F.TT..F.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.OO..F.O.OO..F.F.OO..S.F.OO..F.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................",
         "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
+          {
+            "name": "Djembe solo #1",
+            "pattern": "S..SS.S.S.....S.S..SS.S.S.....S."
+          },
+          {
+            "name": "Djembe solo #2",
+            "pattern": "S.OO..S.S.OO....S.OO..S.S.OO...."
+          },
+          {
+            "name": "Djembe solo #3",
+            "pattern": "F.OO..F.F.SS..S.B.OO..S.B.OO..F."
+          },
+          {
+            "name": "Call",
+            "pattern": "T.TT...TT..T.SSS"
+          },
+          {
+            "name": "Djembé solo frase 1",
+            "pattern": "S.SS.S.S.S......"
+          },
           {
             "name": "frase 2",
             "pattern": ".TT.S.S..STT...."
@@ -12748,84 +10443,42 @@ export const RHYTHM_LIBRARY = [
             "name": "frase 4",
             "pattern": "SS..BT..T.SS.BT."
           }
-        ],
-        "solos": [
-          {
-            "name": "Djembe solo #1",
-            "pattern": "S..SS.S.S.....S.S..SS.S.S.....S."
-          },
-          {
-            "name": "Djembe solo #2",
-            "pattern": "S.TT..S.S.TT....S.TT..S.S.TT...."
-          },
-          {
-            "name": "Djembe solo #3",
-            "pattern": "F.TT..F.F.SS..S.B.TT..S.B.TT..F."
-          },
-          {
-            "name": "Djembé solo frase 1",
-            "pattern": "S.SS.S.S.S......"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
-          },
-          {
-            "name": "Call",
-            "pattern": "T.TT...TT..T.SSS"
-          }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "..OO..M...OO..M...OO..M...OO..M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..OO.O.O.....................O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.OO.O.OO.OO.O.O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -12844,59 +10497,52 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "TTSS..SSTTSSB.SS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOSS..SSOOSSB.SS",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "T.SS.BSSB.SSBBSS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.SS.BSSB.SSBBSS",
+        "variations": []
       },
       {
         "part": "Djembé 4",
         "drum_pattern": "B.BS.S.BB..B.TT.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 5",
         "drum_pattern": "S.BS.BS..B.TTT..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 6",
         "drum_pattern": "TTS...S.STTS...S",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "F.TT.F.TT.F.TT....S...S...S....."
+            "pattern": "F.OO.F.OO.F.OO....S...S...S....."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "S..S..S...TTB...S..S..S.TTTTB..."
+            "pattern": "S..S..S...OOB...S..S..S.OOOOB..."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "BTTBTTBTTBTTB.B.B...S...SSS.B..."
+            "pattern": "BOOBOOBOOBOOB.B.B...S...SSS.B..."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "F.TT.F.TT.F.TT..F.TT.F.TT......."
+            "pattern": "F.OO.F.OO.F.OO..F.OO.F.OO......."
           },
           {
             "name": "Djembe solo #5",
@@ -12904,67 +10550,71 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "STT..TTBSTT..TTBSTT..TTBSTT..TTB"
+            "pattern": "SOO..OOBSOO..OOBSOO..OOBSOO..OOB"
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "S..TTT.BS.....TTS..TTT.BS.....TT"
+            "pattern": "S..OOO.BS.....OOS..OOO.BS.....OO"
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "S.TTS...B..BB.TTS.TTS...B..BB.TT"
+            "pattern": "S.OOS...B..BB.OOS.OOS...B..BB.OO"
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "S.TTS...RRRRR.F.F.F.RRRRR.F.F.R."
+            "pattern": "S.OOS...RRRRR.F.F.F.RRRRR.F.F.R."
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "SSTSTTSBS.S.SS..SSTSTTSBS.S.SS.."
+            "pattern": "SSOSOOSBS.S.SS..SSOSOOSBS.S.SS.."
           },
           {
             "name": "Djembe solo #11",
-            "pattern": "SSSSTTSSS......BSSSSTTSSS......B"
+            "pattern": "SSSSOOSSS......BSSSSOOSSS......B"
           },
           {
             "name": "Djembe solo #12",
-            "pattern": "SS.BS.S..S.BS.TTSS.BS.S..S.BS.TT"
+            "pattern": "SS.BS.S..S.BS.OOSS.BS.S..S.BS.OO"
           },
           {
             "name": "Djembe solo #13",
-            "pattern": "TS.S.S.STTS.S.STT.TT.TT.TT.TT..T"
+            "pattern": "OS.S.S.SOOS.S.SOO.OO.OO.OO.OO..O"
           },
           {
             "name": "Djembe solo #14",
-            "pattern": "TT.BTT.BSS.BSS.BTT.BTT.BSS.BSS.B"
+            "pattern": "OO.BOO.BSS.BSS.BOO.BOO.BSS.BSS.B"
           },
           {
             "name": "Djembe solo #15",
-            "pattern": "TTSS..SSTTSSB.SSTTSS..SSTTSSB.SS"
+            "pattern": "OOSS..SSOOSSB.SSOOSS..SSOOSSB.SS"
           },
           {
             "name": "Djembe solo #16",
-            "pattern": "F.TT.STTS.S.S..SRTSS.SS........."
+            "pattern": "F.OO.SOOS.S.S..SROSS.SS........."
           },
           {
             "name": "Djembe solo #17",
-            "pattern": "S.SS.STTS.SS.STTS.SS.STTS.SS.STT"
+            "pattern": "S.SS.SOOS.SS.SOOS.SS.SOOS.SS.SOO"
           },
           {
             "name": "Djembe solo #18",
-            "pattern": "RTTSRTTSRTTSTS..RTTSRTTSRTTSTS.."
+            "pattern": "ROOSROOSROOSOS..ROOSROOSROOSOS.."
           },
           {
             "name": "Djembe solo #19",
-            "pattern": ".SSS.SSS.SSS.SSS.SSS.SSST.T.TT.."
+            "pattern": ".SSS.SSS.SSS.SSS.SSS.SSSO.O.OO.."
           },
           {
             "name": "Djembe solo #20",
-            "pattern": ".RTS.RTS.RTS.S.S.RTS.RTS.RTS.S.S"
+            "pattern": ".ROS.ROS.ROS.S.S.ROS.ROS.ROS.S.S"
           },
           {
             "name": "Djembe solo #21",
-            "pattern": "BSRTSS.SRTSS.SRTSS.S.S.........."
+            "pattern": "BSROSS.SROSS.SROSS.S.S.........."
+          },
+          {
+            "name": "Call",
+            "pattern": "T.TT.T.TT.SSS..."
           },
           {
             "name": "Djembe solo 1; frases A,B,C and D.",
@@ -12973,16 +10623,6 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Djembe solo 2; frases A, B, C, D, E and F.",
             "pattern": "B.S.B...........B.SSS"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
-          },
-          {
-            "name": "Call",
-            "pattern": "T.TT.T.TT.SSS..."
           },
           {
             "name": "Call",
@@ -12998,40 +10638,31 @@ export const RHYTHM_LIBRARY = [
             "name": "Combination of three duns for one player",
             "pattern": "O.O............."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.O.OO.OO.O.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..O..M.M..O..M.",
         "variations": [
           {
-            "name": "Combination of three duns for one player",
-            "pattern": "O..............."
-          }
-        ],
-        "solos": [],
-        "specials": [
-          {
             "name": "Sangban echauffement",
             "pattern": "C..O..O..O..O..."
+          },
+          {
+            "name": "Combination of three duns for one player",
+            "pattern": "O..............."
           }
         ]
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Sangban echauffement",
             "pattern": "X.X.X.X.X.X.X.X."
@@ -13047,15 +10678,12 @@ export const RHYTHM_LIBRARY = [
             "pattern": "O.0.0.O.O.O....."
           },
           {
-            "name": "Combination of three duns for one player",
-            "pattern": "O.O.O..........."
-          }
-        ],
-        "solos": [],
-        "specials": [
-          {
             "name": "Dundun echauffement",
             "pattern": "O.O.O.00.O.O.00."
+          },
+          {
+            "name": "Combination of three duns for one player",
+            "pattern": "O.O.O..........."
           }
         ]
       },
@@ -13066,10 +10694,7 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Dundun variation",
             "pattern": "X.X.X.X.X.X.X.X."
-          }
-        ],
-        "solos": [],
-        "specials": [
+          },
           {
             "name": "Dundun echauffement",
             "pattern": "X.X.X.XX.X.X.XX."
@@ -13079,9 +10704,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -13100,71 +10723,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "TTSS..SSTTSS..SS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOSS..SSOOSS..SS",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "....O.O.....O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..O..M.M..O..M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "OO........OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.OO.O.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -13184,15 +10789,16 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S.SS..TTS...SS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "B.TT.S.B.TT...S.",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Call",
+            "pattern": "T.TT.STTS.S.S..."
+          },
           {
             "name": "Solo Djembe 1",
             "pattern": "BSS.BSSS.TTSTTST"
@@ -13209,27 +10815,17 @@ export const RHYTHM_LIBRARY = [
             "name": "Solo accompagnement",
             "pattern": "TTSS....SSTTSSB."
           }
-        ],
-        "specials": [
-          {
-            "name": "Call",
-            "pattern": "T.TT.STTS.S.S..."
-          }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "0.00.O..........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "x..x.x..x..x..x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -13239,9 +10835,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban variation",
             "pattern": "XX.X...x.x.x..00"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban Bell",
@@ -13251,9 +10845,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban variation",
             "pattern": "X.X.X.O.O.X.X.X."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun",
@@ -13263,9 +10855,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Dundun variation",
             "pattern": "O.00.X.00.X.X.X."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun Bell",
@@ -13275,16 +10865,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Dundun variation",
             "pattern": "X.000.X.X.X.O.X."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -13303,88 +10889,69 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TTS..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OOS..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.TT..S.B.TT..S.B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO..S.B.OO..S.B.OO..S.B.OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TTSS..SSTTSSB.SSTTSS..SSTTSSB.SS",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "OOSS..SSOOSSB.SSOOSS..SSOOSSB.SS",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.O.O..."
+          },
           {
             "name": "Djembe solo #1",
             "pattern": "SS.....BSSS....B"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "RTSRTSTT...BSS..TT.............."
+            "pattern": "ROSROSOO...BSS..OO.............."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "RTSS.T.STTS.TT.BSS.............."
+            "pattern": "ROSS.O.SOOS.OO.BSS.............."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "S.TS.TS.TS.TSSS.TT.S.T.STTS.TT.BSS.............T"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "S.OS.OS.OS.OSSS.OO.S.O.SOOS.OO.BSS.............O"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O.M.O.M.O...O...O.M.O.M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "OO...O.O..M.M........O.O..M.M...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.O.O.O.OO.O.O.O.OO.O.O.OO.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.OO.............M.............O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.O.OO.O.O.O.OO.O.O.OO.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -13403,71 +10970,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TTS..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OOS..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.TT..S.B.TT..S.B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO..S.B.OO..S.B.OO..S.B.OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TTSS..SSTTSSB.SSTTSS..SSTTSSB.SS",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "OOSS..SSOOSSB.SSOOSS..SSOOSSB.SS",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "OO.M..M.OO.M..M.OO.M..M.OO.M..M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.O.OO.OO.O.OO.OO.O.OO.OO.O.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..O..O.....O.O.....M.......O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "..M..M..M.OM..O.......OM..O.M.MM",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO.OO.O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -13486,71 +11035,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO..S.B.OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "T.SS..STT.SS..ST",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.SS..SOO.SS..SO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT..B...B...B...",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "OO..B...B...B...",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "...O..M....O..M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".O........O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.O.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -13569,34 +11100,33 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.OO.OO.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "................RTTTS..."
+            "pattern": "................ROOOS..."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "SS.SSS.SSS.TS.S.RTTST..S"
+            "pattern": "SS.SSS.SSS.OS.S.ROOSO..S"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "................RSSST..."
+            "pattern": "................RSSSO..."
           },
           {
             "name": "Djembe solo #4",
@@ -13604,35 +11134,35 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "BBSBBTBBSBBBBBSBBTBBSBBB"
+            "pattern": "BBSBBOBBSBBBBBSBBOBBSBBB"
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "S.S.S.S.S.S.TTS.S.S.S.S."
+            "pattern": "S.S.S.S.S.S.OOS.S.S.S.S."
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "SS..SS..SS..TT..SS..SS.."
+            "pattern": "SS..SS..SS..OO..SS..SS.."
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "SSRTSSS.SSRTSSS.SSRTSSS."
+            "pattern": "SSROSSS.SSROSSS.SSROSSS."
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "RTSSRTTSS.RTSSRTSSRTTTS."
+            "pattern": "ROSSROOSS.ROSSROSSROOOS."
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "SS..TTSS..TTSS..TTSS..TT"
+            "pattern": "SS..OOSS..OOSS..OOSS..OO"
           },
           {
             "name": "Djembe solo #11",
-            "pattern": "T.ST.ST.ST.ST.ST.ST.ST.S"
+            "pattern": "O.SO.SO.SO.SO.SO.SO.SO.S"
           },
           {
             "name": "Djembe solo #12",
-            "pattern": "TTSS.STTSS.STTSS.STT...."
+            "pattern": "OOSS.SOOSS.SOOSS.SOO...."
           },
           {
             "name": "Djembe solo #13",
@@ -13640,31 +11170,31 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #14",
-            "pattern": ".S.T.S.TT.S..S.T.S.TT.S..S.T.SS.SS.."
+            "pattern": ".S.O.S.OO.S..S.O.S.OO.S..S.O.SS.SS.."
           },
           {
             "name": "Djembe solo #15",
-            "pattern": "TSTTSSSSSSSSTSTTSSSSSSSS"
+            "pattern": "OSOOSSSSSSSSOSOOSSSSSSSS"
           },
           {
             "name": "Djembe solo #16",
-            "pattern": "TSTTSSSSSSSSTSTTSSS....."
+            "pattern": "OSOOSSSSSSSSOSOOSSS....."
           },
           {
             "name": "Djembe solo #17",
-            "pattern": "TSSBSTTSSBS............T"
+            "pattern": "OSSBSOOSSBS............O"
           },
           {
             "name": "Djembe solo #18",
-            "pattern": "TTSTTSB.SB.STTSTTSB.SB.S"
+            "pattern": "OOSOOSB.SB.SOOSOOSB.SB.S"
           },
           {
             "name": "Djembe solo #19",
-            "pattern": "RTSRTSRTSRTSS....BS..B.."
+            "pattern": "ROSROSROSROSS....BS..B.."
           },
           {
             "name": "Djembe solo #20",
-            "pattern": "F.TT.TT.TT.BS....BS..B.."
+            "pattern": "F.OO.OO.OO.BS....BS..B.."
           },
           {
             "name": "Djembe solo #21",
@@ -13672,57 +11202,39 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #22",
-            "pattern": "TTSSSSSSSSSSSSSSSSSSSSSS"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "OOSSSSSSSSSSSSSSSSSSSSSS"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O..O..O..O..O..O..O..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "..OO..O.O.O.M..M..M...O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.O.OO.OO.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O....OO....OO....OO....O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -13741,71 +11253,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT....TT....TT....TT....",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "OO....OO....OO....OO....",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "F.OO.OO.OO.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O....OO....OO....OO....O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "..OO..O.O.O...OO..M...O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.O.OO.OO.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".O.O...OO.OO.O.O......OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".O.O.O.OO.OO.O.O.O.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -13825,75 +11319,56 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "TT..SB..S.B.SB...S......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "B.SSB...TTB...SSB...TT..",
-        "variations": [],
-        "solos": [
-          {
-            "name": "Solo 1 (repeat first line 4 times)",
-            "pattern": "S.SS.SS.S..............."
-          }
-        ],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "T.TT.T.TT.SSS..........."
+          },
+          {
+            "name": "Solo 1 (repeat first line 4 times)",
+            "pattern": "S.SS.SS.S..............."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O..O..O..O..............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "X.X.X.X.X.X.X.X.........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "00.O....................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "X.X.X.X.X.X.X.X.........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..O....................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -13912,71 +11387,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "F.OO.OO.OO.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O..O..O..O..O..O..O..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..M.OO.O.O.M..M..M...O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O....OO....OO....OO....O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -13995,27 +11452,21 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "................................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "F.OO.OO.OO.."
           },
           {
             "name": "Call",
@@ -14031,9 +11482,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Kenkeni 2",
             "pattern": "h00.00.00.00.00.00.00.00"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Kenkeni Bell",
@@ -14043,16 +11492,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Kenkeni 2",
             "pattern": "XX.XX.XX.XX.XX.XX.XX.XX."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O..M.M.M..O.O..M.M.M..O.O..O.O.O..O.O..M.M.M..",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Sangban; echauffement, a choice",
             "pattern": "A.O.O.O.O.O.O.00........"
@@ -14062,9 +11507,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.OO.O.O.OO.O.OO.O.O.OO.O.OO.O.O.OO.O.OO.O.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Sangban; echauffement, a choice",
             "pattern": "X.X.X.X.X.X.X.X........."
@@ -14074,9 +11517,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Dun Dun",
         "drum_pattern": "O.OO.......OO.OO.......OO.O.OO.O.O.OO.OO........",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Dun Dun; echauffement",
             "pattern": "00.00.00.00.00.00.00...."
@@ -14090,9 +11531,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.OO.O.OO.O.O.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Dun Dun; echauffement",
             "pattern": "X.XX.XX.XX.XX.XX.XX.XX.X"
@@ -14106,9 +11545,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Shekere",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -14127,91 +11564,70 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "............",
         "variations": [
           {
-            "name": "Changing to the Söli",
-            "pattern": "T.TT.TT.TT.TH..........."
-          },
-          {
-            "name": "Söli starts right after:",
-            "pattern": "T.T.T.00................"
-          }
-        ],
-        "solos": [],
-        "specials": [
-          {
             "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "F.OO.OO.OO.."
           },
           {
             "name": "Call",
             "pattern": "T.TT.TT.TT.............."
+          },
+          {
+            "name": "Changing to the Söli",
+            "pattern": "T.TT.TT.TT.OH..........."
+          },
+          {
+            "name": "Söli starts right after:",
+            "pattern": "T.T.T.00................"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O....OO....O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.....O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "....O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -14230,71 +11646,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.SSTTSBSSTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.SSOOSBSSOO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "SSS.TTSSS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "SSS.OOSSS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "F.OO.OO.OO.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "M..OO.M..OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O....M.M.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.OO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..O..O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -14314,9 +11712,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S...S.TT.S.S.TT.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "T.TT.T.TT.T.T..."
@@ -14326,51 +11722,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "O.O.O.O.........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.C...O.C.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O...O.O.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -14389,71 +11771,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "F.SBTTBS.F.SBTTBS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "F.SBOOBS.F.SBOOBS.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "TS.TS.TS.TS.TS.TS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OS.OS.OS.OS.OS.OS.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT.SS.SS.TT.SS.SS.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "OO.SS.SS.OO.SS.SS.",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "SSS.TTT..RTTTT.T.."
+            "pattern": "SSS.OOO..ROOOO.O.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "...OO.......OO....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O......O.O......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.OO.O.O.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".............O.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.OO.O.O.O.O.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -14472,100 +11836,81 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "RSSS.ROOOOO."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": ".S.STT.SS.TT.S.STT.SS.TT"
+            "pattern": ".S.SOO.SS.OO.S.SOO.SS.OO"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "SS..TSSSB.TSSS..TSSSB.TS"
+            "pattern": "SS..OSSSB.OSSS..OSSSB.OS"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": ".F.F.RTTSSTT"
+            "pattern": ".F.F.ROOSSOO"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "RSST..RSST..RSST........"
+            "pattern": "RSSO..RSSO..RSSO........"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": ".FTT.S.FTT.S.FTT.S.FTT.."
+            "pattern": ".FOO.S.FOO.S.FOO.S.FOO.."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "RTSRTSTSTTSSSSSSSSSSSSSS"
+            "pattern": "ROSROSOSOOSSSSSSSSSSSSSS"
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "SSSSSSSSSS..RSSS.RTTTSS."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "RSSS.RTTTTT."
+            "pattern": "SSSSSSSSSS..RSSS.ROOOSS."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O..O..O..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O.O.M..M..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O....OO....O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -14584,100 +11929,81 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT....TTB.B.",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "OO....OOB.B.",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "RSSS.ROOOOO."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": ".S.STT.SS.TT.S.STT.SS.TT"
+            "pattern": ".S.SOO.SS.OO.S.SOO.SS.OO"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "SS..TSSSB.TSSS..TSSSB.TS"
+            "pattern": "SS..OSSSB.OSSS..OSSSB.OS"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": ".F.F.RTTSSTT"
+            "pattern": ".F.F.ROOSSOO"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "RSST..RSST..RSST........"
+            "pattern": "RSSO..RSSO..RSSO........"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": ".FTT.S.FTT.S.FTT.S.FTT.."
+            "pattern": ".FOO.S.FOO.S.FOO.S.FOO.."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "RTSRTSTSTTSSSSSSSSSSSSSS"
+            "pattern": "ROSROSOSOOSSSSSSSSSSSSSS"
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "SSSSSSSSSS..RSSS.RTTTSS."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "RSSS.RTTTTT."
+            "pattern": "SSSSSSSSSS..RSSS.ROOOSS."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O....OO...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..O..M.M...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".OO.OO....OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -14697,16 +12023,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S.TS.S.TS.S.TS..S.TS....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "S.STTS..STTS..STTS..STT.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "T.TT.TT.TT.............."
@@ -14716,51 +12038,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "O.......................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "X.XX.XX.XX.XX.XX.XX.XX.X",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..O..C..C..O..O..O..C..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "X.XX...XX.XX.XX.XX...XX.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "...00...00...00.........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "X.XX.XX.XX.XX.XX.XX.XX.X",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -14779,71 +12087,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.S.TTS.S.TTS.S.TTS.S.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.S.OOS.S.OOS.S.OOS.S.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "S.S.TTSBSBTTS.S.TTSBSBTT",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "S.S.OOSBSBOOS.S.OOSBSBOO",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "TTTTT.T.T.T.T..........."
+            "pattern": "OOOOO.O.O.O.O..........."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "...OO....OO....OO....OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O..M.M.M.OO.O..M.M.M.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.OO.O.O.OO.O.OO.O.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.....OO....O.....OO....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -14862,96 +12152,77 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "B.SS.SS.B.TSTTSS"
+            "pattern": "B.SS.SS.B.OSOOSS"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": ".S.S.S.SS.TSTTSS"
+            "pattern": ".S.S.S.SS.OSOOSS"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "BS.BBS.BS.TSTTSS"
+            "pattern": "BS.BBS.BS.OSOOSS"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "BS.RSSTTS.TSTTSS"
+            "pattern": "BS.RSSOOS.OSOOSS"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "SS...RTTS.TSTTSS"
+            "pattern": "SS...ROOS.OSOOSS"
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "SSRTSSBB..TSTTSS"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "SSROSSBB..OSOOSS"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..O.O..O.O.OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.O.OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O....O..O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -14970,71 +12241,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "..S.TS..S.TS..S.TS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "..S.OS..S.OS..S.OS",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "S.OS..S.OS..S.OS..",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "T.TT.TT.TT........"
+            "pattern": "O.OO.OO.OO........"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O........O.OO.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.OO....OO.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "..................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -15053,100 +12306,81 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "T.SBSTT.SS.TTSSTST",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.SBSOO.SS.OOSSOSO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "T.S..TT.S..TT.S..T",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.S..OO.S..OO.S..O",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TS...TTS...TTS...T",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "OS...OOS...OOS...O",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "O.OO.OO.OO........"
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "TTS.BS.BSTTS.BS.BS"
+            "pattern": "OOS.BS.BSOOS.BS.BS"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "S.TTS.S..S..S..S.."
+            "pattern": "S.OOS.S..S..S..S.."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "T.SS.TT.SS.TT.SS.T"
+            "pattern": "O.SS.OO.SS.OO.SS.O"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "RSSST.RSSST.RSSST."
+            "pattern": "RSSSO.RSSSO.RSSSO."
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "RTSTTS...RTSTTS..."
+            "pattern": "ROSOOS...ROSOOS..."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "RTSS.TT.S.TT.S.T.S"
+            "pattern": "ROSS.OO.S.OO.S.O.S"
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "TT.S.BT.SS.T.TS.RS"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "T.TT.TT.TT........"
+            "pattern": "OO.S.BO.SS.O.OS.RS"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O..O..O..O..O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O..M.M.O.O..M.M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.OO.O.O.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O.....OO.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.OO.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -15165,88 +12399,69 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "T.S.STT.S.STT.S.ST",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.S.SOO.S.SOO.S.SO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "TTS.STS.S.STS.S.ST",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOS.SOS.S.SOS.S.SO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TTS..S..S..S..S..S",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "OOS..S..S..S..S..S",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "O.OO.OO.OO........"
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "TTTSS.SSS.TS.TS.TS"
+            "pattern": "OOOSS.SSS.OS.OS.OS"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": ".TS.TSS.STTS.TS.TS"
+            "pattern": ".OS.OSS.SOOS.OS.OS"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "S.SSTSST..RSS.S.S."
+            "pattern": "S.SSOSSO..RSS.S.S."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "SS.S.....RTSTS...."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "T.TT.TT.TT........"
+            "pattern": "SS.S.....ROSOS...."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O..O..O..O..O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M.....M....OO.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.OO.OO.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "..........O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -15265,71 +12480,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "TSSTTSSTTSSTTSSTTSSTTSST",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OSSOOSSOOSSOOSSOOSSOOSSO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "F.OO.OO.OO.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "OO....O.....OO....O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O...O...O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.OO.OO.O.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -15348,71 +12545,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "BTTTB.SSBTTTT.S.BTTTB.SSBTTTT.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "BOOOB.SSBOOOO.S.BOOOB.SSBOOOO.S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "BTTTB.SSBTTTT.SSBTTTB.SSBTTTT.SS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "BOOOB.SSBOOOO.SSBOOOB.SSBOOOO.SS",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "T.T.T..."
+            "pattern": "O.O.O..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO..OO..OO..OO..OO..OO..OO..OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O...O...O...O...O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M...OO..M...OO..M...OO..M...OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.OO.OO.O.OO.OO.O.OO.OO.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.............O.OO..............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.OO.OO.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -15431,30 +12610,29 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TTS..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OOS..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.BT.BTTS.BT.BTTS.BT.BTTS.BT.BTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.BO.BOOS.BO.BOOS.BO.BOOS.BO.BOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.O.O..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "....F.RTTTS....."
+            "pattern": "....F.ROOOS....."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "TT..TT..TT..TT.."
+            "pattern": "OO..OO..OO..OO.."
           },
           {
             "name": "Djembe solo #3",
@@ -15462,65 +12640,47 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "S...TT..S.S.TT.."
+            "pattern": "S...OO..S.S.OO.."
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "S..S..S..S..TT.."
+            "pattern": "S..S..S..S..OO.."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": ".SRTSS.T.TT.TT.."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": ".SROSS.O.OO.OO.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO.M....OO.M....OO.M....OO.M..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O...O...M...M...O...O...M...M...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "..O...O.......OO..OO..OO......O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.O.O.O.OO.OOO.OOO.OO.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -15539,140 +12699,121 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT....TTB.B.TT....TTB.B.",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "OO....OOB.B.OO....OOB.B.",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "SSOSSS......"
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "SSTSSSSSTSSSSSTSSSSSSSSS"
+            "pattern": "SSOSSSSSOSSSSSOSSSSSSSSS"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "SSTSSSSSTSSSSSTSSSSSSSTT"
+            "pattern": "SSOSSSSSOSSSSSOSSSSSSSOO"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "TSSSTTTSSSTTTSSSSSSSSSTT"
+            "pattern": "OSSSOOOSSSOOOSSSSSSSSSOO"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "TSTSTTTSTSTTTSTSSSSSSSTT"
+            "pattern": "OSOSOOOSOSOOOSOSSSSSSSOO"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "SSTSSTSSTSSTSSTSSTSSSS.."
+            "pattern": "SSOSSOSSOSSOSSOSSOSSSS.."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "TSSSSSSSSSSSTSSSSSSSSSSS"
+            "pattern": "OSSSSSSSSSSSOSSSSSSSSSSS"
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "TSSSSTTSSSSTTSSSSTTSSSST"
+            "pattern": "OSSSSOOSSSSOOSSSSOOSSSSO"
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "TSSTSSTSSTSSTSSTSSTSSS.."
+            "pattern": "OSSOSSOSSOSSOSSOSSOSSS.."
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "TSSSSSSTTSTTSSSSSSSSSSSS"
+            "pattern": "OSSSSSSOOSOOSSSSSSSSSSSS"
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "TTTSTTTSTTTSTTTSTTTSTTTS"
+            "pattern": "OOOSOOOSOOOSOOOSOOOSOOOS"
           },
           {
             "name": "Djembe solo #11",
-            "pattern": "SSTSSTSSTSSTSSTSSTSSTS.."
+            "pattern": "SSOSSOSSOSSOSSOSSOSSOS.."
           },
           {
             "name": "Djembe solo #12",
-            "pattern": "RSSS.RTTT.F............."
+            "pattern": "RSSS.ROOO.F............."
           },
           {
             "name": "Djembe solo #13",
-            "pattern": "RTSS.SS.SS..BS.S.S.S...."
+            "pattern": "ROSS.SS.SS..BS.S.S.S...."
           },
           {
             "name": "Djembe solo #14",
-            "pattern": "RTT.S.S.RTT.S.S.RTT.S.S.RSSSS......."
+            "pattern": "ROO.S.S.ROO.S.S.ROO.S.S.RSSSS......."
           },
           {
             "name": "Djembe solo #15",
-            "pattern": "TTSSSSSSSSS......RSSS..."
+            "pattern": "OOSSSSSSSSS......RSSS..."
           },
           {
             "name": "Djembe solo #16",
-            "pattern": ".F.F.TTSTTS."
+            "pattern": ".F.F.OOSOOS."
           },
           {
             "name": "Djembe solo #17",
-            "pattern": "TSSSSSSSSSSSTSSSSSSSSSSS"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "SSTSSS......"
+            "pattern": "OSSSSSSSSSSSOSSSSSSSSSSS"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.....O.OO..M.....M.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".O.O...OO.O...........OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".O.O.O.OO.O.O.OO.O.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -15691,71 +12832,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT....TTB.B.TT....TTB.B.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "OO....OOB.B.OO....OOB.B.",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "SSTSSS......"
+            "pattern": "SSOSSS......"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": ".....O......O..M.M....O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.O.O.OO.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "OO.O...OO.O.............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.O.O.OO.O.OO.O.O.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -15774,71 +12897,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TSBS..TSBSS.TSBS..TSBS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OSBS..OSBSS.OSBS..OSBS",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "ROOOO.OO.O.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O..O..O..O..O..O..O..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M...OO..M...O.O.OO..M...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.OO.OO.O.O.O.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O....OO....OO....OO....O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -15857,71 +12962,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT....TTB.B.TT....TTB.B.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "OO....OOB.B.OO....OOB.B.",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "F.OO.OO.OO.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.OO....M...M...OO..M...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.O.O.O.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".O.O.O.OO......O......OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.O.OO.O.O.OO.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -15940,96 +13027,77 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "..SBTTBS...SBTTBS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "..SBOOBS...SBOOBS.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "TS.TS.TS.TS.TS.TS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OS.OS.OS.OS.OS.OS.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT.SS.SS.TT.SS.SS.",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "OO.SS.SS.OO.SS.SS.",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "OOOOO.O.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "SS.BTTSTTSS.BS.BTT"
+            "pattern": "SS.BOOSOOSS.BS.BOO"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "SS.BS.BTTSS.BTTSTT"
+            "pattern": "SS.BS.BOOSS.BOOSOO"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "RSSRTSS.TRSSRTSS.T"
+            "pattern": "RSSROSS.ORSSROSS.O"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "TTT.....SSSS.....T"
+            "pattern": "OOO.....SSSS.....O"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "RTSRTSRTSRTSRTSRTS"
+            "pattern": "ROSROSROSROSROSROS"
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "SSSTTSTTSSSSSSSSTT"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "TTTTT.T.."
+            "pattern": "SSSOOSOOSSSSSSSSOO"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "OO....OO....OO....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O.M.M..O.O.M.M..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.OO.O.O.O.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O...M.M.OO.OOO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.OO.OOO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -16048,71 +13116,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "T.SS..ST..SS.BST",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.SS..SO..SS.BSO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "F.OO.O.OO.O.O..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M...O.O.M...O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "...OO.O.O.O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.OO.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -16131,30 +13181,29 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TT..S.S.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OO..S.S.OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.B.TT..S.B.TT..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.B.OO..S.B.OO..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT.STTS.TT.STTS.",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "OO.SOOS.OO.SOOS.",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.O.O..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "TTTTTTTTS...S...TTTTTTTTS...S...TTTTTTTTS...S...TTTTTTTTS...S..."
+            "pattern": "OOOOOOOOS...S...OOOOOOOOS...S...OOOOOOOOS...S...OOOOOOOOS...S..."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "SSSSSSSST...T...SSSSSSSST...T...SSSSSSSST...T...SSSSSSSST...T..."
+            "pattern": "SSSSSSSSO...O...SSSSSSSSO...O...SSSSSSSSO...O...SSSSSSSSO...O..."
           },
           {
             "name": "Djembe solo #3",
@@ -16162,11 +13211,11 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "SS..B..BRSSSS..TSS..B..BRSSSS..TSS..B..BRSSSS..TSS..B..BRSSSS..T"
+            "pattern": "SS..B..BRSSSS..OSS..B..BRSSSS..OSS..B..BRSSSS..OSS..B..BRSSSS..O"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "S.TS.TS.TS.TS.S.S.TS.TS.TS.TS.S.S.TS.TS.TS.TS.S.S.TS.TS.TS.TS.S."
+            "pattern": "S.OS.OS.OS.OS.S.S.OS.OS.OS.OS.S.S.OS.OS.OS.OS.S.S.OS.OS.OS.OS.S."
           },
           {
             "name": "Djembe solo #6",
@@ -16174,7 +13223,7 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "STTSTTS.B.SSS...STTSTTS.B.SSS...STTSTTS.B.SSS...STTSTTS.B.SSS..."
+            "pattern": "SOOSOOS.B.SSS...SOOSOOS.B.SSS...SOOSOOS.B.SSS...SOOSOOS.B.SSS..."
           },
           {
             "name": "Djembe solo #8",
@@ -16182,63 +13231,63 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "SSTSTTS.B.SSS...SSTSTTS.B.SSS...SSTSTTS.B.SSS...SSTSTTS.B.SSS..."
+            "pattern": "SSOSOOS.B.SSS...SSOSOOS.B.SSS...SSOSOOS.B.SSS...SSOSOOS.B.SSS..."
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "RSSRTTRSSRTTRSSSRSSRTTRSSRTTRSSSRSSRTTRSSRTTRSSSRSSRTTRSSRTTRSSS"
+            "pattern": "RSSROORSSROORSSSRSSROORSSROORSSSRSSROORSSROORSSSRSSROORSSROORSSS"
           },
           {
             "name": "Djembe solo #11",
-            "pattern": "BRTBRSSSTTSSS...BRTBRSSSTTSSS...BRTBRSSSTTSSS...BRTBRSSSTTSSS..."
+            "pattern": "BROBRSSSOOSSS...BROBRSSSOOSSS...BROBRSSSOOSSS...BROBRSSSOOSSS..."
           },
           {
             "name": "Djembe solo #12",
-            "pattern": "BRTBRSSSBRTBRSSSBRTBRSSSBRTBRSSSBRTBRSSSBRTBRSSSBRTBRSSSBRTBRSSS"
+            "pattern": "BROBRSSSBROBRSSSBROBRSSSBROBRSSSBROBRSSSBROBRSSSBROBRSSSBROBRSSS"
           },
           {
             "name": "Djembe solo #13",
-            "pattern": "T.ST.ST.RSSST...T.ST.ST.RSSST...T.ST.ST.RSSST...T.ST.ST.RSSST..."
+            "pattern": "O.SO.SO.RSSSO...O.SO.SO.RSSSO...O.SO.SO.RSSSO...O.SO.SO.RSSSO..."
           },
           {
             "name": "Djembe solo #14",
-            "pattern": "BBTTBBS.BBTTBBS.BBTTBBS.BBTTBBS.BBTTBBS.BBTTBBS.BBTTBBS.BBTTBBS."
+            "pattern": "BBOOBBS.BBOOBBS.BBOOBBS.BBOOBBS.BBOOBBS.BBOOBBS.BBOOBBS.BBOOBBS."
           },
           {
             "name": "Djembe solo #15",
-            "pattern": "T.BS.S.BT.BSS...T.BS.S.BT.BSS...T.BS.S.BT.BSS...T.BS.S.BT.BSS..."
+            "pattern": "O.BS.S.BO.BSS...O.BS.S.BO.BSS...O.BS.S.BO.BSS...O.BS.S.BO.BSS..."
           },
           {
             "name": "Djembe solo #16",
-            "pattern": "TSSTSSTSTSSTS...TSSTSSTSTSSTS...TSSTSSTSTSSTS...TSSTSSTSTSSTS..."
+            "pattern": "OSSOSSOSOSSOS...OSSOSSOSOSSOS...OSSOSSOSOSSOS...OSSOSSOSOSSOS..."
           },
           {
             "name": "Djembe solo #17",
-            "pattern": "TTSTTSTTSTTSTTS.TTSTTSTTSTTSTTS.TTSTTSTTSTTSTTS.TTSTTSTTSTTSTTS."
+            "pattern": "OOSOOSOOSOOSOOS.OOSOOSOOSOOSOOS.OOSOOSOOSOOSOOS.OOSOOSOOSOOSOOS."
           },
           {
             "name": "Djembe solo #18",
-            "pattern": "...SS.S.S.S.S.S.RSSS.RSSS.RSS.RSSS.S.T.S.TT.R....SS.RTTTS.S....."
+            "pattern": "...SS.S.S.S.S.S.RSSS.RSSS.RSS.RSSS.S.O.S.OO.R....SS.ROOOS.S....."
           },
           {
             "name": "Djembe solo #19",
-            "pattern": "RSSSS.T.RSSSS.T..BSSS....S..S..S.S.S.S..S....S..S..S.S..S......."
+            "pattern": "RSSSS.O.RSSSS.O..BSSS....S..S..S.S.S.S..S....S..S..S.S..S......."
           },
           {
             "name": "Djembe solo #20",
-            "pattern": ".S..S.RTTT..S....S..S.RTTT..F..F.F..F.RTTT..F..F.F.F.F.F.FF....."
+            "pattern": ".S..S.ROOO..S....S..S.ROOO..F..F.F..F.ROOO..F..F.F.F.F.F.FF....."
           },
           {
             "name": "Djembe solo #21",
-            "pattern": ".....RSSRSS.....RRTTS.S..S..S.S.RRTTS.S..S..S.S.RRTTS....RRTTS.R"
+            "pattern": ".....RSSRSS.....RROOS.S..S..S.S.RROOS.S..S..S.S.RROOS....RROOS.R"
           },
           {
             "name": "Djembe solo #22",
-            "pattern": "...T.T.SS.S.TT.S.T.S.T.ST.S.TT.SS.TT.SS.TT.SS.TTS.TT.SS.TT..R..R"
+            "pattern": "...O.O.SS.S.OO.S.O.S.O.SO.S.OO.SS.OO.SS.OO.SS.OOS.OO.SS.OO..R..R"
           },
           {
             "name": "Djembe solo #23",
-            "pattern": "T.TS...S..S.T.TS...S..S.T.TS..S.T.TS...S..S.T.TS..SS..S.T.TS.SS."
+            "pattern": "O.OS...S..S.O.OS...S..S.O.OS..S.O.OS...S..S.O.OS..SS..S.O.OS.SS."
           },
           {
             "name": "Djembe solo #24",
@@ -16246,31 +13295,35 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #25",
-            "pattern": "RSSRTTRSSRTTRSSSSS..............RSSRTTRSSRTTRSSSSS.............."
+            "pattern": "RSSROORSSROORSSSSS..............RSSROORSSROORSSSSS.............."
           },
           {
             "name": "Djembe solo #26",
-            "pattern": "SS..........S.SS.S.S.SS.S.S.S.SS.S.S.SS.S.S.S.SS.S.S.T.TTSRRSS.."
+            "pattern": "SS..........S.SS.S.S.SS.S.S.S.SS.S.S.SS.S.S.S.SS.S.S.O.OOSRRSS.."
           },
           {
             "name": "Djembe solo #27",
-            "pattern": ".T.S.T.ST.S.T.S..T.S.T.ST...R..RT.SSS...T.SSSS.SS...T.SSSS.SS..."
+            "pattern": ".O.S.O.SO.S.O.S..O.S.O.SO...R..RO.SSS...O.SSSS.SS...O.SSSS.SS..."
           },
           {
             "name": "Djembe solo #28",
-            "pattern": "T.TT.SS...SS.SS.T.TT.SS...SS.SS.T.TT.SS...SS.SS.T.TT.SS....BRSS."
+            "pattern": "O.OO.SS...SS.SS.O.OO.SS...SS.SS.O.OO.SS...SS.SS.O.OO.SS....BRSS."
           },
           {
             "name": "Djembe solo #29",
-            "pattern": ".TTT....S.S..T.TT..S.TT.S.S.TT...TTT.S.T.S..S.S..T.S.....TSSSSS."
+            "pattern": ".OOO....S.S..O.OO..S.OO.S.S.OO...OOO.S.O.S..S.S..O.S.....OSSSSS."
           },
           {
             "name": "Djembe solo #30",
-            "pattern": "T.ST.ST.ST.ST.STT.ST.ST.ST.ST.STT.ST.ST.ST.ST.STT.ST.ST.T.T.SS.."
+            "pattern": "O.SO.SO.SO.SO.SOO.SO.SO.SO.SO.SOO.SO.SO.SO.SO.SOO.SO.SO.T.T.SS.."
           },
           {
             "name": "Djembe solo #31",
-            "pattern": "TSTTSSSSSSSSSSSSTSTTSSSSSSSSSSSSTSTTSSSSSSSSSSSSTSTTSSSSSSS.R..."
+            "pattern": "OSOOSSSSSSSSSSSSOSOOSSSSSSSSSSSSOSOOSSSSSSSSSSSSOSOOSSSSSSS.R..."
+          },
+          {
+            "name": "Call",
+            "pattern": "T.TT.T.TT.T.T..."
           },
           {
             "name": "Solo phrase 1",
@@ -16280,66 +13333,42 @@ export const RHYTHM_LIBRARY = [
             "name": "Solo phrase 2",
             "pattern": "T.S.S.S.T.T.T.T."
           }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
-          },
-          {
-            "name": "Call",
-            "pattern": "T.TT.T.TT.T.T..."
-          }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "OO..OO..OO..OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO..OO..OO..OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..M..O.O.M...O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "...O......O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -16358,71 +13387,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.SB.S.SB.S.TTT.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.SB.S.SB.S.OOO.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TT..SSS.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OO..SSS.OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT.STTS.TT.STTS.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "OO.SOOS.OO.SOOS.",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.TTT."
+            "pattern": "F.OO.O.OO.O.OOO."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO..OO..OO..OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": ".O......O.O...OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": ".O.OO.O.O.O.O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "...OO.O.........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".O.OO.O.O.O.O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -16441,71 +13452,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "SS.TSST.SS.TSST.SS.TSST.SS.TSST.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "SS.OSSO.SS.OSSO.SS.OSSO.SS.OSSO.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.TT..S.B.TT..S.B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO..S.B.OO..S.B.OO..S.B.OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "S.TT..S.S.TT..S.S.TT..S.S.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "S.OO..S.S.OO..S.S.OO..S.S.OO..S.",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "F.OO.O.OO.O.O..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..M..O.O..M..O.O..M..O.O..M..O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "...O........O.O.O..O........O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.O.OO.O.O.O.O.OO.O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -16524,88 +13517,69 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO..S.B.OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "TT..TT..TT..TT..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OO..OO..OO..OO..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.O.O..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "B..S.BS.B.TTT.S."
+            "pattern": "B..S.BS.B.OOO.S."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "T.T.S.S.B.TTT.S."
+            "pattern": "T.T.S.S.B.OOO.S."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "RRTS.S.S..S.TST.B..S.BS.B.TTT.S."
+            "pattern": "RROS.S.S..S.OSO.B..S.BS.B.OOO.S."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "RRTS.S.SRRTS.S.S"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "RROS.S.SRROS.S.S"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O.....O.O.....O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "........O.O.OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "...O............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -16624,71 +13598,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "..S.TS..S.TS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "..S.OS..S.OS",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "F.OO.OO.OO.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "...O...OO...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..O..M.M...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".OO.OO....OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -16707,71 +13663,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.SSTTS.SSTTS.SSTTS.SSTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.SSOOS.SSOOS.SSOOS.SSOO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "SSTSSS......"
+            "pattern": "SSOSSS......"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..M..M...O....M.M..O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.O.OO.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "OO.O.O.OO.O....M.M.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.O.O.OO.O.O.OO.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -16790,96 +13728,77 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "TTSB.STTSB.STTST.STTSB.S",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOSB.SOOSB.SOOSO.SOOSB.S",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.OO.OO.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "TTSB.STTSB.STTSB.STTSB.S"
+            "pattern": "OOSB.SOOSB.SOOSB.SOOSB.S"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "TTSTTSTTSTTSS..B..B..B.."
+            "pattern": "OOSOOSOOSOOSS..B..B..B.."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "S.S.BS.S.S.BT..B..B..B.."
+            "pattern": "S.S.BS.S.S.BO..B..B..B.."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "S.S.BS.S.S.TT..SSSSSSTT."
+            "pattern": "S.S.BS.S.S.OO..SSSSSSOO."
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "S.S.BS.S.S.TT..RRSSSSTT."
+            "pattern": "S.S.BS.S.S.OO..RRSSSSOO."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "B.S.TSB.SBTSB.S.TSB.SBTS"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "B.S.OSB.SBOSB.S.OSB.SBOS"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O..O..O..O..O..O..O..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M...O.M..OO.M...O.M..OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.OOO.O.O.O.O.OOO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.....O.....O.....O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.OO.OO.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -16898,96 +13817,77 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO..S.B.OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.........."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "TTSS..SS..SSTTSSTTSS..SS..SS..SS"
+            "pattern": "OOSS..SS..SSOOSSOOSS..SS..SS..SS"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "F..SF.S....SF.S.T..SF.S.T.T.F.F."
+            "pattern": "F..SF.S....SF.S.O..SF.S.T.T.F.F."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "BSTT.SS.BSTT.SS.BSTT.SS.BSTT.SS."
+            "pattern": "BSOO.SS.BSOO.SS.BSOO.SS.BSOO.SS."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "S..SB...S.TTB...S..SB...S.TTB.B."
+            "pattern": "S..SB...S.OOB...S..SB...S.OOB.B."
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "TTSTTSTTS...RSSSS.TT....RSSSS.TT"
+            "pattern": "OOSOOSOOS...RSSSS.OO....RSSSS.OO"
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "S.TT....RSSSS.TT.S.TT.S.TT.F...."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.........."
+            "pattern": "S.OO....RSSSS.OO.S.OO.S.OO.F...."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO..OO..OO..OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..M.M..O.O.OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".......OO.O.OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.O.OO.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -17006,71 +13906,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO..S.B.OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "F.OO.O.OO.O.O..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..M.M..O.O.OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".......OO.O.OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.O.OO.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -17089,71 +13971,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "TTSS..SSTTSS..SSTTSS..SSTTSS..SS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOSS..SSOOSS..SSOOSS..SSOOSS..SS",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TTS..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OOS..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "B.TT..S.B.TT..S.B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "B.OO..S.B.OO..S.B.OO..S.B.OO..S.",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.T.T.T.T.TTSS...."
+            "pattern": "F.O.O.O.O.OOSS...."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO..OO..OO..OO..OO..OO..OO..OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "..OO..OO..OO..OO..OO..OO..OO..OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..OO.O.O..OO.O.O..OO.O.O..OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "......O.......O.......O.......O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -17172,96 +14036,77 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": ".S...S...S..S.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": ".S...S...S..S.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT..S...TT..S...",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "OO..S...OO..S...",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "SSSS.S.S.SSSS..."
+          },
           {
             "name": "Djembe solo #1",
             "pattern": ".S...S...S..S..."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "TT..S...TT..S..."
+            "pattern": "OO..S...OO..S..."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "T.SS..STTTSS..ST"
+            "pattern": "O.SS..SOOOSS..SO"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": ".SS.SSTT.SS.SSTT"
+            "pattern": ".SS.SSOO.SS.SSOO"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "RTSS.RTSS.RTSS.RTSS.RTSS.RTSS..."
+            "pattern": "ROSS.ROSS.ROSS.ROSS.ROSS.ROSS..."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": ".TTS..SS..SS..SS"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "SSSS.S.S.SSSS..."
+            "pattern": ".OOS..SS..SS..SS"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O.M.O...O.M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "...O.O..O.O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "..OO...OO.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -17280,96 +14125,77 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "FTTSB.S.B.SSB.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "FOOSB.S.B.SSB.S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "TT.STTS.TTSSTTS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OO.SOOS.OOSSOOS.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "FTTSB...B...B..."
+            "pattern": "FOOSB...B...B..."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "FTTSTTS.FTTSTTS."
+            "pattern": "FOOSOOS.FOOSOOS."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "FTTS.FTTS.FTTSS."
+            "pattern": "FOOS.FOOS.FOOSS."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "FTSTTSTTSTTSTTSTTSTTSTTSTTSTSSS."
+            "pattern": "FOSOOSOOSOOSOOSOOSOOSOOSOOSOSSS."
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "FTT.FTS.T.STT.S."
+            "pattern": "FOT.FOS.O.SOO.S."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "FT.SSSSSS......."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "FO.SSSSSS......."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO..M...OO..M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M...O.O.....O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "OO..............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.OO.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -17388,71 +14214,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "T.SS.TT.SS.TT.SS.TT.SS.T",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.SS.OO.SS.OO.SS.OO.SS.O",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.BSTTB.BSTTB.BSTTB.BSTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.BSOOB.BSOOB.BSOOB.BSOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": ".TT.TT.TT.TT.TT.TT.TT.TT",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "S.S.S.S..T..S....TTTTT.."
+            "pattern": "S.S.S.S..O..S....OOOOO.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": ".......O.O.........O.O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.OO.O.OO.O.O.OO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O..MM.M..MO.O..MM.M..M",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -17471,71 +14279,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B..B..B..BTTB..B..BTTBTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B..B..B..BOOB..B..BOOBOO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "BSS.TT.SSS..BSS.TT.SSS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "BSS.OO.SSS..BSS.OO.SSS..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.T..T.T.T.."
+            "pattern": "F.O..O.O.O.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "M..O..M..O..M..O..M..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M...OO.O.O..M...OO.O....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O..O.O.OO.O.OO.O.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O........O..O........O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.OO.O.O.OO.O.OO.O.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -17554,71 +14344,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "SSSS.BT.B.SS.BT.B.SS.BT.B.SS.BT.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "SSSS.BO.B.SS.BO.B.SS.BO.B.SS.BO.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..TT...S..TT...S..TT...S..TT...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..OO...S..OO...S..OO...S..OO...",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "STTSTTSTTSTTS..."
+            "pattern": "SOOSOOSOOSOOS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO..OO..OO..OO..OO..OO..OO..OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O...O...O...O...O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..OO...M..OO...M..OO...M..OO...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.......O.......O.....O.O.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -17638,23 +14410,17 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "B..B..B..BTTB..B..BTTBTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "BSS.TT.SSS..BSS.TT.SSS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "BSS.TT.SSBTTBSS.TT.SSBTT",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "T.T..T.T.T.."
@@ -17664,51 +14430,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "C..OO.C..OO.C..OO.C..OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "XX.XX.XX.XX.XX.XX.XX.XX.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "C...OO...C..C...OO.O.O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "X.X.XX.X.X.XX.X.XX.X.X.X",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O........O..O...........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "X.X.XX.X.X.XX.X.XX.X.X.X",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -17728,40 +14480,31 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "SSSS.BT.B.SS.BT.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "S..TT...S..TT...",
         "variations": [
           {
-            "name": "Djembé 1 variation",
-            "pattern": "B.SS.BT.B.SS.BT."
-          }
-        ],
-        "solos": [],
-        "specials": [
-          {
             "name": "Call",
             "pattern": "STTSSTTSSTTSSTTSS..."
+          },
+          {
+            "name": "Djembé 1 variation",
+            "pattern": "B.SS.BT.B.SS.BT."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO..OO..OO..OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "X...X...X...X...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -17771,9 +14514,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban bell variation",
             "pattern": "C..OO...C..OO..."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban Bell",
@@ -17783,9 +14524,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban bell variation",
             "pattern": "XX.XX.X.XX.XX.X."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun",
@@ -17795,9 +14534,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Dun Dun variation",
             "pattern": "O.....O.O......."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun Bell",
@@ -17807,16 +14544,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Dun Dun variation",
             "pattern": "X.XX.XX.X.XX.XX."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -17835,71 +14568,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TTS..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OOS..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "SSTTSS..SSTTSS..SSTTSS..SSTTSS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "SSOOSS..SSOOSS..SSOOSS..SSOOSS..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "F.OO.O.OO.O.O..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "OO......O.O.....OO......O.O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.O.O.OO.O.O.O.OO.O.O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "...O........O......O........O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.O.O.O.O.OO.O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "......O.......O.......O.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -17918,22 +14633,50 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO..S.B.OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
         "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
+          {
+            "name": "Djembe solo #1",
+            "pattern": "OO.BS.B.S..BS.B.OO.BS.B.S.OOSSS."
+          },
+          {
+            "name": "Djembe solo #2",
+            "pattern": ".OOSOOSOOSOOSOOS.OOSOOSOOSOOSOOS."
+          },
+          {
+            "name": "Djembe solo #3",
+            "pattern": "ROSS.SROSS.SROSS.SROSS.SROSS...."
+          },
+          {
+            "name": "Djembe solo #4",
+            "pattern": "OO.BOO.BSS.BSS..OO.BOO.BSS.BSS.B"
+          },
+          {
+            "name": "Djembe solo #5",
+            "pattern": "OSSOSSOSSOSSOSSOOSSOSSOSSOS.F..."
+          },
+          {
+            "name": "Djembe solo #6",
+            "pattern": "OOSOOSOOSSSOOOS."
+          },
+          {
+            "name": "Solo 1 Use these elements for a solo; repeat lines a few times",
+            "pattern": "TT.BS.B.S..BS.B."
+          },
           {
             "name": "Add 4 rests to next line and repeat",
             "pattern": "TTSTTSTTSTTSTTS."
@@ -17942,57 +14685,17 @@ export const RHYTHM_LIBRARY = [
             "name": "See the next two lines together and take an interval before proceding",
             "pattern": "STTSS.STTS.STTSS"
           }
-        ],
-        "solos": [
-          {
-            "name": "Djembe solo #1",
-            "pattern": "TT.BS.B.S..BS.B.TT.BS.B.S.TTSSS."
-          },
-          {
-            "name": "Djembe solo #2",
-            "pattern": ".TTSTTSTTSTTSTTS.TTSTTSTTSTTSTTS."
-          },
-          {
-            "name": "Djembe solo #3",
-            "pattern": "RTSS.SRTSS.SRTSS.SRTSS.SRTSS...."
-          },
-          {
-            "name": "Djembe solo #4",
-            "pattern": "TT.BTT.BSS.BSS..TT.BTT.BSS.BSS.B"
-          },
-          {
-            "name": "Djembe solo #5",
-            "pattern": "TSSTSSTSSTSSTSSTTSSTSSTSSTS.F..."
-          },
-          {
-            "name": "Djembe solo #6",
-            "pattern": "TTSTTSTTSSSTTTS."
-          },
-          {
-            "name": "Solo 1 Use these elements for a solo; repeat lines a few times",
-            "pattern": "TT.BS.B.S..BS.B."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
-          }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "....OO......OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.OO.OO.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -18002,9 +14705,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban B",
             "pattern": "O..O..C.O..O..C."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban Bell",
@@ -18014,14 +14715,16 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban B",
             "pattern": "X.XX.XX.X.XX.XX."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O.....O.O.....",
         "variations": [
+          {
+            "name": "Break with all the bass-drums",
+            "pattern": "OO.OO...OO.O.O.."
+          },
           {
             "name": "Repeat line 1 once",
             "pattern": "H.OO.H.OO.H.O..."
@@ -18033,13 +14736,6 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Dun Dun variation",
             "pattern": "O.O.....O.O...OO"
-          }
-        ],
-        "solos": [],
-        "specials": [
-          {
-            "name": "Break with all the bass-drums",
-            "pattern": "OO.OO...OO.O.O.."
           },
           {
             "name": "Dundun echauffement",
@@ -18052,6 +14748,10 @@ export const RHYTHM_LIBRARY = [
         "drum_pattern": "O.O.O.O.O.O.O.O.",
         "variations": [
           {
+            "name": "Break with all the bass-drums",
+            "pattern": "XX.XX.X.XX.X.X.X"
+          },
+          {
             "name": "Repeat line 1 once",
             "pattern": "X.XX.X.XX.X.X.X."
           },
@@ -18062,13 +14762,6 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Dun Dun variation",
             "pattern": "X.X.X.X.X.X.X.XX"
-          }
-        ],
-        "solos": [],
-        "specials": [
-          {
-            "name": "Break with all the bass-drums",
-            "pattern": "XX.XX.X.XX.X.X.X"
           },
           {
             "name": "Dundun echauffement",
@@ -18079,9 +14772,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -18100,27 +14791,21 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "STTSS.STTSS.STTSSBSBTSS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "SOOSS.SOOSS.SOOSSBSBOSS.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "..SSTS..SSTSB.SSTS..SSTS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "..SSOS..SSOSB.SSOS..SSOS",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT....TT....TT....TT....",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "OO....OO....OO....OO....",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "..RSSS.TTS.."
+            "pattern": "..RSSS.OOS.."
           },
           {
             "name": "Call",
@@ -18137,23 +14822,20 @@ export const RHYTHM_LIBRARY = [
         "drum_pattern": "..O..O..OM.O..O..O..OM.O",
         "variations": [
           {
-            "name": "Kenkeni variation 1",
-            "pattern": "..O..O..OC.Oc.OC.Oc.OC.O"
-          },
-          {
-            "name": "Kenkeni variation 2",
-            "pattern": "..O..O..OC.O..O..OC.OC.O"
-          }
-        ],
-        "solos": [],
-        "specials": [
-          {
             "name": "Introbreak 1 (line 1)",
             "pattern": "........................"
           },
           {
             "name": "Introbreak 1 (line 2)",
             "pattern": "..O..O..O..O..O..O..O..O"
+          },
+          {
+            "name": "Kenkeni variation 1",
+            "pattern": "..O..O..OC.Oc.OC.Oc.OC.O"
+          },
+          {
+            "name": "Kenkeni variation 2",
+            "pattern": "..O..O..OC.O..O..OC.OC.O"
           }
         ]
       },
@@ -18169,16 +14851,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Kenkeni variation 2",
             "pattern": "X.XX.XX.XX.XX.XX.XX.XX.X"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban",
         "drum_pattern": "..O.O...O.O...O.O...O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Introbreak 1 (line 1)",
             "pattern": "..O....O...O....OO..OO.."
@@ -18192,14 +14870,20 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.................O..O..",
         "variations": [
+          {
+            "name": "Introbreak 1 (line 1)",
+            "pattern": "O....O...O....O....O...."
+          },
+          {
+            "name": "Introbreak 1 (line 2)",
+            "pattern": "O.................O..O.."
+          },
           {
             "name": "Dun Dun variation 1",
             "pattern": "O...OO.O.O.O.OO...O..O.."
@@ -18215,17 +14899,6 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Dun Dun variation 4",
             "pattern": "O....OO.OO.O.O...O..O.."
-          }
-        ],
-        "solos": [],
-        "specials": [
-          {
-            "name": "Introbreak 1 (line 1)",
-            "pattern": "O....O...O....O....O...."
-          },
-          {
-            "name": "Introbreak 1 (line 2)",
-            "pattern": "O.................O..O.."
           }
         ]
       },
@@ -18249,16 +14922,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Dun Dun variation 4",
             "pattern": "X.XX.XX.X.X.X.X.X.XX.X."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Shekere",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -18277,92 +14946,73 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "T.SSSST.SSSST.SSSST.SSSS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.SSSSO.SSSSO.SSSSO.SSSS",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TTS.BS.BS.BSTTS.BS.BSSB.",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "OOS.BS.BS.BSOOS.BS.BSSB.",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "RSSS..ROOO.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "T.S..T.S...T.S.F.TT.TTT."
+            "pattern": "O.S..O.S...O.S.F.OO.OOO."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "BTTB.....BTTBTTB.TTT.TT."
+            "pattern": "BOOB.....BOOBOOB.OOO.OO."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "F.TT.TTT.R.SS.SSS.T.S..."
+            "pattern": "F.OO.OOO.R.SS.SSS.O.S..."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "F.TT.TTT.R.SS.SSS.T.SS.."
+            "pattern": "F.OO.OOO.R.SS.SSS.O.SS.."
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "T.S..T.S.T.TT.TTT.BTTB.."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "RSSS..RTTT.."
+            "pattern": "O.S..O.S.O.OO.OOO.BOOB.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O..O..OM.O..O..O..OM.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "..O.O...O.O...O.O...O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.................O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -18381,83 +15031,81 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "BT.TB.S.B.T.B.S.BT.TB.S.B.T.B.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "BO.OB.S.B.O.B.S.BO.OB.S.B.O.B.S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B..S.TT.B.S..TT.B..S.TT.B.S..TT.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B..S.OO.B.S..OO.B..S.OO.B.S..OO.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "B.T.B...BT.TB...B.T.B...BT.TB...",
+        "drum_pattern": "B.O.B...BO.OB...B.O.B...BO.OB...",
         "variations": [
           {
-            "name": "frase 2",
-            "pattern": "BT.SSS.T.SSS.T.SS"
-          }
-        ],
-        "solos": [
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "T.TS...S..S.T.TS...S..S.T.TS..S."
+            "pattern": "O.OS...S..S.O.OS...S..S.O.OS..S."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "T.TSS..S..S.T.TTS.......T.TSS.S."
+            "pattern": "O.OSS..S..S.O.OOS.......O.OSS.S."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "T..BS..TT.S.S..TT..BS..TT.S.S..T"
+            "pattern": "O..BS..OO.S.S..OO..BS..OO.S.S..O"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "S..TT.S..S..S..BS..TT.S..TT.S..B"
+            "pattern": "S..OO.S..S..S..BS..OO.S..OO.S..B"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "T.SSS.T.SSS.T.SSS..BT.SSS.SSS..B"
+            "pattern": "O.SSS.O.SSS.O.SSS..BO.SSS.SSS..B"
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "T.SSS.SSS...F...T.SSS.SSS...F..."
+            "pattern": "O.SSS.SSS...F...O.SSS.SSS...F..."
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "T.TS...S..S.T.TS...S..S.T.TS..S."
+            "pattern": "O.OS...S..S.O.OS...S..S.O.OS..S."
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "T.TSS..S..S.T.TTS.......T.TSS.S."
+            "pattern": "O.OSS..S..S.O.OOS.......O.OSS.S."
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "T..SS..TT.S.S..TT..SS..TT.S.S..T"
+            "pattern": "O..SS..OO.S.S..OO..SS..OO.S.S..O"
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "TT.SS...S.S.T.T."
+            "pattern": "OO.SS...S.S.O.O."
           },
           {
             "name": "Djembe solo #11",
-            "pattern": "F..SS...S.S.T.T.F..SS...S.S.T.T."
+            "pattern": "F..SS...S.S.O.O.F..SS...S.S.O.O."
           },
           {
             "name": "Djembe solo #12",
-            "pattern": "..RTTT.T.T.T.T."
+            "pattern": "..ROOO.O.O.O.O."
           },
           {
             "name": "Djembe solo #13",
-            "pattern": "...T.T.S...T.T....T.T.S...T.T."
+            "pattern": "...O.O.S...O.O....O.O.S...O.O."
           },
           {
             "name": "Djembe solo #14",
             "pattern": "S...S...S...S..."
+          },
+          {
+            "name": "Call",
+            "pattern": "T.TT.T.TT.T.T..."
           },
           {
             "name": "Djembé solo accompagnement 1",
@@ -18474,16 +15122,10 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Djembé solo 1, frase 1",
             "pattern": "S..TT.S..S..S..B"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
           },
           {
-            "name": "Call",
-            "pattern": "T.TT.T.TT.T.T..."
+            "name": "frase 2",
+            "pattern": "BT.SSS.T.SSS.T.SS"
           },
           {
             "name": "Djembé break to Yankadi",
@@ -18496,15 +15138,12 @@ export const RHYTHM_LIBRARY = [
         "drum_pattern": "..OO..OO..OO..OO..OO..OO..OO..OO",
         "variations": [
           {
-            "name": "Kenkeni B",
-            "pattern": "..OO..OO..OO..OO"
-          }
-        ],
-        "solos": [],
-        "specials": [
-          {
             "name": "Call",
             "pattern": "..............OO"
+          },
+          {
+            "name": "Kenkeni B",
+            "pattern": "..OO..OO..OO..OO"
           }
         ]
       },
@@ -18516,24 +15155,19 @@ export const RHYTHM_LIBRARY = [
             "name": "Kenkeni B",
             "pattern": "X...X...X...X..."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban",
         "drum_pattern": "OO.O..O.M.....O.M.....O.M.....O.",
         "variations": [
           {
-            "name": "Sangban line 2",
-            "pattern": "c.....O.c.....O."
-          }
-        ],
-        "solos": [],
-        "specials": [
-          {
             "name": "Call",
             "pattern": "..............O."
+          },
+          {
+            "name": "Sangban line 2",
+            "pattern": "c.....O.c.....O."
           }
         ]
       },
@@ -18545,30 +15179,22 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban line 2",
             "pattern": "XX.XX.X.XX.XX.X."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..OO...O.O.O...O..OO...O.O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.OO.O.O.O.O.O.OO.OO.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -18587,71 +15213,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "BT.TB.S.B.T.B.S.BT.TB.S.B.T.B.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "BO.OB.S.B.O.B.S.BO.OB.S.B.O.B.S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B..S.TT.B.S..TT.B..S.TT.B.S..TT.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B..S.OO.B.S..OO.B..S.OO.B.S..OO.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "T..TT..........TT..TT.......TTTT",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "O..OO..........OO..OO.......OOOO",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO..OO..OO..OO..OO..OO..OO..OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O...O...O...O...O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "......O.......O.......O.......O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..OO...O.O.O...O..OO...O.O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.OO.O.O.O.O.O.OO.OO.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -18670,112 +15278,93 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TT.BS.B.TT.BS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO.BS.B.OO.BS.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "B.ST.TS.TTS..BS.",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "B.SO.OS.OOS..BS.",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
           {
             "name": "Solo #1 by Oumar Kone",
-            "pattern": "ST.BS..BS..BST.TST.TS..BS..BS..B"
+            "pattern": "SO.BS..BS..BSO.OSO.OS..BS..BS..B"
           },
           {
             "name": "Solo #2 by Oumar Kone",
-            "pattern": "SF.TS..BS..BSF.TSF.TS..BS..BS..B"
+            "pattern": "SF.OS..BS..BSF.OSF.OS..BS..BS..B"
           },
           {
             "name": "Solo #3 by Oumar Kone",
-            "pattern": "TSTTSSB.RTTTSSB.TSTTSSB.RTTTSSB."
+            "pattern": "OSOOSSB.ROOOSSB.OSOOSSB.ROOOSSB."
           },
           {
             "name": "Solo #4 by Ibrahima Sarr",
-            "pattern": "BBSTTTS.T.S..BSBBBSTTTS.T.S..BSB"
+            "pattern": "BBSOOOS.O.S..BSBBBSOOOS.O.S..BSB"
           },
           {
             "name": "Solo #5 by Ibrahima Sarr",
-            "pattern": "..STTTS.T.S..BSS..STTTS.T.S..BSS"
+            "pattern": "..SOOOS.O.S..BSS..SOOOS.O.S..BSS"
           },
           {
             "name": "Solo #6 by Ibrahima Sarr",
-            "pattern": "TT.TT..BS..BTT.TTT.TT..BS..BS..B"
+            "pattern": "OO.OO..BS..BOO.OOO.OO..BS..BS..B"
           },
           {
             "name": "Solo #7 by Ibrahima Sarr",
-            "pattern": "TT.TT..BS.F.TT.TTT.TT..BS.F.S..B"
+            "pattern": "OO.OO..BS.F.OO.OOO.OO..BS.F.S..B"
           },
           {
             "name": "Solo #8 by Ibrahima Sarr",
-            "pattern": "T.T.TT.BS.S.SS.TT.T.TT.BS.S.SS.T"
+            "pattern": "O.O.OO.BS.S.SS.OO.O.OO.BS.S.SS.O"
           },
           {
             "name": "Solo #9 by Ibrahima Sarr",
-            "pattern": "T.T.TT.BS.S.SS.TTSTTSS.BS.S.SS.T"
+            "pattern": "O.O.OO.BS.S.SS.OOSOOSS.BS.S.SS.O"
           },
           {
             "name": "Solo #10 Ibrahima Sarr",
-            "pattern": "SS...BTTSSS..BTTSTTSTTSTTS...BTT"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "SS...BOOSSS..BOOSOOSOOSOOS...BOO"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O..M..O.O..M..O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.OO..OO..M..M..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OOO..O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "M..O.O..O.O..M..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -18794,38 +15383,37 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TT.BS.B.TT.BS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO.BS.B.OO.BS.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT.BSSB.SS.BSSB.",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "OO.BSSB.SS.BSSB.",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
             "pattern": "SS.BS..BS..BS..BSS.BS..BS..BS..B"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "STTSS..BS..BS..BSTTSS..BS..BS..B"
+            "pattern": "SOOSS..BS..BS..BSOOSS..BS..BS..B"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "SS..B...B...TTTTSS..B...B...TTTT"
+            "pattern": "SS..B...B...OOOOSS..B...B...OOOO"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "SS..TTTTSS..TTTTSS..TTTTSS..TTTT"
+            "pattern": "SS..OOOOSS..OOOOSS..OOOOSS..OOOO"
           },
           {
             "name": "Djembe solo #5",
@@ -18837,61 +15425,43 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "SS...BSSTTT.SSS.SS...BSSTTT.SSS."
+            "pattern": "SS...BSSOOO.SSS.SS...BSSOOO.SSS."
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "BS...BSSTTT.SSS.BS...BSSTTT.SSS."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "BS...BSSOOO.SSS.BS...BSSOOO.SSS."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O..M..O.O..M..O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.OO..OO..M..M..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "M..O.O..O.O..M..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.O.OO.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -18910,26 +15480,25 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TT..S.B.TT..S.B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO..S.B.OO..S.B.OO..S.B.OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TTS..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OOS..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "B.TT.BS.B.TT.BS.B.TT.BS.B.TT.BS.",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "B.OO.BS.B.OO.BS.B.OO.BS.B.OO.BS.",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.O.O..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "S..........BTT.."
+            "pattern": "S..........BOO.."
           },
           {
             "name": "Djembe solo #2",
@@ -18937,73 +15506,55 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "TT.SS..BTT.SS..."
+            "pattern": "OO.SS..BOO.SS..."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "..S.RT.BS.RT..S.RT.BS.RT..S.RT.B"
+            "pattern": "..S.RO.BS.RO..S.RO.BS.RO..S.RO.B"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "SS.....BS.S....BTSSTSSTSSTSST..B"
+            "pattern": "SS.....BS.S....BOSSOSSOSSOSSO..B"
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "B.ST.TS.T.S..BS.B.STTTS.TTSS.BS."
+            "pattern": "B.SO.OS.O.S..BS.B.SOOOS.OOSS.BS."
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "SS........F.TTSTTS.S.S.SRTTTS..."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "SS........F.OOSOOS.S.S.SROOOS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O..M..O.O..M..O.O..M..O.O..M..O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..O.O..O.O..M..M..O.O..O.O..M..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.OO.OO.OO.OO.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.....O.......M.M.....O.....O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -19022,30 +15573,29 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": ".SS.TT.SS.TT.SS.TT.ST.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": ".SS.OO.SS.OO.SS.OO.SO.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.O..O.O.O.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "S.SS.BST.S.B"
+            "pattern": "S.SS.BSO.S.B"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "S.RT.BS.BS.B"
+            "pattern": "S.RO.BS.BS.B"
           },
           {
             "name": "Djembe solo #3",
@@ -19053,57 +15603,39 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "SS.SS.SS.RTT"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.T..T.T.T.."
+            "pattern": "SS.SS.SS.ROO"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O..O..O..O..O..O..O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O...O..OO.O.O...O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO..OO.O.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -19122,100 +15654,81 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "TTTT.TB.BB.BT.TT.TB..B..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOOO.OB.BB.BO.OO.OB..B..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.ST.TS.SB.BS.ST.TS.SB.S",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.SO.OS.SB.BS.SO.OS.SB.S",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "T.TT.SS.SS.ST.TT.SS.SS.S",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "O.OO.SS.SS.SO.OO.SS.SS.S",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.OO.OO.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "T.TT.TB.TB.TT.TT.BB.BB.B"
+            "pattern": "O.OO.OB.OB.OO.OO.BB.BB.B"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "B.TB..T.TT.TB..B.TT.TT.T"
+            "pattern": "B.OB..O.OO.OB..B.OO.OO.O"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "T.TT.SB.SS.ST.TT.SB.SS.S"
+            "pattern": "O.OO.SB.SS.SO.OO.SB.SS.S"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "T.TT.ST.SS.ST.TT.ST.SS.S"
+            "pattern": "O.OO.SO.SS.SO.OO.SO.SS.S"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "T.TT.TB.TB.TT.TT.TB.BB.B"
+            "pattern": "O.OO.OB.OB.OO.OO.OB.BB.B"
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "T.TT.SB.TB.TT.TT.SB.BB.B"
+            "pattern": "O.OO.SB.OB.OO.OO.SB.BB.B"
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "B.TB..T.TT.TB.B..TT.TT.T"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "B.OB..O.OO.OB.B..OO.OO.O"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": ".....OO.OO........O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.OO.......OO.OO.O..O..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -19234,88 +15747,69 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS.SS.TS..S.TS.SS.TS..S.TS.SS.TS..S.TS.S",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS.SS.OS..S.OS.SS.OS..S.OS.SS.OS..S.OS.S",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STTS..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOOS..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT....TTB.B.TT....TTB.B.TT....TTB.B.TT....TTB.B.",
+        "drum_pattern": "OO....OOB.B.OO....OOB.B.OO....OOB.B.OO....OOB.B.",
         "variations": [
           {
+            "name": "Master Call",
+            "pattern": "..OO....OO.."
+          },
+          {
             "name": "Babara Bangoura phrase #1",
-            "pattern": "TTS...TTSB..TTS...TTSB.BS.ST.TS.ST.TS.S.TSSSTT.."
+            "pattern": "OOS...OOSB..OOS...OOSB.BS.SO.OS.SO.OS.S.TSSSOO.."
           },
           {
             "name": "Babara Bangoura phrase #2",
-            "pattern": "TTS...TTSB..TTS...TTSB..TS.TSRTSRTS.TS.TSRTSRTS."
+            "pattern": "OOS...OOSB..OOS...OOSB..OS.OSROSROS.OS.OSROSROS."
           },
           {
             "name": "Babara Bangoura phrase #3",
-            "pattern": "TTS...TTSB..TTS...TTSB.RSSSS.RSSRSSSS.RSSRSSSS.."
+            "pattern": "OOS...OOSB..OOS...OOSB.RSSSS.RSSRSSSS.RSSRSSSS.."
           },
           {
             "name": "Babara Bangoura phrase #4",
-            "pattern": "TTS..TTSB...TTS..TTSS...SS..ST.SS.SRS.TTSRSSSS.."
-          }
-        ],
-        "solos": [],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "..TT....TT.."
+            "pattern": "OOS..OOSB...OOS..OOSS...SS..SO.SS.SRS.OOSRSSSS.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "....OO....OO....OO....OO....OO....OO....OO....OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O...M.M...M.M...M.M..O..O...M.M.....O.O.O.O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.OO.OO.O.O.O.OO.OO.O.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O...................OO.OO.........OO.O.O.O..OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.OO.OO.O.O.O.O.OO.O..O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -19334,69 +15828,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "TTSTTS..STTSTTS..S..S..S",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOSOOS..SOOSOOS..S..S..S",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT.SS.SS.SS.TT.SS.SS.SS.",
+        "drum_pattern": "OO.SS.SS.SS.OO.SS.SS.SS.",
         "variations": [
           {
-            "name": "Patterns of Famoudou Konaté: Djembé 1",
-            "pattern": "..STTS..STTS..STTS..STTS"
-          }
-        ],
-        "solos": [
+            "name": "Master Call",
+            "pattern": "F.OO.OO.OO.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "BSB.TB.TTBT.BSB.TB.TTBT."
+            "pattern": "BSB.OB.OOBO.BSB.OB.OOBO."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "TB.S.TT.BS.TTBBSBTT.BSBT"
+            "pattern": "OB.S.OO.BS.OOBBSBOO.BSBO"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "TTSTTSTTSTSTT..SSSS.S..B"
+            "pattern": "OOSOOSOOSOSOO..SSSS.S..B"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "T.B.BBT.B.BBT..SSSS.S..B"
+            "pattern": "O.B.BBO.B.BBO..SSSS.S..B"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "TTSTTSTTSTTSS..RSSS.S..."
+            "pattern": "OOSOOSOOSOOSS..RSSS.S..."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "TSTTSTTSTTS.BS.RSSS.S..T"
+            "pattern": "OSOOSOOSOOS.BS.RSSS.S..O"
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "T.F.F.T.F.F.F.F..F..F.F."
+            "pattern": "O.F.F.O.F.F.F.F..F..F.F."
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "T.TT.T..F.F.T.T..F..F.F."
-          },
-          {
-            "name": "Solo accompagnement",
-            "pattern": "SS.SS.TT.SS.SS.SS.SS.SS."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "O.OO.O..F.F.O.O..F..F.F."
           },
           {
             "name": "Call",
@@ -19405,6 +15883,14 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Call (from Mögöbalu-CD from Mamady Keita)",
             "pattern": "TTSTTSTTSS.."
+          },
+          {
+            "name": "Patterns of Famoudou Konaté: Djembé 1",
+            "pattern": "..STTS..STTS..STTS..STTS"
+          },
+          {
+            "name": "Solo accompagnement",
+            "pattern": "SS.SS.TT.SS.SS.SS.SS.SS."
           }
         ]
       },
@@ -19416,9 +15902,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Patterns of Famoudou Konaté: Kenkeni",
             "pattern": "O..O..O..O..O..O..O..O.."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Kenkeni Bell",
@@ -19428,9 +15912,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Patterns of Famoudou Konaté: Kenkeni",
             "pattern": "X.XX.XX.XX.XX.XX.XX.XX.X"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban",
@@ -19440,9 +15922,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Patterns of Famoudou Konaté: Sangban",
             "pattern": "O.....O.....O....C..C..."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban Bell",
@@ -19452,9 +15932,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Patterns of Famoudou Konaté: Sangban",
             "pattern": "X.XX.XX.XX.XX.XX.XX.XX.X"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun",
@@ -19480,9 +15958,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Dun Dun variations 4",
             "pattern": "O..O..O.O..OO.O........O"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun Bell",
@@ -19508,16 +15984,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Dun Dun variations 4",
             "pattern": "X.XX.XX.XX.XX.XX.XX.XX.X"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Shekere",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -19536,71 +16008,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "..S.TS..S.TS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "..S.OS..S.OS",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "S..BS.SS..TT",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "S..BS.SS..OO",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "TTSTTS..T.T."
+            "pattern": "OOSOOS..O.O."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O....O.M...O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.O.O.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O..M..O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".....O.O....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -19620,37 +16074,27 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "B..BTTB..BTTB..BTTB..BTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "BsTTSsBsTTSsBsTTSsBsTTSs",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "S.TS.BS.TS.BSTS.BS.TS.B.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 4",
         "drum_pattern": "TSS.S.TS.BS.TSS.S.TS.BS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 5",
         "drum_pattern": "TTS.S.TS.BS.TTS.S.TS.BS.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "TTTTT.TT.T.."
@@ -19665,9 +16109,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Serge Blanc names the following: Kenkeni",
             "pattern": "..O.O..O.O.O..O.O..O.O.O"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Kenkeni Bell",
@@ -19677,9 +16119,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Serge Blanc names the following: Kenkeni",
             "pattern": "X.X.X.XX.X.XX.X.X.XX.X.X"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban",
@@ -19693,16 +16133,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Combination (where the second bel is my own idea for the bel-pattern)",
             "pattern": "S...O.....O.....O.....O.."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "XX.XX.XX.XX.XX.XX.XX.XX.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
@@ -19716,23 +16152,17 @@ export const RHYTHM_LIBRARY = [
             "name": "Combination (where the second bel is my own idea for the bel-pattern)",
             "pattern": "O.....OO....O.....OO...."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "X.X.X.XX.X.XX.X.X.XX.X.X",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -19751,124 +16181,105 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B..BTTB..BTTB..BTTB..BTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B..BOOB..BOOB..BOOB..BOO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.TTS.B.TTS.B.TTS.B.TTS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OOS.B.OOS.B.OOS.B.OOS.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "S.TS.BS.TS.BS.TS.BS.TS.B",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "S.OS.BS.OS.BS.OS.BS.OS.B",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "ROOOO.OO.O.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "B.TTS.B.TTS.B.TTS.B.TTS.B.TTS.B.TTS.B.TTS.B.TTS."
+            "pattern": "B.OOS.B.OOS.B.OOS.B.OOS.B.OOS.B.OOS.B.OOS.B.OOS."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "BSTTS.BS.BS.BSTTS.BS.BS.BSTTS.BS.BS.BSTTS.BS.BS."
+            "pattern": "BSOOS.BS.BS.BSOOS.BS.BS.BSOOS.BS.BS.BSOOS.BS.BS."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "BSTTS.BS.BSTTSTTS.BS.BS.BSTTS.BS.BSTTSTTS.BS.BS."
+            "pattern": "BSOOS.BS.BSOOSOOS.BS.BS.BSOOS.BS.BSOOSOOS.BS.BS."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "BSTTSSBSSBSSBSTTSSBSSBSSBSTTSSBSSBSSBSTTSSBSSBSS"
+            "pattern": "BSOOSSBSSBSSBSOOSSBSSBSSBSOOSSBSSBSSBSOOSSBSSBSS"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "BSTTSSBSSBSTTSTTSSBSSBSSBSTTSSBSSBSTTSTTSSBSSBSS"
+            "pattern": "BSOOSSBSSBSOOSOOSSBSSBSSBSOOSSBSSBSOOSOOSSBSSBSS"
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "T..BS.BS.B.TT..BS.BS.B.TT..BS.BS.B.TT..BS.BS.B.T"
+            "pattern": "O..BS.BS.B.OO..BS.BS.B.OO..BS.BS.B.OO..BS.BS.B.O"
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "SSS..BSS.TTSTTS..BSS....SSS..BSS.TTSTTS..BSS...."
+            "pattern": "SSS..BSS.OOSOOS..BSS....SSS..BSS.OOSOOS..BSS...."
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "B..BSSBT.TSSB..BSSBT.TSSB..BSSBT.TSSBT.TSSBT.TSS"
+            "pattern": "B..BSSBO.OSSB..BSSBO.OSSB..BSSBO.OSSBO.OSSBO.OSS"
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "SSS.RTSS..RTSSS.RTSS..RTSSS.RTSS..RTSSS.RTSS..RT"
+            "pattern": "SSS.ROSS..ROSSS.ROSS..ROSSS.ROSS..ROSSS.ROSS..RO"
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "S...F.SS.SS.SS.SS.S..RTSS...F.SS.SS.SS.SS.T..RTS"
+            "pattern": "S...F.SS.SS.SS.SS.S..ROSS...F.SS.SS.SS.SS.O..ROS"
           },
           {
             "name": "Djembe solo #11",
-            "pattern": "S..RTSRTSS.BS..RTSRTSS.BS..RTSRTSS.BS..RTSRTSS.B"
+            "pattern": "S..ROSROSS.BS..ROSROSS.BS..ROSROSS.BS..ROSROSS.B"
           },
           {
             "name": "Djembe solo #12",
-            "pattern": "SSS.SSS.SSSBSSS.TTSTTS.BSSS.SSS.SSSBSSS.TTSTTS.B"
+            "pattern": "SSS.SSS.SSSBSSS.OOSOOS.BSSS.SSS.SSSBSSS.OOSOOS.B"
           },
           {
             "name": "Djembe solo #13",
-            "pattern": "TTSTTS..TTSTTS..TTSTTS..TTSTTS..TTSTTS..TTSTTS.."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "OOSOOS..OOSOOS..OOSOOS..OOSOOS..OOSOOS..OOSOOS.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "...OO....OO....OO....OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.....OO....O.....OO....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.M.M..O.O.OO.M.M..O.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.OO.O.OO.O.O.OO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -19887,71 +16298,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS.BSTTS.BS.TS.BSTTS.B",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS.BSOOS.BS.OS.BSOOS.B",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "TSS.STTSS.STTSS.STTSS.ST",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OSS.SOOSS.SOOSS.SOOSS.SO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT..S.TT..S.TT..S.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "OO..S.OO..S.OO..S.OO..S.",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "ROOOO.OO.O.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.O..O.O.O..O.O..O.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.O.OO.O.O.OO.O.OO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..M..OO.M..O..M..OO.M..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.M.M..O.O.OO.M.M..O.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.OO.O.OO.O.O.OO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -19970,71 +16363,133 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "F....TSSF....TSSF....TSSF....TSS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "F....OSSF....OSSF....OSSF....OSS",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TTS..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OOS..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "S....BSSS..TTBSSSSF....BSSFBSSF.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "S....BSSS..OOBSSSSF....BSSFBSSF.",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
+          },
+          {
+            "name": "Djembe solo #1",
+            "pattern": ""
+          },
+          {
+            "name": "Djembe solo #2",
+            "pattern": ""
+          },
+          {
+            "name": "Djembe solo #3",
+            "pattern": ""
+          },
+          {
+            "name": "Djembe solo #4",
+            "pattern": ""
+          },
+          {
+            "name": "Djembe solo #5",
+            "pattern": ""
+          },
+          {
+            "name": "Djembe solo #6",
+            "pattern": ""
+          },
+          {
+            "name": "Djembe solo #7",
+            "pattern": ""
+          },
+          {
+            "name": "Djembe solo #8",
+            "pattern": ""
+          },
+          {
+            "name": "Djembe solo #9",
+            "pattern": ""
+          },
+          {
+            "name": "Djembe solo #10",
+            "pattern": ""
+          },
+          {
+            "name": "Djembe solo #11",
+            "pattern": ""
+          },
+          {
+            "name": "Djembe solo #12",
+            "pattern": ""
+          },
+          {
+            "name": "Djembe solo #13",
+            "pattern": ""
+          },
+          {
+            "name": "Djembe solo #14",
+            "pattern": ""
+          },
+          {
+            "name": "Djembe solo #15",
+            "pattern": ""
+          },
+          {
+            "name": "Djembe solo #16",
+            "pattern": ""
+          },
+          {
+            "name": "Djembe solo #17",
+            "pattern": ""
+          },
+          {
+            "name": "Djembe solo #18",
+            "pattern": ""
+          },
+          {
+            "name": "Djembe solo #19",
+            "pattern": ""
+          },
+          {
+            "name": "Djembe solo #20",
+            "pattern": ""
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "OO..M...OO..M...O...M...OO..M...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "..OO..M...OO..M...OO..M...O...O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.....M...M.............O...O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -20053,76 +16508,57 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TTS..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OOS..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "TT.S..S.TTTS..S.TT.S..S.TTTS..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OO.S..S.OOOS..S.OO.S..S.OOOS..S.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [
-          {
-            "name": "Djembe solo #1",
-            "pattern": "SS.S.S.S.STT.RTSS.SS.SS.SS.T.RTS"
-          }
-        ],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
+          },
+          {
+            "name": "Djembe solo #1",
+            "pattern": "SS.S.S.S.SOO.ROSS.SS.SS.SS.O.ROS"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..O.O.O..OO..O.O..O..O...OO..O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.OO.OO.O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".O.....OO.OO.OO..O............O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.O.O.OO.OO.OO.OO.O.O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -20141,142 +16577,141 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "S.BSS..BS.TTS.BSS..BSSTT",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "S.BSS..BS.OOS.BSS..BSSOO",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.OO.OO.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "S..BS..BS.TTS..BS..BS.TTS..BS..BS.TTS..BS..BS.TT"
+            "pattern": "S..BS..BS.OOS..BS..BS.OOS..BS..BS.OOS..BS..BS.OO"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "S..SS..BS.TTS..SS..BS.TTS..SS..BS.TTS..SS..BS.TT"
+            "pattern": "S..SS..BS.OOS..SS..BS.OOS..SS..BS.OOS..SS..BS.OO"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "S..SS.STTSTTS..SS..BS.TTS..SS.STTSTTS..SS..BS.TT"
+            "pattern": "S..SS.SOOSOOS..SS..BS.OOS..SS.SOOSOOS..SS..BS.OO"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "S..SSBSBSSTTS..SS..TS.TTS..SSBSBSSTTS..SS..TS.TT"
+            "pattern": "S..SSBSBSSOOS..SS..OS.OOS..SSBSBSSOOS..SS..OS.OO"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "S..SSBSBSSTTS..SSBSBSSTTS..SSBSBSSTTS..SSBSBSSTT"
+            "pattern": "S..SSBSBSSOOS..SSBSBSSOOS..SSBSBSSOOS..SSBSBSSOO"
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "S.TS.BS.BSTTS.TS.BS.BSTTS.TS.BS.BSTTS.TS.BS.BSTT"
+            "pattern": "S.OS.BS.BSOOS.OS.BS.BSOOS.OS.BS.BSOOS.OS.BS.BSOO"
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "T.SS.T.S.T.S.T.SS.S.SS.ST.SS.T.S.T.S.T.SS.S.SS.S"
+            "pattern": "O.SS.O.S.O.S.O.SS.S.SS.SO.SS.O.S.O.S.O.SS.S.SS.S"
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "RTSSS.RTSSS.T...........RTSSS.RTSSS.T..........."
+            "pattern": "ROSSS.ROSSS.O...........ROSSS.ROSSS.O..........."
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "RTSSS.RTSSS.TSSTSSTSSTSSRTSSS.RTSSS.TSSTSSTSSTSS"
+            "pattern": "ROSSS.ROSSS.OSSOSSOSSOSSROSSS.ROSSS.OSSOSSOSSOSS"
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "TSSTSSTSSS.RSSSS.TS.SS..TSSTSSTSSS.RSSSS.TS.SS.."
+            "pattern": "OSSOSSOSSS.RSSSS.OS.SS..OSSOSSOSSS.RSSSS.OS.SS.."
           },
           {
             "name": "Djembe solo #11",
-            "pattern": "T..........RSSSS.SS.SS..T..........RSSSS.SS.SS.."
+            "pattern": "O..........RSSSS.SS.SS..O..........RSSSS.SS.SS.."
           },
           {
             "name": "Djembe solo #12",
-            "pattern": "..S.RTSSS.....S.RTSSS.....S.RTSSS.....S.RTSSS..."
+            "pattern": "..S.ROSSS.....S.ROSSS.....S.ROSSS.....S.ROSSS..."
           },
           {
             "name": "Djembe solo #13",
-            "pattern": "SSS.TTSSS.TTSSS.TTSST.TTSSS.TTSSS.TTSSS.TTSST.TT"
+            "pattern": "SSS.OOSSS.OOSSS.OOSSO.OOSSS.OOSSS.OOSSS.OOSSO.OO"
           },
           {
             "name": "Djembe solo #14",
-            "pattern": "SSS.TTSSS.TTSSS.TTSSS..RSSS.TTSSS.TTSSS.TTSSS..R"
+            "pattern": "SSS.OOSSS.OOSSS.OOSSS..RSSS.OOSSS.OOSSS.OOSSS..R"
           },
           {
             "name": "Djembe solo #15",
-            "pattern": "TTTS.S.S.TT............RTTTS.S.S.TT............R"
+            "pattern": "OOOS.S.S.OO............ROOOS.S.S.OO............R"
           },
           {
             "name": "Djembe solo #16",
-            "pattern": "TTTS.S.S.TTTS..BS..BS.TTTTTS.S.S.TTTS..BS..BS.TT"
+            "pattern": "OOOS.S.S.OOOS..BS..BS.OOOOOS.S.S.OOOS..BS..BS.OO"
           },
           {
             "name": "Djembe solo #17",
-            "pattern": "S...S...S.TTS...S...S.TTS...S...S.TTS...S...S.TT"
+            "pattern": "S...S...S.OOS...S...S.OOS...S...S.OOS...S...S.OO"
           },
           {
             "name": "Djembe solo #18",
-            "pattern": "S...S...S.TTS.TSS.BBSSTTS...S...S.TTS.TSS.BBSSTT"
+            "pattern": "S...S...S.OOS.OSS.BBSSOOS...S...S.OOS.OSS.BBSSOO"
           },
           {
             "name": "Djembe solo #19",
-            "pattern": "S...S...S.TTS.TSS.BBSSS.S...S...S.TTS.TSS.BBSSS."
+            "pattern": "S...S...S.OOS.OSS.BBSSS.S...S...S.OOS.OSS.BBSSS."
           },
           {
             "name": "Djembe solo #20",
-            "pattern": "TT..TSSS..TSSS..TSSS..TSTT..TSSS..TSSS..TSSS..TS"
+            "pattern": "OO..OSSS..OSSS..OSSS..OSOO..OSSS..OSSS..OSSS..OS"
           },
           {
             "name": "Djembe solo #21",
-            "pattern": "SS..TSSS....S.SS.SS.SS..SS..TSSS....S.SS.SS.SS.."
+            "pattern": "SS..OSSS....S.SS.SS.SS..SS..OSSS....S.SS.SS.SS.."
           },
           {
             "name": "Djembe solo #22",
-            "pattern": "F...........BS.RTS.TT.S.F...........BS.RTS.TT.S."
+            "pattern": "F...........BS.ROS.OO.S.F...........BS.ROS.OO.S."
           },
           {
             "name": "Djembe solo #23",
-            "pattern": "BS..........TTSS.SS.F...BS..........TTSS.SS.F..."
+            "pattern": "BS..........OOSS.SS.F...BS..........OOSS.SS.F..."
           },
           {
             "name": "Djembe solo #24",
-            "pattern": "SSTSSTSSTSSSRTSRTSTSTTSSS......................."
+            "pattern": "SSOSSOSSOSSSROSROSOSOOSSS......................."
           },
           {
             "name": "Djembe solo #25",
-            "pattern": "RS.RT.RSSS.T.TFTFTSS.RTSSS.RTSSSSSSSSS.........."
+            "pattern": "RS.RO.RSSS.O.OFOFOSS.ROSSS.ROSSSSSSSSS.........."
           },
           {
             "name": "Djembe solo #26",
-            "pattern": "T.T.S.S.T.T.S.S.T.T.S.S.TST.T.T.TTS............."
+            "pattern": "T.T.S.S.T.T.S.S.T.T.S.S.OST.T.T.OOS............."
           },
           {
             "name": "Djembe solo #27",
-            "pattern": "STT.BSS.SSBSS.SSBSS.SSBSSTT.BSS.SS.TTSTTSTTSS.BS"
+            "pattern": "SOO.BSS.SSBSS.SSBSS.SSBSSOO.BSS.SS.OOSOOSOOSS.BS"
           },
           {
             "name": "Djembe solo #28",
-            "pattern": "F.BB.F.BB.F.BBSS.TT.RSS.TS.TS.TS..RSSSTT.S......"
+            "pattern": "F.BB.F.BB.F.BBSS.OO.RSS.OS.OS.OS..RSSSOO.S......"
           },
           {
             "name": "Djembe solo #29",
-            "pattern": "...T.SS.S.RTS.SS....RSS.TS.RSSS.TS.............."
+            "pattern": "...O.SS.S.ROS.SS....RSS.OS.RSSS.OS.............."
           },
           {
             "name": "Djembe solo #30",
-            "pattern": "RTSRTSSTTSSSSSSSSSSSSSSSTSSTSSTSSTSSTSSTSS..RSS."
+            "pattern": "ROSROSSOOSSSSSSSSSSSSSSSOSSOSSOSSOSSOSSOSS..RSS."
           },
           {
             "name": "Solo 1 (line 1)",
@@ -20299,6 +16734,10 @@ export const RHYTHM_LIBRARY = [
             "pattern": "S..SSBSBSS.TTS..SSBSBSS.TT"
           },
           {
+            "name": "Call",
+            "pattern": "T.TT.T.TT.T.T..."
+          },
+          {
             "name": "Solo phrase 1",
             "pattern": "T.T.T.T.S.S.S.S."
           },
@@ -20310,31 +16749,17 @@ export const RHYTHM_LIBRARY = [
             "name": "Solo phrase 3",
             "pattern": "S.S.T.T.S.S.T.T."
           }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
-          },
-          {
-            "name": "Call",
-            "pattern": "T.TT.T.TT.T.T..."
-          }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O....OO....OO....OO....O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -20367,10 +16792,7 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Sangban variations (line 6)",
             "pattern": "..O.......O..O........O."
-          }
-        ],
-        "solos": [],
-        "specials": [
+          },
           {
             "name": "Sangban echauffement",
             "pattern": "..OO....OO....OO....OO.."
@@ -20384,10 +16806,7 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Sangban; alternative (the not-ballet-version?)",
             "pattern": "X.XX.X.XX.X.X.XX.X.XX.X."
-          }
-        ],
-        "solos": [],
-        "specials": [
+          },
           {
             "name": "Sangban echauffement",
             "pattern": "X.XX.XX.XX.XX.XX.XX.XX.X"
@@ -20410,23 +16829,17 @@ export const RHYTHM_LIBRARY = [
             "name": "Dun Dun variations 3",
             "pattern": "OO.O.O.OO.OO.O.O.O.OO.O."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".O.O.O.OO.OO.O.O.O.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -20445,108 +16858,89 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TTSBS.TTS.S.TTSBS.TTS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OOSBS.OOS.S.OOSBS.OOS.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "S.TS.BS.TS.BS.TS.BS.TS.B",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "S.OS.BS.OS.BS.OS.BS.OS.B",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": ".........SS.R.SS.OOSOOS."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "SS........TSSS...B..B.TTBS.T.S.TT.S.TS...B..B..."
+            "pattern": "SS........OSSS...B..B.OOBS.O.S.OO.S.OS...B..B..."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": ".S.T.S.BTTS.BS..BRTTTS.B"
+            "pattern": ".S.O.S.BOOS.BS..BROOOS.B"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": ".S.S.S.S..F......RTTS.TT.STT.S.TT.S......BBB..BS"
+            "pattern": ".S.S.S.S..F......ROOS.OO.SOO.S.OO.S......BBB..BS"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "TTBTTB.BTTS.TS...B..B..B"
+            "pattern": "OOBOOB.BOOS.OS...B..B..B"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "TTBTTB.BTTS.SS.T.SS.T.SST.SS.T.SS.F.......BBB..."
+            "pattern": "OOBOOB.BOOS.SS.O.SS.O.SSO.SS.O.SS.F.......BBB..."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "S.TS.BS.TSTT"
+            "pattern": "S.OS.BS.OSOO"
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "STTS.BS.TSTTS.TS.BS.TSTT"
+            "pattern": "SOOS.BS.OSOOS.OS.BS.OSOO"
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "S..BS..BSSTT"
+            "pattern": "S..BS..BSSOO"
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "TTS..B..S.TT..S..B..S.TR"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": ".........SS.R.SS.TTSTTS."
+            "pattern": "OOS..B..S.OO..S..B..S.OR"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O.M..OO.M..OO.M..OO.M..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O..M..O.O.O.O..M..O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.OO.OO.O.O.O.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O....O.O..O.O...........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.O.OO.O.O.OO.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -20568,6 +16962,14 @@ export const RHYTHM_LIBRARY = [
         "drum_pattern": "B.T.B...BTTTB...",
         "variations": [
           {
+            "name": "Call 1",
+            "pattern": "T...T.TT.T.TT.T."
+          },
+          {
+            "name": "Call 2",
+            "pattern": "T...T.....SSSS.."
+          },
+          {
             "name": "Djembe 2; first time 1",
             "pattern": "......T.B...BT.T"
           },
@@ -20579,67 +16981,42 @@ export const RHYTHM_LIBRARY = [
             "name": "Djembe 2; repeat 1",
             "pattern": "B...B.T.B...BT.T"
           }
-        ],
-        "solos": [],
-        "specials": [
-          {
-            "name": "Call 1",
-            "pattern": "T...T.TT.T.TT.T."
-          },
-          {
-            "name": "Call 2",
-            "pattern": "T...T.....SSSS.."
-          }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO.OO...OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "X.XX.XX.X.XX.XX.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": ".......O.......O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..OO...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "XX.XX.X.X.X.X.X.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -20658,71 +17035,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.T.B...BTTTB...B.T.B...BTTTB...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.O.B...BOOOB...B.O.B...BOOOB...",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "BSSSB.T.B...BT.TBSSSB.T.B...BT.T",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "BSSSB.O.B...BO.OBSSSB.O.B...BO.O",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "T...T.TT.T.TT.T.T...T.....SSSS.."
+            "pattern": "O...O.OO.O.OO.O.O...O.....SSSS.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO.OO...OO.OO...OO.OO...OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "......O.......O.......O.......O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.OO.O.O.O.O.O.OO.OO.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..OO...O...O...O..OO...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.OO.O.O.O.O.O.OO.OO.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -20741,104 +17100,85 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "SSSSS.B.TS..TTTTS......B",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "SSSSS.B.OS..OOOOS......B",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TTS..BS.TTS.TTS..BS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OOS..BS.OOS.OOS..BS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "SSSTTTTS....SSSTTTTS....",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "SSSOOOOS....SSSOOOOS....",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.OO.OO.."
+          },
           {
             "name": "Djembe solo #1",
             "pattern": "RSSSS.RSSSS.RSSSS.RSSSS."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "RTTTT.BS.T.T.TS........."
+            "pattern": "ROOOO.BS.O.O.OS........."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "RSSSS.B.TS..RTTTS......."
+            "pattern": "RSSSS.B.OS..ROOOS......."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "S.TTS..BS.TTS.TTS..BS.TT"
+            "pattern": "S.OOS..BS.OOS.OOS..BS.OO"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "TTSS.SS.SS.SS.SS.SS.SS.T"
+            "pattern": "OOSS.SS.SS.SS.SS.SS.SS.O"
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "TSTTSTTSTT..TSTTSTTSTT.."
+            "pattern": "OSOOSOOSOO..OSOOSOOSOO.."
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "RSSRTTTS....RSSRTTTS...."
+            "pattern": "RSSROOOS....RSSROOOS...."
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "FTTFTTFTS...FTTFTTFTS..."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "FOOFOOFOS...FOOFOOFOS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O..O..O..O..O..O..O..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..M...OO.O.O..M..O...M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.O.O.OO.OO.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "....OO....OO....OO....OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -20858,16 +17198,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "TTTTT.TT.T.."
@@ -20877,16 +17213,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": ".O..O..O..O..O..O..O..O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "XX.XX.XX.XX.XX.XX.XX.XX.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -20895,10 +17227,7 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Sangban line 2",
             "pattern": "O.O..C.C.O..O.O..C.C.C.."
-          }
-        ],
-        "solos": [],
-        "specials": [
+          },
           {
             "name": "Sangban echauffement",
             "pattern": "O.O..O.O.O..O.O..O.O.O.."
@@ -20912,10 +17241,7 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Sangban line 2",
             "pattern": "X.X.XX.X.X.XX.X.XX.X.X.X"
-          }
-        ],
-        "solos": [],
-        "specials": [
+          },
           {
             "name": "Sangban echauffement",
             "pattern": "X.X.XX.X.X.XX.X.XX.X.X.X"
@@ -20925,9 +17251,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Dun Dun",
         "drum_pattern": "O..O..O..O..O..O..O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Dun Dun echauffement",
             "pattern": "O.OO.OO.OO.OO.OO.OO.OO.O"
@@ -20937,9 +17261,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "XX.XX.XX.XX.XX.XX.XX.XX.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Dun Dun echauffement",
             "pattern": "X.XX.XX.XX.XX.XX.XX.XX.X"
@@ -20949,9 +17271,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Shekere",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -20970,27 +17290,21 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TTB.S.B.TTB.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OOB.S.B.OOB.S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           },
           {
             "name": "Call",
@@ -21001,51 +17315,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O...M...M.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.....O.O.....O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -21065,91 +17365,72 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S....BSSS....BSSS....BSSS....BSS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TTS..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OOS..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "S....BSSS....BSSS.......SSF.SSF.",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO......."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "FTSSTTSSS..BSS.SS..BSS.SS...SS.."
+            "pattern": "FOSSOOSSS..BSS.SS..BSS.SS...SS.."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "FTSTTSTTS.FSTSTTS.FSTSTTS...SS.."
+            "pattern": "FOSOOSOOS.FSOSOOS.FSOSOOS...SS.."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "S...FSTTS.......S...TSTTSTTSTSTT"
+            "pattern": "S...FSOOS.......S...OSOOSOOSOSOO"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "RTS.RTS.S...RTTTS...RTTTS...SS.."
+            "pattern": "ROS.ROS.S...ROOOS...ROOOS...SS.."
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "SSTTS.F.SSTTS.F.SSTTS.F.SSTTS.F."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT......."
+            "pattern": "SSOOS.F.SSOOS.F.SSOOS.F.SSOOS.F."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "OO..M...OO..M...OO..M...OO..M...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "..OO..M...OO..M...OO..M...O...O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.......................O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -21169,9 +17450,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S.S.TT.S.S.S.TT.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "T.TT.T.TT.T.T.T."
@@ -21181,51 +17460,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O...C.O...O.C.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "x.x.x.xx.xx.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O...O.O...O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -21244,27 +17509,21 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "F.OO.OO.OO.."
           },
           {
             "name": "Call",
@@ -21275,51 +17534,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "..O..O..O..O..O..O..O..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O...M.M..O..O...M.M..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.OO.OO.O.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O.....OO.OO.O.....OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -21338,27 +17583,21 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT....TTB.B.TT....TTB.B.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "OO....OOB.B.OO....OOB.B.",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "SSTSSS......"
+            "pattern": "SSOSSS......"
           },
           {
             "name": "Call",
@@ -21369,51 +17608,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O..O..O...M....O..O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".OO.OO.OO.......OO.OO...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -21433,70 +17658,52 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "................................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "................................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "SSTSSS......"
+            "pattern": "SSOSSS......"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO..O.OO..O.OO..O.OO..O.OO..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M.....M..O..M.....OO....O.O..O.O.O..M.....M.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.OO.OO.O.O.OO.O.OO.O.OO.O.O.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "........OO.OO...OO.O...OO.O.OO.O.O.OO...........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.OO.OO.O.OO.O.O.OO.O.OO.O.O.OO.O.OO.O.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -21516,47 +17723,29 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S.S.T.T.S.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "B.B.S.B.B.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "S....BSSS....BSS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 4",
         "drum_pattern": "SSTTS.W.SSTTS.W.",
         "variations": [
           {
-            "name": "Djembe 3 variation part A",
-            "pattern": "S....BSSS....BSS"
+            "name": "Call",
+            "pattern": "T.T.S...f..."
           },
-          {
-            "name": "Djembe 3 variation part B",
-            "pattern": "S.......SSS.SSS."
-          }
-        ],
-        "solos": [
           {
             "name": "Djembé solo 1",
             "pattern": "S.S.T.T.S.S."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Call",
-            "pattern": "T.T.S...f..."
           },
           {
             "name": "Call 1",
@@ -21569,6 +17758,14 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Intro Break (Dj, S, D stacked)",
             "pattern": "........SSS.SSS."
+          },
+          {
+            "name": "Djembe 3 variation part A",
+            "pattern": "S....BSSS....BSS"
+          },
+          {
+            "name": "Djembe 3 variation part B",
+            "pattern": "S.......SSS.SSS."
           }
         ]
       },
@@ -21592,21 +17789,21 @@ export const RHYTHM_LIBRARY = [
             "name": "Kenkeni variation 2 part B",
             "pattern": "OO..C...O.O.O.O."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "XX.XX.XX.XX.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.C.O.C.O.C.",
         "variations": [
+          {
+            "name": "Intro Break (Dj, S, D stacked)",
+            "pattern": "..........O...O."
+          },
           {
             "name": "Sangban variation 1 part A",
             "pattern": "..OO..C...OO..C."
@@ -21631,26 +17828,21 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban variation 3 part B",
             "pattern": "O.OO..C...OO..C."
           }
-        ],
-        "solos": [],
-        "specials": [
-          {
-            "name": "Intro Break (Dj, S, D stacked)",
-            "pattern": "..........O...O."
-          }
         ]
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "X.XX.XX.XX.X",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..O..O..O..",
         "variations": [
+          {
+            "name": "Intro Break (Dj, S, D stacked)",
+            "pattern": "........O...O..."
+          },
           {
             "name": "Dundun variation 1 part A",
             "pattern": "O..............."
@@ -21659,28 +17851,17 @@ export const RHYTHM_LIBRARY = [
             "name": "Dundun variation 1 part B",
             "pattern": "........O.O.O.O."
           }
-        ],
-        "solos": [],
-        "specials": [
-          {
-            "name": "Intro Break (Dj, S, D stacked)",
-            "pattern": "........O...O..."
-          }
         ]
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "XX.XX.XX.XX.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -21699,34 +17880,33 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.S.TTS.S.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.S.OOS.S.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "BSSBTTBSSBTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "BSSBOOBSSBOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "ROOOO.OO.O.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "B.SB..BS.B.BFTTFTTFTTF.."
+            "pattern": "B.SB..BS.B.BFOOFOOFOOF.."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": ".SS..BTS.F...SS..BTS.F.."
+            "pattern": ".SS..BOS.F...SS..BOS.F.."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "FTSFSSTS.F.BFTSFSSTS.F.B"
+            "pattern": "FOSFSSOS.F.BFOSFSSOS.F.B"
           },
           {
             "name": "Djembe solo #4",
@@ -21734,65 +17914,47 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "RTTRTTRSSRSSRTTRTTBS.B.."
+            "pattern": "ROOROORSSRSSROOROOBS.B.."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "FTTB..BS.B..FTTBSSBSSB.."
+            "pattern": "FOOB..BS.B..FOOBSSBSSB.."
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "FTTFSSFSSFTTFTTFSSFSSFSS"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "FOOFSSFSSFOOFOOFSSFSSFSS"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O..O..O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.M.OO.M.M.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.OO.O.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "....O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -21811,84 +17973,65 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..S..TTS..S..TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..S..OOS..S..OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..TS...S..TS...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..OS...S..OS...",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
         "variations": [
           {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.O.O..."
+          },
+          {
             "name": "Ibrahima Sarr phrase #1",
-            "pattern": "B.SSB..BB.SSB..BTT.TT..BTT.TT.S."
+            "pattern": "B.SSB..BB.SSB..BOO.OO..BOO.OO.S."
           },
           {
             "name": "Ibrahima Sarr phrase #2",
-            "pattern": "B.SSB..BB.SSB..BTTBTTBTTBTTBTT.."
+            "pattern": "B.SSB..BB.SSB..BOOBOOBOOBOOBOO.."
           },
           {
             "name": "Ibrahima Sarr phrase #3",
-            "pattern": "B.SSB..BB.SSB..BTTSFS.TTSTTSB..B"
-          }
-        ],
-        "solos": [],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "B.SSB..BB.SSB..BOOSFS.OOSOOSB..B"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..M..OO..M.M..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O..O..OO..O.O..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "......O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -21907,24 +18050,18 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "TT.S..S.TT.SB.S.TT.S..S.TT.SB.S.TT.S..S.TT.SB.S.TT.S..S.TT.SB.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OO.S..S.OO.SB.S.OO.S..S.OO.SB.S.OO.S..S.OO.SB.S.OO.S..S.OO.SB.S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.SS.STTS.SS.STTS.SS.STTS.SS.STTS.SS.STTS.SS.STTS.SS.STTS.SS.STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.SS.SOOS.SS.SOOS.SS.SOOS.SS.SOOS.SS.SOOS.SS.SOOS.SS.SOOS.SS.SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TTTT....TTTTB...TTTT....TTTTB...TTTT....TTTTB...TTTT....TTTTB...",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "OOOO....OOOOB...OOOO....OOOOB...OOOO....OOOOB...OOOO....OOOOB...",
+        "variations": [
           {
             "name": "Master Call",
             "pattern": "RRRRRRRRRRRRS..."
@@ -21934,44 +18071,32 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "O..OO.O..OO.O..OO.OO.OO..OO.O...OO........OO....M..M.M....OO....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.O...OO.O..OO.OO.OO..OO.O...OO.O.OO.O.OOO.O.O.OO.OO.O.OOO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..OO.O..OO.O..OO.OO.OO..OO.O...OO............O.......O.......O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O..OO.O..OO.O..OO.OO.OO..OO.O...OO.O.OO.O.OOO.O.OO.O.OO.O.OOO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..OO.O..OO.O..OO.OO.OO..OO.O...OO..........O...M..M..M.....O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O..OO.O..OO.O..OO.OO.OO..OO.O...OO......O.O.O.O.O.OO.OO.OOO.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -21990,42 +18115,41 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "T.ST.ST.ST.ST.ST",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.SO.SO.SO.SO.SO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "S.S.SS.BS.S.ST.T"
+            "pattern": "S.S.SS.BS.S.SO.O"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "S.S.SS.TS.S.TT.T"
+            "pattern": "S.S.SS.OS.S.OO.O"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "S.S.ST.TS.S.ST.T"
+            "pattern": "S.S.SO.OS.S.SO.O"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "TTSTTSTTSTTSTTS."
+            "pattern": "OOSOOSOOSOOSOOS."
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "TTSTTSTTSTTSTTSB"
+            "pattern": "OOSOOSOOSOOSOOSB"
           },
           {
             "name": "Djembe solo #6",
@@ -22033,13 +18157,7 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "F.TT.S.TT..BSSSS"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.S.OO..BSSSS"
           },
           {
             "name": "Call",
@@ -22050,51 +18168,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "..OO..M.O.OO..M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "..OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -22113,71 +18217,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "T.SS..STT.SS..ST",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.SS..SOO.SS..SO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT..B...B...B...",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "OO..B...B...B...",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "F.OO.O.OO.O.O..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO..M...OO..M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O...M...O.O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "......O.....O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -22196,88 +18282,69 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "BBBBB.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "BBBBB.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "B.OO..S.B.OO..S.",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.O.O..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "S.BTTBTTB..SS.TT"
+            "pattern": "S.BOOBOOB..SS.OO"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "S.TTT.SSS.TT..SS"
+            "pattern": "S.OOO.SSS.OO..SS"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "S.TT.S.BS.TT.T.B"
+            "pattern": "S.OO.S.BS.OO.O.B"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "BBBBB.TTS.SSS.TT"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "BBBBB.OOS.SSS.OO"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O..O..O..O..O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O.....O.O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.....O.O.....O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -22296,66 +18363,65 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "BTTTB.S.BTTTB.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "BOOOB.S.BOOOB.S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..S.TT.SSS.TTT.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..S.OO.SSS.OOO.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "B..BB.TTB...TTTT",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "B..BB.OOB...OOOO",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "BT.TBTS.BT.TBTS."
+            "pattern": "BO.OBOS.BO.OBOS."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "BTT.BTT.BTT.BTT."
+            "pattern": "BOO.BOO.BOO.BOO."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "S.SS.STTS.SS.STT"
+            "pattern": "S.SS.SOOS.SS.SOO"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "S.SS.STTS.S.TTTT"
+            "pattern": "S.SS.SOOS.S.OOOO"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "T.TT.TT...TS.SS."
+            "pattern": "O.OO.OO...OS.SS."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "S.SS.STTS.S.TTTT"
+            "pattern": "S.SS.SOOS.S.OOOO"
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "S..SS.TTS.TSBSTT"
+            "pattern": "S..SS.OOS.OSBSOO"
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "T.TT.TS.SS.S..BT"
+            "pattern": "O.OO.OS.SS.S..BO"
           },
           {
             "name": "Djembe solo #9",
-            "pattern": ".TT.S.SST.TT.T.B"
+            "pattern": ".OO.S.SSO.OO.O.B"
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "T.B.BTB........."
+            "pattern": "O.B.BOB........."
           },
           {
             "name": "Djembe solo #11",
-            "pattern": "RTTTS...RTTTS..."
+            "pattern": "ROOOS...ROOOS..."
           },
           {
             "name": "Djembe solo #12",
@@ -22367,81 +18433,63 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #14",
-            "pattern": "BBBSB.S.B..B.TT."
+            "pattern": "BBBSB.S.B..B.OO."
           },
           {
             "name": "Djembe solo #15",
-            "pattern": "B.TTT.T.B..B.TT."
+            "pattern": "B.OOO.O.B..B.OO."
           },
           {
             "name": "Djembe solo #16",
-            "pattern": "SS.TTTT.BTTBTTBT"
+            "pattern": "SS.OOOO.BOOBOOBO"
           },
           {
             "name": "Djembe solo #17",
-            "pattern": "TBTTB.T.B..B.TT."
+            "pattern": "OBOOB.O.B..B.OO."
           },
           {
             "name": "Djembe solo #18",
-            "pattern": "SS.TTTT.B..B.TT."
+            "pattern": "SS.OOOO.B..B.OO."
           },
           {
             "name": "Djembe solo #19",
-            "pattern": "TSSSSSSSSSSSSSSS"
+            "pattern": "OSSSSSSSSSSSSSSS"
           },
           {
             "name": "Djembe solo #20",
-            "pattern": "TSSSTSSSTSS.F..."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "OSSSOSSSOSS.F..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "......O.......O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.O.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "......O.......O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.OO.O.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "OO.OO...OO.OO...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.OO.O.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -22460,45 +18508,29 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
         "variations": [
           {
-            "name": "CD analysis Djembé 1 24-step phrase part A",
-            "pattern": "..S.TS..S.TS"
-          },
-          {
-            "name": "CD analysis Djembé 1 24-step phrase part B",
-            "pattern": "..S.TS..S.TS"
-          }
-        ],
-        "solos": [
-          {
-            "name": "Djembé solo 1",
-            "pattern": "S.S.T.T.S.S.T.T."
-          }
-        ],
-        "specials": [
-          {
             "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "ROOOO.OO.O.."
           },
           {
             "name": "Call",
             "pattern": "T.T.S...f......."
+          },
+          {
+            "name": "Djembé solo 1",
+            "pattern": "S.S.T.T.S.S.T.T."
           },
           {
             "name": "Call",
@@ -22507,22 +18539,26 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "CD analysis Call",
             "pattern": "T.TT.TT.TT.."
+          },
+          {
+            "name": "CD analysis Djembé 1 24-step phrase part A",
+            "pattern": "..S.TS..S.TS"
+          },
+          {
+            "name": "CD analysis Djembé 1 24-step phrase part B",
+            "pattern": "..S.TS..S.TS"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O..O..O..O..O..O..O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -22544,16 +18580,12 @@ export const RHYTHM_LIBRARY = [
             "name": "CD analysis Sangban 24-step phrase part B",
             "pattern": "..O.....O..."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
@@ -22574,10 +18606,7 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "CD analysis Doun Doun 24-step phrase part B",
             "pattern": "O...OO.OO.O."
-          }
-        ],
-        "solos": [],
-        "specials": [
+          },
           {
             "name": "Doun doun echauffement Start part A",
             "pattern": "....OO.OO.OO"
@@ -22599,16 +18628,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.OO.OO.O.O.O.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -22627,71 +18652,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "SSB.TTSSBBTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "SSB.OOSSBBOO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TT..B.TT..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OO..B.OO..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "ROOOO.OO.O.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.O...O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O......OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..OO...OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OOO.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -22710,76 +18717,57 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "SSB.TTSSB.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "SSB.OOSSB.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TT..S.TT..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OO..S.OO..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [
+        "variations": [
           {
             "name": "DjembeSolo",
-            "pattern": "RTTTT.TT.T.."
-          }
-        ],
-        "specials": [
+            "pattern": "ROOOO.OO.O.."
+          },
           {
             "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "ROOOO.OO.O.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O.O......OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..OO...OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OOO.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -22798,104 +18786,85 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO..S.B.OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "S.SS.STTS.SSBSTTS.SS.STTS.SSBSTT"
+            "pattern": "S.SS.SOOS.SSBSOOS.SS.SOOS.SSBSOO"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "BSTTSSS.BSTTSSS.BSTTSSS.BSTTSSS."
+            "pattern": "BSOOSSS.BSOOSSS.BSOOSSS.BSOOSSS."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "RTSRTSS.B.SSS...RTSRTSS.B.SSS..."
+            "pattern": "ROSROSS.B.SSS...ROSROSS.B.SSS..."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "TS.S.S.TTSS.S..TTS.S.S.TTSS.S..T"
+            "pattern": "OS.S.S.OOSS.S..OOS.S.S.OOSS.S..O"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "RTSRTSRTSRTSRTS.SS...S..S.S..S.."
+            "pattern": "ROSROSROSROSROS.SS...S..S.S..S.."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "TTSTTSTTSTTSTTS.SS.....BS.S.SS.BS.S.SS.BS.S.SS..SS.....BS.S.SS.."
+            "pattern": "OOSOOSOOSOOSOOS.SS.....BS.S.SS.BS.S.SS.BS.S.SS..SS.....BS.S.SS.."
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "TTSTTSS.TTSTTSS.TTSTTSS.T.T.SS.."
+            "pattern": "OOSOOSS.OOSOOSS.OOSOOSS.T.T.SS.."
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "TTTSSSSSSSSSSSSSTTTSSSSSSSSSSSSS"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "OOOSSSSSSSSSSSSSOOOSSSSSSSSSSSSS"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO......OO....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O...M...O...O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".O.O.O.OO.....OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".O.O.O.OO.O.O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -22915,16 +18884,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "B.S..SB.S..S",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "S.T..SS.T..S",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "T.T.S...f..."
@@ -22934,51 +18899,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "..O..O..O..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".XX.XX.XX.XX",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": ".O...O.O...O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": ".XX.XX.XX.XX",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..O..O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "XX.XX.XX.XX.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -23011,66 +18962,48 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.BB..SS..TT..SS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.BB..SS..OO..SS",
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "..........O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.OO....O.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -23090,16 +19023,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "T.T.S...T.T.S...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "B.S.S.S.B.S.S.S.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "T.T.S...f......."
@@ -23109,51 +19038,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "X.X.X.X.X.X.X.X.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.C.O...O.C.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "X.X.X.X.X.X.X.X.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O...O.O.O...O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "X.X.X.X.X.X.X.X.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -23173,9 +19088,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S...S.TT.S.S.TT.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "T.TT.T.TT.T.T..."
@@ -23185,51 +19098,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O...O.C...O.C.C.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.......O...O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -23248,71 +19147,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TTS.S.S.TTS.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OOS.S.S.OOS.S.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "M.OO....M.OO....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.....M..M..O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.....O.O.....O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -23331,71 +19212,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TTS.S.S.TTS.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OOS.S.S.OOS.S.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "OO.M..M.OO.M..M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.O.OO.OO.O.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.....M..M..O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.....O.O.....O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -23414,71 +19277,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TTS.S.S.TTS.S.S.TTS.S.S.TTS.S.S.TTS.S.S.TTS.S.S.TTS.S.S.TTS.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OOS.S.S.OOS.S.S.OOS.S.S.OOS.S.S.OOS.S.S.OOS.S.S.OOS.S.S.OOS.S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TTS..SS.TTS..SS.TTS..SS.TTS..SS.TTS..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OOS..SS.OOS..SS.OOS..SS.OOS..SS.OOS..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................................................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "M.OO....M.OO....M.OO....M.OO....M.OO....M.OO....M.OO....M.OO....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.....M..M..O...O.....M..M..O.O..O.O..M..M..O.O..O.O..M..M..O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.OO.OO.O.O.OO.OO.OO.OO.O.OO.O.OO.OO.OO.O.OO.O.OO.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.....O.O.....O.O.....O.O.....OO.O.O.O.O.OO.O.OO.O.O.O.O.OO.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO..O.O.O.O.OO.O....O.O.O.O.OO.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -23497,71 +19342,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "T.T.B.B.T.T.B.B.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.O.B.B.O.O.B.B.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B...B.T.B...B.T.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B...B.O.B...B.O.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "B.SSB.SSB.SSTT..",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "B.SSB.SSB.SSOO..",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O..O..O...O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO..OO..OO..OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -23580,71 +19407,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "TTSS..SSTTSSB.SS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOSS..SSOOSSB.SS",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "F.OO.O.OO.O.O..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..O....O.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "M....OO.M..OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.OOO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -23692,70 +19501,52 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "....OO.O....OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.O.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "...M..O...M.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "..OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -23774,100 +19565,81 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..S.STTS..S.STTS..S.STTS..S.STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..S.SOOS..S.SOOS..S.SOOS..S.SOO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "..TT..S...TT..S...TT..S...TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "..OO..S...OO..S...OO..S...OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TTTS..S.TTTS..S.TTTS..S.TTTS..S.",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "OOOS..S.OOOS..S.OOOS..S.OOOS..S.",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
             "pattern": "F..F...F..F.SS..F..F...F..F.SS.."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "TTSSSSSSTTSSSSSSTT...RTSS.TTSS.T"
+            "pattern": "OOSSSSSSOOSSSSSSOO...ROSS.OOSS.O"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "T.TT.TT.TT.TT...T.TT.TT.TT.TT..."
+            "pattern": "O.OO.OO.OO.OO...O.OO.OO.OO.OO..."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "F....RTSS.TTSS.RSSSS.RTSS.TTSS.."
+            "pattern": "F....ROSS.OOSS.RSSSS.ROSS.OOSS.."
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "TT...FSSS.TTSS.TTT...FSSS.TTSS.T"
+            "pattern": "OO...FSSS.OOSS.OOO...FSSS.OOSS.O"
           },
           {
             "name": "Djembe solo #6",
-            "pattern": ".....RSSS.S.SS.SRTSS.S.SS.SSTTS."
+            "pattern": ".....RSSS.S.SS.SROSS.S.SS.SSOOS."
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "SS.............SRTSS.SRTSS.SRTSS"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "SS.............SROSS.SROSS.SROSS"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...OO..........O...OO..........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.OO.O........O.O.OO.O........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.......O.O.O...M.M...M.M...O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "......O...O......M.....M..O...O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.OO.O.O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -23886,54 +19658,43 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "TT.SB.S.B..SB.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OO.SB.S.B..SB.S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "TT.S.BS.B.SS.BS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OO.S.BS.B.SS.BS.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT..T.T.TT..B...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OO..O.O.OO..B...",
+        "variations": []
       },
       {
         "part": "Djembé 4",
         "drum_pattern": "T.T.S.S.T.T.S.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 5",
         "drum_pattern": "S.S.T.T.T.T.S...",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.OO.S.SS.SS."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "B...B...TT.TT...B...B...B..TT..."
+            "pattern": "B...B...OO.OO...B...B...B..OO..."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "TTSS..SSTTSS..SSTTSS..SSTTSS..SS"
+            "pattern": "OOSS..SSOOSS..SSOOSS..SSOOSS..SS"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "S..STTTTS..STTTTS..STTTTS..STTTT"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.TT.S.SS.SS."
+            "pattern": "S..SOOOOS..SOOOOS..SOOOOS..SOOOO"
           },
           {
             "name": "Call 1",
@@ -23952,30 +19713,22 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "O...M...OO..M...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M...O.O.M...O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.OO.O.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
@@ -23996,10 +19749,7 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "variation 4",
             "pattern": "O..............."
-          }
-        ],
-        "solos": [],
-        "specials": [
+          },
           {
             "name": "Break 1",
             "pattern": "S.O.O.O.S.O.O.O."
@@ -24025,10 +19775,7 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "variation 4",
             "pattern": "x..............."
-          }
-        ],
-        "solos": [],
-        "specials": [
+          },
           {
             "name": "Break 1",
             "pattern": "x.x.x.x.x.x.x.x."
@@ -24038,9 +19785,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -24059,66 +19804,65 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO..S.B.OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "T.SS.S.SS...F..."
+          },
           {
             "name": "Djembe solo #1",
             "pattern": "....RRSS............RRSS........"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "T.SS.TT.SS.TT.SSS.SS.SSS.SS.SS.S"
+            "pattern": "T.SS.OT.SS.OT.SSS.SS.SSS.SS.SS.S"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "TTSTTSTTSTT.T.SSS.T.TTT.T.SSS.F."
+            "pattern": "OOSOOSOOSOO.T.SSS.T.OOO.T.SSS.F."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "TT.S.S.TT.S.TT.STTSTTSTTST.ST.SS"
+            "pattern": "OO.S.S.OO.S.OO.SOOSOOSOOSO.ST.SS"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "S.TT.F.TT.F.TT.F.F.ST.ST.ST.T.SS"
+            "pattern": "S.OO.F.OO.F.OO.F.F.ST.SO.SO.T.SS"
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "S.TT.F.TT.T.SSS.S.TT.F.TT.T.SSS."
+            "pattern": "S.OO.F.OO.T.SSS.S.OO.F.OO.T.SSS."
           },
           {
             "name": "Djembe solo #7",
-            "pattern": ".TTSSSSSSSSSSSSSSTSSSTSSSTSSSTSS"
+            "pattern": ".OOSSSSSSSSSSSSSSOSSSOSSSOSSSOSS"
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "STSSSTSSSTSSST..RSSS.RTTTT..F..."
+            "pattern": "SOSSSOSSSOSSSO..RSSS.ROOOO..F..."
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "..........TSTTSSB.SSTTSSB.TSTTSS"
+            "pattern": "..........OSOOSSB.SSOOSSB.OSOOSS"
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "B.SSTTSSB.TSTTSSB.SSTTSSB.TSTTSS"
+            "pattern": "B.SSOOSSB.OSOOSSB.SSOOSSB.OSOOSS"
           },
           {
             "name": "Djembe solo #11",
-            "pattern": "B.SSTTSSB.TSTTSSB.SSTTSS........"
+            "pattern": "B.SSOOSSB.OSOOSSB.SSOOSS........"
           },
           {
             "name": "Djembe solo #12",
@@ -24126,25 +19870,19 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #13",
-            "pattern": "TS.TS.TS.TS.TSTTS.TS.TS.TS..SS.T"
+            "pattern": "OS.OS.OS.OS.OSOOS.OS.OS.OS..SS.O"
           },
           {
             "name": "Djembe solo #14",
-            "pattern": "TS.TS.TS.TS.TSTTS.TS.TS.TS..SSTT"
+            "pattern": "OS.OS.OS.OS.OSOOS.OS.OS.OS..SSOO"
           },
           {
             "name": "Djembe solo #15",
-            "pattern": "SS..SS..SS......TT..TT..TT......"
+            "pattern": "SS..SS..SS......OO..OO..OO......"
           },
           {
             "name": "Djembe solo #16",
-            "pattern": "TTSSSSSSSSSSSSSSTTSSSSSSSSSSSSSS"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "T.SS.S.SS...F..."
+            "pattern": "OOSSSSSSSSSSSSSSOOSSSSSSSSSSSSSS"
           },
           {
             "name": "Call",
@@ -24155,51 +19893,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "OO.M....OO.M....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.O.OO.OO.O.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.OO......O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -24218,88 +19942,69 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S....SS..T.TS..B.SS..T.T",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S....SS..O.OS..B.SS..O.O",
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [
+        "variations": [
           {
             "name": "DjembeSolo",
-            "pattern": "............RTTTT.TT.T.."
+            "pattern": "............ROOOO.OO.O.."
+          },
+          {
+            "name": "Master Call",
+            "pattern": "ROOOO.OO.O.."
           },
           {
             "name": "Djembe solo #1",
-            "pattern": "S.S..SS.SB.BS.SB.STTTTTT"
+            "pattern": "S.S..SS.SB.BS.SB.SOOOOOO"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "S.S..SS.SB.BSSSSSSTTTTTT"
+            "pattern": "S.S..SS.SB.BSSSSSSOOOOOO"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "S.S..SS.SB.STTSTTSTTSTTT"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "S.S..SS.SB.SOOSOOSOOSOOO"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O.O...O.O...O.O...O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O..M..M..MM..M..O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -24318,27 +20023,21 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TT..S.TT..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OO..S.OO..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "BTTBSSBTTBSS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "BOOBSSBOOBSS",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "F.OO.OO.OO.."
           },
           {
             "name": "Call",
@@ -24349,51 +20048,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "M..OO.M..OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O...M..M..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.OO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O...O.O...O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -24412,71 +20097,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.STTTS.STTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.SOOOS.SOOO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.SSTTS.SSTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.SSOOS.SSOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "S.OS..S.OS..",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "F.OO.OO.OO.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "M..OO.M..OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M.M..O.OO...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "....O...O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -24495,23 +20162,22 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TTB.SSB.TTB.SS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OOB.SSB.OOB.SS",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..S..TTS..S..TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..S..OOS..S..OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "B..BB..BB..BSSSS",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.O.O..."
+          },
           {
             "name": "Djembe solo #1",
             "pattern": "B..BB..BB..BSSSS"
@@ -24526,73 +20192,55 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "STTSTTSTT..BSSSS"
+            "pattern": "SOOSOOSOO..BSSSS"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "B.SSB.TTB.SSB.TT"
+            "pattern": "B.SSB.OOB.SSB.OO"
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "STTSTTSTT..BSTTS"
+            "pattern": "SOOSOOSOO..BSOOS"
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "TTSTT..BSTTSTTST"
+            "pattern": "OOSOO..BSOOSOOSO"
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "T..BSTTSTTSTT..."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "O..BSOOSOOSOO..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "M...OO..M...OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.OO.OO.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..M...OM.OO....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.OOO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "....M.O.....M.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -24611,71 +20259,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..STTTTS..STTTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOOOS..SOOOO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "M...O.O.M...O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..M...O..OO....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "..OO..OO..OO..OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "......O.......O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "..OO..OO..OO..OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -24694,36 +20324,140 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "TTSS..S.TT.SB.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOSS..S.OO.SB.S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B..S..T.B.TSTTS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B..S..O.B.OSOOS.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "B..S..STT.TSTTS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B..S..SOO.OSOOS.",
+        "variations": []
       },
       {
         "part": "Djembé 4",
         "drum_pattern": "S.S.T.T.B.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 5",
         "drum_pattern": "T.S.B.S.T.T.",
         "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.O.O..."
+          },
+          {
+            "name": "Djembe solo #1",
+            "pattern": "..SS..SS..S.OOOF..SS..SS..S.OOOF"
+          },
+          {
+            "name": "Djembe solo #2",
+            "pattern": "S.S.S.S.S.S.S..OS...S.S.S.S.S..O"
+          },
+          {
+            "name": "Djembe solo #3",
+            "pattern": "O.OO..S.O.S.O..OO.OO..S.O.S.O..O"
+          },
+          {
+            "name": "Djembe solo #4",
+            "pattern": "O.OO...OO.O.O..OO.OO...OO.O.O..O"
+          },
+          {
+            "name": "Djembe solo #5",
+            "pattern": "O.OO..S.O.S.OOSSO.OO..S.O.S.OOSS"
+          },
+          {
+            "name": "Djembe solo #6",
+            "pattern": "BSS.BSS.BSOOBSS.SS..B...B...B..."
+          },
+          {
+            "name": "Djembe solo #7",
+            "pattern": "OS.OOS.OS.OS.OS.SS..B...B...B..."
+          },
+          {
+            "name": "Djembe solo #8",
+            "pattern": "BS.BS.S.ROS.ROS.SS..B...B...B..."
+          },
+          {
+            "name": "Djembe solo #9",
+            "pattern": "RSSS.O.S.O.S.O.OSS..B...B...B..."
+          },
+          {
+            "name": "Djembe solo #10",
+            "pattern": "BSSSOOS.BSSSOOS.OO.............."
+          },
+          {
+            "name": "Djembe solo #11",
+            "pattern": "BSSS.SSS.SSS.SS.OO.............."
+          },
+          {
+            "name": "Djembe solo #12",
+            "pattern": "OO.SOOS.........OO.SOOS........."
+          },
+          {
+            "name": "Djembe solo #13",
+            "pattern": "OS.OOS.OS.OS.OS.OS.OOS.OS.OS.OS."
+          },
+          {
+            "name": "Djembe solo #14",
+            "pattern": "SS.SB..BS.S.OOOOSS.SB..BS.S.OOOO"
+          },
+          {
+            "name": "Djembe solo #15",
+            "pattern": "ROOOS.S.S.S.S.S."
+          },
+          {
+            "name": "Djembe solo #16",
+            "pattern": "RSSSS....OOSOOS."
+          },
+          {
+            "name": "Djembe solo #17",
+            "pattern": "RSSSO.O.RSSSO.O."
+          },
+          {
+            "name": "Djembe solo #18",
+            "pattern": "ROOOS.S.ROOOS.S."
+          },
+          {
+            "name": "Djembe solo #19",
+            "pattern": "F.OO.OO.F......."
+          },
+          {
+            "name": "Djembe solo #10",
+            "pattern": "SROOS.S.SROOS.S."
+          },
+          {
+            "name": "Djembe solo #21",
+            "pattern": "OOSS..SSOOSSB.SS"
+          },
+          {
+            "name": "Djembe solo #22",
+            "pattern": "ROOS.ROOS.ROOS.."
+          },
+          {
+            "name": "Djembe solo #23",
+            "pattern": "OO.S.B.S.BS.B.S.BS.B.S.BS.SRSOOOO..............."
+          },
+          {
+            "name": "Djembe solo #24",
+            "pattern": "FS.O..O.FS.O..O."
+          },
+          {
+            "name": "Djembe solo #25",
+            "pattern": "S.S.S.S.S.S.S..OO.OO...OO.O.O..OO.OO..S.O.S.O..OO.OO..S.O.S.OOSS"
+          },
+          {
+            "name": "Call",
+            "pattern": "T.TT.T.TT.T."
+          },
+          {
+            "name": "Djembé solo accomp.1",
+            "pattern": "S.S.S.S.T.T."
+          },
           {
             "name": "phrase 1",
             "pattern": "T.T.T.T.S.S."
@@ -24764,172 +20498,42 @@ export const RHYTHM_LIBRARY = [
             "name": "phrase 11",
             "pattern": "S.S.T.T.S.S."
           }
-        ],
-        "solos": [
-          {
-            "name": "Djembe solo #1",
-            "pattern": "..SS..SS..S.TTTF..SS..SS..S.TTTF"
-          },
-          {
-            "name": "Djembe solo #2",
-            "pattern": "S.S.S.S.S.S.S..TS...S.S.S.S.S..T"
-          },
-          {
-            "name": "Djembe solo #3",
-            "pattern": "T.TT..S.T.S.T..TT.TT..S.T.S.T..T"
-          },
-          {
-            "name": "Djembe solo #4",
-            "pattern": "T.TT...TT.T.T..TT.TT...TT.T.T..T"
-          },
-          {
-            "name": "Djembe solo #5",
-            "pattern": "T.TT..S.T.S.TTSST.TT..S.T.S.TTSS"
-          },
-          {
-            "name": "Djembe solo #6",
-            "pattern": "BSS.BSS.BSTTBSS.SS..B...B...B..."
-          },
-          {
-            "name": "Djembe solo #7",
-            "pattern": "TS.TTS.TS.TS.TS.SS..B...B...B..."
-          },
-          {
-            "name": "Djembe solo #8",
-            "pattern": "BS.BS.S.RTS.RTS.SS..B...B...B..."
-          },
-          {
-            "name": "Djembe solo #9",
-            "pattern": "RSSS.T.S.T.S.T.TSS..B...B...B..."
-          },
-          {
-            "name": "Djembe solo #10",
-            "pattern": "BSSSTTS.BSSSTTS.TT.............."
-          },
-          {
-            "name": "Djembe solo #11",
-            "pattern": "BSSS.SSS.SSS.SS.TT.............."
-          },
-          {
-            "name": "Djembe solo #12",
-            "pattern": "TT.STTS.........TT.STTS........."
-          },
-          {
-            "name": "Djembe solo #13",
-            "pattern": "TS.TTS.TS.TS.TS.TS.TTS.TS.TS.TS."
-          },
-          {
-            "name": "Djembe solo #14",
-            "pattern": "SS.SB..BS.S.TTTTSS.SB..BS.S.TTTT"
-          },
-          {
-            "name": "Djembe solo #15",
-            "pattern": "RTTTS.S.S.S.S.S."
-          },
-          {
-            "name": "Djembe solo #16",
-            "pattern": "RSSSS....TTSTTS."
-          },
-          {
-            "name": "Djembe solo #17",
-            "pattern": "RSSST.T.RSSST.T."
-          },
-          {
-            "name": "Djembe solo #18",
-            "pattern": "RTTTS.S.RTTTS.S."
-          },
-          {
-            "name": "Djembe solo #19",
-            "pattern": "F.TT.TT.F......."
-          },
-          {
-            "name": "Djembe solo #10",
-            "pattern": "SRTTS.S.SRTTS.S."
-          },
-          {
-            "name": "Djembe solo #21",
-            "pattern": "TTSS..SSTTSSB.SS"
-          },
-          {
-            "name": "Djembe solo #22",
-            "pattern": "RTTS.RTTS.RTTS.."
-          },
-          {
-            "name": "Djembe solo #23",
-            "pattern": "TT.S.B.S.BS.B.S.BS.B.S.BS.SRSTTTT..............."
-          },
-          {
-            "name": "Djembe solo #24",
-            "pattern": "FS.T..T.FS.T..T."
-          },
-          {
-            "name": "Djembe solo #25",
-            "pattern": "S.S.S.S.S.S.S..TT.TT...TT.T.T..TT.TT..S.T.S.T..TT.TT..S.T.S.TTSS"
-          },
-          {
-            "name": "Djembé solo accomp.1",
-            "pattern": "S.S.S.S.T.T."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
-          },
-          {
-            "name": "Call",
-            "pattern": "T.TT.T.TT.T."
-          }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "....O.O.....O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.O.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "OO......O.O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.OO.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "......O.....O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.OO.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -24948,71 +20552,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO..S.B.OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "F.OO.O.OO.O.O..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "....O.O.....O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "OO......O.O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.O.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".......OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.O.OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -25031,71 +20617,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS.BS.TS.BS.TS.BS.TS.B",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS.BS.OS.BS.OS.BS.OS.B",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.SSTTS.SSTTS.SSTTS.SSTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.SSOOS.SSOOS.SSOOS.SSOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "F.OO.OO.OO.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O....OO....OO.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..O..O.................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OOO.O.OO.OO.O.O.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "..OO...O.O....OO.O.O.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OOO.O.OO.OO.O.O.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -25114,71 +20682,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "TT.S..SBTTBSB.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OO.S..SBOOBSB.S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTTTS.BSTTTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOOOS.BSOOOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "F...F...F...F...",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "F.OO.O.OO.O.O..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..M...OO.OO....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OOO.OOO.OOO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "..O...O...O...O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OOO.OOO.OOO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -25197,98 +20747,97 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "TT.STTS.TT.STTS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OO.SOOS.OO.SOOS.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO....O.O.O..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "RSSRTTRSS.TST..."
+            "pattern": "RSSROORSS.OSO..."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "T.SS...........T"
+            "pattern": "T.SS...........O"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "...TT.T.S.F.F..."
+            "pattern": "...OT.T.S.F.F..."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "...F.S..S.T.S..ST.S..ST.S..ST.S..F.S.S.T.ST.S.TT.ST.S..........."
+            "pattern": "...F.S..S.T.S..ST.S..ST.S..ST.S..F.S.S.O.SO.S.OO.ST.S..........."
           },
           {
             "name": "Djembe solo #5",
-            "pattern": ".SFST.S..SFST.S..SFST.S..RT.TT.TT.TT.ST.T.SSTTS."
+            "pattern": ".SFST.S..SFST.S..SFST.S..RO.OO.OO.OO.ST.T.SSOOS."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "...F.S.S.S.S.S.S.S.S.S.RTTTT.RSSSS.S.S.S.S.S.S.S.S.S.S.RTTRSSS.."
+            "pattern": "...F.S.S.S.S.S.S.S.S.S.ROOOO.RSSSS.S.S.S.S.S.S.S.S.S.S.ROORSSS.."
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "..TF.TF........."
+            "pattern": "..OF.OF........."
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "..TF.TF.S.TF.TF.S.TF.TF....RTTRSSS.........RTTRSS..............."
+            "pattern": "..OF.OF.S.OF.OF.S.OF.OF....ROORSSS.........ROORSS..............."
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "............T.TTT.ST.S.T.ST.S.TT..ST.TS...S.T.S...ST.TS..TT.T.SS"
+            "pattern": "............T.OOO.SO.S.O.SO.S.OO..SO.OS...S.O.S...SO.OS..OT.T.SS"
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "..ST.TS...S.T.S."
+            "pattern": "..SO.OS...S.O.S."
           },
           {
             "name": "Djembe solo #11",
-            "pattern": "RSSRTTS...ST.TS..F.S.S.T.ST.S..TRTTT.SRSS.S.T.SS.T.S.T.S.T.ST.SS"
+            "pattern": "RSSROOS...SO.OS..F.S.S.O.SO.S..OROOO.SRSS.S.O.SS.O.S.O.S.O.ST.SS"
           },
           {
             "name": "Djembe solo #12",
-            "pattern": "TR.TF.TR.TF....."
+            "pattern": "OR.OF.OR.OF....."
           },
           {
             "name": "Djembe solo #13",
-            "pattern": "..TF.TF...TF.TF."
+            "pattern": "..OF.OF...OF.OF."
           },
           {
             "name": "Djembe solo #14",
-            "pattern": "TF.TF.T.TTTSF.SS"
+            "pattern": "OF.OF.O.OOOSF.SS"
           },
           {
             "name": "Djembe solo #15",
-            "pattern": "F.TTF.SSF.TTF.SS"
+            "pattern": "F.OOF.SSF.OOF.SS"
           },
           {
             "name": "Djembe solo #16",
-            "pattern": "F.TTF.SSF.TTF.SSF.SSF.SSF.SSF.SSF.TTF.SSF.TTF.SSF.TTF.SSF.TTF..."
+            "pattern": "F.OOF.SSF.OOF.SSF.SSF.SSF.SSF.SSF.OOF.SSF.OOF.SSF.OOF.SSF.OOF..."
           },
           {
             "name": "Djembe solo #17",
-            "pattern": "TT.SB.S.TT.SB.S."
+            "pattern": "OO.SB.S.OO.SB.S."
           },
           {
             "name": "Djembe solo #18",
-            "pattern": "F.....F....BS.BSBTSB...BS.BSBTSBT.S.T.S.T.S.T.S.SSTTT.S.SSTTT.S."
+            "pattern": "F.....F....BS.BSBOSB...BS.BSBOSBO.S.O.S.O.S.O.S.SSOOT.S.SSOOT.S."
           },
           {
             "name": "Djembe solo #19",
-            "pattern": "TTBBTTBBTTBBTTBB"
+            "pattern": "OOBBOOBBOOBBOOBB"
           },
           {
             "name": "Djembe solo #20",
@@ -25298,55 +20847,37 @@ export const RHYTHM_LIBRARY = [
             "name": "Djembe solo #21",
             "pattern": "F.SS.SS.SS.SS.S."
           }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT....T.T.T..."
-          }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..M...OO.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OOO.OOO.OOO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "......O...O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -25365,35 +20896,29 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.SSTTS.SSTTS.SSTTS.SSTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.SSOOS.SSOOS.SSOOS.SSOO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": ".SS.TT.SS.TT.SS.TT.SS.TT",
+        "drum_pattern": ".SS.OO.SS.OO.SS.OO.SS.OO",
         "variations": [
           {
-            "name": "phrase 1",
-            "pattern": "S.S.S.S.T.T."
-          }
-        ],
-        "solos": [
+            "name": "Master Call",
+            "pattern": "ROOOO.OO.O.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "SS.BRTSS.BRTSRTSRTSS.BRT"
+            "pattern": "SS.BROSS.BROSROSROSS.BRO"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "F...RTSS..F.F...RTSS.RSS"
+            "pattern": "F...ROSS..F.F...ROSS.RSS"
           },
           {
             "name": "Djembe solo #3",
@@ -25401,23 +20926,23 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "RRSTTSRRSTTTRRSTTSRRSSSB"
+            "pattern": "RRSOOSRRSOOORRSOOSRRSSSB"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "TTS.S..S..S.TTS.S..S..S."
+            "pattern": "OOS.S..S..S.OOS.S..S..S."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "F...F.SS.TT.BF..RRTTTTS."
+            "pattern": "F...F.SS.OO.BF..RROOOOS."
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "BTT.S.BS.BS.BTT.S.BS.BS."
+            "pattern": "BOO.S.BS.BS.BOO.S.BS.BS."
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "SSS.TTSSSBTTSSS.TTSSSBTT"
+            "pattern": "SSS.OOSSSBOOSSS.OOSSSBOO"
           },
           {
             "name": "Djembe solo #9",
@@ -25425,128 +20950,112 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "BSS.SS.S.TT.BSS.SS.T.TT."
+            "pattern": "BSS.SS.S.OO.BSS.SS.O.OO."
           },
           {
             "name": "Djembe solo #11",
-            "pattern": ".TT.SS.TT.SS.TT.SS.TT.SS"
+            "pattern": ".OO.SS.OO.SS.OO.SS.OO.SS"
           },
           {
             "name": "Djembe solo #12",
-            "pattern": ".TT.SS.TT.SS.TT.SS.TT.SS"
+            "pattern": ".OO.SS.OO.SS.OO.SS.OO.SS"
           },
           {
             "name": "Djembe solo #13",
-            "pattern": "....RTSRTSSSSSSSTTSSSSTT"
+            "pattern": "....ROSROSSSSSSSOOSSSSOO"
           },
           {
             "name": "Djembe solo #14",
-            "pattern": "SSSSRTSRTSSSSSSSTTSSSSTT"
+            "pattern": "SSSSROSROSSSSSSSOOSSSSOO"
           },
           {
             "name": "Djembe solo #15",
-            "pattern": "TSTSTSTSTTSSSSSSSSSSSSSS"
+            "pattern": "OSOSOSOSOOSSSSSSSSSSSSSS"
           },
           {
             "name": "Djembe solo #16",
-            "pattern": "TSSSTSSSTTSSSSSSSSSSSSSS"
+            "pattern": "OSSSOSSSOOSSSSSSSSSSSSSS"
           },
           {
             "name": "Djembe solo #17",
-            "pattern": "SSSSRTSRTSSSSSSSSSSSSSSS"
+            "pattern": "SSSSROSROSSSSSSSSSSSSSSS"
           },
           {
             "name": "Djembe solo #18",
-            "pattern": "SSSSRTSRTSSSSSSSTTSTTSSS"
+            "pattern": "SSSSROSROSSSSSSSOOSOOSSS"
           },
           {
             "name": "Djembe solo #19",
-            "pattern": "SSSSTTSSSSTTSSSTT......."
+            "pattern": "SSSSOOSSSSOOSSSOO......."
           },
           {
             "name": "Djembe solo #20",
-            "pattern": "..S.TT.SS.TT.SS.TT.TS.TT"
+            "pattern": "..S.OO.SS.OO.SS.OO.OS.OO"
           },
           {
             "name": "Djembe solo #21",
-            "pattern": ".SS.TT.SSBTTS...TTSTTSTT"
+            "pattern": ".SS.OO.SSBOOS...OOSOOSOO"
           },
           {
             "name": "Djembe solo #22",
-            "pattern": "S.SSTTS.SSTTS.SSTTS.SSTT"
+            "pattern": "S.SSOOS.SSOOS.SSOOS.SSOO"
           },
           {
             "name": "Djembe solo #23",
-            "pattern": "S...TTSS.BTTS..........."
+            "pattern": "S...OOSS.BOOS..........."
           },
           {
             "name": "Djembe solo #24",
-            "pattern": "....TTSS.BTTS...TTSTTSTT"
+            "pattern": "....OOSS.BOOS...OOSOOSOO"
           },
           {
             "name": "Djembe solo #25",
-            "pattern": "S...TTSS.BTTS...TTS..F.."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "S...OOSS.BOOS...OOS..F.."
           },
           {
             "name": "Call",
             "pattern": "T.TT.T.TT.S."
+          },
+          {
+            "name": "phrase 1",
+            "pattern": "S.S.S.S.T.T."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "...OO....OO....OO....OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..M..OO.OO.M..M..M..OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O...O..O...OO......O...O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -25565,79 +21074,73 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.S.TTS.S.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.S.OOS.S.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "T.SS.TT.SS.T",
+        "drum_pattern": "O.SS.OO.SS.O",
         "variations": [
           {
-            "name": "phrase 1",
-            "pattern": "T.T.T.S.S.S."
-          }
-        ],
-        "solos": [
+            "name": "Master Call",
+            "pattern": "F.OO.OO.OO.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "TTS.BBTTS...TTS.BBTTS..."
+            "pattern": "OOS.BBOOS...OOS.BBOOS..."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "TTS.TSB.SB.STTS.TSB.SB.S"
+            "pattern": "OOS.OSB.SB.SOOS.OSB.SB.S"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "TTS..S..SB.STTS..S..SB.S"
+            "pattern": "OOS..S..SB.SOOS..S..SB.S"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "TTSTTS..SB.STTSTTS..SB.S"
+            "pattern": "OOSOOS..SB.SOOSOOS..SB.S"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "RTSRTS..SB.SRTSRTS..SB.S"
+            "pattern": "ROSROS..SB.SROSROS..SB.S"
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "RTSRTS..SRTS..SRTS..SRTS"
+            "pattern": "ROSROS..SROS..SROS..SROS"
           },
           {
             "name": "Djembe solo #7",
-            "pattern": ".TT.SS.TT.SS.TT.SS.TT.SS"
+            "pattern": ".OO.SS.OO.SS.OO.SS.OO.SS"
           },
           {
             "name": "Djembe solo #8",
-            "pattern": ".RT.RS.RT.RS.RT.RS.RT.RS"
+            "pattern": ".RO.RS.RO.RS.RO.RS.RO.RS"
           },
           {
             "name": "Djembe solo #9",
-            "pattern": ".TTT..SS.SS.TSSSSSTSSSSS"
+            "pattern": ".OOO..SS.SS.OSSSSSOSSSSS"
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "TSTTSTTSTTS.F.SS.RSSTT.."
+            "pattern": "OSOOSOOSOOS.F.SS.RSSOO.."
           },
           {
             "name": "Djembe solo #11",
-            "pattern": "TTS..S..S..STTS..S..S..S"
+            "pattern": "OOS..S..S..SOOS..S..S..S"
           },
           {
             "name": "Djembe solo #12",
-            "pattern": "TTS.TSB.SB.STTS.TSB.SB.S"
+            "pattern": "OOS.OSB.SB.SOOS.OSB.SB.S"
           },
           {
             "name": "Djembe solo #13",
-            "pattern": "TTS.TT.SS.TSTTS.TT.SS.TS"
+            "pattern": "OOS.OO.SS.OSOOS.OO.SS.OS"
           },
           {
             "name": "Djembe solo #14",
@@ -25645,31 +21148,31 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #15",
-            "pattern": "S.STTSS.STTSS.STTSS.STTS"
+            "pattern": "S.SOOSS.SOOSS.SOOSS.SOOS"
           },
           {
             "name": "Djembe solo #16",
-            "pattern": "B..BTTBS.B.ST..BTTBS.B.S"
+            "pattern": "B..BOOBS.B.SO..BOOBS.B.S"
           },
           {
             "name": "Djembe solo #17",
-            "pattern": "B..BRTSRTS.SB..BRTSRTS.S"
+            "pattern": "B..BROSROS.SB..BROSROS.S"
           },
           {
             "name": "Djembe solo #18",
-            "pattern": "T.T.SS...BSST.T.SS...BSS"
+            "pattern": "O.O.SS...BSSO.O.SS...BSS"
           },
           {
             "name": "Djembe solo #19",
-            "pattern": "TSSTSSTSSTSSS.B..SS.B..S"
+            "pattern": "OSSOSSOSSOSSS.B..SS.B..S"
           },
           {
             "name": "Djembe solo #20",
-            "pattern": "T.TT.SS.TT.SS.B..SS.B..S"
+            "pattern": "O.OO.SS.OO.SS.B..SS.B..S"
           },
           {
             "name": "Djembe solo #21",
-            "pattern": "RTSRTSRTSRTSS.B..SS.B..S"
+            "pattern": "ROSROSROSROSS.B..SS.B..S"
           },
           {
             "name": "Djembe solo #22",
@@ -25677,19 +21180,19 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #23",
-            "pattern": "TT.RS.TT....TSSTSSTSSTSS"
+            "pattern": "OO.RS.OO....OSSOSSOSSOSS"
           },
           {
             "name": "Djembe solo #24",
-            "pattern": "TSSTSSTSSS..S.TT.TT.TBSS"
+            "pattern": "OSSOSSOSSS..S.OO.OO.OBSS"
           },
           {
             "name": "Djembe solo #25",
-            "pattern": "RTTT.SRT.TS.RTTT.SRT.TS."
+            "pattern": "ROOO.SRO.OS.ROOO.SRO.OS."
           },
           {
             "name": "Djembe solo #26",
-            "pattern": "TS.RTTTS...."
+            "pattern": "OS.ROOOS...."
           },
           {
             "name": "Djembe solo #27",
@@ -25697,43 +21200,43 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #28",
-            "pattern": "TTS..S..SB.STTS..S..SB.S"
+            "pattern": "OOS..S..SB.SOOS..S..SB.S"
           },
           {
             "name": "Djembe solo #29",
-            "pattern": "TTS..S..SB.STTSTTSTTSTTS"
+            "pattern": "OOS..S..SB.SOOSOOSOOSOOS"
           },
           {
             "name": "Djembe solo #30",
-            "pattern": "B.S.TS.TS.TSTTS..S..SB.S"
+            "pattern": "B.S.OS.OS.OSOOS..S..SB.S"
           },
           {
             "name": "Djembe solo #31",
-            "pattern": "T.T.SS...BSST.T.SS...BSS"
+            "pattern": "O.O.SS...BSSO.O.SS...BSS"
           },
           {
             "name": "Djembe solo #32",
-            "pattern": "TSSTSSTSSTSSS.B..SS.B..S"
+            "pattern": "OSSOSSOSSOSSS.B..SS.B..S"
           },
           {
             "name": "Djembe solo #33",
-            "pattern": "TTSTTSTTSTTSS.B..SS.B..S"
+            "pattern": "OOSOOSOOSOOSS.B..SS.B..S"
           },
           {
             "name": "Djembe solo #34",
-            "pattern": "T.TT.SS.TT.SS.B..SS.B..S"
+            "pattern": "O.OO.SS.OO.SS.B..SS.B..S"
           },
           {
             "name": "Djembe solo #35",
-            "pattern": "T.TT.SS.TT.SS..RSSSS...."
+            "pattern": "O.OO.SS.OO.SS..RSSSS...."
           },
           {
             "name": "Djembe solo #36",
-            "pattern": "RTSRTTTS...S"
+            "pattern": "ROSROOOS...S"
           },
           {
             "name": "Djembe solo #37",
-            "pattern": "RT.RRT.RRT.R"
+            "pattern": "RO.RRO.RRO.R"
           },
           {
             "name": "Djembe solo #38",
@@ -25741,51 +21244,67 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #39",
-            "pattern": "TS.RTTTS...."
+            "pattern": "OS.ROOOS...."
           },
           {
             "name": "Djembe solo #40",
-            "pattern": ".S.RTTTS...."
+            "pattern": ".S.ROOOS...."
           },
           {
             "name": "Djembe solo #41",
-            "pattern": ".S.RTTTS.RTTTS.RTTTS...."
+            "pattern": ".S.ROOOS.ROOOS.ROOOS...."
           },
           {
             "name": "Djembe solo #42",
-            "pattern": "TS.RSSTT.....S.RSSTT...."
+            "pattern": "OS.RSSOO.....S.RSSOO...."
           },
           {
             "name": "Djembe solo #43",
-            "pattern": ".S.RSSTT.RSSTT.RSSTT...."
+            "pattern": ".S.RSSOO.RSSOO.RSSOO...."
           },
           {
             "name": "Djembe solo #44",
-            "pattern": "..F.TT.S.S.."
+            "pattern": "..F.OO.S.S.."
           },
           {
             "name": "Djembe solo #45",
-            "pattern": "..F.TT.SF.TT"
+            "pattern": "..F.OO.SF.OO"
           },
           {
             "name": "Djembe solo #46",
-            "pattern": "..F.TT.S.T.S.T.S.T.ST.ST"
+            "pattern": "..F.OO.S.O.S.O.S.O.SO.SO"
           },
           {
             "name": "Djembe solo #47",
-            "pattern": "TTS..S..SB.S"
+            "pattern": "OOS..S..SB.S"
           },
           {
             "name": "Djembe solo #48",
-            "pattern": "..S.TS.TS.TSTTS..S..SB.S"
+            "pattern": "..S.OS.OS.OSOOS..S..SB.S"
           },
           {
             "name": "Djembe solo #49",
-            "pattern": "SSTSSTSSTSST"
+            "pattern": "SSOSSOSSOSSO"
+          },
+          {
+            "name": "Call",
+            "pattern": "T.TT.T.TT.S."
+          },
+          {
+            "name": "phrase 1",
+            "pattern": "T.T.T.S.S.S."
+          },
+          {
+            "name": "Call",
+            "pattern": "T.T.S...f..."
           },
           {
             "name": "Djembé solo 1",
             "pattern": "S.S.T.T.S.S."
+          },
+          {
+            "name": "Call",
+            "pattern": "T.TT.TT.TT.."
           },
           {
             "name": "Solo accompagnement 1 part A",
@@ -25802,24 +21321,6 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Solo accompagnement 2 part B",
             "pattern": "TTS.TSB.SB.S"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
-          },
-          {
-            "name": "Call",
-            "pattern": "T.TT.T.TT.S."
-          },
-          {
-            "name": "Call",
-            "pattern": "T.T.S...f..."
-          },
-          {
-            "name": "Call",
-            "pattern": "T.TT.TT.TT.."
           },
           {
             "name": "Intro (long) line 1 part A",
@@ -25851,16 +21352,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Combination Kenkeni part B",
             "pattern": "....O.O....."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -25922,16 +21419,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban variation 6 part B",
             "pattern": "O...C.C..O.."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
@@ -25945,23 +21438,17 @@ export const RHYTHM_LIBRARY = [
             "name": "Combination Dun Dun part B",
             "pattern": "..O.....O..O"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -25980,112 +21467,93 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.S.TTS.S.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.S.OOS.S.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "T.SS.TT.SS.T",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.SS.OO.SS.O",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TTS..S..SB.S",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "OOS..S..SB.S",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.OO.OO.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "TTS..S..SB.S"
+            "pattern": "OOS..S..SB.S"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "TTSTTS..SB.S"
+            "pattern": "OOSOOS..SB.S"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "RTSRTS..SB.S"
+            "pattern": "ROSROS..SB.S"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "RTSRTS..SRTS..SRTS..SRTS"
+            "pattern": "ROSROS..SROS..SROS..SROS"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": ".TT.SS.TT.SS"
+            "pattern": ".OO.SS.OO.SS"
           },
           {
             "name": "Djembe solo #6",
-            "pattern": ".RT.RS.RT.RS"
+            "pattern": ".RO.RS.RO.RS"
           },
           {
             "name": "Djembe solo #7",
-            "pattern": ".TTT..SS.SS."
+            "pattern": ".OOO..SS.SS."
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "TSSSSSTSSSSSTSTTSTTSTTS.F.SS.RSSTT.."
+            "pattern": "OSSSSSOSSSSSOSOOSOOSOOS.F.SS.RSSOO.."
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "..TSSSSS...."
+            "pattern": "..OSSSSS...."
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "SSS.TTT.SSS.TTT.S.SS...."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "SSS.OOO.SSS.OOO.S.SS...."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O.O...O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O........O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".......OO..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -26104,88 +21572,69 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TTS.TSB.SB.S",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "OOS.OSB.SB.S",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.OO.OO.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "TTT.SSB..BSS"
+            "pattern": "OOO.SSB..BSS"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "TSSTSSTSSTSSTTT.SSB..BSS"
+            "pattern": "OSSOSSOSSOSSOOO.SSB..BSS"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "S..RTTSS...."
+            "pattern": "S..ROOSS...."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "TSSTSSTSSTSSTTSSSSSSSS.."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "OSSOSSOSSOSSOOSSSSSSSS.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "....MM....MM",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O...M.M..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.OO....OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -26205,15 +21654,20 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S.S.TT.S.S..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "S.TT..S.TT..",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Call",
+            "pattern": "T.TT.T.TT.S."
+          },
+          {
+            "name": "Call",
+            "pattern": "TTTTT.TT.T.."
+          },
           {
             "name": "Solo accompagnement 1 part A",
             "pattern": "SSS.TTSSSBT."
@@ -26254,45 +21708,27 @@ export const RHYTHM_LIBRARY = [
             "name": "Djembe solo frase 1 part H",
             "pattern": "T..........."
           }
-        ],
-        "specials": [
-          {
-            "name": "Call",
-            "pattern": "T.TT.T.TT.S."
-          },
-          {
-            "name": "Call",
-            "pattern": "TTTTT.TT.T.."
-          }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O..O..O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O.C.O.O.C.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
@@ -26306,23 +21742,17 @@ export const RHYTHM_LIBRARY = [
             "name": "Dun Dun variation part B",
             "pattern": "O..........."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -26341,92 +21771,73 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "TTS..STTS...TTS..STTS...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OOS..SOOS...OOS..SOOS...",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT....TTB.T.TT....TTB.T.",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "OO....OOB.O.OO....OOB.O.",
+        "variations": [
           {
             "name": "DjembeSolo",
-            "pattern": "............RTTTT.TT.T.."
+            "pattern": "............ROOOO.OO.O.."
+          },
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.OO.OO.."
           },
           {
             "name": "Djembe solo #1",
-            "pattern": "S.BBTTS.BBSS"
+            "pattern": "S.BBOOS.BBSS"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "TTS..S..SB.BB.S..S..SBTT"
+            "pattern": "OOS..S..SB.BB.S..S..SBOO"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "F.BB.F.BB.F.BBSS.BB.F.SRS.TT.SS.T.T.TT.RSSRTTSS.............TSTSTSTSTS.."
+            "pattern": "F.BB.F.BB.F.BBSS.BB.F.SRS.OO.SS.O.O.OO.RSSROOSS.............OSOSOSOSOS.."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "S.S...S.S......T.SSS..BSS.SS.SSS.BSRS...S.S..S..S...S.S.BS.BS..RTSSTT..."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "S.S...S.S......O.SSS..BSS.SS.SSS.BSRS...S.S..S..S...S.S.BS.BS..ROSSOO..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O.O.O..O..O...M.M..M..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.OO.OO.O.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".O.O.O.O.O.OO.OO......OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".O.O.O.O.O.OO.OO.OO.O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -26445,71 +21856,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "F.OO.OO.OO.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O..O..O.OO..O..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M....O......M..O.O......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.O.O.OO.O.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "....O..OO.....O....OO...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.OO.OO.O.O.O.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -26528,92 +21921,73 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "BTTBS.BTTBS.BTTBS.BTTBS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "BOOBS.BOOBS.BOOBS.BOOBS.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TT..S.TT..S.TT..S.TT..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OO..S.OO..S.OO..S.OO..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "ROOOO.OO.O.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "SSS.TTSSSBTTSSS.TTSSSBTT"
+            "pattern": "SSS.OOSSSBOOSSS.OOSSSBOO"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "TTS..S..S..S..SS..S..S.T"
+            "pattern": "OOS..S..S..S..SS..S..S.O"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "T..B..B.BT.SS.SS.BT.SSST"
+            "pattern": "O..B..B.BO.SS.SS.BO.SSSO"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "T..B..B..B.BT..T..S.TT.S"
+            "pattern": "O..B..B..B.BO..O..S.OO.S"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "S..S..T..S.TT..........."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "S..S..O..S.OO..........."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "M...OO.O.O..M...OO.O.O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.OO.O.O.OO.O.OO.O.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..O..M..O..M..O..M..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..........OO.O.O.OO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.OO.O.OO.O.O.OO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -26632,71 +22006,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO..S.B.OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "..SS..SS..TSTTSS",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "..SS..SS..OSOOSS",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M...M...M.O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.....O.O.....O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -26715,71 +22071,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TT..STT.BS..SB",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO..SOO.BS..SB",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "TT......TT......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OO......OO......",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..............O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.OO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "............O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -26798,71 +22136,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "F.OO.OO.OO.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O.O...O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O...M.M..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -26881,66 +22201,48 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TT.STTS.TT.STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OO.SOOS.OO.SOO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.SSS.TTS.SSST.T",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.SSS.OOS.SSSO.O",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT.STTS.TT.STTS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OO.SOOS.OO.SOOS.",
+        "variations": []
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.OO.O..O.OO.O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.....O.O.....O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -26960,70 +22262,52 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "S.SS.STTS.SS.STT",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "S.SS.SOOS.SS.SOO",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "F.OO.O.OO.O.O..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "M...OO..M...OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.OO.OO.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..M..O.O..M..O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.OO...........O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.O.OO.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -27043,9 +22327,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S...S.TT.S.S.TT.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "T.TT.T.TT.T.T..."
@@ -27055,51 +22337,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "O.O.O.O.........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.C...O.C.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O...O.O.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -27119,26 +22387,20 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "F.OO.O.OO.O.O..."
           },
           {
             "name": "Call",
@@ -27149,51 +22411,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O.M.O...O.M.O...O.M.O...O.M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.OO........O.O.O.OO............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".O.O......OO.OO.O.OO..........OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".O.O.OO.O.OO.OO.O.OO.OO.O.O.O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -27212,55 +22460,42 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "SSSSTTSSSSTTSSSSTTSSSSTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "SSSSOOSSSSOOSSSSOOSSSSOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "BSTTS.BSTTS.BSTTS.BSTTS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "BSOOS.BSOOS.BSOOS.BSOOS.",
+        "variations": []
       },
       {
         "part": "Djembé 4",
         "drum_pattern": "S..STTS..STT",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "OOOOOOOOSS..SSS.SSS.SSS."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "RRSSTT....SSRRSSTT....SS"
+            "pattern": "RRSSOO....SSRRSSOO....SS"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "RRSSTT..RRSSTT..RRSSTT.."
+            "pattern": "RRSSOO..RRSSOO..RRSSOO.."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "RRSSTT.RRSSTT.RRSSTT.RRS"
+            "pattern": "RRSSOO.RRSSOO.RRSSOO.RRS"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "STT.T.T.T.T.SSS........."
-          },
-          {
-            "name": "Djembé solo 1",
-            "pattern": "S.S.T.T.S.S.T.T."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "TTTTTTTTSS..SSS.SSS.SSS."
+            "pattern": "SOO.T.T.T.T.SSS........."
           },
           {
             "name": "Call",
@@ -27269,6 +22504,10 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Call",
             "pattern": "T.T.S...f......."
+          },
+          {
+            "name": "Djembé solo 1",
+            "pattern": "S.S.T.T.S.S.T.T."
           },
           {
             "name": "Call 1 part A",
@@ -27304,16 +22543,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Kenkeni B part B",
             "pattern": "O..O..O..O.."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -27343,16 +22578,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban variation 4 part B",
             "pattern": "..O.O...O.O."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
@@ -27366,23 +22597,17 @@ export const RHYTHM_LIBRARY = [
             "name": "Dun Dun variation part B",
             "pattern": "OOO........."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OOO.O.O.OOO.OOO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -27401,30 +22626,29 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "SSSSTTSSSSTTSSSSTTSSSSTT",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "SSSSOOSSSSOOSSSSOOSSSSOO",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "OOOOOOOOSS.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "SSSSTTSSSSTT"
+            "pattern": "SSSSOOSSSSOO"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "SSSSTT..RRS."
+            "pattern": "SSSSOO..RRS."
           },
           {
             "name": "Djembe solo #3",
@@ -27432,7 +22656,7 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #4",
-            "pattern": ".....F.F.F.F.F.F.F.F.TT."
+            "pattern": ".....F.F.F.F.F.F.F.F.OO."
           },
           {
             "name": "Djembe solo #5",
@@ -27440,31 +22664,31 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "SSS..TSSS..T"
+            "pattern": "SSS..OSSS..O"
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "SSS..TSSS..TSSS.....FFF."
+            "pattern": "SSS..OSSS..OSSS.....FFF."
           },
           {
             "name": "Djembe solo #8",
-            "pattern": ".....RRTSSS."
+            "pattern": ".....RROSSS."
           },
           {
             "name": "Djembe solo #9",
-            "pattern": ".....T..S..T..S..T..S..."
+            "pattern": ".....O..S..O..S..O..S..."
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "....RRS.TT.."
+            "pattern": "....RRS.OO.."
           },
           {
             "name": "Djembe solo #11",
-            "pattern": "SS.TSS.TSS.T"
+            "pattern": "SS.OSS.OSS.O"
           },
           {
             "name": "Djembe solo #12",
-            "pattern": ".T.S.RRRRS.."
+            "pattern": ".O.S.RRRRS.."
           },
           {
             "name": "Djembe solo #13",
@@ -27472,15 +22696,15 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #14",
-            "pattern": "SSSSTTSSSSTTSSS..RRRRS.."
+            "pattern": "SSSSOOSSSSOOSSS..RRRRS.."
           },
           {
             "name": "Djembe solo #15",
-            "pattern": "SSSSTT..RRRR"
+            "pattern": "SSSSOO..RRRR"
           },
           {
             "name": "Djembe solo #16",
-            "pattern": "SSS..TSSS..TSSS..SFFFF.."
+            "pattern": "SSS..OSSS..OSSS..SFFFF.."
           },
           {
             "name": "Djembe solo #17",
@@ -27488,7 +22712,7 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #18",
-            "pattern": "SSS.....RRT."
+            "pattern": "SSS.....RRO."
           },
           {
             "name": "Djembe solo #19",
@@ -27496,11 +22720,11 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #20",
-            "pattern": "SSS..T..S..T"
+            "pattern": "SSS..O..S..O"
           },
           {
             "name": "Djembe solo #21",
-            "pattern": "..S..T..S..T..S..T..SS..SS..SS..SS..SS..SS..SS.."
+            "pattern": "..S..O..S..O..S..O..SS..SS..SS..SS..SS..SS..SS.."
           },
           {
             "name": "Djembe solo #22",
@@ -27512,19 +22736,19 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #24",
-            "pattern": "SSS.RRRRRRRRRRRRRRRTSS.."
+            "pattern": "SSS.RRRRRRRRRRRRRRROSS.."
           },
           {
             "name": "Djembe solo #25",
-            "pattern": "........FSS......STTTS.."
+            "pattern": "........FSS......SOOOS.."
           },
           {
             "name": "Djembe solo #26",
-            "pattern": ".....F.B.FTT.F.B.FTT.F.B.FTT.F.B.B.."
+            "pattern": ".....F.B.FOO.F.B.FOO.F.B.FOO.F.B.B.."
           },
           {
             "name": "Djembe solo #27",
-            "pattern": "SSSSTT..SSS."
+            "pattern": "SSSSOO..SSS."
           },
           {
             "name": "Djembe solo #28",
@@ -27532,65 +22756,47 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #29",
-            "pattern": ".SS.ST.SS.S."
+            "pattern": ".SS.SO.SS.S."
           },
           {
             "name": "Djembe solo #30",
-            "pattern": "SSS.RRS.TT.."
+            "pattern": "SSS.RRS.OO.."
           },
           {
             "name": "Djembe solo #31",
-            "pattern": "TTSSTTSSTTSS"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "TTTTTTTTSS.."
+            "pattern": "OOSSOOSSOOSS"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O..O..O..O..O..O..O..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M.M.O.M.M.O.M.M.O.M.M.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "OOO.........OOO......OOO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OOO.O.O.O.O.OOO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -27609,34 +22815,33 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "SSSSTTSSSSTTSSSSTTSSSSTTSSSSTTSSSSTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "SSSSOOSSSSOOSSSSOOSSSSOOSSSSOOSSSSOO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "BSTTS.BSTTS.BSTTS.BSTTS.BSTTS.BSTTS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "BSOOS.BSOOS.BSOOS.BSOOS.BSOOS.BSOOS.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "....................................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "OOOOOOO.SS..SSS.SSS.SSS.SSB.O.O.O.O."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "....SSTTSSTT"
+            "pattern": "....SSOOSSOO"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "......RTTRSSRTTRSSRTTRSS"
+            "pattern": "......ROORSSROORSSROORSS"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "RSS.RTT.RSS."
+            "pattern": "RSS.ROO.RSS."
           },
           {
             "name": "Djembe solo #4",
@@ -27644,57 +22849,39 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "......RTSSSS"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "TTTTTTT.SS..SSS.SSS.SSS.SSB.T.T.T.T."
+            "pattern": "......ROSSSS"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O..O..O..O..O..O..O..O..O..O..O..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "....O.....O.....O.....O.....O.....O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "OOO.........OOO.........OOO.........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OOO.O.O.O.O.OOO.O.O.O.O.OOO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -27713,26 +22900,25 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "SSSSTTSSSSTTSSSSTTSSSSTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "SSSSOOSSSSOOSSSSOOSSSSOO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "SSSSTTTTSSTTSSSSTTTTSSTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "SSSSOOOOSSOOSSSSOOOOSSOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "..S.TS..S.TS..S.TS..S.TS",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "..S.OS..S.OS..S.OS..S.OS",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "RSS.O.O.SS.SS....SS.SS.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "TTTTTTTTSSS."
+            "pattern": "OOOOOOOOSSS."
           },
           {
             "name": "Djembe solo #2",
@@ -27740,65 +22926,47 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "RRSSTT....TT"
+            "pattern": "RRSSOO....OO"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "RRSSTT..RRSSTT..RRSSTT.."
+            "pattern": "RRSSOO..RRSSOO..RRSSOO.."
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "RRSSTT.RRSSTT.RRSSTT.RRSSTT.T.T.T.T.SSS........."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "RSS.T.T.SS.SS....SS.SS.."
+            "pattern": "RRSSOO.RRSSOO.RRSSOO.RRSSOO.T.T.T.T.SSS........."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "....O.....O.....O.....O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "........OO..........OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "OOO.....................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OOO.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -27818,16 +22986,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S..S.SB..S.S",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "B.S..SB.S..S",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "T.T.S...f..."
@@ -27837,51 +23001,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "O..O..O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "XX.XX.XX.XX.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": ".O.O...O.O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": ".XX.XX.XX.XX",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..O..O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "XX.XX.XX.XX.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -27900,100 +23050,81 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S....B..B.TTS....B..B...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S....B..B.OOS....B..B...",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "R.OO.OO.OO.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "S....B..B.TTF....B..B..."
+            "pattern": "S....B..B.OOF....B..B..."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "TTS.RRTTS.RRTTS..B..B.RR"
+            "pattern": "OOS.RROOS.RROOS..B..B.RR"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "TTBS.BTTBS.BTTBS.BTTBS.B"
+            "pattern": "OOBS.BOOBS.BOOBS.BOOBS.B"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "STTSTTSTT.RRSSTT.B..B.RR"
+            "pattern": "SOOSOOSOO.RRSSOO.B..B.RR"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "TTSSS.TTSSSBTTSSS.TTSSS."
+            "pattern": "OOSSS.OOSSSBOOSSS.OOSSS."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "SSSSRRTTSSRRSSSS.B..B.RR"
+            "pattern": "SSSSRROOSSRRSSSS.B..B.RR"
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "TTSSSSTTSSSSTTSSSSTTSSSS"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "R.TT.TT.TT.."
+            "pattern": "OOSSSSOOSSSSOOSSSSOOSSSS"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O..O..O..O..O..O..O..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O....M..M..OO.O..M..M.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.OOO.O.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".O.O.O.O..OO.O........O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".O.O.O.OO.OO.O.O.O.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -28013,14 +23144,16 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S.S.TT.S.B.B.TT.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "S...S.TT.S.S.TT.",
         "variations": [
+          {
+            "name": "Call",
+            "pattern": "T.TT.T.TT.T.T..."
+          },
           {
             "name": "phrase 1",
             "pattern": "T.T.T.T.S.S.S.S."
@@ -28029,63 +23162,42 @@ export const RHYTHM_LIBRARY = [
             "name": "phrase 2",
             "pattern": "S.S.S.S.T.T.T.T."
           }
-        ],
-        "solos": [],
-        "specials": [
-          {
-            "name": "Call",
-            "pattern": "T.TT.T.TT.T.T..."
-          }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O.O.O.O.........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O...O.O.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O.O...O.O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -28105,16 +23217,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "T.SS..STT.SSB.ST",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "S..SS.TTS..SS.OO",
+        "variations": [
           {
             "name": "Call",
             "pattern": "T.TT.T.TT.T.T..."
@@ -28124,51 +23232,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.....O.O.....O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.OO..C...C.C..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -28188,51 +23282,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "......O...O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.OO...........O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "O.....O.O.....O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -28252,65 +23332,47 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "T.SS.BSTT.SSBST.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "..TT..SS..TT..SS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "....O.O.....O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": ".......O..O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.OO...........O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -28330,16 +23392,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -28349,37 +23407,27 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban (line 2)",
             "pattern": "O..O..C...C.C..O"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -28399,51 +23447,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O......O..C.C..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".O.O.O..........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -28463,23 +23497,17 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..C...OO..C...O",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Another intro line 1",
             "pattern": "O..O............"
@@ -28501,30 +23529,22 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Sangban Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "C..OO.O.O.O.O..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -28795,71 +23815,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.BTT.S.BTT.S.BTT.S.BTT.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.BOO.S.BOO.S.BOO.S.BOO.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "BTT.S.BTT.S.BTT.S.BTT.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "BOO.S.BOO.S.BOO.S.BOO.S.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TS..S.TS..S.TS..S.TS..S.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "OS..S.OS..S.OS..S.OS..S.",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "ROOOO.OO.O.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "M..OO.M..OO.M..OO.M..OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.OO.OO.OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M.M.O.OO..M.M.M.O.OO..M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.OO.OO.O.O.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O.O.O..O.OO.O.M.MM.M.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.OO.O.OO.O.O.OO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -28878,87 +23880,66 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "T.SS.BSTT.SSBBST",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.SS.BSOO.SSBBSO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S...SSTTS...SSTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S...SSOOS...SSOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "S..S..TTS..S..TT",
-        "variations": [],
-        "solos": [
-          {
-            "name": "Djembé solo 1",
-            "pattern": "S.S.T.T.S.S.T.T."
-          }
-        ],
-        "specials": [
+        "drum_pattern": "S..S..OOS..S..OO",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "F.OO.O.OO.O.O..."
           },
           {
             "name": "Call",
             "pattern": "T.T.S...f......."
+          },
+          {
+            "name": "Djembé solo 1",
+            "pattern": "S.S.T.T.S.S.T.T."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO..OO..OO..OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.OO...M..M.M..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OOO.OOO.OOO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -28977,42 +23958,41 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "T.SS..STT.SS..ST",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.SS..SOO.SS..SO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.BB.B.BB.B.TT.B",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.BB.B.BB.B.OO.B",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "T.SS.BSTT.SS.BST",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "O.SS.BSOO.SS.BSO",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.OOO.F."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "...RT.SS..R.S.S.TT.......T.TT.T."
+            "pattern": "...RO.SS..R.S.S.OO.......O.OO.O."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "BS......BS.TT.T....RTTTST.T.TT.."
+            "pattern": "BS......BS.OO.O....ROOOSO.O.OO.."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "BS.........BS.S.BS.RTTTTT.F....B"
+            "pattern": "BS.........BS.S.BS.ROOOOO.F....B"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "S.BB.B.BB.B.SSTTS...........SSTT"
+            "pattern": "S.BB.B.BB.B.SSOOS...........SSOO"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "S..BSSTTS..BSSTT"
+            "pattern": "S..BSSOOS..BSSOO"
           },
           {
             "name": "Djembe solo #6",
@@ -29020,57 +24000,39 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "S..S..TS..S..S.."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.TTT.F."
+            "pattern": "S..S..OS..S..S.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O..M.M.OO..M.M.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.O.OO.OO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.OO.O.O..M.M..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.O.O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..M..MM..O.O..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O..O..OO..O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -29089,71 +24051,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "T.SSB.STB.SSB.STT.SSB.STB.SSB.ST",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.SSB.SOB.SSB.SOO.SSB.SOB.SSB.SO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TTS..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OOS..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "F.OO.O.OO.O.O..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..M...OO..M...OO..M...OO..M...O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.OO.O.OO.OO.O.OO.OO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "M..OO.O.O.O.O..OO.OO....M.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.OO.OO.OO.O..O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -29187,70 +24131,52 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "F.OO.O.OO.O.O..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.OO...M..M.M..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.O.OO.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "...O.O.O........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -29270,15 +24196,24 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S...S.TT.S.S.TT.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "B.S.S.S.B.S.S.S.",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Call",
+            "pattern": "T.TT.T.TT.T.T..."
+          },
+          {
+            "name": "Call",
+            "pattern": "T.T.S...f......."
+          },
+          {
+            "name": "Call",
+            "pattern": "...SSTSSS..............."
+          },
           {
             "name": "Djembe solo phrase 1 a",
             "pattern": "TTSS..TTSS..TTSS..TTSS.."
@@ -29347,35 +24282,17 @@ export const RHYTHM_LIBRARY = [
             "name": "Djembe solo phrase 6 c",
             "pattern": "SSTSSS.................."
           }
-        ],
-        "specials": [
-          {
-            "name": "Call",
-            "pattern": "T.TT.T.TT.T.T..."
-          },
-          {
-            "name": "Call",
-            "pattern": "T.T.S...f......."
-          },
-          {
-            "name": "Call",
-            "pattern": "...SSTSSS..............."
-          }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O.O.O.O.........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -29408,10 +24325,7 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "CD Hamana sequence 6",
             "pattern": "..O.O..OO..C.C...C.C..O"
-          }
-        ],
-        "solos": [],
-        "specials": [
+          },
           {
             "name": "Echauffement",
             "pattern": "..O.O..OO..C.C...C.C..O"
@@ -29429,9 +24343,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Sangban Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
@@ -29464,10 +24376,7 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "CD Hamana sequence 6",
             "pattern": ".OO.OO.OO.OO..........O."
-          }
-        ],
-        "solos": [],
-        "specials": [
+          },
           {
             "name": "Echauffement",
             "pattern": ".OO.OO.OO.OO..........O."
@@ -29485,16 +24394,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -29513,140 +24418,121 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS.BS.TS.BS.TS.BS.TS.B",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS.BS.OS.BS.OS.BS.OS.B",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.SSTTS.SSTTS.SSTTS.SSTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.SSOOS.SSOOS.SSOOS.SSOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "...SSOSSS..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "RTSS..RTSS..RTSS..RTSS..RTSS.T.S.RRRR..........."
+            "pattern": "ROSS..ROSS..ROSS..ROSS..ROSS.O.S.RRRR..........."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "RTSS.SS.SS..RTSS.SS.SS.."
+            "pattern": "ROSS.SS.SS..ROSS.SS.SS.."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "RTSS.SS.SS.SS.SS.SS.SS.."
+            "pattern": "ROSS.SS.SS.SS.SS.SS.SS.."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "F.F.F.F..RSSSTT..S.S.S.S"
+            "pattern": "F.F.F.F..RSSSOO..S.S.S.S"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "RTSRTSTTS...SSTSSS......"
+            "pattern": "ROSROSOOS...SSOSSS......"
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "RTTSS.RTTSS.RSSST......."
+            "pattern": "ROOSS.ROOSS.RSSSO......."
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "TTTSSS......SBST.TT....."
+            "pattern": "OOOSSS......SBSO.OO....."
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "RTSS.TT.S.TT.S.T.S.TT.S."
+            "pattern": "ROSS.OO.S.OO.S.O.S.OO.S."
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "BTTS.TTS.RSSST.........."
+            "pattern": "BOOS.OOS.RSSSO.........."
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "RTTS.TTS.BTTS.TTSTTS.RSSSTT........."
+            "pattern": "ROOS.OOS.BOOS.OOSOOS.RSSSOO........."
           },
           {
             "name": "Djembe solo #11",
-            "pattern": "BS.RTTTS..S.BS.RTTTS..S."
+            "pattern": "BS.ROOOS..S.BS.ROOOS..S."
           },
           {
             "name": "Djembe solo #12",
-            "pattern": "BS.RSSTTSTTS..S.S.S.S..."
+            "pattern": "BS.RSSOOSOOS..S.S.S.S..."
           },
           {
             "name": "Djembe solo #13",
-            "pattern": "SSSSSTSTSSSTSSSSSTSSSSSS"
+            "pattern": "SSSSSOSOSSSOSSSSSOSSSSSS"
           },
           {
             "name": "Djembe solo #14",
-            "pattern": "TTSSSSTTSSSSTTSSSSTTSSSS"
+            "pattern": "OOSSSSOOSSSSOOSSSSOOSSSS"
           },
           {
             "name": "Djembe solo #15",
-            "pattern": "TTSTTSTTSTTSTSTTSTTSTTST"
+            "pattern": "OOSOOSOOSOOSOSOOSOOSOOSO"
           },
           {
             "name": "Djembe solo #16",
-            "pattern": "TTSTTSTSTTSTTSSSSSSSSSSS"
+            "pattern": "OOSOOSOSOOSOOSSSSSSSSSSS"
           },
           {
             "name": "Djembe solo #17",
-            "pattern": "RSSS.TTS.SSSST.........."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "...SSTSSS..."
+            "pattern": "RSSS.OOS.SSSSO.........."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O.O.OOO.O.OOO.O.OOO.O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OOOOOOOOOOOOOOO.OOOOO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O..OO.OO..M.M...M.M..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OOOOO.OO.OOOOOOOO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".OOOOO.OOOOO..OO.O.O.OOO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OOOOOOOOOOOOOOOOOO.OOOOO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -29665,71 +24551,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..S.OS..S.OS..S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STTS..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOOS..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT....TTB.B.TT....TTB.B.TT....TTB.B.TT....TTB.B.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "OO....OOB.B.OO....OOB.B.OO....OOB.B.OO....OOB.B.",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "SSTSSS......"
+            "pattern": "SSOSSS......"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO..O.OO..O.OO..O.OO..O.OO..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..M.M..OO..M.M...M.M..O..O..O..OO..M.M...M.M..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".OO....OO.OO..........O..O..O..OO.OO..........OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -29749,70 +24617,52 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "SSTSSS......"
+            "pattern": "SSOSSS......"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M.O...M.O...M.....M.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "....OO.OO.OO............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -29831,22 +24681,70 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "..S.TS..S.TS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "..S.OS..S.OS",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "............",
         "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "SSOSSS......"
+          },
+          {
+            "name": "Djembe solo #1",
+            "pattern": "ROOS.S.S..S.ROSS.OOS..S."
+          },
+          {
+            "name": "Djembe solo #2",
+            "pattern": "ROSS..ROSS..ROSS..ROSS.O"
+          },
+          {
+            "name": "Djembe solo #3",
+            "pattern": "FSSSOO.SFOOOS..FSSOO...."
+          },
+          {
+            "name": "Djembe solo #4",
+            "pattern": "ROSS.SS.SS..ROSS.SS.SS.."
+          },
+          {
+            "name": "Djembe solo #5",
+            "pattern": "FOSS.OOSOOS.FOSS.OOSOOS."
+          },
+          {
+            "name": "Djembe solo #6",
+            "pattern": "FOSS.OO.S.OO.S.O.SS.FOOO"
+          },
+          {
+            "name": "Djembe solo #7",
+            "pattern": "FOSS..FOSS..FOSS..FOSS.."
+          },
+          {
+            "name": "Call",
+            "pattern": "T.TT.T.TT.T.T..."
+          },
+          {
+            "name": "Call",
+            "pattern": "T.T.S...f..."
+          },
+          {
+            "name": "Call",
+            "pattern": "SSTSSS.................."
+          },
+          {
+            "name": "Solo 1 : a 1",
+            "pattern": "TTTS.S.S..S.TTSS.TTS..S."
+          },
+          {
+            "name": "Solo 1 : a 2",
+            "pattern": ".T.T.T.T..S............."
+          },
           {
             "name": "b: 1",
             "pattern": "TTSS..TTSS..TTSS..TTSS.T"
@@ -29858,6 +24756,14 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "c: 1",
             "pattern": "SSSSTT.STTTTS..SSSTT...."
+          },
+          {
+            "name": "Solo 2 a: 1",
+            "pattern": "TTSS.SS.SS..TTSS.SS.SS.."
+          },
+          {
+            "name": "Solo 2 a: 2",
+            "pattern": "TTSS.TTSTTS............."
           },
           {
             "name": "b: 1",
@@ -29874,70 +24780,6 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "c: 2",
             "pattern": ".ST.S.BS................"
-          }
-        ],
-        "solos": [
-          {
-            "name": "Djembe solo #1",
-            "pattern": "RTTS.S.S..S.RTSS.TTS..S."
-          },
-          {
-            "name": "Djembe solo #2",
-            "pattern": "RTSS..RTSS..RTSS..RTSS.T"
-          },
-          {
-            "name": "Djembe solo #3",
-            "pattern": "FSSSTT.SFTTTS..FSSTT...."
-          },
-          {
-            "name": "Djembe solo #4",
-            "pattern": "RTSS.SS.SS..RTSS.SS.SS.."
-          },
-          {
-            "name": "Djembe solo #5",
-            "pattern": "FTSS.TTSTTS.FTSS.TTSTTS."
-          },
-          {
-            "name": "Djembe solo #6",
-            "pattern": "FTSS.TT.S.TT.S.T.SS.FTTT"
-          },
-          {
-            "name": "Djembe solo #7",
-            "pattern": "FTSS..FTSS..FTSS..FTSS.."
-          },
-          {
-            "name": "Solo 1 : a 1",
-            "pattern": "TTTS.S.S..S.TTSS.TTS..S."
-          },
-          {
-            "name": "Solo 1 : a 2",
-            "pattern": ".T.T.T.T..S............."
-          },
-          {
-            "name": "Solo 2 a: 1",
-            "pattern": "TTSS.SS.SS..TTSS.SS.SS.."
-          },
-          {
-            "name": "Solo 2 a: 2",
-            "pattern": "TTSS.TTSTTS............."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "SSTSSS......"
-          },
-          {
-            "name": "Call",
-            "pattern": "T.TT.T.TT.T.T..."
-          },
-          {
-            "name": "Call",
-            "pattern": "T.T.S...f..."
-          },
-          {
-            "name": "Call",
-            "pattern": "SSTSSS.................."
           },
           {
             "name": "echauffement 1",
@@ -29960,23 +24802,17 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "..O.OO..O.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..M.OO.OO..",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Sangban echauffement & Dun Dun echauffement",
             "pattern": "..OO....OO....OO....OO.."
@@ -29990,16 +24826,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "....OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Sangban echauffement & Dun Dun echauffement",
             "pattern": ".OO.OO.OO.OO.OO.OO.OO.OO"
@@ -30009,16 +24841,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Dun Dun Bell",
         "drum_pattern": ".OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -30038,9 +24866,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S.T.B.S.T.B.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "T.TT.T.TT.S."
@@ -30050,51 +24876,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "O..O..O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..C..O..C..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O...O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -30113,88 +24925,69 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "TT.TT.S.B..SB.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OO.OO.S.B..SB.S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "BSSTTSSBBSSTTSSB",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "BSSOOSSBBSSOOSSB",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "T.TT.BS.T.TT.BS.",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "O.OO.BS.O.OO.BS.",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "TTSTTSTTSTTSTTS.TT.TT.S.B..SB.S."
+            "pattern": "OOSOOSOOSOOSOOS.OO.OO.S.B..SB.S."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "TTTTSSSSTTTTSSS.TT.TT.S.B..SB.S."
+            "pattern": "OOOOSSSSOOOOSSS.OO.OO.S.B..SB.S."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "RTSRTSRTSRTSRTS.TT.SB...B.S.B..."
+            "pattern": "ROSROSROSROSROS.OO.SB...B.S.B..."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "T.ST.ST.ST.ST.SBT.ST.ST.TTTTS..B"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "O.SO.SO.SO.SO.SBO.SO.SO.OOOOS..B"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO..M.OO....M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..M..O.O..M..O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..M.M.OO.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.O.OO.O.OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -30213,34 +25006,33 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TT..S.B.TT..S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OO..S.B.OO..S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "SSTTSS.BS.T.S..B"
+            "pattern": "SSOOSS.BS.O.S..B"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "F....BSSS..BTTSS"
+            "pattern": "F....BSSS..BOOSS"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "S.TT.BSSS..BTTSS"
+            "pattern": "S.OO.BSSS..BOOSS"
           },
           {
             "name": "Djembe solo #4",
@@ -30248,27 +25040,27 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "TTSS.BS.TTSTBBS."
+            "pattern": "OOSS.BS.OOSOBBS."
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "SS.SB..BS.S.TTTT"
+            "pattern": "SS.SB..BS.S.OOOO"
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "SS.STTTTS.S.B..."
+            "pattern": "SS.SOOOOS.S.B..."
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "F.TT.BS.F.TT.SS."
+            "pattern": "F.OO.BS.F.OO.SS."
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "F.TT.BS.F.TT.BSS"
+            "pattern": "F.OO.BS.F.OO.BSS"
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "TTSS..SS..SS..S."
+            "pattern": "OOSS..SS..SS..S."
           },
           {
             "name": "Djembe solo #11",
@@ -30276,33 +25068,27 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #12",
-            "pattern": "SS.BSS.BS.T.S.B."
+            "pattern": "SS.BSS.BS.O.S.B."
           },
           {
             "name": "Djembe solo #13",
-            "pattern": "F..BTTSSS.TT..SS"
+            "pattern": "F..BOOSSS.OO..SS"
           },
           {
             "name": "Djembe solo #14",
-            "pattern": "SS.SB..BS.S.TTTT"
+            "pattern": "SS.SB..BS.S.OOOO"
           },
           {
             "name": "Djembe solo #15",
-            "pattern": "SS..TTTTS.T.B..B"
+            "pattern": "SS..OOOOS.O.B..B"
           },
           {
             "name": "Djembe solo #16",
-            "pattern": "T..SB.SBT.T.TT.T"
+            "pattern": "O..SB.SBO.O.OO.O"
           },
           {
             "name": "Djembe solo #17",
-            "pattern": "T..SB.SBT.TSTTST"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "O..SB.SBO.OSOOSO"
           },
           {
             "name": "Call",
@@ -30322,16 +25108,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Kenkeni (Rigert)",
             "pattern": "O.OO..C.O.OO..C."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -30390,23 +25172,20 @@ export const RHYTHM_LIBRARY = [
             "pattern": ".......O....OO.O"
           },
           {
-            "name": "Sangban (Rigert) line 1",
-            "pattern": "......O.....OO.O"
-          },
-          {
-            "name": "Sangban (Rigert) line 2",
-            "pattern": ".O.O.O.OO...O.O."
-          }
-        ],
-        "solos": [],
-        "specials": [
-          {
             "name": "Sangban echauffement",
             "pattern": "O.OO..C.O.OO..C."
           },
           {
             "name": "Sangban ending echaffement",
             "pattern": "O..O..O..O..O..O"
+          },
+          {
+            "name": "Sangban (Rigert) line 1",
+            "pattern": "......O.....OO.O"
+          },
+          {
+            "name": "Sangban (Rigert) line 2",
+            "pattern": ".O.O.O.OO...O.O."
           },
           {
             "name": "Sangban echauffement (Rigert)",
@@ -30421,9 +25200,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
@@ -30434,24 +25211,19 @@ export const RHYTHM_LIBRARY = [
             "pattern": "............O.OO"
           },
           {
-            "name": "Doun doun (Rigert)",
-            "pattern": "O...O...O...O..."
-          }
-        ],
-        "solos": [],
-        "specials": [
-          {
             "name": "Sangban ending echaffement",
             "pattern": "T..T..T..T..T..S"
+          },
+          {
+            "name": "Doun doun (Rigert)",
+            "pattern": "O...O...O...O..."
           }
         ]
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
@@ -30461,9 +25233,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Sjekere",
             "pattern": "O...O...O...O..."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       }
     ]
   },
@@ -30482,71 +25252,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B..BT.B..BT.B..BT.B..BT.B..BT.B..BT.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B..BO.B..BO.B..BO.B..BO.B..BO.B..BO.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B..BTTB..BTTB..BTTB..BTTB..BTTB..BTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B..BOOB..BOOB..BOOB..BOOB..BOOB..BOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "BTTB..BTTB..BTTB..BTTB..BTTB..BTTB..",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "BOOB..BOOB..BOOB..BOOB..BOOB..BOOB..",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F..T.T.T.T....."
+            "pattern": "F..O.O.O.O....."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "....................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "....................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O.OO.O.O.OO.O.OO.O...OM..OO.M..OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.OO.O.O.OO.O.OO.O.O.OO..OO.O..OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": ".........O...........O...........O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "....................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -30566,45 +25318,99 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S..TS..S.TS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.T.S...B.T.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.O.S...B.O.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "B.SBTTBS.BTTB.SBTTBS.BTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 4",
         "drum_pattern": "S.TT..S.TT..S.TT..S.TT..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 5",
         "drum_pattern": "S.SBTTBSSBTTS.SBTTBSSBTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 6",
         "drum_pattern": "TTSTTSSBSSBSTTSTTSSBSSBS",
         "variations": [
           {
+            "name": "Master Call",
+            "pattern": "ROOOO.OO.O.."
+          },
+          {
+            "name": "Djembe solo #1",
+            "pattern": "S.SBOOBSSBOOS.SBOOBSSBOO"
+          },
+          {
+            "name": "Djembe solo #2",
+            "pattern": "OOSOOSSBSSBSOOSOOSSBSSBS"
+          },
+          {
+            "name": "Djembe solo #3",
+            "pattern": "...S.OOOOS..B..S.OOOOS.B"
+          },
+          {
+            "name": "Djembe solo #4",
+            "pattern": "B..S.OOOOS..B..S.OOOOSBB"
+          },
+          {
+            "name": "Djembe solo #5",
+            "pattern": "BOOS.OOOOS..B..S.OOOOS.B"
+          },
+          {
+            "name": "Djembe solo #6",
+            "pattern": "..ORSSSS.OO...ORSSSS.OO.SS.SS.SS.OO.F.ROOOOO.S.."
+          },
+          {
+            "name": "Djembe solo #7",
+            "pattern": "SSS.OOSS...OSSS.OOSS...O"
+          },
+          {
+            "name": "Djembe solo #8",
+            "pattern": "RSSOO.RSSOO.RSSOO.RSSOO.SS...BSS...BSS...BSS...."
+          },
+          {
+            "name": "Djembe solo #9",
+            "pattern": "OOS..S..S.SBOOS..S..S.OOSSS.OOSSS.OOSSS.OOSSS..B"
+          },
+          {
+            "name": "Call",
+            "pattern": "TTTTT.TTT..f"
+          },
+          {
+            "name": "Call",
+            "pattern": "TTTTT.TT.T.............."
+          },
+          {
             "name": "Djembé 1 line 2",
             "pattern": "rlr.l.rl.rl.rlr.l.rl.rl."
+          },
+          {
+            "name": "Djembé solo 1 line 1",
+            "pattern": "...S.TTTTS..B..S.TTTTS.B"
+          },
+          {
+            "name": "Djembé solo 1 line 2",
+            "pattern": "B..S.TTTTS..B..S.TTTTSBB"
+          },
+          {
+            "name": "Djembé solo 1 line 3",
+            "pattern": "BTTS.TTTTS..B..S.TTTTS.B"
+          },
+          {
+            "name": "Call (modern binary)",
+            "pattern": "T.TT.T.TT.T.S..."
           },
           {
             "name": "Djembe 1 line 1 (modern binary)",
@@ -30622,74 +25428,6 @@ export const RHYTHM_LIBRARY = [
             "name": "Djembé 2 (modern binary)",
             "pattern": "..TT..TT..TT..TT"
           }
-        ],
-        "solos": [
-          {
-            "name": "Djembe solo #1",
-            "pattern": "S.SBTTBSSBTTS.SBTTBSSBTT"
-          },
-          {
-            "name": "Djembe solo #2",
-            "pattern": "TTSTTSSBSSBSTTSTTSSBSSBS"
-          },
-          {
-            "name": "Djembe solo #3",
-            "pattern": "...S.TTTTS..B..S.TTTTS.B"
-          },
-          {
-            "name": "Djembe solo #4",
-            "pattern": "B..S.TTTTS..B..S.TTTTSBB"
-          },
-          {
-            "name": "Djembe solo #5",
-            "pattern": "BTTS.TTTTS..B..S.TTTTS.B"
-          },
-          {
-            "name": "Djembe solo #6",
-            "pattern": "..TRSSSS.TT...TRSSSS.TT.SS.SS.SS.TT.F.RTTTTT.S.."
-          },
-          {
-            "name": "Djembe solo #7",
-            "pattern": "SSS.TTSS...TSSS.TTSS...T"
-          },
-          {
-            "name": "Djembe solo #8",
-            "pattern": "RSSTT.RSSTT.RSSTT.RSSTT.SS...BSS...BSS...BSS...."
-          },
-          {
-            "name": "Djembe solo #9",
-            "pattern": "TTS..S..S.SBTTS..S..S.TTSSS.TTSSS.TTSSS.TTSSS..B"
-          },
-          {
-            "name": "Djembé solo 1 line 1",
-            "pattern": "...S.TTTTS..B..S.TTTTS.B"
-          },
-          {
-            "name": "Djembé solo 1 line 2",
-            "pattern": "B..S.TTTTS..B..S.TTTTSBB"
-          },
-          {
-            "name": "Djembé solo 1 line 3",
-            "pattern": "BTTS.TTTTS..B..S.TTTTS.B"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
-          },
-          {
-            "name": "Call",
-            "pattern": "TTTTT.TTT..f"
-          },
-          {
-            "name": "Call",
-            "pattern": "TTTTT.TT.T.............."
-          },
-          {
-            "name": "Call (modern binary)",
-            "pattern": "T.TT.T.TT.T.S..."
-          }
         ]
       },
       {
@@ -30700,16 +25438,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Combination (modern binary)",
             "pattern": "K....OOO..O...O."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "XX.XX.XX.XX.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -30723,16 +25457,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Combination (modern binary)",
             "pattern": "S..O............"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "XX.XX.XX.XX.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
@@ -30750,23 +25480,17 @@ export const RHYTHM_LIBRARY = [
             "name": "Combination (modern binary)",
             "pattern": "D.......O...O..."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "XX.XX.XX.XX.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -30785,84 +25509,65 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "BST.S.BS.BS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "BSO.S.BS.BS.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TT..S.TT..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OO..S.OO..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "T.SBTTBS.T.T",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "O.SBOOBS.O.O",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "ROOOO.OO.O.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "TTSSSSSS.TTSS.TTSSSSSS..TTSSSSSS.TTSS.TTSSSSSS..SSTSSTSS.T..SSTSSTSS.T..TTSSTTSS.TTSS.TTSSSS..B."
+            "pattern": "OOSSSSSS.OOSS.OOSSSSSS..OOSSSSSS.OOSS.OOSSSSSS..SSOSSOSS.O..SSOSSOSS.O..OOSSOOSS.OOSS.OOSSSS..B."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "BST.BST.BST.BST.ST.ST.STTSTTSTTSTTSTTSTTSTTSTT.."
+            "pattern": "BSO.BSO.BSO.BSO.SO.SO.SOOSOOSOOSOOSOOSOOSOOSOO.."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "B..BS.B..TT."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "B..BS.B..OO."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "...OO....OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "..O...M..M.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O...O.O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -30881,71 +25586,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS.BS.TS.BS.TS.BS.TS.B",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS.BS.OS.BS.OS.BS.OS.B",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": ".BS.TS.BS.TS.BS.TS.BS.TS",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": ".BS.OS.BS.OS.BS.OS.BS.OS",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "F.OO.OO.OO.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..O..O..O..O..O..O..O..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "..OO.OO.OO.O..OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O.OO..M.M.O.O.OO..M.M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.OO.OO.O.O.O.OO.OO.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O.O.O..O..O...........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.OO.OO.O.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -30964,22 +25651,98 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "TT.BS.S.S..BS.S.TT.BS.S.S..BS.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OO.BS.S.S..BS.S.OO.BS.S.S..BS.S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..SS.TTS..SS.TTS..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OOS..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "..SS..SS..SSTTS...SS..SS..SSTTS.",
+        "drum_pattern": "..SS..SS..SSOOS...SS..SS..SSOOS.",
         "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
+          {
+            "name": "Djembe solo #1",
+            "pattern": "..SS..SS..SSOOS...SS..SS..SSOOS."
+          },
+          {
+            "name": "Djembe solo #2",
+            "pattern": "O..OO..BS.S.OO..O..OO..BS.S.OO.."
+          },
+          {
+            "name": "Djembe solo #3",
+            "pattern": "O.OO.OO.OO.BS.S.O.OOO.O.OO.BS.S."
+          },
+          {
+            "name": "Djembe solo #4",
+            "pattern": "OO.BS.S.OO.BS.S.OO.BS.S.OO.BS.S."
+          },
+          {
+            "name": "Djembe solo #5",
+            "pattern": "OO.SS.OOS..SS.OOOO.SS.OOS..SS.OO"
+          },
+          {
+            "name": "Djembe solo #6",
+            "pattern": "F.OO.F.OO..BRSSSS.OO....SOOSOOS."
+          },
+          {
+            "name": "Djembe solo #7",
+            "pattern": ".O.SOOS..S.SOOS..O.SOOS..S.SOOS."
+          },
+          {
+            "name": "Djembe solo #8",
+            "pattern": "S.SO.OS.S.SS..S.S.SO.OS.S.SS..S."
+          },
+          {
+            "name": "Djembe solo #9",
+            "pattern": "S.SO.OS.OO.SOOS.S.SO.OS.OO.SOOS."
+          },
+          {
+            "name": "Djembe solo #10",
+            "pattern": "S.OS.OS.OS.OSS.OS.OS.OS.OS.OSS.O"
+          },
+          {
+            "name": "Djembe solo #11",
+            "pattern": "F.SS.S.SS..BROOOO.SO............"
+          },
+          {
+            "name": "Djembe solo #12",
+            "pattern": "S.OO.S.BS.OO.SBBS.OO.S.BS.OO.SBB"
+          },
+          {
+            "name": "Djembe solo #13",
+            "pattern": "ROOOS...ROOOS.O.S...S...S...S..."
+          },
+          {
+            "name": "Djembe solo #14",
+            "pattern": "OOSOOSOOSOOSSOSBSS.....BSSS....."
+          },
+          {
+            "name": "Djembe solo #15",
+            "pattern": "RSSROOSOOSOOSOOSOOSOOSOOSOOSSS.."
+          },
+          {
+            "name": "Djembe solo #16",
+            "pattern": "BS.S.S.S....ROOOS..............."
+          },
+          {
+            "name": "Call",
+            "pattern": "T...T.T.f......."
+          },
+          {
+            "name": "Solo accompagnement",
+            "pattern": "..SS..SS..SSTTS."
+          },
+          {
+            "name": "Solo 1 a:",
+            "pattern": "TT..TT..BS.S.TT."
+          },
           {
             "name": "b: line 1",
             "pattern": "TT.TT.TT.TT.BS.S"
@@ -30991,6 +25754,14 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "b: line 3",
             "pattern": "TT.ss.tts..ss.tt"
+          },
+          {
+            "name": "Solo 2 c: line 1",
+            "pattern": "S.TT.S.TT..BSSSS"
+          },
+          {
+            "name": "Solo 2 c: line 2",
+            "pattern": "S.TT....sttstts."
           },
           {
             "name": "d:",
@@ -31019,88 +25790,6 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "i:",
             "pattern": "BS.TT.S.BS.TT.SB"
-          }
-        ],
-        "solos": [
-          {
-            "name": "Djembe solo #1",
-            "pattern": "..SS..SS..SSTTS...SS..SS..SSTTS."
-          },
-          {
-            "name": "Djembe solo #2",
-            "pattern": "T..TT..BS.S.TT..T..TT..BS.S.TT.."
-          },
-          {
-            "name": "Djembe solo #3",
-            "pattern": "T.TT.TT.TT.BS.S.T.TTT.T.TT.BS.S."
-          },
-          {
-            "name": "Djembe solo #4",
-            "pattern": "TT.BS.S.TT.BS.S.TT.BS.S.TT.BS.S."
-          },
-          {
-            "name": "Djembe solo #5",
-            "pattern": "TT.SS.TTS..SS.TTTT.SS.TTS..SS.TT"
-          },
-          {
-            "name": "Djembe solo #6",
-            "pattern": "F.TT.F.TT..BRSSSS.TT....STTSTTS."
-          },
-          {
-            "name": "Djembe solo #7",
-            "pattern": ".T.STTS..S.STTS..T.STTS..S.STTS."
-          },
-          {
-            "name": "Djembe solo #8",
-            "pattern": "S.ST.TS.S.SS..S.S.ST.TS.S.SS..S."
-          },
-          {
-            "name": "Djembe solo #9",
-            "pattern": "S.ST.TS.TT.STTS.S.ST.TS.TT.STTS."
-          },
-          {
-            "name": "Djembe solo #10",
-            "pattern": "S.TS.TS.TS.TSS.TS.TS.TS.TS.TSS.T"
-          },
-          {
-            "name": "Djembe solo #11",
-            "pattern": "F.SS.S.SS..BRTTTT.ST............"
-          },
-          {
-            "name": "Djembe solo #12",
-            "pattern": "S.TT.S.BS.TT.SBBS.TT.S.BS.TT.SBB"
-          },
-          {
-            "name": "Djembe solo #13",
-            "pattern": "RTTTS...RTTTS.T.S...S...S...S..."
-          },
-          {
-            "name": "Djembe solo #14",
-            "pattern": "TTSTTSTTSTTSSTSBSS.....BSSS....."
-          },
-          {
-            "name": "Djembe solo #15",
-            "pattern": "RSSRTTSTTSTTSTTSTTSTTSTTSTTSSS.."
-          },
-          {
-            "name": "Djembe solo #16",
-            "pattern": "BS.S.S.S....RTTTS..............."
-          },
-          {
-            "name": "Solo accompagnement",
-            "pattern": "..SS..SS..SSTTS."
-          },
-          {
-            "name": "Solo 1 a:",
-            "pattern": "TT..TT..BS.S.TT."
-          },
-          {
-            "name": "Solo 2 c: line 1",
-            "pattern": "S.TT.S.TT..BSSSS"
-          },
-          {
-            "name": "Solo 2 c: line 2",
-            "pattern": "S.TT....sttstts."
           },
           {
             "name": "Solo 3 j: line 1",
@@ -31110,31 +25799,17 @@ export const RHYTHM_LIBRARY = [
             "name": "Solo 3 j: line 2",
             "pattern": "S...S...S...S..."
           }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
-          },
-          {
-            "name": "Call",
-            "pattern": "T...T.T.f......."
-          }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO..M...OO..M...OO..M...OO..M.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -31148,16 +25823,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Sangban line 2",
             "pattern": "OO..C.C.C...C.C."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OO.OO.O.O.O.O.O.OO.OO.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
@@ -31171,23 +25842,17 @@ export const RHYTHM_LIBRARY = [
             "name": "Dun Dun line 2",
             "pattern": "OO.............."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.OO.O.O.OO.OO.OO.OO.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -31206,71 +25871,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.SBTTB.S.TTS..STTS..STTB.SBTTBSSSTT.SSSTT.SSTTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.SBOOB.S.OOS..SOOS..SOOB.SBOOBSSSOO.SSSOO.SSOOO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "BTTTSBBTT.S.BTTTS.BTT.S.BTTTSBBTT.S.BTTTS.BTT.TB",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "BOOOSBBOO.S.BOOOS.BOO.S.BOOOSBBOO.S.BOOOS.BOO.OB",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "F.OO.OO.OO.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..........O..OM.................................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.OO.OO.O.O.OO.OO.O.O.O.O.O..O....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "..O..O..O.....O..O........O..O..O.....O..O......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.OO.OO.O.O.OO.OO.O.O.O.O.O..O..O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..O..O.................O..O..O.................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.OO.OO.O.O.OO.OO.O.O.O.O.O..O....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -31290,33 +25937,19 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S..TSS..........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.T.S...B.T.S...",
+        "drum_pattern": "B.O.S...B.O.S...",
         "variations": [
-          {
-            "name": "Djembé 1 (Bendré) (fast)",
-            "pattern": "S.sS.STTS.sS.STT"
-          },
-          {
-            "name": "Djembé 2 (Bendré) (fast)",
-            "pattern": "TS.TS..TSST.T.T."
-          }
-        ],
-        "solos": [
-          {
-            "name": "Djembé solo 1",
-            "pattern": "SS..B..........."
-          }
-        ],
-        "specials": [
           {
             "name": "Call",
             "pattern": "TT..TT..B...SS.."
+          },
+          {
+            "name": "Djembé solo 1",
+            "pattern": "SS..B..........."
           },
           {
             "name": "Call line 1",
@@ -31337,6 +25970,14 @@ export const RHYTHM_LIBRARY = [
           {
             "name": "Call (fast) line 3",
             "pattern": "T.T.T..........."
+          },
+          {
+            "name": "Djembé 1 (Bendré) (fast)",
+            "pattern": "S.sS.STTS.sS.STT"
+          },
+          {
+            "name": "Djembé 2 (Bendré) (fast)",
+            "pattern": "TS.TS..TSST.T.T."
           }
         ]
       },
@@ -31348,9 +25989,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Lounga high (fast)",
             "pattern": "....O...o.oo...o"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Kenkeni Bell",
@@ -31360,9 +25999,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Kièma (bel)",
             "pattern": "x.x.x.x.x.x.x.x."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban",
@@ -31372,16 +26009,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Lounga low (fast)",
             "pattern": "O.O..O...O..O..."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
@@ -31399,16 +26032,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Dundun varies a lot line 3",
             "pattern": "OO.O.O.OOO.OO..O"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
@@ -31450,9 +26079,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Wiga 3 l",
             "pattern": "................"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       }
     ]
   },
@@ -31471,26 +26098,25 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "STTSSBSTTSSB",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "SOOSSBSOOSSB",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.OS..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "S.S.TTS.S.TT",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "S.S.OOS.S.OO",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "ROOOO.OO.O.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": ".TT.SS.TT.SS.TT.SS.TT.SS"
+            "pattern": ".OO.SS.OO.SS.OO.SS.OO.SS"
           },
           {
             "name": "Djembe solo #2",
@@ -31498,7 +26124,7 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "B..B..TT.F..B..B..B..F.."
+            "pattern": "B..B..OO.F..B..B..B..F.."
           },
           {
             "name": "Djembe solo #4",
@@ -31510,13 +26136,7 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "S.SS.BST.S.BS.SS.BST.S.B"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "S.SS.BSO.S.BS.SS.BSO.S.B"
           },
           {
             "name": "Call",
@@ -31527,23 +26147,17 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": ".O..O..O..O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.M.OO.M.M.O",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Sangban echauffement",
             "pattern": "C.C.C.C.C.C.C.C."
@@ -31553,16 +26167,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.OO.O.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "...OO....OO.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Dun Dun echauffement",
             "pattern": "O.O.O.O.O.O.O.O."
@@ -31572,16 +26182,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OO.OO.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -31600,71 +26206,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TS..S.B...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OS..S.B...",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "..S.TS..S.TS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "..S.OS..S.OS",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "ROOOO.OO.O.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O..O..O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O...M.M...O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.OO....OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -31683,26 +26271,25 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "T.SB.ST.SB.ST.SB.ST.SB.S",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.SB.SO.SB.SO.SB.SO.SB.S",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "T.T..SS.SS.ST.TT.SS.SS.S",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.O..SS.SS.SO.OO.SS.SS.S",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "T.TS.SB..S.TT.TS.T..SB.S",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "O.OS.SB..S.OO.OS.O..SB.S",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "ROOOO.OO.O.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "TS.TS.B.RTTSSS.B.RTTS.S."
+            "pattern": "OS.OS.B.ROOSSS.B.ROOS.S."
           },
           {
             "name": "Djembe solo #2",
@@ -31710,65 +26297,47 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "...TTSTTSSS......BBBSSS."
+            "pattern": "...OOSOOSSS......BBBSSS."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "T.TT.T..F..TT.T..F..F..T"
+            "pattern": "O.OO.O..F..OO.O..F..F..O"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "S..F.TS....BS..F.TS....B"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "S..F.OS....BS..F.OS....B"
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O.O...O.O...O.O...O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O..M..O..OO..O..M..M.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O........OO..O........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -31787,71 +26356,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "T.SB.ST.SB.ST.SB.ST.SB.S",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "O.SB.SO.SB.SO.SB.SO.SB.S",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..STTS..STTS..STTS..STT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SOOS..SOOS..SOOS..SOO",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "S.TS..S.TS..S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "S.OS..S.OS..S.OS..S.OS..",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.TT.TT.."
+            "pattern": "F.OO.OO.OO.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..M.OO..M.OO..M.OO..M.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO.OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.O...O.O...O.O...O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O..M..M..OO..O..M.M...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -31871,35 +26422,43 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "T.SB.ST.SB.ST.SB.ST.SB.S",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "T.T..SS.SS.ST.TT.SS.SS.S",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "T.TS.SB..S.TT.TS.T..BS.S",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 4",
         "drum_pattern": "T.TB.S...S.ST.TS..S..S.S",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 5",
         "drum_pattern": "S..T.TS....BS..T.TS....B",
         "variations": [
+          {
+            "name": "Djembé solofrase 1",
+            "pattern": "ST.ST.B.SSSTTT.B.SSST.T."
+          },
+          {
+            "name": "Djembé solofrase 2",
+            "pattern": "BT.T.T.T.BT.BT.B.TTTTTT."
+          },
+          {
+            "name": "Djembé solofrase 3",
+            "pattern": "...SSTBSTTT......BBBTTT."
+          },
+          {
+            "name": "Djembé solofrase 4",
+            "pattern": "S.SS.S..B..SS.S..B..S..S"
+          },
           {
             "name": "Djembé (Bamako foli)",
             "pattern": "S.TTS..BS.TTS..b"
@@ -31924,26 +26483,7 @@ export const RHYTHM_LIBRARY = [
             "name": "Djembé 5 (Quarternary)",
             "pattern": "BB.BS.S.BB.B.TT."
           }
-        ],
-        "solos": [
-          {
-            "name": "Djembé solofrase 1",
-            "pattern": "ST.ST.B.SSSTTT.B.SSST.T."
-          },
-          {
-            "name": "Djembé solofrase 2",
-            "pattern": "BT.T.T.T.BT.BT.B.TTTTTT."
-          },
-          {
-            "name": "Djembé solofrase 3",
-            "pattern": "...SSTBSTTT......BBBTTT."
-          },
-          {
-            "name": "Djembé solofrase 4",
-            "pattern": "S.SS.S..B..SS.S..B..S..S"
-          }
-        ],
-        "specials": []
+        ]
       },
       {
         "part": "Kenkeni",
@@ -31973,16 +26513,12 @@ export const RHYTHM_LIBRARY = [
             "name": "A rapid version of Wolosedon Kenkeni",
             "pattern": "O...O.O...O.O...O.O...O."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -32008,16 +26544,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Analysis of Wolosedon from the Bamako foli CD from Rainer Polak",
             "pattern": "OO.C.C.OO.O.C.C."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "x.xx.xx.xx.xx.xx.xx.xx.x",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
@@ -32039,23 +26571,17 @@ export const RHYTHM_LIBRARY = [
             "name": "Combination 2 (D)",
             "pattern": "O.O.....OO......"
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -32075,75 +26601,56 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.T...B.T...",
-        "variations": [],
-        "solos": [
-          {
-            "name": "Djembé solo",
-            "pattern": "S.S.S.S.S.S."
-          }
-        ],
-        "specials": [
+        "drum_pattern": "B.O...B.O...",
+        "variations": [
           {
             "name": "Call",
             "pattern": "TT.TT.f....."
+          },
+          {
+            "name": "Djembé solo",
+            "pattern": "S.S.S.S.S.S."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "OO.C..OO.C..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "XX.XX.XX.XX.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "C..O..C..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "XX.XX.XX.XX.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..O..O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "X..X..X..X..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -32163,16 +26670,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S..SS..SS..SS..S",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "TT.S..B.TT.S..B.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "T.T.T.f........."
@@ -32182,51 +26685,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "..O...O...O...O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "..X...X...X...X.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O...C...O...C...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "X...X...X...X...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "..O...OO..O...OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "..X...XX..X...XX",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -32245,112 +26734,93 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B..S.SB.TT..B..S..B.TT..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B..S.SB.OO..B..S..B.OO..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B....BB.TT.BB....BB.TT.B",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B....BB.OO.BB....BB.OO.B",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "S.ST.TS.S..BS.ST.TS.S..B",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "S.SO.OS.S..BS.SO.OS.S..B",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OS.OO.SO.OS..S.BSSSS.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "S.T.S.T.S.T.S.T.S.T.S..T"
+            "pattern": "S.O.S.O.S.O.S.O.S.O.S..O"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "T.S.T.S.T.S.TSSSSSSSSS.T"
+            "pattern": "O.S.O.S.O.S.OSSSSSSSSS.O"
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "TTT.SSS.T.TTRSSSSSSSSS.T"
+            "pattern": "OOO.SSS.O.OORSSSSSSSSS.O"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "TTT.SSS.TTT.SSS.TTT.SS.T"
+            "pattern": "OOO.SSS.OOO.SSS.OOO.SS.O"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "S.BT.T......F.F...S.S..B"
+            "pattern": "S.BO.O......F.F...S.S..B"
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "T.T..SB.TT..B..S..B.TT.."
+            "pattern": "O.O..SB.OO..B..S..B.OO.."
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "S.ST.ST.TT.TT..S..TTTS.S"
+            "pattern": "S.SO.SO.OO.OO..S..OOOS.S"
           },
           {
             "name": "Djembe solo #8",
-            "pattern": "S..T..S....SS.ST.TT.S..."
+            "pattern": "S..O..S....SS.SO.OO.S..."
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "S..T..S....SS.S.TTT.S..B"
+            "pattern": "S..O..S....SS.S.OOO.S..B"
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "S.ST.SS.S..BS.SRTTTTTS.."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TS.TT.ST.TS..S.BSSSS.."
+            "pattern": "S.SO.SS.S..BS.SROOOOOS.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "......O.O......O..O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O..O.O...............O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O....OO....OO....OO....O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -32369,71 +26839,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "B.TTBSS.B.T.BSS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.OOBSS.B.O.BSS.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TT....F.F.TT..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OO....F.F.OO..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "M.OO....M.M.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M....OO.M....OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.OO.OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..OO..OO..OO..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OOOOOOOOOOOOOOOO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -32452,71 +26904,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "SSTTSS.BSSTTSS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "SSOOSS.BSSOOSS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S.TT....F.F.SS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OO....F.F.SS..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "B.SS.TT.B.S..TT.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "B.SS.OO.B.S..OO.",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
+            "pattern": "F.OO.O.OO.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "M.OO....M.O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M....OO.M....OO.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "OOOOOOOOOOOOOOOO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..OO..OO..OO..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "OOOOOOOOOOOOOOOO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -32535,71 +26969,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.S.S.S.STTSS.S.S.S.STTS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.S.S.S.SOOSS.S.S.S.SOOS",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "TT.TT.B.SB..SS.SS.B.SB..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OO.OO.B.SB..SS.SS.B.SB..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "T....TT....TT....TT....T",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "O....OO....OO....OO....O",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "TTS.S.S.SS..TTS.S.S.SS.."
+            "pattern": "OOS.S.S.SS..OOS.S.S.SS.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O....OO....OO....OO....O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "OO...OOO...OOO...OOO...O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": ".........O......O.O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.OO.OO.O.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O.O.O.................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O..O..O.O.O.O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -32619,16 +27035,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.T...B.T...",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "B.O...B.O...",
+        "variations": [
           {
             "name": "Call",
             "pattern": "T.T.T.f....."
@@ -32638,51 +27050,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "OO....OO....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "XX....XX....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "C..O..C..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "XX.XX.XX.XX.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "...O.....O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "...X.....X..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -32702,16 +27100,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S..SS..SS..SS..S",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
         "drum_pattern": "TT.S..B.TT.S..B.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "TT..T..f........"
@@ -32721,51 +27115,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO....OO......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "..XX....XX......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "C...O...C...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "X...X...X...X...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "......O.......O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "......X.......X.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -32784,92 +27164,73 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "TT.SB.S.B..SB.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "OO.SB.S.B..SB.S.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.SSB.TTB.SSB.SS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "B.SSB.OOB.SSB.SS",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT.SB.S.B.TTSSS.",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "OO.SB.S.B.OOSSS.",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "F.OO.O.OO.SSS..."
+          },
           {
             "name": "Djembe solo #1",
             "pattern": "F.SS.SS.S......."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "F.SS.SS.S.T.S..."
+            "pattern": "F.SS.SS.S.O.S..."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "F.SS.SS.S.T.S.BT"
+            "pattern": "F.SS.SS.S.O.S.BO"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": ".S.T.S.BT.S.T..B"
+            "pattern": ".S.O.S.BO.S.O..B"
           },
           {
             "name": "Djembe solo #5",
             "pattern": "S.S.SS.BS.S.SS.B"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "F.TT.T.TT.SSS..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "..OO......O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "......O.......O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -32888,71 +27249,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..SS.TTS..SS.TT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..SS.OOS..SS.OO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..S..S..S..TT..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..S..S..S..OO..",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "TT.BSS.BSS.BSS.B",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "OO.BSS.BSS.BSS.B",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "F.OO.O.OO.O.O..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "......OO......OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "..OO......OO....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.O.O.O.O.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -32972,16 +27315,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S.TS..S.TS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.T...B.T...",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "B.O...B.O...",
+        "variations": [
           {
             "name": "Call",
             "pattern": "TT.TT.f....."
@@ -32991,51 +27330,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "OO.C..OO.C..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "XX.XX.XX.XX.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "C..O..C..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "XX.XX.XX.XX.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..O..O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "X..X..X..X..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -33054,50 +27379,49 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..S.TT.SS.BS.BS.TT.SS..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..S.OO.SS.BS.BS.OO.SS..",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S....TT....BS....TT....B",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S....OO....BS....OO....B",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "S.BS.TT.SS..S..S.TT.SS.B",
-        "variations": [],
-        "solos": [
+        "drum_pattern": "S.BS.OO.SS..S..S.OO.SS.B",
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "OOO.SSS..OOOO.O.O.O.O..."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "TTT.SSS...F.TT.T.T.TT.T."
+            "pattern": "OOO.SSS...F.OO.O.O.OO.O."
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "TTT.SSS...RTTT.T.T.T...."
+            "pattern": "OOO.SSS...ROOO.O.O.O...."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "B.T.B..B.T.B..B.T.B..TTS"
+            "pattern": "B.O.B..B.O.B..B.O.B..OOS"
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "T.TT.SS.SS.SS.SS.SS.ST.B"
+            "pattern": "O.OO.SS.SS.SS.SS.SS.SO.B"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "T.B..BS.BS.BS.BS.BS.B.TB"
+            "pattern": "O.B..BS.BS.BS.BS.BS.B.OB"
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "T.T.TT..T.T.B.TT.STTS..B"
+            "pattern": "O.O.OO..O.O.B.OO.SOOS..B"
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "S.S.SS..S.S.B.TT.STTS..."
+            "pattern": "S.S.SS..S.S.B.OO.SOOS..."
           },
           {
             "name": "Djembe solo #8",
@@ -33105,69 +27429,51 @@ export const RHYTHM_LIBRARY = [
           },
           {
             "name": "Djembe solo #9",
-            "pattern": "TTT.SSS..RTTT.T.T.T.T..B"
+            "pattern": "OOO.SSS..ROOO.O.O.O.O..B"
           },
           {
             "name": "Djembe solo #10",
-            "pattern": "S.B..BS.B..BS.BS.BS.S.TT"
+            "pattern": "S.B..BS.B..BS.BS.BS.S.OO"
           },
           {
             "name": "Djembe solo #11",
-            "pattern": "SS...SSS..TTT..RTTT.T.T."
+            "pattern": "SS...SSS..OOO..ROOO.O.O."
           },
           {
             "name": "Djembe solo #12",
-            "pattern": "T.T.........S.BS.TT.SS.."
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "TTT.SSS..TTTT.T.T.T.T..."
+            "pattern": "O.O.........S.BS.OO.SS.."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "M.O.O.O..O..M.O.O.O..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.O.O.O.OO.OO.O.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..O..M..O..M..O..M..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.............O..O..O..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -33186,71 +27492,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TT.SS.TT..S.TT.SS.TT.B",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OO.SS.OO..S.OO.SS.OO.B",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "S..TT.S..TT.S..TT.S..TT.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..OO.S..OO.S..OO.S..OO.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "S.T..TT.....S....TT....B",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "S.O..OO.....S....OO....B",
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "TTT.SSS..TTTT.T.T.T.T..."
+            "pattern": "OOO.SSS..OOOO.O.O.O.O..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "M..O..M..O..M..O..M..O..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.OO.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M...O.O.O...M...O.O.O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O.O.O.O.OO.OO.O.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.............O..O..O..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.O.OO.OO.O.O.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -33269,84 +27557,69 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TSB.S.TSB.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OSB.S.OSB.",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": ".TT.S..TT.S.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": ".OO.S..OO.S.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
-        "drum_pattern": "SBTTB.SBTTB.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "SBOOB.SBOOB.",
+        "variations": []
       },
       {
         "part": "Djembé 4",
         "drum_pattern": "SBTTB.SBTTB.SBTTB.SBTTB.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 5",
         "drum_pattern": "S.TSB.STTSB.STTSB.STTSB.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 6",
         "drum_pattern": "SBSST.SBSST.SBSST.SBSST.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 7",
         "drum_pattern": "B.SBTTB.SBTTB.SBTTB.SBTT",
-        "variations": [],
-        "solos": [
+        "variations": [
+          {
+            "name": "Master Call",
+            "pattern": "ROOOO.OO.O.."
+          },
           {
             "name": "Djembe solo #1",
-            "pattern": "S.SSRTS.SSRT"
+            "pattern": "S.SSROS.SSRO"
           },
           {
             "name": "Djembe solo #2",
-            "pattern": "STTSB.STTSB."
+            "pattern": "SOOSB.SOOSB."
           },
           {
             "name": "Djembe solo #3",
-            "pattern": "SBSST.SBSST."
+            "pattern": "SBSSO.SBSSO."
           },
           {
             "name": "Djembe solo #4",
-            "pattern": "B.SBTTBS.BTT"
+            "pattern": "B.SBOOBS.BOO"
           },
           {
             "name": "Djembe solo #5",
-            "pattern": "BSSSSBBT.T.B"
+            "pattern": "BSSSSBBO.O.B"
           },
           {
             "name": "Djembe solo #6",
-            "pattern": "TT.S..TT.S.."
+            "pattern": "OO.S..OO.S.."
           },
           {
             "name": "Djembe solo #7",
-            "pattern": "S.BS.BSTTS.B"
-          }
-        ],
-        "specials": [
-          {
-            "name": "Master Call",
-            "pattern": "RTTTT.TT.T.."
+            "pattern": "S.BS.BSOOS.B"
           },
           {
             "name": "Call 1",
@@ -33382,16 +27655,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Supporting combination used in YAPPages line 1",
             "pattern": "....O.....O.....O.....O."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "O.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
@@ -33405,16 +27674,12 @@ export const RHYTHM_LIBRARY = [
             "name": "Supporting combination used in YAPPages line 2",
             "pattern": "..O.....O.....O.....O..."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": ".OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
@@ -33432,23 +27697,17 @@ export const RHYTHM_LIBRARY = [
             "name": "Supporting pattern 2",
             "pattern": "O...O.O...O.O...O.O...O."
           }
-        ],
-        "solos": [],
-        "specials": []
+        ]
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.O.O.OO.O.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "........................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -33468,16 +27727,12 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S..TS..SS..TS..S",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "B.T.S...B.T.S...",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "drum_pattern": "B.O.S...B.O.S...",
+        "variations": [
           {
             "name": "Call",
             "pattern": "TTT.T.f........."
@@ -33487,51 +27742,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "O.........O.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "X.........X.....",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O...C..O.O.OO...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "X...X..X.X.XX...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -33551,9 +27792,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S.S.TT.S.S.TT...",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "T.TT.T.TT.T.T..."
@@ -33563,51 +27802,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.C...O.C.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O...O.O.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -33626,71 +27851,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S..B..SSS..BT.SSS..B..SSS..BT.SS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S..B..SSS..BO.SSS..B..SSS..BO.SS",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "..TT..SS..TT..SS..TT..SS..TT..SS",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "..OO..SS..OO..SS..OO..SS..OO..SS",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "................................",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "F.TT.T.TT.T.T..."
+            "pattern": "F.OO.O.OO.O.O..."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": "..OO..OO..OO..OO..OO..OO..OO..OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "..OO..OO..OO..OO..OO..OO..OO..OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M..MO.O.O..MM..MM..MO.O.O..MM..M",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "O..OO.O.OO.OO..OO..OO.O.OO.OO..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O..MM..MM.OOO..OO..MM..MM.OOO..O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O..OO..OO.O.OO.OO..OO..OO.O.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -33709,71 +27916,53 @@ export const RHYTHM_LIBRARY = [
     "tracks": [
       {
         "part": "Djembé 1",
-        "drum_pattern": "S.TTTTS.TTTT",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "S.OOOOS.OOOO",
+        "variations": []
       },
       {
         "part": "Djembé 2",
-        "drum_pattern": "STT.S.STTSS.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "drum_pattern": "SOO.S.SOOSS.",
+        "variations": []
       },
       {
         "part": "Djembé 3",
         "drum_pattern": "............",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Master Call",
-            "pattern": "T.T.T.T....."
+            "pattern": "O.O.O.O....."
           }
         ]
       },
       {
         "part": "Kenkeni",
         "drum_pattern": ".OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": ".OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "M...OOM...OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": ".OO.OO.OO.OO",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "M.OO..M.OO..",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "O.OO.OO.OO.O",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -33793,9 +27982,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S.S.TT.S.S.TT...",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "T.TT.T.TT.T.T..."
@@ -33805,51 +27992,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "O...O...O...O...",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.C...O.C.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O...O.O.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -33869,9 +28042,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S...S.TT.S.S.TT.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "T.TT.T.TT.T.T..."
@@ -33881,51 +28052,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "O.O.O.O.........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.C...O.C.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O...O.O.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   },
@@ -33945,9 +28102,7 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Djembé 1",
         "drum_pattern": "S...S.TT.S.S.TT.",
-        "variations": [],
-        "solos": [],
-        "specials": [
+        "variations": [
           {
             "name": "Call",
             "pattern": "T.TT.T.TT.T.T..."
@@ -33957,51 +28112,37 @@ export const RHYTHM_LIBRARY = [
       {
         "part": "Kenkeni",
         "drum_pattern": "O.O.O.O.........",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Kenkeni Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban",
         "drum_pattern": "O.C...O.C.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Sangban Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun",
         "drum_pattern": "O.O...O.O.......",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Dun Dun Bell",
         "drum_pattern": "x.x.x.x.x.x.x.x.",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       },
       {
         "part": "Shekere",
         "drum_pattern": "................",
-        "variations": [],
-        "solos": [],
-        "specials": []
+        "variations": []
       }
     ]
   }
