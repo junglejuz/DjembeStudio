@@ -3042,6 +3042,9 @@ function updateSpecialButtonsState(preset) {
     return;
   }
 
+  const tracksIsArray = Array.isArray(preset.tracks);
+  const isNewObjectFormat = !tracksIsArray && preset.step_count !== undefined;
+
   const hasNewSchema = preset && Array.isArray(preset.tracks) && preset.tracks.some(t =>
     (t.variations && t.variations.length > 0) ||
     (t.solos && t.solos.length > 0) ||
