@@ -262,7 +262,7 @@ function getInstrumentSVG(instrument, type) {
   }
   if (type === "shekere" || instrument === "shekere") return SHEKERE_SVG;
   if (instrument === "call" || type === "call") return CALL_SVG;
-  
+
   // Dunun / Bell
   const isBell = type === "bell" || (instrument && instrument.includes("bell"));
   if (instrument && instrument.includes("kenkeni")) {
@@ -308,17 +308,17 @@ function getInstrumentHSL(instrument, type, isCall) {
   if (type === "shekere" || instrument === "shekere") {
     return "45, 93%, 58%"; // yellow/gold
   }
-  
+
   if (type === "djembe" || (instrument && instrument.startsWith("djembe"))) {
     // 7 colors for 7 groups (purple to red range, avoiding orange/yellow/blue/green, balanced for perceived brightness)
     const djembeColors = [
-      "260, 95%, 66%", // djembe1: violet/purple
-      "280, 95%, 64%", // djembe2: amethyst
-      "310, 95%, 62%", // djembe3: magenta
-      "330, 95%, 60%", // djembe4: deep pink/rose
-      "342, 95%, 57%", // djembe5: crimson
-      "355, 95%, 56%", // djembe6: ruby red
-      "0, 95%, 55%"    // djembe7: bright red
+      "260, 95%, 58%", // djembe1: violet/purple
+      "280, 95%, 58%", // djembe2: amethyst
+      "300, 95%, 58%", // djembe3: magenta
+      "320, 95%, 59%", // djembe4: deep pink/rose
+      "340, 95%, 60%", // djembe5: crimson
+      "360, 95%, 62%", // djembe6: ruby red
+      "20, 95%, 65%"    // djembe7: bright red
     ];
     const idx = parseInt(instrument.replace("djembe", "")) - 1;
     if (idx >= 0 && idx < djembeColors.length) {
@@ -326,7 +326,7 @@ function getInstrumentHSL(instrument, type, isCall) {
     }
     return "280, 95%, 64%"; // default djembe primary HSL (amethyst)
   }
-  
+
   // Dunun or Bell: Unique HSL ranges for D/S/K and their bells, adjusted for perceived brightness
   if (instrument) {
     const isBell = type === "bell" || instrument.includes("bell");
@@ -354,13 +354,13 @@ function getInstrumentHSL(instrument, type, isCall) {
     }
     if (instrument.includes("dundunba")) {
       if (isBell) {
-        if (instrument.includes("3")) return "230, 85%, 72%"; // Bell 2
-        if (instrument.includes("4")) return "238, 85%, 74%"; // Bell 3
-        return "222, 85%, 70%"; // Bell 1
+        if (instrument.includes("3")) return "230, 98%, 72%"; // Bell 2
+        if (instrument.includes("4")) return "238, 98%, 74%"; // Bell 3
+        return "222, 98%, 70%"; // Bell 1
       } else {
-        if (instrument.includes("3")) return "244, 85%, 75%";
-        if (instrument.includes("4")) return "252, 85%, 76%";
-        return "218, 88%, 68%";
+        if (instrument.includes("3")) return "244, 98%, 75%";
+        if (instrument.includes("4")) return "252, 98%, 76%";
+        return "218, 98%, 68%";
       }
     }
   }
@@ -467,7 +467,7 @@ function getHitGlowColor(type, hit, instrument = "") {
 // Helper to return clean visual SVGs for different sound strikes
 function getSoundIcon(track, val, useOriginalIcons = false) {
   if (!val) return "";
-  
+
   const trackType = typeof track === "string" ? track : track.type;
   const instrument = (track && track.instrument) ? track.instrument : "";
 
@@ -488,7 +488,7 @@ function getSoundIcon(track, val, useOriginalIcons = false) {
       </div>
     `;
   }
-  
+
   if (val.includes("-")) {
     const [h1, h2] = val.split("-");
     const c1 = getHitColor(trackType, h1, instrument);
@@ -540,7 +540,7 @@ function getSoundIcon(track, val, useOriginalIcons = false) {
       `;
     }
   }
-  
+
   if (trackType === "djembe") {
     if (val === "B") { // Bass: capital letter B
       return `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
@@ -565,7 +565,7 @@ function getSoundIcon(track, val, useOriginalIcons = false) {
       </svg>`;
     }
   }
-  
+
   if (trackType === "dunun") {
     const isMuffled = (val === "C" || val === "X");
     const strokeWidth = "2.5";
@@ -573,7 +573,7 @@ function getSoundIcon(track, val, useOriginalIcons = false) {
       <line x1="8" y1="8" x2="16" y2="16" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" />
       <line x1="16" y1="8" x2="8" y2="16" stroke="currentColor" stroke-width="3.5" stroke-linecap="round" />
     ` : "";
-    
+
     if (instrument.includes("dundunba")) {
       return `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${strokeWidth}" stroke-linecap="round" stroke-linejoin="round">
         <rect x="3" y="5" width="18" height="14" rx="2" fill="currentColor" fill-opacity="0.15" />
@@ -604,7 +604,7 @@ function getSoundIcon(track, val, useOriginalIcons = false) {
       </svg>`;
     }
   }
-  
+
   if (trackType === "bell") {
     const isMuffled = (val === "C");
     const strokeWidth = "2.5";
@@ -613,7 +613,7 @@ function getSoundIcon(track, val, useOriginalIcons = false) {
       <line x1="4" y1="4" x2="20" y2="20" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
       <line x1="20" y1="4" x2="4" y2="20" stroke="currentColor" stroke-width="3" stroke-linecap="round" />
     ` : "";
-    
+
     if (instrument.includes("dundunba")) {
       return `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="${strokeWidth}" stroke-linecap="round" stroke-linejoin="round">
         <path d="M12 2a2.5 2.5 0 0 0-2.5 2.5v2.5h5V4.5A2.5 2.5 0 0 0 12 2z" />
@@ -644,7 +644,7 @@ function getSoundIcon(track, val, useOriginalIcons = false) {
       </svg>`;
     }
   }
-  
+
   if (trackType === "shekere") {
     if (val === "O") { // Shake
       return `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
@@ -661,7 +661,7 @@ function getSoundIcon(track, val, useOriginalIcons = false) {
       </svg>`;
     }
   }
-  
+
   return val;
 }
 
@@ -776,7 +776,7 @@ const KEY_MAP = {
 
 function injectLargeSliderOverlay() {
   if (document.getElementById("large-slider-overlay")) return;
-  
+
   const overlay = document.createElement("div");
   overlay.id = "large-slider-overlay";
   overlay.style.cssText = `
@@ -792,7 +792,7 @@ function injectLargeSliderOverlay() {
     z-index: 100000;
     pointer-events: auto;
   `;
-  
+
   const windowDiv = document.createElement("div");
   windowDiv.className = "large-slider-window";
   windowDiv.style.cssText = `
@@ -813,7 +813,7 @@ function injectLargeSliderOverlay() {
     gap: 1.25rem;
     pointer-events: auto;
   `;
-  
+
   const titleContainer = document.createElement("div");
   titleContainer.style.cssText = `
     display: flex;
@@ -833,7 +833,7 @@ function injectLargeSliderOverlay() {
     letter-spacing: 0.02em;
     text-align: center;
   `;
-  
+
   const valueElement = document.createElement("div");
   valueElement.className = "large-slider-value";
   valueElement.style.cssText = `
@@ -845,10 +845,10 @@ function injectLargeSliderOverlay() {
     letter-spacing: 0.02em;
     text-align: center;
   `;
-  
+
   titleContainer.appendChild(labelElement);
   titleContainer.appendChild(valueElement);
-  
+
   const slider = document.createElement("input");
   slider.type = "range";
   slider.className = "large-slider-input";
@@ -864,19 +864,19 @@ function injectLargeSliderOverlay() {
     pointer-events: auto;
     touch-action: pan-x;
   `;
-  
+
   windowDiv.appendChild(titleContainer);
   windowDiv.appendChild(slider);
   overlay.appendChild(windowDiv);
-  
+
   overlay.addEventListener("pointerdown", (e) => {
     if (e.target === overlay) {
       overlay.style.display = "none";
     }
   });
-  
+
   document.body.appendChild(overlay);
-  
+
   const style = document.createElement("style");
   style.textContent = `
     .large-slider-input::-webkit-slider-thumb {
@@ -901,9 +901,9 @@ function injectLargeSliderOverlay() {
 function setupLargeSlider(originalSlider, options = {}) {
   if (!originalSlider) return;
   originalSlider.style.touchAction = "none";
-  
+
   let isCustomDragging = false;
-  
+
   // Intercept native browser drag events to prevent them from overriding our custom math on release
   const blockNative = (e) => {
     if (e.target === originalSlider && isCustomDragging && !e.isCustomUpdate) {
@@ -917,42 +917,42 @@ function setupLargeSlider(originalSlider, options = {}) {
       }
     }
   };
-  
+
   window.addEventListener("input", blockNative, true);
   window.addEventListener("change", blockNative, true);
-  
+
   originalSlider.addEventListener("pointerdown", (e) => {
     e.stopPropagation();
     e.preventDefault();
     isCustomDragging = true;
-    
+
     try {
       if (originalSlider.hasPointerCapture(e.pointerId)) {
         originalSlider.releasePointerCapture(e.pointerId);
       }
-    } catch (err) {}
-    
+    } catch (err) { }
+
     injectLargeSliderOverlay();
     const overlay = document.getElementById("large-slider-overlay");
     if (!overlay) return;
-    
+
     const windowDiv = overlay.querySelector(".large-slider-window");
     const largeInput = overlay.querySelector(".large-slider-input");
     const labelLabel = overlay.querySelector(".large-slider-label");
     const valueLabel = overlay.querySelector(".large-slider-value");
-    
+
     const clientX = (e.clientX !== undefined) ? e.clientX : window.innerWidth / 2;
     const clientY = (e.clientY !== undefined) ? e.clientY : window.innerHeight / 2;
-    
+
     const min = parseFloat(originalSlider.min) || 0;
     const max = parseFloat(originalSlider.max) || 100;
     const step = parseFloat(originalSlider.step) || 1;
-    
+
     largeInput.min = originalSlider.min || "0";
     largeInput.max = originalSlider.max || "100";
     largeInput.step = originalSlider.step || "1";
     largeInput.value = originalSlider.value;
-    
+
     const parentRow = originalSlider.closest(".track-row");
     if (parentRow) {
       const hsl = parentRow.style.getPropertyValue("--part-color-hsl");
@@ -964,14 +964,14 @@ function setupLargeSlider(originalSlider, options = {}) {
     } else {
       largeInput.style.removeProperty("--accent-color");
     }
-    
+
     const updateLabelAndValue = () => {
       if (options.label) {
         labelLabel.textContent = options.label;
       } else {
         labelLabel.textContent = "";
       }
-      
+
       if (options.getValueText) {
         valueLabel.textContent = options.getValueText(largeInput.value);
       } else if (options.getLabel) {
@@ -989,38 +989,38 @@ function setupLargeSlider(originalSlider, options = {}) {
         valueLabel.textContent = largeInput.value;
       }
     };
-    
+
     updateLabelAndValue();
     overlay.style.display = "block";
-    
+
     const windowWidth = windowDiv.offsetWidth || 280;
     const windowHeight = windowDiv.offsetHeight || 120;
-    
+
     const container = overlay.parentElement || document.body;
     const containerRect = container.getBoundingClientRect();
     const viewportWidth = window.innerWidth || document.documentElement.clientWidth;
     const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
-    
+
     const containerY = clientY - containerRect.top;
-    
+
     let leftPos = clientX - windowWidth / 2;
     let topPos = containerY - 100; // Default fallback
-    
+
     if (parentRow) {
       const parentRect = parentRow.getBoundingClientRect();
       const parentTop = parentRect.top - containerRect.top;
       topPos = parentTop - 60;
     }
-    
+
     const maxLeft = viewportWidth - windowWidth - 16;
     const maxTop = viewportHeight - windowHeight - 16;
-    
+
     leftPos = Math.max(16, Math.min(maxLeft, leftPos));
     topPos = Math.max(16, Math.min(maxTop, topPos));
-    
+
     windowDiv.style.left = leftPos + "px";
     windowDiv.style.top = topPos + "px";
-    
+
     // Wire direct input slider interaction (for non-trusted pointerdown clicks)
     if (largeInput._onInputHandler) {
       largeInput.removeEventListener("input", largeInput._onInputHandler);
@@ -1033,7 +1033,7 @@ function setupLargeSlider(originalSlider, options = {}) {
       updateLabelAndValue();
     };
     largeInput.addEventListener("input", largeInput._onInputHandler);
-    
+
     // If it's a trusted drag event (BPM slider), support slide-anywhere behavior
     if (e.isTrusted) {
       const origRect = originalSlider.getBoundingClientRect();
@@ -1048,23 +1048,23 @@ function setupLargeSlider(originalSlider, options = {}) {
         ev.isCustomUpdate = true;
         originalSlider.dispatchEvent(ev);
       }
-      
+
       const startX = clientX;
       const startVal = parseFloat(originalSlider.value) || 0;
-      
+
       const getSliderWidth = () => {
         return (largeInput && largeInput.clientWidth) ? largeInput.clientWidth : 200;
       };
-      
+
       const updateValue = (clientXCoord) => {
         const deltaX = clientXCoord - startX;
         const width = getSliderWidth();
         const range = max - min;
-        
+
         let val = startVal + (deltaX / width) * range;
         val = Math.round(val / step) * step;
         val = Math.max(min, Math.min(max, val));
-        
+
         if (largeInput.value !== String(val)) {
           largeInput.value = val;
           originalSlider.value = largeInput.value;
@@ -1074,7 +1074,7 @@ function setupLargeSlider(originalSlider, options = {}) {
           updateLabelAndValue();
         }
       };
-      
+
       const onPointerMove = (moveEvent) => {
         if (moveEvent.cancelable) {
           moveEvent.preventDefault();
@@ -1083,30 +1083,30 @@ function setupLargeSlider(originalSlider, options = {}) {
           updateValue(moveEvent.clientX);
         }
       };
-      
+
       const onRelease = () => {
         window.removeEventListener("pointermove", onPointerMove);
         window.removeEventListener("pointerup", onRelease);
         window.removeEventListener("pointercancel", onRelease);
-        
+
         if (largeInput && originalSlider) {
           originalSlider.value = largeInput.value;
           const evInp = new Event("input");
           evInp.isCustomUpdate = true;
           originalSlider.dispatchEvent(evInp);
-          
+
           const evChg = new Event("change");
           evChg.isCustomUpdate = true;
           originalSlider.dispatchEvent(evChg);
         }
-        
+
         overlay.style.display = "none";
-        
+
         setTimeout(() => {
           isCustomDragging = false;
         }, 100);
       };
-      
+
       window.addEventListener("pointermove", onPointerMove, { passive: false });
       window.addEventListener("pointerup", onRelease);
       window.addEventListener("pointercancel", onRelease);
@@ -1119,7 +1119,7 @@ function init() {
   // Bind progress indicator
   const loadStatusEl = document.getElementById("sample-load-status");
   const statusTextEl = loadStatusEl ? loadStatusEl.querySelector(".status-text") : null;
-  
+
   synth.onProgress = (loaded, total) => {
     if (loadStatusEl && statusTextEl) {
       if (loaded < total) {
@@ -1129,7 +1129,7 @@ function init() {
       } else {
         loadStatusEl.className = "sample-load-status loaded";
         statusTextEl.textContent = "Samples Loaded";
-        
+
         // Gracefully fade out/dim after a delay
         setTimeout(() => {
           loadStatusEl.style.opacity = "0";
@@ -1151,32 +1151,32 @@ function init() {
   }
 
   loadPresetsDropdown();
-  
+
   try {
     loadCustomSaves();
   } catch (err) {
     console.error("Failed to load custom saves on init:", err);
   }
-  
+
   // Set up default layout: Load first library rhythm if available, fallback to Kuku Preset
   if (typeof RHYTHM_LIBRARY !== "undefined" && RHYTHM_LIBRARY && RHYTHM_LIBRARY.length > 0) {
     loadRhythm(RHYTHM_LIBRARY[0]);
   } else {
     loadPresetById("kuku");
   }
-  
+
   // Bind Event Listeners
   setupEventListeners();
-  
+
   injectLargeSliderOverlay();
   setupLargeSlider(bpmRange, {
     label: "Tempo",
     getValueText: (val) => `${val} BPM`
   });
-  
+
   // Start Playhead Animation Loop
   requestAnimationFrame(animatePlayhead);
-  
+
 
 }
 
@@ -1191,7 +1191,7 @@ function updateRhythmNameDisplay() {
 function updateSpecialButtonsState(preset) {
   const btnTriggerCall = document.getElementById("btn-trigger-call");
   const btnTriggerEchauffement = document.getElementById("btn-trigger-echauffement");
-  
+
   if (!preset) {
     if (btnTriggerCall) {
       btnTriggerCall.disabled = true;
@@ -1205,13 +1205,13 @@ function updateSpecialButtonsState(preset) {
     }
     return;
   }
-  
+
   const tracksIsArray = Array.isArray(preset.tracks);
   const isNewObjectFormat = !tracksIsArray && preset.step_count !== undefined;
-  
+
   let hasCall = false;
   let hasEchauffement = false;
-  
+
   if (isNewObjectFormat) {
     hasCall = (preset.special_parts || []).some(sp => sp.type === "Call" || sp.type === "Intro");
     hasEchauffement = preset.echauffement && Object.keys(preset.echauffement).some(key => preset.echauffement[key] !== "Missing Data");
@@ -1223,18 +1223,18 @@ function updateSpecialButtonsState(preset) {
       const trackData = preset.tracks[key];
       return key === "special_0" || (trackData.name || "").toLowerCase().includes("call");
     });
-    hasEchauffement = (preset.solos || []).some(s => 
-      s.name.toLowerCase().includes("echauffement") || 
+    hasEchauffement = (preset.solos || []).some(s =>
+      s.name.toLowerCase().includes("echauffement") ||
       s.name.toLowerCase().includes("échauffement")
     );
   }
-  
+
   if (btnTriggerCall) {
     btnTriggerCall.disabled = !hasCall;
     btnTriggerCall.style.opacity = hasCall ? "" : "0.3";
     btnTriggerCall.style.pointerEvents = hasCall ? "" : "none";
   }
-  
+
   if (btnTriggerEchauffement) {
     btnTriggerEchauffement.disabled = !hasEchauffement;
     btnTriggerEchauffement.style.opacity = hasEchauffement ? "" : "0.3";
@@ -1248,46 +1248,46 @@ function updateSpecialButtonsState(preset) {
 function sortTracks() {
   const isCallTrack = (t) => {
     const nameLower = (t.name || "").toLowerCase();
-    return (t.id && t.id.startsWith("special")) || 
-           nameLower.includes("call") || 
-           nameLower.includes("break") || 
-           nameLower.includes("intro");
+    return (t.id && t.id.startsWith("special")) ||
+      nameLower.includes("call") ||
+      nameLower.includes("break") ||
+      nameLower.includes("intro");
   };
 
   const isSpecialDjembe = (t) => {
     if (t.type !== "djembe") return false;
     if (isCallTrack(t)) return false; // calls are handled separately at the top
     const nameLower = (t.name || "").toLowerCase();
-    return nameLower.includes("solo") || 
-           nameLower.includes("echauffement");
+    return nameLower.includes("solo") ||
+      nameLower.includes("echauffement");
   };
 
   const callTracks = state.tracks.filter(t => isCallTrack(t));
   const standardDjembes = state.tracks.filter(t => t.type === "djembe" && !isCallTrack(t) && !isSpecialDjembe(t) && t.id !== "solo_djembe");
   const specialDjembes = state.tracks.filter(t => t.type === "djembe" && isSpecialDjembe(t) && t.id !== "solo_djembe");
   const soloDjembe = state.tracks.filter(t => t.id === "solo_djembe");
-  
+
   const others = state.tracks.filter(t => t.type !== "djembe" && !isCallTrack(t));
-  
+
   const kenkenis = others.filter(t => t.instrument.includes("kenkeni"));
   const sangbans = others.filter(t => t.instrument.includes("sangban"));
   const dundunbas = others.filter(t => t.instrument.includes("dundunba") || t.instrument.includes("dundun") || t.instrument.includes("dun"));
-  const remainingOthers = others.filter(t => 
-    !t.instrument.includes("kenkeni") && 
-    !t.instrument.includes("sangban") && 
-    !t.instrument.includes("dundunba") && 
-    !t.instrument.includes("dundun") && 
+  const remainingOthers = others.filter(t =>
+    !t.instrument.includes("kenkeni") &&
+    !t.instrument.includes("sangban") &&
+    !t.instrument.includes("dundunba") &&
+    !t.instrument.includes("dundun") &&
     !t.instrument.includes("dun")
   );
-  
+
   state.tracks = [
-    ...callTracks, 
-    ...standardDjembes, 
-    ...kenkenis, 
-    ...sangbans, 
-    ...dundunbas, 
-    ...remainingOthers, 
-    ...specialDjembes, 
+    ...callTracks,
+    ...standardDjembes,
+    ...kenkenis,
+    ...sangbans,
+    ...dundunbas,
+    ...remainingOthers,
+    ...specialDjembes,
     ...soloDjembe
   ];
 }
@@ -1311,20 +1311,20 @@ function setupEventListeners() {
   const btnThemeToggle = document.getElementById("btn-theme-toggle");
   const themeIconSun = document.getElementById("theme-icon-sun");
   const themeIconMoon = document.getElementById("theme-icon-moon");
-  
+
   function applyTheme(isLight) {
     document.body.classList.toggle("light-theme", isLight);
     if (themeIconSun) themeIconSun.style.display = isLight ? "none" : "";
     if (themeIconMoon) themeIconMoon.style.display = isLight ? "" : "none";
-    try { localStorage.setItem("djembe-theme", isLight ? "light" : "dark"); } catch(e) {}
+    try { localStorage.setItem("djembe-theme", isLight ? "light" : "dark"); } catch (e) { }
   }
-  
+
   // Restore saved preference
   try {
     const saved = localStorage.getItem("djembe-theme");
     if (saved === "light") applyTheme(true);
-  } catch(e) {}
-  
+  } catch (e) { }
+
   if (btnThemeToggle) {
     btnThemeToggle.addEventListener("click", () => {
       applyTheme(!document.body.classList.contains("light-theme"));
@@ -1333,26 +1333,26 @@ function setupEventListeners() {
 
   // Play/Stop
   btnPlay.addEventListener("click", togglePlay);
-  
+
   // Call Trigger
   const btnTriggerCall = document.getElementById("btn-trigger-call");
   if (btnTriggerCall) {
     btnTriggerCall.addEventListener("click", triggerCall);
   }
-  
+
   // Échauffement Trigger
   const btnTriggerEchauffement = document.getElementById("btn-trigger-echauffement");
   if (btnTriggerEchauffement) {
     btnTriggerEchauffement.addEventListener("click", triggerEchauffement);
   }
-  
+
   // BPM control
   bpmRange.addEventListener("input", (e) => {
     state.bpm = parseInt(e.target.value);
     bpmVal.textContent = state.bpm;
     updateStepPositions();
   });
-  
+
   // Swing control
   swingRange.addEventListener("input", (e) => {
     state.swing = parseInt(e.target.value);
@@ -1361,24 +1361,24 @@ function setupEventListeners() {
     renderSwingSliders(activeSwingSubdiv);
     updateStepPositions();
   });
-  
+
   // Global Humanise control
   humaniseRange.addEventListener("input", (e) => {
     const val = parseInt(e.target.value);
     humaniseVal.textContent = val + "%";
-    
+
     state.humaniseTime = val;
     state.humanisePitch = val;
     state.humaniseVolume = val;
     synth.humanisePitch = val;
-    
+
     humaniseTimeRange.value = val;
     humaniseTimeVal.textContent = val + "%";
     humanisePitchRange.value = val;
     humanisePitchVal.textContent = val + "%";
     humaniseVolumeRange.value = val;
     humaniseVolumeVal.textContent = val + "%";
-    
+
     updateStepPositions();
     updateCellScales();
   });
@@ -1387,12 +1387,12 @@ function setupEventListeners() {
   humaniseTimeRange.addEventListener("input", (e) => {
     state.humaniseTime = parseInt(e.target.value);
     humaniseTimeVal.textContent = state.humaniseTime + "%";
-    
+
     // Update global average
     const avg = Math.round((state.humaniseTime + state.humanisePitch + state.humaniseVolume) / 3);
     humaniseRange.value = avg;
     humaniseVal.textContent = avg + "%";
-    
+
     updateStepPositions();
   });
 
@@ -1401,12 +1401,12 @@ function setupEventListeners() {
     state.humanisePitch = parseInt(e.target.value);
     humanisePitchVal.textContent = state.humanisePitch + "%";
     synth.humanisePitch = state.humanisePitch;
-    
+
     // Update global average
     const avg = Math.round((state.humaniseTime + state.humanisePitch + state.humaniseVolume) / 3);
     humaniseRange.value = avg;
     humaniseVal.textContent = avg + "%";
-    
+
     updateCellScales();
   });
 
@@ -1414,15 +1414,15 @@ function setupEventListeners() {
   humaniseVolumeRange.addEventListener("input", (e) => {
     state.humaniseVolume = parseInt(e.target.value);
     humaniseVolumeVal.textContent = state.humaniseVolume + "%";
-    
+
     // Update global average
     const avg = Math.round((state.humaniseTime + state.humanisePitch + state.humaniseVolume) / 3);
     humaniseRange.value = avg;
     humaniseVal.textContent = avg + "%";
-    
+
     updateCellScales();
   });
-  
+
   // Global Subdivision control
   if (globalSubdivisionSelect) {
     globalSubdivisionSelect.addEventListener("change", (e) => {
@@ -1434,27 +1434,27 @@ function setupEventListeners() {
       renderGrid();
     });
   }
-  
+
   // Preset loader
   if (presetSelect) {
     presetSelect.addEventListener("change", (e) => {
       loadPresetById(e.target.value);
     });
   }
-  
+
   // Grid actions
   if (btnClear) btnClear.addEventListener("click", clearGrid);
   if (btnRandom) btnRandom.addEventListener("click", randomizeGrid);
-  
+
   function getNextDjembeId() {
     let lastId = 0;
     for (let i = state.tracks.length - 1; i >= 0; i--) {
       const track = state.tracks[i];
       const nameLower = (track.name || "").toLowerCase();
-      const isCall = (track.id && track.id.startsWith("special")) || 
-                     nameLower.includes("call") || 
-                     nameLower.includes("break") || 
-                     nameLower.includes("intro");
+      const isCall = (track.id && track.id.startsWith("special")) ||
+        nameLower.includes("call") ||
+        nameLower.includes("break") ||
+        nameLower.includes("intro");
       if (track.type === "djembe" && !isCall && track.id !== "solo_djembe" && track.instrument) {
         const match = track.instrument.match(/djembe(\d+)/i);
         if (match) {
@@ -1607,7 +1607,7 @@ function setupEventListeners() {
   });
 
 
-  
+
   // Mixer Trigger
   btnMixer.addEventListener("click", () => {
     renderMixer();
@@ -1635,7 +1635,7 @@ function setupEventListeners() {
       volMixerModal.classList.remove("active");
     }
   });
-  
+
   // Custom Swing Trigger
   btnCustomSwing.addEventListener("click", () => {
     openCustomSwingModal();
@@ -1648,7 +1648,7 @@ function setupEventListeners() {
       customSwingModal.classList.remove("active");
     }
   });
-  
+
   // Custom Humanise Trigger
   btnCustomHumanise.addEventListener("click", () => {
     customHumaniseModal.classList.add("active");
@@ -1713,7 +1713,7 @@ function setupEventListeners() {
     });
   });
 
-  
+
   // Swing Tab switching
   document.querySelectorAll(".swing-tab-btn").forEach(btn => {
     btn.addEventListener("click", (e) => {
@@ -1723,12 +1723,12 @@ function setupEventListeners() {
       renderSwingSliders(activeSwingSubdiv);
     });
   });
-  
+
   // Swing Reset
   swingBtnReset.addEventListener("click", () => {
     resetCustomSwing(activeSwingSubdiv);
   });
-  
+
   // New Rhythm Modal Controls
   btnNewRhythm.addEventListener("click", () => {
     newRhythmModal.classList.add("active");
@@ -1762,10 +1762,10 @@ function setupEventListeners() {
       newSubdivision.value = "4";
     }
   });
-  
+
   // Save Slot action
   btnSave.addEventListener("click", saveCurrentPattern);
-  
+
   // Live pads mouse/touch triggers
   drumPads.forEach(pad => {
     pad.addEventListener("mousedown", (e) => {
@@ -1774,7 +1774,7 @@ function setupEventListeners() {
       triggerLiveHit(inst, hit, pad);
     });
   });
-  
+
   // Keyboard triggers
   window.addEventListener("keydown", (e) => {
     if (document.activeElement.tagName === "INPUT" || document.activeElement.tagName === "TEXTAREA") {
@@ -1933,11 +1933,11 @@ function setupEventListeners() {
     btnLoadNotation.addEventListener("click", () => {
       fileImportNotation.click();
     });
-    
+
     fileImportNotation.addEventListener("change", (e) => {
       const file = e.target.files[0];
       if (!file) return;
-      
+
       const reader = new FileReader();
       reader.onload = (evt) => {
         try {
@@ -1969,30 +1969,30 @@ function setupEventListeners() {
 function parseAndLoadNotation(text) {
   const lines = text.split("\n");
   const parsedTracks = [];
-  
+
   for (let line of lines) {
     line = line.trim();
     if (!line) continue;
     const parts = line.split("|");
     if (parts.length < 2) continue;
-    
+
     const rawName = parts[0].trim();
     const stepText = parts[1].trim();
     if (!rawName || !stepText) continue;
-    
+
     const steps = stepText.split(/\s+/).map(s => s === "." ? "" : s);
     if (steps.length === 0) continue;
-    
+
     parsedTracks.push({
       name: rawName,
       steps: steps
     });
   }
-  
+
   if (parsedTracks.length === 0) {
     throw new Error("No valid notation tracks found in file.");
   }
-  
+
   // Clean state focus
   state.focusedTrackId = null;
   state.tracks = [];
@@ -2001,13 +2001,13 @@ function parseAndLoadNotation(text) {
   state.customSangbanCount = 0;
   state.customDundunbaCount = 0;
   state.customShekereCount = 0;
-  
+
   parsedTracks.forEach((pt, idx) => {
     const nameLower = pt.name.toLowerCase();
     const isCall = nameLower.includes("call") || nameLower.includes("break");
     let type = "dunun";
     let instrument = "kenkeni";
-    
+
     if (nameLower.includes("djembe") || isCall) {
       type = "djembe";
       state.customDjembeCount++;
@@ -2047,14 +2047,14 @@ function parseAndLoadNotation(text) {
       instrument = "shekere";
       state.customShekereCount++;
     }
-    
+
     let subdivision = 4;
     if (state.timeSignature === "12/8" || state.timeSignature === "6/8") {
       subdivision = 6;
     } else if (pt.steps.length % 3 === 0 && pt.steps.length % 4 !== 0) {
       subdivision = 3;
     }
-    
+
     state.tracks.push({
       id: `${instrument}_imported_${idx}_${Date.now()}`,
       name: pt.name,
@@ -2068,7 +2068,7 @@ function parseAndLoadNotation(text) {
       soloed: false
     });
   });
-  
+
   renderGrid();
 }
 
@@ -2079,7 +2079,7 @@ let lastLiveHand = "R";
 function triggerLiveHit(inst, hit, padElement) {
   // Toggle hand for each live hit
   lastLiveHand = (lastLiveHand === "L") ? "R" : "L";
-  
+
   // Sound
   if (inst === "djembe") {
     synth.playDjembe(hit, synth.ctx.currentTime, 0.9, "djembe1", 0, lastLiveHand);
@@ -2090,7 +2090,7 @@ function triggerLiveHit(inst, hit, padElement) {
   } else {
     synth.playDunun(inst, hit, synth.ctx.currentTime, 0.9, 0, lastLiveHand);
   }
-  
+
   // Visual Flash
   if (padElement) {
     padElement.classList.add("pad-active");
@@ -2116,7 +2116,7 @@ function loadRhythm(preset) {
   state.focusedTrackId = null;
   state.currentRhythmName = preset.name;
   updateRhythmNameDisplay();
-  
+
   // Retrieve description from preset or RHYTHM_LIBRARY
   let description = preset.description || "";
   if (!description && typeof RHYTHM_LIBRARY !== "undefined" && RHYTHM_LIBRARY) {
@@ -2124,13 +2124,13 @@ function loadRhythm(preset) {
     if (libItem) description = libItem.description || "";
   }
   state.currentRhythmDescription = description;
-  
+
   state.currentPreset = preset;
   state.timeSignature = preset.timeSignature;
   state.beats = (preset.timeSignature === "12/8" || preset.timeSignature === "6/8") ? 2 : (preset.beats || 4);
   state.bpm = preset.tempo || 110;
   state.swing = preset.swing || 0;
-  
+
   // Initialize custom swing offsets for all subdivisions
   state.customSwingOffsets = {
     2: [0, 0],
@@ -2155,7 +2155,7 @@ function loadRhythm(preset) {
   } else {
     [2, 3, 4, 6].forEach(s => applyGlobalSwingToOffsets(s, state.swing));
   }
-  
+
   // Sync UI controls
   state.humaniseTime = 40;
   state.humanisePitch = 20;
@@ -2173,7 +2173,7 @@ function loadRhythm(preset) {
   humanisePitchVal.textContent = "20%";
   humaniseVolumeRange.value = 40;
   humaniseVolumeVal.textContent = "40%";
-  
+
   // Map tracks
   state.tracks = [];
   state.customDjembeCount = 0;
@@ -2181,16 +2181,16 @@ function loadRhythm(preset) {
   state.customSangbanCount = 0;
   state.customDundunbaCount = 0;
   state.customShekereCount = 0;
-  
+
   // Clone variations to avoid mutating the preset object directly
   state.currentVariations = preset.variations ? JSON.parse(JSON.stringify(preset.variations)) : {};
-  
+
   // Separate break/intro tracks (special_1+) from main tracks
   state.currentBreaks = [];
 
   // Group and convert alternative tracks dynamically
   const tracksToProcess = { ...preset.tracks };
-  
+
   // Extract special_0 (and other call/intro tracks) and store in state.presetCallData
   state.presetCallData = null;
   Object.keys(tracksToProcess).forEach(key => {
@@ -2243,26 +2243,26 @@ function loadRhythm(preset) {
     }
   });
   const varsMap = {};
-  
+
   Object.keys(tracksToProcess).forEach(key => {
     const match = key.match(/^(kenkeni|sangban|dundunba)_(\d+)(_bell)?$/);
     if (match) {
       const inst = match[1];
       const num = match[2];
       const isBell = !!match[3];
-      
+
       const mapKey = `${inst}_${num}`;
       if (!varsMap[mapKey]) {
         varsMap[mapKey] = { inst, num, drumKey: null, bellKey: null };
       }
-      
+
       if (isBell) {
         varsMap[mapKey].bellKey = key;
       } else {
         varsMap[mapKey].drumKey = key;
       }
     }
-    
+
     // Group Djembe alternative tracks (e.g., djembe1_1, djembe1_2 -> djembe1 variations)
     const matchDjembe = key.match(/^(djembe\d+)_(\d+)$/);
     if (matchDjembe) {
@@ -2279,13 +2279,13 @@ function loadRhythm(preset) {
   Object.keys(varsMap).forEach(mapKey => {
     const { inst, num, drumKey, bellKey } = varsMap[mapKey];
     state.currentVariations[inst] = state.currentVariations[inst] || [];
-    
+
     const drumTrack = drumKey ? tracksToProcess[drumKey] : null;
     const bellTrack = bellKey ? tracksToProcess[bellKey] : null;
-    
+
     let steps = drumTrack ? [...drumTrack.steps] : [];
     let subdivision = drumTrack ? drumTrack.subdivision : (bellTrack ? bellTrack.subdivision : 6);
-    
+
     // Double steps if 12/8 time signature and subdivision is 3
     if ((preset.timeSignature === "12/8" || preset.timeSignature === "6/8") && subdivision === 3) {
       const doubledSteps = [];
@@ -2302,7 +2302,7 @@ function loadRhythm(preset) {
       subdivision: subdivision,
       steps: steps
     };
-    
+
     if (bellTrack) {
       let bellSteps = [...bellTrack.steps];
       let bellSubdiv = bellTrack.subdivision;
@@ -2316,7 +2316,7 @@ function loadRhythm(preset) {
       }
       variationObj.bellSteps = bellSteps;
     }
-    
+
     // Clean step characters inside the loaded variations
     if (variationObj.steps) {
       variationObj.steps = variationObj.steps.map(step => step === 'X' ? 'C' : step);
@@ -2324,9 +2324,9 @@ function loadRhythm(preset) {
     if (variationObj.bellSteps) {
       variationObj.bellSteps = variationObj.bellSteps.map(step => step === 'O' ? 'X' : step);
     }
-    
+
     state.currentVariations[inst].push(variationObj);
-    
+
     // Delete from tracks to process so they aren't loaded as separate rows
     if (drumKey) delete tracksToProcess[drumKey];
     if (bellKey) delete tracksToProcess[bellKey];
@@ -2339,16 +2339,16 @@ function loadRhythm(preset) {
     state.globalSubdivision = 4;
   }
   if (globalSubdivisionSelect) globalSubdivisionSelect.value = state.globalSubdivision;
-  
+
   Object.keys(tracksToProcess).forEach(trackKey => {
     const presetTrack = tracksToProcess[trackKey];
-    const isCall = trackKey.startsWith("special") || 
-                   presetTrack.name.toLowerCase().includes("call") || 
-                   presetTrack.name.toLowerCase().includes("break") ||
-                   presetTrack.name.toLowerCase().includes("intro");
+    const isCall = trackKey.startsWith("special") ||
+      presetTrack.name.toLowerCase().includes("call") ||
+      presetTrack.name.toLowerCase().includes("break") ||
+      presetTrack.name.toLowerCase().includes("intro");
     let trackName = presetTrack.name.trim();
     const lowerName = trackName.toLowerCase();
-    
+
     if (isCall) {
       if (lowerName.includes("call")) {
         const idx = lowerName.indexOf("call");
@@ -2381,7 +2381,7 @@ function loadRhythm(preset) {
       // Strip anything after colons/semicolons
       if (trackName.includes(":")) trackName = trackName.split(":")[0].trim();
       if (trackName.includes(";")) trackName = trackName.split(";")[0].trim();
-      
+
       const lowerClean = trackName.toLowerCase();
       if (lowerClean.includes("kenkeni")) {
         trackName = lowerClean.includes("bell") ? "Kenkeni Bell" : "Kenkeni";
@@ -2404,7 +2404,7 @@ function loadRhythm(preset) {
     } else if (trackKey.endsWith("bell")) {
       type = "bell";
     }
-    
+
     // Map instrumentation key
     let instrument = "djembe1";
     if (isCall) {
@@ -2420,10 +2420,10 @@ function loadRhythm(preset) {
       if (trackKey.includes("sangban_bell")) instrument = "sangban_bell";
       if (trackKey.includes("dundunba_bell")) instrument = "dundunba_bell";
     }
-    
+
     let steps = [...presetTrack.steps];
     let subdivision = presetTrack.subdivision;
-    
+
     if ((preset.timeSignature === "12/8" || preset.timeSignature === "6/8") && subdivision === 3) {
       const doubledSteps = [];
       steps.forEach(step => {
@@ -2433,7 +2433,7 @@ function loadRhythm(preset) {
       steps = doubledSteps;
       subdivision = 6;
     }
-    
+
     // Clean step characters for base tracks on load
     const isBell = trackKey.endsWith("bell");
     const isDrum = (instrument === "kenkeni" || instrument === "sangban" || instrument === "dundunba");
@@ -2442,7 +2442,7 @@ function loadRhythm(preset) {
     } else if (isBell) {
       steps = steps.map(step => step === 'O' ? 'X' : step);
     }
-    
+
     // Call and Break tracks should only ever be 1 row
     if (isCall) {
       const stepsPerLine = state.beats * subdivision;
@@ -2450,7 +2450,7 @@ function loadRhythm(preset) {
         steps = steps.slice(0, stepsPerLine);
       }
     }
-    
+
     state.tracks.push({
       id: trackKey,
       name: trackName,
@@ -2469,7 +2469,7 @@ function loadRhythm(preset) {
       soloed: false
     });
   });
-  
+
   // Add default Shekere track with one note per bar (step 0) - limited to 1 row
   const shekereSubdiv = state.globalSubdivision;
   const stepsPerLine = state.beats * shekereSubdiv;
@@ -2496,13 +2496,13 @@ function loadRhythm(preset) {
     muted: false,
     soloed: false
   });
-  
+
   // Handle Solos row and dedicated Solo Djembe track
   if (preset.solos && preset.solos.length > 0) {
     if (solosControlRow && solosButtonsContainer) {
       solosControlRow.style.display = "flex";
       solosButtonsContainer.innerHTML = "";
-      
+
       // Populate solo buttons (no solo track is loaded on first load)
       preset.solos.forEach((solo, idx) => {
         const btn = document.createElement("button");
@@ -2521,11 +2521,11 @@ function loadRhythm(preset) {
         btn.style.padding = "0";
         btn.style.flex = "0 0 28px";
         btn.style.cursor = "pointer";
-        
+
         btn.style.background = "rgba(168, 85, 247, 0.15)";
         btn.style.border = "1px solid rgba(168, 85, 247, 0.35)";
         btn.style.color = "#a855f7";
-        
+
         btn.addEventListener("click", () => {
           const wasActive = btn.classList.contains("btn-primary") || btn.classList.contains("special-active");
           const action = () => {
@@ -2534,7 +2534,7 @@ function loadRhythm(preset) {
               btn.classList.add("btn-primary", "special-active");
               btn.style.background = "";
               btn.style.borderColor = "";
-              
+
               // Check if solo track exists, if not create and add it
               let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
               if (!soloTrack) {
@@ -2573,7 +2573,7 @@ function loadRhythm(preset) {
             }
             renderGrid();
           };
-          
+
           if (state.isPlaying) {
             queueSpecialAction(action, btn);
           } else {
@@ -2583,7 +2583,7 @@ function loadRhythm(preset) {
             }
           }
         });
-        
+
         btn.addEventListener("dblclick", () => {
           const updateSolo = () => {
             const soloTrack = state.tracks.find(t => t.id === "solo_djembe");
@@ -2604,7 +2604,7 @@ function loadRhythm(preset) {
             updateSolo();
           }
         });
-        
+
         solosButtonsContainer.appendChild(btn);
       });
     }
@@ -2615,13 +2615,13 @@ function loadRhythm(preset) {
     // Remove solo_djembe if it exists
     state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
   }
-  
+
   // Populate Breaks & Intros buttons
   if (state.currentBreaks && state.currentBreaks.length > 0) {
     if (breaksControlRow && breaksButtonsContainer) {
       breaksControlRow.style.display = "flex";
       breaksButtonsContainer.innerHTML = "";
-      
+
       state.currentBreaks.forEach((brk, idx) => {
         const btn = document.createElement("button");
         btn.className = "btn btn-break";
@@ -2631,7 +2631,7 @@ function loadRhythm(preset) {
         displayName = displayName.replace(/\s*\([^)]*\)/g, "").trim();
         // Strip text after colon
         if (displayName.includes(":")) displayName = displayName.split(":")[0].trim();
-        
+
         btn.textContent = displayName;
         btn.title = brk.name;
         btn.style.minWidth = "36px";
@@ -2648,7 +2648,7 @@ function loadRhythm(preset) {
         btn.style.color = "#f59e0b";
         btn.style.cursor = "pointer";
         btn.style.transition = "all 0.15s ease";
-        
+
         btn.addEventListener("mouseenter", () => {
           btn.style.background = "rgba(245, 158, 11, 0.3)";
           btn.style.borderColor = "rgba(245, 158, 11, 0.6)";
@@ -2659,11 +2659,11 @@ function loadRhythm(preset) {
             btn.style.borderColor = "rgba(245, 158, 11, 0.35)";
           }
         });
-        
+
         btn.addEventListener("click", () => {
           playBreak(brk, btn);
         });
-        
+
         breaksButtonsContainer.appendChild(btn);
       });
     }
@@ -2672,7 +2672,7 @@ function loadRhythm(preset) {
       breaksControlRow.style.display = "none";
     }
   }
-  
+
   renderGrid();
   updateSpecialButtonsState(preset);
 }
@@ -2684,10 +2684,10 @@ function updateTrackSubdivision(track, newSubdiv) {
       [track.subdivision]: [...track.steps]
     };
   }
-  
+
   // Save current steps before changing subdivision
   track.subdivisionSteps[track.subdivision] = [...track.steps];
-  
+
   if (track.subdivisionSteps[newSubdiv]) {
     // Restore previously cached steps for this subdivision
     track.steps = [...track.subdivisionSteps[newSubdiv]];
@@ -2704,7 +2704,7 @@ function updateTrackSubdivision(track, newSubdiv) {
   }
   const newSize = numLines * state.beats * newSubdiv;
   const newSteps = Array(newSize).fill("");
-  
+
   // Distribute steps to nearest locations
   for (let i = 0; i < oldSteps.length; i++) {
     if (oldSteps[i] !== "") {
@@ -2715,7 +2715,7 @@ function updateTrackSubdivision(track, newSubdiv) {
       }
     }
   }
-  
+
   // For shekere, let's make sure there is one note per section (4 per line)
   if (track.type === "shekere") {
     const stepsPerLine = state.beats * newSubdiv;
@@ -2729,7 +2729,7 @@ function updateTrackSubdivision(track, newSubdiv) {
       }
     }
   }
-  
+
   track.subdivision = newSubdiv;
   track.steps = newSteps;
   track.subdivisionSteps[newSubdiv] = [...newSteps];
@@ -2752,11 +2752,11 @@ function togglePlay() {
     btnPlay.innerHTML = `<svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 21 12 5 21 5 3"/></svg>`;
     btnPlay.classList.remove("btn-danger-round");
 
-    
+
     // Hide Playhead
     const playhead = document.querySelector(".playhead-line");
     if (playhead) playhead.classList.remove("active");
-    
+
     state.currentEpoch = 0;
     updateStepPositions();
     updateCellScales();
@@ -2769,37 +2769,37 @@ function togglePlay() {
 
     if (!state.callIntroActive) {
       const hasCall = state.tracks.some(t => {
-        const isCall = t.id.startsWith("special") || 
-                       t.name.toLowerCase().includes("call") || 
-                       t.name.toLowerCase().includes("break") || 
-                       t.name.toLowerCase().includes("intro");
+        const isCall = t.id.startsWith("special") ||
+          t.name.toLowerCase().includes("call") ||
+          t.name.toLowerCase().includes("break") ||
+          t.name.toLowerCase().includes("intro");
         return isCall && t.steps.some(step => step !== "");
       });
       state.callIntroActive = hasCall;
     }
-    
+
     // Unmute call tracks at the start so they play during the intro
     if (state.callIntroActive) {
       state.tracks.forEach(t => {
         const isCall = t.id === "solo_djembe" ||
-                       t.id.startsWith("special") || 
-                       t.name.toLowerCase().includes("call") || 
-                       t.name.toLowerCase().includes("break") || 
-                       t.name.toLowerCase().includes("intro");
+          t.id.startsWith("special") ||
+          t.name.toLowerCase().includes("call") ||
+          t.name.toLowerCase().includes("break") ||
+          t.name.toLowerCase().includes("intro");
         if (isCall) t.muted = false;
       });
     }
 
-    
+
     // Setup lookahead parameters
     nextTickToSchedule = 0;
     playbackStartTime = synth.ctx.currentTime + 0.05;
     nextTickTime = playbackStartTime;
-    
+
     // Activate playhead line visual
     const playhead = document.querySelector(".playhead-line");
     if (playhead) playhead.classList.add("active");
-    
+
     timerId = setInterval(scheduler, scheduleInterval);
   }
 }
@@ -2827,7 +2827,7 @@ function triggerCall() {
       state.tracks.push(soloTrack);
       sortTracks();
     }
-    
+
     // Set the Call steps and subdivision
     soloTrack.subdivision = state.presetCallData.subdivision;
     soloTrack.steps = [...state.presetCallData.steps];
@@ -2836,20 +2836,20 @@ function triggerCall() {
     soloTrack.subdivisionSteps = {
       [soloTrack.subdivision]: [...soloTrack.steps]
     };
-    
+
     // Activate call intro
     state.callIntroActive = true;
     if (state.isPlaying) {
       nextTickToSchedule = 0;
     }
-    
+
     // Unmute call tracks at the start so they play during the intro
     state.tracks.forEach(t => {
       const isCall = t.id === "solo_djembe" ||
-                     t.id.startsWith("special") || 
-                     t.name.toLowerCase().includes("call") || 
-                     t.name.toLowerCase().includes("break") || 
-                     t.name.toLowerCase().includes("intro");
+        t.id.startsWith("special") ||
+        t.name.toLowerCase().includes("call") ||
+        t.name.toLowerCase().includes("break") ||
+        t.name.toLowerCase().includes("intro");
       if (isCall) t.muted = false;
     });
 
@@ -2873,12 +2873,12 @@ function triggerEchauffement() {
   // 1. Search in currentPreset solos
   let echSolo = null;
   if (state.currentPreset && state.currentPreset.solos) {
-    echSolo = state.currentPreset.solos.find(s => 
-      s.name.toLowerCase().includes("echauffement") || 
+    echSolo = state.currentPreset.solos.find(s =>
+      s.name.toLowerCase().includes("echauffement") ||
       s.name.toLowerCase().includes("échauffement")
     );
   }
-  
+
   // 2. Fallback to generic rapid slap roll if none defined
   if (!echSolo) {
     const isTernary = state.timeSignature === "12/8" || state.timeSignature === "6/8";
@@ -2894,10 +2894,10 @@ function triggerEchauffement() {
 
   // 3. Toggle logic on solo_djembe track
   let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
-  const isCurrentlyPlayingThis = soloTrack && 
-                                 soloTrack.name === "Échauffement" && 
-                                 JSON.stringify(soloTrack.steps) === JSON.stringify(echSolo.steps);
-  
+  const isCurrentlyPlayingThis = soloTrack &&
+    soloTrack.name === "Échauffement" &&
+    JSON.stringify(soloTrack.steps) === JSON.stringify(echSolo.steps);
+
   // Clear primary/active classes on other solo buttons if we have a solos row
   const solosContainer = document.getElementById("solos-buttons-container");
   if (solosContainer) {
@@ -2923,7 +2923,7 @@ function triggerEchauffement() {
   } else {
     // Toggle on: highlight button
     if (echBtn) echBtn.classList.add("btn-primary");
-    
+
     const action = () => {
       let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
       if (!soloTrack) {
@@ -2942,7 +2942,7 @@ function triggerEchauffement() {
       } else {
         soloTrack.name = "Échauffement";
       }
-      
+
       soloTrack.subdivision = echSolo.subdivision;
       soloTrack.steps = [...echSolo.steps];
       soloTrack.originalSteps = [...echSolo.steps];
@@ -2952,7 +2952,7 @@ function triggerEchauffement() {
       };
       renderGrid();
     };
-    
+
     if (!state.isPlaying) {
       action();
       togglePlay();
@@ -2984,16 +2984,16 @@ function getSecondsPerBeat() {
 function advanceTick() {
   const secondsPerBeat = getSecondsPerBeat();
   const secondsPerTick = secondsPerBeat / 12;
-  
+
   nextTickTime += secondsPerTick;
   nextTickToSchedule++;
-  
+
   if (state.callIntroActive) {
-    const callTrack = state.tracks.find(t => 
+    const callTrack = state.tracks.find(t =>
       t.id === "solo_djembe" ||
-      t.id.startsWith("special") || 
-      t.name.toLowerCase().includes("call") || 
-      t.name.toLowerCase().includes("break") || 
+      t.id.startsWith("special") ||
+      t.name.toLowerCase().includes("call") ||
+      t.name.toLowerCase().includes("break") ||
       t.name.toLowerCase().includes("intro")
     );
     if (callTrack) {
@@ -3001,17 +3001,17 @@ function advanceTick() {
       if (nextTickToSchedule >= callLengthTicks) {
         state.callIntroActive = false;
         nextTickToSchedule = 0;
-        
+
         if (callTrack.id === "solo_djembe") {
           state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
           renderGrid();
         } else {
           // Auto-mute call tracks after intro completes (user can unmute)
           state.tracks.forEach(t => {
-            const isCt = t.id.startsWith("special") || 
-                         t.name.toLowerCase().includes("call") || 
-                         t.name.toLowerCase().includes("break") || 
-                         t.name.toLowerCase().includes("intro");
+            const isCt = t.id.startsWith("special") ||
+              t.name.toLowerCase().includes("call") ||
+              t.name.toLowerCase().includes("break") ||
+              t.name.toLowerCase().includes("intro");
             if (isCt) {
               t.muted = true;
               const row = document.querySelector(`.track-row[data-track-id="${t.id}"]`);
@@ -3040,14 +3040,14 @@ function getCellRandomSeed(trackId, stepIdx, epoch = 0) {
     hash = (hash << 5) - hash + str.charCodeAt(i);
     hash |= 0; // Convert to 32bit integer
   }
-  
+
   // MurmurHash3 fmix32 finalizer to scatter bits completely
   hash ^= hash >>> 16;
   hash = Math.imul(hash, 0x85ebca6b);
   hash ^= hash >>> 13;
   hash = Math.imul(hash, 0xc2b2ae35);
   hash ^= hash >>> 16;
-  
+
   return ((Math.abs(hash) % 1000) / 1000) - 0.5;
 }
 
@@ -3068,19 +3068,19 @@ function calculatePitchBrightness(track, stepIdx, epoch) {
 // Check swing timings
 function getSwungStepTime(beatIndex, stepInBeat, subdivision, beatDuration, swingPercent, isVisual = false) {
   let relativeBeatOffset = stepInBeat / subdivision;
-  
+
   // Intelligent Dynamic Swing Scaling (attenuate swing at high BPMs)
   // At 120 BPM, attenuation is 1.0. At 200 BPM, it scales down to ~0.6
   const attenuation = Math.min(1.0, 120 / Math.max(120, state.bpm));
   const visualScale = isVisual ? 0.5 : 1.0;
   const activeSwingPercent = swingPercent * attenuation * visualScale;
-  
+
   // Apply custom step offsets (which now represent both global swing and custom adjustments)
   if (state.customSwingOffsets && state.customSwingOffsets[subdivision]) {
     const offsets = state.customSwingOffsets[subdivision];
     const baseStep = Math.floor(stepInBeat);
     const fraction = stepInBeat - baseStep;
-    
+
     let offsetPercent = 0;
     if (offsets[baseStep] !== undefined) {
       offsetPercent = offsets[baseStep];
@@ -3090,41 +3090,41 @@ function getSwungStepTime(beatIndex, stepInBeat, subdivision, beatDuration, swin
         const nextOffset = offsets[nextStep] !== undefined ? offsets[nextStep] : 0;
         offsetPercent = offsetPercent * (1 - fraction) + nextOffset * fraction;
       }
-      
+
       offsetPercent *= attenuation * visualScale;
-      
+
       const stepWidth = 1 / subdivision;
       relativeBeatOffset += (offsetPercent / 100) * stepWidth;
     }
   }
-  
+
   let timeInBeats = beatIndex + relativeBeatOffset;
-  
+
   // Apply swing offsets from groove_modifiers
   if (state.currentPreset && state.currentPreset.groove_modifiers && state.currentPreset.groove_modifiers.swing_offsets) {
     const offsets = state.currentPreset.groove_modifiers.swing_offsets;
     if (offsets.length > 0) {
       const baseStep = Math.floor(stepInBeat);
       const fraction = stepInBeat - baseStep;
-      
+
       const offsetIndex = baseStep % offsets.length;
       let offsetVal = offsets[offsetIndex] || 0;
-      
+
       if (fraction > 0) {
         const nextOffsetIndex = (baseStep + 1) % offsets.length;
         const nextOffsetVal = offsets[nextOffsetIndex] || 0;
         offsetVal = offsetVal * (1 - fraction) + nextOffsetVal * fraction;
       }
-      
+
       offsetVal *= attenuation * visualScale;
-      
+
       // Convert offsetVal (ms) to beats
       const secondsPerBeat = getSecondsPerBeat();
       const offsetInBeats = (offsetVal / 1000) / secondsPerBeat;
       timeInBeats += offsetInBeats;
     }
   }
-  
+
   return timeInBeats * beatDuration;
 }
 
@@ -3133,10 +3133,10 @@ function isTrackAudible(track) {
   // During call intro phase, only call tracks play
   if (state.callIntroActive) {
     const isCall = track.id === "solo_djembe" ||
-                   track.id.startsWith("special") || 
-                   track.name.toLowerCase().includes("call") || 
-                   track.name.toLowerCase().includes("break") || 
-                   track.name.toLowerCase().includes("intro");
+      track.id.startsWith("special") ||
+      track.name.toLowerCase().includes("call") ||
+      track.name.toLowerCase().includes("break") ||
+      track.name.toLowerCase().includes("intro");
     if (!isCall) return false;
   }
 
@@ -3158,7 +3158,7 @@ function updateMuteSoloVisuals() {
       sequencerGrid.classList.remove("has-solo");
     }
   }
-  
+
   state.tracks.forEach(track => {
     const row = document.querySelector(`.track-row[data-track-id="${track.id}"]`);
     if (row) {
@@ -3167,7 +3167,7 @@ function updateMuteSoloVisuals() {
       } else {
         row.classList.remove("muted-track");
       }
-      
+
       if (track.soloed) {
         row.classList.add("soloed-track");
       } else {
@@ -3192,33 +3192,33 @@ function scheduleTick(tickIndex, time) {
   const secondsPerBeat = getSecondsPerBeat();
   const tickInBeat = tickIndex % 12;
   const beatIndex = Math.floor(tickIndex / 12);
-  
+
   const elapsedBeats = Math.floor(tickIndex / 12);
   const maxLines = Math.max(1, ...state.tracks.map(t => Math.ceil(t.steps.length / (state.beats * t.subdivision))));
   const totalBeatsInLoop = maxLines * state.beats;
   const seedEpoch = Math.floor(elapsedBeats / totalBeatsInLoop); // humanise seed changes after every one pass of playhead
   const currentBeatInLoop = beatIndex % totalBeatsInLoop;
-  
+
   state.tracks.forEach(track => {
     const ticksPerStep = 12 / track.subdivision;
-    
+
     // Check if this track contains a step at this tick
     if (tickInBeat % ticksPerStep === 0) {
       const stepInBeat = tickInBeat / ticksPerStep;
       const totalSteps = track.steps.length;
       const stepIndex = (currentBeatInLoop * track.subdivision + stepInBeat) % totalSteps;
       const val = track.steps[stepIndex];
-      
+
       if (val && val !== "") {
         // Calculate exact swung timing relative to beat start
         const beatStartTime = time - tickInBeat * (secondsPerBeat / 12);
         const swungOffset = getSwungStepTime(0, stepInBeat, track.subdivision, secondsPerBeat, state.swing);
         let hitTime = beatStartTime + swungOffset;
-        
+
         // Intelligent Dynamic Humanisation Scaling
         let attenuation = Math.min(1.0, 120 / Math.max(120, state.bpm));
         attenuation = Math.pow(attenuation, 2); // Tighten even more at high tempos
-        
+
         // Apply humanise micro-timing offsets (deterministic per note to match visual grid)
         if (state.humaniseTime > 0) {
           const maxOffset = 0.0175 * attenuation; // max 17.5ms offset (looser, musical feel at 100%)
@@ -3226,7 +3226,7 @@ function scheduleTick(tickIndex, time) {
           const randomOffset = seedOffset * (state.humaniseTime / 100) * maxOffset;
           hitTime += randomOffset;
         }
-        
+
         // Only trigger audio if audible
         let velocity = track.volume;
         if (state.humaniseVolume > 0) {
@@ -3234,7 +3234,7 @@ function scheduleTick(tickIndex, time) {
           const volOffset = seedOffset * (state.humaniseVolume / 100) * 0.65 * attenuation;
           velocity = Math.max(0.05, Math.min(1.2, velocity + volOffset));
         }
-        
+
         let pitch = track.pitch || 0;
         if (state.humanisePitch > 0) {
           const seedOffset = getCellRandomSeed(track.id, stepIndex, seedEpoch);
@@ -3242,10 +3242,10 @@ function scheduleTick(tickIndex, time) {
           if (track.type === "dunun") scaleMultiplier = 0.6 * attenuation;
           else if (track.type === "bell") scaleMultiplier = 0.25 * attenuation;
           else if (track.type === "shekere") scaleMultiplier = 0.4 * attenuation;
-          
+
           pitch += seedOffset * (state.humanisePitch / 100) * scaleMultiplier;
         }
-        
+
         if (isTrackAudible(track)) {
           const stepDuration = secondsPerBeat / track.subdivision;
           // Alternate Left and Right hand samples on successive steps
@@ -3259,7 +3259,7 @@ function scheduleTick(tickIndex, time) {
           };
           triggerSynthHit(track.type, track.instrument, val, hitTime, velocity, pitch, stepDuration, hand, timingContext);
         }
-        
+
         // Schedule visual flash on step grid cell
         const delayMs = (hitTime - synth.ctx.currentTime) * 1000;
         setTimeout(() => {
@@ -3279,7 +3279,7 @@ function triggerSynthHit(type, instrument, hitVal, playTime, trackVol, trackPitc
     triggerSynthHit(type, instrument, h2, playTime + flamGap, trackVol, trackPitch, stepDuration, hand === "L" ? "R" : "L", timingContext);
     return;
   }
-  
+
   if (hitVal.includes("-")) {
     const [h1, h2] = hitVal.split("-");
     let innerHitTime = playTime + stepDuration / 2;
@@ -3322,11 +3322,11 @@ function triggerStepVisualFlash(trackId, stepIndex, velocity = 1.0) {
   if (cell) {
     const track = state.tracks.find(t => t.id === trackId);
     const subdivFactor = (track && (state.beats * track.subdivision > 16)) ? 0.65 : 1.0;
-    
+
     // Scale and glow to match the actual played velocity (with subdivision size correction)
     const playedScale = (0.7 + velocity * 0.4) * subdivFactor;
     const pitchBrightness = track ? calculatePitchBrightness(track, stepIndex, state.currentEpoch || 0) : 1.0;
-    
+
     // Determine the base (idle) scale/brightness we will return to after flash
     let finalVol = velocity;
     if (track) {
@@ -3349,11 +3349,11 @@ function triggerStepVisualFlash(trackId, stepIndex, velocity = 1.0) {
 
     // Run hardware-accelerated compositor animation to flash the note
     cell.animate([
-      { 
+      {
         transform: `translateY(-50%) scale(${playedScale * 1.25})`,
         filter: `brightness(${pitchBrightness * 1.7})`
       },
-      { 
+      {
         transform: `translateY(-50%) scale(${baselineScale})`,
         filter: `brightness(${finalBrightness})`
       }
@@ -3370,11 +3370,11 @@ function animatePlayhead() {
     const secondsPerBeat = getSecondsPerBeat();
     const secondsPerTick = secondsPerBeat / 12;
     const prevTickTime = nextTickTime - secondsPerTick;
-    
+
     // Calculate fractional tick position based on the audio context clock
     const elapsedTicksSincePrev = (synth.ctx.currentTime - prevTickTime) / secondsPerTick;
     const currentTick = (nextTickToSchedule - 1) + elapsedTicksSincePrev;
-    
+
     // Check if epoch has shifted based on visual playhead currentTick (every loop pass)
     const currentElapsedBeats = Math.floor(currentTick / 12);
     const maxLines = Math.max(1, ...state.tracks.map(t => Math.ceil(t.steps.length / (state.beats * t.subdivision))));
@@ -3385,7 +3385,7 @@ function animatePlayhead() {
       updateStepPositions();
       updateCellScales();
     }
-    
+
     // Query all steps-containers on the page
     const containers = document.querySelectorAll(".steps-container");
     containers.forEach(container => {
@@ -3396,28 +3396,28 @@ function animatePlayhead() {
         const stepsPerLine = state.beats * track.subdivision;
         const totalSteps = track.steps.length;
         const trackNumLines = Math.ceil(totalSteps / stepsPerLine);
-        
+
         // The track loops at trackNumLines * state.beats
         const ticksInTrackLoop = trackNumLines * state.beats * 12;
         const trackCurrentTick = currentTick >= 0 ? (currentTick % ticksInTrackLoop) : 0;
-        
+
         // Find which line is active for this track
         const activeLineIdx = Math.floor((trackCurrentTick / 12) / state.beats);
-        
+
         const playheadLine = container.querySelector(".playhead-line");
         if (playheadLine) {
           let showPlayhead = (lineIdx === activeLineIdx);
-          
+
           // During call intro, only show playhead on call tracks
           if (state.callIntroActive) {
             const isCall = track.id === "solo_djembe" ||
-                           track.id.startsWith("special") || 
-                           track.name.toLowerCase().includes("call") || 
-                           track.name.toLowerCase().includes("break") || 
-                           track.name.toLowerCase().includes("intro");
+              track.id.startsWith("special") ||
+              track.name.toLowerCase().includes("call") ||
+              track.name.toLowerCase().includes("break") ||
+              track.name.toLowerCase().includes("intro");
             showPlayhead = isCall && (lineIdx === activeLineIdx);
           }
-          
+
           if (showPlayhead) {
             playheadLine.classList.add("active");
             // Progress within this line (0 to 1)
@@ -3441,9 +3441,9 @@ function animatePlayhead() {
       container.classList.remove("active-line");
     });
   }
-  
 
-  
+
+
   requestAnimationFrame(animatePlayhead);
 }
 
@@ -3460,7 +3460,7 @@ function updateStepPositions() {
         const beatIndex = Math.floor(stepInLine / track.subdivision);
         const stepInBeat = stepInLine % track.subdivision;
         const swungBeat = getSwungStepTime(beatIndex, stepInBeat, track.subdivision, 1.0, state.swing, true);
-        
+
         let humaniseOffset = 0;
         if (state.humaniseTime > 0 && val !== "") {
           const secondsPerBeat = getSecondsPerBeat();
@@ -3470,7 +3470,7 @@ function updateStepPositions() {
           // Convert timing offset from seconds to beats
           humaniseOffset = timingOffsetInSeconds / secondsPerBeat;
         }
-        
+
         const percent = ((swungBeat + humaniseOffset) / state.beats) * 100;
         cell.style.setProperty("--step-time-percent", `${percent}%`);
       }
@@ -3540,7 +3540,7 @@ function updateCellScales() {
           cell.style.setProperty("--current-scale", currentScale);
           cell.style.setProperty("--vel-scale", velocity);
           cell.style.transform = `translateY(-50%) scale(${currentScale})`;
-          
+
           const pitchBrightness = calculatePitchBrightness(track, stepIdx, epoch);
           cell.style.setProperty("--pitch-brightness", pitchBrightness);
         }
@@ -3555,10 +3555,10 @@ function updateCellScales() {
 function renderMixer() {
   const mixerBody = document.getElementById("mixer-body");
   mixerBody.innerHTML = "";
-  
+
   state.tracks.forEach(track => {
     if (track.pitch === undefined) track.pitch = 0;
-    
+
     const row = document.createElement("div");
     row.className = "synth-instrument-row";
     row.style.gridTemplateColumns = "160px 1fr 65px";
@@ -3567,16 +3567,16 @@ function renderMixer() {
     row.style.border = "1px solid var(--border-color)";
     row.style.borderRadius = "8px";
     row.style.padding = "0.5rem 0.75rem";
-    
+
     const label = document.createElement("span");
     label.className = "synth-inst-name";
     label.textContent = cleanTrackName(track.name);
-    
+
     const sliderContainer = document.createElement("div");
     sliderContainer.className = "synth-knob-container";
     sliderContainer.style.gridColumn = "2";
     sliderContainer.style.width = "100%";
-    
+
     const slider = document.createElement("input");
     slider.type = "range";
     slider.className = "synth-slider";
@@ -3586,7 +3586,7 @@ function renderMixer() {
     slider.step = "0.5";
     slider.value = track.pitch;
     slider.defaultValue = "0"; // Default tuning is 0 st
-    
+
     const pitchValDisplay = document.createElement("span");
     pitchValDisplay.style.gridColumn = "3";
     pitchValDisplay.style.textAlign = "right";
@@ -3594,20 +3594,20 @@ function renderMixer() {
     pitchValDisplay.style.fontWeight = "700";
     pitchValDisplay.style.fontSize = "0.85rem";
     pitchValDisplay.style.color = "var(--primary)";
-    
+
     const formatPitch = (p) => {
       const sign = p > 0 ? "+" : "";
       return `${sign}${p.toFixed(1)} st`;
     };
     pitchValDisplay.textContent = formatPitch(track.pitch);
-    
+
     slider.addEventListener("input", (e) => {
       const newPitch = parseFloat(e.target.value);
       track.pitch = newPitch;
       pitchValDisplay.textContent = formatPitch(newPitch);
       updateCellScales();
     });
-    
+
     sliderContainer.appendChild(slider);
     row.appendChild(label);
     row.appendChild(sliderContainer);
@@ -3620,7 +3620,7 @@ function renderMixer() {
 function renderVolumeMixer() {
   const volMixerBody = document.getElementById("vol-mixer-body");
   volMixerBody.innerHTML = "";
-  
+
   state.tracks.forEach(track => {
     const row = document.createElement("div");
     row.className = "synth-instrument-row";
@@ -3630,16 +3630,16 @@ function renderVolumeMixer() {
     row.style.border = "1px solid var(--border-color)";
     row.style.borderRadius = "8px";
     row.style.padding = "0.5rem 0.75rem";
-    
+
     const label = document.createElement("span");
     label.className = "synth-inst-name";
     label.textContent = cleanTrackName(track.name);
-    
+
     const sliderContainer = document.createElement("div");
     sliderContainer.className = "synth-knob-container";
     sliderContainer.style.gridColumn = "2";
     sliderContainer.style.width = "100%";
-    
+
     const slider = document.createElement("input");
     slider.type = "range";
     slider.className = "synth-slider";
@@ -3648,12 +3648,12 @@ function renderVolumeMixer() {
     slider.max = "1";
     slider.step = "0.01";
     slider.value = track.volume;
-    
+
     let defaultVol = 0.8;
     if (track.type === "bell") defaultVol = 0.7;
     else if (track.type === "shekere") defaultVol = 0.75;
     slider.defaultValue = defaultVol;
-    
+
     const volValDisplay = document.createElement("span");
     volValDisplay.style.gridColumn = "3";
     volValDisplay.style.textAlign = "right";
@@ -3662,14 +3662,14 @@ function renderVolumeMixer() {
     volValDisplay.style.fontSize = "0.85rem";
     volValDisplay.style.color = "var(--primary)";
     volValDisplay.textContent = `${Math.round(track.volume * 100)}%`;
-    
+
     slider.addEventListener("input", (e) => {
       const newVol = parseFloat(e.target.value);
       track.volume = newVol;
       volValDisplay.textContent = `${Math.round(newVol * 100)}%`;
       updateCellScales();
     });
-    
+
     sliderContainer.appendChild(slider);
     row.appendChild(label);
     row.appendChild(sliderContainer);
@@ -3685,7 +3685,7 @@ function openEffectsModal() {
     if (synth.settings[inst] && synth.settings[inst][param] !== undefined) {
       const val = synth.settings[inst][param];
       input.value = val;
-      
+
       if (input.tagName === "INPUT" && input.type === "range") {
         const percentVal = Math.round(val * 100);
         const display = document.getElementById(`effects-${param}-val-${inst}`);
@@ -3706,7 +3706,7 @@ let activeSwingSubdiv = 4;
 
 function openCustomSwingModal() {
   activeSwingSubdiv = getSubdivisionForTiming(state.timeSignature);
-  
+
   // Set tab classes
   document.querySelectorAll(".swing-tab-btn").forEach(btn => {
     const subdiv = parseInt(btn.getAttribute("data-subdiv"));
@@ -3716,14 +3716,14 @@ function openCustomSwingModal() {
       btn.classList.remove("active");
     }
   });
-  
+
   renderSwingSliders(activeSwingSubdiv);
   customSwingModal.classList.add("active");
 }
 
 function renderSwingSliders(subdiv) {
   swingSlidersContainer.innerHTML = "";
-  
+
   // Get/initialize offsets for this subdivision
   if (!state.customSwingOffsets) {
     state.customSwingOffsets = {
@@ -3736,17 +3736,17 @@ function renderSwingSliders(subdiv) {
   if (!state.customSwingOffsets[subdiv]) {
     state.customSwingOffsets[subdiv] = Array(subdiv).fill(0);
   }
-  
+
   const offsets = state.customSwingOffsets[subdiv];
-  
+
   for (let i = 0; i < subdiv; i++) {
     const row = document.createElement("div");
     row.className = "swing-slider-row";
-    
+
     const label = document.createElement("span");
     label.className = "swing-slider-label";
     label.textContent = `Step ${i + 1}`;
-    
+
     const slider = document.createElement("input");
     slider.type = "range";
     slider.className = "synth-slider";
@@ -3756,7 +3756,7 @@ function renderSwingSliders(subdiv) {
     slider.step = "1";
     slider.value = offsets[i];
     slider.defaultValue = "0"; // Default swing offset is 0%
-    
+
     const valDisplay = document.createElement("span");
     valDisplay.className = "swing-slider-value";
     const updateValText = (val) => {
@@ -3764,7 +3764,7 @@ function renderSwingSliders(subdiv) {
       return `${sign}${val}%`;
     };
     valDisplay.textContent = updateValText(offsets[i]);
-    
+
     slider.addEventListener("input", (e) => {
       const val = parseInt(e.target.value);
       offsets[i] = val;
@@ -3773,19 +3773,19 @@ function renderSwingSliders(subdiv) {
       updateSwingTimeline(subdiv);
       updateStepPositions();
     });
-    
+
     row.appendChild(label);
     row.appendChild(slider);
     row.appendChild(valDisplay);
     swingSlidersContainer.appendChild(row);
   }
-  
+
   updateSwingTimeline(subdiv);
 }
 
 function updateSwingTimeline(subdiv) {
   swingTimelineDots.innerHTML = "";
-  
+
   // Render visual grid line tick marks for subdivisions
   // Scaled from -0.5 to subdiv + 0.5 to keep all offset dots within bounds
   for (let i = 0; i <= subdiv; i++) {
@@ -3795,13 +3795,13 @@ function updateSwingTimeline(subdiv) {
     tick.style.left = `${leftPercent}%`;
     swingTimelineDots.appendChild(tick);
   }
-  
+
   // Render step dots
   const offsets = state.customSwingOffsets[subdiv] || Array(subdiv).fill(0);
   for (let i = 0; i < subdiv; i++) {
     const dot = document.createElement("div");
     dot.className = "swing-timeline-dot";
-    
+
     // Position = default step position + offset.
     // Scaled from -0.5 to subdiv + 0.5 so that negative swing for Step 1 stays within bounds.
     const offsetFactor = offsets[i] / 100;
@@ -3910,15 +3910,15 @@ function randomizeGrid() {
 function renderGrid() {
   sortTracks();
   sequencerGrid.innerHTML = "";
-  
 
-  
+
+
   // Render tracks
   state.tracks.forEach(track => {
     const row = document.createElement("div");
     row.className = "track-row";
     row.setAttribute("data-track-id", track.id);
-    
+
     // Apply focus/dimmed styles if a track is focused
     if (state.focusedTrackId !== null) {
       if (track.id === state.focusedTrackId) {
@@ -3927,13 +3927,13 @@ function renderGrid() {
         row.classList.add("dimmed-track");
       }
     }
-    
+
     // Set custom properties for glassy instrument-specific border/glow colors (matches user mockup)
     const isCall = track.id.startsWith("special") || track.name.toLowerCase().includes("call") || track.name.toLowerCase().includes("break");
     let hslString = getInstrumentHSL(track.instrument, track.type, isCall);
-    
+
     row.style.setProperty("--part-color-hsl", hslString);
-    
+
     // Perceptual brightness multiplier to balance opacity across colors (red/purple/blue get a boost, green gets reduced)
     let opacityMultiplier = 1.0;
     if (track.type === "djembe") {
@@ -3945,23 +3945,29 @@ function renderGrid() {
         opacityMultiplier = 0.8; // Green reduction
       }
     }
-    
+
+    // Check if the color is red or very close to red (hue in [340, 360] or [0, 15])
+    const hueVal = parseInt(hslString.split(",")[0]);
+    if (hueVal >= 340 || hueVal <= 15) {
+      opacityMultiplier += 0.25; // Boost overlay opacity for red tracks
+    }
+
     row.style.setProperty("--row-border-color", `hsla(${hslString}, ${0.08 * opacityMultiplier})`);
     row.style.setProperty("--row-border-color-active", `hsla(${hslString}, ${0.42 * opacityMultiplier})`);
     row.style.setProperty("--row-shadow-glow", `hsla(${hslString}, ${0.17 * opacityMultiplier})`);
-    
+
     // Left: Track Controls
     const meta = document.createElement("div");
     meta.className = "track-meta";
-    
+
     const info = document.createElement("div");
     info.className = "track-info";
     info.style.display = "flex";
     info.style.alignItems = "center";
     info.style.gap = "0.5rem";
-    
+
     let instIconSVG = getInstrumentSVG(isCall ? "call" : track.instrument, track.type);
-    
+
     const iconSpan = document.createElement("span");
     iconSpan.className = "track-icon-wrapper";
     iconSpan.style.display = "inline-flex";
@@ -3971,10 +3977,10 @@ function renderGrid() {
     iconSpan.innerHTML = instIconSVG;
     iconSpan.style.cursor = "pointer";
     iconSpan.title = "Click to focus this track / toggle forefront mode";
-    
+
     iconSpan.addEventListener("click", () => {
       const isAlreadyFocused = state.focusedTrackId === track.id;
-      
+
       // Restore baseline volumes first if any focus exists
       if (state.focusedTrackId !== null) {
         state.tracks.forEach(t => {
@@ -3984,7 +3990,7 @@ function renderGrid() {
           }
         });
       }
-      
+
       if (isAlreadyFocused) {
         state.focusedTrackId = null;
       } else {
@@ -4002,29 +4008,29 @@ function renderGrid() {
           }
         });
       }
-      
+
       renderGrid();
     });
-    
+
     const nameSpan = document.createElement("span");
     nameSpan.className = "track-name";
     nameSpan.textContent = cleanTrackName(track.name);
-    
+
     info.appendChild(iconSpan);
     info.appendChild(nameSpan);
-    
+
     // Wrapper for instrument name; variations positioned absolutely below
     const infoColumn = document.createElement("div");
     infoColumn.style.flex = "1";
     infoColumn.style.overflow = "visible";
     infoColumn.style.position = "relative";
     infoColumn.appendChild(info);
-    
+
     meta.appendChild(infoColumn);
-    
+
     const controls = document.createElement("div");
     controls.className = "track-controls";
-    
+
     // Subdivision selection
     const subSelect = document.createElement("select");
     subSelect.className = "track-subdiv-select";
@@ -4041,11 +4047,11 @@ function renderGrid() {
       renderGrid();
     });
     controls.appendChild(subSelect);
-    
+
     // Mute/Solo button groupings
     const btns = document.createElement("div");
     btns.className = "track-btns";
-    
+
     const muteBtn = document.createElement("button");
     muteBtn.className = `track-btn mute ${track.muted ? 'active' : ''}`;
     muteBtn.textContent = "M";
@@ -4058,7 +4064,7 @@ function renderGrid() {
       }
       updateMuteSoloVisuals();
     });
-    
+
     const soloBtn = document.createElement("button");
     soloBtn.className = `track-btn solo ${track.soloed ? 'active' : ''}`;
     soloBtn.textContent = "S";
@@ -4071,12 +4077,12 @@ function renderGrid() {
       }
       updateMuteSoloVisuals();
     });
-    
+
     btns.appendChild(muteBtn);
     btns.appendChild(soloBtn);
     controls.appendChild(btns);
     meta.appendChild(controls);
-    
+
     // Variations injection - placed under instrument name
     if (state.currentVariations && state.currentVariations[track.instrument]) {
       const varsContainer = document.createElement("div");
@@ -4085,8 +4091,8 @@ function renderGrid() {
       varsContainer.style.marginTop = "0.25rem";
       varsContainer.style.flexWrap = "wrap";
       varsContainer.style.alignItems = "center";
-      
-      
+
+
       // Default/Original button to restore non-variation pattern
       const defaultBtn = document.createElement("button");
       defaultBtn.className = `btn${track.activeVariation == null ? ' btn-primary' : ''}`;
@@ -4131,7 +4137,7 @@ function renderGrid() {
         }
       });
       varsContainer.appendChild(defaultBtn);
-      
+
       state.currentVariations[track.instrument].forEach((vari, idx) => {
         const vbtn = document.createElement("button");
         vbtn.className = `btn${track.activeVariation === idx ? ' btn-primary' : ''}`;
@@ -4158,7 +4164,7 @@ function renderGrid() {
             track.subdivisionSteps = {
               [track.subdivision]: [...track.steps]
             };
-            
+
             if (vari.bellSteps) {
               const bellTrack = state.tracks.find(t => t.instrument === track.instrument + "_bell");
               if (bellTrack) {
@@ -4168,7 +4174,7 @@ function renderGrid() {
                 };
               }
             }
-            
+
             if (vari.compoundTracks) {
               Object.keys(vari.compoundTracks).forEach(compInst => {
                 const compTrack = state.tracks.find(t => t.instrument === compInst);
@@ -4206,13 +4212,13 @@ function renderGrid() {
       // Add extra bottom padding to the row to make room for variation buttons
       row.style.paddingBottom = "1.75rem";
     }
-    
+
     row.appendChild(meta);
-    
+
     // Center: Track Lines (multiple rows if extended)
     const linesContainer = document.createElement("div");
     linesContainer.className = "track-lines-container";
-    
+
     const stepsPerLine = state.beats * track.subdivision;
     let numLines = Math.max(1, Math.ceil(track.steps.length / stepsPerLine));
     if (track.type === "shekere" || isCall) {
@@ -4221,7 +4227,7 @@ function renderGrid() {
         track.steps = track.steps.slice(0, stepsPerLine);
       }
     }
-    
+
     // Ensure track steps are padded to complete lines
     while (track.steps.length < numLines * stepsPerLine) {
       const nextIdx = track.steps.length;
@@ -4237,21 +4243,21 @@ function renderGrid() {
         track.steps.push("");
       }
     }
-    
+
     for (let l = 0; l < numLines; l++) {
       const lineRow = document.createElement("div");
       lineRow.className = "track-line-row";
-      
+
       const stepsContainer = document.createElement("div");
       stepsContainer.className = "steps-container";
       stepsContainer.setAttribute("data-track-id", track.id);
       stepsContainer.setAttribute("data-line-index", l);
-      
+
       // Playhead for this container
       const playhead = document.createElement("div");
       playhead.className = "playhead-line";
       stepsContainer.appendChild(playhead);
-      
+
       // Insert beat markers to clearly distinguish beat limits, positioned exactly half-way between steps
       const boundaries = (state.timeSignature === "12/8" || state.timeSignature === "6/8")
         ? [0.5, 1.0, 1.5]
@@ -4281,24 +4287,24 @@ function renderGrid() {
           const tFirst = stepTimes[idxFirst];
           const tMid = (tLast + tFirst) / 2;
           const leftPercent = (tMid / state.beats) * 100;
-          
+
           const marker = document.createElement("div");
           marker.className = "beat-marker";
           marker.style.left = `calc(${leftPercent}% + 21px)`;
           stepsContainer.appendChild(marker);
         }
       });
-      
+
       const startIdx = l * stepsPerLine;
       const endIdx = startIdx + stepsPerLine;
-      
+
       for (let stepIdx = startIdx; stepIdx < endIdx; stepIdx++) {
         const stepVal = track.steps[stepIdx];
         const cell = document.createElement("div");
         cell.className = "step-cell";
         cell.setAttribute("data-track-id", track.id);
         cell.setAttribute("data-step-index", stepIdx);
-        
+
         // Calculate position relative to this line
         const stepInLine = stepIdx % stepsPerLine;
         const beatIndex = Math.floor(stepInLine / track.subdivision);
@@ -4306,17 +4312,17 @@ function renderGrid() {
         const swungBeat = getSwungStepTime(beatIndex, stepInBeat, track.subdivision, 1.0, state.swing, true);
         const percent = (swungBeat / state.beats) * 100;
         cell.style.setProperty("--step-time-percent", `${percent}%`);
-        
+
         // Inject symbol SVG icon and add active state classes
         const subdivFactor = (state.beats * track.subdivision > 16) ? 0.65 : 1.0;
-        
+
         if (stepVal && stepVal !== "") {
           cell.innerHTML = getSoundIcon(track, stepVal);
-          
+
           cell.style.removeProperty("background");
           cell.style.removeProperty("border-color");
           cell.style.removeProperty("box-shadow");
-          
+
           if (stepVal.includes("/")) {
             const [h1, h2] = stepVal.split("/");
             const c1 = getHitColor(track.type, h1, track.instrument);
@@ -4348,7 +4354,7 @@ function renderGrid() {
           } else {
             cell.className = `step-cell ${track.type}-${stepVal} ${track.instrument}-${stepVal}`;
           }
-          
+
           const currentScale = (0.7 + track.volume * 0.4) * subdivFactor;
           cell.style.setProperty("--current-scale", currentScale);
           cell.style.setProperty("--vel-scale", track.volume);
@@ -4363,20 +4369,20 @@ function renderGrid() {
           if (stepInLine % beatInterval === 0) {
             cell.classList.add("beat-start-empty");
           }
-          
+
           const currentScale = 1.0 * subdivFactor;
           cell.style.setProperty("--current-scale", currentScale);
           cell.style.transform = `translateY(-50%) scale(${currentScale})`;
         }
-        
+
         cell.addEventListener("contextmenu", (e) => e.preventDefault());
-        
+
         let pressTimer = null;
         let isLongPress = false;
         let hasMoved = false;
         let startX = 0;
         let startY = 0;
-        
+
         const startPress = (e) => {
           if (e.type === "mousedown" && e.button !== 0) return;
           isLongPress = false;
@@ -4389,7 +4395,7 @@ function renderGrid() {
             openVariationsMenu(track, stepIdx, cell, e);
           }, 500);
         };
-        
+
         const cancelPress = () => {
           if (pressTimer) {
             clearTimeout(pressTimer);
@@ -4406,7 +4412,7 @@ function renderGrid() {
             cancelPress();
           }
         };
-        
+
         cell.addEventListener("mousedown", startPress);
         cell.addEventListener("mousemove", handleMove);
         cell.addEventListener("mouseup", (e) => {
@@ -4416,7 +4422,7 @@ function renderGrid() {
           }
         });
         cell.addEventListener("mouseleave", cancelPress);
-        
+
         cell.addEventListener("touchstart", startPress, { passive: true });
         cell.addEventListener("touchmove", handleMove, { passive: true });
         cell.addEventListener("touchend", (e) => {
@@ -4427,16 +4433,16 @@ function renderGrid() {
           }
         }, { passive: false });
         cell.addEventListener("touchcancel", cancelPress, { passive: true });
-        
+
         stepsContainer.appendChild(cell);
       }
-      
+
       lineRow.appendChild(stepsContainer);
-      
+
       // Line actions (+ and - buttons)
       const lineActions = document.createElement("div");
       lineActions.className = "track-line-actions";
-      
+
       const btnAdd = document.createElement("button");
       btnAdd.className = "btn-line-action add";
       btnAdd.textContent = "+";
@@ -4460,7 +4466,7 @@ function renderGrid() {
         btnAdd.style.pointerEvents = "none";
       }
       lineActions.appendChild(btnAdd);
-      
+
       const btnRemove = document.createElement("button");
       btnRemove.className = "btn-line-action remove";
       btnRemove.textContent = "-";
@@ -4481,16 +4487,16 @@ function renderGrid() {
         });
       }
       lineActions.appendChild(btnRemove);
-      
+
       lineRow.appendChild(lineActions);
-      
+
       linesContainer.appendChild(lineRow);
     }
     row.appendChild(linesContainer);
-    
+
     sequencerGrid.appendChild(row);
   });
-  
+
   updateNotation();
   updateStepPositions();
   updateCellScales();
@@ -4500,7 +4506,7 @@ function renderGrid() {
 // Cycles step click values (e.g. Empty -> Bass -> Tone -> Slap -> Muffled)
 function cycleStepHit(track, idx, cellElement) {
   let val = track.steps[idx];
-  
+
   if (track.type === "djembe") {
     const cycle = ["", "S", "T", "B", "M"];
     const curIdx = cycle.indexOf(val);
@@ -4518,13 +4524,13 @@ function cycleStepHit(track, idx, cellElement) {
     const curIdx = cycle.indexOf(val);
     val = cycle[(curIdx + 1) % cycle.length];
   }
-  
+
   track.steps[idx] = val;
   if (!track.subdivisionSteps) {
     track.subdivisionSteps = {};
   }
   track.subdivisionSteps[track.subdivision] = [...track.steps];
-  
+
   cellElement.style.removeProperty("background");
   cellElement.style.removeProperty("border-color");
   cellElement.style.removeProperty("box-shadow");
@@ -4539,7 +4545,7 @@ function cycleStepHit(track, idx, cellElement) {
     }
   }
   const subdivFactor = (state.beats * track.subdivision > 16) ? 0.65 : 1.0;
-  
+
   if (val !== "") {
     cellElement.innerHTML = getSoundIcon(track, val);
     cellElement.classList.add(`${track.type}-${val}`);
@@ -4548,7 +4554,7 @@ function cycleStepHit(track, idx, cellElement) {
     cellElement.style.setProperty("--current-scale", currentScale);
     cellElement.style.setProperty("--vel-scale", track.volume);
     cellElement.style.transform = `translateY(-50%) scale(${currentScale})`;
-    
+
     const hand = (idx % 2 === 0) ? "L" : "R";
     triggerSynthHit(track.type, track.instrument, val, synth.ctx.currentTime, track.volume, track.pitch, 0.15, hand);
   } else {
@@ -4556,7 +4562,7 @@ function cycleStepHit(track, idx, cellElement) {
     cellElement.style.setProperty("--current-scale", currentScale);
     cellElement.style.transform = `translateY(-50%) scale(${currentScale})`;
   }
-  
+
   updateNotation();
   updateStepPositions();
   updateCellScales();
@@ -4580,11 +4586,11 @@ function createNewCustomRhythm() {
   const name = newRhythmName.value.trim() || "Custom Groove";
   state.currentRhythmName = name;
   updateRhythmNameDisplay();
-  
+
   const timeSig = newTimeSignature.value;
   const subdiv = parseInt(newSubdivision.value);
   const defaults = TIME_SIGNATURE_DEFAULTS[timeSig];
-  
+
   state.timeSignature = timeSig;
   state.beats = defaults.beats;
   state.globalSubdivision = subdiv;
@@ -4600,20 +4606,20 @@ function createNewCustomRhythm() {
   humanisePitchVal.textContent = "20%";
   humaniseVolumeRange.value = 40;
   humaniseVolumeVal.textContent = "40%";
-  
+
   state.customDjembeCount = 0;
   state.customKenkeniCount = 0;
   state.customSangbanCount = 0;
   state.customDundunbaCount = 0;
   state.customShekereCount = 0;
-  
+
   // Re-synchronize select
   if (globalSubdivisionSelect) globalSubdivisionSelect.value = subdiv;
-  
+
   const numLines = parseInt(document.getElementById("new-bars").value) || 2;
   const numSteps = numLines * state.beats * subdiv;
   state.currentRhythmDescription = "A custom rhythm groove created by the user.";
-  
+
   const stepsPerLine = state.beats * subdiv;
   const shekereSteps = Array(stepsPerLine).fill("");
   const sectionLength = stepsPerLine / 4;
@@ -4634,7 +4640,7 @@ function createNewCustomRhythm() {
     { id: "shekere_default", name: "Shekere", type: "shekere", instrument: "shekere", subdivision: subdiv, steps: shekereSteps, volume: 0.75, pitch: 0, muted: false, soloed: false }
   ];
   state.customDjembeCount = 0;
-  
+
   renderGrid();
   newRhythmModal.classList.remove("active");
 }
@@ -4644,14 +4650,14 @@ const DBManager = {
   dbName: "DjembeStudioDB",
   storeName: "custom_rhythms",
   version: 1,
-  
+
   init() {
     return new Promise((resolve, reject) => {
       const request = indexedDB.open(this.dbName, this.version);
-      
+
       request.onerror = (e) => reject(e.target.error);
       request.onsuccess = (e) => resolve(e.target.result);
-      
+
       request.onupgradeneeded = (e) => {
         const db = e.target.result;
         if (!db.objectStoreNames.contains(this.storeName)) {
@@ -4660,7 +4666,7 @@ const DBManager = {
       };
     });
   },
-  
+
   async save(rhythm) {
     const db = await this.init();
     return new Promise((resolve, reject) => {
@@ -4671,7 +4677,7 @@ const DBManager = {
       tx.onerror = (e) => reject(e.target.error);
     });
   },
-  
+
   async getAll() {
     const db = await this.init();
     return new Promise((resolve, reject) => {
@@ -4682,7 +4688,7 @@ const DBManager = {
       req.onerror = (e) => reject(e.target.error);
     });
   },
-  
+
   async delete(name) {
     const db = await this.init();
     return new Promise((resolve, reject) => {
@@ -4693,7 +4699,7 @@ const DBManager = {
       tx.onerror = (e) => reject(e.target.error);
     });
   },
-  
+
   async migrateFromLocalStorage() {
     try {
       const existing = JSON.parse(localStorage.getItem("djembe_studio_saves") || "[]");
@@ -4715,7 +4721,7 @@ async function saveCurrentPattern() {
     alert("Please enter a name for the pattern.");
     return;
   }
-  
+
   const savedData = {
     name: rawName,
     timeSignature: state.timeSignature,
@@ -4744,7 +4750,7 @@ async function saveCurrentPattern() {
     })),
     timestamp: Date.now()
   };
-  
+
   try {
     await DBManager.save(savedData);
     saveNameInput.value = "";
@@ -4761,45 +4767,45 @@ async function loadCustomSaves() {
     await DBManager.migrateFromLocalStorage();
     const saves = await DBManager.getAll();
     savesList.innerHTML = "";
-    
+
     if (saves.length === 0) {
       savesList.innerHTML = `<span style="font-size:0.8rem; color:var(--text-dim); text-align:center; padding:0.5rem 0;">No custom saved patterns yet.</span>`;
       return;
     }
-    
+
     saves.forEach(save => {
       const item = document.createElement("div");
       item.className = "save-item";
-      
+
       const info = document.createElement("div");
       info.className = "save-item-info";
       const name = document.createElement("strong");
       name.textContent = save.name;
       const details = document.createElement("span");
       details.className = "save-item-time";
-      
+
       let dateStr = "Unknown Date";
       if (save.timestamp) {
         try {
           dateStr = new Date(save.timestamp).toLocaleDateString();
-        } catch (e) {}
+        } catch (e) { }
       }
       details.textContent = `${save.timeSignature || "4/4"} | ${save.bpm || 110} BPM | ${dateStr}`;
-      
+
       info.appendChild(name);
       info.appendChild(details);
       item.appendChild(info);
-      
+
       const actions = document.createElement("div");
       actions.className = "save-item-actions";
-      
+
       const loadBtn = document.createElement("button");
       loadBtn.className = "save-item-btn";
       loadBtn.textContent = "Load";
       loadBtn.addEventListener("click", () => {
         loadSavedPattern(save);
       });
-      
+
       const delBtn = document.createElement("button");
       delBtn.className = "save-item-btn";
       delBtn.style.color = "#ef4444";
@@ -4807,11 +4813,11 @@ async function loadCustomSaves() {
       delBtn.addEventListener("click", () => {
         deleteSavedPattern(save.name);
       });
-      
+
       actions.appendChild(loadBtn);
       actions.appendChild(delBtn);
       item.appendChild(actions);
-      
+
       savesList.appendChild(item);
     });
   } catch (err) {
@@ -4825,7 +4831,7 @@ function loadSavedPattern(save) {
   state.focusedTrackId = null;
   state.currentRhythmName = save.name;
   updateRhythmNameDisplay();
-  
+
   state.currentPreset = null;
   state.presetCallData = null;
   state.timeSignature = save.timeSignature;
@@ -4837,7 +4843,7 @@ function loadSavedPattern(save) {
   state.humaniseVolume = save.humaniseVolume !== undefined ? save.humaniseVolume : 0;
   synth.humanisePitch = state.humanisePitch;
   state.globalSubdivision = save.globalSubdivision;
-  
+
   state.customSwingOffsets = save.customSwingOffsets || {
     2: [0, 0],
     3: [0, 0, 0],
@@ -4847,13 +4853,13 @@ function loadSavedPattern(save) {
   if (!save.customSwingOffsets) {
     [2, 3, 4, 6].forEach(s => applyGlobalSwingToOffsets(s, state.swing));
   }
-  
+
   state.customDjembeCount = save.customDjembeCount || 0;
   state.customKenkeniCount = save.customKenkeniCount || 0;
   state.customSangbanCount = save.customSangbanCount || 0;
   state.customDundunbaCount = save.customDundunbaCount || 0;
   state.customShekereCount = save.customShekereCount || 0;
-  
+
   bpmRange.value = state.bpm;
   bpmVal.textContent = state.bpm;
   swingRange.value = state.swing;
@@ -4868,7 +4874,7 @@ function loadSavedPattern(save) {
   humaniseVolumeRange.value = state.humaniseVolume;
   humaniseVolumeVal.textContent = state.humaniseVolume + "%";
   if (globalSubdivisionSelect) globalSubdivisionSelect.value = state.globalSubdivision;
-  
+
   // Filter out any Call track from save.tracks
   let savedTracksToLoad = [];
   if (save.tracks) {
@@ -4887,7 +4893,7 @@ function loadSavedPattern(save) {
       }
     });
   }
-  
+
   state.tracks = savedTracksToLoad.map(t => ({
     id: t.id,
     name: t.name,
@@ -4900,7 +4906,7 @@ function loadSavedPattern(save) {
     muted: false,
     soloed: false
   }));
-  
+
   renderGrid();
   updateSpecialButtonsState(null);
   if (savesModal) {
@@ -4924,7 +4930,7 @@ async function deleteSavedPattern(name) {
 function renderLibraryItems(searchQuery, filterSig) {
   libraryBody.innerHTML = "";
   const query = searchQuery.toLowerCase().trim();
-  
+
   const filtered = RHYTHM_LIBRARY.filter(r => {
     const name = r.rhythm_name || r.name || "";
     const sig = r.timing || r.timeSignature || "";
@@ -4932,13 +4938,13 @@ function renderLibraryItems(searchQuery, filterSig) {
     const matchesSig = filterSig === "all" || sig === filterSig;
     return matchesSearch && matchesSig;
   });
-  
+
   libraryCount.textContent = `Showing ${filtered.length} of ${RHYTHM_LIBRARY.length} rhythms`;
-  
+
   filtered.forEach(rhythm => {
     const card = document.createElement("div");
     card.className = "library-item";
-    
+
     // Get unique instrument names (supporting both new and old format)
     let instNames = [];
     if (Array.isArray(rhythm.tracks)) {
@@ -4959,27 +4965,27 @@ function renderLibraryItems(searchQuery, filterSig) {
       if (tracksObj["8_shekere"] !== undefined) instNames.push("Shekere");
     }
     const uniqueInsts = [...new Set(instNames)];
-    
+
     const info = document.createElement("div");
     info.className = "library-info";
-    
+
     const title = document.createElement("div");
     title.className = "library-title";
     title.textContent = rhythm.rhythm_name || rhythm.name;
-    
+
     const meta = document.createElement("div");
     meta.className = "library-meta";
     meta.style.display = "flex";
     meta.style.alignItems = "center";
     meta.style.flexWrap = "wrap";
     meta.style.gap = "0.5rem";
-    
+
     const timing = rhythm.timing || rhythm.timeSignature || "12/8";
     const badge = document.createElement("span");
     const sigClass = timing.replace("/", "-");
     badge.className = `meter-badge meter-${sigClass}`;
     badge.textContent = timing;
-    
+
     const sourceBadge = document.createElement("span");
     const sourceText = rhythm.source || "Classic WAP";
     sourceBadge.textContent = sourceText;
@@ -4989,7 +4995,7 @@ function renderLibraryItems(searchQuery, filterSig) {
     sourceBadge.style.fontWeight = "bold";
     sourceBadge.style.textTransform = "uppercase";
     sourceBadge.style.letterSpacing = "0.02em";
-    
+
     if (sourceText.includes("Merged")) {
       sourceBadge.style.background = "rgba(74, 222, 128, 0.15)";
       sourceBadge.style.color = "#4ade80";
@@ -5003,19 +5009,19 @@ function renderLibraryItems(searchQuery, filterSig) {
       sourceBadge.style.color = "#fbbf24";
       sourceBadge.style.border = "1px solid rgba(251, 191, 36, 0.3)";
     }
-    
+
     const instText = document.createElement("span");
     instText.textContent = uniqueInsts.join(", ");
-    
+
     meta.appendChild(badge);
     meta.appendChild(sourceBadge);
     meta.appendChild(instText);
     info.appendChild(title);
     info.appendChild(meta);
-    
+
     const actions = document.createElement("div");
     actions.className = "library-actions";
-    
+
     const btnLoad = document.createElement("button");
     btnLoad.className = "btn btn-primary btn-sm";
     btnLoad.textContent = "Load";
@@ -5023,7 +5029,7 @@ function renderLibraryItems(searchQuery, filterSig) {
       loadRhythm(rhythm);
       libraryModal.classList.remove("active");
     });
-    
+
     actions.appendChild(btnLoad);
     card.appendChild(info);
     card.appendChild(actions);
@@ -5048,20 +5054,20 @@ function openVariationsMenu(track, stepIdx, cellElement, event) {
   const builderBtnRoll = document.getElementById("builder-btn-roll");
   const builderBtnTriplet = document.getElementById("builder-btn-triplet");
   const builderApply = document.getElementById("builder-apply");
-  
+
   if (!popup) return;
-  
+
   title.textContent = `${cleanTrackName(track.name)} - Step ${stepIdx + 1}`;
-  
+
   builderHit1.innerHTML = "";
   builderHit2.innerHTML = "";
   if (builderHit3) builderHit3.innerHTML = "";
-  
+
   let options = [];
   let presetsFlam = [];
   let presetsRoll = [];
   let presetsTriplet = [];
-  
+
   if (track.type === "djembe") {
     options = [
       { val: "B", label: "Bass (B)" },
@@ -5101,12 +5107,12 @@ function openVariationsMenu(track, stepIdx, cellElement, event) {
     const muteChar = "X";
     const openLbl = isShekere ? "Shake (O)" : "Open (O)";
     const muteLbl = isShekere ? "Tap (X)" : "Muted (X)";
-    
+
     options = [
       { val: openChar, label: openLbl },
       { val: muteChar, label: muteLbl }
     ];
-    
+
     presetsFlam = [
       { val: `${openChar}/${muteChar}`, label: `${openChar}/${muteChar}` },
       { val: `${muteChar}/${openChar}`, label: `${muteChar}/${openChar}` },
@@ -5126,13 +5132,13 @@ function openVariationsMenu(track, stepIdx, cellElement, event) {
       { val: `${muteChar}*${openChar}*${muteChar}`, label: `${muteChar}*${openChar}*${muteChar}` }
     ];
   }
-  
+
   options.forEach(opt => {
     const o1 = document.createElement("option");
     o1.value = opt.val;
     o1.textContent = opt.label;
     builderHit1.appendChild(o1);
-    
+
     const o2 = document.createElement("option");
     o2.value = opt.val;
     o2.textContent = opt.label;
@@ -5145,9 +5151,9 @@ function openVariationsMenu(track, stepIdx, cellElement, event) {
       builderHit3.appendChild(o3);
     }
   });
-  
+
   let selectedType = "flam";
-  
+
   const updateBuilderUI = (type) => {
     selectedType = type;
     [builderBtnFlam, builderBtnRoll, builderBtnTriplet].forEach(btn => {
@@ -5199,20 +5205,20 @@ function openVariationsMenu(track, stepIdx, cellElement, event) {
   } else {
     updateBuilderUI("flam");
   }
-  
+
   const populateSection = (container, list) => {
     if (!container) return;
     container.innerHTML = "";
     list.forEach(p => {
       const btn = document.createElement("button");
       btn.className = "variation-btn";
-      
+
       const iconWrapper = document.createElement("div");
       iconWrapper.className = "variation-btn-icon";
       iconWrapper.innerHTML = getSoundIcon(track, p.val, true);
-      
+
       btn.appendChild(iconWrapper);
-      
+
       btn.addEventListener("click", () => {
         applyValue(p.val);
       });
@@ -5223,7 +5229,7 @@ function openVariationsMenu(track, stepIdx, cellElement, event) {
   populateSection(flamContainer, presetsFlam);
   populateSection(rollContainer, presetsRoll);
   populateSection(tripletContainer, presetsTriplet);
-  
+
   builderApply.onclick = () => {
     const h1 = builderHit1.value;
     const h2 = builderHit2.value;
@@ -5235,18 +5241,18 @@ function openVariationsMenu(track, stepIdx, cellElement, event) {
       applyValue(`${h1}${delimiter}${h2}`);
     }
   };
-  
+
   clearBtn.onclick = () => {
     applyValue("");
   };
-  
+
   closeBtn.onclick = () => {
     popup.classList.remove("active");
   };
-  
+
   function applyValue(newVal) {
     track.steps[stepIdx] = newVal;
-    
+
     cellElement.style.removeProperty("background");
     cellElement.style.removeProperty("border-color");
     cellElement.style.removeProperty("box-shadow");
@@ -5260,12 +5266,12 @@ function openVariationsMenu(track, stepIdx, cellElement, event) {
         cellElement.classList.add("beat-start-empty");
       }
     }
-    
+
     const subdivFactor = (state.beats * track.subdivision > 16) ? 0.65 : 1.0;
-    
+
     if (newVal !== "") {
       cellElement.innerHTML = getSoundIcon(track, newVal);
-      
+
       if (newVal.includes("/")) {
         const [h1, h2] = newVal.split("/");
         const c1 = getHitColor(track.type, h1, track.instrument);
@@ -5297,12 +5303,12 @@ function openVariationsMenu(track, stepIdx, cellElement, event) {
       } else {
         cellElement.className = `step-cell ${track.type}-${newVal} ${track.instrument}-${newVal}`;
       }
-      
+
       const currentScale = (0.7 + track.volume * 0.4) * subdivFactor;
       cellElement.style.setProperty("--current-scale", currentScale);
       cellElement.style.setProperty("--vel-scale", track.volume);
       cellElement.style.transform = `translateY(-50%) scale(${currentScale})`;
-      
+
       const hand = (stepIdx % 2 === 0) ? "L" : "R";
       triggerSynthHit(track.type, track.instrument, newVal, synth.ctx.currentTime, track.volume, track.pitch, 0.15, hand);
     } else {
@@ -5310,22 +5316,22 @@ function openVariationsMenu(track, stepIdx, cellElement, event) {
       cellElement.style.setProperty("--current-scale", currentScale);
       cellElement.style.transform = `translateY(-50%) scale(${currentScale})`;
     }
-    
+
     updateNotation();
     updateStepPositions();
     updateCellScales();
     popup.classList.remove("active");
   }
-  
+
   popup.classList.add("active");
   const rect = cellElement.getBoundingClientRect();
   const scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
   const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-  
+
   let popupLeft = rect.left + scrollLeft + (rect.width / 2) - 170;
   popupLeft = Math.max(10, Math.min(window.innerWidth - 350, popupLeft));
   popup.style.left = `${popupLeft}px`;
-  
+
   const popupHeight = popup.offsetHeight || 480;
   if (rect.top - popupHeight - 10 > 0) {
     popup.style.top = `${rect.top + scrollTop - popupHeight - 10}px`;
@@ -5375,12 +5381,12 @@ function formatTrackSubKeyName(subKey) {
 
 function mapHitToSound(hit, trackType) {
   if (!hit || hit === '.') return '';
-  
+
   const isDjembe = trackType === 'djembe';
   const isBell = trackType === 'bell';
   const isDunun = trackType === 'dunun';
   const isShekere = trackType === 'shekere';
-  
+
   switch (hit) {
     // Standard Hits
     case 'S': return 'S';
@@ -5390,11 +5396,11 @@ function mapHitToSound(hit, trackType) {
     case 'C': return 'C';
     case 'X': return isBell ? 'X' : 'O';
     case 'x': return isBell ? 'C' : 'C';
-    case 'd': 
+    case 'd':
       if (isDjembe) return 'M';
       if (isShekere) return 'X';
       return 'C';
-      
+
     // Flams
     case 'f':
       if (isDjembe) return 'S/S';
@@ -5405,7 +5411,7 @@ function mapHitToSound(hit, trackType) {
     case 'fb': return 'B/B';
     case 'Y': return 'B/T';
     case 'W': return 'B/S';
-    
+
     // Rolls & Triplets
     case '2':
       if (isDjembe) return 'S-S';
@@ -5415,7 +5421,7 @@ function mapHitToSound(hit, trackType) {
     case 'rt': return 'T-T';
     case 'rb': return 'B-B';
     case 'ts': return 'S*S*S';
-    
+
     default:
       return hit;
   }
@@ -5427,7 +5433,7 @@ function convertSpaceDelimitedPatternToSteps(pattern, trackType, stepCount) {
   }
   const tokens = pattern.trim().split(/\s+/);
   const steps = tokens.map(t => mapHitToSound(t, trackType));
-  
+
   while (steps.length < stepCount) {
     steps.push("");
   }
@@ -5466,7 +5472,7 @@ function deactivateAllSpecialButtons() {
   state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
   state.callIntroActive = false;
   state.activeVariation = null;
-  
+
   state.tracks.forEach(track => {
     if (track.standardSteps) {
       track.steps = [...track.standardSteps];
@@ -5478,19 +5484,19 @@ function deactivateAllSpecialButtons() {
       delete track.preSoloMutedState;
     }
   });
-  
+
   const containers = [
     document.getElementById("solos-buttons-container"),
     document.getElementById("breaks-buttons-container"),
     document.getElementById("variations-buttons-container"),
     document.getElementById("special-parts-buttons-container")
   ];
-  
+
   containers.forEach(container => {
     if (!container) return;
     Array.from(container.children).forEach(btn => {
       btn.classList.remove("btn-primary", "special-active", "break-active", "blinking");
-      
+
       const type = btn.dataset.type;
       if (type === 'intro') {
         btn.style.background = "rgba(59, 130, 246, 0.15)";
@@ -5514,12 +5520,12 @@ function deactivateAllSpecialButtons() {
 
 function handleSoloToggle(sp, isActive) {
   const isNewFormat = state.currentPreset && (state.currentPreset.step_count !== undefined || (state.currentPreset.tracks && !Array.isArray(state.currentPreset.tracks)));
-  
+
   if (isNewFormat) {
     const link = sp.accompaniment_link;
     const djembeSubKeys = (state.currentPreset.tracks && state.currentPreset.tracks["1_djembe"]) ? Object.keys(state.currentPreset.tracks["1_djembe"]) : [];
     const isLinkMatched = djembeSubKeys.includes(link);
-    
+
     if (isActive) {
       let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
       if (!soloTrack) {
@@ -5538,7 +5544,7 @@ function handleSoloToggle(sp, isActive) {
       } else {
         soloTrack.name = sp.name || sp.part_id || "Solo Djembe";
       }
-      
+
       soloTrack.subdivision = getSubdivisionForTiming(state.timeSignature);
       const steps = convertSpaceDelimitedPatternToSteps(sp.sequence, "djembe", state.currentPreset.step_count);
       soloTrack.steps = steps;
@@ -5547,7 +5553,7 @@ function handleSoloToggle(sp, isActive) {
       soloTrack.subdivisionSteps = {
         [soloTrack.subdivision]: [...steps]
       };
-      
+
       state.tracks.forEach(track => {
         if (track.subKey) {
           if (isLinkMatched && track.subKey === link) {
@@ -5572,12 +5578,12 @@ function handleSoloToggle(sp, isActive) {
 
 function playVariationPart(sp, isActive) {
   const isNewFormat = state.currentPreset && (state.currentPreset.step_count !== undefined || (state.currentPreset.tracks && !Array.isArray(state.currentPreset.tracks)));
-  
+
   if (isNewFormat) {
     const partId = (sp.part_id || "").toLowerCase();
     const track = state.tracks.find(t => {
       const id = t.id.toLowerCase();
-      
+
       if (partId.includes("sangban")) {
         return id.includes("sangban") && !id.includes("bell");
       }
@@ -5598,7 +5604,7 @@ function playVariationPart(sp, isActive) {
       }
       return false;
     });
-    
+
     if (track) {
       if (isActive) {
         if (!track.standardSteps) track.standardSteps = [...track.steps];
@@ -5618,7 +5624,7 @@ function playVariationPart(sp, isActive) {
 function getTrackHierarchyKey(track) {
   const id = track.id.toLowerCase();
   const name = track.name.toLowerCase();
-  
+
   if (id.includes("djembe")) return "1_djembe";
   if (id.includes("kenkeni_bell")) return "3_kenkeni_bell";
   if (id.includes("kenkeni")) return "2_kenkeni";
@@ -5627,7 +5633,7 @@ function getTrackHierarchyKey(track) {
   if (id.includes("dundunba_bell") || id.includes("dun_dun_bell")) return "7_dun_dun_bell";
   if (id.includes("dundunba") || id.includes("dun_dun")) return "6_dun_dun";
   if (id.includes("shekere")) return "8_shekere";
-  
+
   if (name.includes("djembe") || name.includes("djembé")) return "1_djembe";
   if (name.includes("kenkeni bell")) return "3_kenkeni_bell";
   if (name.includes("kenkeni")) return "2_kenkeni";
@@ -5636,7 +5642,7 @@ function getTrackHierarchyKey(track) {
   if (name.includes("dun dun bell") || name.includes("dundun bell") || name.includes("dundunba bell")) return "7_dun_dun_bell";
   if (name.includes("dun dun") || name.includes("dundun") || name.includes("dundunba")) return "6_dun_dun";
   if (name.includes("shekere")) return "8_shekere";
-  
+
   return null;
 }
 
@@ -5644,11 +5650,11 @@ function loadRhythmNew(preset) {
   state.focusedTrackId = null;
   state.currentRhythmName = preset.rhythm_name || "Untitled Rhythm";
   updateRhythmNameDisplay();
-  
+
   state.currentRhythmDescription = preset.description || "";
   state.currentPreset = preset;
   state.timeSignature = preset.timing || preset.time_signature || "12/8";
-  
+
   const subdivision = getSubdivisionForTiming(state.timeSignature);
   state.globalSubdivision = subdivision;
   if (globalSubdivisionSelect) globalSubdivisionSelect.value = state.globalSubdivision;
@@ -5656,20 +5662,20 @@ function loadRhythmNew(preset) {
   const isNewFormat = preset.step_count !== undefined || (preset.tracks && !Array.isArray(preset.tracks));
   const firstTrack = (!isNewFormat && preset.tracks && preset.tracks[0]);
   const patternLen = isNewFormat ? (preset.step_count || 16) : (firstTrack ? firstTrack.drum_pattern.length : 24);
-  
+
   if (state.timeSignature === "12/8" || state.timeSignature === "6/8") {
     state.beats = 2; // 12 steps per line (2 beats of subdivision 6)
   } else {
     state.beats = 4; // 16 steps per line (4 beats of subdivision 4)
   }
-  
+
   state.bpm = preset.tempo || 110;
   if (preset.groove_modifiers && preset.groove_modifiers.swing_factor !== undefined) {
     state.swing = preset.groove_modifiers.swing_factor;
   } else {
     state.swing = preset.swing || 0;
   }
-  
+
   state.customSwingOffsets = {
     2: [0, 0],
     3: [0, 0, 0],
@@ -5677,7 +5683,7 @@ function loadRhythmNew(preset) {
     6: [0, 0, 0, 0, 0, 0]
   };
   [2, 3, 4, 6].forEach(s => applyGlobalSwingToOffsets(s, state.swing));
-  
+
   // Sync UI controls
   state.humaniseTime = 40;
   state.humanisePitch = 20;
@@ -5695,7 +5701,7 @@ function loadRhythmNew(preset) {
   humanisePitchVal.textContent = "20%";
   humaniseVolumeRange.value = 40;
   humaniseVolumeVal.textContent = "40%";
-  
+
   state.tracks = [];
   state.customDjembeCount = 0;
   state.customKenkeniCount = 0;
@@ -5705,7 +5711,7 @@ function loadRhythmNew(preset) {
   state.echauffementActive = false;
   state.activeVariation = null;
   state.callIntroActive = false;
-  
+
   // Extract and populate state.presetCallData from special_parts if type === "Call"
   const callPart = (preset.special_parts || []).find(sp => sp.type === "Call" || sp.type === "Intro");
   if (callPart) {
@@ -5726,30 +5732,30 @@ function loadRhythmNew(preset) {
   } else {
     state.presetCallData = null;
   }
-  
+
   // Hide old solos/breaks control rows
   if (solosControlRow) solosControlRow.style.display = "none";
   if (breaksControlRow) breaksControlRow.style.display = "none";
-  
+
   // Deactivate Échauffement button highlight
   const echBtn = document.getElementById("btn-trigger-echauffement");
   if (echBtn) echBtn.classList.remove("btn-primary");
-  
+
   const solosContainer = document.getElementById("solos-buttons-container");
   const breaksContainer = document.getElementById("breaks-buttons-container");
   const variationsContainer = document.getElementById("variations-buttons-container");
   const specialContainer = document.getElementById("special-parts-buttons-container");
-  
+
   if (solosContainer) solosContainer.innerHTML = "";
   if (breaksContainer) breaksContainer.innerHTML = "";
   if (variationsContainer) variationsContainer.innerHTML = "";
   if (specialContainer) specialContainer.innerHTML = "";
-  
+
   const solosRow = document.getElementById("solos-control-row");
   const breaksRow = document.getElementById("breaks-control-row");
   const variationsRow = document.getElementById("variations-control-row");
   const specialRow = document.getElementById("special-parts-control-row");
-  
+
   if (solosRow) solosRow.style.display = "none";
   if (breaksRow) breaksRow.style.display = "none";
   if (variationsRow) variationsRow.style.display = "none";
@@ -5757,7 +5763,7 @@ function loadRhythmNew(preset) {
 
   if (isNewFormat) {
     const tracksObj = preset.tracks || {};
-    
+
     // 1. Djembé Tracks
     const djembeObj = tracksObj["1_djembe"] || {};
     let djembeCounter = 0;
@@ -5770,7 +5776,7 @@ function loadRhythmNew(preset) {
       }
       const steps = convertSpaceDelimitedPatternToSteps(val, "djembe", patternLen);
       const cleanName = formatTrackSubKeyName(subKey);
-      
+
       state.tracks.push({
         id: `djembe_preset_${djembeCounter}`,
         subKey: subKey,
@@ -5790,7 +5796,7 @@ function loadRhythmNew(preset) {
         soloed: false
       });
     });
-    
+
     // 2. Kenkeni
     const kenkeniVal = tracksObj["2_kenkeni"];
     if (kenkeniVal !== undefined) {
@@ -5815,7 +5821,7 @@ function loadRhythmNew(preset) {
         soloed: false
       });
     }
-    
+
     // 3. Kenkeni Bell
     const kenkeniBellVal = tracksObj["3_kenkeni_bell"];
     if (kenkeniBellVal !== undefined) {
@@ -5840,7 +5846,7 @@ function loadRhythmNew(preset) {
         soloed: false
       });
     }
-    
+
     // 4. Sangban
     const sangbanVal = tracksObj["4_sangban"];
     if (sangbanVal !== undefined) {
@@ -5865,7 +5871,7 @@ function loadRhythmNew(preset) {
         soloed: false
       });
     }
-    
+
     // 5. Sangban Bell
     const sangbanBellVal = tracksObj["5_sangban_bell"];
     if (sangbanBellVal !== undefined) {
@@ -5890,7 +5896,7 @@ function loadRhythmNew(preset) {
         soloed: false
       });
     }
-    
+
     // 6. Dun Dun
     const dundunVal = tracksObj["6_dun_dun"];
     if (dundunVal !== undefined) {
@@ -5915,7 +5921,7 @@ function loadRhythmNew(preset) {
         soloed: false
       });
     }
-    
+
     // 7. Dun Dun Bell
     const dundunBellVal = tracksObj["7_dun_dun_bell"];
     if (dundunBellVal !== undefined) {
@@ -5940,7 +5946,7 @@ function loadRhythmNew(preset) {
         soloed: false
       });
     }
-    
+
     // 8. Shekere
     const shekereVal = tracksObj["8_shekere"];
     if (shekereVal !== undefined) {
@@ -5968,7 +5974,7 @@ function loadRhythmNew(preset) {
 
     // UI elements generation
     const ui = preset.ui_elements || {};
-    
+
     // 1. Solos
     const soloIds = Array.isArray(ui.solo_button) ? ui.solo_button : (ui.solo_button && ui.solo_button !== "Missing Data" ? [ui.solo_button] : []);
     if (soloIds.length > 0 && solosContainer && solosRow) {
@@ -5992,11 +5998,11 @@ function loadRhythmNew(preset) {
           btn.style.padding = "0";
           btn.style.flex = "0 0 28px";
           btn.style.cursor = "pointer";
-          
+
           btn.style.background = "rgba(168, 85, 247, 0.15)";
           btn.style.border = "1px solid rgba(168, 85, 247, 0.35)";
           btn.style.color = "#a855f7";
-          
+
           btn.addEventListener("click", () => {
             const wasActive = btn.classList.contains("btn-primary") || btn.classList.contains("special-active");
             const action = () => {
@@ -6011,7 +6017,7 @@ function loadRhythmNew(preset) {
               }
               renderGrid();
             };
-            
+
             if (state.isPlaying) {
               queueSpecialAction(action, btn);
             } else {
@@ -6025,7 +6031,7 @@ function loadRhythmNew(preset) {
         }
       });
     }
-    
+
     // 2. Variations
     const varIds = Array.isArray(ui.variation_button) ? ui.variation_button : (ui.variation_button && ui.variation_button !== "Missing Data" ? [ui.variation_button] : []);
     if (varIds.length > 0 && variationsContainer && variationsRow) {
@@ -6045,11 +6051,11 @@ function loadRhythmNew(preset) {
           btn.style.fontSize = "0.8rem";
           btn.style.padding = "0.35rem 0.75rem";
           btn.style.cursor = "pointer";
-          
+
           btn.style.background = "rgba(16, 185, 129, 0.15)";
           btn.style.border = "1px solid rgba(16, 185, 129, 0.35)";
           btn.style.color = "#10b981";
-          
+
           btn.addEventListener("click", () => {
             const wasActive = btn.classList.contains("btn-primary") || btn.classList.contains("special-active");
             const action = () => {
@@ -6064,7 +6070,7 @@ function loadRhythmNew(preset) {
               }
               renderGrid();
             };
-            
+
             if (state.isPlaying) {
               queueSpecialAction(action, btn);
             } else {
@@ -6075,7 +6081,7 @@ function loadRhythmNew(preset) {
         }
       });
     }
-    
+
     // 3. Breaks
     const breakIds = Array.isArray(ui.break_button) ? ui.break_button : (ui.break_button && ui.break_button !== "Missing Data" ? [ui.break_button] : []);
     if (breakIds.length > 0 && breaksContainer && breaksRow) {
@@ -6095,11 +6101,11 @@ function loadRhythmNew(preset) {
           btn.style.fontSize = "0.8rem";
           btn.style.padding = "0.35rem 0.75rem";
           btn.style.cursor = "pointer";
-          
+
           btn.style.background = "rgba(245, 158, 11, 0.15)";
           btn.style.border = "1px solid rgba(245, 158, 11, 0.35)";
           btn.style.color = "#f59e0b";
-          
+
           btn.addEventListener("click", () => {
             const wasActive = btn.classList.contains("btn-primary") || btn.classList.contains("special-active");
             const action = () => {
@@ -6115,7 +6121,7 @@ function loadRhythmNew(preset) {
                 renderGrid();
               }
             };
-            
+
             if (state.isPlaying) {
               queueSpecialAction(action, btn);
             } else {
@@ -6126,12 +6132,12 @@ function loadRhythmNew(preset) {
         }
       });
     }
-    
+
     // 4. Calls & Intros
     const callIds = Array.isArray(ui.call_button) ? ui.call_button : (ui.call_button && ui.call_button !== "Missing Data" ? [ui.call_button] : []);
     const introIds = Array.isArray(ui.intro_button) ? ui.intro_button : (ui.intro_button && ui.intro_button !== "Missing Data" ? [ui.intro_button] : []);
     const specialPartIds = [...callIds, ...introIds];
-    
+
     if (specialPartIds.length > 0 && specialContainer && specialRow) {
       specialRow.style.display = "flex";
       specialPartIds.forEach((id) => {
@@ -6150,7 +6156,7 @@ function loadRhythmNew(preset) {
           btn.style.fontSize = "0.8rem";
           btn.style.padding = "0.35rem 0.75rem";
           btn.style.cursor = "pointer";
-          
+
           if (isCall) {
             btn.style.background = "rgba(99, 102, 241, 0.15)";
             btn.style.border = "1px solid rgba(99, 102, 241, 0.35)";
@@ -6160,7 +6166,7 @@ function loadRhythmNew(preset) {
             btn.style.border = "1px solid rgba(59, 130, 246, 0.35)";
             btn.style.color = "#3b82f6";
           }
-          
+
           btn.addEventListener("click", () => {
             const wasActive = btn.classList.contains("btn-primary") || btn.classList.contains("special-active");
             const action = () => {
@@ -6176,7 +6182,7 @@ function loadRhythmNew(preset) {
                 renderGrid();
               }
             };
-            
+
             if (state.isPlaying) {
               queueSpecialAction(action, btn);
             } else {
@@ -6190,7 +6196,7 @@ function loadRhythmNew(preset) {
   } else {
     // Map and sort tracks in strict hierarchy
     const sortedPresetTracks = [];
-    
+
     // 1. Djembe
     preset.tracks.forEach(pt => {
       const partLC = pt.part.toLowerCase();
@@ -6198,31 +6204,31 @@ function loadRhythmNew(preset) {
         sortedPresetTracks.push(pt);
       }
     });
-    
+
     // 2. Kenkeni
     const kenkeni = preset.tracks.find(pt => pt.part.toLowerCase() === "kenkeni");
     if (kenkeni) sortedPresetTracks.push(kenkeni);
-    
+
     // 3. Kenkeni Bell
     const kenkeniBell = preset.tracks.find(pt => pt.part.toLowerCase() === "kenkeni bell");
     if (kenkeniBell) sortedPresetTracks.push(kenkeniBell);
-    
+
     // 4. Sangban
     const sangban = preset.tracks.find(pt => pt.part.toLowerCase() === "sangban");
     if (sangban) sortedPresetTracks.push(sangban);
-    
+
     // 5. Sangban Bell
     const sangbanBell = preset.tracks.find(pt => pt.part.toLowerCase() === "sangban bell");
     if (sangbanBell) sortedPresetTracks.push(sangbanBell);
-    
+
     // 6. Dun Dun
     const dundun = preset.tracks.find(pt => pt.part.toLowerCase() === "dun dun" || pt.part.toLowerCase() === "dundun" || pt.part.toLowerCase() === "dundunba");
     if (dundun) sortedPresetTracks.push(dundun);
-    
+
     // 7. Dun Dun Bell
     const dundunBell = preset.tracks.find(pt => pt.part.toLowerCase() === "dun dun bell" || pt.part.toLowerCase() === "dundun bell" || pt.part.toLowerCase() === "dundunba bell");
     if (dundunBell) sortedPresetTracks.push(dundunBell);
-    
+
     // Create track objects
     let djembeCounter = 0;
     sortedPresetTracks.forEach(pt => {
@@ -6265,9 +6271,9 @@ function loadRhythmNew(preset) {
         instrument = "dundunba_bell";
         cleanName = "Dun Dun Bell";
       }
-      
+
       const steps = convertPatternToSteps(pt.drum_pattern, state.timeSignature, pt.part);
-      
+
       state.tracks.push({
         id: id,
         name: cleanName,
@@ -6286,7 +6292,7 @@ function loadRhythmNew(preset) {
         soloed: false
       });
     });
-    
+
     // Add default Shekere track
     const shekereSteps = Array(patternLen).fill("");
     const totalSubsteps = patternLen;
@@ -6311,15 +6317,15 @@ function loadRhythmNew(preset) {
       muted: false,
       soloed: false
     });
-    
+
     // Populate Variations Row
     const hasVariations = preset.tracks.some(pt => pt.variations && pt.variations.length > 0);
     if (hasVariations && variationsRow && variationsContainer) {
       variationsRow.style.display = "flex";
       variationsContainer.innerHTML = "";
-      
+
       const maxVars = Math.max(...preset.tracks.map(pt => (pt.variations || []).length));
-      
+
       for (let i = 0; i < maxVars; i++) {
         const btn = document.createElement("button");
         btn.className = "btn";
@@ -6328,18 +6334,18 @@ function loadRhythmNew(preset) {
         btn.style.borderRadius = "8px";
         btn.style.padding = "0.35rem 0.75rem";
         btn.style.cursor = "pointer";
-        
+
         btn.addEventListener("click", () => {
           const wasActive = btn.classList.contains("btn-primary");
-          
+
           Array.from(variationsContainer.children).forEach(child => {
             child.classList.remove("btn-primary");
           });
-          
+
           if (state.echauffementActive) {
             triggerEchauffement(); // toggle off
           }
-          
+
           if (!wasActive) {
             btn.classList.add("btn-primary");
           }
@@ -6356,12 +6362,12 @@ function loadRhythmNew(preset) {
               });
             } else {
               state.activeVariation = i;
-              
+
               state.tracks.forEach(track => {
                 const presetTrack = state.currentPreset.tracks.find(pt => cleanTrackName(pt.part) === cleanTrackName(track.name));
                 if (presetTrack) {
                   if (!track.standardSteps) track.standardSteps = [...track.steps];
-                  
+
                   if (presetTrack.variations && presetTrack.variations[i]) {
                     track.steps = convertPatternToSteps(presetTrack.variations[i].drum_pattern, state.timeSignature, track.name);
                   } else {
@@ -6380,19 +6386,19 @@ function loadRhythmNew(preset) {
             action();
           }
         });
-        
+
         variationsContainer.appendChild(btn);
       }
     } else {
       if (variationsRow) variationsRow.style.display = "none";
     }
-    
+
     // Populate Special Parts Row
     const nonSoloSpecialParts = (preset.special_parts || []).filter(sp => sp.type !== "Solo" && sp.type !== "Call");
     if (nonSoloSpecialParts.length > 0 && specialRow && specialContainer) {
       specialRow.style.display = "flex";
       specialContainer.innerHTML = "";
-      
+
       nonSoloSpecialParts.forEach((sp, idx) => {
         const btn = document.createElement("button");
         btn.className = "btn";
@@ -6403,7 +6409,7 @@ function loadRhythmNew(preset) {
         btn.style.fontSize = "0.8rem";
         btn.style.padding = "0.35rem 0.75rem";
         btn.style.cursor = "pointer";
-        
+
         if (sp.type === "Intro") {
           btn.style.background = "rgba(59, 130, 246, 0.15)";
           btn.style.border = "1px solid rgba(59, 130, 246, 0.35)";
@@ -6417,10 +6423,10 @@ function loadRhythmNew(preset) {
           btn.style.border = "1px solid rgba(245, 158, 11, 0.35)";
           btn.style.color = "#f59e0b";
         }
-        
+
         btn.addEventListener("click", () => {
           const wasActive = btn.classList.contains("btn-primary") || btn.classList.contains("special-active");
-          
+
           Array.from(specialContainer.children).forEach(child => {
             child.classList.remove("btn-primary", "special-active");
             const title = child.title.split(":")[0];
@@ -6435,7 +6441,7 @@ function loadRhythmNew(preset) {
               child.style.borderColor = "rgba(245, 158, 11, 0.35)";
             }
           });
-          
+
           const solosContainer = document.getElementById("solos-buttons-container");
           if (solosContainer) {
             Array.from(solosContainer.children).forEach(child => {
@@ -6444,7 +6450,7 @@ function loadRhythmNew(preset) {
               child.style.borderColor = "rgba(168, 85, 247, 0.35)";
             });
           }
-          
+
           state.tracks.forEach(track => {
             if (track.preSoloAccompanimentSteps) {
               track.steps = [...track.preSoloAccompanimentSteps];
@@ -6455,7 +6461,7 @@ function loadRhythmNew(preset) {
               delete track.preSoloAccompanimentSteps;
             }
           });
-          
+
           if (wasActive) {
             state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
             state.callIntroActive = false;
@@ -6467,21 +6473,21 @@ function loadRhythmNew(preset) {
             playSpecialPart(sp, btn);
           }
         });
-        
+
         specialContainer.appendChild(btn);
       });
     } else {
       if (specialRow) specialRow.style.display = "none";
     }
-    
+
     // Populate Solos Row (for the old format)
     const soloParts = (preset.special_parts || []).filter(sp => sp.type === "Solo" && !sp.name.toLowerCase().includes("accomp"));
     const accompPart = (preset.special_parts || []).find(sp => sp.type === "Solo" && sp.name.toLowerCase().includes("accomp"));
-    
+
     if (soloParts.length > 0 && solosRow && solosContainer) {
       solosRow.style.display = "flex";
       solosContainer.innerHTML = "";
-      
+
       soloParts.forEach((sp, idx) => {
         const btn = document.createElement("button");
         btn.className = "btn";
@@ -6499,16 +6505,16 @@ function loadRhythmNew(preset) {
         btn.style.padding = "0";
         btn.style.flex = "0 0 28px";
         btn.style.cursor = "pointer";
-        
+
         btn.style.background = "rgba(168, 85, 247, 0.15)";
         btn.style.border = "1px solid rgba(168, 85, 247, 0.35)";
         btn.style.color = "#a855f7";
-        
+
         btn.addEventListener("click", () => {
           const wasActive = btn.classList.contains("btn-primary") || btn.classList.contains("special-active");
           const action = () => {
             deactivateAllSpecialButtons();
-            
+
             state.tracks.forEach(track => {
               if (track.preSoloAccompanimentSteps) {
                 track.steps = [...track.preSoloAccompanimentSteps];
@@ -6519,12 +6525,12 @@ function loadRhythmNew(preset) {
                 delete track.preSoloAccompanimentSteps;
               }
             });
-            
+
             if (!wasActive) {
               btn.classList.add("special-active", "btn-primary");
               btn.style.background = "";
               btn.style.borderColor = "";
-              
+
               if (accompPart) {
                 const djembeTrack = state.tracks.find(t => t.type === "djembe" && t.id !== "solo_djembe");
                 if (djembeTrack) {
@@ -6537,7 +6543,7 @@ function loadRhythmNew(preset) {
                   }
                 }
               }
-              
+
               let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
               if (!soloTrack) {
                 soloTrack = {
@@ -6555,7 +6561,7 @@ function loadRhythmNew(preset) {
               } else {
                 soloTrack.name = sp.name;
               }
-              
+
               soloTrack.subdivision = getSubdivisionForTiming(state.timeSignature);
               const steps = convertPatternToSteps(sp.drum_pattern, state.timeSignature, "Djembé");
               soloTrack.steps = steps;
@@ -6564,19 +6570,19 @@ function loadRhythmNew(preset) {
               soloTrack.subdivisionSteps = {
                 [soloTrack.subdivision]: [...steps]
               };
-              
+
               if (sp.type === "Intro" || sp.type === "Call" || sp.type === "Break") {
                 state.callIntroActive = true;
               } else {
                 state.callIntroActive = false;
               }
-              
+
               state.tracks.forEach(t => {
                 const isCall = t.id === "solo_djembe" ||
-                               t.id.startsWith("special") || 
-                               t.name.toLowerCase().includes("call") || 
-                               t.name.toLowerCase().includes("break") || 
-                               t.name.toLowerCase().includes("intro");
+                  t.id.startsWith("special") ||
+                  t.name.toLowerCase().includes("call") ||
+                  t.name.toLowerCase().includes("break") ||
+                  t.name.toLowerCase().includes("intro");
                 if (isCall) t.muted = false;
               });
             } else {
@@ -6595,14 +6601,14 @@ function loadRhythmNew(preset) {
             }
           }
         });
-        
+
         solosContainer.appendChild(btn);
       });
     } else {
       if (solosRow) solosRow.style.display = "none";
     }
   }
-  
+
   renderGrid();
   updateSpecialButtonsState(preset);
 }
@@ -6610,15 +6616,15 @@ function loadRhythmNew(preset) {
 function toggleEchauffementNew() {
   const echBtn = document.getElementById("btn-trigger-echauffement");
   state.echauffementActive = !state.echauffementActive;
-  
+
   const isNewFormat = state.currentPreset && (state.currentPreset.step_count !== undefined || (state.currentPreset.tracks && !Array.isArray(state.currentPreset.tracks)));
-  
+
   if (state.echauffementActive) {
     if (echBtn) echBtn.classList.add("btn-primary");
-    
+
     // Deactivate solos and variations to avoid conflict
     deactivateAllSpecialButtons();
-    
+
     const action = () => {
       if (isNewFormat) {
         const echObj = state.currentPreset.echauffement || {};
@@ -6642,7 +6648,7 @@ function toggleEchauffementNew() {
       }
       renderGrid();
     };
-    
+
     if (!state.isPlaying) {
       action();
       togglePlay();
@@ -6651,7 +6657,7 @@ function toggleEchauffementNew() {
     }
   } else {
     if (echBtn) echBtn.classList.remove("btn-primary");
-    
+
     const action = () => {
       state.tracks.forEach(track => {
         if (track.standardSteps) {
@@ -6662,7 +6668,7 @@ function toggleEchauffementNew() {
       });
       renderGrid();
     };
-    
+
     if (!state.isPlaying) {
       action();
     } else {
@@ -6673,7 +6679,7 @@ function toggleEchauffementNew() {
 
 function playSpecialPart(sp) {
   const isNewFormat = state.currentPreset && (state.currentPreset.step_count !== undefined || (state.currentPreset.tracks && !Array.isArray(state.currentPreset.tracks)));
-  
+
   let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
   if (!soloTrack) {
     soloTrack = {
@@ -6691,7 +6697,7 @@ function playSpecialPart(sp) {
   } else {
     soloTrack.name = sp.name || sp.part_id || "Solo Djembe";
   }
-  
+
   soloTrack.subdivision = getSubdivisionForTiming(state.timeSignature);
   let steps;
   if (isNewFormat) {
@@ -6699,26 +6705,26 @@ function playSpecialPart(sp) {
   } else {
     steps = convertPatternToSteps(sp.drum_pattern, state.timeSignature, "Djembé");
   }
-  
+
   soloTrack.steps = steps;
   soloTrack.originalSteps = [...steps];
   soloTrack.originalSubdivision = soloTrack.subdivision;
   soloTrack.subdivisionSteps = {
     [soloTrack.subdivision]: [...steps]
   };
-  
+
   if (sp.type === "Intro" || sp.type === "Call" || sp.type === "Break") {
     state.callIntroActive = true;
   } else {
     state.callIntroActive = false;
   }
-  
+
   state.tracks.forEach(t => {
     const isCall = t.id === "solo_djembe" ||
-                   t.id.startsWith("special") || 
-                   t.name.toLowerCase().includes("call") || 
-                   t.name.toLowerCase().includes("break") || 
-                   t.name.toLowerCase().includes("intro");
+      t.id.startsWith("special") ||
+      t.name.toLowerCase().includes("call") ||
+      t.name.toLowerCase().includes("break") ||
+      t.name.toLowerCase().includes("intro");
     if (isCall) t.muted = false;
   });
 
@@ -6727,7 +6733,7 @@ function playSpecialPart(sp) {
 
 function playBreak(brk, btn) {
   const wasActive = btn ? (btn.classList.contains("break-active") || btn.classList.contains("btn-primary")) : false;
-  
+
   const action = () => {
     deactivateAllSpecialButtons();
     if (!wasActive) {
@@ -6748,7 +6754,7 @@ function playBreak(brk, btn) {
       } else {
         soloTrack.name = brk.name;
       }
-      
+
       soloTrack.subdivision = brk.subdivision;
       soloTrack.steps = [...brk.steps];
       soloTrack.originalSteps = [...brk.steps];
@@ -6756,7 +6762,7 @@ function playBreak(brk, btn) {
       soloTrack.subdivisionSteps = {
         [soloTrack.subdivision]: [...soloTrack.steps]
       };
-      
+
       state.callIntroActive = true;
       if (btn) {
         btn.classList.add("break-active", "btn-primary");

@@ -353,13 +353,13 @@ function getInstrumentHSL(instrument, type, isCall) {
     }
     if (instrument.includes("dundunba")) {
       if (isBell) {
-        if (instrument.includes("3")) return "230, 85%, 72%"; // Bell 2
-        if (instrument.includes("4")) return "238, 85%, 74%"; // Bell 3
-        return "222, 85%, 70%"; // Bell 1
+        if (instrument.includes("3")) return "230, 98%, 72%"; // Bell 2
+        if (instrument.includes("4")) return "238, 98%, 74%"; // Bell 3
+        return "222, 98%, 70%"; // Bell 1
       } else {
-        if (instrument.includes("3")) return "244, 85%, 75%";
-        if (instrument.includes("4")) return "252, 85%, 76%";
-        return "218, 88%, 68%";
+        if (instrument.includes("3")) return "244, 98%, 75%";
+        if (instrument.includes("4")) return "252, 98%, 76%";
+        return "218, 98%, 68%";
       }
     }
   }
@@ -5469,6 +5469,12 @@ function renderGrid() {
       } else if (track.instrument.includes("kenkeni")) {
         opacityMultiplier = 0.8; // Green reduction
       }
+    }
+
+    // Check if the color is red or very close to red (hue in [340, 360] or [0, 15])
+    const hueVal = parseInt(hslString.split(",")[0]);
+    if (hueVal >= 340 || hueVal <= 15) {
+      opacityMultiplier += 0.25; // Boost overlay opacity for red tracks
     }
 
     row.style.setProperty("--row-border-color", `hsla(${hslString}, ${0.08 * opacityMultiplier})`);
