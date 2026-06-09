@@ -38,29 +38,55 @@ const state = {
 const synth = new DrumSynth();
 
 // Graphical SVGs for Track Instruments
-const DJEMBE_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+const DJEMBE_1_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
   <ellipse cx="12" cy="5" rx="7" ry="2" fill="currentColor" fill-opacity="0.15" />
   <path d="M5 5c0 4 3 6 4 10a3 3 0 0 0 3 3 3 3 0 0 0 3-3c1-4 4-6 4-10" />
   <ellipse cx="12" cy="18" rx="3" ry="1" fill="currentColor" fill-opacity="0.2" />
 </svg>`;
 
-const DUNDUNBA_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-  <rect x="3" y="5" width="18" height="14" rx="2" fill="currentColor" fill-opacity="0.15" />
-  <ellipse cx="3" cy="12" rx="1.5" ry="7" />
-  <ellipse cx="21" cy="12" rx="1.5" ry="7" />
-  <path d="M3 5h18M3 19h18" />
-  <path d="M3 5l4.5 14 4.5-14 4.5 14 4.5-14" stroke-dasharray="1 1" />
+const DJEMBE_2_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <ellipse cx="12" cy="5" rx="7" ry="2" fill="currentColor" fill-opacity="0.15" />
+  <path d="M5 5c0 4 3 6 4 10a3 3 0 0 0 3 3 3 3 0 0 0 3-3c1-4 4-6 4-10" />
+  <ellipse cx="12" cy="18" rx="3" ry="1" fill="currentColor" fill-opacity="0.2" />
+  <path d="M8 6l1 9 M12 7v8 M16 6l-1 9" stroke-width="1.2" stroke-dasharray="1 1" />
 </svg>`;
 
-const SANGBAN_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-  <rect x="5" y="6" width="14" height="12" rx="2" fill="currentColor" fill-opacity="0.15" />
-  <ellipse cx="5" cy="12" rx="1.5" ry="6" />
-  <ellipse cx="19" cy="12" rx="1.5" ry="6" />
-  <path d="M5 6h14M5 18h14" />
-  <path d="M5 6l3.5 12 3.5-12 3.5 12 3.5-12" stroke-dasharray="1 1" />
+const DJEMBE_3_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <ellipse cx="12" cy="5" rx="7.5" ry="2" fill="currentColor" fill-opacity="0.15" />
+  <path d="M4.5 5c0 3 2.5 5.5 3.5 9.5a4 4 0 0 0 4 3.5 4 4 0 0 0 4-3.5c1-4 3.5-6.5 3.5-9.5" />
+  <ellipse cx="12" cy="18" rx="4" ry="1" fill="currentColor" fill-opacity="0.2" />
+  <path d="M8 12.5a4 0.8 0 0 0 8 0" stroke-width="1.5" />
 </svg>`;
 
-const KENKENI_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+const DJEMBE_4_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <ellipse cx="12" cy="4.5" rx="6.5" ry="1.8" fill="currentColor" fill-opacity="0.25" />
+  <path d="M12 4.5m-6.5 0v1a6.5 1.8 0 0 0 13 0v-1" />
+  <path d="M5.5 5c0 4.5 3.5 6.5 3.5 10.5a3 3 0 0 0 3 3 3 3 0 0 0 3-3c0-4 3.5-6 3.5-10.5" />
+  <ellipse cx="12" cy="18.5" rx="3" ry="1" fill="currentColor" fill-opacity="0.25" />
+  <path d="M9 13.5l3-8.5 3 8.5 M7 6.5l5 7 5-7" stroke-width="1" stroke-opacity="0.7" />
+</svg>`;
+
+const DJEMBE_5_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+  <ellipse cx="12" cy="5" rx="7" ry="2" fill="currentColor" fill-opacity="0.15" />
+  <path d="M5 5c0 3.5 2 5.5 3 9.5v3.5h8v-3.5c1-4 3-6 3-9.5" />
+  <line x1="8" y1="14.5" x2="16" y2="14.5" stroke-width="1.5" />
+</svg>`;
+
+const DJEMBE_6_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <ellipse cx="12" cy="5" rx="7" ry="2" fill="currentColor" fill-opacity="0.15" />
+  <path d="M5 5c0 4 3 6 4 10a3 3 0 0 0 3 3 3 3 0 0 0 3-3c1-4 4-6 4-10" />
+  <ellipse cx="12" cy="18" rx="3" ry="1" fill="currentColor" fill-opacity="0.2" />
+  <path d="M6 5.5l5 9 M18 5.5l-5 9 M12 5l-3 9.5 M12 5l3 9.5" stroke-width="0.8" stroke-opacity="0.6" />
+</svg>`;
+
+const DJEMBE_7_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <ellipse cx="12" cy="5" rx="7" ry="2" fill="currentColor" fill-opacity="0.1" />
+  <path d="M5 5c0 4 3 6 4 10a3 3 0 0 0 3 3 3 3 0 0 0 3-3c1-4 4-6 4-10" />
+  <ellipse cx="12" cy="18" rx="4.5" ry="1.5" fill="currentColor" fill-opacity="0.3" />
+  <path d="M9.5 13.5h5 M9 15h6" stroke-width="1.5" />
+</svg>`;
+
+const KENKENI_1_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
   <rect x="7" y="7" width="10" height="10" rx="2" fill="currentColor" fill-opacity="0.15" />
   <ellipse cx="7" cy="12" rx="1.2" ry="5" />
   <ellipse cx="17" cy="12" rx="1.2" ry="5" />
@@ -68,14 +94,71 @@ const KENKENI_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox
   <path d="M7 7l2.5 10 2.5-10 2.5 10 2.5-10" stroke-dasharray="1 1" />
 </svg>`;
 
-const KENKENI_BELL_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+const KENKENI_2_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <rect x="7.5" y="7" width="9" height="10" rx="1.5" fill="currentColor" fill-opacity="0.15" />
+  <ellipse cx="7.5" cy="12" rx="1" ry="5" />
+  <ellipse cx="16.5" cy="12" rx="1" ry="5" />
+  <path d="M7.5 7h9M7.5 17h9" />
+  <path d="M7.5 7l2.25 10 2.25-10 2.25 10 2.25-10" />
+  <path d="M7.5 17l2.25-10 2.25 10 2.25-10 2.25 10" stroke-width="0.8" stroke-opacity="0.5" />
+</svg>`;
+
+const KENKENI_3_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <rect x="7" y="7" width="10" height="10" rx="2" fill="currentColor" fill-opacity="0.25" />
+  <ellipse cx="7" cy="12" rx="1.2" ry="5" />
+  <ellipse cx="17" cy="12" rx="1.2" ry="5" />
+  <path d="M7 7h10M7 17h10" stroke-width="2.5" />
+  <line x1="12" y1="7" x2="12" y2="17" stroke-width="1.5" />
+</svg>`;
+
+const KENKENI_BELL_1_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
   <path d="M12 3a2 2 0 0 0-2 2v1h4V5a2 2 0 0 0-2-2z" />
   <path d="M10 6 L7 17 A5 1.5 0 0 0 17 17 L14 6 Z" fill="currentColor" fill-opacity="0.15" />
   <ellipse cx="12" cy="17" rx="5" ry="1.5" />
   <line x1="12" y1="6" x2="12" y2="15.5" stroke-dasharray="1 2" />
 </svg>`;
 
-const SANGBAN_BELL_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+const KENKENI_BELL_2_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <path d="M12 3a2 2 0 0 0-2 2v1h4V5a2 2 0 0 0-2-2z" />
+  <path d="M10 6 L7 17 A5 1.5 0 0 0 17 17 L14 6 Z" fill="currentColor" fill-opacity="0.15" />
+  <ellipse cx="12" cy="17" rx="5" ry="1.5" />
+  <path d="M8.5 11.5a3 0.9 0 0 0 7 0" stroke-width="1" stroke-dasharray="1 1" />
+  <line x1="12" y1="6" x2="12" y2="15.5" />
+</svg>`;
+
+const KENKENI_BELL_3_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <path d="M12 3a2 2 0 0 0-2 2v1h4V5a2 2 0 0 0-2-2z" />
+  <path d="M10 6 L7 17 A5 1.5 0 0 0 17 17 L14 6 Z" fill="currentColor" fill-opacity="0.3" />
+  <ellipse cx="12" cy="17" rx="5" ry="1.5" />
+  <path d="M10 6h4 M8.5 11.5h7" stroke-width="1.5" />
+</svg>`;
+
+const SANGBAN_1_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <rect x="5" y="6" width="14" height="12" rx="2" fill="currentColor" fill-opacity="0.15" />
+  <ellipse cx="5" cy="12" rx="1.5" ry="6" />
+  <ellipse cx="19" cy="12" rx="1.5" ry="6" />
+  <path d="M5 6h14M5 18h14" />
+  <path d="M5 6l3.5 12 3.5-12 3.5 12 3.5-12" stroke-dasharray="1 1" />
+</svg>`;
+
+const SANGBAN_2_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <rect x="5.5" y="6" width="13" height="12" rx="1.5" fill="currentColor" fill-opacity="0.15" />
+  <ellipse cx="5.5" cy="12" rx="1.2" ry="6" />
+  <ellipse cx="18.5" cy="12" rx="1.2" ry="6" />
+  <path d="M5.5 6h13M5.5 18h13" />
+  <path d="M5.5 6l3.25 12 3.25-12 3.25 12 3.25-12" />
+  <path d="M5.5 18l3.25-12 3.25 12 3.25-12 3.25 12" stroke-width="0.8" stroke-opacity="0.5" />
+</svg>`;
+
+const SANGBAN_3_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <rect x="5" y="6" width="14" height="12" rx="2" fill="currentColor" fill-opacity="0.25" />
+  <ellipse cx="5" cy="12" rx="1.5" ry="6" />
+  <ellipse cx="19" cy="12" rx="1.5" ry="6" />
+  <path d="M5 6h14M5 18h14" />
+  <path d="M8 6v12 M11 6v12 M14 6v12" stroke-width="1.2" />
+</svg>`;
+
+const SANGBAN_BELL_1_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
   <path d="M12 2a2 2 0 0 0-2 2v2h4V4a2 2 0 0 0-2-2z" />
   <path d="M10 8 L6 18 A6 1.8 0 0 0 18 18 L14 8 Z" fill="currentColor" fill-opacity="0.15" />
   <ellipse cx="12" cy="18" rx="6" ry="1.8" />
@@ -83,13 +166,68 @@ const SANGBAN_BELL_SVG = `<svg class="track-inst-icon" width="20" height="20" vi
   <path d="M8.5 13c2.3 1 4.7 1 7 0" stroke-width="1" stroke-dasharray="1 1" />
 </svg>`;
 
-const DUNDUNBA_BELL_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+const SANGBAN_BELL_2_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <path d="M12 2a2 2 0 0 0-2 2v2h4V4a2 2 0 0 0-2-2z" />
+  <path d="M10 8 L6 18 A6 1.8 0 0 0 18 18 L14 8 Z" fill="currentColor" fill-opacity="0.15" />
+  <ellipse cx="12" cy="18" rx="6" ry="1.8" />
+  <line x1="12" y1="8" x2="12" y2="16.2" stroke-dasharray="2 1" />
+  <path d="M8 13.5a5.5 1.5 0 0 0 8 0" stroke-width="1.2" />
+</svg>`;
+
+const SANGBAN_BELL_3_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <path d="M12 2a2 2 0 0 0-2 2v2h4V4a2 2 0 0 0-2-2z" stroke-width="2.5" />
+  <path d="M10 8 L6 18 A6 1.8 0 0 0 18 18 L14 8 Z" fill="currentColor" fill-opacity="0.3" />
+  <ellipse cx="12" cy="18" rx="6" ry="1.8" />
+  <path d="M10 8h4 M7.5 14.5h9" stroke-width="1.8" />
+</svg>`;
+
+const DUNDUNBA_1_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <rect x="3" y="5" width="18" height="14" rx="2" fill="currentColor" fill-opacity="0.15" />
+  <ellipse cx="3" cy="12" rx="1.5" ry="7" />
+  <ellipse cx="21" cy="12" rx="1.5" ry="7" />
+  <path d="M3 5h18M3 19h18" />
+  <path d="M3 5l4.5 14 4.5-14 4.5 14 4.5-14" stroke-dasharray="1 1" />
+</svg>`;
+
+const DUNDUNBA_2_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <rect x="3.5" y="5" width="17" height="14" rx="1.5" fill="currentColor" fill-opacity="0.15" />
+  <ellipse cx="3.5" cy="12" rx="1.2" ry="7" />
+  <ellipse cx="20.5" cy="12" rx="1.2" ry="7" />
+  <path d="M3.5 5h17M3.5 19h17" />
+  <path d="M3.5 5l4.25 14 4.25-14 4.25 14 4.25-14" />
+  <path d="M3.5 19l4.25-14 4.25 14 4.25-14 4.25 14" stroke-width="1" stroke-opacity="0.6" />
+</svg>`;
+
+const DUNDUNBA_3_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <rect x="3" y="5" width="18" height="14" rx="2" fill="currentColor" fill-opacity="0.25" />
+  <ellipse cx="3" cy="12" rx="1.5" ry="7" />
+  <ellipse cx="21" cy="12" rx="1.5" ry="7" />
+  <path d="M3 5h18M3 19h18" />
+  <path d="M3 8.5h18M3 12h18M3 15.5h18" stroke-dasharray="2 2" stroke-opacity="0.8" />
+</svg>`;
+
+const DUNDUNBA_BELL_1_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
   <path d="M12 2a2.5 2.5 0 0 0-2.5 2.5v2.5h5V4.5A2.5 2.5 0 0 0 12 2z" />
   <path d="M9.5 7 L5 19 A7 2 0 0 0 19 19 L14.5 7 Z" fill="currentColor" fill-opacity="0.15" />
   <ellipse cx="12" cy="19" rx="7" ry="2" />
   <line x1="12" y1="7" x2="12" y2="17" />
   <path d="M8.2 12c2.5 1.2 5.1 1.2 7.6 0" stroke-width="1.2" />
   <path d="M6.5 16c3.6 1.5 7.4 1.5 11 0" stroke-width="1.2" />
+</svg>`;
+
+const DUNDUNBA_BELL_2_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <path d="M12 2a2.5 2.5 0 0 0-2.5 2.5v2.5h5V4.5A2.5 2.5 0 0 0 12 2z" />
+  <path d="M9.5 7 L5 19 A7 2 0 0 0 19 19 L14.5 7 Z" fill="currentColor" fill-opacity="0.15" />
+  <ellipse cx="12" cy="19" rx="7" ry="2" />
+  <line x1="12" y1="7" x2="12" y2="17" stroke-dasharray="1 1" />
+  <path d="M8 12.5a6.5 1.5 0 0 0 8 0 M6.5 15.5a9 1.5 0 0 0 11 0" stroke-width="1" />
+</svg>`;
+
+const DUNDUNBA_BELL_3_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <path d="M12 2a2.5 2.5 0 0 0-2.5 2.5v2.5h5V4.5A2.5 2.5 0 0 0 12 2z" stroke-width="2.5" />
+  <path d="M9.5 7 L5 19 A7 2 0 0 0 19 19 L14.5 7 Z" fill="currentColor" fill-opacity="0.3" />
+  <ellipse cx="12" cy="19" rx="7" ry="2" />
+  <path d="M9.5 7h5 M7.2 13.2h9.6" stroke-width="1.8" />
 </svg>`;
 
 const SHEKERE_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -110,6 +248,58 @@ const CALL_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0
   <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" fill="currentColor" fill-opacity="0.15" />
   <line x1="4" y1="22" x2="4" y2="15" />
 </svg>`;
+
+function getInstrumentSVG(instrument, type) {
+  if (type === "djembe" || (instrument && instrument.startsWith("djembe"))) {
+    if (instrument === "djembe1") return DJEMBE_1_SVG;
+    if (instrument === "djembe2") return DJEMBE_2_SVG;
+    if (instrument === "djembe3") return DJEMBE_3_SVG;
+    if (instrument === "djembe4") return DJEMBE_4_SVG;
+    if (instrument === "djembe5") return DJEMBE_5_SVG;
+    if (instrument === "djembe6") return DJEMBE_6_SVG;
+    if (instrument === "djembe7") return DJEMBE_7_SVG;
+    return DJEMBE_1_SVG;
+  }
+  if (type === "shekere" || instrument === "shekere") return SHEKERE_SVG;
+  if (instrument === "call" || type === "call") return CALL_SVG;
+  
+  // Dunun / Bell
+  const isBell = type === "bell" || (instrument && instrument.includes("bell"));
+  if (instrument && instrument.includes("kenkeni")) {
+    if (isBell) {
+      if (instrument.includes("3")) return KENKENI_BELL_2_SVG;
+      if (instrument.includes("4")) return KENKENI_BELL_3_SVG;
+      return KENKENI_BELL_1_SVG;
+    } else {
+      if (instrument.includes("3")) return KENKENI_2_SVG;
+      if (instrument.includes("4")) return KENKENI_3_SVG;
+      return KENKENI_1_SVG;
+    }
+  }
+  if (instrument && instrument.includes("sangban")) {
+    if (isBell) {
+      if (instrument.includes("3")) return SANGBAN_BELL_2_SVG;
+      if (instrument.includes("4")) return SANGBAN_BELL_3_SVG;
+      return SANGBAN_BELL_1_SVG;
+    } else {
+      if (instrument.includes("3")) return SANGBAN_2_SVG;
+      if (instrument.includes("4")) return SANGBAN_3_SVG;
+      return SANGBAN_1_SVG;
+    }
+  }
+  if (instrument && instrument.includes("dundunba")) {
+    if (isBell) {
+      if (instrument.includes("3")) return DUNDUNBA_BELL_2_SVG;
+      if (instrument.includes("4")) return DUNDUNBA_BELL_3_SVG;
+      return DUNDUNBA_BELL_1_SVG;
+    } else {
+      if (instrument.includes("3")) return DUNDUNBA_2_SVG;
+      if (instrument.includes("4")) return DUNDUNBA_3_SVG;
+      return DUNDUNBA_1_SVG;
+    }
+  }
+  return DJEMBE_1_SVG;
+}
 
 // Helper to strip roles in parentheses, colons, semicolons, and remove "drum" or "bell" case-insensitively
 function cleanTrackName(name) {
@@ -5227,20 +5417,7 @@ function renderGrid() {
     info.style.alignItems = "center";
     info.style.gap = "0.5rem";
     
-    let instIconSVG = DJEMBE_SVG;
-    if (isCall) {
-      instIconSVG = CALL_SVG;
-    } else if (track.type === "dunun") {
-      if (track.instrument.includes("dundunba")) instIconSVG = DUNDUNBA_SVG;
-      else if (track.instrument.includes("sangban")) instIconSVG = SANGBAN_SVG;
-      else instIconSVG = KENKENI_SVG;
-    }
-    if (track.type === "bell") {
-      if (track.instrument.includes("dundunba")) instIconSVG = DUNDUNBA_BELL_SVG;
-      else if (track.instrument.includes("sangban")) instIconSVG = SANGBAN_BELL_SVG;
-      else instIconSVG = KENKENI_BELL_SVG;
-    }
-    if (track.type === "shekere") instIconSVG = SHEKERE_SVG;
+    let instIconSVG = getInstrumentSVG(isCall ? "call" : track.instrument, track.type);
     
     const iconSpan = document.createElement("span");
     iconSpan.className = "track-icon-wrapper";
@@ -5809,8 +5986,18 @@ function renderGrid() {
     // Build sample group options (used by popup picker button)
     let sampleOptions = [];
     if (track.type === "djembe") {
+      const djembeLabels = {
+        djembe1: "Djembe 1",
+        djembe2: "Djembe 2",
+        djembe3: "Djembe 3",
+        djembe4: "Djembe Solo",
+        djembe5: "Djembe 5",
+        djembe6: "Djembe 6",
+        djembe7: "Djembe 7"
+      };
       for (let i = 1; i <= 7; i++) {
-        sampleOptions.push({ value: `djembe${i}`, text: `Group ${i}` });
+        const val = `djembe${i}`;
+        sampleOptions.push({ value: val, text: djembeLabels[val] });
       }
     } else if (track.type === "dunun" || track.type === "bell") {
       let baseName = "";
@@ -5820,15 +6007,16 @@ function renderGrid() {
       
       if (baseName) {
         const isBell = track.instrument.includes("bell");
-        // 3 groups: Set 1 = djembeloops_samples, Set 2 = circAfrique v4 #1, Set 3 = circAfrique v4 #2
+        const instTitle = baseName.charAt(0).toUpperCase() + baseName.slice(1);
+        
         if (isBell) {
-          sampleOptions.push({ value: `${baseName}_bell`, text: "Set 1" });
-          sampleOptions.push({ value: `${baseName}3_bell`, text: "Set 2" });
-          sampleOptions.push({ value: `${baseName}4_bell`, text: "Set 3" });
+          sampleOptions.push({ value: `${baseName}_bell`, text: `${instTitle} Bell` });
+          sampleOptions.push({ value: `${baseName}3_bell`, text: `${instTitle} Bell 3` });
+          sampleOptions.push({ value: `${baseName}4_bell`, text: `${instTitle} Bell 4` });
         } else {
-          sampleOptions.push({ value: baseName, text: "Set 1" });
-          sampleOptions.push({ value: `${baseName}3`, text: "Set 2" });
-          sampleOptions.push({ value: `${baseName}4`, text: "Set 3" });
+          sampleOptions.push({ value: baseName, text: instTitle });
+          sampleOptions.push({ value: `${baseName}3`, text: `${instTitle} 3` });
+          sampleOptions.push({ value: `${baseName}4`, text: `${instTitle} 4` });
         }
       }
     }
@@ -6097,11 +6285,10 @@ function showSampleGroupPopup(track, sampleOptions, trackRow) {
     if (track.instrument === opt.value) btn.classList.add("active");
     
     // Get appropriate SVG icon and color for this option
-    let iconSvg = "";
+    let iconSvg = getInstrumentSVG(opt.value, track.type);
     let color = "";
     
     if (track.type === "djembe") {
-      iconSvg = DJEMBE_SVG;
       // 7 colors for 7 groups
       const djembeColors = [
         "hsl(342, 85%, 48%)", // crimson
@@ -6113,26 +6300,7 @@ function showSampleGroupPopup(track, sampleOptions, trackRow) {
         "hsl(280, 84%, 60%)"  // amethyst
       ];
       color = djembeColors[idx % djembeColors.length];
-      
-      // Slightly vary the look by changing fill-opacity and stroke-width
-      if (idx % 3 === 1) {
-        iconSvg = iconSvg.replace('fill-opacity="0.15"', 'fill-opacity="0.35"');
-      } else if (idx % 3 === 2) {
-        iconSvg = iconSvg.replace('stroke-width="2"', 'stroke-width="2.5"');
-      }
     } else {
-      // Dunun or Bell
-      const isBell = track.instrument.includes("bell");
-      if (track.instrument.includes("kenkeni")) {
-        iconSvg = isBell ? KENKENI_BELL_SVG : KENKENI_SVG;
-      } else if (track.instrument.includes("sangban")) {
-        iconSvg = isBell ? SANGBAN_BELL_SVG : SANGBAN_SVG;
-      } else if (track.instrument.includes("dundunba")) {
-        iconSvg = isBell ? DUNDUNBA_BELL_SVG : DUNDUNBA_SVG;
-      } else {
-        iconSvg = DJEMBE_SVG;
-      }
-      
       // 3 colors for 3 sets
       const setColors = [
         "hsl(175, 84%, 39%)", // set 1
@@ -6140,16 +6308,6 @@ function showSampleGroupPopup(track, sampleOptions, trackRow) {
         "hsl(239, 84%, 59%)"  // set 3
       ];
       color = setColors[idx % setColors.length];
-      
-      // Make them look slightly different
-      if (idx === 1) {
-        // Set 2: dashed line style
-        iconSvg = iconSvg.replace('stroke-width="2"', 'stroke-width="2" stroke-dasharray="2 1.5"');
-      } else if (idx === 2) {
-        // Set 3: filled style
-        iconSvg = iconSvg.replace('fill-opacity="0.15"', 'fill-opacity="0.4"');
-        iconSvg = iconSvg.replace('stroke-width="2"', 'stroke-width="2.5"');
-      }
     }
     
     // Create an icon wrapper div
