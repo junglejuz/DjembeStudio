@@ -303,28 +303,28 @@ function getInstrumentSVG(instrument, type) {
 
 function getInstrumentHSL(instrument, type, isCall) {
   if (isCall) {
-    return "35, 90%, 53%"; // warm gold / amber
+    return "35, 90%, 60%"; // warm gold / amber
   }
   if (type === "shekere" || instrument === "shekere") {
-    return "45, 93%, 49%"; // yellow/gold
+    return "45, 93%, 58%"; // yellow/gold
   }
   
   if (type === "djembe" || (instrument && instrument.startsWith("djembe"))) {
     // 7 colors for 7 groups (purple to red range, avoiding orange/yellow/blue/green, balanced for perceived brightness)
     const djembeColors = [
-      "260, 85%, 67%", // djembe1: violet/purple
-      "280, 84%, 65%", // djembe2: amethyst
-      "310, 85%, 60%", // djembe3: magenta
-      "330, 85%, 56%", // djembe4: deep pink/rose
-      "342, 85%, 54%", // djembe5: crimson
-      "355, 85%, 53%", // djembe6: ruby red
-      "0, 95%, 53%"    // djembe7: bright red
+      "260, 85%, 78%", // djembe1: violet/purple
+      "280, 84%, 76%", // djembe2: amethyst
+      "310, 85%, 72%", // djembe3: magenta
+      "330, 85%, 68%", // djembe4: deep pink/rose
+      "342, 85%, 65%", // djembe5: crimson
+      "355, 85%, 64%", // djembe6: ruby red
+      "0, 95%, 64%"    // djembe7: bright red
     ];
     const idx = parseInt(instrument.replace("djembe", "")) - 1;
     if (idx >= 0 && idx < djembeColors.length) {
       return djembeColors[idx];
     }
-    return "280, 84%, 65%"; // default djembe primary HSL (amethyst)
+    return "280, 84%, 76%"; // default djembe primary HSL (amethyst)
   }
   
   // Dunun or Bell: Unique HSL ranges for D/S/K and their bells, adjusted for perceived brightness
@@ -332,35 +332,35 @@ function getInstrumentHSL(instrument, type, isCall) {
     const isBell = type === "bell" || instrument.includes("bell");
     if (instrument.includes("kenkeni")) {
       if (isBell) {
-        if (instrument.includes("3")) return "162, 84%, 42%"; // Bell 2
-        if (instrument.includes("4")) return "152, 75%, 44%"; // Bell 3
-        return "138, 78%, 43%"; // Bell 1
+        if (instrument.includes("3")) return "162, 84%, 36%"; // Bell 2
+        if (instrument.includes("4")) return "152, 75%, 38%"; // Bell 3
+        return "138, 78%, 37%"; // Bell 1
       } else {
-        if (instrument.includes("3")) return "145, 80%, 43%";
-        if (instrument.includes("4")) return "158, 82%, 40%";
-        return "128, 76%, 44%";
+        if (instrument.includes("3")) return "145, 80%, 35%";
+        if (instrument.includes("4")) return "158, 82%, 34%";
+        return "128, 76%, 36%";
       }
     }
     if (instrument.includes("sangban")) {
       if (isBell) {
-        if (instrument.includes("3")) return "185, 90%, 47%"; // Bell 2
-        if (instrument.includes("4")) return "192, 92%, 49%"; // Bell 3
-        return "178, 88%, 45%"; // Bell 1
+        if (instrument.includes("3")) return "185, 90%, 42%"; // Bell 2
+        if (instrument.includes("4")) return "192, 92%, 43%"; // Bell 3
+        return "178, 88%, 41%"; // Bell 1
       } else {
-        if (instrument.includes("3")) return "197, 95%, 48%";
-        if (instrument.includes("4")) return "205, 95%, 50%";
-        return "182, 92%, 46%";
+        if (instrument.includes("3")) return "197, 95%, 42%";
+        if (instrument.includes("4")) return "205, 95%, 44%";
+        return "182, 92%, 40%";
       }
     }
     if (instrument.includes("dundunba")) {
       if (isBell) {
-        if (instrument.includes("3")) return "230, 85%, 63%"; // Bell 2
-        if (instrument.includes("4")) return "238, 85%, 65%"; // Bell 3
-        return "222, 85%, 61%"; // Bell 1
+        if (instrument.includes("3")) return "230, 85%, 72%"; // Bell 2
+        if (instrument.includes("4")) return "238, 85%, 74%"; // Bell 3
+        return "222, 85%, 70%"; // Bell 1
       } else {
-        if (instrument.includes("3")) return "244, 85%, 66%";
-        if (instrument.includes("4")) return "252, 85%, 68%";
-        return "218, 88%, 60%";
+        if (instrument.includes("3")) return "244, 85%, 75%";
+        if (instrument.includes("4")) return "252, 85%, 76%";
+        return "218, 88%, 68%";
       }
     }
   }
@@ -3933,9 +3933,22 @@ function renderGrid() {
     let hslString = getInstrumentHSL(track.instrument, track.type, isCall);
     
     row.style.setProperty("--part-color-hsl", hslString);
-    row.style.setProperty("--row-border-color", `hsla(${hslString}, 0.08)`);
-    row.style.setProperty("--row-border-color-active", `hsla(${hslString}, 0.42)`);
-    row.style.setProperty("--row-shadow-glow", `hsla(${hslString}, 0.17)`);
+    
+    // Perceptual brightness multiplier to balance opacity across colors (red/purple/blue get a boost, green gets reduced)
+    let opacityMultiplier = 1.0;
+    if (track.type === "djembe") {
+      opacityMultiplier = 1.4; // Red/Purple boost
+    } else if (track.type === "dunun" || track.type === "bell") {
+      if (track.instrument.includes("dundunba")) {
+        opacityMultiplier = 1.4; // Blue boost
+      } else if (track.instrument.includes("kenkeni")) {
+        opacityMultiplier = 0.8; // Green reduction
+      }
+    }
+    
+    row.style.setProperty("--row-border-color", `hsla(${hslString}, ${0.08 * opacityMultiplier})`);
+    row.style.setProperty("--row-border-color-active", `hsla(${hslString}, ${0.42 * opacityMultiplier})`);
+    row.style.setProperty("--row-shadow-glow", `hsla(${hslString}, ${0.17 * opacityMultiplier})`);
     
     // Left: Track Controls
     const meta = document.createElement("div");
