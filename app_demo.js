@@ -1,6 +1,6 @@
 import { DrumSynth } from './audio.js?v=1.0.9';
 import { RHYTHM_PRESETS, TIME_SIGNATURE_DEFAULTS } from './rhythms.js?v=1.0.9';
-import { RHYTHM_LIBRARY } from './library.js?v=1.0.9';
+import { RHYTHM_LIBRARY } from './library_compiled.js?v=1.0.9';
 
 
 // Application State
@@ -1092,7 +1092,9 @@ function loadRhythmNew(preset) {
   }
 
   state.bpm = preset.tempo || 110;
-  if (preset.groove_modifiers && preset.groove_modifiers.swing_factor !== undefined) {
+  if (preset.swingFactor !== undefined) {
+    state.swing = preset.swingFactor;
+  } else if (preset.groove_modifiers && preset.groove_modifiers.swing_factor !== undefined) {
     state.swing = preset.groove_modifiers.swing_factor;
   } else {
     state.swing = preset.swing || 0;
@@ -1105,6 +1107,12 @@ function loadRhythmNew(preset) {
     6: [0, 0, 0, 0, 0, 0]
   };
   [2, 3, 4, 6].forEach(s => applyGlobalSwingToOffsets(s, state.swing));
+
+  // Determine active subdivision based on timing and inject rhythm.swingOffsets flat array
+  const activeSubdivision = getSubdivisionForTiming(state.timeSignature);
+  if (Array.isArray(preset.swingOffsets)) {
+    state.customSwingOffsets[activeSubdivision] = [...preset.swingOffsets];
+  }
 
   // Sync UI controls
   state.humaniseTime = 40;

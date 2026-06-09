@@ -2,37 +2,50 @@ const fs = require('fs');
 const path = require('path');
 
 // Mock DOM globally
+function createMockElement(tag = '') {
+  const el = {
+    value: '',
+    textContent: '',
+    className: '',
+    options: [],
+    style: { setProperty: () => {}, removeProperty: () => {} },
+    classList: { add: () => {}, remove: () => {}, toggle: () => {}, contains: () => false },
+    appendChild: (child) => child,
+    addEventListener: () => {},
+    setAttribute: () => {},
+    getAttribute: () => '',
+    removeAttribute: () => {},
+    querySelector: () => createMockElement(),
+    querySelectorAll: () => []
+  };
+  return el;
+}
+
 global.window = {
-  state: {}
+  state: {},
+  document: null,
+  addEventListener: () => {},
+  removeEventListener: () => {}
+};
+global.localStorage = {
+  getItem: () => null,
+  setItem: () => {},
+  removeItem: () => {},
+  clear: () => {}
 };
 global.document = {
-  getElementById: (id) => {
-    return {
-      value: '',
-      textContent: '',
-      addEventListener: () => {},
-      appendChild: () => {},
-      style: {},
-      options: [],
-      classList: { add: () => {}, remove: () => {}, toggle: () => {} }
-    };
-  },
-  createElement: (tag) => {
-    return {
-      className: '',
-      style: {},
-      appendChild: () => {},
-      addEventListener: () => {},
-      setAttribute: () => {},
-      classList: { add: () => {}, remove: () => {}, toggle: () => {} }
-    };
-  },
-  querySelectorAll: () => []
+  getElementById: (id) => createMockElement(),
+  createElement: (tag) => createMockElement(tag),
+  querySelectorAll: () => [],
+  querySelector: () => createMockElement(),
+  addEventListener: () => {},
+  removeEventListener: () => {}
 };
+global.window.document = global.document;
 
 // Load file contents
 let rhythmsJs = fs.readFileSync(path.join(__dirname, 'rhythms.js'), 'utf8');
-let libraryJs = fs.readFileSync(path.join(__dirname, 'library.js'), 'utf8');
+let libraryJs = fs.readFileSync(path.join(__dirname, 'library_compiled.js'), 'utf8');
 let appJs = fs.readFileSync(path.join(__dirname, 'app.js'), 'utf8');
 
 // Strip exports and assign directly to global
@@ -82,12 +95,13 @@ let successCount = 0;
 let failCount = 0;
 
 for (let rhythm of library) {
-  console.log(`[PURE NODE] Loading rhythm: ${rhythm.name} (${rhythm.id})`);
+  const name = rhythm.rhythm_name || "Untitled";
+  console.log(`[PURE NODE] Loading rhythm: ${name}`);
   try {
-    global.loadRhythm(rhythm);
+    global.window.loadRhythm(rhythm);
     successCount++;
   } catch (e) {
-    console.error(`Failed to load rhythm "${rhythm.name}" (${rhythm.id}):`, e);
+    console.error(`Failed to load rhythm "${name}":`, e);
     failCount++;
   }
 }
