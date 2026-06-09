@@ -311,19 +311,19 @@ function getInstrumentHSL(instrument, type, isCall) {
   if (type === "djembe" || (instrument && instrument.startsWith("djembe"))) {
     // 7 colors for 7 groups (purple to red range, avoiding orange/yellow/blue/green, balanced for perceived brightness)
     const djembeColors = [
-      "260, 85%, 78%", // djembe1: violet/purple
-      "280, 84%, 76%", // djembe2: amethyst
-      "310, 85%, 72%", // djembe3: magenta
-      "330, 85%, 68%", // djembe4: deep pink/rose
-      "342, 85%, 65%", // djembe5: crimson
-      "355, 85%, 64%", // djembe6: ruby red
-      "0, 95%, 64%"    // djembe7: bright red
+      "260, 95%, 66%", // djembe1: violet/purple
+      "280, 95%, 64%", // djembe2: amethyst
+      "310, 95%, 62%", // djembe3: magenta
+      "330, 95%, 60%", // djembe4: deep pink/rose
+      "342, 95%, 57%", // djembe5: crimson
+      "355, 95%, 56%", // djembe6: ruby red
+      "0, 95%, 55%"    // djembe7: bright red
     ];
     const idx = parseInt(instrument.replace("djembe", "")) - 1;
     if (idx >= 0 && idx < djembeColors.length) {
       return djembeColors[idx];
     }
-    return "280, 84%, 76%"; // default djembe primary HSL (amethyst)
+    return "280, 95%, 64%"; // default djembe primary HSL (amethyst)
   }
   
   // Dunun or Bell: Unique HSL ranges for D/S/K and their bells, adjusted for perceived brightness
