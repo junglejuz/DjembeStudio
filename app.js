@@ -310,15 +310,15 @@ function getInstrumentHSL(instrument, type, isCall) {
   }
   
   if (type === "djembe" || (instrument && instrument.startsWith("djembe"))) {
-    // 7 colors for 7 groups (purple to orange range, avoiding blues/greens, balanced for perceived brightness)
+    // 7 colors for 7 groups (purple to red range, avoiding orange/yellow/blue/green, balanced for perceived brightness)
     const djembeColors = [
-      "342, 85%, 54%", // djembe1: crimson
-      "12, 95%, 53%",  // djembe2: rust/red-orange
-      "28, 95%, 51%",  // djembe3: orange
-      "45, 95%, 49%",  // djembe4: gold/amber
-      "280, 84%, 65%", // djembe5: amethyst
-      "260, 85%, 67%", // djembe6: violet/purple
-      "315, 85%, 60%"  // djembe7: magenta/pink-purple
+      "260, 85%, 67%", // djembe1: violet/purple
+      "280, 84%, 65%", // djembe2: amethyst
+      "310, 85%, 60%", // djembe3: magenta
+      "330, 85%, 56%", // djembe4: deep pink/rose
+      "342, 85%, 54%", // djembe5: crimson
+      "355, 85%, 53%", // djembe6: ruby red
+      "0, 95%, 53%"    // djembe7: bright red
     ];
     const idx = parseInt(instrument.replace("djembe", "")) - 1;
     if (idx >= 0 && idx < djembeColors.length) {
@@ -3933,9 +3933,9 @@ function renderGrid() {
     let hslString = getInstrumentHSL(track.instrument, track.type, isCall);
     
     row.style.setProperty("--part-color-hsl", hslString);
-    row.style.setProperty("--row-border-color", `hsla(${hslString}, 0.12)`);
-    row.style.setProperty("--row-border-color-active", `hsla(${hslString}, 0.6)`);
-    row.style.setProperty("--row-shadow-glow", `hsla(${hslString}, 0.25)`);
+    row.style.setProperty("--row-border-color", `hsla(${hslString}, 0.08)`);
+    row.style.setProperty("--row-border-color-active", `hsla(${hslString}, 0.42)`);
+    row.style.setProperty("--row-shadow-glow", `hsla(${hslString}, 0.17)`);
     
     // Left: Track Controls
     const meta = document.createElement("div");
