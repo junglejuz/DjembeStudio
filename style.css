@@ -375,6 +375,19 @@ input[type="range"] {
   background: rgba(255, 255, 255, 0.1);
   border-radius: 3px;
   outline: none;
+  touch-action: none; /* Prevent scroll interception on touch devices */
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+input[type="range"]::-moz-range-track {
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
 }
 
 input[type="range"]::-webkit-slider-thumb {
@@ -1153,6 +1166,7 @@ select option {
 .synth-slider {
   flex: 1;
   width: 100% !important;
+  touch-action: none; /* Prevent scroll interference */
 }
 
 /* Bottom Bar: Notation Export and Save slots */
@@ -2477,4 +2491,41 @@ body.light-theme .step-cell.beat-start-empty {
   color: #fff !important;
   background: var(--primary) !important;
   box-shadow: 0 0 10px var(--primary-glow) !important;
+}
+
+/* Responsive columns and layouts for Tuning and Volume Mixer rows */
+.tuning-mixer-row {
+  display: grid !important;
+  grid-template-columns: 32px 120px 1fr 65px !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+}
+
+@media (max-width: 480px) {
+  .tuning-mixer-row {
+    grid-template-columns: 24px 90px 1fr 50px !important;
+    gap: 0.4rem !important;
+  }
+}
+
+.volume-mixer-row {
+  display: grid !important;
+  grid-template-columns: 140px 1fr 65px !important;
+  align-items: center !important;
+  gap: 0.75rem !important;
+}
+
+@media (max-width: 480px) {
+  .volume-mixer-row {
+    grid-template-columns: 100px 1fr 50px !important;
+    gap: 0.4rem !important;
+  }
+}
+
+/* Disable top-level header and controls when any modal overlay is active */
+body:has(.modal-overlay.active) header .controls-right .btn,
+body:has(.modal-overlay.active) .controls-group-center .btn {
+  opacity: 0.35 !important;
+  pointer-events: none !important;
+  transition: all 0.2s ease !important;
 }

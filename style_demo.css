@@ -1015,27 +1015,11 @@ body {
   font-size: 0.7rem !important;
 }
 
-/* Active, dimmed, and disabled state styling for header buttons when modals/menus are open */
-body:has(#library-modal.active) .btn-title-icon:not(#btn-library-icon),
-body:has(#custom-swing-modal.active) .btn-title-icon:not(#btn-swing-settings),
-body:has(#custom-humanise-modal.active) .btn-title-icon:not(#btn-humanise-settings),
-body:has(#hamburger-menu.active) .btn-title-icon:not(#btn-hamburger),
-body:has(.modal-overlay.active:not(#library-modal):not(#custom-swing-modal):not(#custom-humanise-modal)) .btn-title-icon {
+/* Disable all settings header buttons when any modal or popup overlay is active */
+body:has(.modal-overlay.active) .btn-title-icon,
+body:has(.sample-group-overlay.active) .btn-title-icon {
   opacity: 0.35 !important;
   pointer-events: none !important;
-  transition: all 0.2s ease !important;
-}
-
-/* Highlight the active settings header buttons when open */
-body:has(#library-modal.active) #btn-library-icon,
-body:has(#custom-swing-modal.active) #btn-swing-settings,
-body:has(#custom-humanise-modal.active) #btn-humanise-settings,
-body:has(#hamburger-menu.active) #btn-hamburger {
-  opacity: 1 !important;
-  color: #ffffff !important;
-  background: rgba(255, 255, 255, 0.12) !important;
-  border-radius: 8px !important;
-  box-shadow: 0 0 10px rgba(255, 255, 255, 0.05) !important;
   transition: all 0.2s ease !important;
 }
 
@@ -1540,4 +1524,73 @@ body.light-theme .step-cell.beat-start-empty {
   color: #fff !important;
   background: var(--primary) !important;
   box-shadow: 0 0 10px var(--primary-glow) !important;
+}
+
+/* Responsive columns and layouts for Tuning and Volume Mixer rows (mobile version) */
+.tuning-mixer-row {
+  display: grid !important;
+  grid-template-columns: 24px 90px 1fr 50px !important;
+  gap: 0.4rem !important;
+  align-items: center !important;
+}
+
+.volume-mixer-row {
+  display: grid !important;
+  grid-template-columns: 100px 1fr 50px !important;
+  gap: 0.4rem !important;
+  align-items: center !important;
+}
+
+/* Custom styling for the sample picker popup tuning slider */
+.popup-tuning-container input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px; /* Thinner track */
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-radius: 2px;
+  outline: none;
+  touch-action: none;
+}
+
+.popup-tuning-container input[type="range"]::-webkit-slider-runnable-track {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-radius: 2px;
+}
+
+.popup-tuning-container input[type="range"]::-moz-range-track {
+  height: 4px;
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-radius: 2px;
+}
+
+.popup-tuning-container input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 8px var(--primary-glow);
+  cursor: pointer;
+  margin-top: -5px; /* Center track */
+  transition: transform 0.1s ease;
+}
+
+.popup-tuning-container input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.popup-tuning-container input[type="range"]::-moz-range-thumb {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--primary);
+  border: none;
+  box-shadow: 0 0 8px var(--primary-glow);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.popup-tuning-container input[type="range"]::-moz-range-thumb:hover {
+  transform: scale(1.2);
 }

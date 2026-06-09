@@ -5082,11 +5082,7 @@ function renderMixer() {
     const hslString = getInstrumentHSL(track.instrument, track.type, isCall);
 
     const row = document.createElement("div");
-    row.className = "synth-instrument-row";
-    row.style.display = "grid";
-    row.style.gridTemplateColumns = "32px 140px 1fr 65px";
-    row.style.alignItems = "center";
-    row.style.gap = "0.75rem";
+    row.className = "synth-instrument-row tuning-mixer-row";
     row.style.background = `linear-gradient(105deg, hsla(${hslString}, 0.08) 0%, hsla(${hslString}, 0.01) 100%)`;
     row.style.border = `1px solid hsla(${hslString}, 0.22)`;
     row.style.borderRadius = "8px";
@@ -5164,9 +5160,7 @@ function renderVolumeMixer() {
 
   state.tracks.forEach(track => {
     const row = document.createElement("div");
-    row.className = "synth-instrument-row";
-    row.style.gridTemplateColumns = "160px 1fr 65px";
-    row.style.alignItems = "center";
+    row.className = "synth-instrument-row volume-mixer-row";
     row.style.background = "rgba(255, 255, 255, 0.01)";
     row.style.border = "1px solid var(--border-color)";
     row.style.borderRadius = "8px";
@@ -6486,13 +6480,19 @@ function showSampleGroupPopup(track, sampleOptions, trackRow) {
   tuningContainer.appendChild(tuningSlider);
   popup.appendChild(tuningContainer);
 
-  // Add Close Button
+  // Add Close Button (wrapped in a right-aligned container)
+  const footerContainer = document.createElement("div");
+  footerContainer.style.cssText = `
+    width: 100%;
+    margin-top: 0.85rem;
+    display: flex;
+    justify-content: flex-end;
+  `;
+
   const closeBtn = document.createElement("button");
   closeBtn.className = "btn btn-primary";
   closeBtn.style.cssText = `
-    margin-top: 0.85rem;
-    width: 100%;
-    padding: 0.55rem;
+    padding: 0.5rem 1.5rem;
     font-size: 0.85rem;
     font-weight: 600;
     border-radius: 8px;
@@ -6504,7 +6504,9 @@ function showSampleGroupPopup(track, sampleOptions, trackRow) {
     overlay.remove();
     renderGrid();
   });
-  popup.appendChild(closeBtn);
+
+  footerContainer.appendChild(closeBtn);
+  popup.appendChild(footerContainer);
 
   overlay.appendChild(popup);
 
