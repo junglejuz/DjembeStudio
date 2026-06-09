@@ -828,6 +828,7 @@ function mapHitToSound(hit, trackType) {
       if (isDjembe) return 'S/S';
       if (isBell) return 'X/X';
       return 'O/O';
+    case 'tt': return 'T/T';
     case 'fs': return 'S/S';
     case 'ft': return 'T/T';
     case 'fb': return 'B/B';

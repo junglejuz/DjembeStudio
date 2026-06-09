@@ -3314,6 +3314,18 @@ function scheduleTick(tickIndex, time) {
 
 // Sound triggering routing
 function triggerSynthHit(type, instrument, hitVal, playTime, trackVol, trackPitch = 0, stepDuration = 0.15, hand = "L", timingContext = null) {
+  if (hitVal === "f") hitVal = "S/S";
+  else if (hitVal === "tt") hitVal = "T/T";
+  else if (hitVal === "fs") hitVal = "S/S";
+  else if (hitVal === "ft") hitVal = "T/T";
+  else if (hitVal === "fb") hitVal = "B/B";
+  else if (hitVal === "Y") hitVal = "B/T";
+  else if (hitVal === "W") hitVal = "B/S";
+  else if (hitVal === "rs") hitVal = "S-S";
+  else if (hitVal === "rt") hitVal = "T-T";
+  else if (hitVal === "rb") hitVal = "B-B";
+  else if (hitVal === "ts") hitVal = "S*S*S";
+
   if (hitVal.includes("/")) {
     const [h1, h2] = hitVal.split("/");
     const flamGap = Math.min(0.040, stepDuration * 0.22);
@@ -5484,6 +5496,7 @@ function mapHitToSound(hit, trackType) {
       if (isDjembe) return 'S/S';
       if (isBell) return 'X/X';
       return 'O/O';
+    case 'tt': return 'T/T';
     case 'fs': return 'S/S';
     case 'ft': return 'T/T';
     case 'fb': return 'B/B';
