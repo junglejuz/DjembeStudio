@@ -2360,6 +2360,10 @@ function setupLargeSlider(originalSlider, options = {}) {
     e.stopPropagation();
     e.preventDefault();
 
+    try {
+      originalSlider.setPointerCapture(e.pointerId);
+    } catch (err) { }
+
     injectLargeSliderOverlay();
     const overlay = document.getElementById("large-slider-overlay");
     if (!overlay) return;
@@ -2511,6 +2515,10 @@ function setupLargeSlider(originalSlider, options = {}) {
         window.removeEventListener("pointermove", onPointerMove);
         window.removeEventListener("pointerup", onRelease);
         window.removeEventListener("pointercancel", onRelease);
+
+        try {
+          originalSlider.releasePointerCapture(e.pointerId);
+        } catch (err) {}
       };
 
       window.addEventListener("pointermove", onPointerMove, { passive: false });
@@ -5152,7 +5160,7 @@ function renderMixer() {
     pitchValDisplay.style.fontFamily = "Outfit, sans-serif";
     pitchValDisplay.style.fontWeight = "700";
     pitchValDisplay.style.fontSize = "0.85rem";
-    pitchValDisplay.style.color = `hsl(${hslString})`;
+    pitchValDisplay.style.color = "#ffffff";
 
     const formatPitch = (p) => {
       const sign = p > 0 ? "+" : "";
@@ -5182,15 +5190,27 @@ function renderVolumeMixer() {
   volMixerBody.innerHTML = "";
 
   state.tracks.forEach(track => {
+    const isCall = track.id.startsWith("special") || track.name.toLowerCase().includes("call") || track.name.toLowerCase().includes("break");
+    const hslString = getInstrumentHSL(track.instrument, track.type, isCall);
+
     const row = document.createElement("div");
-    row.className = "synth-instrument-row volume-mixer-row";
-    row.style.background = "rgba(255, 255, 255, 0.01)";
-    row.style.border = "1px solid var(--border-color)";
+    row.className = "synth-instrument-row tuning-mixer-row";
+    row.style.background = `linear-gradient(105deg, hsla(${hslString}, 0.08) 0%, hsla(${hslString}, 0.01) 100%)`;
+    row.style.border = `1px solid hsla(${hslString}, 0.22)`;
     row.style.borderRadius = "8px";
     row.style.padding = "0.5rem 0.75rem";
 
+    const iconSpan = document.createElement("span");
+    iconSpan.style.display = "inline-flex";
+    iconSpan.style.alignItems = "center";
+    iconSpan.style.justifyContent = "center";
+    iconSpan.style.color = `hsl(${hslString})`;
+    iconSpan.style.gridColumn = "1";
+    iconSpan.innerHTML = getInstrumentSVG(isCall ? "call" : track.instrument, track.type);
+
     const label = document.createElement("span");
     label.className = "synth-inst-name";
+    label.style.gridColumn = "2";
     
     let displayName = cleanTrackName(track.name);
     if (track.type === "bell" || (track.instrument && track.instrument.includes("bell"))) {
@@ -5202,7 +5222,7 @@ function renderVolumeMixer() {
 
     const sliderContainer = document.createElement("div");
     sliderContainer.className = "synth-knob-container";
-    sliderContainer.style.gridColumn = "2";
+    sliderContainer.style.gridColumn = "3";
     sliderContainer.style.width = "100%";
 
     const slider = document.createElement("input");
@@ -5220,12 +5240,12 @@ function renderVolumeMixer() {
     slider.defaultValue = defaultVol;
 
     const volValDisplay = document.createElement("span");
-    volValDisplay.style.gridColumn = "3";
+    volValDisplay.style.gridColumn = "4";
     volValDisplay.style.textAlign = "right";
     volValDisplay.style.fontFamily = "Outfit, sans-serif";
     volValDisplay.style.fontWeight = "700";
     volValDisplay.style.fontSize = "0.85rem";
-    volValDisplay.style.color = "var(--primary)";
+    volValDisplay.style.color = "#ffffff";
     volValDisplay.textContent = `${Math.round(track.volume * 100)}%`;
 
     slider.addEventListener("input", (e) => {
@@ -5236,6 +5256,7 @@ function renderVolumeMixer() {
     });
 
     sliderContainer.appendChild(slider);
+    row.appendChild(iconSpan);
     row.appendChild(label);
     row.appendChild(sliderContainer);
     row.appendChild(volValDisplay);

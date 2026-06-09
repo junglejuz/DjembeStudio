@@ -879,6 +879,11 @@ function injectLargeSliderOverlay() {
 
   const style = document.createElement("style");
   style.textContent = `
+    .large-slider-input::-webkit-slider-runnable-track {
+      height: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+    }
     .large-slider-input::-webkit-slider-thumb {
       -webkit-appearance: none;
       appearance: none;
@@ -889,10 +894,26 @@ function injectLargeSliderOverlay() {
       cursor: pointer;
       box-shadow: 0 0 15px rgba(255,255,255,0.4);
       border: 2px solid #fff;
+      margin-top: -7px; /* Center thumb vertically on 10px track */
       transition: transform 0.1s ease;
     }
     .large-slider-input::-webkit-slider-thumb:active {
       transform: scale(1.15);
+    }
+    .large-slider-input::-moz-range-track {
+      height: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 6px;
+    }
+    .large-slider-input::-moz-range-thumb {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--accent-color, var(--primary, #6366f1)) !important;
+      cursor: pointer;
+      box-shadow: 0 0 15px rgba(255,255,255,0.4);
+      border: 2px solid #fff;
+      transition: transform 0.1s ease;
     }
   `;
   document.head.appendChild(style);
@@ -927,9 +948,7 @@ function setupLargeSlider(originalSlider, options = {}) {
     isCustomDragging = true;
 
     try {
-      if (originalSlider.hasPointerCapture(e.pointerId)) {
-        originalSlider.releasePointerCapture(e.pointerId);
-      }
+      originalSlider.setPointerCapture(e.pointerId);
     } catch (err) { }
 
     injectLargeSliderOverlay();
@@ -1089,6 +1108,10 @@ function setupLargeSlider(originalSlider, options = {}) {
         window.removeEventListener("pointerup", onRelease);
         window.removeEventListener("pointercancel", onRelease);
 
+        try {
+          originalSlider.releasePointerCapture(e.pointerId);
+        } catch (err) {}
+
         if (largeInput && originalSlider) {
           originalSlider.value = largeInput.value;
           const evInp = new Event("input");
@@ -1099,8 +1122,6 @@ function setupLargeSlider(originalSlider, options = {}) {
           evChg.isCustomUpdate = true;
           originalSlider.dispatchEvent(evChg);
         }
-
-        overlay.style.display = "none";
 
         setTimeout(() => {
           isCustomDragging = false;

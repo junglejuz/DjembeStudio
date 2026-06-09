@@ -371,9 +371,8 @@ header {
 input[type="range"] {
   -webkit-appearance: none;
   width: 130px;
-  height: 6px;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 3px;
+  height: 20px; /* Taller input to avoid thumb clipping and alignment issues */
+  background: transparent !important;
   outline: none;
   touch-action: none; /* Prevent scroll interception on touch devices */
 }
@@ -398,7 +397,7 @@ input[type="range"]::-webkit-slider-thumb {
   background: var(--primary);
   box-shadow: 0 0 10px var(--primary-glow);
   cursor: pointer;
-  margin-top: -5px; /* Center thumb vertically on Webkit track */
+  margin-top: -5px; /* Center 16px thumb on 6px track: (6-16)/2 = -5 */
   transition: transform 0.1s ease;
 }
 
@@ -2534,15 +2533,16 @@ body:has(.modal-overlay.active) .controls-group-center .btn {
 /* Custom styling for the main UI BPM/tempo range slider to make it thin (4px) and centered */
 #bpm-range {
   -webkit-appearance: none;
-  height: 4px !important;
-  background: rgba(255, 255, 255, 0.15) !important;
-  border-radius: 2px !important;
+  height: 20px !important;
+  background: transparent !important;
+  border-radius: 0 !important;
   outline: none;
 }
 
 #bpm-range::-webkit-slider-runnable-track {
   height: 4px !important;
-  background: transparent !important;
+  background: rgba(255, 255, 255, 0.15) !important;
+  border-radius: 2px !important;
 }
 
 #bpm-range::-webkit-slider-thumb {
@@ -2553,7 +2553,7 @@ body:has(.modal-overlay.active) .controls-group-center .btn {
   background: var(--primary);
   box-shadow: 0 0 10px var(--primary-glow);
   cursor: pointer;
-  margin-top: -6px; /* Center 16px thumb on 4px track */
+  margin-top: -6px; /* Center 16px thumb on 4px track: (4-16)/2 = -6 */
   transition: transform 0.1s ease;
 }
 
