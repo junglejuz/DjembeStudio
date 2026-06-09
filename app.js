@@ -310,40 +310,61 @@ function getInstrumentHSL(instrument, type, isCall) {
   }
   
   if (type === "djembe" || (instrument && instrument.startsWith("djembe"))) {
-    // 7 colors for 7 groups
+    // 7 colors for 7 groups (purple to orange range, avoiding blues/greens)
     const djembeColors = [
       "342, 85%, 48%", // djembe1: crimson
-      "24, 95%, 50%",  // djembe2: orange
-      "48, 95%, 48%",  // djembe3: gold
-      "142, 76%, 45%", // djembe4: emerald
-      "189, 94%, 43%", // djembe5: cyan
-      "239, 84%, 59%", // djembe6: indigo
-      "280, 84%, 60%"  // djembe7: amethyst
+      "12, 95%, 52%",  // djembe2: rust/red-orange
+      "28, 95%, 50%",  // djembe3: orange
+      "45, 95%, 48%",  // djembe4: gold/amber
+      "280, 84%, 60%", // djembe5: amethyst
+      "260, 85%, 62%", // djembe6: violet/purple
+      "315, 85%, 55%"  // djembe7: magenta/pink-purple
     ];
     const idx = parseInt(instrument.replace("djembe", "")) - 1;
     if (idx >= 0 && idx < djembeColors.length) {
       return djembeColors[idx];
     }
-    return "243, 75%, 59%"; // default djembe primary HSL (indigo-500)
+    return "280, 84%, 60%"; // default djembe primary HSL (amethyst)
   }
   
-  // Dunun or Bell
-  // 3 colors for 3 sets
-  const setColors = [
-    "175, 84%, 39%", // set 1
-    "199, 94%, 43%", // set 2
-    "239, 84%, 59%"  // set 3
-  ];
-  
+  // Dunun or Bell: Unique HSL ranges for D/S/K and their bells
   if (instrument) {
-    if (instrument.includes("3")) {
-      return setColors[1];
+    const isBell = type === "bell" || instrument.includes("bell");
+    if (instrument.includes("kenkeni")) {
+      if (isBell) {
+        if (instrument.includes("3")) return "162, 84%, 40%"; // Bell 2
+        if (instrument.includes("4")) return "152, 75%, 44%"; // Bell 3
+        return "138, 78%, 43%"; // Bell 1
+      } else {
+        if (instrument.includes("3")) return "145, 80%, 42%";
+        if (instrument.includes("4")) return "158, 82%, 38%";
+        return "128, 76%, 44%";
+      }
     }
-    if (instrument.includes("4")) {
-      return setColors[2];
+    if (instrument.includes("sangban")) {
+      if (isBell) {
+        if (instrument.includes("3")) return "185, 90%, 42%"; // Bell 2
+        if (instrument.includes("4")) return "192, 92%, 44%"; // Bell 3
+        return "178, 88%, 40%"; // Bell 1
+      } else {
+        if (instrument.includes("3")) return "197, 95%, 44%";
+        if (instrument.includes("4")) return "205, 95%, 46%";
+        return "182, 92%, 41%";
+      }
+    }
+    if (instrument.includes("dundunba")) {
+      if (isBell) {
+        if (instrument.includes("3")) return "230, 85%, 54%"; // Bell 2
+        if (instrument.includes("4")) return "238, 85%, 58%"; // Bell 3
+        return "222, 85%, 52%"; // Bell 1
+      } else {
+        if (instrument.includes("3")) return "244, 85%, 60%";
+        if (instrument.includes("4")) return "252, 85%, 63%";
+        return "218, 88%, 50%";
+      }
     }
   }
-  return setColors[0];
+  return "175, 84%, 39%"; // default Dunun color (green-teal)
 }
 
 // Helper to strip roles in parentheses, colons, semicolons, and remove "drum" or "bell" case-insensitively
@@ -365,29 +386,22 @@ function cleanTrackName(name) {
 function getHitColor(type, hit, instrument = "") {
   if (instrument !== "") {
     const isBell = instrument.includes("bell");
-    if (instrument.includes("kenkeni")) {
+    if (instrument.includes("kenkeni") || instrument.includes("sangban") || instrument.includes("dundunba")) {
+      const hslString = getInstrumentHSL(instrument, type, false);
       if (isBell) {
-        if (hit === "O" || hit === "X") return "hsl(189, 94%, 43%)";
-        if (hit === "C") return "hsl(189, 20%, 43%)";
+        if (hit === "O" || hit === "X") return `hsl(${hslString})`;
+        if (hit === "C") {
+          const parts = hslString.split(",");
+          const h = parts[0].trim();
+          return `hsl(${h}, 20%, 43%)`;
+        }
       } else {
-        if (hit === "O") return "hsl(175, 84%, 39%)";
-        if (hit === "C" || hit === "X") return "hsl(175, 20%, 39%)";
-      }
-    } else if (instrument.includes("sangban")) {
-      if (isBell) {
-        if (hit === "O" || hit === "X") return "hsl(209, 94%, 43%)";
-        if (hit === "C") return "hsl(209, 20%, 43%)";
-      } else {
-        if (hit === "O") return "hsl(199, 94%, 43%)";
-        if (hit === "C" || hit === "X") return "hsl(199, 20%, 43%)";
-      }
-    } else if (instrument.includes("dundunba")) {
-      if (isBell) {
-        if (hit === "O" || hit === "X") return "hsl(229, 94%, 43%)";
-        if (hit === "C") return "hsl(229, 20%, 43%)";
-      } else {
-        if (hit === "O") return "hsl(219, 94%, 43%)";
-        if (hit === "C" || hit === "X") return "hsl(219, 20%, 43%)";
+        if (hit === "O") return `hsl(${hslString})`;
+        if (hit === "C" || hit === "X") {
+          const parts = hslString.split(",");
+          const h = parts[0].trim();
+          return `hsl(${h}, 20%, 39%)`;
+        }
       }
     }
   }
@@ -413,29 +427,22 @@ function getHitColor(type, hit, instrument = "") {
 function getHitGlowColor(type, hit, instrument = "") {
   if (instrument !== "") {
     const isBell = instrument.includes("bell");
-    if (instrument.includes("kenkeni")) {
+    if (instrument.includes("kenkeni") || instrument.includes("sangban") || instrument.includes("dundunba")) {
+      const hslString = getInstrumentHSL(instrument, type, false);
       if (isBell) {
-        if (hit === "O" || hit === "X") return "hsla(189, 94%, 43%, 0.25)";
-        if (hit === "C") return "hsla(189, 20%, 43%, 0.2)";
+        if (hit === "O" || hit === "X") return `hsla(${hslString}, 0.25)`;
+        if (hit === "C") {
+          const parts = hslString.split(",");
+          const h = parts[0].trim();
+          return `hsla(${h}, 20%, 43%, 0.2)`;
+        }
       } else {
-        if (hit === "O") return "hsla(175, 84%, 39%, 0.25)";
-        if (hit === "C" || hit === "X") return "hsla(175, 20%, 39%, 0.2)";
-      }
-    } else if (instrument.includes("sangban")) {
-      if (isBell) {
-        if (hit === "O" || hit === "X") return "hsla(209, 94%, 43%, 0.25)";
-        if (hit === "C") return "hsla(209, 20%, 43%, 0.2)";
-      } else {
-        if (hit === "O") return "hsla(199, 94%, 43%, 0.25)";
-        if (hit === "C" || hit === "X") return "hsla(199, 20%, 43%, 0.2)";
-      }
-    } else if (instrument.includes("dundunba")) {
-      if (isBell) {
-        if (hit === "O" || hit === "X") return "hsla(229, 94%, 43%, 0.25)";
-        if (hit === "C") return "hsla(229, 20%, 43%, 0.2)";
-      } else {
-        if (hit === "O") return "hsla(219, 94%, 43%, 0.25)";
-        if (hit === "C" || hit === "X") return "hsla(219, 20%, 43%, 0.2)";
+        if (hit === "O") return `hsla(${hslString}, 0.25)`;
+        if (hit === "C" || hit === "X") {
+          const parts = hslString.split(",");
+          const h = parts[0].trim();
+          return `hsla(${h}, 20%, 39%, 0.2)`;
+        }
       }
     }
   }
