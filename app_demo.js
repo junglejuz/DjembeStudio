@@ -302,64 +302,64 @@ function getInstrumentSVG(instrument, type) {
 
 function getInstrumentHSL(instrument, type, isCall) {
   if (isCall) {
-    return "35, 90%, 55%"; // warm gold / amber
+    return "35, 90%, 53%"; // warm gold / amber
   }
   if (type === "shekere" || instrument === "shekere") {
-    return "45, 93%, 47%"; // yellow/gold
+    return "45, 93%, 49%"; // yellow/gold
   }
   
   if (type === "djembe" || (instrument && instrument.startsWith("djembe"))) {
-    // 7 colors for 7 groups (purple to orange range, avoiding blues/greens)
+    // 7 colors for 7 groups (purple to orange range, avoiding blues/greens, balanced for perceived brightness)
     const djembeColors = [
-      "342, 85%, 48%", // djembe1: crimson
-      "12, 95%, 52%",  // djembe2: rust/red-orange
-      "28, 95%, 50%",  // djembe3: orange
-      "45, 95%, 48%",  // djembe4: gold/amber
-      "280, 84%, 60%", // djembe5: amethyst
-      "260, 85%, 62%", // djembe6: violet/purple
-      "315, 85%, 55%"  // djembe7: magenta/pink-purple
+      "342, 85%, 54%", // djembe1: crimson
+      "12, 95%, 53%",  // djembe2: rust/red-orange
+      "28, 95%, 51%",  // djembe3: orange
+      "45, 95%, 49%",  // djembe4: gold/amber
+      "280, 84%, 65%", // djembe5: amethyst
+      "260, 85%, 67%", // djembe6: violet/purple
+      "315, 85%, 60%"  // djembe7: magenta/pink-purple
     ];
     const idx = parseInt(instrument.replace("djembe", "")) - 1;
     if (idx >= 0 && idx < djembeColors.length) {
       return djembeColors[idx];
     }
-    return "280, 84%, 60%"; // default djembe primary HSL (amethyst)
+    return "280, 84%, 65%"; // default djembe primary HSL (amethyst)
   }
   
-  // Dunun or Bell: Unique HSL ranges for D/S/K and their bells
+  // Dunun or Bell: Unique HSL ranges for D/S/K and their bells, adjusted for perceived brightness
   if (instrument) {
     const isBell = type === "bell" || instrument.includes("bell");
     if (instrument.includes("kenkeni")) {
       if (isBell) {
-        if (instrument.includes("3")) return "162, 84%, 40%"; // Bell 2
+        if (instrument.includes("3")) return "162, 84%, 42%"; // Bell 2
         if (instrument.includes("4")) return "152, 75%, 44%"; // Bell 3
         return "138, 78%, 43%"; // Bell 1
       } else {
-        if (instrument.includes("3")) return "145, 80%, 42%";
-        if (instrument.includes("4")) return "158, 82%, 38%";
+        if (instrument.includes("3")) return "145, 80%, 43%";
+        if (instrument.includes("4")) return "158, 82%, 40%";
         return "128, 76%, 44%";
       }
     }
     if (instrument.includes("sangban")) {
       if (isBell) {
-        if (instrument.includes("3")) return "185, 90%, 42%"; // Bell 2
-        if (instrument.includes("4")) return "192, 92%, 44%"; // Bell 3
-        return "178, 88%, 40%"; // Bell 1
+        if (instrument.includes("3")) return "185, 90%, 47%"; // Bell 2
+        if (instrument.includes("4")) return "192, 92%, 49%"; // Bell 3
+        return "178, 88%, 45%"; // Bell 1
       } else {
-        if (instrument.includes("3")) return "197, 95%, 44%";
-        if (instrument.includes("4")) return "205, 95%, 46%";
-        return "182, 92%, 41%";
+        if (instrument.includes("3")) return "197, 95%, 48%";
+        if (instrument.includes("4")) return "205, 95%, 50%";
+        return "182, 92%, 46%";
       }
     }
     if (instrument.includes("dundunba")) {
       if (isBell) {
-        if (instrument.includes("3")) return "230, 85%, 54%"; // Bell 2
-        if (instrument.includes("4")) return "238, 85%, 58%"; // Bell 3
-        return "222, 85%, 52%"; // Bell 1
+        if (instrument.includes("3")) return "230, 85%, 63%"; // Bell 2
+        if (instrument.includes("4")) return "238, 85%, 65%"; // Bell 3
+        return "222, 85%, 61%"; // Bell 1
       } else {
-        if (instrument.includes("3")) return "244, 85%, 60%";
-        if (instrument.includes("4")) return "252, 85%, 63%";
-        return "218, 88%, 50%";
+        if (instrument.includes("3")) return "244, 85%, 66%";
+        if (instrument.includes("4")) return "252, 85%, 68%";
+        return "218, 88%, 60%";
       }
     }
   }
