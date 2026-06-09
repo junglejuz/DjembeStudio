@@ -2142,9 +2142,9 @@ select option {
 }
 .step-cell.dundunba-X,
 .step-cell.dundunba-C {
-  background: hsl(220, 98%, 52%);
-  border-color: hsl(220, 98%, 52%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(220, 98%, 52%, 0.2);
+  background: hsl(220, 65%, 52%);
+  border-color: hsl(220, 65%, 52%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(220, 65%, 52%, 0.2);
 }
 
 .step-cell.dundunba3-O {
@@ -2154,9 +2154,9 @@ select option {
 }
 .step-cell.dundunba3-X,
 .step-cell.dundunba3-C {
-  background: hsl(215, 98%, 60%);
-  border-color: hsl(215, 98%, 60%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(215, 98%, 60%, 0.2);
+  background: hsl(215, 65%, 60%);
+  border-color: hsl(215, 65%, 60%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(215, 65%, 60%, 0.2);
 }
 
 .step-cell.dundunba4-O {
@@ -2166,84 +2166,84 @@ select option {
 }
 .step-cell.dundunba4-X,
 .step-cell.dundunba4-C {
-  background: hsl(208, 98%, 62%);
-  border-color: hsl(208, 98%, 62%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(208, 98%, 62%, 0.2);
+  background: hsl(208, 65%, 62%);
+  border-color: hsl(208, 65%, 62%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(208, 65%, 62%, 0.2);
 }
 
 /* Instrument-specific Bell colors */
 /* Kenkeni Bell: Shifted +10 deg and desaturated */
 .step-cell.kenkeni_bell-O,
 .step-cell.kenkeni_bell-X {
-  background: hsl(153, 87%, 37%);
-  border-color: hsl(153, 87%, 37%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(153, 87%, 37%, 0.25);
+  background: hsl(153, 58%, 37%);
+  border-color: hsl(153, 58%, 37%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(153, 58%, 37%, 0.25);
 }
 .step-cell.kenkeni_bell-C {
-  background: hsl(153, 87%, 37%);
-  border-color: hsl(153, 87%, 37%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(153, 87%, 37%, 0.2);
+  background: hsl(153, 20%, 37%);
+  border-color: hsl(153, 20%, 37%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(153, 20%, 37%, 0.2);
 }
 
 .step-cell.kenkeni3_bell-O,
 .step-cell.kenkeni3_bell-X {
-  background: hsl(143, 96%, 36%);
-  border-color: hsl(143, 96%, 36%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(143, 96%, 36%, 0.25);
+  background: hsl(143, 64%, 36%);
+  border-color: hsl(143, 64%, 36%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(143, 64%, 36%, 0.25);
 }
 .step-cell.kenkeni3_bell-C {
-  background: hsl(143, 96%, 36%);
-  border-color: hsl(143, 96%, 36%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(143, 96%, 36%, 0.2);
+  background: hsl(143, 20%, 36%);
+  border-color: hsl(143, 20%, 36%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(143, 20%, 36%, 0.2);
 }
 
 .step-cell.kenkeni4_bell-O,
 .step-cell.kenkeni4_bell-X {
-  background: hsl(133, 82%, 38%);
-  border-color: hsl(133, 82%, 38%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(133, 82%, 38%, 0.25);
+  background: hsl(133, 55%, 38%);
+  border-color: hsl(133, 55%, 38%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(133, 55%, 38%, 0.25);
 }
 .step-cell.kenkeni4_bell-C {
-  background: hsl(133, 82%, 38%);
-  border-color: hsl(133, 82%, 38%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(133, 82%, 38%, 0.2);
+  background: hsl(133, 20%, 38%);
+  border-color: hsl(133, 20%, 38%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(133, 20%, 38%, 0.2);
 }
 
 /* Sangban Bell: Aqua +- 20 degrees */
 .step-cell.sangban_bell-O,
 .step-cell.sangban_bell-X {
-  background: hsl(185, 100%, 41%);
-  border-color: hsl(185, 100%, 41%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(185, 100%, 41%, 0.25);
+  background: hsl(185, 88%, 41%);
+  border-color: hsl(185, 88%, 41%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(185, 88%, 41%, 0.25);
 }
 .step-cell.sangban_bell-C {
-  background: hsl(185, 100%, 41%);
-  border-color: hsl(185, 100%, 41%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(185, 100%, 41%, 0.2);
+  background: hsl(185, 20%, 41%);
+  border-color: hsl(185, 20%, 41%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(185, 20%, 41%, 0.2);
 }
 
 .step-cell.sangban3_bell-O,
 .step-cell.sangban3_bell-X {
-  background: hsl(175, 100%, 42%);
-  border-color: hsl(175, 100%, 42%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(175, 100%, 42%, 0.25);
+  background: hsl(175, 90%, 42%);
+  border-color: hsl(175, 90%, 42%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(175, 90%, 42%, 0.25);
 }
 .step-cell.sangban3_bell-C {
-  background: hsl(175, 100%, 42%);
-  border-color: hsl(175, 100%, 42%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(175, 100%, 42%, 0.2);
+  background: hsl(175, 20%, 42%);
+  border-color: hsl(175, 20%, 42%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(175, 20%, 42%, 0.2);
 }
 
 .step-cell.sangban4_bell-O,
 .step-cell.sangban4_bell-X {
-  background: hsl(165, 100%, 43%);
-  border-color: hsl(165, 100%, 43%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(165, 100%, 43%, 0.25);
+  background: hsl(165, 92%, 43%);
+  border-color: hsl(165, 92%, 43%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(165, 92%, 43%, 0.25);
 }
 .step-cell.sangban4_bell-C {
-  background: hsl(165, 100%, 43%);
-  border-color: hsl(165, 100%, 43%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(165, 100%, 43%, 0.2);
+  background: hsl(165, 20%, 43%);
+  border-color: hsl(165, 20%, 43%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(165, 20%, 43%, 0.2);
 }
 
 /* Dundunba Bell: Blue (not exceeding 240 degrees) */
@@ -2254,9 +2254,9 @@ select option {
   box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(218, 98%, 54%, 0.25);
 }
 .step-cell.dundunba_bell-C {
-  background: hsl(218, 98%, 54%);
-  border-color: hsl(218, 98%, 54%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(218, 98%, 54%, 0.2);
+  background: hsl(218, 65%, 54%);
+  border-color: hsl(218, 65%, 54%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(218, 65%, 54%, 0.2);
 }
 
 .step-cell.dundunba3_bell-O,
@@ -2266,9 +2266,9 @@ select option {
   box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(212, 98%, 56%, 0.25);
 }
 .step-cell.dundunba3_bell-C {
-  background: hsl(212, 98%, 56%);
-  border-color: hsl(212, 98%, 56%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(212, 98%, 56%, 0.2);
+  background: hsl(212, 65%, 56%);
+  border-color: hsl(212, 65%, 56%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(212, 65%, 56%, 0.2);
 }
 
 .step-cell.dundunba4_bell-O,
@@ -2278,9 +2278,9 @@ select option {
   box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(204, 98%, 58%, 0.25);
 }
 .step-cell.dundunba4_bell-C {
-  background: hsl(204, 98%, 58%);
-  border-color: hsl(204, 98%, 58%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(204, 98%, 58%, 0.2);
+  background: hsl(204, 65%, 58%);
+  border-color: hsl(204, 65%, 58%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(204, 65%, 58%, 0.2);
 }
 
 #description-modal-body p {
