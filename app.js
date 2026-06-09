@@ -1053,6 +1053,25 @@ function setupLargeSlider(originalSlider, options = {}) {
     };
     largeInput.addEventListener("input", largeInput._onInputHandler);
 
+    if (largeInput._onChangeHandler) {
+      largeInput.removeEventListener("change", largeInput._onChangeHandler);
+      largeInput.removeEventListener("pointerup", largeInput._onChangeHandler);
+    }
+    largeInput._onChangeHandler = (ev) => {
+      originalSlider.value = largeInput.value;
+      const evInp = new Event("input");
+      evInp.isCustomUpdate = true;
+      originalSlider.dispatchEvent(evInp);
+
+      const evChg = new Event("change");
+      evChg.isCustomUpdate = true;
+      originalSlider.dispatchEvent(evChg);
+
+      overlay.style.display = "none";
+    };
+    largeInput.addEventListener("change", largeInput._onChangeHandler);
+    largeInput.addEventListener("pointerup", largeInput._onChangeHandler);
+
     // If it's a trusted drag event (BPM slider), support slide-anywhere behavior
     if (e.isTrusted) {
       const origRect = originalSlider.getBoundingClientRect();
@@ -1122,6 +1141,8 @@ function setupLargeSlider(originalSlider, options = {}) {
           evChg.isCustomUpdate = true;
           originalSlider.dispatchEvent(evChg);
         }
+
+        overlay.style.display = "none";
 
         setTimeout(() => {
           isCustomDragging = false;

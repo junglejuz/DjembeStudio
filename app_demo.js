@@ -2465,6 +2465,19 @@ function setupLargeSlider(originalSlider, options = {}) {
     };
     largeInput.addEventListener("input", largeInput._onInputHandler);
 
+    if (largeInput._onChangeHandler) {
+      largeInput.removeEventListener("change", largeInput._onChangeHandler);
+      largeInput.removeEventListener("pointerup", largeInput._onChangeHandler);
+    }
+    largeInput._onChangeHandler = (ev) => {
+      originalSlider.value = largeInput.value;
+      originalSlider.dispatchEvent(new Event("input"));
+      originalSlider.dispatchEvent(new Event("change"));
+      overlay.style.display = "none";
+    };
+    largeInput.addEventListener("change", largeInput._onChangeHandler);
+    largeInput.addEventListener("pointerup", largeInput._onChangeHandler);
+
     // If it's a trusted drag event (BPM slider), support slide-anywhere behavior immediately
     if (e.isTrusted) {
       const origRect = originalSlider.getBoundingClientRect();
@@ -2519,6 +2532,14 @@ function setupLargeSlider(originalSlider, options = {}) {
         try {
           originalSlider.releasePointerCapture(e.pointerId);
         } catch (err) {}
+
+        if (largeInput && originalSlider) {
+          originalSlider.value = largeInput.value;
+          originalSlider.dispatchEvent(new Event("input"));
+          originalSlider.dispatchEvent(new Event("change"));
+        }
+
+        overlay.style.display = "none";
       };
 
       window.addEventListener("pointermove", onPointerMove, { passive: false });
