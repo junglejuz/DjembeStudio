@@ -5936,7 +5936,7 @@ function renderGrid() {
     // Subdivision picker button
     const btnSubdiv = document.createElement("button");
     btnSubdiv.className = "drawer-btn btn-subdiv";
-    btnSubdiv.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>`;
+    btnSubdiv.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>`;
     btnSubdiv.title = `Subdivision (current: /${track.subdivision})`;
     btnSubdiv.addEventListener("click", (e) => {
       e.stopPropagation();
@@ -5948,7 +5948,7 @@ function renderGrid() {
     if (sampleOptions.length > 0) {
       const btnSampleGroup = document.createElement("button");
       btnSampleGroup.className = "drawer-btn btn-sample-group";
-      btnSampleGroup.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>`;
+      btnSampleGroup.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18V5l12-2v13"/><circle cx="6" cy="18" r="3"/><circle cx="18" cy="16" r="3"/></svg>`;
       btnSampleGroup.title = "Change sound set";
       btnSampleGroup.addEventListener("click", (e) => {
         e.stopPropagation();
@@ -5982,7 +5982,7 @@ function renderGrid() {
     // Volume icon button — triggers existing large slider overlay
     const btnVolume = document.createElement("button");
     btnVolume.className = "drawer-btn btn-volume";
-    btnVolume.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>`;
+    btnVolume.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>`;
     btnVolume.title = "Volume";
     btnVolume.addEventListener("click", (e) => {
       e.stopPropagation();

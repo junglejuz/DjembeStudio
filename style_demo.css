@@ -659,6 +659,26 @@ body {
   gap: 0.35rem;
 }
 
+.drawer-center .drawer-btn {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  width: auto !important;
+  height: 28px !important;
+  padding: 0 0.2rem !important;
+}
+
+.drawer-center .drawer-btn svg {
+  width: 18px !important;
+  height: 18px !important;
+  transition: transform 0.2s ease !important;
+}
+
+.drawer-center .drawer-btn:hover svg {
+  transform: scale(1.15) !important;
+}
+
 .drawer-right {
   display: flex;
   align-items: center;
@@ -740,38 +760,29 @@ body {
 
 /* Subdivision button */
 .drawer-btn.btn-subdiv {
-  background: rgba(245, 158, 11, 0.1);
-  border-color: rgba(245, 158, 11, 0.25);
-  color: #fb923c;
+  color: #fb923c !important;
 }
 
 .drawer-btn.btn-subdiv:hover {
-  background: rgba(245, 158, 11, 0.2);
-  border-color: rgba(245, 158, 11, 0.4);
+  color: #fdba74 !important;
 }
 
 /* Volume icon button */
 .drawer-btn.btn-volume {
-  background: rgba(139, 92, 246, 0.1);
-  border-color: rgba(139, 92, 246, 0.25);
-  color: #a78bfa;
+  color: #a78bfa !important;
 }
 
 .drawer-btn.btn-volume:hover {
-  background: rgba(139, 92, 246, 0.2);
-  border-color: rgba(139, 92, 246, 0.4);
+  color: #c084fc !important;
 }
 
 /* Sample group picker button */
 .drawer-btn.btn-sample-group {
-  background: rgba(20, 184, 166, 0.1);
-  border-color: rgba(20, 184, 166, 0.25);
-  color: #2dd4bf;
+  color: #2dd4bf !important;
 }
 
 .drawer-btn.btn-sample-group:hover {
-  background: rgba(20, 184, 166, 0.2);
-  border-color: rgba(20, 184, 166, 0.4);
+  color: #5eead4 !important;
 }
 
 /* Sample group popup overlay */
