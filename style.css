@@ -2060,89 +2060,227 @@ select option {
 /* Flam Presets Grid width optimization - 4 across */
 
 /* Instrument-specific Dunun Drum colors */
-/* Kenkeni: Less green, shifted towards bell color hsl(175, 84%, 39%) */
+/* Kenkeni: Green +- 20 degrees */
 .step-cell.kenkeni-O {
-  background: hsl(175, 84%, 39%);
-  border-color: hsl(175, 84%, 39%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(175, 84%, 39%, 0.25);
+  background: hsl(120, 76%, 36%);
+  border-color: hsl(120, 76%, 36%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(120, 76%, 36%, 0.25);
 }
-
 .step-cell.kenkeni-X,
 .step-cell.kenkeni-C {
-  background: hsl(175, 20%, 39%);
-  border-color: hsl(175, 20%, 39%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(175, 20%, 39%, 0.2);
+  background: hsl(120, 20%, 36%);
+  border-color: hsl(120, 20%, 36%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(120, 20%, 36%, 0.2);
 }
 
-/* Sangban: Midway between Kenkeni Bell and Sangban Bell hsl(199, 94%, 43%) */
+.step-cell.kenkeni3-O {
+  background: hsl(130, 80%, 35%);
+  border-color: hsl(130, 80%, 35%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(130, 80%, 35%, 0.25);
+}
+.step-cell.kenkeni3-X,
+.step-cell.kenkeni3-C {
+  background: hsl(130, 20%, 35%);
+  border-color: hsl(130, 20%, 35%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(130, 20%, 35%, 0.2);
+}
+
+.step-cell.kenkeni4-O {
+  background: hsl(140, 82%, 34%);
+  border-color: hsl(140, 82%, 34%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(140, 82%, 34%, 0.25);
+}
+.step-cell.kenkeni4-X,
+.step-cell.kenkeni4-C {
+  background: hsl(140, 20%, 34%);
+  border-color: hsl(140, 20%, 34%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(140, 20%, 34%, 0.2);
+}
+
+/* Sangban: Aqua +- 20 degrees */
 .step-cell.sangban-O {
-  background: hsl(199, 94%, 43%);
-  border-color: hsl(199, 94%, 43%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(199, 94%, 43%, 0.25);
+  background: hsl(180, 92%, 40%);
+  border-color: hsl(180, 92%, 40%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(180, 92%, 40%, 0.25);
 }
-
 .step-cell.sangban-X,
 .step-cell.sangban-C {
-  background: hsl(199, 20%, 43%);
-  border-color: hsl(199, 20%, 43%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(199, 20%, 43%, 0.2);
+  background: hsl(180, 20%, 40%);
+  border-color: hsl(180, 20%, 40%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(180, 20%, 40%, 0.2);
 }
 
-/* Dundunba: Midway between Sangban Bell and Dun Bell hsl(219, 94%, 43%) */
+.step-cell.sangban3-O {
+  background: hsl(190, 95%, 42%);
+  border-color: hsl(190, 95%, 42%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(190, 95%, 42%, 0.25);
+}
+.step-cell.sangban3-X,
+.step-cell.sangban3-C {
+  background: hsl(190, 20%, 42%);
+  border-color: hsl(190, 20%, 42%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(190, 20%, 42%, 0.2);
+}
+
+.step-cell.sangban4-O {
+  background: hsl(200, 95%, 44%);
+  border-color: hsl(200, 95%, 44%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(200, 95%, 44%, 0.25);
+}
+.step-cell.sangban4-X,
+.step-cell.sangban4-C {
+  background: hsl(200, 20%, 44%);
+  border-color: hsl(200, 20%, 44%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(200, 20%, 44%, 0.2);
+}
+
+/* Dundunba: Blue +- 20 degrees */
 .step-cell.dundunba-O {
-  background: hsl(219, 94%, 43%);
-  border-color: hsl(219, 94%, 43%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(219, 94%, 43%, 0.25);
+  background: hsl(240, 98%, 52%);
+  border-color: hsl(240, 98%, 52%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(240, 98%, 52%, 0.25);
 }
-
 .step-cell.dundunba-X,
 .step-cell.dundunba-C {
-  background: hsl(219, 20%, 43%);
-  border-color: hsl(219, 20%, 43%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(219, 20%, 43%, 0.2);
+  background: hsl(240, 20%, 52%);
+  border-color: hsl(240, 20%, 52%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(240, 20%, 52%, 0.2);
+}
+
+.step-cell.dundunba3-O {
+  background: hsl(250, 98%, 60%);
+  border-color: hsl(250, 98%, 60%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(250, 98%, 60%, 0.25);
+}
+.step-cell.dundunba3-X,
+.step-cell.dundunba3-C {
+  background: hsl(250, 20%, 60%);
+  border-color: hsl(250, 20%, 60%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(250, 20%, 60%, 0.2);
+}
+
+.step-cell.dundunba4-O {
+  background: hsl(260, 98%, 62%);
+  border-color: hsl(260, 98%, 62%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(260, 98%, 62%, 0.25);
+}
+.step-cell.dundunba4-X,
+.step-cell.dundunba4-C {
+  background: hsl(260, 20%, 62%);
+  border-color: hsl(260, 20%, 62%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(260, 20%, 62%, 0.2);
 }
 
 /* Instrument-specific Bell colors */
-/* Kenkeni Bell: Default bell blue hsl(189, 94%, 43%) */
+/* Kenkeni Bell: Green +- 20 degrees */
 .step-cell.kenkeni_bell-O,
 .step-cell.kenkeni_bell-X {
-  background: hsl(189, 94%, 43%);
-  border-color: hsl(189, 94%, 43%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(189, 94%, 43%, 0.25);
+  background: hsl(125, 78%, 37%);
+  border-color: hsl(125, 78%, 37%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(125, 78%, 37%, 0.25);
 }
-
 .step-cell.kenkeni_bell-C {
-  background: hsl(189, 20%, 43%);
-  border-color: hsl(189, 20%, 43%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(189, 20%, 43%, 0.2);
+  background: hsl(125, 20%, 37%);
+  border-color: hsl(125, 20%, 37%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(125, 20%, 37%, 0.2);
 }
 
-/* Sangban Bell: 20 degrees higher than Kenkeni bell hsl(209, 94%, 43%) */
+.step-cell.kenkeni3_bell-O,
+.step-cell.kenkeni3_bell-X {
+  background: hsl(115, 84%, 36%);
+  border-color: hsl(115, 84%, 36%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(115, 84%, 36%, 0.25);
+}
+.step-cell.kenkeni3_bell-C {
+  background: hsl(115, 20%, 36%);
+  border-color: hsl(115, 20%, 36%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(115, 20%, 36%, 0.2);
+}
+
+.step-cell.kenkeni4_bell-O,
+.step-cell.kenkeni4_bell-X {
+  background: hsl(105, 75%, 38%);
+  border-color: hsl(105, 75%, 38%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(105, 75%, 38%, 0.25);
+}
+.step-cell.kenkeni4_bell-C {
+  background: hsl(105, 20%, 38%);
+  border-color: hsl(105, 20%, 38%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(105, 20%, 38%, 0.2);
+}
+
+/* Sangban Bell: Aqua +- 20 degrees */
 .step-cell.sangban_bell-O,
 .step-cell.sangban_bell-X {
-  background: hsl(209, 94%, 43%);
-  border-color: hsl(209, 94%, 43%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(209, 94%, 43%, 0.25);
+  background: hsl(185, 88%, 41%);
+  border-color: hsl(185, 88%, 41%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(185, 88%, 41%, 0.25);
 }
-
 .step-cell.sangban_bell-C {
-  background: hsl(209, 20%, 43%);
-  border-color: hsl(209, 20%, 43%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(209, 20%, 43%, 0.2);
+  background: hsl(185, 20%, 41%);
+  border-color: hsl(185, 20%, 41%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(185, 20%, 41%, 0.2);
 }
 
-/* Dundunba Bell: 20 degrees higher than Sangban bell hsl(229, 94%, 43%) */
+.step-cell.sangban3_bell-O,
+.step-cell.sangban3_bell-X {
+  background: hsl(175, 90%, 42%);
+  border-color: hsl(175, 90%, 42%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(175, 90%, 42%, 0.25);
+}
+.step-cell.sangban3_bell-C {
+  background: hsl(175, 20%, 42%);
+  border-color: hsl(175, 20%, 42%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(175, 20%, 42%, 0.2);
+}
+
+.step-cell.sangban4_bell-O,
+.step-cell.sangban4_bell-X {
+  background: hsl(165, 92%, 43%);
+  border-color: hsl(165, 92%, 43%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(165, 92%, 43%, 0.25);
+}
+.step-cell.sangban4_bell-C {
+  background: hsl(165, 20%, 43%);
+  border-color: hsl(165, 20%, 43%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(165, 20%, 43%, 0.2);
+}
+
+/* Dundunba Bell: Blue +- 20 degrees */
 .step-cell.dundunba_bell-O,
 .step-cell.dundunba_bell-X {
-  background: hsl(229, 94%, 43%);
-  border-color: hsl(229, 94%, 43%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(229, 94%, 43%, 0.25);
+  background: hsl(245, 98%, 54%);
+  border-color: hsl(245, 98%, 54%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(245, 98%, 54%, 0.25);
+}
+.step-cell.dundunba_bell-C {
+  background: hsl(245, 20%, 54%);
+  border-color: hsl(245, 20%, 54%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(245, 20%, 54%, 0.2);
 }
 
-.step-cell.dundunba_bell-C {
-  background: hsl(229, 20%, 43%);
-  border-color: hsl(229, 20%, 43%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(229, 20%, 43%, 0.2);
+.step-cell.dundunba3_bell-O,
+.step-cell.dundunba3_bell-X {
+  background: hsl(235, 98%, 56%);
+  border-color: hsl(235, 98%, 56%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(235, 98%, 56%, 0.25);
+}
+.step-cell.dundunba3_bell-C {
+  background: hsl(235, 20%, 56%);
+  border-color: hsl(235, 20%, 56%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(235, 20%, 56%, 0.2);
+}
+
+.step-cell.dundunba4_bell-O,
+.step-cell.dundunba4_bell-X {
+  background: hsl(225, 98%, 58%);
+  border-color: hsl(225, 98%, 58%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(225, 98%, 58%, 0.25);
+}
+.step-cell.dundunba4_bell-C {
+  background: hsl(225, 20%, 58%);
+  border-color: hsl(225, 20%, 58%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(225, 20%, 58%, 0.2);
 }
 
 #description-modal-body p {

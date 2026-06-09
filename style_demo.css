@@ -1039,32 +1039,226 @@ body:has(#hamburger-menu.active) #btn-hamburger {
   transition: all 0.2s ease !important;
 }
 
-/* Override step cell colors for Sangban drum midway HSL (199, 94%, 43%) */
-.step-cell.sangban-O {
-  background: hsl(199, 94%, 43%) !important;
-  border-color: hsl(199, 94%, 43%) !important;
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(199, 94%, 43%, 0.25) !important;
+/* Override step cell colors for Kenkeni drum midway HSL (Green +- 20) */
+.step-cell.kenkeni-O {
+  background: hsl(120, 76%, 36%) !important;
+  border-color: hsl(120, 76%, 36%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(120, 76%, 36%, 0.25) !important;
+}
+.step-cell.kenkeni-X,
+.step-cell.kenkeni-C {
+  background: hsl(120, 20%, 36%) !important;
+  border-color: hsl(120, 20%, 36%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(120, 20%, 36%, 0.2) !important;
 }
 
+.step-cell.kenkeni3-O {
+  background: hsl(130, 80%, 35%) !important;
+  border-color: hsl(130, 80%, 35%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(130, 80%, 35%, 0.25) !important;
+}
+.step-cell.kenkeni3-X,
+.step-cell.kenkeni3-C {
+  background: hsl(130, 20%, 35%) !important;
+  border-color: hsl(130, 20%, 35%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(130, 20%, 35%, 0.2) !important;
+}
+
+.step-cell.kenkeni4-O {
+  background: hsl(140, 82%, 34%) !important;
+  border-color: hsl(140, 82%, 34%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(140, 82%, 34%, 0.25) !important;
+}
+.step-cell.kenkeni4-X,
+.step-cell.kenkeni4-C {
+  background: hsl(140, 20%, 34%) !important;
+  border-color: hsl(140, 20%, 34%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(140, 20%, 34%, 0.2) !important;
+}
+
+/* Override step cell colors for Sangban drum midway HSL (Aqua +- 20) */
+.step-cell.sangban-O {
+  background: hsl(180, 92%, 40%) !important;
+  border-color: hsl(180, 92%, 40%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(180, 92%, 40%, 0.25) !important;
+}
 .step-cell.sangban-X,
 .step-cell.sangban-C {
-  background: hsl(199, 20%, 43%) !important;
-  border-color: hsl(199, 20%, 43%) !important;
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(199, 20%, 43%, 0.2) !important;
+  background: hsl(180, 20%, 40%) !important;
+  border-color: hsl(180, 20%, 40%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(180, 20%, 40%, 0.2) !important;
 }
 
-/* Override step cell colors for Dundunba drum midway HSL (219, 94%, 43%) */
+.step-cell.sangban3-O {
+  background: hsl(190, 95%, 42%) !important;
+  border-color: hsl(190, 95%, 42%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(190, 95%, 42%, 0.25) !important;
+}
+.step-cell.sangban3-X,
+.step-cell.sangban3-C {
+  background: hsl(190, 20%, 42%) !important;
+  border-color: hsl(190, 20%, 42%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(190, 20%, 42%, 0.2) !important;
+}
+
+.step-cell.sangban4-O {
+  background: hsl(200, 95%, 44%) !important;
+  border-color: hsl(200, 95%, 44%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(200, 95%, 44%, 0.25) !important;
+}
+.step-cell.sangban4-X,
+.step-cell.sangban4-C {
+  background: hsl(200, 20%, 44%) !important;
+  border-color: hsl(200, 20%, 44%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(200, 20%, 44%, 0.2) !important;
+}
+
+/* Override step cell colors for Dundunba drum midway HSL (Blue +- 20) */
 .step-cell.dundunba-O {
-  background: hsl(219, 94%, 43%) !important;
-  border-color: hsl(219, 94%, 43%) !important;
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(219, 94%, 43%, 0.25) !important;
+  background: hsl(240, 98%, 52%) !important;
+  border-color: hsl(240, 98%, 52%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(240, 98%, 52%, 0.25) !important;
 }
-
 .step-cell.dundunba-X,
 .step-cell.dundunba-C {
-  background: hsl(219, 20%, 43%) !important;
-  border-color: hsl(219, 20%, 43%) !important;
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(219, 20%, 43%, 0.2) !important;
+  background: hsl(240, 20%, 52%) !important;
+  border-color: hsl(240, 20%, 52%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(240, 20%, 52%, 0.2) !important;
+}
+
+.step-cell.dundunba3-O {
+  background: hsl(250, 98%, 60%) !important;
+  border-color: hsl(250, 98%, 60%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(250, 98%, 60%, 0.25) !important;
+}
+.step-cell.dundunba3-X,
+.step-cell.dundunba3-C {
+  background: hsl(250, 20%, 60%) !important;
+  border-color: hsl(250, 20%, 60%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(250, 20%, 60%, 0.2) !important;
+}
+
+.step-cell.dundunba4-O {
+  background: hsl(260, 98%, 62%) !important;
+  border-color: hsl(260, 98%, 62%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(260, 98%, 62%, 0.25) !important;
+}
+.step-cell.dundunba4-X,
+.step-cell.dundunba4-C {
+  background: hsl(260, 20%, 62%) !important;
+  border-color: hsl(260, 20%, 62%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(260, 20%, 62%, 0.2) !important;
+}
+
+/* Override step cell colors for Kenkeni Bell (Green +- 20) */
+.step-cell.kenkeni_bell-O,
+.step-cell.kenkeni_bell-X {
+  background: hsl(125, 78%, 37%) !important;
+  border-color: hsl(125, 78%, 37%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(125, 78%, 37%, 0.25) !important;
+}
+.step-cell.kenkeni_bell-C {
+  background: hsl(125, 20%, 37%) !important;
+  border-color: hsl(125, 20%, 37%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(125, 20%, 37%, 0.2) !important;
+}
+
+.step-cell.kenkeni3_bell-O,
+.step-cell.kenkeni3_bell-X {
+  background: hsl(115, 84%, 36%) !important;
+  border-color: hsl(115, 84%, 36%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(115, 84%, 36%, 0.25) !important;
+}
+.step-cell.kenkeni3_bell-C {
+  background: hsl(115, 20%, 36%) !important;
+  border-color: hsl(115, 20%, 36%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(115, 20%, 36%, 0.2) !important;
+}
+
+.step-cell.kenkeni4_bell-O,
+.step-cell.kenkeni4_bell-X {
+  background: hsl(105, 75%, 38%) !important;
+  border-color: hsl(105, 75%, 38%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(105, 75%, 38%, 0.25) !important;
+}
+.step-cell.kenkeni4_bell-C {
+  background: hsl(105, 20%, 38%) !important;
+  border-color: hsl(105, 20%, 38%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(105, 20%, 38%, 0.2) !important;
+}
+
+/* Override step cell colors for Sangban Bell (Aqua +- 20) */
+.step-cell.sangban_bell-O,
+.step-cell.sangban_bell-X {
+  background: hsl(185, 88%, 41%) !important;
+  border-color: hsl(185, 88%, 41%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(185, 88%, 41%, 0.25) !important;
+}
+.step-cell.sangban_bell-C {
+  background: hsl(185, 20%, 41%) !important;
+  border-color: hsl(185, 20%, 41%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(185, 20%, 41%, 0.2) !important;
+}
+
+.step-cell.sangban3_bell-O,
+.step-cell.sangban3_bell-X {
+  background: hsl(175, 90%, 42%) !important;
+  border-color: hsl(175, 90%, 42%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(175, 90%, 42%, 0.25) !important;
+}
+.step-cell.sangban3_bell-C {
+  background: hsl(175, 20%, 42%) !important;
+  border-color: hsl(175, 20%, 42%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(175, 20%, 42%, 0.2) !important;
+}
+
+.step-cell.sangban4_bell-O,
+.step-cell.sangban4_bell-X {
+  background: hsl(165, 92%, 43%) !important;
+  border-color: hsl(165, 92%, 43%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(165, 92%, 43%, 0.25) !important;
+}
+.step-cell.sangban4_bell-C {
+  background: hsl(165, 20%, 43%) !important;
+  border-color: hsl(165, 20%, 43%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(165, 20%, 43%, 0.2) !important;
+}
+
+/* Override step cell colors for Dundunba Bell (Blue +- 20) */
+.step-cell.dundunba_bell-O,
+.step-cell.dundunba_bell-X {
+  background: hsl(245, 98%, 54%) !important;
+  border-color: hsl(245, 98%, 54%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(245, 98%, 54%, 0.25) !important;
+}
+.step-cell.dundunba_bell-C {
+  background: hsl(245, 20%, 54%) !important;
+  border-color: hsl(245, 20%, 54%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(245, 20%, 54%, 0.2) !important;
+}
+
+.step-cell.dundunba3_bell-O,
+.step-cell.dundunba3_bell-X {
+  background: hsl(235, 98%, 56%) !important;
+  border-color: hsl(235, 98%, 56%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(235, 98%, 56%, 0.25) !important;
+}
+.step-cell.dundunba3_bell-C {
+  background: hsl(235, 20%, 56%) !important;
+  border-color: hsl(235, 20%, 56%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(235, 20%, 56%, 0.2) !important;
+}
+
+.step-cell.dundunba4_bell-O,
+.step-cell.dundunba4_bell-X {
+  background: hsl(225, 98%, 58%) !important;
+  border-color: hsl(225, 98%, 58%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(225, 98%, 58%, 0.25) !important;
+}
+.step-cell.dundunba4_bell-C {
+  background: hsl(225, 20%, 58%) !important;
+  border-color: hsl(225, 20%, 58%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(225, 20%, 58%, 0.2) !important;
 }
 
 /* ============================================================
