@@ -2142,9 +2142,9 @@ select option {
 }
 .step-cell.dundunba-X,
 .step-cell.dundunba-C {
-  background: hsl(220, 20%, 52%);
-  border-color: hsl(220, 20%, 52%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(220, 20%, 52%, 0.2);
+  background: hsl(220, 65%, 52%);
+  border-color: hsl(220, 65%, 52%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(220, 65%, 52%, 0.2);
 }
 
 .step-cell.dundunba3-O {
@@ -2154,9 +2154,9 @@ select option {
 }
 .step-cell.dundunba3-X,
 .step-cell.dundunba3-C {
-  background: hsl(215, 20%, 60%);
-  border-color: hsl(215, 20%, 60%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(215, 20%, 60%, 0.2);
+  background: hsl(215, 65%, 60%);
+  border-color: hsl(215, 65%, 60%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(215, 65%, 60%, 0.2);
 }
 
 .step-cell.dundunba4-O {
@@ -2166,9 +2166,9 @@ select option {
 }
 .step-cell.dundunba4-X,
 .step-cell.dundunba4-C {
-  background: hsl(208, 20%, 62%);
-  border-color: hsl(208, 20%, 62%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(208, 20%, 62%, 0.2);
+  background: hsl(208, 65%, 62%);
+  border-color: hsl(208, 65%, 62%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(208, 65%, 62%, 0.2);
 }
 
 /* Instrument-specific Bell colors */
@@ -2254,9 +2254,9 @@ select option {
   box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(218, 98%, 54%, 0.25);
 }
 .step-cell.dundunba_bell-C {
-  background: hsl(218, 20%, 54%);
-  border-color: hsl(218, 20%, 54%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(218, 20%, 54%, 0.2);
+  background: hsl(218, 65%, 54%);
+  border-color: hsl(218, 65%, 54%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(218, 65%, 54%, 0.2);
 }
 
 .step-cell.dundunba3_bell-O,
@@ -2266,9 +2266,9 @@ select option {
   box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(212, 98%, 56%, 0.25);
 }
 .step-cell.dundunba3_bell-C {
-  background: hsl(212, 20%, 56%);
-  border-color: hsl(212, 20%, 56%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(212, 20%, 56%, 0.2);
+  background: hsl(212, 65%, 56%);
+  border-color: hsl(212, 65%, 56%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(212, 65%, 56%, 0.2);
 }
 
 .step-cell.dundunba4_bell-O,
@@ -2278,9 +2278,9 @@ select option {
   box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(204, 98%, 58%, 0.25);
 }
 .step-cell.dundunba4_bell-C {
-  background: hsl(204, 20%, 58%);
-  border-color: hsl(204, 20%, 58%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(204, 20%, 58%, 0.2);
+  background: hsl(204, 65%, 58%);
+  border-color: hsl(204, 65%, 58%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(204, 65%, 58%, 0.2);
 }
 
 #description-modal-body p {
