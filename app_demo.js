@@ -311,13 +311,13 @@ function getInstrumentHSL(instrument, type, isCall) {
   if (type === "djembe" || (instrument && instrument.startsWith("djembe"))) {
     // 7 colors for 7 groups (purple to red range, avoiding orange/yellow/blue/green, balanced for perceived brightness)
     const djembeColors = [
-      "260, 95%, 60%", // djembe1: violet/purple
-      "280, 95%, 59%", // djembe2: amethyst
-      "310, 95%, 58%", // djembe3: magenta
-      "330, 95%, 58%", // djembe4: deep pink/rose
-      "342, 95%, 57%", // djembe5: crimson
-      "355, 95%, 56%", // djembe6: ruby red
-      "0, 95%, 55%"    // djembe7: bright red
+      "260, 95%, 58%", // djembe1: violet/purple
+      "280, 95%, 58%", // djembe2: amethyst
+      "300, 95%, 58%", // djembe3: magenta
+      "320, 95%, 59%", // djembe4: deep pink/rose
+      "340, 95%, 60%", // djembe5: crimson
+      "360, 95%, 62%", // djembe6: ruby red
+      "20, 95%, 65%"    // djembe7: bright red
     ];
     const idx = parseInt(instrument.replace("djembe", "")) - 1;
     if (idx >= 0 && idx < djembeColors.length) {
