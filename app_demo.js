@@ -2436,64 +2436,6 @@ function setupLargeSlider(originalSlider, options = {}) {
       updateLabelAndValue();
     };
     largeInput.addEventListener("input", largeInput._onInputHandler);
-
-    // If it's a trusted drag event (BPM slider), support slide-anywhere behavior
-    if (e.isTrusted) {
-      const origRect = originalSlider.getBoundingClientRect();
-      const origWidth = origRect.width;
-      if (origWidth > 0) {
-        let clickFraction = (clientX - origRect.left) / origWidth;
-        clickFraction = Math.max(0, Math.min(1, clickFraction));
-        let clickVal = min + clickFraction * (max - min);
-        clickVal = Math.round(clickVal / step) * step;
-        originalSlider.value = clickVal;
-        originalSlider.dispatchEvent(new Event("input"));
-      }
-
-      const startX = clientX;
-      const startVal = parseFloat(originalSlider.value) || 0;
-
-      const getSliderWidth = () => {
-        return (largeInput && largeInput.clientWidth) ? largeInput.clientWidth : 200;
-      };
-
-      const updateValue = (clientXCoord) => {
-        const deltaX = clientXCoord - startX;
-        const width = getSliderWidth();
-        const range = max - min;
-
-        let val = startVal + (deltaX / width) * range;
-        val = Math.round(val / step) * step;
-        val = Math.max(min, Math.min(max, val));
-
-        if (largeInput.value !== String(val)) {
-          largeInput.value = val;
-          originalSlider.value = largeInput.value;
-          originalSlider.dispatchEvent(new Event("input"));
-          updateLabelAndValue();
-        }
-      };
-
-      const onPointerMove = (moveEvent) => {
-        if (moveEvent.cancelable) {
-          moveEvent.preventDefault();
-        }
-        if (moveEvent.clientX !== undefined) {
-          updateValue(moveEvent.clientX);
-        }
-      };
-
-      const onRelease = () => {
-        window.removeEventListener("pointermove", onPointerMove);
-        window.removeEventListener("pointerup", onRelease);
-        window.removeEventListener("pointercancel", onRelease);
-        overlay.style.display = "none";
-      };
-
-      window.addEventListener("pointermove", onPointerMove, { passive: false });
-      window.addEventListener("pointerup", onRelease);
-      window.addEventListener("pointercancel", onRelease);
-    }
   });
 }
 

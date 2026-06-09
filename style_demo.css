@@ -863,6 +863,7 @@ body {
   color: rgba(255, 255, 255, 0.7);
   letter-spacing: 0.02em;
   text-align: center;
+  margin-bottom: 0.75rem;
 }
 
 .sample-group-popup-grid {
