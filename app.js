@@ -3559,22 +3559,43 @@ function renderMixer() {
   state.tracks.forEach(track => {
     if (track.pitch === undefined) track.pitch = 0;
 
+    const isCall = track.id.startsWith("special") || track.name.toLowerCase().includes("call") || track.name.toLowerCase().includes("break");
+    const hslString = getInstrumentHSL(track.instrument, track.type, isCall);
+
     const row = document.createElement("div");
     row.className = "synth-instrument-row";
-    row.style.gridTemplateColumns = "160px 1fr 65px";
+    row.style.display = "grid";
+    row.style.gridTemplateColumns = "32px 140px 1fr 65px";
     row.style.alignItems = "center";
-    row.style.background = "rgba(255, 255, 255, 0.01)";
-    row.style.border = "1px solid var(--border-color)";
+    row.style.gap = "0.75rem";
+    row.style.background = `linear-gradient(105deg, hsla(${hslString}, 0.08) 0%, hsla(${hslString}, 0.01) 100%)`;
+    row.style.border = `1px solid hsla(${hslString}, 0.22)`;
     row.style.borderRadius = "8px";
     row.style.padding = "0.5rem 0.75rem";
 
+    const iconSpan = document.createElement("span");
+    iconSpan.style.display = "inline-flex";
+    iconSpan.style.alignItems = "center";
+    iconSpan.style.justifyContent = "center";
+    iconSpan.style.color = `hsl(${hslString})`;
+    iconSpan.style.gridColumn = "1";
+    iconSpan.innerHTML = getInstrumentSVG(isCall ? "call" : track.instrument, track.type);
+
     const label = document.createElement("span");
     label.className = "synth-inst-name";
-    label.textContent = cleanTrackName(track.name);
+    label.style.gridColumn = "2";
+    
+    let displayName = cleanTrackName(track.name);
+    if (track.type === "bell" || (track.instrument && track.instrument.includes("bell"))) {
+      if (!displayName.toLowerCase().includes("bell")) {
+        displayName += " Bell";
+      }
+    }
+    label.textContent = displayName;
 
     const sliderContainer = document.createElement("div");
     sliderContainer.className = "synth-knob-container";
-    sliderContainer.style.gridColumn = "2";
+    sliderContainer.style.gridColumn = "3";
     sliderContainer.style.width = "100%";
 
     const slider = document.createElement("input");
@@ -3588,12 +3609,12 @@ function renderMixer() {
     slider.defaultValue = "0"; // Default tuning is 0 st
 
     const pitchValDisplay = document.createElement("span");
-    pitchValDisplay.style.gridColumn = "3";
+    pitchValDisplay.style.gridColumn = "4";
     pitchValDisplay.style.textAlign = "right";
     pitchValDisplay.style.fontFamily = "Outfit, sans-serif";
     pitchValDisplay.style.fontWeight = "700";
     pitchValDisplay.style.fontSize = "0.85rem";
-    pitchValDisplay.style.color = "var(--primary)";
+    pitchValDisplay.style.color = `hsl(${hslString})`;
 
     const formatPitch = (p) => {
       const sign = p > 0 ? "+" : "";
@@ -3609,6 +3630,7 @@ function renderMixer() {
     });
 
     sliderContainer.appendChild(slider);
+    row.appendChild(iconSpan);
     row.appendChild(label);
     row.appendChild(sliderContainer);
     row.appendChild(pitchValDisplay);
@@ -3633,7 +3655,14 @@ function renderVolumeMixer() {
 
     const label = document.createElement("span");
     label.className = "synth-inst-name";
-    label.textContent = cleanTrackName(track.name);
+    
+    let displayName = cleanTrackName(track.name);
+    if (track.type === "bell" || (track.instrument && track.instrument.includes("bell"))) {
+      if (!displayName.toLowerCase().includes("bell")) {
+        displayName += " Bell";
+      }
+    }
+    label.textContent = displayName;
 
     const sliderContainer = document.createElement("div");
     sliderContainer.className = "synth-knob-container";

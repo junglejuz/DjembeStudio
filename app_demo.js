@@ -5078,22 +5078,43 @@ function renderMixer() {
   state.tracks.forEach(track => {
     if (track.pitch === undefined) track.pitch = 0;
 
+    const isCall = track.id.startsWith("special") || track.name.toLowerCase().includes("call") || track.name.toLowerCase().includes("break");
+    const hslString = getInstrumentHSL(track.instrument, track.type, isCall);
+
     const row = document.createElement("div");
     row.className = "synth-instrument-row";
-    row.style.gridTemplateColumns = "160px 1fr 65px";
+    row.style.display = "grid";
+    row.style.gridTemplateColumns = "32px 140px 1fr 65px";
     row.style.alignItems = "center";
-    row.style.background = "rgba(255, 255, 255, 0.01)";
-    row.style.border = "1px solid var(--border-color)";
+    row.style.gap = "0.75rem";
+    row.style.background = `linear-gradient(105deg, hsla(${hslString}, 0.08) 0%, hsla(${hslString}, 0.01) 100%)`;
+    row.style.border = `1px solid hsla(${hslString}, 0.22)`;
     row.style.borderRadius = "8px";
     row.style.padding = "0.5rem 0.75rem";
 
+    const iconSpan = document.createElement("span");
+    iconSpan.style.display = "inline-flex";
+    iconSpan.style.alignItems = "center";
+    iconSpan.style.justifyContent = "center";
+    iconSpan.style.color = `hsl(${hslString})`;
+    iconSpan.style.gridColumn = "1";
+    iconSpan.innerHTML = getInstrumentSVG(isCall ? "call" : track.instrument, track.type);
+
     const label = document.createElement("span");
     label.className = "synth-inst-name";
-    label.textContent = cleanTrackName(track.name);
+    label.style.gridColumn = "2";
+    
+    let displayName = cleanTrackName(track.name);
+    if (track.type === "bell" || (track.instrument && track.instrument.includes("bell"))) {
+      if (!displayName.toLowerCase().includes("bell")) {
+        displayName += " Bell";
+      }
+    }
+    label.textContent = displayName;
 
     const sliderContainer = document.createElement("div");
     sliderContainer.className = "synth-knob-container";
-    sliderContainer.style.gridColumn = "2";
+    sliderContainer.style.gridColumn = "3";
     sliderContainer.style.width = "100%";
 
     const slider = document.createElement("input");
@@ -5107,12 +5128,12 @@ function renderMixer() {
     slider.defaultValue = "0"; // Default tuning is 0 st
 
     const pitchValDisplay = document.createElement("span");
-    pitchValDisplay.style.gridColumn = "3";
+    pitchValDisplay.style.gridColumn = "4";
     pitchValDisplay.style.textAlign = "right";
     pitchValDisplay.style.fontFamily = "Outfit, sans-serif";
     pitchValDisplay.style.fontWeight = "700";
     pitchValDisplay.style.fontSize = "0.85rem";
-    pitchValDisplay.style.color = "var(--primary)";
+    pitchValDisplay.style.color = `hsl(${hslString})`;
 
     const formatPitch = (p) => {
       const sign = p > 0 ? "+" : "";
@@ -5128,6 +5149,7 @@ function renderMixer() {
     });
 
     sliderContainer.appendChild(slider);
+    row.appendChild(iconSpan);
     row.appendChild(label);
     row.appendChild(sliderContainer);
     row.appendChild(pitchValDisplay);
@@ -5152,7 +5174,14 @@ function renderVolumeMixer() {
 
     const label = document.createElement("span");
     label.className = "synth-inst-name";
-    label.textContent = cleanTrackName(track.name);
+    
+    let displayName = cleanTrackName(track.name);
+    if (track.type === "bell" || (track.instrument && track.instrument.includes("bell"))) {
+      if (!displayName.toLowerCase().includes("bell")) {
+        displayName += " Bell";
+      }
+    }
+    label.textContent = displayName;
 
     const sliderContainer = document.createElement("div");
     sliderContainer.className = "synth-knob-container";
@@ -6335,19 +6364,21 @@ function showSampleGroupPopup(track, sampleOptions, trackRow) {
   popup.className = "sample-group-popup";
 
   // Determine instrument display name
-  let title = "Select Sound Set";
-  if (track.type === "djembe") {
-    title = "Djembe Sound";
-  } else {
-    const inst = track.instrument;
-    if (inst.includes("kenkeni")) title = inst.includes("bell") ? "Kenkeni Bell Sound" : "Kenkeni Sound";
-    else if (inst.includes("sangban")) title = inst.includes("bell") ? "Sangban Bell Sound" : "Sangban Sound";
-    else if (inst.includes("dundunba")) title = inst.includes("bell") ? "Dundunba Bell Sound" : "Dundunba Sound";
-  }
+  const updateTitleText = () => {
+    let title = "Select Sound Set";
+    if (track.type === "djembe") {
+      title = "Djembe Sound";
+    } else {
+      const inst = track.instrument;
+      if (inst.includes("kenkeni")) title = inst.includes("bell") ? "Kenkeni Bell Sound" : "Kenkeni Sound";
+      else if (inst.includes("sangban")) title = inst.includes("bell") ? "Sangban Bell Sound" : "Sangban Sound";
+      else if (inst.includes("dundunba")) title = inst.includes("bell") ? "Dundunba Bell Sound" : "Dundunba Sound";
+    }
+    titleEl.textContent = title;
+  };
 
   const titleEl = document.createElement("div");
   titleEl.className = "sample-group-popup-title";
-  titleEl.textContent = title;
   popup.appendChild(titleEl);
 
   const grid = document.createElement("div");
@@ -6382,19 +6413,106 @@ function showSampleGroupPopup(track, sampleOptions, trackRow) {
     btn.addEventListener("click", (e) => {
       e.stopPropagation();
       track.instrument = opt.value;
-      overlay.remove();
+      popup.querySelectorAll(".sample-group-popup-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      updateTitleText();
       renderGrid();
     });
     grid.appendChild(btn);
   });
 
   popup.appendChild(grid);
+  updateTitleText();
+
+  // Add Pitch Slider at the bottom
+  const tuningContainer = document.createElement("div");
+  tuningContainer.className = "popup-tuning-container";
+  tuningContainer.style.cssText = `
+    width: 100%;
+    margin-top: 0.85rem;
+    padding-top: 0.85rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+  `;
+
+  const tuningHeader = document.createElement("div");
+  tuningHeader.style.cssText = `
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'Outfit', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.7);
+  `;
+
+  const tuningLabel = document.createElement("span");
+  tuningLabel.textContent = "Tuning:";
+
+  const tuningVal = document.createElement("span");
+  tuningVal.style.color = "var(--primary)";
+  tuningVal.style.fontWeight = "700";
+
+  const formatPitch = (p) => {
+    const sign = p > 0 ? "+" : "";
+    return `${sign}${p.toFixed(1)} st`;
+  };
+
+  if (track.pitch === undefined) track.pitch = 0;
+  tuningVal.textContent = formatPitch(track.pitch);
+
+  tuningHeader.appendChild(tuningLabel);
+  tuningHeader.appendChild(tuningVal);
+
+  const tuningSlider = document.createElement("input");
+  tuningSlider.type = "range";
+  tuningSlider.className = "synth-slider";
+  tuningSlider.style.width = "100%";
+  tuningSlider.min = "-6";
+  tuningSlider.max = "6";
+  tuningSlider.step = "0.5";
+  tuningSlider.value = track.pitch;
+
+  tuningSlider.addEventListener("input", (e) => {
+    const p = parseFloat(e.target.value);
+    track.pitch = p;
+    tuningVal.textContent = formatPitch(p);
+    updateCellScales();
+  });
+
+  tuningContainer.appendChild(tuningHeader);
+  tuningContainer.appendChild(tuningSlider);
+  popup.appendChild(tuningContainer);
+
+  // Add Close Button
+  const closeBtn = document.createElement("button");
+  closeBtn.className = "btn btn-primary";
+  closeBtn.style.cssText = `
+    margin-top: 0.85rem;
+    width: 100%;
+    padding: 0.55rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border-radius: 8px;
+    cursor: pointer;
+  `;
+  closeBtn.textContent = "Close";
+  closeBtn.addEventListener("click", (e) => {
+    e.stopPropagation();
+    overlay.remove();
+    renderGrid();
+  });
+  popup.appendChild(closeBtn);
+
   overlay.appendChild(popup);
 
   // Close on background click
   overlay.addEventListener("click", (e) => {
     if (e.target === overlay) {
       overlay.remove();
+      renderGrid();
     }
   });
 
