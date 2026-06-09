@@ -1789,294 +1789,261 @@ function loadRhythmNew(preset) {
       specials: []
     });
 
-    // Populate Variations Row
-    const hasVariations = preset.tracks.some(pt => pt.variations && pt.variations.length > 0);
-    if (hasVariations && variationsRow && variationsContainer) {
-      variationsRow.style.display = "flex";
-      variationsContainer.innerHTML = "";
+    // Populate bottom rows with unique solos, variations, specials, and breaks for the new library
+    const collectedSolos = new Set();
+    const collectedVariations = new Set();
+    const collectedSpecials = new Set();
 
-      const maxVars = Math.max(...preset.tracks.map(pt => (pt.variations || []).length));
+    state.tracks.forEach(t => {
+      (t.solos || []).forEach(item => { if (item.name) collectedSolos.add(item.name); });
+      (t.variations || []).forEach(item => { if (item.name) collectedVariations.add(item.name); });
+      (t.specials || []).forEach(item => { if (item.name) collectedSpecials.add(item.name); });
+    });
 
-      for (let i = 0; i < maxVars; i++) {
+    // 1. Solos
+    if (collectedSolos.size > 0 && solosContainer && solosRow) {
+      solosRow.style.display = "flex";
+      solosContainer.innerHTML = "";
+      Array.from(collectedSolos).forEach(soloName => {
         const btn = document.createElement("button");
         btn.className = "btn";
-        btn.textContent = `Variation ${i + 1}`;
-        btn.style.fontWeight = "bold";
-        btn.style.borderRadius = "8px";
-        btn.style.padding = "0.35rem 0.75rem";
-        btn.style.cursor = "pointer";
-
-        btn.addEventListener("click", () => {
-          const wasActive = btn.classList.contains("btn-primary");
-
-          Array.from(variationsContainer.children).forEach(child => {
-            child.classList.remove("btn-primary");
-          });
-
-          if (state.echauffementActive) {
-            triggerEchauffement(); // toggle off
-          }
-
-          if (!wasActive) {
-            btn.classList.add("btn-primary");
-          }
-
-          const action = () => {
-            if (wasActive) {
-              state.activeVariation = null;
-              state.tracks.forEach(track => {
-                if (track.standardSteps) {
-                  track.steps = [...track.standardSteps];
-                  track.subdivisionSteps[track.subdivision] = [...track.steps];
-                  delete track.standardSteps;
-                }
-              });
-            } else {
-              state.activeVariation = i;
-
-              state.tracks.forEach(track => {
-                const presetTrack = state.currentPreset.tracks.find(pt => cleanTrackName(pt.part) === cleanTrackName(track.name));
-                if (presetTrack) {
-                  if (!track.standardSteps) track.standardSteps = [...track.steps];
-
-                  if (presetTrack.variations && presetTrack.variations[i]) {
-                    track.steps = convertPatternToSteps(presetTrack.variations[i].drum_pattern || presetTrack.variations[i].pattern, state.timeSignature, track.name);
-                  } else {
-                    track.steps = [...track.standardSteps];
-                  }
-                  track.subdivisionSteps[track.subdivision] = [...track.steps];
-                }
-              });
-            }
-            renderGrid();
-          };
-
-          if (state.isPlaying) {
-            state.queuedActions.push(action);
-          } else {
-            action();
-          }
-        });
-
-        variationsContainer.appendChild(btn);
-      }
-    } else {
-      if (variationsRow) variationsRow.style.display = "none";
-    }
-
-    // Populate Special Parts Row
-    const nonSoloSpecialParts = (preset.special_parts || []).filter(sp => sp.type !== "Solo" && sp.type !== "Call");
-    if (nonSoloSpecialParts.length > 0 && specialRow && specialContainer) {
-      specialRow.style.display = "flex";
-      specialContainer.innerHTML = "";
-
-      nonSoloSpecialParts.forEach((sp, idx) => {
-        const btn = document.createElement("button");
-        btn.className = "btn";
-        btn.textContent = sp.name;
-        btn.title = `${sp.type}:${sp.name}`;
+        btn.textContent = soloName;
         btn.style.fontWeight = "bold";
         btn.style.borderRadius = "8px";
         btn.style.fontSize = "0.8rem";
         btn.style.padding = "0.35rem 0.75rem";
         btn.style.cursor = "pointer";
-
-        if (sp.type === "Intro") {
-          btn.style.background = "rgba(59, 130, 246, 0.15)";
-          btn.style.border = "1px solid rgba(59, 130, 246, 0.35)";
-          btn.style.color = "#3b82f6";
-        } else if (sp.type === "Call") {
-          btn.style.background = "rgba(99, 102, 241, 0.15)";
-          btn.style.border = "1px solid rgba(99, 102, 241, 0.35)";
-          btn.style.color = "var(--primary)";
-        } else if (sp.type === "Break") {
-          btn.style.background = "rgba(245, 158, 11, 0.15)";
-          btn.style.border = "1px solid rgba(245, 158, 11, 0.35)";
-          btn.style.color = "#f59e0b";
-        }
-
-        btn.addEventListener("click", () => {
-          const wasActive = btn.classList.contains("btn-primary") || btn.classList.contains("special-active");
-
-          Array.from(specialContainer.children).forEach(child => {
-            child.classList.remove("btn-primary", "special-active");
-            const title = child.title.split(":")[0];
-            if (title === "Intro") {
-              child.style.background = "rgba(59, 130, 246, 0.15)";
-              child.style.borderColor = "rgba(59, 130, 246, 0.35)";
-            } else if (title === "Call") {
-              child.style.background = "rgba(99, 102, 241, 0.15)";
-              child.style.borderColor = "rgba(99, 102, 241, 0.35)";
-            } else if (title === "Break") {
-              child.style.background = "rgba(245, 158, 11, 0.15)";
-              child.style.borderColor = "rgba(245, 158, 11, 0.35)";
-            }
-          });
-
-          const solosContainer = document.getElementById("solos-buttons-container");
-          if (solosContainer) {
-            Array.from(solosContainer.children).forEach(child => {
-              child.classList.remove("btn-primary", "special-active");
-              child.style.background = "rgba(168, 85, 247, 0.15)";
-              child.style.borderColor = "rgba(168, 85, 247, 0.35)";
-            });
-          }
-
-          state.tracks.forEach(track => {
-            if (track.preSoloAccompanimentSteps) {
-              track.steps = [...track.preSoloAccompanimentSteps];
-              track.subdivisionSteps[track.subdivision] = [...track.steps];
-              if (track.standardSteps) {
-                track.standardSteps = [...track.steps];
-              }
-              delete track.preSoloAccompanimentSteps;
-            }
-          });
-
-          if (wasActive) {
-            state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
-            state.callIntroActive = false;
-            renderGrid();
-          } else {
-            btn.classList.add("special-active", "btn-primary");
-            btn.style.background = "";
-            btn.style.borderColor = "";
-            playSpecialPart(sp, btn);
-          }
-        });
-
-        specialContainer.appendChild(btn);
-      });
-    } else {
-      if (specialRow) specialRow.style.display = "none";
-    }
-
-    // Populate Solos Row (for the old format)
-    const soloParts = (preset.special_parts || []).filter(sp => sp.type === "Solo" && !sp.name.toLowerCase().includes("accomp"));
-    const accompPart = (preset.special_parts || []).find(sp => sp.type === "Solo" && sp.name.toLowerCase().includes("accomp"));
-
-    if (soloParts.length > 0 && solosRow && solosContainer) {
-      solosRow.style.display = "flex";
-      solosContainer.innerHTML = "";
-
-      soloParts.forEach((sp, idx) => {
-        const btn = document.createElement("button");
-        btn.className = "btn";
-        btn.dataset.type = "solo";
-        btn.textContent = idx + 1;
-        btn.title = sp.name;
-        btn.style.minWidth = "28px";
-        btn.style.height = "28px";
-        btn.style.display = "flex";
-        btn.style.alignItems = "center";
-        btn.style.justifyContent = "center";
-        btn.style.fontWeight = "bold";
-        btn.style.borderRadius = "6px";
-        btn.style.fontSize = "0.75rem";
-        btn.style.padding = "0";
-        btn.style.flex = "0 0 28px";
-        btn.style.cursor = "pointer";
-
         btn.style.background = "rgba(168, 85, 247, 0.15)";
         btn.style.border = "1px solid rgba(168, 85, 247, 0.35)";
         btn.style.color = "#a855f7";
 
         btn.addEventListener("click", () => {
-          const wasActive = btn.classList.contains("btn-primary") || btn.classList.contains("special-active");
-          const action = () => {
-            deactivateAllSpecialButtons();
+          const wasActive = btn.classList.contains("btn-primary");
+          deactivateAllSpecialButtons();
+          
+          if (!wasActive) {
+            btn.classList.add("btn-primary");
+            btn.style.background = "";
+            btn.style.borderColor = "";
 
-            state.tracks.forEach(track => {
-              if (track.preSoloAccompanimentSteps) {
-                track.steps = [...track.preSoloAccompanimentSteps];
-                track.subdivisionSteps[track.subdivision] = [...track.steps];
-                if (track.standardSteps) {
-                  track.standardSteps = [...track.steps];
+            const action = () => {
+              state.tracks.forEach(track => {
+                const match = (track.solos || []).find(s => s.name === soloName);
+                if (match) {
+                  if (!track.standardSteps) track.standardSteps = [...track.steps];
+                  track.steps = convertPatternToSteps(match.pattern || match.drum_pattern, state.timeSignature, track.name);
+                  track.subdivisionSteps[track.subdivision] = [...track.steps];
                 }
-                delete track.preSoloAccompanimentSteps;
-              }
-            });
-
-            if (!wasActive) {
-              btn.classList.add("special-active", "btn-primary");
-              btn.style.background = "";
-              btn.style.borderColor = "";
-
-              if (accompPart) {
-                const djembeTrack = state.tracks.find(t => t.type === "djembe" && t.id !== "solo_djembe");
-                if (djembeTrack) {
-                  djembeTrack.preSoloAccompanimentSteps = [...djembeTrack.steps];
-                  const accompSteps = convertPatternToSteps(accompPart.drum_pattern, state.timeSignature, djembeTrack.name);
-                  djembeTrack.steps = accompSteps;
-                  djembeTrack.subdivisionSteps[djembeTrack.subdivision] = [...accompSteps];
-                  if (djembeTrack.standardSteps) {
-                    djembeTrack.standardSteps = [...accompSteps];
-                  }
-                }
-              }
-
-              let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
-              if (!soloTrack) {
-                soloTrack = {
-                  id: "solo_djembe",
-                  name: sp.name,
-                  type: "djembe",
-                  instrument: "djembe1",
-                  volume: 0.85,
-                  pitch: 0,
-                  muted: false,
-                  soloed: false
-                };
-                state.tracks.push(soloTrack);
-                sortTracks();
-              } else {
-                soloTrack.name = sp.name;
-              }
-
-              soloTrack.subdivision = getSubdivisionForTiming(state.timeSignature);
-              const steps = convertPatternToSteps(sp.drum_pattern, state.timeSignature, "Djembé");
-              soloTrack.steps = steps;
-              soloTrack.originalSteps = [...steps];
-              soloTrack.originalSubdivision = soloTrack.subdivision;
-              soloTrack.subdivisionSteps = {
-                [soloTrack.subdivision]: [...steps]
-              };
-
-              if (sp.type === "Intro" || sp.type === "Call" || sp.type === "Break") {
-                state.callIntroActive = true;
-              } else {
-                state.callIntroActive = false;
-              }
-
-              state.tracks.forEach(t => {
-                const isCall = t.id === "solo_djembe" ||
-                  t.id.startsWith("special") ||
-                  t.name.toLowerCase().includes("call") ||
-                  t.name.toLowerCase().includes("break") ||
-                  t.name.toLowerCase().includes("intro");
-                if (isCall) t.muted = false;
               });
+              renderGrid();
+            };
+            if (state.isPlaying) {
+              state.queuedActions.push(action);
             } else {
-              state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
-              state.callIntroActive = false;
+              action();
             }
-            renderGrid();
-          };
-
-          if (state.isPlaying) {
-            queueSpecialAction(action, btn);
           } else {
-            action();
-            if (!wasActive) {
-              togglePlay();
+            const action = () => { renderGrid(); };
+            if (state.isPlaying) {
+              state.queuedActions.push(action);
+            } else {
+              action();
             }
           }
         });
-
         solosContainer.appendChild(btn);
       });
     } else {
       if (solosRow) solosRow.style.display = "none";
+    }
+
+    // 2. Variations
+    if (collectedVariations.size > 0 && variationsContainer && variationsRow) {
+      variationsRow.style.display = "flex";
+      variationsContainer.innerHTML = "";
+      Array.from(collectedVariations).forEach(varName => {
+        const btn = document.createElement("button");
+        btn.className = "btn";
+        btn.textContent = varName;
+        btn.style.fontWeight = "bold";
+        btn.style.borderRadius = "8px";
+        btn.style.fontSize = "0.8rem";
+        btn.style.padding = "0.35rem 0.75rem";
+        btn.style.cursor = "pointer";
+        btn.style.background = "rgba(16, 185, 129, 0.15)";
+        btn.style.border = "1px solid rgba(16, 185, 129, 0.35)";
+        btn.style.color = "#10b981";
+
+        btn.addEventListener("click", () => {
+          const wasActive = btn.classList.contains("btn-primary");
+          deactivateAllSpecialButtons();
+
+          if (!wasActive) {
+            btn.classList.add("btn-primary");
+            btn.style.background = "";
+            btn.style.borderColor = "";
+
+            const action = () => {
+              state.tracks.forEach(track => {
+                const match = (track.variations || []).find(v => v.name === varName);
+                if (match) {
+                  if (!track.standardSteps) track.standardSteps = [...track.steps];
+                  track.steps = convertPatternToSteps(match.pattern || match.drum_pattern, state.timeSignature, track.name);
+                  track.subdivisionSteps[track.subdivision] = [...track.steps];
+                }
+              });
+              renderGrid();
+            };
+            if (state.isPlaying) {
+              state.queuedActions.push(action);
+            } else {
+              action();
+            }
+          } else {
+            const action = () => { renderGrid(); };
+            if (state.isPlaying) {
+              state.queuedActions.push(action);
+            } else {
+              action();
+            }
+          }
+        });
+        variationsContainer.appendChild(btn);
+      });
+    } else {
+      if (variationsRow) variationsRow.style.display = "none";
+    }
+
+    // 3. Specials & Breaks
+    let tempCall = null;
+    let tempEch = null;
+    state.tracks.forEach(track => {
+      (track.specials || []).forEach(sp => {
+        const nameLC = (sp.name || "").toLowerCase();
+        if (!tempCall && nameLC.includes("call")) tempCall = sp.name;
+        if (!tempEch && (nameLC.includes("echauffement") || nameLC.includes("échauffement"))) tempEch = sp.name;
+      });
+    });
+
+    const filteredSpecialNames = Array.from(collectedSpecials).filter(name => {
+      return name !== tempCall && name !== tempEch;
+    });
+
+    const breakNames = filteredSpecialNames.filter(name => name.toLowerCase().includes("break"));
+    const otherSpecialNames = filteredSpecialNames.filter(name => !name.toLowerCase().includes("break"));
+
+    // Breaks
+    if (breakNames.length > 0 && breaksContainer && breaksRow) {
+      breaksRow.style.display = "flex";
+      breaksContainer.innerHTML = "";
+      breakNames.forEach(bName => {
+        const btn = document.createElement("button");
+        btn.className = "btn";
+        btn.textContent = bName;
+        btn.style.fontWeight = "bold";
+        btn.style.borderRadius = "8px";
+        btn.style.fontSize = "0.8rem";
+        btn.style.padding = "0.35rem 0.75rem";
+        btn.style.cursor = "pointer";
+        btn.style.background = "rgba(245, 158, 11, 0.15)";
+        btn.style.border = "1px solid rgba(245, 158, 11, 0.35)";
+        btn.style.color = "#f59e0b";
+
+        btn.addEventListener("click", () => {
+          const wasActive = btn.classList.contains("btn-primary");
+          deactivateAllSpecialButtons();
+
+          if (!wasActive) {
+            btn.classList.add("btn-primary");
+            btn.style.background = "";
+            btn.style.borderColor = "";
+
+            const action = () => {
+              state.tracks.forEach(track => {
+                const match = (track.specials || []).find(s => s.name === bName);
+                if (match) {
+                  if (!track.standardSteps) track.standardSteps = [...track.steps];
+                  track.steps = convertPatternToSteps(match.pattern || match.drum_pattern || match.sequence, state.timeSignature, track.name);
+                  track.subdivisionSteps[track.subdivision] = [...track.steps];
+                }
+              });
+              renderGrid();
+            };
+            if (state.isPlaying) {
+              state.queuedActions.push(action);
+            } else {
+              action();
+            }
+          } else {
+            const action = () => { renderGrid(); };
+            if (state.isPlaying) {
+              state.queuedActions.push(action);
+            } else {
+              action();
+            }
+          }
+        });
+        breaksContainer.appendChild(btn);
+      });
+    } else {
+      if (breaksRow) breaksRow.style.display = "none";
+    }
+
+    // Specials
+    if (otherSpecialNames.length > 0 && specialContainer && specialRow) {
+      specialRow.style.display = "flex";
+      specialContainer.innerHTML = "";
+      otherSpecialNames.forEach(sName => {
+        const btn = document.createElement("button");
+        btn.className = "btn";
+        btn.textContent = sName;
+        btn.style.fontWeight = "bold";
+        btn.style.borderRadius = "8px";
+        btn.style.fontSize = "0.8rem";
+        btn.style.padding = "0.35rem 0.75rem";
+        btn.style.cursor = "pointer";
+        btn.style.background = "rgba(99, 102, 241, 0.15)";
+        btn.style.border = "1px solid rgba(99, 102, 241, 0.35)";
+        btn.style.color = "var(--primary)";
+
+        btn.addEventListener("click", () => {
+          const wasActive = btn.classList.contains("btn-primary");
+          deactivateAllSpecialButtons();
+
+          if (!wasActive) {
+            btn.classList.add("btn-primary");
+            btn.style.background = "";
+            btn.style.borderColor = "";
+
+            const action = () => {
+              state.tracks.forEach(track => {
+                const match = (track.specials || []).find(s => s.name === sName);
+                if (match) {
+                  if (!track.standardSteps) track.standardSteps = [...track.steps];
+                  track.steps = convertPatternToSteps(match.pattern || match.drum_pattern || match.sequence, state.timeSignature, track.name);
+                  track.subdivisionSteps[track.subdivision] = [...track.steps];
+                }
+              });
+              renderGrid();
+            };
+            if (state.isPlaying) {
+              state.queuedActions.push(action);
+            } else {
+              action();
+            }
+          } else {
+            const action = () => { renderGrid(); };
+            if (state.isPlaying) {
+              state.queuedActions.push(action);
+            } else {
+              action();
+            }
+          }
+        });
+        specialContainer.appendChild(btn);
+      });
+    } else {
+      if (specialRow) specialRow.style.display = "none";
     }
   }
 
@@ -5919,16 +5886,8 @@ function renderGrid() {
     controls.appendChild(btns);
     meta.appendChild(controls);
 
-    // Alt Parts Dropdowns (Solos, Specials, Variations) - placed under instrument name
-    const filteredSpecials = (track.specials || []).filter(sp => {
-      const name = sp.name || "";
-      return name !== state.primaryCallName && name !== state.primaryEchauffementName;
-    });
-    const hasAltParts = (track.solos && track.solos.length > 0) || 
-                         (filteredSpecials.length > 0) || 
-                         (track.variations && track.variations.length > 0);
-
-    if (hasAltParts) {
+    // Variations injection - placed under instrument name
+    if (state.currentVariations && state.currentVariations[track.instrument]) {
       const varsContainer = document.createElement("div");
       varsContainer.style.display = "flex";
       varsContainer.style.gap = "0.25rem";
@@ -5936,201 +5895,124 @@ function renderGrid() {
       varsContainer.style.flexWrap = "wrap";
       varsContainer.style.alignItems = "center";
 
-      const restoreTrackOriginal = (t) => {
-        if (t.standardSteps) {
-          t.steps = [...t.standardSteps];
-          delete t.standardSteps;
-        } else if (t.originalSteps) {
-          t.steps = [...t.originalSteps];
+
+      // Default/Original button to restore non-variation pattern
+      const defaultBtn = document.createElement("button");
+      defaultBtn.className = `btn${track.activeVariation == null ? ' btn-primary' : ''}`;
+      defaultBtn.textContent = "Orig";
+      defaultBtn.title = "Restore original pattern";
+      defaultBtn.style.padding = "0.15rem 0.4rem";
+      defaultBtn.style.fontSize = "0.7rem";
+      defaultBtn.style.minWidth = "32px";
+      defaultBtn.addEventListener("click", () => {
+        // Highlight button immediately
+        track.activeVariation = null;
+        const container = defaultBtn.parentElement;
+        if (container) {
+          Array.from(container.children).forEach(btn => {
+            if (btn !== defaultBtn) btn.classList.remove("btn-primary");
+          });
         }
-        t.subdivisionSteps[t.subdivision] = [...t.steps];
-      };
+        defaultBtn.classList.add("btn-primary");
 
-      // 1. Solos Dropdown
-      if (track.solos && track.solos.length > 0) {
-        const select = document.createElement("select");
-        select.className = "track-alt-select select-solos";
-        select.style.fontSize = "0.7rem";
-        select.style.padding = "0.1rem 0.2rem";
-        select.style.borderRadius = "4px";
-        select.style.background = "rgba(168, 85, 247, 0.15)";
-        select.style.border = "1px solid rgba(168, 85, 247, 0.35)";
-        select.style.color = "#a855f7";
-        select.style.cursor = "pointer";
-
-        const defOpt = document.createElement("option");
-        defOpt.value = "-1";
-        defOpt.textContent = "Solos";
-        if (track.activeSoloIndex === undefined || track.activeSoloIndex === -1) defOpt.selected = true;
-        select.appendChild(defOpt);
-
-        track.solos.forEach((item, idx) => {
-          const opt = document.createElement("option");
-          opt.value = idx;
-          opt.textContent = item.name || `Solo ${idx + 1}`;
-          if (track.activeSoloIndex === idx) opt.selected = true;
-          select.appendChild(opt);
-        });
-
-        select.addEventListener("change", (e) => {
-          const val = parseInt(e.target.value);
-          track.activeSoloIndex = val;
-          if (val !== -1) {
-            track.activeSpecialIndex = -1;
-            track.activeVariationIndex = -1;
-            // Sync DOM sibling dropdown selects
-            const specSel = select.parentElement.querySelector(".select-specials");
-            if (specSel) specSel.value = "-1";
-            const varSel = select.parentElement.querySelector(".select-variations");
-            if (varSel) varSel.value = "-1";
+        const action = () => {
+          if (track.originalSteps) {
+            track.steps = [...track.originalSteps];
+            if (track.originalSubdivision !== undefined) track.subdivision = track.originalSubdivision;
+            track.subdivisionSteps = {
+              [track.subdivision]: [...track.steps]
+            };
           }
+          const bellTrack = state.tracks.find(t => t.instrument === track.instrument + "_bell");
+          if (bellTrack && bellTrack.originalSteps) {
+            bellTrack.steps = [...bellTrack.originalSteps];
+            if (bellTrack.originalSubdivision !== undefined) bellTrack.subdivision = bellTrack.originalSubdivision;
+            bellTrack.subdivisionSteps = {
+              [bellTrack.subdivision]: [...bellTrack.steps]
+            };
+          }
+          renderGrid();
+        };
+        if (state.isPlaying) {
+          state.queuedActions.push(action);
+        } else {
+          action();
+        }
+      });
+      varsContainer.appendChild(defaultBtn);
+
+      state.currentVariations[track.instrument].forEach((vari, idx) => {
+        const vbtn = document.createElement("button");
+        vbtn.className = `btn${track.activeVariation === idx ? ' btn-primary' : ''}`;
+        vbtn.textContent = (idx + 1).toString();
+        vbtn.title = vari.name;
+        vbtn.style.padding = "0.15rem 0.4rem";
+        vbtn.style.fontSize = "0.7rem";
+        vbtn.style.minWidth = "24px";
+        vbtn.addEventListener("click", () => {
+          // Highlight button immediately
+          track.activeVariation = idx;
+          const container = vbtn.parentElement;
+          if (container) {
+            Array.from(container.children).forEach(btn => {
+              if (btn !== defaultBtn) btn.classList.remove("btn-primary");
+            });
+          }
+          vbtn.classList.add("btn-primary");
+          if (defaultBtn) defaultBtn.classList.remove("btn-primary");
 
           const action = () => {
-            if (val === -1) {
-              restoreTrackOriginal(track);
-            } else {
-              if (!track.standardSteps) track.standardSteps = [...track.steps];
-              const patternStr = track.solos[val].pattern || track.solos[val].drum_pattern;
-              track.steps = convertPatternToSteps(patternStr, state.timeSignature, track.name);
-              track.subdivisionSteps[track.subdivision] = [...track.steps];
+            track.steps = [...vari.steps];
+            if (vari.subdivision) track.subdivision = vari.subdivision;
+            track.subdivisionSteps = {
+              [track.subdivision]: [...track.steps]
+            };
+
+            if (vari.bellSteps) {
+              const bellTrack = state.tracks.find(t => t.instrument === track.instrument + "_bell");
+              if (bellTrack) {
+                bellTrack.steps = [...vari.bellSteps];
+                bellTrack.subdivisionSteps = {
+                  [bellTrack.subdivision]: [...bellTrack.steps]
+                };
+              }
+            }
+
+            if (vari.compoundTracks) {
+              Object.keys(vari.compoundTracks).forEach(compInst => {
+                const compTrack = state.tracks.find(t => t.instrument === compInst);
+                if (compTrack) {
+                  compTrack.steps = [...vari.compoundTracks[compInst].steps];
+                  compTrack.subdivisionSteps = {
+                    [compTrack.subdivision]: [...compTrack.steps]
+                  };
+                }
+                const compBellTrack = state.tracks.find(t => t.instrument === compInst + "_bell");
+                if (compBellTrack && vari.compoundTracks[compInst].bellSteps) {
+                  compBellTrack.steps = [...vari.compoundTracks[compInst].bellSteps];
+                  compBellTrack.subdivisionSteps = {
+                    [compBellTrack.subdivision]: [...compBellTrack.steps]
+                  };
+                }
+              });
             }
             renderGrid();
           };
-
           if (state.isPlaying) {
             state.queuedActions.push(action);
           } else {
             action();
           }
         });
-        varsContainer.appendChild(select);
-      }
-
-      // 2. Specials Dropdown
-      if (filteredSpecials.length > 0) {
-        const select = document.createElement("select");
-        select.className = "track-alt-select select-specials";
-        select.style.fontSize = "0.7rem";
-        select.style.padding = "0.1rem 0.2rem";
-        select.style.borderRadius = "4px";
-        select.style.background = "rgba(245, 158, 11, 0.15)";
-        select.style.border = "1px solid rgba(245, 158, 11, 0.35)";
-        select.style.color = "#f59e0b";
-        select.style.cursor = "pointer";
-
-        const defOpt = document.createElement("option");
-        defOpt.value = "-1";
-        defOpt.textContent = "Specials";
-        if (track.activeSpecialIndex === undefined || track.activeSpecialIndex === -1) defOpt.selected = true;
-        select.appendChild(defOpt);
-
-        filteredSpecials.forEach((item, idx) => {
-          const opt = document.createElement("option");
-          opt.value = idx;
-          opt.textContent = item.name || `Special ${idx + 1}`;
-          if (track.activeSpecialIndex === idx) opt.selected = true;
-          select.appendChild(opt);
-        });
-
-        select.addEventListener("change", (e) => {
-          const val = parseInt(e.target.value);
-          track.activeSpecialIndex = val;
-          if (val !== -1) {
-            track.activeSoloIndex = -1;
-            track.activeVariationIndex = -1;
-            // Sync DOM sibling dropdown selects
-            const soloSel = select.parentElement.querySelector(".select-solos");
-            if (soloSel) soloSel.value = "-1";
-            const varSel = select.parentElement.querySelector(".select-variations");
-            if (varSel) varSel.value = "-1";
-          }
-
-          const action = () => {
-            if (val === -1) {
-              restoreTrackOriginal(track);
-            } else {
-              if (!track.standardSteps) track.standardSteps = [...track.steps];
-              const patternStr = filteredSpecials[val].pattern || filteredSpecials[val].drum_pattern || filteredSpecials[val].sequence;
-              track.steps = convertPatternToSteps(patternStr, state.timeSignature, track.name);
-              track.subdivisionSteps[track.subdivision] = [...track.steps];
-            }
-            renderGrid();
-          };
-
-          if (state.isPlaying) {
-            state.queuedActions.push(action);
-          } else {
-            action();
-          }
-        });
-        varsContainer.appendChild(select);
-      }
-
-      // 3. Variations Dropdown
-      if (track.variations && track.variations.length > 0) {
-        const select = document.createElement("select");
-        select.className = "track-alt-select select-variations";
-        select.style.fontSize = "0.7rem";
-        select.style.padding = "0.1rem 0.2rem";
-        select.style.borderRadius = "4px";
-        select.style.background = "rgba(16, 185, 129, 0.15)";
-        select.style.border = "1px solid rgba(16, 185, 129, 0.35)";
-        select.style.color = "#10b981";
-        select.style.cursor = "pointer";
-
-        const defOpt = document.createElement("option");
-        defOpt.value = "-1";
-        defOpt.textContent = "Variations";
-        if (track.activeVariationIndex === undefined || track.activeVariationIndex === -1) defOpt.selected = true;
-        select.appendChild(defOpt);
-
-        track.variations.forEach((item, idx) => {
-          const opt = document.createElement("option");
-          opt.value = idx;
-          opt.textContent = item.name || `Variation ${idx + 1}`;
-          if (track.activeVariationIndex === idx) opt.selected = true;
-          select.appendChild(opt);
-        });
-
-        select.addEventListener("change", (e) => {
-          const val = parseInt(e.target.value);
-          track.activeVariationIndex = val;
-          if (val !== -1) {
-            track.activeSoloIndex = -1;
-            track.activeSpecialIndex = -1;
-            // Sync DOM sibling dropdown selects
-            const soloSel = select.parentElement.querySelector(".select-solos");
-            if (soloSel) soloSel.value = "-1";
-            const specSel = select.parentElement.querySelector(".select-specials");
-            if (specSel) specSel.value = "-1";
-          }
-
-          const action = () => {
-            if (val === -1) {
-              restoreTrackOriginal(track);
-            } else {
-              if (!track.standardSteps) track.standardSteps = [...track.steps];
-              const patternStr = track.variations[val].pattern || track.variations[val].drum_pattern;
-              track.steps = convertPatternToSteps(patternStr, state.timeSignature, track.name);
-              track.subdivisionSteps[track.subdivision] = [...track.steps];
-            }
-            renderGrid();
-          };
-
-          if (state.isPlaying) {
-            state.queuedActions.push(action);
-          } else {
-            action();
-          }
-        });
-        varsContainer.appendChild(select);
-      }
-
+        varsContainer.appendChild(vbtn);
+      });
+      // Position absolutely below the instrument name so it doesn't affect centering
       varsContainer.style.position = "absolute";
       varsContainer.style.top = "100%";
       varsContainer.style.left = "0";
       varsContainer.style.zIndex = "5";
       infoColumn.appendChild(varsContainer);
+      // Add extra bottom padding to the row to make room for variation buttons
       row.style.paddingBottom = "1.75rem";
     }
 
