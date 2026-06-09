@@ -2062,39 +2062,39 @@ select option {
 /* Instrument-specific Dunun Drum colors */
 /* Kenkeni: Shifted +10 deg and desaturated */
 .step-cell.kenkeni-O {
-  background: hsl(130, 64%, 36%);
-  border-color: hsl(130, 64%, 36%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(130, 64%, 36%, 0.25);
+  background: hsl(138, 56%, 36%);
+  border-color: hsl(138, 56%, 36%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(138, 56%, 36%, 0.25);
 }
 .step-cell.kenkeni-X,
 .step-cell.kenkeni-C {
-  background: hsl(130, 20%, 36%);
-  border-color: hsl(130, 20%, 36%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(130, 20%, 36%, 0.2);
+  background: hsl(138, 20%, 36%);
+  border-color: hsl(138, 20%, 36%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(138, 20%, 36%, 0.2);
 }
 
 .step-cell.kenkeni3-O {
-  background: hsl(140, 68%, 35%);
-  border-color: hsl(140, 68%, 35%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(140, 68%, 35%, 0.25);
+  background: hsl(148, 60%, 35%);
+  border-color: hsl(148, 60%, 35%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(148, 60%, 35%, 0.25);
 }
 .step-cell.kenkeni3-X,
 .step-cell.kenkeni3-C {
-  background: hsl(140, 20%, 35%);
-  border-color: hsl(140, 20%, 35%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(140, 20%, 35%, 0.2);
+  background: hsl(148, 20%, 35%);
+  border-color: hsl(148, 20%, 35%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(148, 20%, 35%, 0.2);
 }
 
 .step-cell.kenkeni4-O {
-  background: hsl(150, 70%, 34%);
-  border-color: hsl(150, 70%, 34%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(150, 70%, 34%, 0.25);
+  background: hsl(158, 62%, 34%);
+  border-color: hsl(158, 62%, 34%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(158, 62%, 34%, 0.25);
 }
 .step-cell.kenkeni4-X,
 .step-cell.kenkeni4-C {
-  background: hsl(150, 20%, 34%);
-  border-color: hsl(150, 20%, 34%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(150, 20%, 34%, 0.2);
+  background: hsl(158, 20%, 34%);
+  border-color: hsl(158, 20%, 34%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(158, 20%, 34%, 0.2);
 }
 
 /* Sangban: Aqua +- 20 degrees */
@@ -2175,38 +2175,38 @@ select option {
 /* Kenkeni Bell: Shifted +10 deg and desaturated */
 .step-cell.kenkeni_bell-O,
 .step-cell.kenkeni_bell-X {
-  background: hsl(135, 66%, 37%);
-  border-color: hsl(135, 66%, 37%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(135, 66%, 37%, 0.25);
+  background: hsl(143, 58%, 37%);
+  border-color: hsl(143, 58%, 37%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(143, 58%, 37%, 0.25);
 }
 .step-cell.kenkeni_bell-C {
-  background: hsl(135, 20%, 37%);
-  border-color: hsl(135, 20%, 37%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(135, 20%, 37%, 0.2);
+  background: hsl(143, 20%, 37%);
+  border-color: hsl(143, 20%, 37%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(143, 20%, 37%, 0.2);
 }
 
 .step-cell.kenkeni3_bell-O,
 .step-cell.kenkeni3_bell-X {
-  background: hsl(125, 72%, 36%);
-  border-color: hsl(125, 72%, 36%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(125, 72%, 36%, 0.25);
+  background: hsl(133, 64%, 36%);
+  border-color: hsl(133, 64%, 36%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(133, 64%, 36%, 0.25);
 }
 .step-cell.kenkeni3_bell-C {
-  background: hsl(125, 20%, 36%);
-  border-color: hsl(125, 20%, 36%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(125, 20%, 36%, 0.2);
+  background: hsl(133, 20%, 36%);
+  border-color: hsl(133, 20%, 36%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(133, 20%, 36%, 0.2);
 }
 
 .step-cell.kenkeni4_bell-O,
 .step-cell.kenkeni4_bell-X {
-  background: hsl(115, 63%, 38%);
-  border-color: hsl(115, 63%, 38%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(115, 63%, 38%, 0.25);
+  background: hsl(123, 55%, 38%);
+  border-color: hsl(123, 55%, 38%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(123, 55%, 38%, 0.25);
 }
 .step-cell.kenkeni4_bell-C {
-  background: hsl(115, 20%, 38%);
-  border-color: hsl(115, 20%, 38%);
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(115, 20%, 38%, 0.2);
+  background: hsl(123, 20%, 38%);
+  border-color: hsl(123, 20%, 38%);
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(123, 20%, 38%, 0.2);
 }
 
 /* Sangban Bell: Aqua +- 20 degrees */

@@ -331,13 +331,13 @@ function getInstrumentHSL(instrument, type, isCall) {
     const isBell = type === "bell" || instrument.includes("bell");
     if (instrument.includes("kenkeni")) {
       if (isBell) {
-        if (instrument.includes("3")) return "125, 72%, 36%"; // Bell 2 (Shifted +10 deg, desaturated)
-        if (instrument.includes("4")) return "115, 63%, 38%"; // Bell 3 (Shifted +10 deg, desaturated)
-        return "135, 66%, 37%"; // Bell 1 (Shifted +10 deg, desaturated)
+        if (instrument.includes("3")) return "133, 64%, 36%"; // Bell 2 (Shifted +18 deg total, further desaturated)
+        if (instrument.includes("4")) return "123, 55%, 38%"; // Bell 3 (Shifted +18 deg total, further desaturated)
+        return "143, 58%, 37%"; // Bell 1 (Shifted +18 deg total, further desaturated)
       } else {
-        if (instrument.includes("3")) return "140, 68%, 35%"; // Kenkeni 3 (Shifted +10 deg, desaturated)
-        if (instrument.includes("4")) return "150, 70%, 34%"; // Kenkeni 4 (Shifted +10 deg, desaturated)
-        return "130, 64%, 36%"; // Kenkeni 1 (Shifted +10 deg, desaturated)
+        if (instrument.includes("3")) return "148, 60%, 35%"; // Kenkeni 3 (Shifted +18 deg total, further desaturated)
+        if (instrument.includes("4")) return "158, 62%, 34%"; // Kenkeni 4 (Shifted +18 deg total, further desaturated)
+        return "138, 56%, 36%"; // Kenkeni 1 (Shifted +18 deg total, further desaturated)
       }
     }
     if (instrument.includes("sangban")) {
