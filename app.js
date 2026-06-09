@@ -332,39 +332,39 @@ function getInstrumentHSL(instrument, type, isCall) {
     const isBell = type === "bell" || instrument.includes("bell");
     if (instrument.includes("kenkeni")) {
       if (isBell) {
-        if (instrument.includes("3")) return "143, 64%, 36%"; // Bell 2 (Shifted +28 deg total, further desaturated)
-        if (instrument.includes("4")) return "133, 55%, 38%"; // Bell 3 (Shifted +28 deg total, further desaturated)
-        return "153, 58%, 37%"; // Bell 1 (Shifted +28 deg total, further desaturated)
+        if (instrument.includes("3")) return "203, 64%, 36%"; // Bell 2 (Shifted +60 deg to blue)
+        if (instrument.includes("4")) return "193, 55%, 38%"; // Bell 3 (Shifted +60 deg to blue)
+        return "213, 58%, 37%"; // Bell 1 (Shifted +60 deg to blue)
       } else {
-        if (instrument.includes("3")) return "158, 60%, 35%"; // Kenkeni 3 (Shifted +28 deg total, further desaturated)
-        if (instrument.includes("4")) return "168, 62%, 34%"; // Kenkeni 4 (Shifted +28 deg total, further desaturated)
-        return "148, 56%, 36%"; // Kenkeni 1 (Shifted +28 deg total, further desaturated)
+        if (instrument.includes("3")) return "218, 60%, 35%"; // Kenkeni 3 (Shifted +60 deg to blue)
+        if (instrument.includes("4")) return "228, 62%, 34%"; // Kenkeni 4 (Shifted +60 deg to blue)
+        return "208, 56%, 36%"; // Kenkeni 1 (Shifted +60 deg to blue)
       }
     }
     if (instrument.includes("sangban")) {
       if (isBell) {
-        if (instrument.includes("3")) return "175, 90%, 42%"; // Bell 2 (Aqua)
-        if (instrument.includes("4")) return "165, 92%, 43%"; // Bell 3 (Aqua)
-        return "185, 88%, 41%"; // Bell 1 (Aqua)
+        if (instrument.includes("3")) return "235, 90%, 42%"; // Bell 2 (Shifted +60 deg to blue)
+        if (instrument.includes("4")) return "225, 92%, 43%"; // Bell 3 (Shifted +60 deg to blue)
+        return "245, 88%, 41%"; // Bell 1 (Shifted +60 deg to blue)
       } else {
-        if (instrument.includes("3")) return "190, 95%, 42%"; // Sangban 3 (Aqua)
-        if (instrument.includes("4")) return "200, 95%, 44%"; // Sangban 4 (Aqua)
-        return "180, 92%, 40%"; // Sangban 1 (Aqua)
+        if (instrument.includes("3")) return "250, 95%, 42%"; // Sangban 3 (Shifted +60 deg to blue)
+        if (instrument.includes("4")) return "260, 95%, 44%"; // Sangban 4 (Shifted +60 deg to blue)
+        return "240, 92%, 40%"; // Sangban 1 (Shifted +60 deg to blue)
       }
     }
     if (instrument.includes("dundunba")) {
       if (isBell) {
-        if (instrument.includes("3")) return "212, 98%, 56%"; // Bell 2 (Vibrant blue, avoiding purple)
-        if (instrument.includes("4")) return "204, 98%, 58%"; // Bell 3 (Vibrant blue, avoiding purple)
-        return "218, 98%, 54%"; // Bell 1 (Vibrant blue, avoiding purple)
+        if (instrument.includes("3")) return "272, 98%, 56%"; // Bell 2 (Shifted +60 deg to violet-blue)
+        if (instrument.includes("4")) return "264, 98%, 58%"; // Bell 3 (Shifted +60 deg to violet-blue)
+        return "278, 98%, 54%"; // Bell 1 (Shifted +60 deg to violet-blue)
       } else {
-        if (instrument.includes("3")) return "215, 98%, 60%"; // Dundunba 3 (Vibrant blue, avoiding purple)
-        if (instrument.includes("4")) return "208, 98%, 62%"; // Dundunba 4 (Vibrant blue, avoiding purple)
-        return "220, 98%, 52%"; // Dundunba 1 (Vibrant blue, avoiding purple)
+        if (instrument.includes("3")) return "275, 98%, 60%"; // Dundunba 3 (Shifted +60 deg to violet-blue)
+        if (instrument.includes("4")) return "268, 98%, 62%"; // Dundunba 4 (Shifted +60 deg to violet-blue)
+        return "280, 98%, 52%"; // Dundunba 1 (Shifted +60 deg to violet-blue)
       }
     }
   }
-  return "175, 84%, 39%"; // default Dunun color (green-teal)
+  return "235, 84%, 39%"; // default Dunun color (Shifted +60 deg to blue)
 }
 
 // Helper to strip roles in parentheses, colons, semicolons, and remove "drum" or "bell" case-insensitively
