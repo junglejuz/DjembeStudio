@@ -24,14 +24,6 @@ const SAMPLES = {
   "dundunba_O": "samples/djembeloops_samples/Doundoun_Open.mp3",
   "dundunba_X": "samples/djembeloops_samples/Doundoun_Muffled.mp3",
   
-  // Dununs Head Hits (Secondary) - map to same files as they represent the instruments
-  "kenkeni2_O": "samples/djembeloops_samples/Kenkeni_Open.mp3",
-  "kenkeni2_X": "samples/djembeloops_samples/Kenkeni_Muffled.mp3",
-  "sangban2_O": "samples/djembeloops_samples/Sangban_Open.mp3",
-  "sangban2_X": "samples/djembeloops_samples/Sangban_Muffled.mp3",
-  "dundunba2_O": "samples/djembeloops_samples/Doundoun_Open.mp3",
-  "dundunba2_X": "samples/djembeloops_samples/Doundoun_Muffled.mp3",
-  
   // Dununs Bells (Primary)
   "kenkeni_bell_O": "samples/djembeloops_samples/Kenkeni_Bell_Open.mp3",
   "kenkeni_bell_X": "samples/djembeloops_samples/Kenkeni_Muffled.mp3",
@@ -39,14 +31,6 @@ const SAMPLES = {
   "sangban_bell_X": "samples/djembeloops_samples/Sangban_Muffled.mp3",
   "dundunba_bell_O": "samples/djembeloops_samples/Doundoun_Bell_Open.mp3",
   "dundunba_bell_X": "samples/djembeloops_samples/Doundoun_Muffled.mp3",
-
-  // Dununs Bells (Secondary)
-  "kenkeni_bell2_O": "samples/djembeloops_samples/Kenkeni_Bell_Open.mp3",
-  "kenkeni_bell2_X": "samples/djembeloops_samples/Kenkeni_Muffled.mp3",
-  "sangban_bell2_O": "samples/djembeloops_samples/Sangban_Bell_Open.mp3",
-  "sangban_bell2_X": "samples/djembeloops_samples/Sangban_Muffled.mp3",
-  "dundunba_bell2_O": "samples/djembeloops_samples/Doundoun_Bell_Open.mp3",
-  "dundunba_bell2_X": "samples/djembeloops_samples/Doundoun_Muffled.mp3",
 
   // Shekere Rattles (Shake & Tap)
   "shekere_O": "samples/djembeloops_samples/Shekere.mp3",
@@ -143,12 +127,7 @@ export class DrumSynth {
       sangban_bell: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.2, volume: 0.7 },
       dundunba_bell: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.2, volume: 0.7 },
       
-      kenkeni2: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.15, volume: 0.8 },
-      sangban2: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.15, volume: 0.8 },
-      dundunba2: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.15, volume: 0.8 },
-      kenkeni_bell2: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.2, volume: 0.7 },
-      sangban_bell2: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.2, volume: 0.7 },
-      dundunba_bell2: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.2, volume: 0.7 },
+
       
       kenkeni3: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.15, volume: 0.5 },
       sangban3: { pitch: 0, delay: 0, delaySubdiv: 0.25, reverb: 0.15, volume: 0.5 },
@@ -195,10 +174,8 @@ export class DrumSynth {
         "djembe", 
         "kenkeni", "sangban", "dundunba", 
         "kenkeni_bell", "sangban_bell", "dundunba_bell", 
-        "kenkeni2", "sangban2", "dundunba2", 
-        "kenkeni_bell2", "sangban_bell2", "dundunba_bell2", 
         "kenkeni3", "sangban3", "dundunba3", 
-        "kenkeni3_bell", "sangban3_bell", "dundunba3_bell", 
+        "kenkeni3_bell", "sangban3_bell", "dundunba3_bell",  
         "kenkeni4", "sangban4", "dundunba4", 
         "kenkeni4_bell", "sangban4_bell", "dundunba4_bell", 
         "shekere", "agogo"
@@ -406,7 +383,16 @@ export class DrumSynth {
     const playbackRate = Math.pow(2, finalPitchOffset / 12);
     source.playbackRate.setValueAtTime(playbackRate, time);
     
-    const finalVolume = volume * volumeScale;
+    let finalVolume = volume * volumeScale;
+    const isDjembeloopsMuffled = [
+      "kenkeni_X", "sangban_X", "dundunba_X",
+      "kenkeni_bell_X", "sangban_bell_X", "dundunba_bell_X"
+    ].includes(bufferKey);
+
+    if (isDjembeloopsMuffled) {
+      finalVolume *= 1.5;
+    }
+
     const gainNode = ctx.createGain();
     gainNode.gain.setValueAtTime(0.001, time);
     gainNode.gain.linearRampToValueAtTime(finalVolume, time + 0.003);
@@ -417,7 +403,7 @@ export class DrumSynth {
     let decayDuration = duration * decayScale;
     
     if (isMuffled) {
-      decayDuration = Math.min(decayDuration, 0.05); // cut off quickly for muffled hits
+      decayDuration = Math.min(decayDuration, isDjembeloopsMuffled ? 0.08 : 0.05); // cut off quickly for muffled hits
     }
     
     // Smooth envelope release to avoid pop clicks

@@ -5805,25 +5805,6 @@ function renderGrid() {
     // --- START DRAWER FOR MOBILE ACCORDION ---
     const drawer = document.createElement("div");
     drawer.className = "track-drawer";
-    
-    // Subdivision selection dropdown under the track icon
-    const subdivSelect = document.createElement("select");
-    subdivSelect.className = "drawer-subdiv-select";
-    [3, 4, 6].forEach(val => {
-      const opt = document.createElement("option");
-      opt.value = val;
-      opt.textContent = `/${val}`;
-      if (track.subdivision === val) opt.selected = true;
-      subdivSelect.appendChild(opt);
-    });
-    subdivSelect.addEventListener("change", (e) => {
-      const newSub = parseInt(e.target.value);
-      updateTrackSubdivision(track, newSub);
-      renderGrid();
-    });
-    subdivSelect.addEventListener("click", (e) => {
-      e.stopPropagation(); // Prevent toggling collapse on select click
-    });
 
     // Build sample group options (used by popup picker button)
     let sampleOptions = [];
@@ -5946,8 +5927,22 @@ function renderGrid() {
     drawerLeft.appendChild(btnSolo);
     
     leftGroup.appendChild(drawerLeft);
-    leftGroup.appendChild(subdivSelect);
     drawer.appendChild(leftGroup);
+    
+    // Center container for subdivision, sample group, and volume buttons
+    const drawerCenter = document.createElement("div");
+    drawerCenter.className = "drawer-center";
+    
+    // Subdivision picker button
+    const btnSubdiv = document.createElement("button");
+    btnSubdiv.className = "drawer-btn btn-subdiv";
+    btnSubdiv.innerHTML = `<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg>`;
+    btnSubdiv.title = `Subdivision (current: /${track.subdivision})`;
+    btnSubdiv.addEventListener("click", (e) => {
+      e.stopPropagation();
+      showSubdivisionPopup(track);
+    });
+    drawerCenter.appendChild(btnSubdiv);
     
     // Sample group picker button (opens popup overlay)
     if (sampleOptions.length > 0) {
@@ -5959,7 +5954,7 @@ function renderGrid() {
         e.stopPropagation();
         showSampleGroupPopup(track, sampleOptions, row);
       });
-      drawer.appendChild(btnSampleGroup);
+      drawerCenter.appendChild(btnSampleGroup);
     }
     
     // Hidden volume slider (used by large slider overlay)
@@ -5982,7 +5977,7 @@ function renderGrid() {
       label: `${cleanTrackName(track.name)} Volume`,
       getValueText: (val) => `${Math.round(parseFloat(val) * 100)}%`
     });
-    drawer.appendChild(volSlider);
+    drawerCenter.appendChild(volSlider);
     
     // Volume icon button — triggers existing large slider overlay
     const btnVolume = document.createElement("button");
@@ -6001,12 +5996,9 @@ function renderGrid() {
       });
       volSlider.dispatchEvent(syntheticEvent);
     });
-    drawer.appendChild(btnVolume);
+    drawerCenter.appendChild(btnVolume);
     
-    // Spacer to push right buttons to the edge
-    const drawerSpacer = document.createElement("div");
-    drawerSpacer.style.flex = "1";
-    drawer.appendChild(drawerSpacer);
+    drawer.appendChild(drawerCenter);
     
     const drawerRight = document.createElement("div");
     drawerRight.className = "drawer-right";
@@ -6107,6 +6099,49 @@ function showSampleGroupPopup(track, sampleOptions, trackRow) {
     btn.addEventListener("click", (e) => {
       e.stopPropagation();
       track.instrument = opt.value;
+      overlay.remove();
+      renderGrid();
+    });
+    grid.appendChild(btn);
+  });
+  
+  popup.appendChild(grid);
+  overlay.appendChild(popup);
+  
+  // Close on background click
+  container.appendChild(overlay);
+}
+
+// Show the subdivision picker popup overlay
+function showSubdivisionPopup(track) {
+  // Remove any existing overlay
+  const existing = document.querySelector(".sample-group-overlay");
+  if (existing) existing.remove();
+  
+  const container = document.querySelector(".demo-device-frame") || document.querySelector(".app-container") || document.body;
+  
+  const overlay = document.createElement("div");
+  overlay.className = "sample-group-overlay active";
+  
+  const popup = document.createElement("div");
+  popup.className = "sample-group-popup";
+  
+  const titleEl = document.createElement("div");
+  titleEl.className = "sample-group-popup-title";
+  titleEl.textContent = "Select Subdivision";
+  popup.appendChild(titleEl);
+  
+  const grid = document.createElement("div");
+  grid.className = "sample-group-popup-grid";
+  
+  [3, 4, 6].forEach(val => {
+    const btn = document.createElement("button");
+    btn.className = "sample-group-popup-btn";
+    if (track.subdivision === val) btn.classList.add("active");
+    btn.textContent = `/${val}`;
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      updateTrackSubdivision(track, val);
       overlay.remove();
       renderGrid();
     });

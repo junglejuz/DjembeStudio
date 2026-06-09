@@ -355,7 +355,7 @@ body {
 
 /* Track Row - Glassy & Premium (matches user mockup) */
 .track-row {
-  padding: 0.18rem 0.25rem !important;
+  padding: 0.18rem 8px !important;
   /* Padding between track borders and notes reduced by 50% */
   border-radius: 14px !important;
   position: relative;
@@ -441,11 +441,11 @@ body {
 
 /* Make track-meta extremely narrow: display ONLY instrument SVG icons */
 .track-meta {
-  width: 44px !important;
-  min-width: 44px !important;
+  width: 28px !important;
+  min-width: 28px !important;
   border-right: none !important;
   padding-right: 0px !important;
-  justify-content: center !important;
+  justify-content: flex-start !important;
 }
 
 .track-info {
@@ -482,13 +482,13 @@ body {
 
 /* Steps Container auto-fits screen width */
 .steps-container {
-  margin-left: 0.15rem !important;
+  margin-left: 8px !important;
   min-width: 0 !important;
-  width: calc(100% - 8px) !important;
+  width: calc(100% - 22px) !important;
   height: 22px !important;
   overflow: visible !important;
-  padding-left: 6px !important;
-  padding-right: 6px !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }
 
 /* Note cells: Uniform squares of the exact same size */
@@ -656,6 +656,7 @@ body {
   justify-content: center;
   padding: 0 0.25rem;
   min-width: 0;
+  gap: 0.35rem;
 }
 
 .drawer-right {
@@ -735,6 +736,18 @@ body {
 .drawer-btn.btn-remove-row:hover {
   background: rgba(239, 68, 68, 0.15);
   border-color: rgba(239, 68, 68, 0.3);
+}
+
+/* Subdivision button */
+.drawer-btn.btn-subdiv {
+  background: rgba(245, 158, 11, 0.1);
+  border-color: rgba(245, 158, 11, 0.25);
+  color: #fb923c;
+}
+
+.drawer-btn.btn-subdiv:hover {
+  background: rgba(245, 158, 11, 0.2);
+  border-color: rgba(245, 158, 11, 0.4);
 }
 
 /* Volume icon button */
