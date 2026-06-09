@@ -1121,9 +1121,9 @@ body:has(#hamburger-menu.active) #btn-hamburger {
 }
 .step-cell.dundunba-X,
 .step-cell.dundunba-C {
-  background: hsl(220, 65%, 68%) !important;
-  border-color: hsl(220, 65%, 68%) !important;
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(220, 65%, 68%, 0.2) !important;
+  background: hsl(220, 98%, 68%) !important;
+  border-color: hsl(220, 98%, 68%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(220, 98%, 68%, 0.2) !important;
 }
 
 .step-cell.dundunba3-O {
@@ -1133,9 +1133,9 @@ body:has(#hamburger-menu.active) #btn-hamburger {
 }
 .step-cell.dundunba3-X,
 .step-cell.dundunba3-C {
-  background: hsl(215, 65%, 75%) !important;
-  border-color: hsl(215, 65%, 75%) !important;
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(215, 65%, 75%, 0.2) !important;
+  background: hsl(215, 98%, 75%) !important;
+  border-color: hsl(215, 98%, 75%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(215, 98%, 75%, 0.2) !important;
 }
 
 .step-cell.dundunba4-O {
@@ -1145,9 +1145,9 @@ body:has(#hamburger-menu.active) #btn-hamburger {
 }
 .step-cell.dundunba4-X,
 .step-cell.dundunba4-C {
-  background: hsl(208, 65%, 76%) !important;
-  border-color: hsl(208, 65%, 76%) !important;
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(208, 65%, 76%, 0.2) !important;
+  background: hsl(208, 98%, 76%) !important;
+  border-color: hsl(208, 98%, 76%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(208, 98%, 76%, 0.2) !important;
 }
 
 /* Override step cell colors for Kenkeni Bell (Shifted +10 deg, desaturated) */
@@ -1190,38 +1190,38 @@ body:has(#hamburger-menu.active) #btn-hamburger {
 /* Override step cell colors for Sangban Bell (Aqua +- 20) */
 .step-cell.sangban_bell-O,
 .step-cell.sangban_bell-X {
-  background: hsl(185, 88%, 41%) !important;
-  border-color: hsl(185, 88%, 41%) !important;
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(185, 88%, 41%, 0.25) !important;
+  background: hsl(185, 100%, 41%) !important;
+  border-color: hsl(185, 100%, 41%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(185, 100%, 41%, 0.25) !important;
 }
 .step-cell.sangban_bell-C {
-  background: hsl(185, 20%, 41%) !important;
-  border-color: hsl(185, 20%, 41%) !important;
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(185, 20%, 41%, 0.2) !important;
+  background: hsl(185, 100%, 41%) !important;
+  border-color: hsl(185, 100%, 41%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(185, 100%, 41%, 0.2) !important;
 }
 
 .step-cell.sangban3_bell-O,
 .step-cell.sangban3_bell-X {
-  background: hsl(175, 90%, 42%) !important;
-  border-color: hsl(175, 90%, 42%) !important;
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(175, 90%, 42%, 0.25) !important;
+  background: hsl(175, 100%, 42%) !important;
+  border-color: hsl(175, 100%, 42%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(175, 100%, 42%, 0.25) !important;
 }
 .step-cell.sangban3_bell-C {
-  background: hsl(175, 20%, 42%) !important;
-  border-color: hsl(175, 20%, 42%) !important;
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(175, 20%, 42%, 0.2) !important;
+  background: hsl(175, 100%, 42%) !important;
+  border-color: hsl(175, 100%, 42%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(175, 100%, 42%, 0.2) !important;
 }
 
 .step-cell.sangban4_bell-O,
 .step-cell.sangban4_bell-X {
-  background: hsl(165, 92%, 43%) !important;
-  border-color: hsl(165, 92%, 43%) !important;
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(165, 92%, 43%, 0.25) !important;
+  background: hsl(165, 100%, 43%) !important;
+  border-color: hsl(165, 100%, 43%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(165, 100%, 43%, 0.25) !important;
 }
 .step-cell.sangban4_bell-C {
-  background: hsl(165, 20%, 43%) !important;
-  border-color: hsl(165, 20%, 43%) !important;
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(165, 20%, 43%, 0.2) !important;
+  background: hsl(165, 100%, 43%) !important;
+  border-color: hsl(165, 100%, 43%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(165, 100%, 43%, 0.2) !important;
 }
 
 /* Override step cell colors for Dundunba Bell (Blue, not exceeding 240) */
@@ -1232,9 +1232,9 @@ body:has(#hamburger-menu.active) #btn-hamburger {
   box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(218, 98%, 70%, 0.25) !important;
 }
 .step-cell.dundunba_bell-C {
-  background: hsl(218, 65%, 70%) !important;
-  border-color: hsl(218, 65%, 70%) !important;
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(218, 65%, 70%, 0.2) !important;
+  background: hsl(218, 98%, 70%) !important;
+  border-color: hsl(218, 98%, 70%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(218, 98%, 70%, 0.2) !important;
 }
 
 .step-cell.dundunba3_bell-O,
@@ -1244,9 +1244,9 @@ body:has(#hamburger-menu.active) #btn-hamburger {
   box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(212, 98%, 72%, 0.25) !important;
 }
 .step-cell.dundunba3_bell-C {
-  background: hsl(212, 65%, 72%) !important;
-  border-color: hsl(212, 65%, 72%) !important;
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(212, 65%, 72%, 0.2) !important;
+  background: hsl(212, 98%, 72%) !important;
+  border-color: hsl(212, 98%, 72%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(212, 98%, 72%, 0.2) !important;
 }
 
 .step-cell.dundunba4_bell-O,
@@ -1256,9 +1256,9 @@ body:has(#hamburger-menu.active) #btn-hamburger {
   box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 15px) hsla(204, 98%, 74%, 0.25) !important;
 }
 .step-cell.dundunba4_bell-C {
-  background: hsl(204, 65%, 74%) !important;
-  border-color: hsl(204, 65%, 74%) !important;
-  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(204, 65%, 74%, 0.2) !important;
+  background: hsl(204, 98%, 74%) !important;
+  border-color: hsl(204, 98%, 74%) !important;
+  box-shadow: 0 0 calc(var(--vel-scale, 0.8) * 12px) hsla(204, 98%, 74%, 0.2) !important;
 }
 
 /* ============================================================

@@ -332,9 +332,9 @@ function getInstrumentHSL(instrument, type, isCall) {
     const isBell = type === "bell" || instrument.includes("bell");
     if (instrument.includes("kenkeni")) {
       if (isBell) {
-        if (instrument.includes("3")) return "143, 64%, 36%"; // Bell 2 (Shifted +28 deg total, further desaturated)
-        if (instrument.includes("4")) return "133, 55%, 38%"; // Bell 3 (Shifted +28 deg total, further desaturated)
-        return "153, 58%, 37%"; // Bell 1 (Shifted +28 deg total, further desaturated)
+        if (instrument.includes("3")) return "143, 96%, 36%"; // Bell 2 (Shifted +28 deg total, highly saturated)
+        if (instrument.includes("4")) return "133, 82%, 38%"; // Bell 3 (Shifted +28 deg total, highly saturated)
+        return "153, 87%, 37%"; // Bell 1 (Shifted +28 deg total, highly saturated)
       } else {
         if (instrument.includes("3")) return "158, 60%, 35%"; // Kenkeni 3 (Shifted +28 deg total, further desaturated)
         if (instrument.includes("4")) return "168, 62%, 34%"; // Kenkeni 4 (Shifted +28 deg total, further desaturated)
@@ -343,9 +343,9 @@ function getInstrumentHSL(instrument, type, isCall) {
     }
     if (instrument.includes("sangban")) {
       if (isBell) {
-        if (instrument.includes("3")) return "175, 90%, 42%"; // Bell 2 (Aqua)
-        if (instrument.includes("4")) return "165, 92%, 43%"; // Bell 3 (Aqua)
-        return "185, 88%, 41%"; // Bell 1 (Aqua)
+        if (instrument.includes("3")) return "175, 100%, 42%"; // Bell 2 (Aqua, highly saturated)
+        if (instrument.includes("4")) return "165, 100%, 43%"; // Bell 3 (Aqua, highly saturated)
+        return "185, 100%, 41%"; // Bell 1 (Aqua, highly saturated)
       } else {
         if (instrument.includes("3")) return "190, 95%, 42%"; // Sangban 3 (Aqua)
         if (instrument.includes("4")) return "200, 95%, 44%"; // Sangban 4 (Aqua)
@@ -393,14 +393,16 @@ function getHitColor(type, hit, instrument = "") {
         if (hit === "C") {
           const parts = hslString.split(",");
           const h = parts[0].trim();
-          return `hsl(${h}, 20%, 43%)`;
+          const s = parts[1].trim();
+          return `hsl(${h}, ${s}, 43%)`;
         }
       } else {
         if (hit === "O") return `hsl(${hslString})`;
         if (hit === "C" || hit === "X") {
           const parts = hslString.split(",");
           const h = parts[0].trim();
-          return `hsl(${h}, 20%, 39%)`;
+          const s = parts[1].trim();
+          return `hsl(${h}, ${s}, 39%)`;
         }
       }
     }
@@ -434,14 +436,16 @@ function getHitGlowColor(type, hit, instrument = "") {
         if (hit === "C") {
           const parts = hslString.split(",");
           const h = parts[0].trim();
-          return `hsla(${h}, 20%, 43%, 0.2)`;
+          const s = parts[1].trim();
+          return `hsla(${h}, ${s}, 43%, 0.2)`;
         }
       } else {
         if (hit === "O") return `hsla(${hslString}, 0.25)`;
         if (hit === "C" || hit === "X") {
           const parts = hslString.split(",");
           const h = parts[0].trim();
-          return `hsla(${h}, 20%, 39%, 0.2)`;
+          const s = parts[1].trim();
+          return `hsla(${h}, ${s}, 39%, 0.2)`;
         }
       }
     }
