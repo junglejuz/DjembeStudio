@@ -298,7 +298,51 @@ function getInstrumentSVG(instrument, type) {
       return DUNDUNBA_1_SVG;
     }
   }
-  return DJEMBE_1_SVG;
+}
+
+function getInstrumentHSL(instrument, type, isCall) {
+  if (isCall) {
+    return "35, 90%, 55%"; // warm gold / amber
+  }
+  if (type === "shekere" || instrument === "shekere") {
+    return "45, 93%, 47%"; // yellow/gold
+  }
+  
+  if (type === "djembe" || (instrument && instrument.startsWith("djembe"))) {
+    // 7 colors for 7 groups
+    const djembeColors = [
+      "342, 85%, 48%", // djembe1: crimson
+      "24, 95%, 50%",  // djembe2: orange
+      "48, 95%, 48%",  // djembe3: gold
+      "142, 76%, 45%", // djembe4: emerald
+      "189, 94%, 43%", // djembe5: cyan
+      "239, 84%, 59%", // djembe6: indigo
+      "280, 84%, 60%"  // djembe7: amethyst
+    ];
+    const idx = parseInt(instrument.replace("djembe", "")) - 1;
+    if (idx >= 0 && idx < djembeColors.length) {
+      return djembeColors[idx];
+    }
+    return "243, 75%, 59%"; // default djembe primary HSL (indigo-500)
+  }
+  
+  // Dunun or Bell
+  // 3 colors for 3 sets
+  const setColors = [
+    "175, 84%, 39%", // set 1
+    "199, 94%, 43%", // set 2
+    "239, 84%, 59%"  // set 3
+  ];
+  
+  if (instrument) {
+    if (instrument.includes("3")) {
+      return setColors[1];
+    }
+    if (instrument.includes("4")) {
+      return setColors[2];
+    }
+  }
+  return setColors[0];
 }
 
 // Helper to strip roles in parentheses, colons, semicolons, and remove "drum" or "bell" case-insensitively
@@ -2169,8 +2213,7 @@ function injectLargeSliderOverlay() {
     -webkit-backdrop-filter: blur(12px);
     display: none;
     z-index: 100000;
-    pointer-events: none;
-    touch-action: none;
+    pointer-events: auto;
   `;
   
   const windowDiv = document.createElement("div");
@@ -2191,8 +2234,7 @@ function injectLargeSliderOverlay() {
     flex-direction: column;
     align-items: center;
     gap: 1.25rem;
-    pointer-events: none;
-    touch-action: none;
+    pointer-events: auto;
   `;
   
   const titleContainer = document.createElement("div");
@@ -2242,13 +2284,19 @@ function injectLargeSliderOverlay() {
     border-radius: 6px;
     outline: none;
     margin: 0.5rem 0;
-    pointer-events: none;
-    touch-action: none;
+    pointer-events: auto;
+    touch-action: pan-x;
   `;
   
   windowDiv.appendChild(titleContainer);
   windowDiv.appendChild(slider);
   overlay.appendChild(windowDiv);
+  
+  overlay.addEventListener("pointerdown", (e) => {
+    if (e.target === overlay) {
+      overlay.style.display = "none";
+    }
+  });
   
   const container = document.querySelector(".demo-device-frame") || document.querySelector(".app-container") || document.body;
   container.appendChild(overlay);
@@ -2296,17 +2344,6 @@ function setupLargeSlider(originalSlider, options = {}) {
     const min = parseFloat(originalSlider.min) || 0;
     const max = parseFloat(originalSlider.max) || 100;
     const step = parseFloat(originalSlider.step) || 1;
-    
-    const origRect = originalSlider.getBoundingClientRect();
-    const origWidth = origRect.width;
-    if (origWidth > 0) {
-      let clickFraction = (clientX - origRect.left) / origWidth;
-      clickFraction = Math.max(0, Math.min(1, clickFraction));
-      let clickVal = min + clickFraction * (max - min);
-      clickVal = Math.round(clickVal / step) * step;
-      originalSlider.value = clickVal;
-      originalSlider.dispatchEvent(new Event("input"));
-    }
     
     largeInput.min = originalSlider.min || "0";
     largeInput.max = originalSlider.max || "100";
@@ -2382,49 +2419,74 @@ function setupLargeSlider(originalSlider, options = {}) {
     windowDiv.style.left = leftPos + "px";
     windowDiv.style.top = topPos + "px";
     
-    const startX = clientX;
-    const startVal = parseFloat(originalSlider.value) || 0;
-    
-    const getSliderWidth = () => {
-      return (largeInput && largeInput.clientWidth) ? largeInput.clientWidth : 200;
+    // Wire direct input slider interaction (for non-trusted pointerdown clicks)
+    if (largeInput._onInputHandler) {
+      largeInput.removeEventListener("input", largeInput._onInputHandler);
+    }
+    largeInput._onInputHandler = (ev) => {
+      originalSlider.value = largeInput.value;
+      originalSlider.dispatchEvent(new Event("input"));
+      updateLabelAndValue();
     };
+    largeInput.addEventListener("input", largeInput._onInputHandler);
     
-    const updateValue = (clientXCoord) => {
-      const deltaX = clientXCoord - startX;
-      const width = getSliderWidth();
-      const range = max - min;
-      
-      let val = startVal + (deltaX / width) * range;
-      val = Math.round(val / step) * step;
-      val = Math.max(min, Math.min(max, val));
-      
-      if (largeInput.value !== String(val)) {
-        largeInput.value = val;
-        originalSlider.value = largeInput.value;
+    // If it's a trusted drag event (BPM slider), support slide-anywhere behavior
+    if (e.isTrusted) {
+      const origRect = originalSlider.getBoundingClientRect();
+      const origWidth = origRect.width;
+      if (origWidth > 0) {
+        let clickFraction = (clientX - origRect.left) / origWidth;
+        clickFraction = Math.max(0, Math.min(1, clickFraction));
+        let clickVal = min + clickFraction * (max - min);
+        clickVal = Math.round(clickVal / step) * step;
+        originalSlider.value = clickVal;
         originalSlider.dispatchEvent(new Event("input"));
-        updateLabelAndValue();
       }
-    };
-    
-    const onPointerMove = (moveEvent) => {
-      if (moveEvent.cancelable) {
-        moveEvent.preventDefault();
-      }
-      if (moveEvent.clientX !== undefined) {
-        updateValue(moveEvent.clientX);
-      }
-    };
-    
-    const onRelease = () => {
-      window.removeEventListener("pointermove", onPointerMove);
-      window.removeEventListener("pointerup", onRelease);
-      window.removeEventListener("pointercancel", onRelease);
-      overlay.style.display = "none";
-    };
-    
-    window.addEventListener("pointermove", onPointerMove, { passive: false });
-    window.addEventListener("pointerup", onRelease);
-    window.addEventListener("pointercancel", onRelease);
+      
+      const startX = clientX;
+      const startVal = parseFloat(originalSlider.value) || 0;
+      
+      const getSliderWidth = () => {
+        return (largeInput && largeInput.clientWidth) ? largeInput.clientWidth : 200;
+      };
+      
+      const updateValue = (clientXCoord) => {
+        const deltaX = clientXCoord - startX;
+        const width = getSliderWidth();
+        const range = max - min;
+        
+        let val = startVal + (deltaX / width) * range;
+        val = Math.round(val / step) * step;
+        val = Math.max(min, Math.min(max, val));
+        
+        if (largeInput.value !== String(val)) {
+          largeInput.value = val;
+          originalSlider.value = largeInput.value;
+          originalSlider.dispatchEvent(new Event("input"));
+          updateLabelAndValue();
+        }
+      };
+      
+      const onPointerMove = (moveEvent) => {
+        if (moveEvent.cancelable) {
+          moveEvent.preventDefault();
+        }
+        if (moveEvent.clientX !== undefined) {
+          updateValue(moveEvent.clientX);
+        }
+      };
+      
+      const onRelease = () => {
+        window.removeEventListener("pointermove", onPointerMove);
+        window.removeEventListener("pointerup", onRelease);
+        window.removeEventListener("pointercancel", onRelease);
+        overlay.style.display = "none";
+      };
+      
+      window.addEventListener("pointermove", onPointerMove, { passive: false });
+      window.addEventListener("pointerup", onRelease);
+      window.addEventListener("pointercancel", onRelease);
+    }
   });
 }
 
@@ -5386,21 +5448,7 @@ function renderGrid() {
     }
     
     // Set custom properties for glassy instrument-specific border/glow colors (matches user mockup)
-    let hslString = "243, 75%, 59%"; // default djembe primary HSL (indigo-500)
-    
-    if (isCall) {
-      hslString = "35, 90%, 55%"; // warm gold / amber
-    } else if (track.type === "dunun") {
-      if (track.instrument.includes("sangban")) hslString = "199, 94%, 43%"; // midway between kenkeni bell (189) and sangban bell (209)
-      else if (track.instrument.includes("dundunba")) hslString = "219, 94%, 43%"; // midway between sangban bell (209) and dun bell (229)
-      else hslString = "175, 84%, 39%"; // kenkeni
-    } else if (track.type === "bell") {
-      if (track.instrument.includes("sangban")) hslString = "209, 94%, 43%";
-      else if (track.instrument.includes("dundunba")) hslString = "229, 94%, 43%";
-      else hslString = "189, 94%, 43%"; // kenkeni
-    } else if (track.type === "shekere") {
-      hslString = "45, 93%, 47%"; // yellow/gold
-    }
+    let hslString = getInstrumentHSL(track.instrument, track.type, isCall);
     
     row.style.setProperty("--part-color-hsl", hslString);
     row.style.setProperty("--row-border-color", `hsla(${hslString}, 0.12)`);

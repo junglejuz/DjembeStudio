@@ -312,18 +312,37 @@ body {
   height: 18px !important;
 }
 
-/* Eliminate tap highlight border and outline focus rings on mobile demo */
+/* Eliminate tap highlight border and outline focus rings globally on all elements */
+* {
+  -webkit-tap-highlight-color: transparent !important;
+  outline: none !important;
+}
+
 .btn-play-large,
-.btn {
+.btn,
+.track-icon-wrapper,
+.drawer-btn,
+.drum-pad,
+.sample-group-popup-btn,
+.variation-btn {
   outline: none !important;
   -webkit-tap-highlight-color: transparent !important;
 }
 
 .btn-play-large:focus,
-.btn-play-large:active,
 .btn:focus,
-.btn:active {
+.track-icon-wrapper:focus,
+.drawer-btn:focus,
+.drum-pad:focus,
+.sample-group-popup-btn:focus,
+.variation-btn:focus {
   outline: none !important;
+}
+
+.btn-play-large:active,
+.btn:active {
+  transform: scale(0.95) !important;
+  transition: transform 0.1s cubic-bezier(0.25, 1, 0.5, 1) !important;
 }
 
 .btn-play-large.btn-danger-round {
@@ -689,6 +708,10 @@ body {
 
 .drawer-center .drawer-btn:hover svg {
   transform: scale(1.15) !important;
+}
+
+.drawer-center .drawer-btn:active svg {
+  transform: scale(0.85) !important;
 }
 
 .drawer-right {

@@ -38,29 +38,55 @@ const state = {
 const synth = new DrumSynth();
 
 // Graphical SVGs for Track Instruments
-const DJEMBE_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+const DJEMBE_1_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
   <ellipse cx="12" cy="5" rx="7" ry="2" fill="currentColor" fill-opacity="0.15" />
   <path d="M5 5c0 4 3 6 4 10a3 3 0 0 0 3 3 3 3 0 0 0 3-3c1-4 4-6 4-10" />
   <ellipse cx="12" cy="18" rx="3" ry="1" fill="currentColor" fill-opacity="0.2" />
 </svg>`;
 
-const DUNDUNBA_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-  <rect x="3" y="5" width="18" height="14" rx="2" fill="currentColor" fill-opacity="0.15" />
-  <ellipse cx="3" cy="12" rx="1.5" ry="7" />
-  <ellipse cx="21" cy="12" rx="1.5" ry="7" />
-  <path d="M3 5h18M3 19h18" />
-  <path d="M3 5l4.5 14 4.5-14 4.5 14 4.5-14" stroke-dasharray="1 1" />
+const DJEMBE_2_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <ellipse cx="12" cy="5" rx="7" ry="2" fill="currentColor" fill-opacity="0.15" />
+  <path d="M5 5c0 4 3 6 4 10a3 3 0 0 0 3 3 3 3 0 0 0 3-3c1-4 4-6 4-10" />
+  <ellipse cx="12" cy="18" rx="3" ry="1" fill="currentColor" fill-opacity="0.2" />
+  <path d="M8 6l1 9 M12 7v8 M16 6l-1 9" stroke-width="1.2" stroke-dasharray="1 1" />
 </svg>`;
 
-const SANGBAN_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-  <rect x="5" y="6" width="14" height="12" rx="2" fill="currentColor" fill-opacity="0.15" />
-  <ellipse cx="5" cy="12" rx="1.5" ry="6" />
-  <ellipse cx="19" cy="12" rx="1.5" ry="6" />
-  <path d="M5 6h14M5 18h14" />
-  <path d="M5 6l3.5 12 3.5-12 3.5 12 3.5-12" stroke-dasharray="1 1" />
+const DJEMBE_3_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <ellipse cx="12" cy="5" rx="7.5" ry="2" fill="currentColor" fill-opacity="0.15" />
+  <path d="M4.5 5c0 3 2.5 5.5 3.5 9.5a4 4 0 0 0 4 3.5 4 4 0 0 0 4-3.5c1-4 3.5-6.5 3.5-9.5" />
+  <ellipse cx="12" cy="18" rx="4" ry="1" fill="currentColor" fill-opacity="0.2" />
+  <path d="M8 12.5a4 0.8 0 0 0 8 0" stroke-width="1.5" />
 </svg>`;
 
-const KENKENI_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+const DJEMBE_4_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <ellipse cx="12" cy="4.5" rx="6.5" ry="1.8" fill="currentColor" fill-opacity="0.25" />
+  <path d="M12 4.5m-6.5 0v1a6.5 1.8 0 0 0 13 0v-1" />
+  <path d="M5.5 5c0 4.5 3.5 6.5 3.5 10.5a3 3 0 0 0 3 3 3 3 0 0 0 3-3c0-4 3.5-6 3.5-10.5" />
+  <ellipse cx="12" cy="18.5" rx="3" ry="1" fill="currentColor" fill-opacity="0.25" />
+  <path d="M9 13.5l3-8.5 3 8.5 M7 6.5l5 7 5-7" stroke-width="1" stroke-opacity="0.7" />
+</svg>`;
+
+const DJEMBE_5_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+  <ellipse cx="12" cy="5" rx="7" ry="2" fill="currentColor" fill-opacity="0.15" />
+  <path d="M5 5c0 3.5 2 5.5 3 9.5v3.5h8v-3.5c1-4 3-6 3-9.5" />
+  <line x1="8" y1="14.5" x2="16" y2="14.5" stroke-width="1.5" />
+</svg>`;
+
+const DJEMBE_6_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <ellipse cx="12" cy="5" rx="7" ry="2" fill="currentColor" fill-opacity="0.15" />
+  <path d="M5 5c0 4 3 6 4 10a3 3 0 0 0 3 3 3 3 0 0 0 3-3c1-4 4-6 4-10" />
+  <ellipse cx="12" cy="18" rx="3" ry="1" fill="currentColor" fill-opacity="0.2" />
+  <path d="M6 5.5l5 9 M18 5.5l-5 9 M12 5l-3 9.5 M12 5l3 9.5" stroke-width="0.8" stroke-opacity="0.6" />
+</svg>`;
+
+const DJEMBE_7_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <ellipse cx="12" cy="5" rx="7" ry="2" fill="currentColor" fill-opacity="0.1" />
+  <path d="M5 5c0 4 3 6 4 10a3 3 0 0 0 3 3 3 3 0 0 0 3-3c1-4 4-6 4-10" />
+  <ellipse cx="12" cy="18" rx="4.5" ry="1.5" fill="currentColor" fill-opacity="0.3" />
+  <path d="M9.5 13.5h5 M9 15h6" stroke-width="1.5" />
+</svg>`;
+
+const KENKENI_1_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
   <rect x="7" y="7" width="10" height="10" rx="2" fill="currentColor" fill-opacity="0.15" />
   <ellipse cx="7" cy="12" rx="1.2" ry="5" />
   <ellipse cx="17" cy="12" rx="1.2" ry="5" />
@@ -68,14 +94,71 @@ const KENKENI_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox
   <path d="M7 7l2.5 10 2.5-10 2.5 10 2.5-10" stroke-dasharray="1 1" />
 </svg>`;
 
-const KENKENI_BELL_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+const KENKENI_2_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <rect x="7.5" y="7" width="9" height="10" rx="1.5" fill="currentColor" fill-opacity="0.15" />
+  <ellipse cx="7.5" cy="12" rx="1" ry="5" />
+  <ellipse cx="16.5" cy="12" rx="1" ry="5" />
+  <path d="M7.5 7h9M7.5 17h9" />
+  <path d="M7.5 7l2.25 10 2.25-10 2.25 10 2.25-10" />
+  <path d="M7.5 17l2.25-10 2.25 10 2.25-10 2.25 10" stroke-width="0.8" stroke-opacity="0.5" />
+</svg>`;
+
+const KENKENI_3_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <rect x="7" y="7" width="10" height="10" rx="2" fill="currentColor" fill-opacity="0.25" />
+  <ellipse cx="7" cy="12" rx="1.2" ry="5" />
+  <ellipse cx="17" cy="12" rx="1.2" ry="5" />
+  <path d="M7 7h10M7 17h10" stroke-width="2.5" />
+  <line x1="12" y1="7" x2="12" y2="17" stroke-width="1.5" />
+</svg>`;
+
+const KENKENI_BELL_1_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
   <path d="M12 3a2 2 0 0 0-2 2v1h4V5a2 2 0 0 0-2-2z" />
   <path d="M10 6 L7 17 A5 1.5 0 0 0 17 17 L14 6 Z" fill="currentColor" fill-opacity="0.15" />
   <ellipse cx="12" cy="17" rx="5" ry="1.5" />
   <line x1="12" y1="6" x2="12" y2="15.5" stroke-dasharray="1 2" />
 </svg>`;
 
-const SANGBAN_BELL_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+const KENKENI_BELL_2_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <path d="M12 3a2 2 0 0 0-2 2v1h4V5a2 2 0 0 0-2-2z" />
+  <path d="M10 6 L7 17 A5 1.5 0 0 0 17 17 L14 6 Z" fill="currentColor" fill-opacity="0.15" />
+  <ellipse cx="12" cy="17" rx="5" ry="1.5" />
+  <path d="M8.5 11.5a3 0.9 0 0 0 7 0" stroke-width="1" stroke-dasharray="1 1" />
+  <line x1="12" y1="6" x2="12" y2="15.5" />
+</svg>`;
+
+const KENKENI_BELL_3_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <path d="M12 3a2 2 0 0 0-2 2v1h4V5a2 2 0 0 0-2-2z" />
+  <path d="M10 6 L7 17 A5 1.5 0 0 0 17 17 L14 6 Z" fill="currentColor" fill-opacity="0.3" />
+  <ellipse cx="12" cy="17" rx="5" ry="1.5" />
+  <path d="M10 6h4 M8.5 11.5h7" stroke-width="1.5" />
+</svg>`;
+
+const SANGBAN_1_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <rect x="5" y="6" width="14" height="12" rx="2" fill="currentColor" fill-opacity="0.15" />
+  <ellipse cx="5" cy="12" rx="1.5" ry="6" />
+  <ellipse cx="19" cy="12" rx="1.5" ry="6" />
+  <path d="M5 6h14M5 18h14" />
+  <path d="M5 6l3.5 12 3.5-12 3.5 12 3.5-12" stroke-dasharray="1 1" />
+</svg>`;
+
+const SANGBAN_2_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <rect x="5.5" y="6" width="13" height="12" rx="1.5" fill="currentColor" fill-opacity="0.15" />
+  <ellipse cx="5.5" cy="12" rx="1.2" ry="6" />
+  <ellipse cx="18.5" cy="12" rx="1.2" ry="6" />
+  <path d="M5.5 6h13M5.5 18h13" />
+  <path d="M5.5 6l3.25 12 3.25-12 3.25 12 3.25-12" />
+  <path d="M5.5 18l3.25-12 3.25 12 3.25-12 3.25 12" stroke-width="0.8" stroke-opacity="0.5" />
+</svg>`;
+
+const SANGBAN_3_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <rect x="5" y="6" width="14" height="12" rx="2" fill="currentColor" fill-opacity="0.25" />
+  <ellipse cx="5" cy="12" rx="1.5" ry="6" />
+  <ellipse cx="19" cy="12" rx="1.5" ry="6" />
+  <path d="M5 6h14M5 18h14" />
+  <path d="M8 6v12 M11 6v12 M14 6v12" stroke-width="1.2" />
+</svg>`;
+
+const SANGBAN_BELL_1_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
   <path d="M12 2a2 2 0 0 0-2 2v2h4V4a2 2 0 0 0-2-2z" />
   <path d="M10 8 L6 18 A6 1.8 0 0 0 18 18 L14 8 Z" fill="currentColor" fill-opacity="0.15" />
   <ellipse cx="12" cy="18" rx="6" ry="1.8" />
@@ -83,13 +166,68 @@ const SANGBAN_BELL_SVG = `<svg class="track-inst-icon" width="20" height="20" vi
   <path d="M8.5 13c2.3 1 4.7 1 7 0" stroke-width="1" stroke-dasharray="1 1" />
 </svg>`;
 
-const DUNDUNBA_BELL_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+const SANGBAN_BELL_2_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <path d="M12 2a2 2 0 0 0-2 2v2h4V4a2 2 0 0 0-2-2z" />
+  <path d="M10 8 L6 18 A6 1.8 0 0 0 18 18 L14 8 Z" fill="currentColor" fill-opacity="0.15" />
+  <ellipse cx="12" cy="18" rx="6" ry="1.8" />
+  <line x1="12" y1="8" x2="12" y2="16.2" stroke-dasharray="2 1" />
+  <path d="M8 13.5a5.5 1.5 0 0 0 8 0" stroke-width="1.2" />
+</svg>`;
+
+const SANGBAN_BELL_3_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <path d="M12 2a2 2 0 0 0-2 2v2h4V4a2 2 0 0 0-2-2z" stroke-width="2.5" />
+  <path d="M10 8 L6 18 A6 1.8 0 0 0 18 18 L14 8 Z" fill="currentColor" fill-opacity="0.3" />
+  <ellipse cx="12" cy="18" rx="6" ry="1.8" />
+  <path d="M10 8h4 M7.5 14.5h9" stroke-width="1.8" />
+</svg>`;
+
+const DUNDUNBA_1_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <rect x="3" y="5" width="18" height="14" rx="2" fill="currentColor" fill-opacity="0.15" />
+  <ellipse cx="3" cy="12" rx="1.5" ry="7" />
+  <ellipse cx="21" cy="12" rx="1.5" ry="7" />
+  <path d="M3 5h18M3 19h18" />
+  <path d="M3 5l4.5 14 4.5-14 4.5 14 4.5-14" stroke-dasharray="1 1" />
+</svg>`;
+
+const DUNDUNBA_2_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <rect x="3.5" y="5" width="17" height="14" rx="1.5" fill="currentColor" fill-opacity="0.15" />
+  <ellipse cx="3.5" cy="12" rx="1.2" ry="7" />
+  <ellipse cx="20.5" cy="12" rx="1.2" ry="7" />
+  <path d="M3.5 5h17M3.5 19h17" />
+  <path d="M3.5 5l4.25 14 4.25-14 4.25 14 4.25-14" />
+  <path d="M3.5 19l4.25-14 4.25 14 4.25-14 4.25 14" stroke-width="1" stroke-opacity="0.6" />
+</svg>`;
+
+const DUNDUNBA_3_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <rect x="3" y="5" width="18" height="14" rx="2" fill="currentColor" fill-opacity="0.25" />
+  <ellipse cx="3" cy="12" rx="1.5" ry="7" />
+  <ellipse cx="21" cy="12" rx="1.5" ry="7" />
+  <path d="M3 5h18M3 19h18" />
+  <path d="M3 8.5h18M3 12h18M3 15.5h18" stroke-dasharray="2 2" stroke-opacity="0.8" />
+</svg>`;
+
+const DUNDUNBA_BELL_1_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
   <path d="M12 2a2.5 2.5 0 0 0-2.5 2.5v2.5h5V4.5A2.5 2.5 0 0 0 12 2z" />
   <path d="M9.5 7 L5 19 A7 2 0 0 0 19 19 L14.5 7 Z" fill="currentColor" fill-opacity="0.15" />
   <ellipse cx="12" cy="19" rx="7" ry="2" />
   <line x1="12" y1="7" x2="12" y2="17" />
   <path d="M8.2 12c2.5 1.2 5.1 1.2 7.6 0" stroke-width="1.2" />
   <path d="M6.5 16c3.6 1.5 7.4 1.5 11 0" stroke-width="1.2" />
+</svg>`;
+
+const DUNDUNBA_BELL_2_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <path d="M12 2a2.5 2.5 0 0 0-2.5 2.5v2.5h5V4.5A2.5 2.5 0 0 0 12 2z" />
+  <path d="M9.5 7 L5 19 A7 2 0 0 0 19 19 L14.5 7 Z" fill="currentColor" fill-opacity="0.15" />
+  <ellipse cx="12" cy="19" rx="7" ry="2" />
+  <line x1="12" y1="7" x2="12" y2="17" stroke-dasharray="1 1" />
+  <path d="M8 12.5a6.5 1.5 0 0 0 8 0 M6.5 15.5a9 1.5 0 0 0 11 0" stroke-width="1" />
+</svg>`;
+
+const DUNDUNBA_BELL_3_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+  <path d="M12 2a2.5 2.5 0 0 0-2.5 2.5v2.5h5V4.5A2.5 2.5 0 0 0 12 2z" stroke-width="2.5" />
+  <path d="M9.5 7 L5 19 A7 2 0 0 0 19 19 L14.5 7 Z" fill="currentColor" fill-opacity="0.3" />
+  <ellipse cx="12" cy="19" rx="7" ry="2" />
+  <path d="M9.5 7h5 M7.2 13.2h9.6" stroke-width="1.8" />
 </svg>`;
 
 const SHEKERE_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -110,6 +248,103 @@ const CALL_SVG = `<svg class="track-inst-icon" width="20" height="20" viewBox="0
   <path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z" fill="currentColor" fill-opacity="0.15" />
   <line x1="4" y1="22" x2="4" y2="15" />
 </svg>`;
+
+function getInstrumentSVG(instrument, type) {
+  if (type === "djembe" || (instrument && instrument.startsWith("djembe"))) {
+    if (instrument === "djembe1") return DJEMBE_1_SVG;
+    if (instrument === "djembe2") return DJEMBE_2_SVG;
+    if (instrument === "djembe3") return DJEMBE_3_SVG;
+    if (instrument === "djembe4") return DJEMBE_4_SVG;
+    if (instrument === "djembe5") return DJEMBE_5_SVG;
+    if (instrument === "djembe6") return DJEMBE_6_SVG;
+    if (instrument === "djembe7") return DJEMBE_7_SVG;
+    return DJEMBE_1_SVG;
+  }
+  if (type === "shekere" || instrument === "shekere") return SHEKERE_SVG;
+  if (instrument === "call" || type === "call") return CALL_SVG;
+  
+  // Dunun / Bell
+  const isBell = type === "bell" || (instrument && instrument.includes("bell"));
+  if (instrument && instrument.includes("kenkeni")) {
+    if (isBell) {
+      if (instrument.includes("3")) return KENKENI_BELL_2_SVG;
+      if (instrument.includes("4")) return KENKENI_BELL_3_SVG;
+      return KENKENI_BELL_1_SVG;
+    } else {
+      if (instrument.includes("3")) return KENKENI_2_SVG;
+      if (instrument.includes("4")) return KENKENI_3_SVG;
+      return KENKENI_1_SVG;
+    }
+  }
+  if (instrument && instrument.includes("sangban")) {
+    if (isBell) {
+      if (instrument.includes("3")) return SANGBAN_BELL_2_SVG;
+      if (instrument.includes("4")) return SANGBAN_BELL_3_SVG;
+      return SANGBAN_BELL_1_SVG;
+    } else {
+      if (instrument.includes("3")) return SANGBAN_2_SVG;
+      if (instrument.includes("4")) return SANGBAN_3_SVG;
+      return SANGBAN_1_SVG;
+    }
+  }
+  if (instrument && instrument.includes("dundunba")) {
+    if (isBell) {
+      if (instrument.includes("3")) return DUNDUNBA_BELL_2_SVG;
+      if (instrument.includes("4")) return DUNDUNBA_BELL_3_SVG;
+      return DUNDUNBA_BELL_1_SVG;
+    } else {
+      if (instrument.includes("3")) return DUNDUNBA_2_SVG;
+      if (instrument.includes("4")) return DUNDUNBA_3_SVG;
+      return DUNDUNBA_1_SVG;
+    }
+  }
+  return DJEMBE_1_SVG;
+}
+
+function getInstrumentHSL(instrument, type, isCall) {
+  if (isCall) {
+    return "35, 90%, 55%"; // warm gold / amber
+  }
+  if (type === "shekere" || instrument === "shekere") {
+    return "45, 93%, 47%"; // yellow/gold
+  }
+  
+  if (type === "djembe" || (instrument && instrument.startsWith("djembe"))) {
+    // 7 colors for 7 groups
+    const djembeColors = [
+      "342, 85%, 48%", // djembe1: crimson
+      "24, 95%, 50%",  // djembe2: orange
+      "48, 95%, 48%",  // djembe3: gold
+      "142, 76%, 45%", // djembe4: emerald
+      "189, 94%, 43%", // djembe5: cyan
+      "239, 84%, 59%", // djembe6: indigo
+      "280, 84%, 60%"  // djembe7: amethyst
+    ];
+    const idx = parseInt(instrument.replace("djembe", "")) - 1;
+    if (idx >= 0 && idx < djembeColors.length) {
+      return djembeColors[idx];
+    }
+    return "243, 75%, 59%"; // default djembe primary HSL (indigo-500)
+  }
+  
+  // Dunun or Bell
+  // 3 colors for 3 sets
+  const setColors = [
+    "175, 84%, 39%", // set 1
+    "199, 94%, 43%", // set 2
+    "239, 84%, 59%"  // set 3
+  ];
+  
+  if (instrument) {
+    if (instrument.includes("3")) {
+      return setColors[1];
+    }
+    if (instrument.includes("4")) {
+      return setColors[2];
+    }
+  }
+  return setColors[0];
+}
 
 // Helper to strip roles in parentheses, colons, semicolons, and remove "drum" or "bell" case-insensitively
 function cleanTrackName(name) {
@@ -548,8 +783,7 @@ function injectLargeSliderOverlay() {
     -webkit-backdrop-filter: blur(12px);
     display: none;
     z-index: 100000;
-    pointer-events: none;
-    touch-action: none;
+    pointer-events: auto;
   `;
   
   const windowDiv = document.createElement("div");
@@ -570,8 +804,7 @@ function injectLargeSliderOverlay() {
     flex-direction: column;
     align-items: center;
     gap: 1.25rem;
-    pointer-events: none;
-    touch-action: none;
+    pointer-events: auto;
   `;
   
   const titleContainer = document.createElement("div");
@@ -621,13 +854,20 @@ function injectLargeSliderOverlay() {
     border-radius: 6px;
     outline: none;
     margin: 0.5rem 0;
-    pointer-events: none;
-    touch-action: none;
+    pointer-events: auto;
+    touch-action: pan-x;
   `;
   
   windowDiv.appendChild(titleContainer);
   windowDiv.appendChild(slider);
   overlay.appendChild(windowDiv);
+  
+  overlay.addEventListener("pointerdown", (e) => {
+    if (e.target === overlay) {
+      overlay.style.display = "none";
+    }
+  });
+  
   document.body.appendChild(overlay);
   
   const style = document.createElement("style");
@@ -663,7 +903,6 @@ function setupLargeSlider(originalSlider, options = {}) {
       e.stopImmediatePropagation();
       e.stopPropagation();
       e.preventDefault();
-      // Force native visual thumb back to our intended value instantly
       const overlay = document.getElementById("large-slider-overlay");
       if (overlay) {
         const largeInput = overlay.querySelector(".large-slider-input");
@@ -701,19 +940,6 @@ function setupLargeSlider(originalSlider, options = {}) {
     const min = parseFloat(originalSlider.min) || 0;
     const max = parseFloat(originalSlider.max) || 100;
     const step = parseFloat(originalSlider.step) || 1;
-    
-    const origRect = originalSlider.getBoundingClientRect();
-    const origWidth = origRect.width;
-    if (origWidth > 0) {
-      let clickFraction = (clientX - origRect.left) / origWidth;
-      clickFraction = Math.max(0, Math.min(1, clickFraction));
-      let clickVal = min + clickFraction * (max - min);
-      clickVal = Math.round(clickVal / step) * step;
-      originalSlider.value = clickVal;
-      const ev = new Event("input");
-      ev.isCustomUpdate = true;
-      originalSlider.dispatchEvent(ev);
-    }
     
     largeInput.min = originalSlider.min || "0";
     largeInput.max = originalSlider.max || "100";
@@ -776,7 +1002,6 @@ function setupLargeSlider(originalSlider, options = {}) {
     if (parentRow) {
       const parentRect = parentRow.getBoundingClientRect();
       const parentTop = parentRect.top - containerRect.top;
-      // Position it directly above the track row
       topPos = parentTop - 60;
     }
     
@@ -789,69 +1014,96 @@ function setupLargeSlider(originalSlider, options = {}) {
     windowDiv.style.left = leftPos + "px";
     windowDiv.style.top = topPos + "px";
     
-    const startX = clientX;
-    const startVal = parseFloat(originalSlider.value) || 0;
-    
-    const getSliderWidth = () => {
-      return (largeInput && largeInput.clientWidth) ? largeInput.clientWidth : 200;
+    // Wire direct input slider interaction (for non-trusted pointerdown clicks)
+    if (largeInput._onInputHandler) {
+      largeInput.removeEventListener("input", largeInput._onInputHandler);
+    }
+    largeInput._onInputHandler = (ev) => {
+      originalSlider.value = largeInput.value;
+      const evInp = new Event("input");
+      evInp.isCustomUpdate = true;
+      originalSlider.dispatchEvent(evInp);
+      updateLabelAndValue();
     };
+    largeInput.addEventListener("input", largeInput._onInputHandler);
     
-    const updateValue = (clientXCoord) => {
-      const deltaX = clientXCoord - startX;
-      const width = getSliderWidth();
-      const range = max - min;
-      
-      let val = startVal + (deltaX / width) * range;
-      val = Math.round(val / step) * step;
-      val = Math.max(min, Math.min(max, val));
-      
-      if (largeInput.value !== String(val)) {
-        largeInput.value = val;
-        originalSlider.value = largeInput.value;
+    // If it's a trusted drag event (BPM slider), support slide-anywhere behavior
+    if (e.isTrusted) {
+      const origRect = originalSlider.getBoundingClientRect();
+      const origWidth = origRect.width;
+      if (origWidth > 0) {
+        let clickFraction = (clientX - origRect.left) / origWidth;
+        clickFraction = Math.max(0, Math.min(1, clickFraction));
+        let clickVal = min + clickFraction * (max - min);
+        clickVal = Math.round(clickVal / step) * step;
+        originalSlider.value = clickVal;
         const ev = new Event("input");
         ev.isCustomUpdate = true;
         originalSlider.dispatchEvent(ev);
-        updateLabelAndValue();
       }
-    };
-    
-    const onPointerMove = (moveEvent) => {
-      if (moveEvent.cancelable) {
-        moveEvent.preventDefault();
-      }
-      if (moveEvent.clientX !== undefined) {
-        updateValue(moveEvent.clientX);
-      }
-    };
-    
-    const onRelease = () => {
-      window.removeEventListener("pointermove", onPointerMove);
-      window.removeEventListener("pointerup", onRelease);
-      window.removeEventListener("pointercancel", onRelease);
       
-      // Force sync native slider on release to fix DOM/visual mismatches
-      if (largeInput && originalSlider) {
-        originalSlider.value = largeInput.value;
-        const evInp = new Event("input");
-        evInp.isCustomUpdate = true;
-        originalSlider.dispatchEvent(evInp);
+      const startX = clientX;
+      const startVal = parseFloat(originalSlider.value) || 0;
+      
+      const getSliderWidth = () => {
+        return (largeInput && largeInput.clientWidth) ? largeInput.clientWidth : 200;
+      };
+      
+      const updateValue = (clientXCoord) => {
+        const deltaX = clientXCoord - startX;
+        const width = getSliderWidth();
+        const range = max - min;
         
-        const evChg = new Event("change");
-        evChg.isCustomUpdate = true;
-        originalSlider.dispatchEvent(evChg);
-      }
+        let val = startVal + (deltaX / width) * range;
+        val = Math.round(val / step) * step;
+        val = Math.max(min, Math.min(max, val));
+        
+        if (largeInput.value !== String(val)) {
+          largeInput.value = val;
+          originalSlider.value = largeInput.value;
+          const ev = new Event("input");
+          ev.isCustomUpdate = true;
+          originalSlider.dispatchEvent(ev);
+          updateLabelAndValue();
+        }
+      };
       
-      overlay.style.display = "none";
+      const onPointerMove = (moveEvent) => {
+        if (moveEvent.cancelable) {
+          moveEvent.preventDefault();
+        }
+        if (moveEvent.clientX !== undefined) {
+          updateValue(moveEvent.clientX);
+        }
+      };
       
-      // Delay releasing the lock to catch late-firing native browser events
-      setTimeout(() => {
-        isCustomDragging = false;
-      }, 100);
-    };
-    
-    window.addEventListener("pointermove", onPointerMove, { passive: false });
-    window.addEventListener("pointerup", onRelease);
-    window.addEventListener("pointercancel", onRelease);
+      const onRelease = () => {
+        window.removeEventListener("pointermove", onPointerMove);
+        window.removeEventListener("pointerup", onRelease);
+        window.removeEventListener("pointercancel", onRelease);
+        
+        if (largeInput && originalSlider) {
+          originalSlider.value = largeInput.value;
+          const evInp = new Event("input");
+          evInp.isCustomUpdate = true;
+          originalSlider.dispatchEvent(evInp);
+          
+          const evChg = new Event("change");
+          evChg.isCustomUpdate = true;
+          originalSlider.dispatchEvent(evChg);
+        }
+        
+        overlay.style.display = "none";
+        
+        setTimeout(() => {
+          isCustomDragging = false;
+        }, 100);
+      };
+      
+      window.addEventListener("pointermove", onPointerMove, { passive: false });
+      window.addEventListener("pointerup", onRelease);
+      window.addEventListener("pointercancel", onRelease);
+    }
   });
 }
 
@@ -3669,6 +3921,15 @@ function renderGrid() {
       }
     }
     
+    // Set custom properties for glassy instrument-specific border/glow colors (matches user mockup)
+    const isCall = track.id.startsWith("special") || track.name.toLowerCase().includes("call") || track.name.toLowerCase().includes("break");
+    let hslString = getInstrumentHSL(track.instrument, track.type, isCall);
+    
+    row.style.setProperty("--part-color-hsl", hslString);
+    row.style.setProperty("--row-border-color", `hsla(${hslString}, 0.12)`);
+    row.style.setProperty("--row-border-color-active", `hsla(${hslString}, 0.6)`);
+    row.style.setProperty("--row-shadow-glow", `hsla(${hslString}, 0.25)`);
+    
     // Left: Track Controls
     const meta = document.createElement("div");
     meta.className = "track-meta";
@@ -3679,41 +3940,14 @@ function renderGrid() {
     info.style.alignItems = "center";
     info.style.gap = "0.5rem";
     
-    const isCall = track.id.startsWith("special") || track.name.toLowerCase().includes("call") || track.name.toLowerCase().includes("break");
-    let instIconSVG = DJEMBE_SVG;
-    if (isCall) {
-      instIconSVG = CALL_SVG;
-    } else if (track.type === "dunun") {
-      if (track.instrument.includes("dundunba")) instIconSVG = DUNDUNBA_SVG;
-      else if (track.instrument.includes("sangban")) instIconSVG = SANGBAN_SVG;
-      else instIconSVG = KENKENI_SVG;
-    }
-    if (track.type === "bell") {
-      if (track.instrument.includes("dundunba")) instIconSVG = DUNDUNBA_BELL_SVG;
-      else if (track.instrument.includes("sangban")) instIconSVG = SANGBAN_BELL_SVG;
-      else instIconSVG = KENKENI_BELL_SVG;
-    }
-    if (track.type === "shekere") instIconSVG = SHEKERE_SVG;
+    let instIconSVG = getInstrumentSVG(isCall ? "call" : track.instrument, track.type);
     
     const iconSpan = document.createElement("span");
     iconSpan.className = "track-icon-wrapper";
     iconSpan.style.display = "inline-flex";
     iconSpan.style.alignItems = "center";
     iconSpan.style.justifyContent = "center";
-    iconSpan.style.color = "var(--primary)";
-    if (isCall) {
-      iconSpan.style.color = "hsl(35, 90%, 55%)"; // warm gold / amber
-    } else if (track.type === "dunun") {
-      if (track.instrument.includes("sangban")) iconSpan.style.color = "hsl(199, 94%, 43%)";
-      else if (track.instrument.includes("dundunba")) iconSpan.style.color = "hsl(219, 94%, 43%)";
-      else iconSpan.style.color = "hsl(175, 84%, 39%)";
-    }
-    if (track.type === "bell") {
-      if (track.instrument.includes("sangban")) iconSpan.style.color = "hsl(209, 94%, 43%)";
-      else if (track.instrument.includes("dundunba")) iconSpan.style.color = "hsl(229, 94%, 43%)";
-      else iconSpan.style.color = "hsl(189, 94%, 43%)";
-    }
-    if (track.type === "shekere") iconSpan.style.color = "#f97316";
+    iconSpan.style.color = `hsl(${hslString})`;
     iconSpan.innerHTML = instIconSVG;
     iconSpan.style.cursor = "pointer";
     iconSpan.title = "Click to focus this track / toggle forefront mode";
