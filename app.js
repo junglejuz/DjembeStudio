@@ -1251,10 +1251,19 @@ function updateSpecialButtonsState(preset) {
   const tracksIsArray = Array.isArray(preset.tracks);
   const isNewObjectFormat = !tracksIsArray && preset.step_count !== undefined;
 
+  const hasNewSchema = preset && Array.isArray(preset.tracks) && preset.tracks.some(t =>
+    (t.variations && t.variations.length > 0) ||
+    (t.solos && t.solos.length > 0) ||
+    (t.specials && t.specials.length > 0)
+  );
+
   let hasCall = false;
   let hasEchauffement = false;
 
-  if (isNewObjectFormat) {
+  if (hasNewSchema) {
+    hasCall = true;
+    hasEchauffement = true;
+  } else if (isNewObjectFormat) {
     hasCall = (preset.special_parts || []).some(sp => sp.type === "Call" || sp.type === "Intro");
     hasEchauffement = preset.echauffement && Object.keys(preset.echauffement).some(key => preset.echauffement[key] !== "Missing Data");
   } else if (tracksIsArray) {
@@ -2847,60 +2856,122 @@ function togglePlay() {
 }
 
 function triggerCall() {
-  if (!state.presetCallData) {
-    console.log("No call data for this rhythm.");
-    return;
-  }
+  const hasNewSchema = state.currentPreset && Array.isArray(state.currentPreset.tracks) && state.currentPreset.tracks.some(t =>
+    (t.variations && t.variations.length > 0) ||
+    (t.solos && t.solos.length > 0) ||
+    (t.specials && t.specials.length > 0)
+  );
+
+  const parsePatternToSteps = (pattern, trackType, stepCount, partName) => {
+    if (!pattern) return Array(stepCount).fill("");
+    if (pattern.includes(" ") || pattern.trim().split(/\s+/).length > 1) {
+      return convertSpaceDelimitedPatternToSteps(pattern, trackType, stepCount);
+    } else {
+      return convertPatternToSteps(pattern, state.timeSignature, partName);
+    }
+  };
 
   const action = () => {
-    // Ensure the solo_djembe track exists in state.tracks
-    let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
-    if (!soloTrack) {
-      soloTrack = {
-        id: "solo_djembe",
-        name: "Solo Djembe",
-        type: "djembe",
-        instrument: "djembe1",
-        volume: 0.85,
-        pitch: 0,
-        muted: false,
-        soloed: false
+    if (hasNewSchema && state.primaryCallName) {
+      const wasActive = state.callIntroActive;
+
+      // Turn off call if it was active
+      if (wasActive) {
+        state.callIntroActive = false;
+        state.tracks.forEach(track => {
+          if (track.isPlayingCall) {
+            track.isPlayingCall = false;
+            if (track.standardSteps) {
+              track.steps = [...track.standardSteps];
+              track.subdivisionSteps[track.subdivision] = [...track.steps];
+              delete track.standardSteps;
+            }
+          }
+        });
+      } else {
+        state.callIntroActive = true;
+        deactivateAllSpecialButtons();
+
+        state.tracks.forEach(track => {
+          const presetTrack = state.currentPreset.tracks.find(pt => cleanTrackName(pt.part) === cleanTrackName(track.name));
+          if (presetTrack && presetTrack.specials) {
+            const matchedCall = presetTrack.specials.find(sp => sp.name === state.primaryCallName);
+            if (matchedCall) {
+              if (!track.standardSteps) track.standardSteps = [...track.steps];
+              const steps = parsePatternToSteps(matchedCall.pattern || matchedCall.drum_pattern, track.type, track.steps.length, track.name);
+              track.steps = steps;
+              track.subdivisionSteps[track.subdivision] = [...steps];
+              track.isPlayingCall = true;
+            }
+          }
+        });
+
+        if (state.isPlaying) {
+          nextTickToSchedule = 0;
+        }
+      }
+    } else {
+      // Fallback/standard call logic
+      let callData = state.presetCallData;
+      if (!callData) {
+        // Assign a standard fallback call
+        const isTernary = state.timeSignature === "12/8" || state.timeSignature === "6/8";
+        const standardCallPattern = isTernary ? "SSTSSS.................." : "T.TT.TT.T.SSS...";
+        const timingSubdiv = isTernary ? 6 : 4;
+        const steps = parsePatternToSteps(standardCallPattern, "djembe", state.beats * timingSubdiv, "Djembé");
+        callData = {
+          id: "special_call",
+          name: "Call",
+          steps: steps,
+          subdivision: timingSubdiv
+        };
+      }
+
+      let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
+      if (!soloTrack) {
+        soloTrack = {
+          id: "solo_djembe",
+          name: "Solo Djembe",
+          type: "djembe",
+          instrument: "djembe1",
+          volume: 0.85,
+          pitch: 0,
+          muted: false,
+          soloed: false
+        };
+        state.tracks.push(soloTrack);
+        sortTracks();
+      }
+
+      soloTrack.subdivision = callData.subdivision;
+      soloTrack.steps = [...callData.steps];
+      soloTrack.originalSteps = [...callData.steps];
+      soloTrack.originalSubdivision = callData.subdivision;
+      soloTrack.subdivisionSteps = {
+        [soloTrack.subdivision]: [...soloTrack.steps]
       };
-      state.tracks.push(soloTrack);
-      sortTracks();
+
+      state.callIntroActive = true;
+      if (state.isPlaying) {
+        nextTickToSchedule = 0;
+      }
+
+      state.tracks.forEach(t => {
+        const isCall = t.id === "solo_djembe" ||
+          t.id.startsWith("special") ||
+          t.name.toLowerCase().includes("call") ||
+          t.name.toLowerCase().includes("break") ||
+          t.name.toLowerCase().includes("intro");
+        if (isCall) t.muted = false;
+      });
     }
-
-    // Set the Call steps and subdivision
-    soloTrack.subdivision = state.presetCallData.subdivision;
-    soloTrack.steps = [...state.presetCallData.steps];
-    soloTrack.originalSteps = [...state.presetCallData.steps];
-    soloTrack.originalSubdivision = state.presetCallData.subdivision;
-    soloTrack.subdivisionSteps = {
-      [soloTrack.subdivision]: [...soloTrack.steps]
-    };
-
-    // Activate call intro
-    state.callIntroActive = true;
-    if (state.isPlaying) {
-      nextTickToSchedule = 0;
-    }
-
-    // Unmute call tracks at the start so they play during the intro
-    state.tracks.forEach(t => {
-      const isCall = t.id === "solo_djembe" ||
-        t.id.startsWith("special") ||
-        t.name.toLowerCase().includes("call") ||
-        t.name.toLowerCase().includes("break") ||
-        t.name.toLowerCase().includes("intro");
-      if (isCall) t.muted = false;
-    });
 
     renderGrid();
   };
 
   if (!state.isPlaying) {
     action();
-    togglePlay(); // This starts the sequencer playhead
+    togglePlay();
   } else {
     state.queuedActions.push(action);
   }
@@ -3036,7 +3107,8 @@ function advanceTick() {
       t.id.startsWith("special") ||
       t.name.toLowerCase().includes("call") ||
       t.name.toLowerCase().includes("break") ||
-      t.name.toLowerCase().includes("intro")
+      t.name.toLowerCase().includes("intro") ||
+      t.isPlayingCall
     );
     if (callTrack) {
       const callLengthTicks = callTrack.steps.length * (12 / callTrack.subdivision);
@@ -3044,8 +3116,27 @@ function advanceTick() {
         state.callIntroActive = false;
         nextTickToSchedule = 0;
 
+        state.tracks.forEach(t => {
+          if (t.isPlayingCall) {
+            t.isPlayingCall = false;
+            if (t.standardSteps) {
+              t.steps = [...t.standardSteps];
+              t.subdivisionSteps[t.subdivision] = [...t.steps];
+              delete t.standardSteps;
+            }
+          }
+        });
+
+        const hasNewSchema = state.currentPreset && Array.isArray(state.currentPreset.tracks) && state.currentPreset.tracks.some(t =>
+          (t.variations && t.variations.length > 0) ||
+          (t.solos && t.solos.length > 0) ||
+          (t.specials && t.specials.length > 0)
+        );
+
         if (callTrack.id === "solo_djembe") {
           state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
+          renderGrid();
+        } else if (hasNewSchema) {
           renderGrid();
         } else {
           // Auto-mute call tracks after intro completes (user can unmute)
@@ -3178,7 +3269,8 @@ function isTrackAudible(track) {
       track.id.startsWith("special") ||
       track.name.toLowerCase().includes("call") ||
       track.name.toLowerCase().includes("break") ||
-      track.name.toLowerCase().includes("intro");
+      track.name.toLowerCase().includes("intro") ||
+      track.isPlayingCall;
     if (!isCall) return false;
   }
 
@@ -3314,6 +3406,18 @@ function scheduleTick(tickIndex, time) {
 
 // Sound triggering routing
 function triggerSynthHit(type, instrument, hitVal, playTime, trackVol, trackPitch = 0, stepDuration = 0.15, hand = "L", timingContext = null) {
+  if (hitVal === "f") hitVal = "S/S";
+  else if (hitVal === "tt") hitVal = "T/T";
+  else if (hitVal === "fs") hitVal = "S/S";
+  else if (hitVal === "ft") hitVal = "T/T";
+  else if (hitVal === "fb") hitVal = "B/B";
+  else if (hitVal === "Y") hitVal = "B/T";
+  else if (hitVal === "W") hitVal = "B/S";
+  else if (hitVal === "rs") hitVal = "S-S";
+  else if (hitVal === "rt") hitVal = "T-T";
+  else if (hitVal === "rb") hitVal = "B-B";
+  else if (hitVal === "ts") hitVal = "S*S*S";
+
   if (hitVal.includes("/")) {
     const [h1, h2] = hitVal.split("/");
     const flamGap = Math.min(0.040, stepDuration * 0.22);
@@ -5484,6 +5588,7 @@ function mapHitToSound(hit, trackType) {
       if (isDjembe) return 'S/S';
       if (isBell) return 'X/X';
       return 'O/O';
+    case 'tt': return 'T/T';
     case 'fs': return 'S/S';
     case 'ft': return 'T/T';
     case 'fb': return 'B/B';
@@ -6396,202 +6501,466 @@ function loadRhythmNew(preset) {
       soloed: false
     });
 
-    // Populate Variations Row
-    const hasVariations = preset.tracks.some(pt => pt.variations && pt.variations.length > 0);
-    if (hasVariations && variationsRow && variationsContainer) {
-      variationsRow.style.display = "flex";
-      variationsContainer.innerHTML = "";
+    const hasNewSchema = Array.isArray(preset.tracks) && preset.tracks.some(t =>
+      (t.variations && t.variations.length > 0) ||
+      (t.solos && t.solos.length > 0) ||
+      (t.specials && t.specials.length > 0)
+    );
 
-      const maxVars = Math.max(...preset.tracks.map(pt => (pt.variations || []).length));
-
-      for (let i = 0; i < maxVars; i++) {
-        const btn = document.createElement("button");
-        btn.className = "btn";
-        btn.textContent = `Variation ${i + 1}`;
-        btn.style.fontWeight = "bold";
-        btn.style.borderRadius = "8px";
-        btn.style.padding = "0.35rem 0.75rem";
-        btn.style.cursor = "pointer";
-
-        btn.addEventListener("click", () => {
-          const wasActive = btn.classList.contains("btn-primary");
-
-          Array.from(variationsContainer.children).forEach(child => {
-            child.classList.remove("btn-primary");
-          });
-
-          if (state.echauffementActive) {
-            triggerEchauffement(); // toggle off
-          }
-
-          if (!wasActive) {
-            btn.classList.add("btn-primary");
-          }
-
-          const action = () => {
-            if (wasActive) {
-              state.activeVariation = null;
-              state.tracks.forEach(track => {
-                if (track.standardSteps) {
-                  track.steps = [...track.standardSteps];
-                  track.subdivisionSteps[track.subdivision] = [...track.steps];
-                  delete track.standardSteps;
-                }
-              });
-            } else {
-              state.activeVariation = i;
-
-              state.tracks.forEach(track => {
-                const presetTrack = state.currentPreset.tracks.find(pt => cleanTrackName(pt.part) === cleanTrackName(track.name));
-                if (presetTrack) {
-                  if (!track.standardSteps) track.standardSteps = [...track.steps];
-
-                  if (presetTrack.variations && presetTrack.variations[i]) {
-                    track.steps = convertPatternToSteps(presetTrack.variations[i].drum_pattern, state.timeSignature, track.name);
-                  } else {
-                    track.steps = [...track.standardSteps];
-                  }
-                  track.subdivisionSteps[track.subdivision] = [...track.steps];
-                }
-              });
-            }
-            renderGrid();
-          };
-
-          if (state.isPlaying) {
-            state.queuedActions.push(action);
-          } else {
-            action();
-          }
-        });
-
-        variationsContainer.appendChild(btn);
+    const parsePatternToSteps = (pattern, trackType, stepCount, partName) => {
+      if (!pattern) return Array(stepCount).fill("");
+      if (pattern.includes(" ") || pattern.trim().split(/\s+/).length > 1) {
+        return convertSpaceDelimitedPatternToSteps(pattern, trackType, stepCount);
+      } else {
+        return convertPatternToSteps(pattern, state.timeSignature, partName);
       }
-    } else {
-      if (variationsRow) variationsRow.style.display = "none";
-    }
+    };
 
-    // Populate Special Parts Row
-    const nonSoloSpecialParts = (preset.special_parts || []).filter(sp => sp.type !== "Solo" && sp.type !== "Call");
-    if (nonSoloSpecialParts.length > 0 && specialRow && specialContainer) {
-      specialRow.style.display = "flex";
-      specialContainer.innerHTML = "";
+    if (hasNewSchema) {
+      // 1. Render Variations
+      const uniqueVarNames = [];
+      preset.tracks.forEach(pt => {
+        if (pt.variations) {
+          pt.variations.forEach(v => {
+            if (v.name && !uniqueVarNames.includes(v.name)) {
+              uniqueVarNames.push(v.name);
+            }
+          });
+        }
+      });
 
-      nonSoloSpecialParts.forEach((sp, idx) => {
-        const btn = document.createElement("button");
-        btn.className = "btn";
-        btn.textContent = sp.name;
-        btn.title = `${sp.type}:${sp.name}`;
-        btn.style.fontWeight = "bold";
-        btn.style.borderRadius = "8px";
-        btn.style.fontSize = "0.8rem";
-        btn.style.padding = "0.35rem 0.75rem";
-        btn.style.cursor = "pointer";
+      if (uniqueVarNames.length > 0 && variationsRow && variationsContainer) {
+        variationsRow.style.display = "flex";
+        variationsContainer.innerHTML = "";
 
-        if (sp.type === "Intro") {
+        uniqueVarNames.forEach(varName => {
+          const btn = document.createElement("button");
+          btn.className = "btn";
+          btn.textContent = varName;
+          btn.style.fontWeight = "bold";
+          btn.style.borderRadius = "8px";
+          btn.style.padding = "0.35rem 0.75rem";
+          btn.style.cursor = "pointer";
+
+          btn.style.background = "rgba(16, 185, 129, 0.15)";
+          btn.style.border = "1px solid rgba(16, 185, 129, 0.35)";
+          btn.style.color = "#10b981";
+
+          btn.addEventListener("click", () => {
+            const wasActive = btn.classList.contains("btn-primary") || btn.classList.contains("special-active");
+            const action = () => {
+              deactivateAllSpecialButtons();
+
+              // Deactivate other variation buttons
+              Array.from(variationsContainer.children).forEach(child => {
+                child.classList.remove("btn-primary", "special-active");
+                child.style.background = "rgba(16, 185, 129, 0.15)";
+                child.style.borderColor = "rgba(16, 185, 129, 0.35)";
+              });
+
+              if (state.echauffementActive) {
+                triggerEchauffement(); // toggle off
+              }
+
+              if (!wasActive) {
+                btn.classList.add("btn-primary", "special-active");
+                btn.style.background = "";
+                btn.style.borderColor = "";
+                
+                state.tracks.forEach(track => {
+                  const presetTrack = preset.tracks.find(pt => cleanTrackName(pt.part) === cleanTrackName(track.name));
+                  if (presetTrack && presetTrack.variations) {
+                    const matchedVar = presetTrack.variations.find(v => v.name === varName);
+                    if (matchedVar) {
+                      if (!track.standardSteps) track.standardSteps = [...track.steps];
+                      const steps = parsePatternToSteps(matchedVar.pattern || matchedVar.drum_pattern, track.type, track.steps.length, track.name);
+                      track.steps = steps;
+                      track.subdivisionSteps[track.subdivision] = [...steps];
+                    } else {
+                      if (track.standardSteps) {
+                        track.steps = [...track.standardSteps];
+                        track.subdivisionSteps[track.subdivision] = [...track.steps];
+                        delete track.standardSteps;
+                      }
+                    }
+                  }
+                });
+              } else {
+                state.tracks.forEach(track => {
+                  if (track.standardSteps) {
+                    track.steps = [...track.standardSteps];
+                    track.subdivisionSteps[track.subdivision] = [...track.steps];
+                    delete track.standardSteps;
+                  }
+                });
+              }
+              renderGrid();
+            };
+
+            if (state.isPlaying) {
+              queueSpecialAction(action, btn);
+            } else {
+              action();
+            }
+          });
+          variationsContainer.appendChild(btn);
+        });
+      } else {
+        if (variationsRow) variationsRow.style.display = "none";
+      }
+
+      // 2. Render Solos
+      const allSolos = [];
+      preset.tracks.forEach(pt => {
+        if (pt.solos) {
+          pt.solos.forEach(s => {
+            allSolos.push({
+              name: s.name,
+              pattern: s.pattern || s.drum_pattern,
+              partName: pt.part
+            });
+          });
+        }
+      });
+
+      if (allSolos.length > 0 && solosRow && solosContainer) {
+        solosRow.style.display = "flex";
+        solosContainer.innerHTML = "";
+
+        allSolos.forEach((s, idx) => {
+          const btn = document.createElement("button");
+          btn.className = "btn";
+          btn.textContent = s.name;
+          btn.style.fontWeight = "bold";
+          btn.style.borderRadius = "8px";
+          btn.style.padding = "0.35rem 0.75rem";
+          btn.style.cursor = "pointer";
+
+          btn.style.background = "rgba(168, 85, 247, 0.15)";
+          btn.style.border = "1px solid rgba(168, 85, 247, 0.35)";
+          btn.style.color = "#a855f7";
+
+          btn.addEventListener("click", () => {
+            const wasActive = btn.classList.contains("btn-primary") || btn.classList.contains("special-active");
+            const action = () => {
+              deactivateAllSpecialButtons();
+
+              // Deactivate other solo buttons
+              Array.from(solosContainer.children).forEach(child => {
+                child.classList.remove("btn-primary", "special-active");
+                child.style.background = "rgba(168, 85, 247, 0.15)";
+                child.style.borderColor = "rgba(168, 85, 247, 0.35)";
+              });
+
+              if (!wasActive) {
+                btn.classList.add("btn-primary", "special-active");
+                btn.style.background = "";
+                btn.style.borderColor = "";
+
+                let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
+                if (!soloTrack) {
+                  soloTrack = {
+                    id: "solo_djembe",
+                    name: s.name,
+                    type: "djembe",
+                    instrument: "djembe1",
+                    volume: 0.85,
+                    pitch: 0,
+                    muted: false,
+                    soloed: false
+                  };
+                  state.tracks.push(soloTrack);
+                  sortTracks();
+                } else {
+                  soloTrack.name = s.name;
+                }
+
+                const timingSubdiv = getSubdivisionForTiming(state.timeSignature);
+                soloTrack.subdivision = timingSubdiv;
+                const steps = parsePatternToSteps(s.pattern, "djembe", state.beats * timingSubdiv, "Djembé");
+                soloTrack.steps = steps;
+                soloTrack.originalSteps = [...steps];
+                soloTrack.originalSubdivision = timingSubdiv;
+                soloTrack.subdivisionSteps = {
+                  [timingSubdiv]: [...steps]
+                };
+              } else {
+                state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
+              }
+              renderGrid();
+            };
+
+            if (state.isPlaying) {
+              queueSpecialAction(action, btn);
+            } else {
+              action();
+            }
+          });
+          solosContainer.appendChild(btn);
+        });
+      } else {
+        if (solosRow) solosRow.style.display = "none";
+      }
+
+      // Identify primaryCall and primaryEchauffement and store in state
+      let primaryCall = null;
+      let primaryEchauffement = null;
+      preset.tracks.forEach(pt => {
+        if (pt.specials) {
+          pt.specials.forEach(sp => {
+            const nameLC = (sp.name || "").toLowerCase();
+            if (nameLC.includes("call") && !primaryCall) {
+              primaryCall = sp;
+            }
+            if ((nameLC.includes("echauffement") || nameLC.includes("échauffement")) && !primaryEchauffement) {
+              primaryEchauffement = sp;
+            }
+          });
+        }
+      });
+
+      state.primaryCallName = primaryCall ? primaryCall.name : null;
+      state.primaryEchauffementName = primaryEchauffement ? primaryEchauffement.name : null;
+
+      // 3. Render Specials (excluding primaryCall & primaryEchauffement, grouped by name)
+      const uniqueSpecials = [];
+      preset.tracks.forEach(pt => {
+        if (pt.specials) {
+          pt.specials.forEach(sp => {
+            const name = sp.name;
+            if (primaryCall && name === primaryCall.name) return;
+            if (primaryEchauffement && name === primaryEchauffement.name) return;
+            if (name && !uniqueSpecials.includes(name)) {
+              uniqueSpecials.push(name);
+            }
+          });
+        }
+      });
+
+      if (uniqueSpecials.length > 0 && specialRow && specialContainer) {
+        specialRow.style.display = "flex";
+        specialContainer.innerHTML = "";
+
+        uniqueSpecials.forEach(specName => {
+          const btn = document.createElement("button");
+          btn.className = "btn";
+          btn.textContent = specName;
+          btn.style.fontWeight = "bold";
+          btn.style.borderRadius = "8px";
+          btn.style.padding = "0.35rem 0.75rem";
+          btn.style.cursor = "pointer";
+
           btn.style.background = "rgba(59, 130, 246, 0.15)";
           btn.style.border = "1px solid rgba(59, 130, 246, 0.35)";
           btn.style.color = "#3b82f6";
-        } else if (sp.type === "Call") {
-          btn.style.background = "rgba(99, 102, 241, 0.15)";
-          btn.style.border = "1px solid rgba(99, 102, 241, 0.35)";
-          btn.style.color = "var(--primary)";
-        } else if (sp.type === "Break") {
-          btn.style.background = "rgba(245, 158, 11, 0.15)";
-          btn.style.border = "1px solid rgba(245, 158, 11, 0.35)";
-          btn.style.color = "#f59e0b";
-        }
 
-        btn.addEventListener("click", () => {
-          const wasActive = btn.classList.contains("btn-primary") || btn.classList.contains("special-active");
+          btn.addEventListener("click", () => {
+            const wasActive = btn.classList.contains("btn-primary") || btn.classList.contains("special-active");
+            const action = () => {
+              deactivateAllSpecialButtons();
 
-          Array.from(specialContainer.children).forEach(child => {
-            child.classList.remove("btn-primary", "special-active");
-            const title = child.title.split(":")[0];
-            if (title === "Intro") {
-              child.style.background = "rgba(59, 130, 246, 0.15)";
-              child.style.borderColor = "rgba(59, 130, 246, 0.35)";
-            } else if (title === "Call") {
-              child.style.background = "rgba(99, 102, 241, 0.15)";
-              child.style.borderColor = "rgba(99, 102, 241, 0.35)";
-            } else if (title === "Break") {
-              child.style.background = "rgba(245, 158, 11, 0.15)";
-              child.style.borderColor = "rgba(245, 158, 11, 0.35)";
-            }
-          });
+              // Deactivate other special buttons
+              Array.from(specialContainer.children).forEach(child => {
+                child.classList.remove("btn-primary", "special-active");
+                child.style.background = "rgba(59, 130, 246, 0.15)";
+                child.style.borderColor = "rgba(59, 130, 246, 0.35)";
+              });
 
-          const solosContainer = document.getElementById("solos-buttons-container");
-          if (solosContainer) {
-            Array.from(solosContainer.children).forEach(child => {
-              child.classList.remove("btn-primary", "special-active");
-              child.style.background = "rgba(168, 85, 247, 0.15)";
-              child.style.borderColor = "rgba(168, 85, 247, 0.35)";
-            });
-          }
+              // Also turn off callIntro if active
+              state.callIntroActive = false;
+              state.tracks.forEach(t => {
+                if (t.isPlayingCall) {
+                  t.isPlayingCall = false;
+                  if (t.standardSteps) {
+                    t.steps = [...t.standardSteps];
+                    t.subdivisionSteps[t.subdivision] = [...t.steps];
+                    delete t.standardSteps;
+                  }
+                }
+              });
 
-          state.tracks.forEach(track => {
-            if (track.preSoloAccompanimentSteps) {
-              track.steps = [...track.preSoloAccompanimentSteps];
-              track.subdivisionSteps[track.subdivision] = [...track.steps];
-              if (track.standardSteps) {
-                track.standardSteps = [...track.steps];
+              if (!wasActive) {
+                btn.classList.add("btn-primary", "special-active");
+                btn.style.background = "";
+                btn.style.borderColor = "";
+
+                const nameLC = specName.toLowerCase();
+                const isCallOrBreak = nameLC.includes("call") || nameLC.includes("break") || nameLC.includes("intro");
+                if (isCallOrBreak) {
+                  state.callIntroActive = true;
+                }
+
+                state.tracks.forEach(track => {
+                  const presetTrack = preset.tracks.find(pt => cleanTrackName(pt.part) === cleanTrackName(track.name));
+                  if (presetTrack && presetTrack.specials) {
+                    const matchedSpec = presetTrack.specials.find(sp => sp.name === specName);
+                    if (matchedSpec) {
+                      if (!track.standardSteps) track.standardSteps = [...track.steps];
+                      const steps = parsePatternToSteps(matchedSpec.pattern || matchedSpec.drum_pattern, track.type, track.steps.length, track.name);
+                      track.steps = steps;
+                      track.subdivisionSteps[track.subdivision] = [...steps];
+                      if (isCallOrBreak) {
+                        track.isPlayingCall = true;
+                      }
+                    }
+                  }
+                });
+              } else {
+                state.tracks.forEach(track => {
+                  if (track.standardSteps) {
+                    track.steps = [...track.standardSteps];
+                    track.subdivisionSteps[track.subdivision] = [...track.steps];
+                    delete track.standardSteps;
+                  }
+                });
               }
-              delete track.preSoloAccompanimentSteps;
+              renderGrid();
+            };
+
+            if (state.isPlaying) {
+              queueSpecialAction(action, btn);
+            } else {
+              action();
+            }
+          });
+          specialContainer.appendChild(btn);
+        });
+      } else {
+        if (specialRow) specialRow.style.display = "none";
+      }
+    } else {
+      // Populate Variations Row
+      const hasVariations = preset.tracks.some(pt => pt.variations && pt.variations.length > 0);
+      if (hasVariations && variationsRow && variationsContainer) {
+        variationsRow.style.display = "flex";
+        variationsContainer.innerHTML = "";
+
+        const maxVars = Math.max(...preset.tracks.map(pt => (pt.variations || []).length));
+
+        for (let i = 0; i < maxVars; i++) {
+          const btn = document.createElement("button");
+          btn.className = "btn";
+          btn.textContent = `Variation ${i + 1}`;
+          btn.style.fontWeight = "bold";
+          btn.style.borderRadius = "8px";
+          btn.style.padding = "0.35rem 0.75rem";
+          btn.style.cursor = "pointer";
+
+          btn.addEventListener("click", () => {
+            const wasActive = btn.classList.contains("btn-primary");
+
+            Array.from(variationsContainer.children).forEach(child => {
+              child.classList.remove("btn-primary");
+            });
+
+            if (state.echauffementActive) {
+              triggerEchauffement(); // toggle off
+            }
+
+            if (!wasActive) {
+              btn.classList.add("btn-primary");
+            }
+
+            const action = () => {
+              if (wasActive) {
+                state.activeVariation = null;
+                state.tracks.forEach(track => {
+                  if (track.standardSteps) {
+                    track.steps = [...track.standardSteps];
+                    track.subdivisionSteps[track.subdivision] = [...track.steps];
+                    delete track.standardSteps;
+                  }
+                });
+              } else {
+                state.activeVariation = i;
+
+                state.tracks.forEach(track => {
+                  const presetTrack = state.currentPreset.tracks.find(pt => cleanTrackName(pt.part) === cleanTrackName(track.name));
+                  if (presetTrack) {
+                    if (!track.standardSteps) track.standardSteps = [...track.steps];
+
+                    if (presetTrack.variations && presetTrack.variations[i]) {
+                      track.steps = convertPatternToSteps(presetTrack.variations[i].drum_pattern, state.timeSignature, track.name);
+                    } else {
+                      track.steps = [...track.standardSteps];
+                    }
+                    track.subdivisionSteps[track.subdivision] = [...track.steps];
+                  }
+                });
+              }
+              renderGrid();
+            };
+
+            if (state.isPlaying) {
+              queueSpecialAction(action, btn);
+            } else {
+              action();
             }
           });
 
-          if (wasActive) {
-            state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
-            state.callIntroActive = false;
-            renderGrid();
-          } else {
-            btn.classList.add("special-active", "btn-primary");
-            btn.style.background = "";
-            btn.style.borderColor = "";
-            playSpecialPart(sp, btn);
+          variationsContainer.appendChild(btn);
+        }
+      } else {
+        if (variationsRow) variationsRow.style.display = "none";
+      }
+
+      // Populate Special Parts Row
+      const nonSoloSpecialParts = (preset.special_parts || []).filter(sp => sp.type !== "Solo" && sp.type !== "Call");
+      if (nonSoloSpecialParts.length > 0 && specialRow && specialContainer) {
+        specialRow.style.display = "flex";
+        specialContainer.innerHTML = "";
+
+        nonSoloSpecialParts.forEach((sp, idx) => {
+          const btn = document.createElement("button");
+          btn.className = "btn";
+          btn.textContent = sp.name;
+          btn.title = `${sp.type}:${sp.name}`;
+          btn.style.fontWeight = "bold";
+          btn.style.borderRadius = "8px";
+          btn.style.fontSize = "0.8rem";
+          btn.style.padding = "0.35rem 0.75rem";
+          btn.style.cursor = "pointer";
+
+          if (sp.type === "Intro") {
+            btn.style.background = "rgba(59, 130, 246, 0.15)";
+            btn.style.border = "1px solid rgba(59, 130, 246, 0.35)";
+            btn.style.color = "#3b82f6";
+          } else if (sp.type === "Call") {
+            btn.style.background = "rgba(99, 102, 241, 0.15)";
+            btn.style.border = "1px solid rgba(99, 102, 241, 0.35)";
+            btn.style.color = "var(--primary)";
+          } else if (sp.type === "Break") {
+            btn.style.background = "rgba(245, 158, 11, 0.15)";
+            btn.style.border = "1px solid rgba(245, 158, 11, 0.35)";
+            btn.style.color = "#f59e0b";
           }
-        });
 
-        specialContainer.appendChild(btn);
-      });
-    } else {
-      if (specialRow) specialRow.style.display = "none";
-    }
+          btn.addEventListener("click", () => {
+            const wasActive = btn.classList.contains("btn-primary") || btn.classList.contains("special-active");
 
-    // Populate Solos Row (for the old format)
-    const soloParts = (preset.special_parts || []).filter(sp => sp.type === "Solo" && !sp.name.toLowerCase().includes("accomp"));
-    const accompPart = (preset.special_parts || []).find(sp => sp.type === "Solo" && sp.name.toLowerCase().includes("accomp"));
+            Array.from(specialContainer.children).forEach(child => {
+              child.classList.remove("btn-primary", "special-active");
+              const title = child.title.split(":")[0];
+              if (title === "Intro") {
+                child.style.background = "rgba(59, 130, 246, 0.15)";
+                child.style.borderColor = "rgba(59, 130, 246, 0.35)";
+              } else if (title === "Call") {
+                child.style.background = "rgba(99, 102, 241, 0.15)";
+                child.style.borderColor = "rgba(99, 102, 241, 0.35)";
+              } else if (title === "Break") {
+                child.style.background = "rgba(245, 158, 11, 0.15)";
+                child.style.borderColor = "rgba(245, 158, 11, 0.35)";
+              }
+            });
 
-    if (soloParts.length > 0 && solosRow && solosContainer) {
-      solosRow.style.display = "flex";
-      solosContainer.innerHTML = "";
-
-      soloParts.forEach((sp, idx) => {
-        const btn = document.createElement("button");
-        btn.className = "btn";
-        btn.dataset.type = "solo";
-        btn.textContent = idx + 1;
-        btn.title = sp.name;
-        btn.style.minWidth = "28px";
-        btn.style.height = "28px";
-        btn.style.display = "flex";
-        btn.style.alignItems = "center";
-        btn.style.justifyContent = "center";
-        btn.style.fontWeight = "bold";
-        btn.style.borderRadius = "6px";
-        btn.style.fontSize = "0.75rem";
-        btn.style.padding = "0";
-        btn.style.flex = "0 0 28px";
-        btn.style.cursor = "pointer";
-
-        btn.style.background = "rgba(168, 85, 247, 0.15)";
-        btn.style.border = "1px solid rgba(168, 85, 247, 0.35)";
-        btn.style.color = "#a855f7";
-
-        btn.addEventListener("click", () => {
-          const wasActive = btn.classList.contains("btn-primary") || btn.classList.contains("special-active");
-          const action = () => {
-            deactivateAllSpecialButtons();
+            const solosContainer = document.getElementById("solos-buttons-container");
+            if (solosContainer) {
+              Array.from(solosContainer.children).forEach(child => {
+                child.classList.remove("btn-primary", "special-active");
+                child.style.background = "rgba(168, 85, 247, 0.15)";
+                child.style.borderColor = "rgba(168, 85, 247, 0.35)";
+              });
+            }
 
             state.tracks.forEach(track => {
               if (track.preSoloAccompanimentSteps) {
@@ -6604,86 +6973,151 @@ function loadRhythmNew(preset) {
               }
             });
 
-            if (!wasActive) {
+            if (wasActive) {
+              state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
+              state.callIntroActive = false;
+              renderGrid();
+            } else {
               btn.classList.add("special-active", "btn-primary");
               btn.style.background = "";
               btn.style.borderColor = "";
+              playSpecialPart(sp, btn);
+            }
+          });
 
-              if (accompPart) {
-                const djembeTrack = state.tracks.find(t => t.type === "djembe" && t.id !== "solo_djembe");
-                if (djembeTrack) {
-                  djembeTrack.preSoloAccompanimentSteps = [...djembeTrack.steps];
-                  const accompSteps = convertPatternToSteps(accompPart.drum_pattern, state.timeSignature, djembeTrack.name);
-                  djembeTrack.steps = accompSteps;
-                  djembeTrack.subdivisionSteps[djembeTrack.subdivision] = [...accompSteps];
-                  if (djembeTrack.standardSteps) {
-                    djembeTrack.standardSteps = [...accompSteps];
+          specialContainer.appendChild(btn);
+        });
+      } else {
+        if (specialRow) specialRow.style.display = "none";
+      }
+
+      // Populate Solos Row (for the old format)
+      const soloParts = (preset.special_parts || []).filter(sp => sp.type === "Solo" && !sp.name.toLowerCase().includes("accomp"));
+      const accompPart = (preset.special_parts || []).find(sp => sp.type === "Solo" && sp.name.toLowerCase().includes("accomp"));
+
+      if (soloParts.length > 0 && solosRow && solosContainer) {
+        solosRow.style.display = "flex";
+        solosContainer.innerHTML = "";
+
+        soloParts.forEach((sp, idx) => {
+          const btn = document.createElement("button");
+          btn.className = "btn";
+          btn.dataset.type = "solo";
+          btn.textContent = idx + 1;
+          btn.title = sp.name;
+          btn.style.minWidth = "28px";
+          btn.style.height = "28px";
+          btn.style.display = "flex";
+          btn.style.alignItems = "center";
+          btn.style.justifyContent = "center";
+          btn.style.fontWeight = "bold";
+          btn.style.borderRadius = "6px";
+          btn.style.fontSize = "0.75rem";
+          btn.style.padding = "0";
+          btn.style.flex = "0 0 28px";
+          btn.style.cursor = "pointer";
+
+          btn.style.background = "rgba(168, 85, 247, 0.15)";
+          btn.style.border = "1px solid rgba(168, 85, 247, 0.35)";
+          btn.style.color = "#a855f7";
+
+          btn.addEventListener("click", () => {
+            const wasActive = btn.classList.contains("btn-primary") || btn.classList.contains("special-active");
+            const action = () => {
+              deactivateAllSpecialButtons();
+
+              state.tracks.forEach(track => {
+                if (track.preSoloAccompanimentSteps) {
+                  track.steps = [...track.preSoloAccompanimentSteps];
+                  track.subdivisionSteps[track.subdivision] = [...track.steps];
+                  if (track.standardSteps) {
+                    track.standardSteps = [...track.steps];
+                  }
+                  delete track.preSoloAccompanimentSteps;
+                }
+              });
+
+              if (!wasActive) {
+                btn.classList.add("special-active", "btn-primary");
+                btn.style.background = "";
+                btn.style.borderColor = "";
+
+                if (accompPart) {
+                  const djembeTrack = state.tracks.find(t => t.type === "djembe" && t.id !== "solo_djembe");
+                  if (djembeTrack) {
+                    djembeTrack.preSoloAccompanimentSteps = [...djembeTrack.steps];
+                    const accompSteps = convertPatternToSteps(accompPart.drum_pattern, state.timeSignature, djembeTrack.name);
+                    djembeTrack.steps = accompSteps;
+                    djembeTrack.subdivisionSteps[djembeTrack.subdivision] = [...accompSteps];
+                    if (djembeTrack.standardSteps) {
+                      djembeTrack.standardSteps = [...accompSteps];
+                    }
                   }
                 }
-              }
 
-              let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
-              if (!soloTrack) {
-                soloTrack = {
-                  id: "solo_djembe",
-                  name: sp.name,
-                  type: "djembe",
-                  instrument: "djembe1",
-                  volume: 0.85,
-                  pitch: 0,
-                  muted: false,
-                  soloed: false
+                let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
+                if (!soloTrack) {
+                  soloTrack = {
+                    id: "solo_djembe",
+                    name: sp.name,
+                    type: "djembe",
+                    instrument: "djembe1",
+                    volume: 0.85,
+                    pitch: 0,
+                    muted: false,
+                    soloed: false
+                  };
+                  state.tracks.push(soloTrack);
+                  sortTracks();
+                } else {
+                  soloTrack.name = sp.name;
+                }
+
+                soloTrack.subdivision = getSubdivisionForTiming(state.timeSignature);
+                const steps = convertPatternToSteps(sp.drum_pattern, state.timeSignature, "Djembé");
+                soloTrack.steps = steps;
+                soloTrack.originalSteps = [...steps];
+                soloTrack.originalSubdivision = soloTrack.subdivision;
+                soloTrack.subdivisionSteps = {
+                  [soloTrack.subdivision]: [...steps]
                 };
-                state.tracks.push(soloTrack);
-                sortTracks();
-              } else {
-                soloTrack.name = sp.name;
-              }
 
-              soloTrack.subdivision = getSubdivisionForTiming(state.timeSignature);
-              const steps = convertPatternToSteps(sp.drum_pattern, state.timeSignature, "Djembé");
-              soloTrack.steps = steps;
-              soloTrack.originalSteps = [...steps];
-              soloTrack.originalSubdivision = soloTrack.subdivision;
-              soloTrack.subdivisionSteps = {
-                [soloTrack.subdivision]: [...steps]
-              };
+                if (sp.type === "Intro" || sp.type === "Call" || sp.type === "Break") {
+                  state.callIntroActive = true;
+                } else {
+                  state.callIntroActive = false;
+                }
 
-              if (sp.type === "Intro" || sp.type === "Call" || sp.type === "Break") {
-                state.callIntroActive = true;
+                state.tracks.forEach(t => {
+                  const isCall = t.id === "solo_djembe" ||
+                    t.id.startsWith("special") ||
+                    t.name.toLowerCase().includes("call") ||
+                    t.name.toLowerCase().includes("break") ||
+                    t.name.toLowerCase().includes("intro");
+                  if (isCall) t.muted = false;
+                });
               } else {
+                state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
                 state.callIntroActive = false;
               }
+              renderGrid();
+            };
 
-              state.tracks.forEach(t => {
-                const isCall = t.id === "solo_djembe" ||
-                  t.id.startsWith("special") ||
-                  t.name.toLowerCase().includes("call") ||
-                  t.name.toLowerCase().includes("break") ||
-                  t.name.toLowerCase().includes("intro");
-                if (isCall) t.muted = false;
-              });
+            if (state.isPlaying) {
+              queueSpecialAction(action, btn);
             } else {
-              state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
-              state.callIntroActive = false;
+              action();
+              if (!wasActive) {
+                togglePlay();
+              }
             }
-            renderGrid();
-          };
+          });
 
-          if (state.isPlaying) {
-            queueSpecialAction(action, btn);
-          } else {
-            action();
-            if (!wasActive) {
-              togglePlay();
-            }
-          }
+          solosContainer.appendChild(btn);
         });
-
-        solosContainer.appendChild(btn);
-      });
-    } else {
-      if (solosRow) solosRow.style.display = "none";
+      } else {
+        if (solosRow) solosRow.style.display = "none";
+      }
     }
   }
 
@@ -6695,7 +7129,22 @@ function toggleEchauffementNew() {
   const echBtn = document.getElementById("btn-trigger-echauffement");
   state.echauffementActive = !state.echauffementActive;
 
+  const hasNewSchema = state.currentPreset && Array.isArray(state.currentPreset.tracks) && state.currentPreset.tracks.some(t =>
+    (t.variations && t.variations.length > 0) ||
+    (t.solos && t.solos.length > 0) ||
+    (t.specials && t.specials.length > 0)
+  );
+
   const isNewFormat = state.currentPreset && (state.currentPreset.step_count !== undefined || (state.currentPreset.tracks && !Array.isArray(state.currentPreset.tracks)));
+
+  const parsePatternToSteps = (pattern, trackType, stepCount, partName) => {
+    if (!pattern) return Array(stepCount).fill("");
+    if (pattern.includes(" ") || pattern.trim().split(/\s+/).length > 1) {
+      return convertSpaceDelimitedPatternToSteps(pattern, trackType, stepCount);
+    } else {
+      return convertPatternToSteps(pattern, state.timeSignature, partName);
+    }
+  };
 
   if (state.echauffementActive) {
     if (echBtn) echBtn.classList.add("btn-primary");
@@ -6704,7 +7153,53 @@ function toggleEchauffementNew() {
     deactivateAllSpecialButtons();
 
     const action = () => {
-      if (isNewFormat) {
+      if (hasNewSchema) {
+        if (state.primaryEchauffementName) {
+          state.tracks.forEach(track => {
+            const presetTrack = state.currentPreset.tracks.find(pt => cleanTrackName(pt.part) === cleanTrackName(track.name));
+            if (presetTrack && presetTrack.specials) {
+              const matchedEch = presetTrack.specials.find(sp => sp.name === state.primaryEchauffementName);
+              if (matchedEch) {
+                if (!track.standardSteps) track.standardSteps = [...track.steps];
+                const steps = parsePatternToSteps(matchedEch.pattern || matchedEch.drum_pattern, track.type, track.steps.length, track.name);
+                track.steps = steps;
+                track.subdivisionSteps[track.subdivision] = [...steps];
+                track.isPlayingEchauffement = true;
+              }
+            }
+          });
+        } else {
+          // Fallback to generic rapid roll on solo_djembe
+          const isTernary = state.timeSignature === "12/8" || state.timeSignature === "6/8";
+          const subdiv = isTernary ? 6 : 4;
+          const stepsCount = subdiv * state.beats;
+          const steps = Array(stepsCount).fill("").map((_, idx) => (idx % 2 === 0 ? "S" : "T"));
+          let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
+          if (!soloTrack) {
+            soloTrack = {
+              id: "solo_djembe",
+              name: "Échauffement",
+              type: "djembe",
+              instrument: "djembe1",
+              volume: 0.85,
+              pitch: 0,
+              muted: false,
+              soloed: false
+            };
+            state.tracks.push(soloTrack);
+            sortTracks();
+          } else {
+            soloTrack.name = "Échauffement";
+          }
+          soloTrack.subdivision = subdiv;
+          soloTrack.steps = [...steps];
+          soloTrack.originalSteps = [...steps];
+          soloTrack.originalSubdivision = subdiv;
+          soloTrack.subdivisionSteps = {
+            [subdiv]: [...steps]
+          };
+        }
+      } else if (isNewFormat) {
         const echObj = state.currentPreset.echauffement || {};
         state.tracks.forEach(track => {
           const hierarchyKey = getTrackHierarchyKey(track);
@@ -6743,7 +7238,9 @@ function toggleEchauffementNew() {
           track.subdivisionSteps[track.subdivision] = [...track.steps];
           delete track.standardSteps;
         }
+        track.isPlayingEchauffement = false;
       });
+      state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
       renderGrid();
     };
 
