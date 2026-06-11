@@ -117,20 +117,6 @@ const dom = new JSDOM(htmlContent, {
           connect: () => {}
         };
       }
-      createOscillator() {
-        return {
-          type: 'sine',
-          frequency: {
-            setValueAtTime: () => {},
-            linearRampToValueAtTime: () => {},
-            exponentialRampToValueAtTime: () => {},
-            value: 440
-          },
-          connect: () => {},
-          start: () => {},
-          stop: () => {}
-        };
-      }
       decodeAudioData(arrayBuffer, successCallback) {
         setTimeout(() => {
           if (successCallback) successCallback({ duration: 1.0 });
