@@ -309,14 +309,14 @@ function getInstrumentHSL(instrument, type, isCall) {
       let s = parseFloat(parts[1]);
       let l = parseFloat(parts[2]);
       
-      // Reduce saturation so it's less electric/neon (between 40% and 55%)
-      s = Math.min(55, s * 0.6);
+      // Reduce saturation so it's less electric/neon (between 30% and 45%)
+      s = Math.min(45, s * 0.45);
       
-      // Reduce lightness so it's darker (between 25% and 38%)
+      // Reduce lightness so it's darker (between 15% and 25%)
       if (l > 50) {
-        l = 32 + (l - 50) * 0.2; // e.g. 75% -> 37%
+        l = 18 + (l - 50) * 0.1; // e.g. 75% -> 20.5%
       } else {
-        l = Math.max(25, l * 0.75); // e.g. 36% -> 27%
+        l = Math.max(15, l * 0.45); // e.g. 36% -> 16.2%
       }
       
       return `${h}, ${Math.round(s)}%, ${Math.round(l)}%`;
