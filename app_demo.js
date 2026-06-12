@@ -5206,7 +5206,7 @@ function triggerStepVisualFlash(trackId, stepIndex, velocity = 1.0) {
     const subdivFactor = (track && (state.beats * track.subdivision > 16)) ? 0.65 : 1.0;
 
     // Scale and glow to match the actual played velocity (with subdivision size correction)
-    const playedScale = (0.7 + velocity * 0.4) * subdivFactor;
+    const playedScale = subdivFactor;
     const pitchBrightness = track ? calculatePitchBrightness(track, stepIndex, state.currentEpoch || 0) : 1.0;
 
     // Determine the base (idle) scale/brightness we will return to after flash
@@ -5220,7 +5220,7 @@ function triggerStepVisualFlash(trackId, stepIndex, velocity = 1.0) {
         finalVol = Math.max(0.05, Math.min(1.2, finalVol + volOffset));
       }
     }
-    const baselineScale = (0.7 + finalVol * 0.4) * subdivFactor;
+    const baselineScale = subdivFactor;
     const finalBrightness = track ? calculatePitchBrightness(track, stepIndex, state.currentEpoch || 0) : 1.0;
 
     // Apply base variables to style
@@ -5533,19 +5533,20 @@ function updateCellScales() {
   state.tracks.forEach(track => {
     const subdivFactor = (state.beats * track.subdivision > 16) ? 0.65 : 1.0;
     track.steps.forEach((val, stepIdx) => {
-      if (val !== "") {
-        const cell = getCachedCell(track.id, stepIdx);
-        if (cell && !cell.classList.contains("strike-flash")) {
+      const cell = getCachedCell(track.id, stepIdx);
+      if (cell && !cell.classList.contains("strike-flash")) {
+        const currentScale = subdivFactor;
+        cell.style.setProperty("--current-scale", currentScale);
+        cell.style.transform = `translateY(-50%) scale(${currentScale})`;
+
+        if (val !== "") {
           let velocity = track.volume;
           if (state.humaniseVolume > 0) {
             const seedOffset = getCellRandomSeed(track.id, stepIdx, epoch);
             const volOffset = seedOffset * (state.humaniseVolume / 100) * 0.65;
             velocity = Math.max(0.05, Math.min(1.2, velocity + volOffset));
           }
-          const currentScale = (0.7 + velocity * 0.4) * subdivFactor;
-          cell.style.setProperty("--current-scale", currentScale);
           cell.style.setProperty("--vel-scale", velocity);
-          cell.style.transform = `translateY(-50%) scale(${currentScale})`;
 
           const pitchBrightness = calculatePitchBrightness(track, stepIdx, epoch);
           cell.style.setProperty("--pitch-brightness", pitchBrightness);
@@ -6456,7 +6457,7 @@ function renderGrid() {
             cell.className = `step-cell ${track.type}-${stepVal} ${track.instrument}-${stepVal} has-note`;
           }
 
-          const currentScale = (0.7 + track.volume * 0.4) * subdivFactor;
+          const currentScale = subdivFactor;
           cell.style.setProperty("--current-scale", currentScale);
           cell.style.setProperty("--vel-scale", track.volume);
           cell.style.transform = `translateY(-50%) scale(${currentScale})`;
@@ -6471,7 +6472,7 @@ function renderGrid() {
             cell.classList.add("beat-start-empty");
           }
 
-          const currentScale = 1.0 * subdivFactor;
+          const currentScale = subdivFactor;
           cell.style.setProperty("--current-scale", currentScale);
           cell.style.transform = `translateY(-50%) scale(${currentScale})`;
         }
@@ -6956,6 +6957,7 @@ function showSampleGroupPopup(track, sampleOptions, trackRow) {
   `;
 
   const tuningHeader = document.createElement("div");
+  tuningHeader.className = "popup-tuning-header";
   tuningHeader.style.cssText = `
     display: flex;
     justify-content: space-between;
@@ -7114,6 +7116,7 @@ function showDeleteTrackPopup(track, onConfirm) {
   popup.appendChild(titleEl);
 
   const textEl = document.createElement("div");
+  textEl.className = "popup-delete-text";
   textEl.style.fontSize = "0.85rem";
   textEl.style.color = "rgba(255, 255, 255, 0.65)";
   textEl.style.textAlign = "center";
@@ -7216,7 +7219,7 @@ function cycleStepHit(track, idx, cellElement) {
     cellElement.classList.add(`${track.type}-${val}`);
     cellElement.classList.add(`${track.instrument}-${val}`);
     cellElement.classList.add("has-note");
-    const currentScale = (0.7 + track.volume * 0.4) * subdivFactor;
+    const currentScale = subdivFactor;
     cellElement.style.setProperty("--current-scale", currentScale);
     cellElement.style.setProperty("--vel-scale", track.volume);
     cellElement.style.transform = `translateY(-50%) scale(${currentScale})`;
@@ -7224,7 +7227,7 @@ function cycleStepHit(track, idx, cellElement) {
     const hand = (idx % 2 === 0) ? "L" : "R";
     triggerSynthHit(track.type, track.instrument, val, synth.ctx.currentTime, track.volume, track.pitch, 0.15, hand);
   } else {
-    const currentScale = 1.0 * subdivFactor;
+    const currentScale = subdivFactor;
     cellElement.style.setProperty("--current-scale", currentScale);
     cellElement.style.transform = `translateY(-50%) scale(${currentScale})`;
   }
@@ -7918,7 +7921,7 @@ function openVariationsMenu(track, stepIdx, cellElement, event) {
         cellElement.className = `step-cell ${track.type}-${newVal} ${track.instrument}-${newVal} has-note`;
       }
 
-      const currentScale = (0.7 + track.volume * 0.4) * subdivFactor;
+      const currentScale = subdivFactor;
       cellElement.style.setProperty("--current-scale", currentScale);
       cellElement.style.setProperty("--vel-scale", track.volume);
       cellElement.style.transform = `translateY(-50%) scale(${currentScale})`;
@@ -7926,7 +7929,7 @@ function openVariationsMenu(track, stepIdx, cellElement, event) {
       const hand = (stepIdx % 2 === 0) ? "L" : "R";
       triggerSynthHit(track.type, track.instrument, newVal, synth.ctx.currentTime, track.volume, track.pitch, 0.15, hand);
     } else {
-      const currentScale = 1.0 * subdivFactor;
+      const currentScale = subdivFactor;
       cellElement.style.setProperty("--current-scale", currentScale);
       cellElement.style.transform = `translateY(-50%) scale(${currentScale})`;
     }

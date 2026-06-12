@@ -3198,3 +3198,163 @@ body.theme-tinted .step-cell.step-cell-composite {
   -moz-user-select: none !important;
   -ms-user-select: none !important;
 }
+
+/* Mobile percentage-based sizing for composite notes (rolls and triplets) */
+.roll-first-note.sub-note-square {
+  width: 42% !important;
+  height: 42% !important;
+  border-radius: 20% !important;
+  margin-right: -10% !important;
+  box-sizing: border-box !important;
+}
+
+.roll-second-note.sub-note-square {
+  width: 52% !important;
+  height: 52% !important;
+  border-radius: 20% !important;
+  box-sizing: border-box !important;
+}
+
+.triplet-first-note.sub-note-square {
+  width: 32% !important;
+  height: 32% !important;
+  border-radius: 20% !important;
+  margin-right: -8% !important;
+  box-sizing: border-box !important;
+}
+
+.triplet-second-note.sub-note-square {
+  width: 32% !important;
+  height: 32% !important;
+  border-radius: 20% !important;
+  margin-right: -8% !important;
+  box-sizing: border-box !important;
+}
+
+.triplet-third-note.sub-note-square {
+  width: 42% !important;
+  height: 42% !important;
+  border-radius: 20% !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure child SVGs fill the sub-note squares correctly without scaling mismatch */
+.roll-first-note.sub-note-square svg,
+.roll-second-note.sub-note-square svg,
+.triplet-first-note.sub-note-square svg,
+.triplet-second-note.sub-note-square svg,
+.triplet-third-note.sub-note-square svg {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  display: block !important;
+}
+
+/* Position triplet badge "3" cleanly just above the step-cell container on mobile */
+body:not(.theme-studio) .triplet-badge {
+  top: -6px !important;
+  font-size: 6px !important;
+  padding: 0.5px 2px !important;
+  border-radius: 2px !important;
+}
+
+/* Light theme overrides for Volume Slider window and Sound Set popup */
+body.light-theme .large-slider-window {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.8) !important;
+}
+
+body.light-theme .large-slider-label {
+  color: rgba(31, 41, 55, 0.7) !important;
+}
+
+body.light-theme .large-slider-value {
+  color: #1f2937 !important;
+  text-shadow: none !important;
+}
+
+body.light-theme .large-slider-input {
+  background: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Chrome/Safari slider track and thumb for light theme */
+body.light-theme .large-slider-input::-webkit-slider-runnable-track {
+  background: rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light-theme .large-slider-input::-webkit-slider-thumb {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15) !important;
+  border: 2px solid #ffffff !important;
+}
+
+/* Firefox slider track and thumb for light theme */
+body.light-theme .large-slider-input::-moz-range-track {
+  background: rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light-theme .large-slider-input::-moz-range-thumb {
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15) !important;
+  border: 2px solid #ffffff !important;
+}
+
+body.light-theme .sample-group-popup {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
+}
+
+body.light-theme .sample-group-popup-title {
+  color: #1f2937 !important;
+}
+
+body.light-theme .sample-group-popup-btn {
+  background: rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  color: #1f2937 !important;
+}
+
+body.light-theme .sample-group-popup-btn.active {
+  background: rgba(20, 184, 166, 0.15) !important;
+  border-color: rgba(20, 184, 166, 0.5) !important;
+  color: #0f766e !important;
+  box-shadow: 0 0 10px rgba(20, 184, 166, 0.15) !important;
+}
+
+body.light-theme .sample-group-popup-btn.card-style {
+  background: rgba(0, 0, 0, 0.03) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05) !important;
+}
+
+body.light-theme .sample-group-popup-btn.card-style:hover {
+  background: rgba(0, 0, 0, 0.06) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+body.light-theme .sample-group-popup-btn.card-style.active {
+  background: rgba(0, 0, 0, 0.04) !important;
+  border-color: var(--theme-active-color, #2dd4bf) !important;
+  box-shadow: 0 0 15px var(--theme-active-glow, rgba(20, 184, 166, 0.15)) !important;
+}
+
+body.light-theme .popup-btn-label {
+  color: rgba(31, 41, 55, 0.6) !important;
+}
+
+body.light-theme .sample-group-popup-btn.card-style.active .popup-btn-label {
+  color: #1f2937 !important;
+}
+
+body.light-theme .popup-tuning-container {
+  border-top-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light-theme .popup-tuning-header {
+  color: #1f2937 !important;
+}
+
+body.light-theme .popup-delete-text {
+  color: #374151 !important;
+}
