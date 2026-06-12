@@ -5464,9 +5464,14 @@ function updateStepPositions() {
 
     for (let l = 0; l < numLines; l++) {
       const stepsContainer = document.querySelector(`.steps-container[data-track-id="${track.id}"][data-line-index="${l}"]`);
-      const containerWidth = stepsContainer ? (stepsContainer.getBoundingClientRect().width || stepsContainer.offsetWidth) : 368;
-      // The cell's visual width on screen is 14px * subdivFactor.
-      const cellWidthPercent = (14 * subdivFactor / containerWidth) * 100;
+      let containerWidth = stepsContainer ? (stepsContainer.getBoundingClientRect().width || stepsContainer.offsetWidth) : 0;
+      if (containerWidth <= 0) {
+        const deviceFrame = document.querySelector(".demo-device-frame");
+        const parentWidth = deviceFrame ? (deviceFrame.getBoundingClientRect().width || deviceFrame.offsetWidth) : window.innerWidth;
+        containerWidth = Math.max(200, parentWidth - 62);
+      }
+      // Use 14.5px to include border safety so they just touch at 100% swing
+      const cellWidthPercent = (14.5 * subdivFactor / containerWidth) * 100;
 
       // Calculate ideal percentage positions for all steps in this line
       const linePercent = [];
@@ -5535,8 +5540,13 @@ function updateStepPositions() {
           }
 
           // Apply clamping to stepTimes to align beat markers correctly
-          const containerWidth = stepsContainer.getBoundingClientRect().width || stepsContainer.offsetWidth || 368;
-          const cellWidthPercent = (14 * subdivFactor / containerWidth) * 100;
+          let containerWidth = stepsContainer.getBoundingClientRect().width || stepsContainer.offsetWidth || 0;
+          if (containerWidth <= 0) {
+            const deviceFrame = document.querySelector(".demo-device-frame");
+            const parentWidth = deviceFrame ? (deviceFrame.getBoundingClientRect().width || deviceFrame.offsetWidth) : window.innerWidth;
+            containerWidth = Math.max(200, parentWidth - 62);
+          }
+          const cellWidthPercent = (14.5 * subdivFactor / containerWidth) * 100;
           const cellWidthInBeats = (cellWidthPercent / 100) * state.beats;
 
           for (let i = stepsPerLine - 2; i >= 0; i--) {
