@@ -5459,31 +5459,65 @@ function updateStepPositions() {
 
   state.tracks.forEach(track => {
     const stepsPerLine = state.beats * track.subdivision;
-    track.steps.forEach((val, stepIdx) => {
-      const cell = getCachedCell(track.id, stepIdx);
-      if (cell) {
-        const stepInLine = stepIdx % stepsPerLine;
+    const subdivFactor = (state.beats * track.subdivision > 16) ? 0.65 : 1.0;
+    const numLines = Math.max(1, Math.ceil(track.steps.length / stepsPerLine));
+
+    for (let l = 0; l < numLines; l++) {
+      const stepsContainer = document.querySelector(`.steps-container[data-track-id="${track.id}"][data-line-index="${l}"]`);
+      const containerWidth = stepsContainer ? (stepsContainer.getBoundingClientRect().width || stepsContainer.offsetWidth) : 368;
+      // The cell's visual width on screen is 14px * subdivFactor.
+      const cellWidthPercent = (14 * subdivFactor / containerWidth) * 100;
+
+      // Calculate ideal percentage positions for all steps in this line
+      const linePercent = [];
+      for (let stepInLine = 0; stepInLine < stepsPerLine; stepInLine++) {
+        const stepIdx = l * stepsPerLine + stepInLine;
         const beatIndex = Math.floor(stepInLine / track.subdivision);
         const stepInBeat = stepInLine % track.subdivision;
         const swungBeat = getSwungStepTime(beatIndex, stepInBeat, track.subdivision, 1.0, state.swing, true);
 
         let humaniseOffset = 0;
-        if (state.humaniseTime > 0 && val !== "") {
+        const val = track.steps[stepIdx];
+        if (state.humaniseTime > 0 && val !== undefined && val !== "") {
           const secondsPerBeat = getSecondsPerBeat();
           const maxOffset = 0.0175; // max 17.5ms offset in seconds
           const seedOffset = getCellRandomSeed(track.id, stepIdx, epoch);
           const timingOffsetInSeconds = seedOffset * (state.humaniseTime / 100) * maxOffset;
-          // Convert timing offset from seconds to beats
           humaniseOffset = timingOffsetInSeconds / secondsPerBeat;
         }
 
-        const percent = ((swungBeat + humaniseOffset) / state.beats) * 100;
-        cell.style.setProperty("--step-time-percent", `${percent}%`);
+        const idealPercent = ((swungBeat + humaniseOffset) / state.beats) * 100;
+        linePercent.push(idealPercent);
       }
-    });
+
+      // Sweep right-to-left to prevent overlap
+      for (let i = stepsPerLine - 2; i >= 0; i--) {
+        if (linePercent[i] > linePercent[i+1] - cellWidthPercent) {
+          linePercent[i] = linePercent[i+1] - cellWidthPercent;
+        }
+      }
+
+      // Sweep left-to-right to ensure no elements drop below 0% and propagate spacing constraints
+      if (linePercent[0] < 0) {
+        linePercent[0] = 0;
+      }
+      for (let i = 1; i < stepsPerLine; i++) {
+        if (linePercent[i] < linePercent[i-1] + cellWidthPercent) {
+          linePercent[i] = linePercent[i-1] + cellWidthPercent;
+        }
+      }
+
+      // Apply positions to the DOM elements
+      for (let stepInLine = 0; stepInLine < stepsPerLine; stepInLine++) {
+        const stepIdx = l * stepsPerLine + stepInLine;
+        const cell = getCachedCell(track.id, stepIdx);
+        if (cell) {
+          cell.style.setProperty("--step-time-percent", `${linePercent[stepInLine]}%`);
+        }
+      }
+    }
 
     // Dynamically update beat markers to remain exactly centered between steps when swing changes
-    const numLines = Math.max(1, Math.ceil(track.steps.length / stepsPerLine));
     for (let l = 0; l < numLines; l++) {
       const stepsContainer = document.querySelector(`.steps-container[data-track-id="${track.id}"][data-line-index="${l}"]`);
       if (stepsContainer) {
@@ -5498,6 +5532,25 @@ function updateStepPositions() {
             const beatIndex = Math.floor(stepInLine / track.subdivision);
             const stepInBeat = stepInLine % track.subdivision;
             stepTimes.push(getSwungStepTime(beatIndex, stepInBeat, track.subdivision, 1.0, state.swing, true));
+          }
+
+          // Apply clamping to stepTimes to align beat markers correctly
+          const containerWidth = stepsContainer.getBoundingClientRect().width || stepsContainer.offsetWidth || 368;
+          const cellWidthPercent = (14 * subdivFactor / containerWidth) * 100;
+          const cellWidthInBeats = (cellWidthPercent / 100) * state.beats;
+
+          for (let i = stepsPerLine - 2; i >= 0; i--) {
+            if (stepTimes[i] > stepTimes[i+1] - cellWidthInBeats) {
+              stepTimes[i] = stepTimes[i+1] - cellWidthInBeats;
+            }
+          }
+          if (stepTimes[0] < 0) {
+            stepTimes[0] = 0;
+          }
+          for (let i = 1; i < stepsPerLine; i++) {
+            if (stepTimes[i] < stepTimes[i-1] + cellWidthInBeats) {
+              stepTimes[i] = stepTimes[i-1] + cellWidthInBeats;
+            }
           }
 
           boundaries.forEach((b, idx) => {
