@@ -509,27 +509,40 @@ function isIconTheme() {
 // backdrop-filter blur, and a per-step playhead glide (CSS transition on the
 // compositor) instead of per-frame JS updates.
 let perfLite = false;
+let disableBlur = false;
 
 function setPerfMode(lite) {
   perfLite = !!lite;
   document.body.classList.toggle("perf-lite", perfLite);
 }
 
+function setBlurMode(disable) {
+  disableBlur = !!disable;
+  document.body.classList.toggle("disable-blur", disableBlur);
+}
+
 // Initial immediate hardware & config check (benchmark will run during loading)
 (function detectPerfMode() {
   try {
     const forced = localStorage.getItem("djembe-perf");
-    if (forced === "lite") { setPerfMode(true); return; }
-    if (forced === "full") { setPerfMode(false); return; }
+    if (forced === "lite") {
+      setPerfMode(true);
+      setBlurMode(false);
+      return;
+    }
+    if (forced === "full") {
+      setPerfMode(false);
+      setBlurMode(false);
+      return;
+    }
 
     const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     const mem = navigator.deviceMemory || 8;
     const cores = navigator.hardwareConcurrency || 8;
     const reduced = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-    
-    // Slower phones (memory <= 4GB or cores <= 6) default to performance mode immediately
     if (reduced || mem <= 2 || cores <= 3 || (isMobile && (mem <= 4 || cores <= 6))) {
       setPerfMode(true);
+      setBlurMode(true);
       return;
     }
   } catch (e) { }
@@ -591,9 +604,11 @@ function runLoadingBenchmark() {
         console.log(`Pre-playback benchmark median: ${median.toFixed(1)}ms`);
         if (median > threshold) {
           setPerfMode(true);
+          setBlurMode(true);
           console.log(`Pre-playback benchmark triggered perf-lite. Median frame time: ${median.toFixed(1)}ms`);
         } else {
           setPerfMode(false);
+          setBlurMode(false);
           console.log(`Pre-playback benchmark passed. Median frame time: ${median.toFixed(1)}ms`);
         }
         resolve();
@@ -3880,6 +3895,7 @@ function setupEventListeners() {
         const mode = btn.getAttribute("data-perf");
         localStorage.setItem("djembe-perf", mode);
         setPerfMode(mode === "lite");
+        setBlurMode(false);
         updatePlayheadOptionUI();
       });
     });

@@ -2259,48 +2259,48 @@ body.unified .app-container {
 }
 
 /* Kill expensive backdrop blur on lite devices */
-body.perf-lite .glass-panel,
-body.perf-lite .mobile-header,
-body.perf-lite .controls-bar,
-body.perf-lite .modal-overlay,
-body.perf-lite .modal-content,
-body.perf-lite .variations-popup {
+body.disable-blur .glass-panel,
+body.disable-blur .mobile-header,
+body.disable-blur .controls-bar,
+body.disable-blur .modal-overlay,
+body.disable-blur .modal-content,
+body.disable-blur .variations-popup {
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
 }
 
 /* Solid dark backdrops replace the glass effect */
-body.perf-lite:not(.light-theme) .glass-panel {
+body.disable-blur:not(.light-theme) .glass-panel {
   background: #0b0e15 !important;
 }
 
-body.perf-lite:not(.light-theme) .controls-bar {
+body.disable-blur:not(.light-theme) .controls-bar {
   background: #07090e !important;
 }
 
-body.perf-lite:not(.light-theme) .modal-content {
+body.disable-blur:not(.light-theme) .modal-content {
   background: #10141d !important;
 }
 
-body.perf-lite:not(.light-theme) .variations-popup {
+body.disable-blur:not(.light-theme) .variations-popup {
   background: #10141d !important;
 }
 
 /* Light theme gets solid light surfaces instead */
-body.perf-lite.light-theme .glass-panel,
-body.perf-lite.light-theme .modal-content,
-body.perf-lite.light-theme .variations-popup {
+body.disable-blur.light-theme .glass-panel,
+body.disable-blur.light-theme .modal-content,
+body.disable-blur.light-theme .variations-popup {
   background: #ffffff !important;
 }
 
-body.perf-lite.light-theme .controls-bar {
+body.disable-blur.light-theme .controls-bar {
   background: #f4f6fa !important;
 }
 
 /* Cheaper shadows */
-body.perf-lite .glass-panel,
-body.perf-lite .track-row,
-body.perf-lite .controls-bar {
+body.disable-blur .glass-panel,
+body.disable-blur .track-row,
+body.disable-blur .controls-bar {
   box-shadow: none !important;
 }
 
@@ -2950,45 +2950,45 @@ body.theme-studio.light-theme .playhead-line {
    djembe-perf = "lite" / "full".
    ============================================================ */
 
-body.perf-lite .glass-panel,
-body.perf-lite .mobile-header,
-body.perf-lite .controls-bar,
-body.perf-lite .modal-overlay,
-body.perf-lite .modal-content,
-body.perf-lite .variations-popup {
+body.disable-blur .glass-panel,
+body.disable-blur .mobile-header,
+body.disable-blur .controls-bar,
+body.disable-blur .modal-overlay,
+body.disable-blur .modal-content,
+body.disable-blur .variations-popup {
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
 }
 
-body.perf-lite:not(.light-theme) .glass-panel {
+body.disable-blur:not(.light-theme) .glass-panel {
   background: #0b0e15 !important;
 }
 
-body.perf-lite:not(.light-theme) .controls-bar {
+body.disable-blur:not(.light-theme) .controls-bar {
   background: #07090e !important;
 }
 
-body.perf-lite:not(.light-theme) .modal-content {
+body.disable-blur:not(.light-theme) .modal-content {
   background: #10141d !important;
 }
 
-body.perf-lite:not(.light-theme) .variations-popup {
+body.disable-blur:not(.light-theme) .variations-popup {
   background: #10141d !important;
 }
 
-body.perf-lite.light-theme .glass-panel,
-body.perf-lite.light-theme .modal-content,
-body.perf-lite.light-theme .variations-popup {
+body.disable-blur.light-theme .glass-panel,
+body.disable-blur.light-theme .modal-content,
+body.disable-blur.light-theme .variations-popup {
   background: #ffffff !important;
 }
 
-body.perf-lite.light-theme .controls-bar {
+body.disable-blur.light-theme .controls-bar {
   background: #f4f6fa !important;
 }
 
-body.perf-lite .glass-panel,
-body.perf-lite .track-row,
-body.perf-lite .controls-bar {
+body.disable-blur .glass-panel,
+body.disable-blur .track-row,
+body.disable-blur .controls-bar {
   box-shadow: none !important;
 }
 
@@ -3260,7 +3260,7 @@ body:not(.theme-studio) .triplet-badge {
 }
 
 /* Light theme overrides for Volume Slider window and Sound Set popup */
-body.light-theme.perf-lite .large-slider-window {
+body.light-theme.disable-blur .large-slider-window {
   background: #ffffff !important;
   border: 1px solid rgba(0, 0, 0, 0.12) !important;
   box-shadow: 0 20px 40px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.8) !important;
@@ -3268,7 +3268,7 @@ body.light-theme.perf-lite .large-slider-window {
   -webkit-backdrop-filter: none !important;
 }
 
-body.light-theme:not(.perf-lite) .large-slider-window {
+body.light-theme:not(.disable-blur) .large-slider-window {
   background: rgba(255, 255, 255, 0.72) !important;
   border: 1px solid rgba(0, 0, 0, 0.12) !important;
   box-shadow: 0 20px 40px rgba(0,0,0,0.15), inset 0 1px 0 rgba(255,255,255,0.8) !important;
@@ -3309,7 +3309,7 @@ body.light-theme .large-slider-input::-moz-range-thumb {
   border: 2px solid #ffffff !important;
 }
 
-body.light-theme.perf-lite .sample-group-popup {
+body.light-theme.disable-blur .sample-group-popup {
   background: #ffffff !important;
   border: 1px solid rgba(0, 0, 0, 0.12) !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
@@ -3317,7 +3317,7 @@ body.light-theme.perf-lite .sample-group-popup {
   -webkit-backdrop-filter: none !important;
 }
 
-body.light-theme:not(.perf-lite) .sample-group-popup {
+body.light-theme:not(.disable-blur) .sample-group-popup {
   background: rgba(255, 255, 255, 0.72) !important;
   border: 1px solid rgba(0, 0, 0, 0.12) !important;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15), inset 0 1px 0 rgba(255, 255, 255, 0.8) !important;
