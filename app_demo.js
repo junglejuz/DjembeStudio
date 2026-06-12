@@ -301,6 +301,31 @@ function getInstrumentSVG(instrument, type) {
 }
 
 function getInstrumentHSL(instrument, type, isCall) {
+  let hsl = getInstrumentHSLRaw(instrument, type, isCall);
+  if (document.body && document.body.classList.contains("light-theme")) {
+    const parts = hsl.split(",").map(p => p.trim());
+    if (parts.length === 3) {
+      const h = parts[0];
+      let s = parseFloat(parts[1]);
+      let l = parseFloat(parts[2]);
+      
+      // Reduce saturation so it's less electric/neon (between 40% and 55%)
+      s = Math.min(55, s * 0.6);
+      
+      // Reduce lightness so it's darker (between 25% and 38%)
+      if (l > 50) {
+        l = 32 + (l - 50) * 0.2; // e.g. 75% -> 37%
+      } else {
+        l = Math.max(25, l * 0.75); // e.g. 36% -> 27%
+      }
+      
+      return `${h}, ${Math.round(s)}%, ${Math.round(l)}%`;
+    }
+  }
+  return hsl;
+}
+
+function getInstrumentHSLRaw(instrument, type, isCall) {
   if (isCall) {
     return "35, 90%, 60%"; // warm gold / amber
   }
@@ -473,7 +498,7 @@ function isIconTheme() {
   try {
     const saved = localStorage.getItem("djembe-theme");
     const name = saved === "light" ? "light" : ((saved === "classic" || saved === "dark") ? "classic" : "studio");
-    document.body.classList.toggle("theme-studio", name === "studio");
+    document.body.classList.toggle("theme-studio", name === "studio" || name === "light");
     document.body.classList.toggle("light-theme", name === "light");
   } catch (e) { }
 })();
@@ -3670,7 +3695,7 @@ function setupEventListeners() {
 
   function applyTheme(name, rerender = true) {
     if (name !== "studio" && name !== "classic" && name !== "light") name = "studio";
-    document.body.classList.toggle("theme-studio", name === "studio");
+    document.body.classList.toggle("theme-studio", name === "studio" || name === "light");
     document.body.classList.toggle("light-theme", name === "light");
     try { localStorage.setItem("djembe-theme", name); } catch (e) { }
 
@@ -7533,6 +7558,34 @@ function openVariationsMenu(track, stepIdx, cellElement, event) {
       { val: `${muteChar}*${openChar}*${muteChar}`, label: `${muteChar}*${openChar}*${muteChar}` }
     ];
   }
+
+  // Populate preset grids dynamically with SVG icons and values
+  const renderPresetsInContainer = (container, presets) => {
+    if (!container) return;
+    container.innerHTML = "";
+    presets.forEach(preset => {
+      const btn = document.createElement("button");
+      btn.className = "variation-btn";
+      btn.title = preset.label;
+      btn.type = "button";
+      
+      const iconSpan = document.createElement("span");
+      iconSpan.className = "variation-btn-icon";
+      iconSpan.innerHTML = getSoundIcon(track, preset.val);
+      btn.appendChild(iconSpan);
+      
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        applyValue(preset.val);
+      };
+      
+      container.appendChild(btn);
+    });
+  };
+
+  renderPresetsInContainer(flamContainer, presetsFlam);
+  renderPresetsInContainer(rollContainer, presetsRoll);
+  renderPresetsInContainer(tripletContainer, presetsTriplet);
 
   if (builderHit1 && builderHit2 && builderApply) {
     options.forEach(opt => {
