@@ -2431,7 +2431,7 @@ function injectLargeSliderOverlay() {
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     display: none;
-    z-index: 100000;
+    z-index: 100005;
     pointer-events: auto;
   `;
 
@@ -2514,6 +2514,7 @@ function injectLargeSliderOverlay() {
   overlay.addEventListener("pointerdown", (e) => {
     if (e.target === overlay) {
       overlay.style.display = "none";
+      overlay.classList.remove("active");
     }
   });
 
@@ -2636,6 +2637,7 @@ function setupLargeSlider(originalSlider, options = {}) {
 
     updateLabelAndValue();
     overlay.style.display = "block";
+    overlay.classList.add("active");
 
     const windowWidth = windowDiv.offsetWidth || 280;
     const windowHeight = windowDiv.offsetHeight || 120;
@@ -2686,6 +2688,7 @@ function setupLargeSlider(originalSlider, options = {}) {
       originalSlider.dispatchEvent(new Event("input"));
       originalSlider.dispatchEvent(new Event("change"));
       overlay.style.display = "none";
+      overlay.classList.remove("active");
     };
     largeInput.addEventListener("change", largeInput._onChangeHandler);
     largeInput.addEventListener("pointerup", largeInput._onChangeHandler);
@@ -2752,6 +2755,7 @@ function setupLargeSlider(originalSlider, options = {}) {
         }
 
         overlay.style.display = "none";
+        overlay.classList.remove("active");
       };
 
       window.addEventListener("pointermove", onPointerMove, { passive: false });

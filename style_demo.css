@@ -1018,7 +1018,8 @@ body {
 
 /* Disable all settings header buttons when any modal or popup overlay is active */
 body:has(.modal-overlay.active) .btn-title-icon,
-body:has(.sample-group-overlay.active) .btn-title-icon {
+body:has(.sample-group-overlay.active) .btn-title-icon,
+body:has(#large-slider-overlay.active) .btn-title-icon {
   opacity: 0.35 !important;
   pointer-events: none !important;
   transition: all 0.2s ease !important;
@@ -3287,26 +3288,56 @@ body.light-theme .large-slider-value {
 
 body.light-theme .large-slider-input {
   background: rgba(0, 0, 0, 0.08) !important;
+  height: 4px !important;
+  border-radius: 2px !important;
+  margin: 0.5rem 0 !important;
 }
 
 /* Chrome/Safari slider track and thumb for light theme */
 body.light-theme .large-slider-input::-webkit-slider-runnable-track {
   background: rgba(0, 0, 0, 0.08) !important;
+  height: 4px !important;
+  border-radius: 2px !important;
 }
 
 body.light-theme .large-slider-input::-webkit-slider-thumb {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15) !important;
-  border: 2px solid #ffffff !important;
+  -webkit-appearance: none !important;
+  appearance: none !important;
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50% !important;
+  background: var(--accent-color, var(--primary, #6366f1)) !important;
+  cursor: pointer !important;
+  box-shadow: 0 0 8px var(--primary-glow) !important;
+  border: none !important;
+  margin-top: -5px !important; /* Center on 4px track */
+  transition: transform 0.1s ease !important;
+}
+
+body.light-theme .large-slider-input::-webkit-slider-thumb:active {
+  transform: scale(1.2) !important;
 }
 
 /* Firefox slider track and thumb for light theme */
 body.light-theme .large-slider-input::-moz-range-track {
   background: rgba(0, 0, 0, 0.08) !important;
+  height: 4px !important;
+  border-radius: 2px !important;
 }
 
 body.light-theme .large-slider-input::-moz-range-thumb {
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.15) !important;
-  border: 2px solid #ffffff !important;
+  width: 14px !important;
+  height: 14px !important;
+  border-radius: 50% !important;
+  background: var(--accent-color, var(--primary, #6366f1)) !important;
+  cursor: pointer !important;
+  box-shadow: 0 0 8px var(--primary-glow) !important;
+  border: none !important;
+  transition: transform 0.1s ease !important;
+}
+
+body.light-theme .large-slider-input::-moz-range-thumb:active {
+  transform: scale(1.2) !important;
 }
 
 body.light-theme.disable-blur .sample-group-popup {
@@ -3369,6 +3400,18 @@ body.light-theme .sample-group-popup-btn.card-style.active .popup-btn-label {
 
 body.light-theme .popup-tuning-container {
   border-top-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light-theme .popup-tuning-container input[type="range"] {
+  background: rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light-theme .popup-tuning-container input[type="range"]::-webkit-slider-runnable-track {
+  background: rgba(0, 0, 0, 0.08) !important;
+}
+
+body.light-theme .popup-tuning-container input[type="range"]::-moz-range-track {
+  background: rgba(0, 0, 0, 0.08) !important;
 }
 
 body.light-theme .popup-tuning-header {
