@@ -1889,3 +1889,78 @@ body.unified .app-container {
     min-width: 420px;
   }
 }
+
+/* ============================================================
+   PERFORMANCE LITE MODE (older / slower devices)
+   Activated via body.perf-lite (auto-detected in JS, or forced
+   with localStorage djembe-perf = "lite" / "full").
+   Newer phones keep blur + per-frame playhead; lite mode swaps
+   blur for solid backdrops and animates via compositor only.
+   ============================================================ */
+
+/* Playhead now moves via transform on all devices (cheaper than left) */
+.playhead-line {
+  left: 0 !important;
+  will-change: transform !important;
+}
+
+/* Kill expensive backdrop blur on lite devices */
+body.perf-lite .glass-panel,
+body.perf-lite .mobile-header,
+body.perf-lite .controls-bar,
+body.perf-lite .modal-overlay,
+body.perf-lite .modal-content,
+body.perf-lite .variations-popup {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Solid dark backdrops replace the glass effect */
+body.perf-lite:not(.light-theme) .glass-panel {
+  background: #0b0e15 !important;
+}
+
+body.perf-lite:not(.light-theme) .controls-bar {
+  background: #07090e !important;
+}
+
+body.perf-lite:not(.light-theme) .modal-content {
+  background: #10141d !important;
+}
+
+body.perf-lite:not(.light-theme) .variations-popup {
+  background: #10141d !important;
+}
+
+/* Light theme gets solid light surfaces instead */
+body.perf-lite.light-theme .glass-panel,
+body.perf-lite.light-theme .modal-content,
+body.perf-lite.light-theme .variations-popup {
+  background: #ffffff !important;
+}
+
+body.perf-lite.light-theme .controls-bar {
+  background: #f4f6fa !important;
+}
+
+/* Cheaper shadows */
+body.perf-lite .glass-panel,
+body.perf-lite .track-row,
+body.perf-lite .controls-bar {
+  box-shadow: none !important;
+}
+
+/* Note-hit flash without brightness filter (transform-only = compositor) */
+body.perf-lite .step-cell.strike-flash {
+  animation: liteStrikeFlash 0.22s ease-out forwards !important;
+}
+
+@keyframes liteStrikeFlash {
+  0% {
+    transform: translateY(-50%) scale(calc(var(--current-scale, 1) * 1.35));
+  }
+
+  100% {
+    transform: translateY(-50%) scale(var(--current-scale, 1));
+  }
+}

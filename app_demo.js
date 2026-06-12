@@ -478,6 +478,54 @@ function isIconTheme() {
   } catch (e) { }
 })();
 
+// --- Performance mode -------------------------------------------------------
+// Older/slower phones get a "lite" rendering path: solid backdrops instead of
+// backdrop-filter blur, and a per-step playhead glide (CSS transition on the
+// compositor) instead of per-frame JS updates.
+let perfLite = false;
+
+function setPerfMode(lite) {
+  perfLite = !!lite;
+  document.body.classList.toggle("perf-lite", perfLite);
+}
+
+(function detectPerfMode() {
+  try {
+    // Manual override for testing: localStorage djembe-perf = "lite" | "full"
+    const forced = localStorage.getItem("djembe-perf");
+    if (forced === "lite") { setPerfMode(true); return; }
+    if (forced === "full") { setPerfMode(false); return; }
+
+    const mem = navigator.deviceMemory || 8;
+    const cores = navigator.hardwareConcurrency || 8;
+    const reduced = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced || mem <= 2 || cores <= 3) { setPerfMode(true); return; }
+
+    // Frame-time probe after initial load settles: median frame > ~22ms => lite
+    setTimeout(() => {
+      const times = [];
+      let last = performance.now();
+      function probe(now) {
+        times.push(now - last);
+        last = now;
+        if (times.length < 30) {
+          requestAnimationFrame(probe);
+        } else {
+          times.sort((a, b) => a - b);
+          if (times[15] > 22) setPerfMode(true);
+        }
+      }
+      requestAnimationFrame(probe);
+    }, 1500);
+  } catch (e) { }
+})();
+
+// Playhead width caches go stale on rotation/resize
+window.addEventListener("resize", () => {
+  (cachedStepContainers || []).forEach(c => { c._phWidth = null; });
+});
+
+
 // Helper to return clean visual SVGs for different sound strikes
 function getSoundIcon(track, val, useOriginalIcons = false) {
   if (!val) return "";
@@ -3657,7 +3705,7 @@ function setupEventListeners() {
     menuBtnTheme.addEventListener("click", () => {
       if (hamburgerMenu) hamburgerMenu.classList.remove("active");
       themesModal.classList.add("active");
-      if (window.gsap) {
+      if (window.gsap && !perfLite) {
         const content = themesModal.querySelector(".modal-content");
         if (content) gsap.fromTo(content, { scale: 0.92, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.28, ease: "back.out(1.6)" });
       }
@@ -3666,7 +3714,7 @@ function setupEventListeners() {
     themesModal.querySelectorAll(".theme-option-btn").forEach(btn => {
       btn.addEventListener("click", () => {
         applyTheme(btn.getAttribute("data-theme"));
-        if (window.gsap) {
+        if (window.gsap && !perfLite) {
           gsap.fromTo(".app-container", { opacity: 0.6 }, { opacity: 1, duration: 0.35, ease: "power2.out" });
         }
       });
@@ -3809,7 +3857,7 @@ function triggerLiveHit(inst, hit, padElement) {
 
   // Visual Flash
   if (padElement) {
-    if (window.gsap) {
+    if (window.gsap && !perfLite) {
       gsap.fromTo(padElement, { scale: 0.9 }, { scale: 1, duration: 0.35, ease: "back.out(2.5)", overwrite: "auto" });
     }
     padElement.classList.add("pad-active");
@@ -5088,10 +5136,32 @@ function animatePlayhead() {
             // Progress within this line (0 to 1)
             const tickInLine = trackCurrentTick % (state.beats * 12);
             const progress = tickInLine / (state.beats * 12);
-            playheadLine.style.left = `${progress * 100}%`;
+            const lineWidth = container._phWidth || (container._phWidth = container.offsetWidth);
+            if (!perfLite) {
+              // Full mode: GPU-composited glide, updated every frame (transform = no layout)
+              playheadLine.style.transform = `translate3d(${progress * lineWidth}px, 0, 0)`;
+            } else {
+              // Lite mode: JS runs once per step; a CSS transition glides to the next step
+              const stepsPerLineCount = state.beats * track.subdivision;
+              const stepIdx = Math.floor(progress * stepsPerLineCount);
+              if (playheadLine._liteStep !== stepIdx) {
+                const stepDur = secondsPerBeat / track.subdivision;
+                if (playheadLine._liteStep === undefined || stepIdx < playheadLine._liteStep) {
+                  // First frame or loop wrap: snap to the current step, then glide
+                  playheadLine.style.transition = "none";
+                  playheadLine.style.transform = `translate3d(${(stepIdx / stepsPerLineCount) * lineWidth}px, 0, 0)`;
+                  void playheadLine.offsetWidth;
+                }
+                playheadLine._liteStep = stepIdx;
+                const targetX = Math.min(1, (stepIdx + 1) / stepsPerLineCount) * lineWidth;
+                playheadLine.style.transition = `transform ${stepDur.toFixed(3)}s linear`;
+                playheadLine.style.transform = `translate3d(${targetX}px, 0, 0)`;
+              }
+            }
             container.classList.add("active-line");
           } else {
             playheadLine.classList.remove("active");
+            playheadLine._liteStep = undefined;
             container.classList.remove("active-line");
           }
         }
@@ -5102,7 +5172,10 @@ function animatePlayhead() {
     const idleContainers = cachedStepContainers.length ? cachedStepContainers : Array.from(document.querySelectorAll(".steps-container"));
     idleContainers.forEach(container => {
       const playhead = container.querySelector(".playhead-line");
-      if (playhead) playhead.classList.remove("active");
+      if (playhead) {
+        playhead.classList.remove("active");
+        playhead._liteStep = undefined;
+      }
       container.classList.remove("active-line");
     });
   }
