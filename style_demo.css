@@ -3157,3 +3157,11 @@ body.theme-tinted .step-cell.shekere-X {
 body.theme-tinted .step-cell.step-cell-composite {
   color: hsla(var(--part-color-hsl, 220, 30%, 75%), 0.85) !important;
 }
+
+/* Make variations popup unselectable on long press */
+.variations-popup {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+}

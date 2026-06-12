@@ -3843,9 +3843,23 @@ function setupEventListeners() {
   }
 
   if (menuBtnTheme && themesModal) {
+    const playheadBtns = themesModal.querySelectorAll(".playhead-option-btn");
+    function updatePlayheadOptionUI() {
+      const activeMode = perfLite ? "lite" : "full";
+      playheadBtns.forEach(btn => {
+        const mode = btn.getAttribute("data-perf");
+        const check = btn.querySelector(".playhead-check");
+        if (check) {
+          check.style.display = (mode === activeMode) ? "block" : "none";
+        }
+        btn.classList.toggle("active", mode === activeMode);
+      });
+    }
+
     menuBtnTheme.addEventListener("click", () => {
       if (hamburgerMenu) hamburgerMenu.classList.remove("active");
       themesModal.classList.add("active");
+      updatePlayheadOptionUI();
       if (window.gsap && !perfLite) {
         const content = themesModal.querySelector(".modal-content");
         if (content) gsap.fromTo(content, { scale: 0.92, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.28, ease: "back.out(1.6)" });
@@ -3860,6 +3874,17 @@ function setupEventListeners() {
         }
       });
     });
+
+    playheadBtns.forEach(btn => {
+      btn.addEventListener("click", () => {
+        const mode = btn.getAttribute("data-perf");
+        localStorage.setItem("djembe-perf", mode);
+        setPerfMode(mode === "lite");
+        updatePlayheadOptionUI();
+      });
+    });
+
+    updatePlayheadOptionUI();
 
     const themesBtnClose = document.getElementById("themes-btn-close");
     if (themesBtnClose) {
@@ -7621,7 +7646,7 @@ function openVariationsMenu(track, stepIdx, cellElement, event) {
 
   if (!popup) return;
 
-  title.textContent = `Edit Note \u00b7 ${cleanTrackName(track.name)} \u00b7 Step ${stepIdx + 1}`;
+  title.textContent = "Flams / Rolls";
 
 
 
