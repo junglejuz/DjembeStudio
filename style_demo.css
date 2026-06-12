@@ -1250,31 +1250,32 @@ body:has(.sample-group-overlay.active) .btn-title-icon {
    LIGHT THEME — Mobile Demo Overrides
    ============================================================ */
 body.light-theme {
-  background-color: #e8eaf2;
+  background-color: #f3efe6 !important;
   --studio-note: #1f2937;
   --studio-note-dim: rgba(31, 41, 55, 0.4);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%23000000' stroke-width='1.5' stroke-opacity='0.035'%3E%3Cpolygon points='30,5 55,30 30,55 5,30'/%3E%3Ccircle cx='30' cy='30' r='3.5' fill='%23000000' fill-opacity='0.035' stroke='none'/%3E%3Cpath d='M0,0 L10,10 M60,0 L50,10 M0,60 L10,50 M60,60 L50,50 M30,0 v5 M30,55 v5 M0,30 h5 M55,30 h5'/%3E%3Cpolygon points='0,30 12,18 12,42' fill='%23000000' fill-opacity='0.015'/%3E%3Cpolygon points='60,30 48,18 48,42' fill='%23000000' fill-opacity='0.015'/%3E%3C/g%3E%3C/svg%3E") !important;
 }
 
 body.light-theme .demo-device-frame {
-  background: #f0f2f7;
-  border-color: #c5cae0;
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2), 0 0 20px rgba(99, 102, 241, 0.08);
+  background: #fcfbfa;
+  border-color: #dcd7cd;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 20px rgba(99, 102, 241, 0.05);
 }
 
 body.light-theme .track-row {
-  background: #ffffff !important;
+  background: #e5dfd2 !important; /* Darker than background (#f3efe6) but still lighter than notes */
   border: 1px solid rgba(0, 0, 0, 0.08) !important;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
 }
 
 body.light-theme .track-row:hover {
-  background: #fcfdfe !important;
+  background: #ded8cb !important;
   border-color: rgba(0, 0, 0, 0.12) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
 }
 
 body.light-theme .track-row.focused-track {
-  background: #f9fafb !important;
+  background: #dbd5c8 !important;
   border-color: rgba(99, 102, 241, 0.3) !important;
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.08) !important;
 }
@@ -1286,23 +1287,23 @@ body.light-theme .track-icon-wrapper {
 }
 
 body.light-theme .step-cell {
-  background: rgba(0, 0, 0, 0.03) !important;
+  background: rgba(0, 0, 0, 0.04) !important;
   border-color: rgba(0, 0, 0, 0.08) !important;
   color: var(--studio-note) !important;
 }
 
 body.light-theme .step-cell.beat-start-empty {
-  background: rgba(0, 0, 0, 0.03) !important;
+  background: rgba(0, 0, 0, 0.04) !important;
   border-color: rgba(0, 0, 0, 0.08) !important;
 }
 
 body.light-theme .step-cell.has-note {
-  background: rgba(0, 0, 0, 0.07) !important;
+  background: rgba(0, 0, 0, 0.08) !important;
   border-color: rgba(0, 0, 0, 0.18) !important;
 }
 
 body.light-theme .step-cell.step-cell-composite {
-  background: rgba(0, 0, 0, 0.07) !important;
+  background: rgba(0, 0, 0, 0.08) !important;
   border-color: rgba(0, 0, 0, 0.18) !important;
 }
 
@@ -1340,7 +1341,7 @@ body.light-theme .glass-panel {
 }
 
 body.light-theme .hamburger-menu.glass-panel {
-  background: rgba(240, 242, 247, 0.97) !important;
+  background: rgba(243, 239, 230, 0.97) !important;
 }
 
 body.light-theme .menu-item-btn {
@@ -1356,9 +1357,9 @@ body.light-theme .modal-overlay {
 }
 
 body.light-theme .modal-content {
-  background: rgba(255, 255, 255, 0.95) !important;
+  background: #faf8f4 !important;
   border: 1px solid rgba(0, 0, 0, 0.12) !important;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.18) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15) !important;
   color: #1f2937 !important;
 }
 
@@ -1379,9 +1380,9 @@ body.light-theme input[type="range"] {
 }
 
 body.light-theme .variations-popup {
-  background: rgba(255, 255, 255, 0.96) !important;
+  background: #faf8f4 !important;
   border-color: rgba(0, 0, 0, 0.12) !important;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15) !important;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12) !important;
   color: #1f2937 !important;
 }
 
@@ -1417,9 +1418,9 @@ body.light-theme .variation-btn-icon {
 }
 
 body.light-theme .controls-bar {
-  background: rgba(255, 255, 255, 0.82) !important;
+  background: rgba(243, 239, 230, 0.94) !important;
   border-top: 1px solid rgba(0, 0, 0, 0.08) !important;
-  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.05) !important;
 }
 
 body.light-theme #solos-control-row,
