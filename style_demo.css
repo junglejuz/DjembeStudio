@@ -2347,14 +2347,16 @@ body.perf-lite .playhead-line {
 }
 
 body.perf-lite .step-cell.current-beat-highlight {
-  background-color: rgba(99, 102, 241, 0.18) !important;
-  border-color: rgba(99, 102, 241, 0.35) !important;
+  background-color: rgba(99, 102, 241, 0.32) !important;
+  border-color: rgba(129, 140, 248, 0.7) !important;
+  box-shadow: 0 0 6px rgba(99, 102, 241, 0.2) !important;
 }
 
 body.perf-lite.light-theme .step-cell.current-beat-highlight,
 body.theme-studio.perf-lite.light-theme .step-cell.current-beat-highlight {
-  background-color: rgba(217, 119, 6, 0.1) !important;
-  border-color: rgba(217, 119, 6, 0.25) !important;
+  background-color: rgba(217, 119, 6, 0.24) !important;
+  border-color: rgba(217, 119, 6, 0.65) !important;
+  box-shadow: 0 0 6px rgba(217, 119, 6, 0.15) !important;
 }
 
 /* Active line is no longer boxed/highlighted... */
@@ -2451,4 +2453,126 @@ body.theme-studio .variation-btn-icon svg {
 .track-row.part-ech-active .track-icon-wrapper {
   color: #ef4444 !important;
   border-color: rgba(239, 68, 68, 0.5) !important;
+}
+
+/* ============================================================
+   LOADING SCREEN UI
+   ============================================================ */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+  color: #f8fafc;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Outfit', 'Inter', sans-serif;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.5s;
+}
+
+/* Confined to device mockup frame when inside .demo-device-frame */
+.demo-device-frame .loading-screen {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 32px;
+}
+
+.loading-content {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  z-index: 10;
+  padding: 2rem;
+}
+
+.loading-spinner-container {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-spinner {
+  width: 70px;
+  height: 70px;
+  border: 3.5px solid rgba(129, 140, 248, 0.1);
+  border-top: 3.5px solid #818cf8;
+  border-radius: 50%;
+  animation: loading-spin 1.2s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite;
+}
+
+.loading-spinner-inner {
+  position: absolute;
+  width: 46px;
+  height: 46px;
+  border: 2.5px solid rgba(244, 63, 94, 0.1);
+  border-bottom: 2.5px solid #f43f5e;
+  border-radius: 50%;
+  animation: loading-spin 0.9s cubic-bezier(0.5, 0.1, 0.5, 0.9) infinite reverse;
+}
+
+.loading-title {
+  font-size: 1.9rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 0;
+  background: linear-gradient(135deg, #a5b4fc 0%, #818cf8 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 4px 12px rgba(129, 140, 248, 0.15);
+}
+
+.loading-status {
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: #94a3b8;
+  letter-spacing: 0.05em;
+  min-height: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+/* Light Theme loading screen styles */
+body.light-theme .loading-screen {
+  background: #f3efe6 !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60' viewBox='0 0 60 60'%3E%3Cg fill='none' stroke='%23000000' stroke-width='1.5' stroke-opacity='0.035'%3E%3Cpolygon points='30,5 55,30 30,55 5,30'/%3E%3Ccircle cx='30' cy='30' r='3.5' fill='%23000000' fill-opacity='0.035' stroke='none'/%3E%3Cpath d='M0,0 L10,10 M60,0 L50,10 M0,60 L10,50 M60,60 L50,50 M30,0 v5 M30,55 v5 M0,30 h5 M55,30 h5'/%3E%3Cpolygon points='0,30 12,18 12,42' fill='%23000000' fill-opacity='0.015'/%3E%3Cpolygon points='60,30 48,18 48,42' fill='%23000000' fill-opacity='0.015'/%3E%3C/g%3E%3C/svg%3E") !important;
+  color: #1f2937 !important;
+}
+
+body.light-theme .loading-title {
+  background: linear-gradient(135deg, #1f2937 0%, #4b5563 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  text-shadow: none !important;
+}
+
+body.light-theme .loading-status {
+  color: #6b7280 !important;
+}
+
+body.light-theme .loading-spinner {
+  border: 3.5px solid rgba(79, 70, 229, 0.1) !important;
+  border-top: 3.5px solid #4f46e5 !important;
+}
+
+body.light-theme .loading-spinner-inner {
+  border: 2.5px solid rgba(217, 119, 6, 0.1) !important;
+  border-bottom: 2.5px solid #d97706 !important;
+}
+
+@keyframes loading-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

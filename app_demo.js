@@ -514,9 +514,9 @@ function setPerfMode(lite) {
   document.body.classList.toggle("perf-lite", perfLite);
 }
 
+// Initial immediate hardware & config check (benchmark will run during loading)
 (function detectPerfMode() {
   try {
-    // Manual override for testing: localStorage djembe-perf = "lite" | "full"
     const forced = localStorage.getItem("djembe-perf");
     if (forced === "lite") { setPerfMode(true); return; }
     if (forced === "full") { setPerfMode(false); return; }
@@ -531,66 +531,75 @@ function setPerfMode(lite) {
       setPerfMode(true);
       return;
     }
-
-    // Frame-time probe after initial load settles: strict 17.5ms limit on mobile at idle
-    setTimeout(() => {
-      const times = [];
-      let last = performance.now();
-      function probe(now) {
-        times.push(now - last);
-        last = now;
-        if (times.length < 35) {
-          requestAnimationFrame(probe);
-        } else {
-          times.sort((a, b) => a - b);
-          const median = times[Math.floor(times.length / 2)];
-          const threshold = isMobile ? 17.5 : 22;
-          if (median > threshold) {
-            setPerfMode(true);
-            console.log(`Idle performance probe triggered perf-lite. Median frame time: ${median.toFixed(1)}ms`);
-          }
-        }
-      }
-      requestAnimationFrame(probe);
-    }, 1500);
   } catch (e) { }
 })();
 
-// Active benchmark running during playback to catch mid-range lag
-let playbackProbeDone = false;
-function startPlaybackPerfProbe() {
-  if (playbackProbeDone || perfLite) return;
-  
-  const times = [];
-  let last = performance.now();
-  let frameCount = 0;
-  
-  function probe(now) {
-    if (!state.isPlaying) return; // play stopped, abort
+// Active benchmark run in requestAnimationFrame loop during loading screen
+function runLoadingBenchmark() {
+  return new Promise((resolve) => {
+    // If already forced, skip active benchmarking
+    const forced = localStorage.getItem("djembe-perf");
+    if (forced === "lite" || forced === "full") {
+      resolve();
+      return;
+    }
+    const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+    const mem = navigator.deviceMemory || 8;
+    const cores = navigator.hardwareConcurrency || 8;
+    const reduced = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduced || mem <= 2 || cores <= 3 || (isMobile && (mem <= 4 || cores <= 6))) {
+      resolve();
+      return;
+    }
+
+    const times = [];
+    let last = performance.now();
+    let frameCount = 0;
     
-    times.push(now - last);
-    last = now;
-    frameCount++;
-    
-    if (frameCount < 40) {
-      requestAnimationFrame(probe);
-    } else {
-      times.sort((a, b) => a - b);
-      const median = times[Math.floor(times.length / 2)];
-      const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-      const threshold = isMobile ? 18.0 : 23.0; // strict ~55fps threshold under active synthesis load
+    function probe(now) {
+      const delta = now - last;
+      last = now;
       
-      if (median > threshold) {
-        setPerfMode(true);
-        console.log(`Playback performance probe triggered perf-lite. Median: ${median.toFixed(1)}ms`);
+      // Skip first 5 frames to ignore startup/parsing jank
+      if (frameCount >= 5) {
+        times.push(delta);
+      }
+      frameCount++;
+      
+      // Calibrated workload: 100k loop of math calculations
+      let dummy = 0;
+      for (let i = 0; i < 100000; i++) {
+        dummy += Math.sin(i) * Math.cos(i);
+      }
+      
+      // Trigger DOM layout queries to simulate render engine stress
+      const testDiv = document.createElement("div");
+      testDiv.style.cssText = "position:absolute;width:10px;height:10px;overflow:hidden;visibility:hidden;";
+      testDiv.innerHTML = "<span>test</span>";
+      document.body.appendChild(testDiv);
+      const h = testDiv.offsetHeight; // force layout calculation
+      document.body.removeChild(testDiv);
+      
+      if (frameCount < 45) {
+        requestAnimationFrame(probe);
       } else {
-        playbackProbeDone = true;
-        console.log(`Playback performance probe passed. Median: ${median.toFixed(1)}ms`);
+        times.sort((a, b) => a - b);
+        const median = times[Math.floor(times.length / 2)];
+        const threshold = isMobile ? 21.0 : 22.0;
+        
+        console.log(`Pre-playback benchmark median: ${median.toFixed(1)}ms`);
+        if (median > threshold) {
+          setPerfMode(true);
+          console.log(`Pre-playback benchmark triggered perf-lite. Median frame time: ${median.toFixed(1)}ms`);
+        } else {
+          setPerfMode(false);
+          console.log(`Pre-playback benchmark passed. Median frame time: ${median.toFixed(1)}ms`);
+        }
+        resolve();
       }
     }
-  }
-  
-  requestAnimationFrame(probe);
+    requestAnimationFrame(probe);
+  });
 }
 
 // Playhead width caches go stale on rotation/resize
@@ -2726,6 +2735,9 @@ function setupLargeSlider(originalSlider, options = {}) {
 
 // Initialize Application
 function init() {
+  const loadingText = document.getElementById("loading-status-text");
+  let audioLoaded = false;
+
   // Bind progress indicator
   const loadStatusEl = document.getElementById("sample-load-status");
   const statusTextEl = loadStatusEl ? loadStatusEl.querySelector(".status-text") : null;
@@ -2749,16 +2761,54 @@ function init() {
         }, 2500);
       }
     }
+    // Update loading screen text
+    if (loadingText && !audioLoaded) {
+      loadingText.textContent = `Loading sound library (${loaded}/${total})...`;
+    }
   };
 
+  // Run benchmark during loading screen
+  const benchmarkPromise = runLoadingBenchmark().then(() => {
+    if (loadingText && !audioLoaded) {
+      loadingText.textContent = "Loading sound library...";
+    }
+  });
+
   // Pre-load audio samples safely in the background
+  let audioPromise;
   try {
-    synth.init().then(() => {
+    audioPromise = synth.init().then(() => {
       synth.humanisePitch = state.humanisePitch;
-    }).catch(err => console.error("Failed to init audio engine", err));
+      audioLoaded = true;
+      if (loadingText) {
+        loadingText.textContent = "Engine ready!";
+      }
+    }).catch(err => {
+      console.error("Failed to init audio engine", err);
+      audioLoaded = true;
+    });
   } catch (err) {
     console.error("Audio engine failed to initialize synchronously on load:", err);
+    audioPromise = Promise.resolve();
+    audioLoaded = true;
   }
+
+  // Dismiss loading screen once both benchmark and audio loading are done
+  Promise.all([benchmarkPromise, audioPromise]).then(() => {
+    const loadingScreen = document.getElementById("loading-screen");
+    if (loadingScreen) {
+      loadingScreen.style.opacity = "0";
+      setTimeout(() => {
+        loadingScreen.style.display = "none";
+      }, 500);
+    }
+  }).catch(err => {
+    console.error("Failed to initialize system during startup:", err);
+    const loadingScreen = document.getElementById("loading-screen");
+    if (loadingScreen) {
+      loadingScreen.style.display = "none";
+    }
+  });
 
   loadPresetsDropdown();
 
@@ -4607,7 +4657,6 @@ function togglePlay() {
     // PLAY
     synth.resume();
     state.isPlaying = true;
-    startPlaybackPerfProbe();
     btnPlay.innerHTML = `<svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>`;
     btnPlay.classList.add("btn-danger-round");
 
