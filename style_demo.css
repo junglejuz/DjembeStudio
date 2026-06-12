@@ -1267,21 +1267,21 @@ body.theme-studio.light-theme .demo-device-frame {
 
 body.light-theme .track-row,
 body.theme-studio.light-theme .track-row {
-  background: #eee9dc !important; /* Lighter beige to contrast gently with base beige (#f3efe6) */
+  background: #f2eee2 !important; /* Lighter beige to contrast gently with base beige (#f3efe6) */
   border: 1px solid rgba(0, 0, 0, 0.06) !important;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02) !important;
 }
 
 body.light-theme .track-row:hover,
 body.theme-studio.light-theme .track-row:hover {
-  background: #e7e2d4 !important;
+  background: #ebe7da !important;
   border-color: rgba(0, 0, 0, 0.1) !important;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04) !important;
 }
 
 body.light-theme .track-row.focused-track,
 body.theme-studio.light-theme .track-row.focused-track {
-  background: #e5dfd1 !important;
+  background: #e6e2d4 !important;
   border-color: rgba(99, 102, 241, 0.25) !important;
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.06) !important;
 }
@@ -1358,13 +1358,36 @@ body.theme-studio.light-theme .playhead-line {
   box-shadow: -6px 0 10px rgba(99, 102, 241, 0.15) !important;
 }
 
-body.light-theme .mobile-header,
 body.light-theme .glass-panel,
-body.theme-studio.light-theme .mobile-header,
 body.theme-studio.light-theme .glass-panel {
   background: rgba(255, 255, 255, 0.82) !important;
   border-color: rgba(0, 0, 0, 0.08) !important;
   box-shadow: 0 4px 18px rgba(0, 0, 0, 0.06) !important;
+}
+
+body.light-theme .mobile-header,
+body.theme-studio.light-theme .mobile-header {
+  background: #ffffff !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08) !important;
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  border-radius: 0px !important;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.04) !important;
+  margin-top: -0.75rem !important;
+  margin-left: -0.6rem !important;
+  margin-right: -0.6rem !important;
+  width: calc(100% + 1.2rem) !important;
+}
+
+@media (min-width: 900px) {
+  body.light-theme .mobile-header,
+  body.theme-studio.light-theme .mobile-header {
+    margin-top: -1rem !important;
+    margin-left: -1.5rem !important;
+    margin-right: -1.5rem !important;
+    width: calc(100% + 3rem) !important;
+  }
 }
 
 body.light-theme .hamburger-menu.glass-panel,
