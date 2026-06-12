@@ -463,15 +463,35 @@ function getHitGlowColor(type, hit, instrument = "") {
   return "rgba(255,255,255,0.1)";
 }
 
+// True when the icon-based "Studio" theme is active (new default theme)
+function isIconTheme() {
+  return document.body.classList.contains("theme-studio");
+}
+
+// Apply the persisted theme class immediately so the very first render is themed
+(function () {
+  try {
+    const saved = localStorage.getItem("djembe-theme");
+    const name = saved === "light" ? "light" : ((saved === "classic" || saved === "dark") ? "classic" : "studio");
+    document.body.classList.toggle("theme-studio", name === "studio");
+    document.body.classList.toggle("light-theme", name === "light");
+  } catch (e) { }
+})();
+
 // Helper to return clean visual SVGs for different sound strikes
 function getSoundIcon(track, val, useOriginalIcons = false) {
   if (!val) return "";
 
   const trackType = typeof track === "string" ? track : track.type;
   const instrument = (track && track.instrument) ? track.instrument : "";
+  const studio = isIconTheme();
 
   if (val.includes("/")) {
     const [h1, h2] = val.split("/");
+    if (studio) {
+      // Flam: grace-note icon sits slightly above and behind the dominant main icon
+      return `<span class="studio-flam"><span class="studio-grace">${getSoundIcon(track, h1)}</span><span class="studio-main">${getSoundIcon(track, h2)}</span></span>`;
+    }
     let c1, c2;
     if (trackType === "djembe") {
       c1 = h1 === "B" ? "#3b82f6" : (h1 === "T" ? "#eab308" : (h1 === "S" ? "#ef4444" : "#a855f7"));
@@ -490,6 +510,10 @@ function getSoundIcon(track, val, useOriginalIcons = false) {
 
   if (val.includes("-")) {
     const [h1, h2] = val.split("-");
+    if (studio) {
+      // Roll: two equal icons side by side in playing order
+      return `<span class="studio-roll"><span>${getSoundIcon(track, h1)}</span><span>${getSoundIcon(track, h2)}</span></span>`;
+    }
     const c1 = getHitColor(trackType, h1, instrument);
     const c2 = getHitColor(trackType, h2, instrument);
     const icon1 = getSoundIcon(track, h1, true);
@@ -513,6 +537,10 @@ function getSoundIcon(track, val, useOriginalIcons = false) {
 
   if (val.includes("*")) {
     const [h1, h2, h3] = val.split("*");
+    if (studio) {
+      // Triplet: three icons across with a small "3" badge
+      return `<span class="studio-triplet"><span class="studio-badge3">3</span><span>${getSoundIcon(track, h1)}</span><span>${getSoundIcon(track, h2)}</span><span>${getSoundIcon(track, h3)}</span></span>`;
+    }
     const c1 = getHitColor(trackType, h1, instrument);
     const c2 = getHitColor(trackType, h2, instrument);
     const c3 = getHitColor(trackType, h3, instrument);
@@ -566,6 +594,13 @@ function getSoundIcon(track, val, useOriginalIcons = false) {
   }
 
   if (trackType === "dunun") {
+    if (studio) {
+      // Studio: same colour for open/closed — filled square = open, outlined = closed
+      const isClosed = (val === "C" || val === "X");
+      return isClosed
+        ? `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><rect x="4.5" y="4.5" width="15" height="15" rx="2.5" /></svg>`
+        : `<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5" /></svg>`;
+    }
     const isMuffled = (val === "C" || val === "X");
     const strokeWidth = "2.5";
     const xOverlay = isMuffled ? `
@@ -605,6 +640,13 @@ function getSoundIcon(track, val, useOriginalIcons = false) {
   }
 
   if (trackType === "bell") {
+    if (studio) {
+      // Studio: triangles — filled = open, outlined = muted
+      const isClosed = (val === "C");
+      return isClosed
+        ? `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><path d="M12 4.5 L20.5 19.5 H3.5 Z" /></svg>`
+        : `<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3.5 L21.5 20 H2.5 Z" /></svg>`;
+    }
     const isMuffled = (val === "C");
     const strokeWidth = "2.5";
     const fillOpacity = isMuffled ? "0" : "0.4";
@@ -662,6 +704,15 @@ function getSoundIcon(track, val, useOriginalIcons = false) {
   }
 
   return val;
+}
+
+// Cached DOM references, rebuilt on each renderGrid() — avoids per-frame/per-note querySelector calls
+let cachedStepContainers = [];
+const cellCache = new Map();
+
+function getCachedCell(trackId, stepIdx) {
+  return cellCache.get(trackId + ":" + stepIdx) ||
+    document.querySelector(`.step-cell[data-track-id="${trackId}"][data-step-index="${stepIdx}"]`);
 }
 
 // Timing Variables
@@ -3562,31 +3613,71 @@ function setupEventListeners() {
     });
   }
 
-  // Theme toggle
+  // Theme system: "studio" (icon-based, new default), "classic" (original look), "light"
   const menuBtnTheme = document.getElementById("menu-btn-theme");
-  const themeIconSun = document.getElementById("theme-icon-sun");
-  const themeIconMoon = document.getElementById("theme-icon-moon");
-  const menuThemeLabel = document.getElementById("menu-theme-label");
+  const themesModal = document.getElementById("themes-modal");
 
-  function applyTheme(isLight) {
-    document.body.classList.toggle("light-theme", isLight);
-    if (themeIconSun) themeIconSun.style.display = isLight ? "none" : "";
-    if (themeIconMoon) themeIconMoon.style.display = isLight ? "" : "none";
-    if (menuThemeLabel) menuThemeLabel.textContent = isLight ? "Dark Theme" : "Light Theme";
-    try { localStorage.setItem("djembe-theme", isLight ? "light" : "dark"); } catch (e) { }
+  function applyTheme(name, rerender = true) {
+    if (name !== "studio" && name !== "classic" && name !== "light") name = "studio";
+    document.body.classList.toggle("theme-studio", name === "studio");
+    document.body.classList.toggle("light-theme", name === "light");
+    try { localStorage.setItem("djembe-theme", name); } catch (e) { }
+
+    // Sync checkmarks in the themes modal
+    if (themesModal) {
+      themesModal.querySelectorAll(".theme-option-btn").forEach(btn => {
+        btn.classList.toggle("active", btn.getAttribute("data-theme") === name);
+      });
+    }
+
+    // Re-render the grid so note markup matches the theme (icons vs coloured squares)
+    if (rerender) {
+      try {
+        if (typeof renderGrid === "function" && state && state.tracks && state.tracks.length) {
+          renderGrid();
+          updateStepPositions();
+          updateCellScales();
+        }
+      } catch (e) { }
+    }
   }
+  window.applyTheme = applyTheme;
 
-  // Restore saved preference
+  // Restore saved preference (legacy values: "dark" was the old default look)
   try {
     const saved = localStorage.getItem("djembe-theme");
-    if (saved === "light") applyTheme(true);
-  } catch (e) { }
+    if (saved === "light") applyTheme("light", false);
+    else if (saved === "classic" || saved === "dark") applyTheme("classic", false);
+    else applyTheme("studio", false);
+  } catch (e) {
+    applyTheme("studio", false);
+  }
 
-  if (menuBtnTheme) {
+  if (menuBtnTheme && themesModal) {
     menuBtnTheme.addEventListener("click", () => {
-      const isLight = !document.body.classList.contains("light-theme");
-      applyTheme(isLight);
       if (hamburgerMenu) hamburgerMenu.classList.remove("active");
+      themesModal.classList.add("active");
+      if (window.gsap) {
+        const content = themesModal.querySelector(".modal-content");
+        if (content) gsap.fromTo(content, { scale: 0.92, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.28, ease: "back.out(1.6)" });
+      }
+    });
+
+    themesModal.querySelectorAll(".theme-option-btn").forEach(btn => {
+      btn.addEventListener("click", () => {
+        applyTheme(btn.getAttribute("data-theme"));
+        if (window.gsap) {
+          gsap.fromTo(".app-container", { opacity: 0.6 }, { opacity: 1, duration: 0.35, ease: "power2.out" });
+        }
+      });
+    });
+
+    const themesBtnClose = document.getElementById("themes-btn-close");
+    if (themesBtnClose) {
+      themesBtnClose.addEventListener("click", () => themesModal.classList.remove("active"));
+    }
+    themesModal.addEventListener("click", (e) => {
+      if (e.target === themesModal) themesModal.classList.remove("active");
     });
   }
 }
@@ -3718,6 +3809,9 @@ function triggerLiveHit(inst, hit, padElement) {
 
   // Visual Flash
   if (padElement) {
+    if (window.gsap) {
+      gsap.fromTo(padElement, { scale: 0.9 }, { scale: 1, duration: 0.35, ease: "back.out(2.5)", overwrite: "auto" });
+    }
     padElement.classList.add("pad-active");
     setTimeout(() => {
       padElement.classList.remove("pad-active");
@@ -4889,7 +4983,7 @@ function triggerSynthHit(type, instrument, hitVal, playTime, trackVol, trackPitc
 
 // Step Flash Animation using performant hardware-accelerated Web Animations API
 function triggerStepVisualFlash(trackId, stepIndex, velocity = 1.0) {
-  const cell = document.querySelector(`.step-cell[data-track-id="${trackId}"][data-step-index="${stepIndex}"]`);
+  const cell = getCachedCell(trackId, stepIndex);
   if (cell) {
     const track = state.tracks.find(t => t.id === trackId);
     const subdivFactor = (track && (state.beats * track.subdivision > 16)) ? 0.65 : 1.0;
@@ -4957,8 +5051,8 @@ function animatePlayhead() {
       updateCellScales();
     }
 
-    // Query all steps-containers on the page
-    const containers = document.querySelectorAll(".steps-container");
+    // Use cached steps-containers (rebuilt on each renderGrid) instead of querying every frame
+    const containers = cachedStepContainers.length ? cachedStepContainers : document.querySelectorAll(".steps-container");
     containers.forEach(container => {
       const trackId = container.getAttribute("data-track-id");
       const lineIdx = parseInt(container.getAttribute("data-line-index") || 0);
@@ -5005,10 +5099,10 @@ function animatePlayhead() {
     });
   } else {
     // If not playing, hide all playhead lines and active line highlights
-    document.querySelectorAll(".playhead-line").forEach(playhead => {
-      playhead.classList.remove("active");
-    });
-    document.querySelectorAll(".steps-container").forEach(container => {
+    const idleContainers = cachedStepContainers.length ? cachedStepContainers : Array.from(document.querySelectorAll(".steps-container"));
+    idleContainers.forEach(container => {
+      const playhead = container.querySelector(".playhead-line");
+      if (playhead) playhead.classList.remove("active");
       container.classList.remove("active-line");
     });
   }
@@ -5025,7 +5119,7 @@ function updateStepPositions() {
   state.tracks.forEach(track => {
     const stepsPerLine = state.beats * track.subdivision;
     track.steps.forEach((val, stepIdx) => {
-      const cell = document.querySelector(`.step-cell[data-track-id="${track.id}"][data-step-index="${stepIdx}"]`);
+      const cell = getCachedCell(track.id, stepIdx);
       if (cell) {
         const stepInLine = stepIdx % stepsPerLine;
         const beatIndex = Math.floor(stepInLine / track.subdivision);
@@ -5099,7 +5193,7 @@ function updateCellScales() {
     const subdivFactor = (state.beats * track.subdivision > 16) ? 0.65 : 1.0;
     track.steps.forEach((val, stepIdx) => {
       if (val !== "") {
-        const cell = document.querySelector(`.step-cell[data-track-id="${track.id}"][data-step-index="${stepIdx}"]`);
+        const cell = getCachedCell(track.id, stepIdx);
         if (cell && !cell.classList.contains("strike-flash")) {
           let velocity = track.volume;
           if (state.humaniseVolume > 0) {
@@ -5522,6 +5616,7 @@ function randomizeGrid() {
 function renderGrid() {
   sortTracks();
   sequencerGrid.innerHTML = "";
+  cellCache.clear();
 
 
 
@@ -5900,6 +5995,10 @@ function renderGrid() {
       stepsContainer.setAttribute("data-track-id", track.id);
       stepsContainer.setAttribute("data-line-index", l);
 
+      // Beat-group shading (Studio theme): how many visual beat divisions per line
+      const is12or6Sig = (state.timeSignature === "12/8" || state.timeSignature === "6/8");
+      stepsContainer.style.setProperty("--beat-divisions", is12or6Sig ? state.beats * 2 : state.beats);
+
       // Playhead for this container
       const playhead = document.createElement("div");
       playhead.className = "playhead-line";
@@ -5970,36 +6069,43 @@ function renderGrid() {
           cell.style.removeProperty("border-color");
           cell.style.removeProperty("box-shadow");
 
+          const studioTheme = isIconTheme();
           if (stepVal.includes("/")) {
-            const [h1, h2] = stepVal.split("/");
-            const c1 = getHitColor(track.type, h1, track.instrument);
-            const c2 = getHitColor(track.type, h2, track.instrument);
-            const g2 = getHitGlowColor(track.type, h2, track.instrument);
-            cell.className = "step-cell step-cell-composite step-cell-flam";
-            cell.style.background = `linear-gradient(135deg, ${c1} 0%, ${c2} 100%)`;
-            cell.style.borderColor = c2;
-            cell.style.boxShadow = `0 0 calc(var(--vel-scale, 0.8) * 15px) ${g2}`;
+            cell.className = "step-cell step-cell-composite step-cell-flam has-note";
+            if (!studioTheme) {
+              const [h1, h2] = stepVal.split("/");
+              const c1 = getHitColor(track.type, h1, track.instrument);
+              const c2 = getHitColor(track.type, h2, track.instrument);
+              const g2 = getHitGlowColor(track.type, h2, track.instrument);
+              cell.style.background = `linear-gradient(135deg, ${c1} 0%, ${c2} 100%)`;
+              cell.style.borderColor = c2;
+              cell.style.boxShadow = `0 0 calc(var(--vel-scale, 0.8) * 15px) ${g2}`;
+            }
           } else if (stepVal.includes("-")) {
-            const [h1, h2] = stepVal.split("-");
-            const c1 = getHitColor(track.type, h1, track.instrument);
-            const c2 = getHitColor(track.type, h2, track.instrument);
-            const g2 = getHitGlowColor(track.type, h2, track.instrument);
-            cell.className = "step-cell step-cell-composite step-cell-roll";
-            cell.style.background = `linear-gradient(90deg, ${c1} 0%, ${c1} 50%, ${c2} 50%, ${c2} 100%)`;
-            cell.style.borderColor = c2;
-            cell.style.boxShadow = `0 0 calc(var(--vel-scale, 0.8) * 15px) ${g2}`;
+            cell.className = "step-cell step-cell-composite step-cell-roll has-note";
+            if (!studioTheme) {
+              const [h1, h2] = stepVal.split("-");
+              const c1 = getHitColor(track.type, h1, track.instrument);
+              const c2 = getHitColor(track.type, h2, track.instrument);
+              const g2 = getHitGlowColor(track.type, h2, track.instrument);
+              cell.style.background = `linear-gradient(90deg, ${c1} 0%, ${c1} 50%, ${c2} 50%, ${c2} 100%)`;
+              cell.style.borderColor = c2;
+              cell.style.boxShadow = `0 0 calc(var(--vel-scale, 0.8) * 15px) ${g2}`;
+            }
           } else if (stepVal.includes("*")) {
-            const [h1, h2, h3] = stepVal.split("*");
-            const c1 = getHitColor(track.type, h1, track.instrument);
-            const c2 = getHitColor(track.type, h2, track.instrument);
-            const c3 = getHitColor(track.type, h3, track.instrument);
-            const g3 = getHitGlowColor(track.type, h3, track.instrument);
-            cell.className = "step-cell step-cell-composite step-cell-triplet";
-            cell.style.background = `linear-gradient(90deg, ${c1} 0%, ${c1} 33.3%, ${c2} 33.3%, ${c2} 66.6%, ${c3} 66.6%, ${c3} 100%)`;
-            cell.style.borderColor = c3;
-            cell.style.boxShadow = `0 0 calc(var(--vel-scale, 0.8) * 15px) ${g3}`;
+            cell.className = "step-cell step-cell-composite step-cell-triplet has-note";
+            if (!studioTheme) {
+              const [h1, h2, h3] = stepVal.split("*");
+              const c1 = getHitColor(track.type, h1, track.instrument);
+              const c2 = getHitColor(track.type, h2, track.instrument);
+              const c3 = getHitColor(track.type, h3, track.instrument);
+              const g3 = getHitGlowColor(track.type, h3, track.instrument);
+              cell.style.background = `linear-gradient(90deg, ${c1} 0%, ${c1} 33.3%, ${c2} 33.3%, ${c2} 66.6%, ${c3} 66.6%, ${c3} 100%)`;
+              cell.style.borderColor = c3;
+              cell.style.boxShadow = `0 0 calc(var(--vel-scale, 0.8) * 15px) ${g3}`;
+            }
           } else {
-            cell.className = `step-cell ${track.type}-${stepVal} ${track.instrument}-${stepVal}`;
+            cell.className = `step-cell ${track.type}-${stepVal} ${track.instrument}-${stepVal} has-note`;
           }
 
           const currentScale = (0.7 + track.volume * 0.4) * subdivFactor;
@@ -6082,6 +6188,7 @@ function renderGrid() {
         cell.addEventListener("touchcancel", cancelPress, { passive: true });
 
         stepsContainer.appendChild(cell);
+        cellCache.set(track.id + ":" + stepIdx, cell);
       }
 
       lineRow.appendChild(stepsContainer);
@@ -6402,6 +6509,9 @@ function renderGrid() {
 
     sequencerGrid.appendChild(row);
   });
+
+  // Rebuild cached container list for the rAF playhead loop
+  cachedStepContainers = Array.from(document.querySelectorAll(".steps-container"));
 
   updateNotation();
   updateStepPositions();
@@ -6756,6 +6866,7 @@ function cycleStepHit(track, idx, cellElement) {
     cellElement.innerHTML = getSoundIcon(track, val);
     cellElement.classList.add(`${track.type}-${val}`);
     cellElement.classList.add(`${track.instrument}-${val}`);
+    cellElement.classList.add("has-note");
     const currentScale = (0.7 + track.volume * 0.4) * subdivFactor;
     cellElement.style.setProperty("--current-scale", currentScale);
     cellElement.style.setProperty("--vel-scale", track.volume);
@@ -7411,36 +7522,43 @@ function openVariationsMenu(track, stepIdx, cellElement, event) {
     if (newVal !== "") {
       cellElement.innerHTML = getSoundIcon(track, newVal);
 
+      const studioTheme = isIconTheme();
       if (newVal.includes("/")) {
-        const [h1, h2] = newVal.split("/");
-        const c1 = getHitColor(track.type, h1, track.instrument);
-        const c2 = getHitColor(track.type, h2, track.instrument);
-        const g2 = getHitGlowColor(track.type, h2, track.instrument);
-        cellElement.className = "step-cell step-cell-composite step-cell-flam";
-        cellElement.style.background = `linear-gradient(135deg, ${c1} 0%, ${c2} 100%)`;
-        cellElement.style.borderColor = c2;
-        cellElement.style.boxShadow = `0 0 calc(var(--vel-scale, 0.8) * 15px) ${g2}`;
+        cellElement.className = "step-cell step-cell-composite step-cell-flam has-note";
+        if (!studioTheme) {
+          const [h1, h2] = newVal.split("/");
+          const c1 = getHitColor(track.type, h1, track.instrument);
+          const c2 = getHitColor(track.type, h2, track.instrument);
+          const g2 = getHitGlowColor(track.type, h2, track.instrument);
+          cellElement.style.background = `linear-gradient(135deg, ${c1} 0%, ${c2} 100%)`;
+          cellElement.style.borderColor = c2;
+          cellElement.style.boxShadow = `0 0 calc(var(--vel-scale, 0.8) * 15px) ${g2}`;
+        }
       } else if (newVal.includes("-")) {
-        const [h1, h2] = newVal.split("-");
-        const c1 = getHitColor(track.type, h1, track.instrument);
-        const c2 = getHitColor(track.type, h2, track.instrument);
-        const g2 = getHitGlowColor(track.type, h2, track.instrument);
-        cellElement.className = "step-cell step-cell-composite step-cell-roll";
-        cellElement.style.background = `linear-gradient(90deg, ${c1} 0%, ${c1} 50%, ${c2} 50%, ${c2} 100%)`;
-        cellElement.style.borderColor = c2;
-        cellElement.style.boxShadow = `0 0 calc(var(--vel-scale, 0.8) * 15px) ${g2}`;
+        cellElement.className = "step-cell step-cell-composite step-cell-roll has-note";
+        if (!studioTheme) {
+          const [h1, h2] = newVal.split("-");
+          const c1 = getHitColor(track.type, h1, track.instrument);
+          const c2 = getHitColor(track.type, h2, track.instrument);
+          const g2 = getHitGlowColor(track.type, h2, track.instrument);
+          cellElement.style.background = `linear-gradient(90deg, ${c1} 0%, ${c1} 50%, ${c2} 50%, ${c2} 100%)`;
+          cellElement.style.borderColor = c2;
+          cellElement.style.boxShadow = `0 0 calc(var(--vel-scale, 0.8) * 15px) ${g2}`;
+        }
       } else if (newVal.includes("*")) {
-        const [h1, h2, h3] = newVal.split("*");
-        const c1 = getHitColor(track.type, h1, track.instrument);
-        const c2 = getHitColor(track.type, h2, track.instrument);
-        const c3 = getHitColor(track.type, h3, track.instrument);
-        const g3 = getHitGlowColor(track.type, h3, track.instrument);
-        cellElement.className = "step-cell step-cell-composite step-cell-triplet";
-        cellElement.style.background = `linear-gradient(90deg, ${c1} 0%, ${c1} 33.3%, ${c2} 33.3%, ${c2} 66.6%, ${c3} 66.6%, ${c3} 100%)`;
-        cellElement.style.borderColor = c3;
-        cellElement.style.boxShadow = `0 0 calc(var(--vel-scale, 0.8) * 15px) ${g3}`;
+        cellElement.className = "step-cell step-cell-composite step-cell-triplet has-note";
+        if (!studioTheme) {
+          const [h1, h2, h3] = newVal.split("*");
+          const c1 = getHitColor(track.type, h1, track.instrument);
+          const c2 = getHitColor(track.type, h2, track.instrument);
+          const c3 = getHitColor(track.type, h3, track.instrument);
+          const g3 = getHitGlowColor(track.type, h3, track.instrument);
+          cellElement.style.background = `linear-gradient(90deg, ${c1} 0%, ${c1} 33.3%, ${c2} 33.3%, ${c2} 66.6%, ${c3} 66.6%, ${c3} 100%)`;
+          cellElement.style.borderColor = c3;
+          cellElement.style.boxShadow = `0 0 calc(var(--vel-scale, 0.8) * 15px) ${g3}`;
+        }
       } else {
-        cellElement.className = `step-cell ${track.type}-${newVal} ${track.instrument}-${newVal}`;
+        cellElement.className = `step-cell ${track.type}-${newVal} ${track.instrument}-${newVal} has-note`;
       }
 
       const currentScale = (0.7 + track.volume * 0.4) * subdivFactor;
@@ -7487,3 +7605,4 @@ window.loadRhythm = loadRhythm;
 window.state = state;
 window.getSwungStepTime = getSwungStepTime;
 window.getSecondsPerBeat = getSecondsPerBeat;
+window.isIconTheme = isIconTheme;
