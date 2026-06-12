@@ -5225,19 +5225,30 @@ function animatePlayhead() {
               // Full mode: GPU-composited glide, updated every frame (transform = no layout)
               playheadLine.style.transform = `translate3d(${progress * lineWidth}px, 0, 0)`;
             } else {
-              // Lite mode: JS runs once per step; a CSS transition glides to the next step
-              if (playheadLine._liteStep !== curStepInLine) {
-                const stepDur = secondsPerBeat / track.subdivision;
-                if (playheadLine._liteStep === undefined || curStepInLine < playheadLine._liteStep) {
-                  // First frame or loop wrap: snap to the current step, then glide
-                  playheadLine.style.transition = "none";
-                  playheadLine.style.transform = `translate3d(${(curStepInLine / stepsPerLineCount) * lineWidth}px, 0, 0)`;
-                  void playheadLine.offsetWidth;
+              // Slower device performance mode: highlight whole beat groups instead of animating the playhead line
+              const is12or6 = (state.timeSignature === "12/8" || state.timeSignature === "6/8");
+              const beatInterval = (is12or6 && track.subdivision === 6) ? 3 : track.subdivision;
+              const curBeatInLine = Math.floor(curStepInLine / beatInterval);
+              
+              if (container._currentHighlightBeat !== curBeatInLine) {
+                // Clear previous highlights
+                if (container._highlightedCells) {
+                  container._highlightedCells.forEach(cell => cell.classList.remove("current-beat-highlight"));
                 }
-                playheadLine._liteStep = curStepInLine;
-                const targetX = Math.min(1, (curStepInLine + 1) / stepsPerLineCount) * lineWidth;
-                playheadLine.style.transition = `transform ${stepDur.toFixed(3)}s linear`;
-                playheadLine.style.transform = `translate3d(${targetX}px, 0, 0)`;
+                
+                // Add highlights to current beat's step cells
+                const newHighlighted = [];
+                const startIndex = curBeatInLine * beatInterval;
+                const endIndex = Math.min(stepsPerLineCount, startIndex + beatInterval);
+                for (let i = startIndex; i < endIndex; i++) {
+                  const cell = cellCache.get(trackId + ":" + (lineIdx * stepsPerLineCount + i));
+                  if (cell) {
+                    cell.classList.add("current-beat-highlight");
+                    newHighlighted.push(cell);
+                  }
+                }
+                container._highlightedCells = newHighlighted;
+                container._currentHighlightBeat = curBeatInLine;
               }
             }
             container.classList.add("active-line");
@@ -5252,6 +5263,11 @@ function animatePlayhead() {
               container._pulseCell.classList.remove("ph-pass");
               container._pulseCell = null;
               container._pulseStep = undefined;
+            }
+            if (container._highlightedCells) {
+              container._highlightedCells.forEach(cell => cell.classList.remove("current-beat-highlight"));
+              container._highlightedCells = null;
+              container._currentHighlightBeat = undefined;
             }
           }
         }
@@ -5272,6 +5288,11 @@ function animatePlayhead() {
         container._pulseCell.classList.remove("ph-pass");
         container._pulseCell = null;
         container._pulseStep = undefined;
+      }
+      if (container._highlightedCells) {
+        container._highlightedCells.forEach(cell => cell.classList.remove("current-beat-highlight"));
+        container._highlightedCells = null;
+        container._currentHighlightBeat = undefined;
       }
     });
   }

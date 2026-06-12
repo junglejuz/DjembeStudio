@@ -2341,8 +2341,20 @@ body.perf-lite .step-cell.strike-flash {
   }
 }
 
-body.perf-lite .step-cell.ph-pass:not(.strike-flash) {
-  animation: phPassLite 0.35s cubic-bezier(0.1, 0.8, 0.3, 1) forwards !important;
+/* Slower device performance mode: highlight current beat group instead of smooth playhead glide */
+body.perf-lite .playhead-line {
+  display: none !important;
+}
+
+body.perf-lite .step-cell.current-beat-highlight {
+  background-color: rgba(99, 102, 241, 0.18) !important;
+  border-color: rgba(99, 102, 241, 0.35) !important;
+}
+
+body.perf-lite.light-theme .step-cell.current-beat-highlight,
+body.theme-studio.perf-lite.light-theme .step-cell.current-beat-highlight {
+  background-color: rgba(217, 119, 6, 0.1) !important;
+  border-color: rgba(217, 119, 6, 0.25) !important;
 }
 
 /* Active line is no longer boxed/highlighted... */
