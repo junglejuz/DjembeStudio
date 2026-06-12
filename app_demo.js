@@ -521,29 +521,77 @@ function setPerfMode(lite) {
     if (forced === "lite") { setPerfMode(true); return; }
     if (forced === "full") { setPerfMode(false); return; }
 
+    const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
     const mem = navigator.deviceMemory || 8;
     const cores = navigator.hardwareConcurrency || 8;
     const reduced = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduced || mem <= 2 || cores <= 3) { setPerfMode(true); return; }
+    
+    // Slower phones (memory <= 4GB or cores <= 6) default to performance mode immediately
+    if (reduced || mem <= 2 || cores <= 3 || (isMobile && (mem <= 4 || cores <= 6))) {
+      setPerfMode(true);
+      return;
+    }
 
-    // Frame-time probe after initial load settles: median frame > ~22ms => lite
+    // Frame-time probe after initial load settles: strict 17.5ms limit on mobile at idle
     setTimeout(() => {
       const times = [];
       let last = performance.now();
       function probe(now) {
         times.push(now - last);
         last = now;
-        if (times.length < 30) {
+        if (times.length < 35) {
           requestAnimationFrame(probe);
         } else {
           times.sort((a, b) => a - b);
-          if (times[15] > 22) setPerfMode(true);
+          const median = times[Math.floor(times.length / 2)];
+          const threshold = isMobile ? 17.5 : 22;
+          if (median > threshold) {
+            setPerfMode(true);
+            console.log(`Idle performance probe triggered perf-lite. Median frame time: ${median.toFixed(1)}ms`);
+          }
         }
       }
       requestAnimationFrame(probe);
     }, 1500);
   } catch (e) { }
 })();
+
+// Active benchmark running during playback to catch mid-range lag
+let playbackProbeDone = false;
+function startPlaybackPerfProbe() {
+  if (playbackProbeDone || perfLite) return;
+  
+  const times = [];
+  let last = performance.now();
+  let frameCount = 0;
+  
+  function probe(now) {
+    if (!state.isPlaying) return; // play stopped, abort
+    
+    times.push(now - last);
+    last = now;
+    frameCount++;
+    
+    if (frameCount < 40) {
+      requestAnimationFrame(probe);
+    } else {
+      times.sort((a, b) => a - b);
+      const median = times[Math.floor(times.length / 2)];
+      const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+      const threshold = isMobile ? 18.0 : 23.0; // strict ~55fps threshold under active synthesis load
+      
+      if (median > threshold) {
+        setPerfMode(true);
+        console.log(`Playback performance probe triggered perf-lite. Median: ${median.toFixed(1)}ms`);
+      } else {
+        playbackProbeDone = true;
+        console.log(`Playback performance probe passed. Median: ${median.toFixed(1)}ms`);
+      }
+    }
+  }
+  
+  requestAnimationFrame(probe);
+}
 
 // Playhead width caches go stale on rotation/resize
 window.addEventListener("resize", () => {
@@ -4559,6 +4607,7 @@ function togglePlay() {
     // PLAY
     synth.resume();
     state.isPlaying = true;
+    startPlaybackPerfProbe();
     btnPlay.innerHTML = `<svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor"><rect x="4" y="4" width="16" height="16" rx="2"/></svg>`;
     btnPlay.classList.add("btn-danger-round");
 
