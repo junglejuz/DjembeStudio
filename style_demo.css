@@ -1662,10 +1662,6 @@ body.theme-studio .steps-container {
   border-radius: 4px;
 }
 
-body.theme-studio .beat-marker {
-  display: none !important;
-}
-
 /* --- Step cells: neutral boxes, icon carries the meaning --- */
 body.theme-studio .step-cell {
   background: rgba(255, 255, 255, 0.02) !important;
@@ -1714,10 +1710,10 @@ body.theme-studio .studio-flam .studio-grace {
 
 body.theme-studio .studio-flam .studio-main {
   position: absolute;
-  bottom: -6%;
-  right: -10%;
-  width: 88%;
-  height: 88%;
+  bottom: -4%;
+  right: -6%;
+  width: 96%;
+  height: 96%;
   z-index: 2;
 }
 
@@ -1963,4 +1959,131 @@ body.perf-lite .step-cell.strike-flash {
   100% {
     transform: translateY(-50%) scale(var(--current-scale, 1));
   }
+}
+
+
+/* ============================================================
+   GRID FEEDBACK & PART-STATE STYLING
+   ============================================================ */
+
+/* Step boxes pulse brighter + slightly larger as the playhead passes */
+@keyframes phPass {
+  0% {
+    transform: translateY(-50%) scale(calc(var(--current-scale, 1) * 1.22));
+    filter: brightness(calc(var(--pitch-brightness, 1) * 1.7));
+  }
+
+  100% {
+    transform: translateY(-50%) scale(var(--current-scale, 1));
+    filter: brightness(var(--pitch-brightness, 1));
+  }
+}
+
+.step-cell.ph-pass:not(.strike-flash) {
+  animation: phPass 0.25s ease-out forwards !important;
+}
+
+@keyframes phPassLite {
+  0% {
+    transform: translateY(-50%) scale(calc(var(--current-scale, 1) * 1.22));
+  }
+
+  100% {
+    transform: translateY(-50%) scale(var(--current-scale, 1));
+  }
+}
+
+body.perf-lite .step-cell.ph-pass:not(.strike-flash) {
+  animation: phPassLite 0.25s ease-out forwards !important;
+}
+
+/* Active line is no longer boxed/highlighted... */
+body:not(.theme-studio) .steps-container.active-line {
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+body.theme-studio .steps-container.active-line {
+  border-color: transparent !important;
+  box-shadow: none !important;
+}
+
+/* ...instead, the non-playing lines of multi-row parts dim slightly (still readable) */
+.steps-container.dim-line {
+  opacity: 0.45;
+  transition: opacity 0.25s ease;
+}
+
+/* Studio icons inside the flam/roll variations popup buttons */
+body.theme-studio .variation-btn-icon {
+  position: relative !important;
+  width: 26px !important;
+  height: 26px !important;
+  transform: none !important;
+  margin: 0 auto !important;
+  color: var(--studio-note, #c9ced8);
+}
+
+body.theme-studio .variation-btn-icon svg {
+  display: block !important;
+}
+
+/* Slightly bigger header icons */
+.btn-title-icon svg {
+  width: 24px !important;
+  height: 24px !important;
+}
+
+/* Call / Échauffement buttons: flash while queued, solid while playing */
+@keyframes partQueueFlash {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.35;
+  }
+}
+
+#btn-trigger-call.btn-part-queued,
+#btn-trigger-echauffement.btn-part-queued {
+  animation: partQueueFlash 0.55s ease-in-out infinite !important;
+}
+
+#btn-trigger-call.btn-call-on {
+  background: #10b981 !important;
+  border-color: #10b981 !important;
+  color: #04251a !important;
+}
+
+#btn-trigger-echauffement.btn-ech-on {
+  background: #ef4444 !important;
+  border-color: #ef4444 !important;
+  color: #ffffff !important;
+}
+
+/* Instruments playing the call/échauffement adopt its colour */
+.track-row.part-call-active {
+  --part-color-hsl: 152, 60%, 42% !important;
+  outline: 1px solid rgba(16, 185, 129, 0.4);
+  outline-offset: -1px;
+}
+
+.track-row.part-call-active .track-icon-wrapper {
+  color: #10b981 !important;
+  border-color: rgba(16, 185, 129, 0.5) !important;
+}
+
+.track-row.part-ech-active {
+  --part-color-hsl: 8, 85%, 55% !important;
+  outline: 1px solid rgba(239, 68, 68, 0.4);
+  outline-offset: -1px;
+}
+
+.track-row.part-ech-active .track-icon-wrapper {
+  color: #ef4444 !important;
+  border-color: rgba(239, 68, 68, 0.5) !important;
 }

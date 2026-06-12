@@ -993,6 +993,7 @@ function deactivateAllSpecialButtons() {
   state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
   state.callIntroActive = false;
   state.activeVariation = null;
+  state.echPlaying = false;
 
   state.tracks.forEach(track => {
     if (track.standardSteps) {
@@ -2131,16 +2132,14 @@ function loadRhythmNew(preset) {
 }
 
 function toggleEchauffementNew() {
-  const echBtn = document.getElementById("btn-trigger-echauffement");
-  state.echauffementActive = !state.echauffementActive;
+  const turningOn = !state.echauffementActive;
 
   const isNewFormat = state.currentPreset && (state.currentPreset.step_count !== undefined || (state.currentPreset.tracks && !Array.isArray(state.currentPreset.tracks)));
 
-  if (state.echauffementActive) {
-    if (echBtn) echBtn.classList.add("btn-primary");
-
+  if (turningOn) {
     // Deactivate solos and variations to avoid conflict
     deactivateAllSpecialButtons();
+    state.echauffementActive = true;
 
     const action = () => {
       if (isNewFormat) {
@@ -2163,6 +2162,7 @@ function toggleEchauffementNew() {
           }
         });
       }
+      state.echPlaying = true;
       renderGrid();
     };
 
@@ -2170,10 +2170,11 @@ function toggleEchauffementNew() {
       action();
       togglePlay();
     } else {
-      state.queuedActions.push(action);
+      echQueuedFlag = true;
+      state.queuedActions.push(() => { echQueuedFlag = false; action(); });
     }
   } else {
-    if (echBtn) echBtn.classList.remove("btn-primary");
+    state.echauffementActive = false;
 
     const action = () => {
       state.tracks.forEach(track => {
@@ -2183,13 +2184,15 @@ function toggleEchauffementNew() {
           delete track.standardSteps;
         }
       });
+      state.echPlaying = false;
       renderGrid();
     };
 
     if (!state.isPlaying) {
       action();
     } else {
-      state.queuedActions.push(action);
+      echQueuedFlag = true;
+      state.queuedActions.push(() => { echQueuedFlag = false; action(); });
     }
   }
 }
@@ -4624,7 +4627,8 @@ function triggerCall() {
     action();
     togglePlay(); // This starts the sequencer playhead
   } else {
-    state.queuedActions.push(action);
+    callQueuedFlag = true;
+    state.queuedActions.push(() => { callQueuedFlag = false; action(); });
   }
 }
 
@@ -4674,19 +4678,18 @@ function triggerEchauffement() {
 
   if (isCurrentlyPlayingThis) {
     // Toggle off: remove solo track
-    if (echBtn) echBtn.classList.remove("btn-primary");
     const action = () => {
       state.tracks = state.tracks.filter(t => t.id !== "solo_djembe");
+      state.echPlaying = false;
       renderGrid();
     };
     if (state.isPlaying) {
-      state.queuedActions.push(action);
+      echQueuedFlag = true;
+      state.queuedActions.push(() => { echQueuedFlag = false; action(); });
     } else {
       action();
     }
   } else {
-    // Toggle on: highlight button
-    if (echBtn) echBtn.classList.add("btn-primary");
 
     const action = () => {
       let soloTrack = state.tracks.find(t => t.id === "solo_djembe");
@@ -4714,6 +4717,7 @@ function triggerEchauffement() {
       soloTrack.subdivisionSteps = {
         [soloTrack.subdivision]: [...soloTrack.steps]
       };
+      state.echPlaying = true;
       renderGrid();
     };
 
@@ -4721,7 +4725,8 @@ function triggerEchauffement() {
       action();
       togglePlay();
     } else {
-      state.queuedActions.push(action);
+      echQueuedFlag = true;
+      state.queuedActions.push(() => { echQueuedFlag = false; action(); });
     }
   }
 }
@@ -4931,7 +4936,7 @@ function scheduleTick(tickIndex, time) {
   const elapsedBeats = Math.floor(tickIndex / 12);
   const maxLines = Math.max(1, ...state.tracks.map(t => Math.ceil(t.steps.length / (state.beats * t.subdivision))));
   const totalBeatsInLoop = maxLines * state.beats;
-  const seedEpoch = Math.floor(elapsedBeats / totalBeatsInLoop); // humanise seed changes after every one pass of playhead
+  const seedEpoch = 0; // fixed humanise seed: micro-variations stay consistent between passes
   const currentBeatInLoop = beatIndex % totalBeatsInLoop;
 
   state.tracks.forEach(track => {
@@ -5077,6 +5082,53 @@ function triggerStepVisualFlash(trackId, stepIndex, velocity = 1.0) {
   }
 }
 
+// --- Call / Échauffement state sync -----------------------------------------
+let callQueuedFlag = false;
+let echQueuedFlag = false;
+let lastPartHighlightKey = null;
+
+function isEchTrack(track) {
+  return !!track.standardSteps ||
+    (track.id === "solo_djembe" && track.name.toLowerCase().includes("chauffement"));
+}
+
+// Buttons: flash while queued, solid colour while the part is playing
+function syncPartButtonStates() {
+  if (!state.isPlaying && (callQueuedFlag || echQueuedFlag)) {
+    callQueuedFlag = false;
+    echQueuedFlag = false;
+  }
+  const callBtn = document.getElementById("btn-trigger-call");
+  const echBtn = document.getElementById("btn-trigger-echauffement");
+  if (callBtn) {
+    callBtn.classList.toggle("btn-part-queued", callQueuedFlag);
+    callBtn.classList.toggle("btn-call-on", !callQueuedFlag && !!state.callIntroActive);
+  }
+  if (echBtn) {
+    echBtn.classList.toggle("btn-part-queued", echQueuedFlag);
+    echBtn.classList.toggle("btn-ech-on", !echQueuedFlag && !!state.echPlaying);
+  }
+}
+
+// Rows: instruments playing the call/échauffement adopt its colour
+function syncPartRowHighlights() {
+  const key = (state.callIntroActive ? "C" : "") + (state.echPlaying ? "E" : "");
+  if (key === lastPartHighlightKey) return;
+  lastPartHighlightKey = key;
+  document.querySelectorAll(".track-row").forEach(row => {
+    const id = row.getAttribute("data-track-id");
+    const track = state.tracks.find(t => t.id === id);
+    if (!track) return;
+    const isCallTrack = track.id === "solo_djembe" ||
+      track.id.startsWith("special") ||
+      track.name.toLowerCase().includes("call") ||
+      track.name.toLowerCase().includes("break") ||
+      track.name.toLowerCase().includes("intro");
+    row.classList.toggle("part-call-active", !!state.callIntroActive && isCallTrack && !isEchTrack(track));
+    row.classList.toggle("part-ech-active", !!state.echPlaying && isEchTrack(track));
+  });
+}
+
 // Animate playhead position smoothly
 function animatePlayhead() {
   if (state.isPlaying && synth.ctx) {
@@ -5088,16 +5140,7 @@ function animatePlayhead() {
     const elapsedTicksSincePrev = (synth.ctx.currentTime - prevTickTime) / secondsPerTick;
     const currentTick = (nextTickToSchedule - 1) + elapsedTicksSincePrev;
 
-    // Check if epoch has shifted based on visual playhead currentTick (every loop pass)
-    const currentElapsedBeats = Math.floor(currentTick / 12);
-    const maxLines = Math.max(1, ...state.tracks.map(t => Math.ceil(t.steps.length / (state.beats * t.subdivision))));
-    const totalBeatsInLoop = maxLines * state.beats;
-    const currentEpoch = Math.max(0, Math.floor(currentElapsedBeats / totalBeatsInLoop));
-    if (state.currentEpoch !== currentEpoch) {
-      state.currentEpoch = currentEpoch;
-      updateStepPositions();
-      updateCellScales();
-    }
+    // Humanise seed is fixed (epoch 0): no re-randomisation between passes
 
     // Use cached steps-containers (rebuilt on each renderGrid) instead of querying every frame
     const containers = cachedStepContainers.length ? cachedStepContainers : document.querySelectorAll(".steps-container");
@@ -5137,32 +5180,54 @@ function animatePlayhead() {
             const tickInLine = trackCurrentTick % (state.beats * 12);
             const progress = tickInLine / (state.beats * 12);
             const lineWidth = container._phWidth || (container._phWidth = container.offsetWidth);
+            const stepsPerLineCount = state.beats * track.subdivision;
+            const curStepInLine = Math.min(stepsPerLineCount - 1, Math.floor(progress * stepsPerLineCount));
+
+            // Pulse the step box the playhead is passing over (brighter + slightly larger)
+            if (container._pulseStep !== curStepInLine) {
+              container._pulseStep = curStepInLine;
+              if (container._pulseCell) container._pulseCell.classList.remove("ph-pass");
+              const pulseCell = cellCache.get(trackId + ":" + (lineIdx * stepsPerLineCount + curStepInLine));
+              if (pulseCell) {
+                pulseCell.classList.add("ph-pass");
+                container._pulseCell = pulseCell;
+              } else {
+                container._pulseCell = null;
+              }
+            }
+
             if (!perfLite) {
               // Full mode: GPU-composited glide, updated every frame (transform = no layout)
               playheadLine.style.transform = `translate3d(${progress * lineWidth}px, 0, 0)`;
             } else {
               // Lite mode: JS runs once per step; a CSS transition glides to the next step
-              const stepsPerLineCount = state.beats * track.subdivision;
-              const stepIdx = Math.floor(progress * stepsPerLineCount);
-              if (playheadLine._liteStep !== stepIdx) {
+              if (playheadLine._liteStep !== curStepInLine) {
                 const stepDur = secondsPerBeat / track.subdivision;
-                if (playheadLine._liteStep === undefined || stepIdx < playheadLine._liteStep) {
+                if (playheadLine._liteStep === undefined || curStepInLine < playheadLine._liteStep) {
                   // First frame or loop wrap: snap to the current step, then glide
                   playheadLine.style.transition = "none";
-                  playheadLine.style.transform = `translate3d(${(stepIdx / stepsPerLineCount) * lineWidth}px, 0, 0)`;
+                  playheadLine.style.transform = `translate3d(${(curStepInLine / stepsPerLineCount) * lineWidth}px, 0, 0)`;
                   void playheadLine.offsetWidth;
                 }
-                playheadLine._liteStep = stepIdx;
-                const targetX = Math.min(1, (stepIdx + 1) / stepsPerLineCount) * lineWidth;
+                playheadLine._liteStep = curStepInLine;
+                const targetX = Math.min(1, (curStepInLine + 1) / stepsPerLineCount) * lineWidth;
                 playheadLine.style.transition = `transform ${stepDur.toFixed(3)}s linear`;
                 playheadLine.style.transform = `translate3d(${targetX}px, 0, 0)`;
               }
             }
             container.classList.add("active-line");
+            container.classList.remove("dim-line");
           } else {
             playheadLine.classList.remove("active");
             playheadLine._liteStep = undefined;
             container.classList.remove("active-line");
+            // Dim the lines of this part that are not currently playing (multi-row parts only)
+            container.classList.toggle("dim-line", state.isPlaying && trackNumLines > 1);
+            if (container._pulseCell) {
+              container._pulseCell.classList.remove("ph-pass");
+              container._pulseCell = null;
+              container._pulseStep = undefined;
+            }
           }
         }
       }
@@ -5177,10 +5242,19 @@ function animatePlayhead() {
         playhead._liteStep = undefined;
       }
       container.classList.remove("active-line");
+      container.classList.remove("dim-line");
+      if (container._pulseCell) {
+        container._pulseCell.classList.remove("ph-pass");
+        container._pulseCell = null;
+        container._pulseStep = undefined;
+      }
     });
   }
 
 
+
+  syncPartButtonStates();
+  syncPartRowHighlights();
 
   requestAnimationFrame(animatePlayhead);
 }
@@ -5700,6 +5774,10 @@ function renderGrid() {
     const row = document.createElement("div");
     row.className = "track-row";
     row.setAttribute("data-track-id", track.id);
+
+    // Instruments playing a call/échauffement adopt its colour
+    if (state.callIntroActive && isCall && !isEchTrack(track)) row.classList.add("part-call-active");
+    if (state.echPlaying && isEchTrack(track)) row.classList.add("part-ech-active");
 
     // Apply focus/dimmed styles if a track is focused
     if (state.focusedTrackId !== null) {
@@ -6585,6 +6663,7 @@ function renderGrid() {
 
   // Rebuild cached container list for the rAF playhead loop
   cachedStepContainers = Array.from(document.querySelectorAll(".steps-container"));
+  lastPartHighlightKey = null;
 
   updateNotation();
   updateStepPositions();
