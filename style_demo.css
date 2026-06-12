@@ -1469,15 +1469,15 @@ body.light-theme .menu-item-btn:hover {
   animation: play-btn-pop 0.25s cubic-bezier(0.25, 0.8, 0.25, 1.25) !important;
 }
 
-/* Brighter start of beat empty cells */
+/* Brighter start of beat empty cells - overridden to match normal empty steps */
 .step-cell.beat-start-empty {
-  background: rgba(255, 255, 255, 0.05) !important;
-  border-color: rgba(255, 255, 255, 0.10) !important;
+  background: rgba(255, 255, 255, 0.015) !important;
+  border-color: rgba(255, 255, 255, 0.04) !important;
 }
 
 body.light-theme .step-cell.beat-start-empty {
-  background: rgba(0, 0, 0, 0.16) !important;
-  border-color: rgba(0, 0, 0, 0.3) !important;
+  background: rgba(0, 0, 0, 0.08) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
 }
 
 /* Responsive overrides for note variations popover on mobile viewports */
@@ -1655,10 +1655,10 @@ body.theme-studio .track-icon-wrapper {
 /* --- Beat-group shading: alternate tint every beat --- */
 body.theme-studio .steps-container {
   background: repeating-linear-gradient(90deg,
-      rgba(255, 255, 255, 0.045) 0,
-      rgba(255, 255, 255, 0.045) calc(100% / var(--beat-divisions, 4)),
-      rgba(255, 255, 255, 0.008) calc(100% / var(--beat-divisions, 4)),
-      rgba(255, 255, 255, 0.008) calc(200% / var(--beat-divisions, 4)));
+      rgba(255, 255, 255, 0.03) 0,
+      rgba(255, 255, 255, 0.03) calc(100% / var(--beat-divisions, 4)),
+      rgba(255, 255, 255, 0.015) calc(100% / var(--beat-divisions, 4)),
+      rgba(255, 255, 255, 0.015) calc(200% / var(--beat-divisions, 4)));
   border-radius: 4px;
 }
 
@@ -1674,8 +1674,8 @@ body.theme-studio .step-cell {
 }
 
 body.theme-studio .step-cell.beat-start-empty {
-  background: rgba(255, 255, 255, 0.045) !important;
-  border-color: rgba(255, 255, 255, 0.16) !important;
+  background: rgba(255, 255, 255, 0.02) !important;
+  border-color: rgba(255, 255, 255, 0.09) !important;
 }
 
 body.theme-studio .step-cell.has-note {
@@ -2011,10 +2011,10 @@ body:not(.theme-studio) .steps-container.active-line {
 
 body.theme-studio .steps-container.active-line {
   background: repeating-linear-gradient(90deg,
-      rgba(255, 255, 255, 0.045) 0,
-      rgba(255, 255, 255, 0.045) calc(100% / var(--beat-divisions, 4)),
-      rgba(255, 255, 255, 0.008) calc(100% / var(--beat-divisions, 4)),
-      rgba(255, 255, 255, 0.008) calc(200% / var(--beat-divisions, 4))) !important;
+      rgba(255, 255, 255, 0.03) 0,
+      rgba(255, 255, 255, 0.03) calc(100% / var(--beat-divisions, 4)),
+      rgba(255, 255, 255, 0.015) calc(100% / var(--beat-divisions, 4)),
+      rgba(255, 255, 255, 0.015) calc(200% / var(--beat-divisions, 4))) !important;
   border-color: transparent !important;
   box-shadow: none !important;
 }

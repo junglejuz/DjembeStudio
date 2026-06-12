@@ -5137,9 +5137,7 @@ function openVariationsMenu(track, stepIdx, cellElement, event) {
 
   title.textContent = `${cleanTrackName(track.name)} - Step ${stepIdx + 1}`;
 
-  builderHit1.innerHTML = "";
-  builderHit2.innerHTML = "";
-  if (builderHit3) builderHit3.innerHTML = "";
+
 
   let options = [];
   let presetsFlam = [];
@@ -5211,114 +5209,92 @@ function openVariationsMenu(track, stepIdx, cellElement, event) {
     ];
   }
 
-  options.forEach(opt => {
-    const o1 = document.createElement("option");
-    o1.value = opt.val;
-    o1.textContent = opt.label;
-    builderHit1.appendChild(o1);
+  if (builderHit1 && builderHit2 && builderApply) {
+    options.forEach(opt => {
+      const o1 = document.createElement("option");
+      o1.value = opt.val;
+      o1.textContent = opt.label;
+      builderHit1.appendChild(o1);
 
-    const o2 = document.createElement("option");
-    o2.value = opt.val;
-    o2.textContent = opt.label;
-    builderHit2.appendChild(o2);
+      const o2 = document.createElement("option");
+      o2.value = opt.val;
+      o2.textContent = opt.label;
+      builderHit2.appendChild(o2);
 
-    if (builderHit3) {
-      const o3 = document.createElement("option");
-      o3.value = opt.val;
-      o3.textContent = opt.label;
-      builderHit3.appendChild(o3);
-    }
-  });
-
-  let selectedType = "flam";
-
-  const updateBuilderUI = (type) => {
-    selectedType = type;
-    [builderBtnFlam, builderBtnRoll, builderBtnTriplet].forEach(btn => {
-      if (btn) btn.classList.remove("active");
+      if (builderHit3) {
+        const o3 = document.createElement("option");
+        o3.value = opt.val;
+        o3.textContent = opt.label;
+        builderHit3.appendChild(o3);
+      }
     });
-    if (type === "flam") {
-      builderBtnFlam.classList.add("active");
-      if (builderHit3) builderHit3.style.display = "none";
-      if (builderTo2) builderTo2.style.display = "none";
-    } else if (type === "roll") {
-      builderBtnRoll.classList.add("active");
-      if (builderHit3) builderHit3.style.display = "none";
-      if (builderTo2) builderTo2.style.display = "none";
-    } else if (type === "triplet") {
-      if (builderBtnTriplet) builderBtnTriplet.classList.add("active");
-      if (builderHit3) builderHit3.style.display = "";
-      if (builderTo2) builderTo2.style.display = "";
-    }
-  };
 
-  builderBtnFlam.onclick = () => updateBuilderUI("flam");
-  builderBtnRoll.onclick = () => updateBuilderUI("roll");
-  if (builderBtnTriplet) {
-    builderBtnTriplet.onclick = () => updateBuilderUI("triplet");
-  }
+    let selectedType = "flam";
 
-  const curVal = track.steps[stepIdx];
-  if (curVal && curVal.includes("/")) {
-    const [h1, h2] = curVal.split("/");
-    builderHit1.value = h1;
-    builderHit2.value = h2;
-    updateBuilderUI("flam");
-  } else if (curVal && curVal.includes("-")) {
-    const [h1, h2] = curVal.split("-");
-    builderHit1.value = h1;
-    builderHit2.value = h2;
-    updateBuilderUI("roll");
-  } else if (curVal && curVal.includes("*")) {
-    const [h1, h2, h3] = curVal.split("*");
-    builderHit1.value = h1;
-    builderHit2.value = h2;
-    if (builderHit3) builderHit3.value = h3 || h1;
-    updateBuilderUI("triplet");
-  } else if (curVal && curVal !== "") {
-    builderHit1.value = curVal;
-    builderHit2.value = curVal;
-    if (builderHit3) builderHit3.value = curVal;
-    updateBuilderUI("flam");
-  } else {
-    updateBuilderUI("flam");
-  }
-
-  const populateSection = (container, list) => {
-    if (!container) return;
-    container.innerHTML = "";
-    list.forEach(p => {
-      const btn = document.createElement("button");
-      btn.className = "variation-btn";
-
-      const iconWrapper = document.createElement("div");
-      iconWrapper.className = "variation-btn-icon";
-      iconWrapper.innerHTML = getSoundIcon(track, p.val, true);
-
-      btn.appendChild(iconWrapper);
-
-      btn.addEventListener("click", () => {
-        applyValue(p.val);
+    const updateBuilderUI = (type) => {
+      selectedType = type;
+      [builderBtnFlam, builderBtnRoll, builderBtnTriplet].forEach(btn => {
+        if (btn) btn.classList.remove("active");
       });
-      container.appendChild(btn);
-    });
-  };
+      if (type === "flam") {
+        if (builderBtnFlam) builderBtnFlam.classList.add("active");
+        if (builderHit3) builderHit3.style.display = "none";
+        if (builderTo2) builderTo2.style.display = "none";
+      } else if (type === "roll") {
+        if (builderBtnRoll) builderBtnRoll.classList.add("active");
+        if (builderHit3) builderHit3.style.display = "none";
+        if (builderTo2) builderTo2.style.display = "none";
+      } else if (type === "triplet") {
+        if (builderBtnTriplet) builderBtnTriplet.classList.add("active");
+        if (builderHit3) builderHit3.style.display = "";
+        if (builderTo2) builderTo2.style.display = "";
+      }
+    };
 
-  populateSection(flamContainer, presetsFlam);
-  populateSection(rollContainer, presetsRoll);
-  populateSection(tripletContainer, presetsTriplet);
-
-  builderApply.onclick = () => {
-    const h1 = builderHit1.value;
-    const h2 = builderHit2.value;
-    if (selectedType === "triplet") {
-      const h3 = builderHit3 ? builderHit3.value : h1;
-      applyValue(`${h1}*${h2}*${h3}`);
-    } else {
-      const delimiter = selectedType === "flam" ? "/" : "-";
-      applyValue(`${h1}${delimiter}${h2}`);
+    if (builderBtnFlam) builderBtnFlam.onclick = () => updateBuilderUI("flam");
+    if (builderBtnRoll) builderBtnRoll.onclick = () => updateBuilderUI("roll");
+    if (builderBtnTriplet) {
+      builderBtnTriplet.onclick = () => updateBuilderUI("triplet");
     }
-  };
+
+    const curVal = track.steps[stepIdx];
+    if (curVal && curVal.includes("/")) {
+      const [h1, h2] = curVal.split("/");
+      builderHit1.value = h1;
+      builderHit2.value = h2;
+      updateBuilderUI("flam");
+    } else if (curVal && curVal.includes("-")) {
+      const [h1, h2] = curVal.split("-");
+      builderHit1.value = h1;
+      builderHit2.value = h2;
+      updateBuilderUI("roll");
+    } else if (curVal && curVal.includes("*")) {
+      const [h1, h2, h3] = curVal.split("*");
+      builderHit1.value = h1;
+      builderHit2.value = h2;
+      if (builderHit3) builderHit3.value = h3 || h1;
+      updateBuilderUI("triplet");
+    } else if (curVal && curVal !== "") {
+      builderHit1.value = curVal;
+      builderHit2.value = curVal;
+      if (builderHit3) builderHit3.value = curVal;
+      updateBuilderUI("flam");
+    } else {
+      updateBuilderUI("flam");
+    }
+
+    builderApply.onclick = () => {
+      const h1 = builderHit1.value;
+      const h2 = builderHit2.value;
+      if (selectedType === "triplet") {
+        const h3 = builderHit3 ? builderHit3.value : h1;
+        applyValue(`${h1}*${h2}*${h3}`);
+      } else {
+        const delimiter = selectedType === "flam" ? "/" : "-";
+        applyValue(`${h1}${delimiter}${h2}`);
+      }
+    };
+  }
 
   clearBtn.onclick = () => {
     applyValue("");
