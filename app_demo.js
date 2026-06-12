@@ -6148,7 +6148,8 @@ function renderGrid() {
 
       // Beat-group shading (Studio theme): how many visual beat divisions per line
       const is12or6Sig = (state.timeSignature === "12/8" || state.timeSignature === "6/8");
-      stepsContainer.style.setProperty("--beat-divisions", is12or6Sig ? state.beats * 2 : state.beats);
+      const beatDivisions = is12or6Sig ? (stepsPerLine / 3) : state.beats;
+      stepsContainer.style.setProperty("--beat-divisions", beatDivisions);
 
       // Playhead for this container
       const playhead = document.createElement("div");

@@ -1969,8 +1969,11 @@ body.perf-lite .step-cell.strike-flash {
 /* Step boxes pulse brighter + slightly larger as the playhead passes */
 @keyframes phPass {
   0% {
-    transform: translateY(-50%) scale(calc(var(--current-scale, 1) * 1.22));
-    filter: brightness(calc(var(--pitch-brightness, 1) * 1.7));
+    transform: translateY(-50%) scale(calc(var(--current-scale, 1) * 1.35));
+    filter: brightness(calc(var(--pitch-brightness, 1) * 2.0));
+    background-color: rgba(255, 255, 255, 0.45) !important;
+    border-color: rgba(255, 255, 255, 0.6) !important;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.4) !important;
   }
 
   100% {
@@ -1980,12 +1983,14 @@ body.perf-lite .step-cell.strike-flash {
 }
 
 .step-cell.ph-pass:not(.strike-flash) {
-  animation: phPass 0.25s ease-out forwards !important;
+  animation: phPass 0.35s cubic-bezier(0.1, 0.8, 0.3, 1) forwards !important;
 }
 
 @keyframes phPassLite {
   0% {
-    transform: translateY(-50%) scale(calc(var(--current-scale, 1) * 1.22));
+    transform: translateY(-50%) scale(calc(var(--current-scale, 1) * 1.35));
+    background-color: rgba(255, 255, 255, 0.4) !important;
+    border-color: rgba(255, 255, 255, 0.5) !important;
   }
 
   100% {
@@ -1994,7 +1999,7 @@ body.perf-lite .step-cell.strike-flash {
 }
 
 body.perf-lite .step-cell.ph-pass:not(.strike-flash) {
-  animation: phPassLite 0.25s ease-out forwards !important;
+  animation: phPassLite 0.35s cubic-bezier(0.1, 0.8, 0.3, 1) forwards !important;
 }
 
 /* Active line is no longer boxed/highlighted... */
@@ -2005,13 +2010,18 @@ body:not(.theme-studio) .steps-container.active-line {
 }
 
 body.theme-studio .steps-container.active-line {
+  background: repeating-linear-gradient(90deg,
+      rgba(255, 255, 255, 0.045) 0,
+      rgba(255, 255, 255, 0.045) calc(100% / var(--beat-divisions, 4)),
+      rgba(255, 255, 255, 0.008) calc(100% / var(--beat-divisions, 4)),
+      rgba(255, 255, 255, 0.008) calc(200% / var(--beat-divisions, 4))) !important;
   border-color: transparent !important;
   box-shadow: none !important;
 }
 
 /* ...instead, the non-playing lines of multi-row parts dim slightly (still readable) */
 .steps-container.dim-line {
-  opacity: 0.45;
+  opacity: 0.35 !important;
   transition: opacity 0.25s ease;
 }
 

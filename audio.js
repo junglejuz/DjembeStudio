@@ -26,11 +26,11 @@ const SAMPLES = {
   
   // Dununs Bells (Primary)
   "kenkeni_bell_O": "samples/djembeloops_samples/Kenkeni_Bell_Open.mp3",
-  "kenkeni_bell_X": "samples/djembeloops_samples/Kenkeni_Muffled.mp3",
+  "kenkeni_bell_X": "samples/circAfrique v4/Kenkeni1 Bell Mute.bin",
   "sangban_bell_O": "samples/djembeloops_samples/Sangban_Bell_Open.mp3",
-  "sangban_bell_X": "samples/djembeloops_samples/Sangban_Muffled.mp3",
+  "sangban_bell_X": "samples/circAfrique v4/Sangban1 Bell Mute.bin",
   "dundunba_bell_O": "samples/djembeloops_samples/Doundoun_Bell_Open.mp3",
-  "dundunba_bell_X": "samples/djembeloops_samples/Doundoun_Muffled.mp3",
+  "dundunba_bell_X": "samples/circAfrique v4/Dununba1 Bell Mute.bin",
 
   // Shekere Rattles (Shake & Tap)
   "shekere_O": "samples/djembeloops_samples/Shekere.mp3",
@@ -494,7 +494,9 @@ export class DrumSynth {
     this.resume();
     
     const settings = this.settings[type] || { volume: 0.7, pitch: 0, reverb: 0.2, delay: 0, delaySubdiv: 0.25 };
-    const instVolume = settings.volume * velocity;
+    // Reduce bell volumes algorithmically to balance with duns
+    const bellVolumeScale = 0.6;
+    const instVolume = settings.volume * velocity * bellVolumeScale;
     let sampleHitType = hitType;
     if (hitType === "X") sampleHitType = "O";
     else if (hitType === "C") sampleHitType = "X";
@@ -505,7 +507,7 @@ export class DrumSynth {
     if (this.isLoaded && this.buffers[bufferKey]) {
       this.playSample(bufferKey, time, instVolume, pitchOffset, settings.reverb, null, sampleHitType === "X", settings.delay, settings.delaySubdiv, type);
     } else {
-      this.playSynthesizedBell(type, sampleHitType, time, velocity, pitchOffset);
+      this.playSynthesizedBell(type, sampleHitType, time, velocity * bellVolumeScale, pitchOffset);
     }
   }
 
