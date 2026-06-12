@@ -1984,59 +1984,74 @@ body.theme-studio #sequencer-grid-title {
 /* --- Track containers: keep the colour identity, drop the glow --- */
 body.theme-studio .track-row {
   background:
-    linear-gradient(105deg, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.055) 0%, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.01) 100%) padding-box,
-    linear-gradient(rgba(10, 13, 20, 0.55), rgba(10, 13, 20, 0.55)) padding-box,
-    linear-gradient(105deg, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.22) 0%, rgba(120, 120, 120, 0.07) 100%) border-box !important;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+    linear-gradie
+/* ============================================================
+   COMPACT NOTE LAYOUT (phones + demo frame)
+   Bigger step boxes and icons without extra vertical space:
+   steps reclaim the horizontal padding, starting tight against
+   the instrument icon and ending at the right edge.
+   Activated via body.compact-notes (set in JS: viewport < 900px
+   or the demo device frame is present).
+   ============================================================ */
+
+/* Reclaim horizontal padding around the sequencer grid */
+body.compact-notes .glass-panel:has(#sequencer-grid) {
+  padding-left: 0.3rem !important;
+  padding-right: 0.3rem !important;
 }
 
-body.theme-studio .track-icon-wrapper {
-  box-shadow: none !important;
-  border-color: hsla(var(--part-color-hsl, 243, 75%, 59%), 0.35) !important;
+body.compact-notes #sequencer-grid-title {
+  margin-bottom: 0.45rem !important;
 }
 
-/* --- Beat-group shading: alternate tint every beat --- */
-body.theme-studio .steps-container {
-  background: repeating-linear-gradient(90deg,
-      rgba(255, 255, 255, 0.03) 0,
-      rgba(255, 255, 255, 0.03) calc(100% / var(--beat-divisions, 4)),
-      rgba(255, 255, 255, 0.015) calc(100% / var(--beat-divisions, 4)),
-      rgba(255, 255, 255, 0.015) calc(200% / var(--beat-divisions, 4)));
-  border-radius: 4px;
+/* Tighter track shell: smaller radius so cells can sit near the ends */
+body.compact-notes .track-row {
+  padding: 0.12rem 3px !important;
+  border-radius: 8px !important;
+  margin-bottom: 0.08rem !important;
 }
 
-/* --- Step cells: neutral boxes, icon carries the meaning --- */
-body.theme-studio .step-cell {
-  background: rgba(255, 255, 255, 0.02) !important;
-  border-color: rgba(255, 255, 255, 0.09) !important;
-  box-shadow: none !important;
-  color: var(--studio-note) !important;
-  border-radius: 3px !important;
+/* Slimmer instrument column: first step starts close to the icon */
+body.compact-notes .track-meta {
+  width: 24px !important;
+  min-width: 24px !important;
+}
+
+body.compact-notes .track-icon-wrapper {
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 6px !important;
+}
+
+body.compact-notes .track-icon-wrapper svg {
   width: 16px !important;
   height: 16px !important;
 }
 
-body.theme-studio .step-cell.beat-start-empty {
-  background: rgba(255, 255, 255, 0.02) !important;
-  border-color: rgba(255, 255, 255, 0.09) !important;
+/* Steps span the full remaining width; last cell ends at the right edge */
+body.compact-notes .steps-container {
+  margin-left: 3px !important;
+  width: calc(100% - 3px) !important;
+  height: 24px !important;
 }
 
-body.theme-studio .step-cell.has-note {
-  background: rgba(255, 255, 255, 0.055) !important;
-  border-color: rgba(255, 255, 255, 0.22) !important;
+/* Bigger boxes (~36% more icon area), same musical spacing */
+body.compact-notes .step-cell {
+  width: 19px !important;
+  height: 19px !important;
+  border-radius: 3px !important;
 }
 
-/* Un-hide the note icons and let them fill the box */
-body.theme-studio .step-cell svg {
-  display: block !important;
+body.compact-notes .step-cell svg {
   width: 92% !important;
   height: 92% !important;
 }
 
-/* --- Composite notes (flams / rolls / triplets) --- */
-body.theme-studio .studio-flam {
-  position: relative;
-  display: block;
+/* Keep stacked lines inside a track tight */
+body.compact-notes .track-lines-container {
+  gap: 0.22rem !important;
+}
+: block;
   width: 100%;
   height: 100%;
 }

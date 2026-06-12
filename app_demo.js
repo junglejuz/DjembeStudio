@@ -607,6 +607,18 @@ window.addEventListener("resize", () => {
   (cachedStepContainers || []).forEach(c => { c._phWidth = null; });
 });
 
+// Compact note layout: phones (and the demo device frame) get larger, edge-to-edge
+// step boxes; desktop keeps the spacious layout.
+(function setupCompactNotes() {
+  function update() {
+    const compact = !!document.querySelector(".demo-device-frame") || window.innerWidth < 900;
+    document.body.classList.toggle("compact-notes", compact);
+  }
+  update();
+  window.addEventListener("resize", update);
+})();
+
+
 
 // Helper to return clean visual SVGs for different sound strikes
 function getSoundIcon(track, val, useOriginalIcons = false) {
@@ -7793,13 +7805,17 @@ function openVariationsMenu(track, stepIdx, cellElement, event) {
     };
   }
 
-  clearBtn.onclick = () => {
-    applyValue("");
-  };
+  if (clearBtn) {
+    clearBtn.onclick = () => {
+      applyValue("");
+    };
+  }
 
-  closeBtn.onclick = () => {
-    popup.classList.remove("active");
-  };
+  if (closeBtn) {
+    closeBtn.onclick = () => {
+      popup.classList.remove("active");
+    };
+  }
 
   function applyValue(newVal) {
     track.steps[stepIdx] = newVal;
