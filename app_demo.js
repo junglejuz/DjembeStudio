@@ -5199,6 +5199,7 @@ function triggerSynthHit(type, instrument, hitVal, playTime, trackVol, trackPitc
 
 // Step Flash Animation using performant hardware-accelerated Web Animations API
 function triggerStepVisualFlash(trackId, stepIndex, velocity = 1.0) {
+  if (perfLite) return;
   const cell = getCachedCell(trackId, stepIndex);
   if (cell) {
     const track = state.tracks.find(t => t.id === trackId);
