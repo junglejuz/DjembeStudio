@@ -6466,11 +6466,6 @@ function renderGrid() {
           cell.style.removeProperty("border-color");
           cell.style.removeProperty("box-shadow");
           cell.className = "step-cell";
-          const is12or6 = (state.timeSignature === "12/8" || state.timeSignature === "6/8");
-          const beatInterval = (is12or6 && track.subdivision === 6) ? 3 : track.subdivision;
-          if (stepInLine % beatInterval === 0) {
-            cell.classList.add("beat-start-empty");
-          }
 
           const currentScale = subdivFactor;
           cell.style.setProperty("--current-scale", currentScale);
@@ -7204,14 +7199,6 @@ function cycleStepHit(track, idx, cellElement) {
   cellElement.style.removeProperty("box-shadow");
   cellElement.className = "step-cell";
   cellElement.innerHTML = "";
-  if (val === "") {
-    const stepInLine = idx % (track.subdivision * state.beats);
-    const is12or6 = (state.timeSignature === "12/8" || state.timeSignature === "6/8");
-    const beatInterval = (is12or6 && track.subdivision === 6) ? 3 : track.subdivision;
-    if (stepInLine % beatInterval === 0) {
-      cellElement.classList.add("beat-start-empty");
-    }
-  }
   const subdivFactor = (state.beats * track.subdivision > 16) ? 0.65 : 1.0;
 
   if (val !== "") {
@@ -7868,14 +7855,6 @@ function openVariationsMenu(track, stepIdx, cellElement, event) {
     cellElement.style.removeProperty("box-shadow");
     cellElement.className = "step-cell";
     cellElement.innerHTML = "";
-    if (newVal === "") {
-      const stepInLine = stepIdx % (track.subdivision * state.beats);
-      const is12or6 = (state.timeSignature === "12/8" || state.timeSignature === "6/8");
-      const beatInterval = (is12or6 && track.subdivision === 6) ? 3 : track.subdivision;
-      if (stepInLine % beatInterval === 0) {
-        cellElement.classList.add("beat-start-empty");
-      }
-    }
 
     const subdivFactor = (state.beats * track.subdivision > 16) ? 0.65 : 1.0;
 
