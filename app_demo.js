@@ -497,8 +497,9 @@ function isIconTheme() {
 (function () {
   try {
     const saved = localStorage.getItem("djembe-theme");
-    const name = saved === "light" ? "light" : ((saved === "classic" || saved === "dark") ? "classic" : "studio");
-    document.body.classList.toggle("theme-studio", name === "studio" || name === "light");
+    const name = (saved === "light" || saved === "tinted") ? saved : ((saved === "classic" || saved === "dark") ? "classic" : "studio");
+    document.body.classList.toggle("theme-studio", name === "studio" || name === "tinted" || name === "light");
+    document.body.classList.toggle("theme-tinted", name === "tinted");
     document.body.classList.toggle("light-theme", name === "light");
   } catch (e) { }
 })();
@@ -3804,8 +3805,9 @@ function setupEventListeners() {
   const themesModal = document.getElementById("themes-modal");
 
   function applyTheme(name, rerender = true) {
-    if (name !== "studio" && name !== "classic" && name !== "light") name = "studio";
-    document.body.classList.toggle("theme-studio", name === "studio" || name === "light");
+    if (name !== "studio" && name !== "tinted" && name !== "classic" && name !== "light") name = "studio";
+    document.body.classList.toggle("theme-studio", name === "studio" || name === "tinted" || name === "light");
+    document.body.classList.toggle("theme-tinted", name === "tinted");
     document.body.classList.toggle("light-theme", name === "light");
     try { localStorage.setItem("djembe-theme", name); } catch (e) { }
 
@@ -3833,6 +3835,7 @@ function setupEventListeners() {
   try {
     const saved = localStorage.getItem("djembe-theme");
     if (saved === "light") applyTheme("light", false);
+    else if (saved === "tinted") applyTheme("tinted", false);
     else if (saved === "classic" || saved === "dark") applyTheme("classic", false);
     else applyTheme("studio", false);
   } catch (e) {
@@ -7618,7 +7621,7 @@ function openVariationsMenu(track, stepIdx, cellElement, event) {
 
   if (!popup) return;
 
-  title.textContent = `${cleanTrackName(track.name)} - Step ${stepIdx + 1}`;
+  title.textContent = `Edit Note \u00b7 ${cleanTrackName(track.name)} \u00b7 Step ${stepIdx + 1}`;
 
 
 

@@ -41,6 +41,13 @@ const SAMPLES = {
   "agogo_X": "samples/djembeloops_samples/Sangban_Bell_Open.mp3"
 };
 
+// Per-sample loudness compensation: some source packs are recorded quieter.
+// Dundunba sample group 1 (djembeloops Doundoun) boosted to match groups 2/3.
+const SAMPLE_GAINS = {
+  "dundunba_O": 1.5,
+  "dundunba_X": 1.5
+};
+
 // Add Djembe 1-7 Bass/Tone/Slap/Mute (both normal and Left hand samples)
 const DJEMBE_MAP = {
   1: "DjembeOne",
@@ -354,6 +361,9 @@ export class DrumSynth {
     if (!this.buffers[bufferKey]) {
       return null;
     }
+
+    // Apply per-sample loudness compensation
+    volume *= (SAMPLE_GAINS[bufferKey] || 1);
     
     const ctx = this.ctx;
     const buffer = this.buffers[bufferKey];
