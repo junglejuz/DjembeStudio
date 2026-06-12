@@ -6306,6 +6306,8 @@ function renderGrid() {
       const is12or6Sig = (state.timeSignature === "12/8" || state.timeSignature === "6/8");
       const beatDivisions = is12or6Sig ? (stepsPerLine / 3) : state.beats;
       stepsContainer.style.setProperty("--beat-divisions", beatDivisions);
+      // Compact layout: lets CSS size cells to the largest square that fits the line
+      stepsContainer.style.setProperty("--line-steps", stepsPerLine);
 
       // Playhead for this container
       const playhead = document.createElement("div");

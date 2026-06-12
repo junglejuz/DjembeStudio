@@ -2591,3 +2591,479 @@ body.light-theme .loading-spinner-inner {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+/* ============================================================
+   LOADING SCREEN
+   ============================================================ */
+
+.loading-screen {
+  position: absolute;
+  inset: 0;
+  z-index: 100002;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #080a0f;
+  transition: opacity 0.4s ease;
+}
+
+body.unified .loading-screen {
+  position: fixed;
+}
+
+.loading-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.loading-spinner-container {
+  position: relative;
+  width: 64px;
+  height: 64px;
+}
+
+.loading-spinner,
+.loading-spinner-inner {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 3px solid transparent;
+}
+
+.loading-spinner {
+  border-top-color: var(--primary);
+  animation: loadspin 1s linear infinite;
+}
+
+.loading-spinner-inner {
+  inset: 10px;
+  border-bottom-color: #d9b27c;
+  animation: loadspin 1.4s linear infinite reverse;
+}
+
+@keyframes loadspin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: #e2e5ea;
+}
+
+.loading-status {
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+/* ============================================================
+   STUDIO THEME (new default theme)
+   Icon-based notes, neutral greys, no glows, beat-group shading.
+   Activated via body.theme-studio.
+   ============================================================ */
+
+body.theme-studio {
+  --studio-note: #c9ced8;
+  --studio-note-dim: rgba(201, 206, 216, 0.45);
+}
+
+/* Themes modal option rows (theme-agnostic) */
+.theme-option-btn {
+  display: flex;
+  align-items: center;
+}
+
+.theme-option-btn .theme-check {
+  display: none;
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.theme-option-btn.active .theme-check {
+  display: block;
+}
+
+/* --- Calmer chrome: no glowing gradient titles --- */
+body.theme-studio .logo-title {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: #e2e5ea !important;
+  text-shadow: none !important;
+}
+
+body.theme-studio #sequencer-grid-title {
+  background: none !important;
+  -webkit-background-clip: unset !important;
+  -webkit-text-fill-color: #d9b27c !important;
+  text-shadow: none !important;
+}
+
+/* --- Track containers: keep the colour identity, drop the glow --- */
+body.theme-studio .track-row {
+  background:
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.055) 0%, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.01) 100%) padding-box,
+    linear-gradient(rgba(10, 13, 20, 0.55), rgba(10, 13, 20, 0.55)) padding-box,
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.22) 0%, rgba(120, 120, 120, 0.07) 100%) border-box !important;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3) !important;
+}
+
+body.theme-studio .track-icon-wrapper {
+  box-shadow: none !important;
+  border-color: hsla(var(--part-color-hsl, 243, 75%, 59%), 0.35) !important;
+}
+
+/* --- Beat-group shading: alternate tint every beat --- */
+body.theme-studio .steps-container {
+  background: repeating-linear-gradient(90deg,
+      rgba(255, 255, 255, 0.045) 0,
+      rgba(255, 255, 255, 0.045) calc(100% / var(--beat-divisions, 4)),
+      rgba(255, 255, 255, 0.008) calc(100% / var(--beat-divisions, 4)),
+      rgba(255, 255, 255, 0.008) calc(200% / var(--beat-divisions, 4)));
+  border-radius: 4px;
+}
+
+body.theme-studio .beat-marker {
+  display: none !important;
+}
+
+/* --- Step cells: neutral boxes, icon carries the meaning --- */
+body.theme-studio .step-cell {
+  background: rgba(255, 255, 255, 0.02) !important;
+  border-color: rgba(255, 255, 255, 0.09) !important;
+  box-shadow: none !important;
+  color: var(--studio-note) !important;
+  border-radius: 3px !important;
+}
+
+body.theme-studio .step-cell.beat-start-empty {
+  background: rgba(255, 255, 255, 0.045) !important;
+  border-color: rgba(255, 255, 255, 0.16) !important;
+}
+
+body.theme-studio .step-cell.has-note {
+  background: rgba(255, 255, 255, 0.055) !important;
+  border-color: rgba(255, 255, 255, 0.22) !important;
+}
+
+/* Un-hide the note icons and let them fill the box */
+body.theme-studio .step-cell svg {
+  display: block !important;
+  width: 92% !important;
+  height: 92% !important;
+}
+
+/* --- Composite notes (flams / rolls / triplets) --- */
+body.theme-studio .studio-flam {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+body.theme-studio .studio-flam .studio-grace {
+  position: absolute;
+  top: -22%;
+  left: -22%;
+  width: 64%;
+  height: 64%;
+  opacity: 0.55;
+  z-index: 1;
+}
+
+body.theme-studio .studio-flam .studio-main {
+  position: absolute;
+  bottom: -6%;
+  right: -10%;
+  width: 88%;
+  height: 88%;
+  z-index: 2;
+}
+
+body.theme-studio .studio-roll {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  gap: 1px;
+}
+
+body.theme-studio .studio-roll > span {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.theme-studio .studio-roll > span:last-child {
+  opacity: 0.8;
+}
+
+body.theme-studio .studio-triplet {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+body.theme-studio .studio-triplet > span {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+body.theme-studio .studio-triplet .studio-badge3 {
+  position: absolute;
+  top: -90%;
+  right: -20%;
+  flex: none;
+  font-size: 8px;
+  font-weight: 700;
+  color: var(--studio-note-dim);
+  line-height: 1;
+}
+
+body.theme-studio .studio-flam svg,
+body.theme-studio .studio-roll svg,
+body.theme-studio .studio-triplet svg {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+body.theme-studio .step-cell.step-cell-composite {
+  background: rgba(255, 255, 255, 0.055) !important;
+  border-color: rgba(255, 255, 255, 0.22) !important;
+}
+
+/* --- Cleaner playhead: soft sweeping column --- */
+.playhead-line {
+  left: 0 !important;
+  will-change: transform !important;
+}
+
+body.theme-studio .playhead-line {
+  width: 3px !important;
+  background: linear-gradient(180deg, transparent 0%, rgba(226, 229, 234, 0.85) 30%, rgba(226, 229, 234, 0.85) 70%, transparent 100%) !important;
+  box-shadow: -6px 0 10px rgba(226, 229, 234, 0.12) !important;
+  border-radius: 2px;
+}
+
+/* --- One accent, calmer labels --- */
+body.theme-studio #breaks-control-row,
+body.theme-studio #special-parts-control-row {
+  background: var(--bg-glass) !important;
+  border: 1px solid var(--border-color) !important;
+}
+
+body.theme-studio #solos-control-row > span,
+body.theme-studio #breaks-control-row > span,
+body.theme-studio #variations-control-row > span,
+body.theme-studio #special-parts-control-row > span {
+  color: var(--text-muted) !important;
+  text-transform: none !important;
+  letter-spacing: 0.02em !important;
+}
+
+body.theme-studio .btn,
+body.theme-studio .btn-primary,
+body.theme-studio .btn-play-large {
+  box-shadow: none !important;
+}
+
+body.theme-studio .demo-device-frame {
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8) !important;
+}
+
+/* ============================================================
+   LIGHT + STUDIO: dark icons on light surfaces
+   (Light theme uses icon notes too; both classes are applied.)
+   ============================================================ */
+
+body.theme-studio.light-theme {
+  --studio-note: #3f4756;
+  --studio-note-dim: rgba(63, 71, 86, 0.5);
+}
+
+body.theme-studio.light-theme .logo-title {
+  -webkit-text-fill-color: #1f2530 !important;
+}
+
+body.theme-studio.light-theme #sequencer-grid-title {
+  -webkit-text-fill-color: #8a6a3a !important;
+}
+
+body.theme-studio.light-theme .track-row {
+  background:
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.10) 0%, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.02) 100%) padding-box,
+    linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)) padding-box,
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.35) 0%, rgba(120, 120, 120, 0.15) 100%) border-box !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+}
+
+body.theme-studio.light-theme .steps-container {
+  background: repeating-linear-gradient(90deg,
+      rgba(0, 0, 0, 0.05) 0,
+      rgba(0, 0, 0, 0.05) calc(100% / var(--beat-divisions, 4)),
+      rgba(0, 0, 0, 0.012) calc(100% / var(--beat-divisions, 4)),
+      rgba(0, 0, 0, 0.012) calc(200% / var(--beat-divisions, 4)));
+}
+
+body.theme-studio.light-theme .step-cell {
+  background: rgba(0, 0, 0, 0.035) !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+}
+
+body.theme-studio.light-theme .step-cell.beat-start-empty {
+  background: rgba(0, 0, 0, 0.08) !important;
+  border-color: rgba(0, 0, 0, 0.25) !important;
+}
+
+body.theme-studio.light-theme .step-cell.has-note,
+body.theme-studio.light-theme .step-cell.step-cell-composite {
+  background: rgba(0, 0, 0, 0.06) !important;
+  border-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+body.theme-studio.light-theme .playhead-line {
+  background: linear-gradient(180deg, transparent 0%, rgba(30, 41, 59, 0.8) 30%, rgba(30, 41, 59, 0.8) 70%, transparent 100%) !important;
+  box-shadow: none !important;
+}
+
+/* ============================================================
+   PERFORMANCE LITE MODE (older / slower devices)
+   body.perf-lite — auto-detected, or force via localStorage
+   djembe-perf = "lite" / "full".
+   ============================================================ */
+
+body.perf-lite .glass-panel,
+body.perf-lite .mobile-header,
+body.perf-lite .controls-bar,
+body.perf-lite .modal-overlay,
+body.perf-lite .modal-content,
+body.perf-lite .variations-popup {
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+body.perf-lite:not(.light-theme) .glass-panel {
+  background: #0b0e15 !important;
+}
+
+body.perf-lite:not(.light-theme) .controls-bar {
+  background: #07090e !important;
+}
+
+body.perf-lite:not(.light-theme) .modal-content {
+  background: #10141d !important;
+}
+
+body.perf-lite:not(.light-theme) .variations-popup {
+  background: #10141d !important;
+}
+
+body.perf-lite.light-theme .glass-panel,
+body.perf-lite.light-theme .modal-content,
+body.perf-lite.light-theme .variations-popup {
+  background: #ffffff !important;
+}
+
+body.perf-lite.light-theme .controls-bar {
+  background: #f4f6fa !important;
+}
+
+body.perf-lite .glass-panel,
+body.perf-lite .track-row,
+body.perf-lite .controls-bar {
+  box-shadow: none !important;
+}
+
+body.perf-lite .step-cell.strike-flash {
+  animation: liteStrikeFlash 0.22s ease-out forwards !important;
+}
+
+@keyframes liteStrikeFlash {
+  0% {
+    transform: translateY(-50%) scale(calc(var(--current-scale, 1) * 1.35));
+  }
+
+  100% {
+    transform: translateY(-50%) scale(var(--current-scale, 1));
+  }
+}
+
+/* ============================================================
+   COMPACT NOTE LAYOUT (phones + demo frame)
+   Cells auto-size to the largest square that fits the line with
+   a slight gap (--line-steps set per line in JS). Steps run from
+   tight against the instrument icon to the right edge.
+   Activated via body.compact-notes.
+   ============================================================ */
+
+body.compact-notes .app-container {
+  padding-left: 0.3rem !important;
+  padding-right: 0.3rem !important;
+}
+
+body.compact-notes .glass-panel:has(#sequencer-grid) {
+  padding-left: 0.2rem !important;
+  padding-right: 0.2rem !important;
+}
+
+body.compact-notes #sequencer-grid-title {
+  margin-bottom: 0.45rem !important;
+}
+
+body.compact-notes .track-row {
+  padding: 0.12rem 2px !important;
+  border-radius: 8px !important;
+  margin-bottom: 0.08rem !important;
+}
+
+body.compact-notes .track-meta {
+  width: 22px !important;
+  min-width: 22px !important;
+}
+
+body.compact-notes .track-icon-wrapper {
+  width: 22px !important;
+  height: 22px !important;
+  border-radius: 6px !important;
+}
+
+body.compact-notes .track-icon-wrapper svg {
+  width: 15px !important;
+  height: 15px !important;
+}
+
+body.compact-notes .steps-container {
+  margin-left: 2px !important;
+  width: calc(100% - 2px) !important;
+  height: 24px !important;
+}
+
+/* Largest square that fits the line, minus a 1.5px gap, capped at 22px */
+body.compact-notes .step-cell {
+  width: clamp(13px, calc(100% / var(--line-steps, 16) - 1.5px), 22px) !important;
+  height: auto !important;
+  aspect-ratio: 1 / 1;
+  border-radius: 3px !important;
+}
+
+body.compact-notes .step-cell svg {
+  width: 92% !important;
+  height: 92% !important;
+}
+
+body.compact-notes .track-lines-container {
+  gap: 0.22rem !important;
+}
