@@ -1266,23 +1266,23 @@ body.theme-studio.light-theme .demo-device-frame {
 
 body.light-theme .track-row,
 body.theme-studio.light-theme .track-row {
-  background: #e5dfd2 !important; /* Darker than background (#f3efe6) but still lighter than notes */
-  border: 1px solid rgba(0, 0, 0, 0.08) !important;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.03) !important;
+  background: #eee9dc !important; /* Lighter beige to contrast gently with base beige (#f3efe6) */
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02) !important;
 }
 
 body.light-theme .track-row:hover,
 body.theme-studio.light-theme .track-row:hover {
-  background: #ded8cb !important;
-  border-color: rgba(0, 0, 0, 0.12) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
+  background: #e7e2d4 !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04) !important;
 }
 
 body.light-theme .track-row.focused-track,
 body.theme-studio.light-theme .track-row.focused-track {
-  background: #dbd5c8 !important;
-  border-color: rgba(99, 102, 241, 0.3) !important;
-  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.08) !important;
+  background: #e5dfd1 !important;
+  border-color: rgba(99, 102, 241, 0.25) !important;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.06) !important;
 }
 
 body.light-theme .track-icon-wrapper,
@@ -1307,14 +1307,24 @@ body.theme-studio.light-theme .step-cell.beat-start-empty {
 
 body.light-theme .step-cell.has-note,
 body.theme-studio.light-theme .step-cell.has-note {
-  background: rgba(0, 0, 0, 0.08) !important;
-  border-color: rgba(0, 0, 0, 0.18) !important;
+  background: rgba(0, 0, 0, 0.04) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
 }
 
 body.light-theme .step-cell.step-cell-composite,
 body.theme-studio.light-theme .step-cell.step-cell-composite {
-  background: rgba(0, 0, 0, 0.08) !important;
-  border-color: rgba(0, 0, 0, 0.18) !important;
+  background: rgba(0, 0, 0, 0.04) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Remove active playhead highlights and scales for step boxes on light theme */
+body.light-theme .step-cell.ph-pass,
+body.theme-studio.light-theme .step-cell.ph-pass {
+  animation: none !important;
+  background: rgba(0, 0, 0, 0.04) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  box-shadow: none !important;
+  transform: translateY(-50%) scale(var(--current-scale, 1)) !important;
 }
 
 body.light-theme .steps-container,
