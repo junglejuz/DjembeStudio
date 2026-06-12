@@ -2115,7 +2115,7 @@ body.theme-studio .studio-triplet > span {
 
 body.theme-studio .studio-triplet .studio-badge3 {
   position: absolute;
-  top: -90%;
+  top: -40%;
   right: -20%;
   flex: none;
   font-size: 8px;
@@ -2361,17 +2361,22 @@ body.perf-lite .playhead-line {
   display: none !important;
 }
 
-body.perf-lite .step-cell.current-beat-highlight {
-  background-color: rgba(99, 102, 241, 0.32) !important;
-  border-color: rgba(129, 140, 248, 0.7) !important;
-  box-shadow: 0 0 6px rgba(99, 102, 241, 0.2) !important;
+body.perf-lite .step-cell.current-beat-highlight,
+body.theme-studio.perf-lite .step-cell.current-beat-highlight,
+body.perf-lite .step-cell.has-note.current-beat-highlight,
+body.perf-lite .step-cell.step-cell-composite.current-beat-highlight {
+  background-color: rgba(99, 102, 241, 0.35) !important;
+  border-color: rgba(129, 140, 248, 0.75) !important;
+  box-shadow: 0 0 8px rgba(99, 102, 241, 0.3) !important;
 }
 
 body.perf-lite.light-theme .step-cell.current-beat-highlight,
-body.theme-studio.perf-lite.light-theme .step-cell.current-beat-highlight {
-  background-color: rgba(217, 119, 6, 0.24) !important;
-  border-color: rgba(217, 119, 6, 0.65) !important;
-  box-shadow: 0 0 6px rgba(217, 119, 6, 0.15) !important;
+body.theme-studio.perf-lite.light-theme .step-cell.current-beat-highlight,
+body.perf-lite.light-theme .step-cell.has-note.current-beat-highlight,
+body.perf-lite.light-theme .step-cell.step-cell-composite.current-beat-highlight {
+  background-color: rgba(217, 119, 6, 0.26) !important;
+  border-color: rgba(217, 119, 6, 0.7) !important;
+  box-shadow: 0 0 8px rgba(217, 119, 6, 0.2) !important;
 }
 
 /* Active line is no longer boxed/highlighted... */
@@ -2824,7 +2829,7 @@ body.theme-studio .studio-triplet > span {
 
 body.theme-studio .studio-triplet .studio-badge3 {
   position: absolute;
-  top: -90%;
+  top: -40%;
   right: -20%;
   flex: none;
   font-size: 8px;
@@ -3153,7 +3158,35 @@ body.theme-tinted .step-cell.shekere-X {
   color: #e9b98b !important;
 }
 
-/* Composite notes (flams/rolls/triplets) take a soft wash of the track colour */
+/* Coloured studio theme SVG overrides for individual notes inside flams/rolls/triplets */
+body.theme-tinted .note-svg-djembe-B {
+  color: #92b9f0 !important;
+}
+body.theme-tinted .note-svg-djembe-T {
+  color: #e7c483 !important;
+}
+body.theme-tinted .note-svg-djembe-S {
+  color: #ee9a93 !important;
+}
+body.theme-tinted .note-svg-djembe-M {
+  color: #c5a9eb !important;
+}
+body.theme-tinted .note-svg-dunun-O,
+body.theme-tinted .note-svg-dunun-X,
+body.theme-tinted .note-svg-dunun-C {
+  color: #94d6b4 !important;
+}
+body.theme-tinted .note-svg-bell-O,
+body.theme-tinted .note-svg-bell-X,
+body.theme-tinted .note-svg-bell-C {
+  color: #8fd2e3 !important;
+}
+body.theme-tinted .note-svg-shekere-O,
+body.theme-tinted .note-svg-shekere-X {
+  color: #e9b98b !important;
+}
+
+/* Composite notes (flams/rolls/triplets) take a soft wash of the track colour by default, but SVGs override it */
 body.theme-tinted .step-cell.step-cell-composite {
   color: hsla(var(--part-color-hsl, 220, 30%, 75%), 0.85) !important;
 }

@@ -713,23 +713,23 @@ function getSoundIcon(track, val, useOriginalIcons = false) {
 
   if (trackType === "djembe") {
     if (val === "B") { // Bass: capital letter B
-      return `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      return `<svg class="note-svg note-svg-djembe-B" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
         <path d="M6 4h8a4 4 0 0 1 0 8H6v-8zm0 8h9a4 4 0 0 1 0 8H6v-8z" />
       </svg>`;
     }
     if (val === "T") { // Tone: solid dot
-      return `<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+      return `<svg class="note-svg note-svg-djembe-T" width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
         <circle cx="12" cy="12" r="8" />
       </svg>`;
     }
     if (val === "S") { // Slap: X icon
-      return `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round">
+      return `<svg class="note-svg note-svg-djembe-S" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round">
         <line x1="6" y1="6" x2="18" y2="18" />
         <line x1="18" y1="6" x2="6" y2="18" />
       </svg>`;
     }
     if (val === "M") { // Muffled Slap: down arrow
-      return `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      return `<svg class="note-svg note-svg-djembe-M" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
         <line x1="12" y1="4" x2="12" y2="20" />
         <polyline points="5 13 12 20 19 13" />
       </svg>`;
@@ -741,8 +741,8 @@ function getSoundIcon(track, val, useOriginalIcons = false) {
       // Studio: same colour for open/closed — filled square = open, outlined = closed
       const isClosed = (val === "C" || val === "X");
       return isClosed
-        ? `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><rect x="4.5" y="4.5" width="15" height="15" rx="2.5" /></svg>`
-        : `<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5" /></svg>`;
+        ? `<svg class="note-svg note-svg-dunun-${val}" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6"><rect x="4.5" y="4.5" width="15" height="15" rx="2.5" /></svg>`
+        : `<svg class="note-svg note-svg-dunun-${val}" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><rect x="3.5" y="3.5" width="17" height="17" rx="2.5" /></svg>`;
     }
     const isMuffled = (val === "C" || val === "X");
     const strokeWidth = "2.5";
@@ -787,8 +787,8 @@ function getSoundIcon(track, val, useOriginalIcons = false) {
       // Studio: triangles — filled = open, outlined = muted
       const isClosed = (val === "C");
       return isClosed
-        ? `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><path d="M12 4.5 L20.5 19.5 H3.5 Z" /></svg>`
-        : `<svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3.5 L21.5 20 H2.5 Z" /></svg>`;
+        ? `<svg class="note-svg note-svg-bell-${val}" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linejoin="round"><path d="M12 4.5 L20.5 19.5 H3.5 Z" /></svg>`
+        : `<svg class="note-svg note-svg-bell-${val}" width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3.5 L21.5 20 H2.5 Z" /></svg>`;
     }
     const isMuffled = (val === "C");
     const strokeWidth = "2.5";
@@ -831,7 +831,7 @@ function getSoundIcon(track, val, useOriginalIcons = false) {
 
   if (trackType === "shekere") {
     if (val === "O") { // Shake
-      return `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+      return `<svg class="note-svg note-svg-shekere-O" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
         <path d="M6 8a4 4 0 0 1 12 0c0 4-4 6-4 10a2 2 0 0 1-4 0c0-4-4-6-4-10z" fill="currentColor" fill-opacity="0.1" />
         <circle cx="12" cy="8" r="1.5" fill="currentColor" />
         <circle cx="9" cy="11" r="1.5" fill="currentColor" />
@@ -839,7 +839,7 @@ function getSoundIcon(track, val, useOriginalIcons = false) {
       </svg>`;
     }
     if (val === "X") { // Gourd Tap
-      return `<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+      return `<svg class="note-svg note-svg-shekere-X" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
         <circle cx="12" cy="12" r="8" fill="currentColor" fill-opacity="0.2" />
         <path d="M12 8v8M8 12h8" />
       </svg>`;
@@ -5347,15 +5347,24 @@ function animatePlayhead() {
             const curStepInLine = Math.min(stepsPerLineCount - 1, Math.floor(progress * stepsPerLineCount));
 
             // Pulse the step box the playhead is passing over (brighter + slightly larger)
-            if (container._pulseStep !== curStepInLine) {
-              container._pulseStep = curStepInLine;
-              if (container._pulseCell) container._pulseCell.classList.remove("ph-pass");
-              const pulseCell = cellCache.get(trackId + ":" + (lineIdx * stepsPerLineCount + curStepInLine));
-              if (pulseCell) {
-                pulseCell.classList.add("ph-pass");
-                container._pulseCell = pulseCell;
-              } else {
+            if (!perfLite) {
+              if (container._pulseStep !== curStepInLine) {
+                container._pulseStep = curStepInLine;
+                if (container._pulseCell) container._pulseCell.classList.remove("ph-pass");
+                const pulseCell = cellCache.get(trackId + ":" + (lineIdx * stepsPerLineCount + curStepInLine));
+                if (pulseCell) {
+                  pulseCell.classList.add("ph-pass");
+                  container._pulseCell = pulseCell;
+                } else {
+                  container._pulseCell = null;
+                }
+              }
+            } else {
+              // Slower device mode: disable individual step pulsing
+              if (container._pulseCell) {
+                container._pulseCell.classList.remove("ph-pass");
                 container._pulseCell = null;
+                container._pulseStep = undefined;
               }
             }
 
