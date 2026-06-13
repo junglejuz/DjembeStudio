@@ -5252,8 +5252,8 @@ function triggerStepVisualFlash(trackId, stepIndex, velocity = 1.0) {
     const subdivFactor = (track && (state.beats * track.subdivision > 16)) ? 0.65 : 1.0;
 
     // Scale and glow to match the actual played velocity (with subdivision size correction)
-    const playedScale = subdivFactor;
-    const pitchBrightness = track ? calculatePitchBrightness(track, stepIndex, state.currentEpoch || 0) : 1.0;
+    const baselineScale = subdivFactor;
+    const finalBrightness = track ? calculatePitchBrightness(track, stepIndex, state.currentEpoch || 0) : 1.0;
 
     // Determine the base (idle) scale/brightness we will return to after flash
     let finalVol = velocity;
@@ -5266,8 +5266,6 @@ function triggerStepVisualFlash(trackId, stepIndex, velocity = 1.0) {
         finalVol = Math.max(0.05, Math.min(1.2, finalVol + volOffset));
       }
     }
-    const baselineScale = subdivFactor;
-    const finalBrightness = track ? calculatePitchBrightness(track, stepIndex, state.currentEpoch || 0) : 1.0;
 
     // Apply base variables to style
     cell.style.setProperty("--vel-scale", finalVol);
@@ -5275,20 +5273,15 @@ function triggerStepVisualFlash(trackId, stepIndex, velocity = 1.0) {
     cell.style.setProperty("--pitch-brightness", finalBrightness);
     cell.style.transform = `translateY(-50%) scale(${baselineScale})`;
 
-    // Run hardware-accelerated compositor animation to flash the note
-    cell.animate([
-      {
-        transform: `translateY(-50%) scale(${playedScale * 1.25})`,
-        filter: `brightness(${pitchBrightness * 1.7})`
-      },
-      {
-        transform: `translateY(-50%) scale(${baselineScale})`,
-        filter: `brightness(${finalBrightness})`
-      }
-    ], {
-      duration: 250,
-      easing: 'cubic-bezier(0.1, 0.8, 0.3, 1)'
-    });
+    // Trigger visual highlight flash that quickly animates on and off
+    cell.classList.remove("note-play-flash");
+    void cell.offsetWidth; // Force reflow to restart animation if already active
+    cell.classList.add("note-play-flash");
+    
+    // Clean up class after animation ends (250ms duration + buffer)
+    setTimeout(() => {
+      cell.classList.remove("note-play-flash");
+    }, 280);
   }
 }
 
