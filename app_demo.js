@@ -551,17 +551,17 @@ const THEME_PRESETS = [
     id: 'segou_mudcloth', name: 'Ségou Mudcloth', isDark: true, background: '#281507', phoneBg: '#130a04', barBg: '#1c1008', patternType: 'mudcloth', patternOpacity: 0.18,
     tracks: {
       djembes: { cardBg: 'rgba(62, 22, 5, 0.65)', border: '#622908', iconColor: '#EB8F69', iconBg: '#281507', noteBg: '#8A2E0F', noteColor: '#F7EFC2', blendNoteColor: '#D4622E' },
-      kenkeni: { cardBg: 'rgba(178, 162, 104, 0.15)', border: '#9CA681', iconColor: '#D0AD54', iconBg: 'rgba(178, 162, 104, 0.1)', noteBg: '#B2A268', noteColor: '#ffffff', blendNoteColor: '#DBAB3D' },
-      sangban: { cardBg: 'rgba(127, 115, 80, 0.18)', border: '#7F7350', iconColor: '#B2A268', iconBg: 'rgba(127, 115, 80, 0.1)', noteBg: '#C07F28', noteColor: '#ffffff', blendNoteColor: '#F3983C' },
+      kenkeni: { cardBg: 'rgba(178, 162, 104, 0.15)', border: '#9CA681', iconColor: '#D0AD54', iconBg: 'rgba(178, 162, 104, 0.1)', noteBg: '#5B4A39', noteColor: '#ffffff', blendNoteColor: '#DBAB3D' },
+      sangban: { cardBg: 'rgba(127, 115, 80, 0.18)', border: '#7F7350', iconColor: '#B2A268', iconBg: 'rgba(127, 115, 80, 0.1)', noteBg: '#8F502A', noteColor: '#ffffff', blendNoteColor: '#F3983C' },
       doundounba: { cardBg: 'rgba(91, 74, 57, 0.22)', border: '#5B4A39', iconColor: '#8F502A', iconBg: 'rgba(91, 74, 57, 0.1)', noteBg: '#784617', noteColor: '#ffffff', blendNoteColor: '#622908' }
     }
   },
   {
     id: 'niger_delta', name: 'Niger Delta Savanna', isDark: true, background: '#15221B', phoneBg: '#090e0b', barBg: '#111d17', patternType: 'linen', patternOpacity: 0.15,
     tracks: {
-      djembes: { cardBg: 'rgba(33, 68, 62, 0.65)', border: '#39675D', iconColor: '#85AF97', iconBg: '#15221B', noteBg: '#8A2E0F', noteColor: '#FFFDF5', blendNoteColor: '#EB8F69' },
+      djembes: { cardBg: 'rgba(33, 68, 62, 0.65)', border: '#39675D', iconColor: '#85AF97', iconBg: '#15221B', noteBg: '#8A2E0F', noteColor: '#FFFDF5', blendNoteColor: '#FFFDF2' },
       kenkeni: { cardBg: 'rgba(94, 140, 123, 0.15)', border: '#5E8C7B', iconColor: '#85AF97', iconBg: 'rgba(94, 140, 123, 0.1)', noteBg: '#39675D', noteColor: '#FFFDF5', blendNoteColor: '#85AF97' },
-      sangban: { cardBg: 'rgba(156, 166, 129, 0.15)', border: '#9CA681', iconColor: '#B2A268', iconBg: 'rgba(156, 166, 129, 0.1)', noteBg: '#DBAB3D', noteColor: '#ffffff', blendNoteColor: '#D0AD54' },
+      sangban: { cardBg: 'rgba(156, 166, 129, 0.15)', border: '#9CA681', iconColor: '#B2A268', iconBg: 'rgba(156, 166, 129, 0.1)', noteBg: '#5B4A39', noteColor: '#ffffff', blendNoteColor: '#D0AD54' },
       doundounba: { cardBg: 'rgba(127, 115, 80, 0.15)', border: '#7F7350', iconColor: '#B08248', iconBg: 'rgba(127, 115, 80, 0.1)', noteBg: '#784617', noteColor: '#ffffff', blendNoteColor: '#8F502A' }
     }
   },
@@ -569,8 +569,8 @@ const THEME_PRESETS = [
     id: 'ebony_fire', name: 'Ebony Campfire', isDark: true, background: '#3E1605', phoneBg: '#1a0902', barBg: '#250f05', patternType: 'kente', patternOpacity: 0.14,
     tracks: {
       djembes: { cardBg: 'rgba(138, 46, 15, 0.25)', border: '#8A2E0F', iconColor: '#D4622E', iconBg: '#3E1605', noteBg: '#A72305', noteColor: '#F7EFC2', blendNoteColor: '#F3983C' },
-      kenkeni: { cardBg: 'rgba(218, 171, 61, 0.15)', border: '#DBAB3D', iconColor: '#E5A827', iconBg: 'rgba(218, 171, 61, 0.1)', noteBg: '#D0AD54', noteColor: '#ffffff', blendNoteColor: '#E5A827' },
-      sangban: { cardBg: 'rgba(243, 152, 60, 0.12)', border: '#F3983C', iconColor: '#EB8F69', iconBg: 'rgba(243, 152, 60, 0.1)', noteBg: '#D4622E', noteColor: '#ffffff', blendNoteColor: '#EB8F69' },
+      kenkeni: { cardBg: 'rgba(218, 171, 61, 0.15)', border: '#DBAB3D', iconColor: '#E5A827', iconBg: 'rgba(218, 171, 61, 0.1)', noteBg: '#8F502A', noteColor: '#ffffff', blendNoteColor: '#E5A827' },
+      sangban: { cardBg: 'rgba(243, 152, 60, 0.12)', border: '#F3983C', iconColor: '#EB8F69', iconBg: 'rgba(243, 152, 60, 0.1)', noteBg: '#B53A16', noteColor: '#ffffff', blendNoteColor: '#EB8F69' },
       doundounba: { cardBg: 'rgba(181, 58, 22, 0.15)', border: '#B53A16', iconColor: '#B53A16', iconBg: 'rgba(181, 58, 22, 0.1)', noteBg: '#8A2E0F', noteColor: '#ffffff', blendNoteColor: '#B53A16' }
     }
   },
@@ -578,8 +578,8 @@ const THEME_PRESETS = [
     id: 'sahel_midnight', name: 'Sahel Oasis', isDark: true, background: '#21443E', phoneBg: '#0f221e', barBg: '#17332d', patternType: 'mudcloth', patternOpacity: 0.12,
     tracks: {
       djembes: { cardBg: 'rgba(94, 140, 123, 0.35)', border: '#5E8C7B', iconColor: '#C5D0B2', iconBg: '#21443E', noteBg: '#39675D', noteColor: '#FFFDF5', blendNoteColor: '#85AF97' },
-      kenkeni: { cardBg: 'rgba(247, 239, 194, 0.15)', border: '#F7EFC2', iconColor: '#EFCD91', iconBg: 'rgba(247, 239, 194, 0.1)', noteBg: '#DAB980', noteColor: '#0f221e', blendNoteColor: '#F7EFC2' },
-      sangban: { cardBg: 'rgba(239, 205, 145, 0.18)', border: '#EFCD91', iconColor: '#DAB980', iconBg: 'rgba(239, 205, 145, 0.1)', noteBg: '#B08248', noteColor: '#0f221e', blendNoteColor: '#EFCD91' },
+      kenkeni: { cardBg: 'rgba(247, 239, 194, 0.15)', border: '#F7EFC2', iconColor: '#EFCD91', iconBg: 'rgba(247, 239, 194, 0.1)', noteBg: '#7F7350', noteColor: '#0f221e', blendNoteColor: '#F7EFC2' },
+      sangban: { cardBg: 'rgba(239, 205, 145, 0.18)', border: '#EFCD91', iconColor: '#DAB980', iconBg: 'rgba(239, 205, 145, 0.1)', noteBg: '#8F502A', noteColor: '#0f221e', blendNoteColor: '#EFCD91' },
       doundounba: { cardBg: 'rgba(91, 74, 57, 0.22)', border: '#5B4A39', iconColor: '#7F7350', iconBg: 'rgba(91, 74, 57, 0.1)', noteBg: '#5B4A39', noteColor: '#FFFDF5', blendNoteColor: '#B08248' }
     }
   },
@@ -589,15 +589,15 @@ const THEME_PRESETS = [
     tracks: {
       djembes: { cardBg: '#fdece6', border: '#eb8f69', iconColor: '#8A2E0F', iconBg: '#f3caac', noteBg: '#A72305', noteColor: '#ffffff', blendNoteColor: '#A72305' },
       kenkeni: { cardBg: '#e6f0ec', border: '#85af97', iconColor: '#21443E', iconBg: '#c5d0b2', noteBg: '#39675D', noteColor: '#ffffff', blendNoteColor: '#21443E' },
-      sangban: { cardBg: '#fcf6e6', border: '#dab980', iconColor: '#784617', iconBg: '#efcd91', noteBg: '#b08248', noteColor: '#ffffff', blendNoteColor: '#784617' },
-      doundounba: { cardBg: '#f4eae0', border: '#b08248', iconColor: '#3e1605', iconBg: '#dab980', noteBg: '#622908', noteColor: '#ffffff', blendNoteColor: '#3e1605' }
+      sangban: { cardBg: '#fcf6e6', border: '#dab980', iconColor: '#784617', iconBg: '#efcd91', noteBg: '#8F502A', noteColor: '#ffffff', blendNoteColor: '#784617' },
+      doundounba: { cardBg: '#f4eae0', border: '#b08248', iconColor: '#3e1605', iconBg: '#dab980', noteBg: '#784617', noteColor: '#ffffff', blendNoteColor: '#3e1605' }
     }
   },
   {
     id: 'sahel_harvest', name: 'Sahel Harvest', isDark: false, background: '#EFCD91', phoneBg: '#FFFDF2', barBg: '#EAD2AA', patternType: 'mudcloth', patternOpacity: 0.12,
     tracks: {
       djembes: { cardBg: '#fdf2eb', border: '#d4622e', iconColor: '#8A2E0F', iconBg: '#eb8f69', noteBg: '#8A2E0F', noteColor: '#ffffff', blendNoteColor: '#8A2E0F' },
-      kenkeni: { cardBg: '#eef4f1', border: '#85af97', iconColor: '#15221B', iconBg: '#c5d0b2', noteBg: '#21443E', noteColor: '#ffffff', blendNoteColor: '#21443E' },
+      kenkeni: { cardBg: '#eef4f1', border: '#85af97', iconColor: '#15221B', iconBg: '#c5d0b2', noteBg: '#39675D', noteColor: '#ffffff', blendNoteColor: '#21443E' },
       sangban: { cardBg: '#faf6eb', border: '#dab980', iconColor: '#7f7350', iconBg: '#efcd91', noteBg: '#784617', noteColor: '#ffffff', blendNoteColor: '#784617' },
       doundounba: { cardBg: '#f6f0ea', border: '#b08248', iconColor: '#281507', iconBg: '#dab980', noteBg: '#5B4A39', noteColor: '#ffffff', blendNoteColor: '#281507' }
     }
@@ -605,8 +605,8 @@ const THEME_PRESETS = [
   {
     id: 'savanna_daybreak', name: 'Savanna Daybreak', isDark: false, background: '#C5D0B2', phoneBg: '#F7F9F3', barBg: '#B8C7A3', patternType: 'linen', patternOpacity: 0.15,
     tracks: {
-      djembes: { cardBg: '#f5ece2', border: '#dab980', iconColor: '#784617', iconBg: '#efcd91', noteBg: '#8A2E0F', noteColor: '#ffffff', blendNoteColor: '#8A2E0F' },
-      kenkeni: { cardBg: '#eaf2ee', border: '#85af97', iconColor: '#15221B', iconBg: '#c5d0b2', noteBg: '#21443E', noteColor: '#ffffff', blendNoteColor: '#21443E' },
+      djembes: { cardBg: '#f5ece2', border: '#dab980', iconColor: '#784617', iconBg: '#efcd91', noteBg: '#8A2E0F', noteColor: '#ffffff', blendNoteColor: '#FFFDF2' },
+      kenkeni: { cardBg: '#eaf2ee', border: '#85af97', iconColor: '#15221B', iconBg: '#c5d0b2', noteBg: '#39675D', noteColor: '#ffffff', blendNoteColor: '#21443E' },
       sangban: { cardBg: '#f7f4e9', border: '#dab980', iconColor: '#7f7350', iconBg: '#efcd91', noteBg: '#784617', noteColor: '#ffffff', blendNoteColor: '#784617' },
       doundounba: { cardBg: '#f5e9df', border: '#b08248', iconColor: '#281507', iconBg: '#dab980', noteBg: '#5B4A39', noteColor: '#ffffff', blendNoteColor: '#281507' }
     }
@@ -615,9 +615,9 @@ const THEME_PRESETS = [
     id: 'kente_festival', name: 'Kente Festival', isDark: false, background: '#EB8F69', phoneBg: '#FFFDFB', barBg: '#F2D8D0', patternType: 'kente', patternOpacity: 0.18,
     tracks: {
       djembes: { cardBg: '#fef2ed', border: '#d4622e', iconColor: '#8A2E0F', iconBg: '#eb8f69', noteBg: '#A72305', noteColor: '#ffffff', blendNoteColor: '#A72305' },
-      kenkeni: { cardBg: '#ecf4f1', border: '#85af97', iconColor: '#21443E', iconBg: '#c5d0b2', noteBg: '#21443E', noteColor: '#ffffff', blendNoteColor: '#21443E' },
+      kenkeni: { cardBg: '#ecf4f1', border: '#85af97', iconColor: '#FFFDF2', iconBg: '#c5d0b2', noteBg: '#39675D', noteColor: '#ffffff', blendNoteColor: '#FFFDF2' },
       sangban: { cardBg: '#fdf6e7', border: '#dab980', iconColor: '#784617', iconBg: '#efcd91', noteBg: '#784617', noteColor: '#ffffff', blendNoteColor: '#784617' },
-      doundounba: { cardBg: '#fdf2e8', border: '#b08248', iconColor: '#281507', iconBg: '#dab980', noteBg: '#3E1605', noteColor: '#ffffff', blendNoteColor: '#3E1605' }
+      doundounba: { cardBg: '#fdf2e8', border: '#b08248', iconColor: '#281507', iconBg: '#dab980', noteBg: '#5B4A39', noteColor: '#ffffff', blendNoteColor: '#3E1605' }
     }
   }
 ];
@@ -4290,7 +4290,7 @@ function setupEventListeners() {
       const sub = document.createElement('div');
       sub.id = 'afro-submenu';
       sub.className = 'theme-submenu';
-      sub.style.cssText = 'padding: 0.5rem 0.5rem 0.5rem 2rem; margin-top: 0.25rem; margin-bottom: 0.5rem; background: rgba(0, 0, 0, 0.15); border-radius: 8px; flex-direction: column; gap: 0.5rem; border-left: 3px solid #EB8F69;';
+      sub.style.cssText = 'background: rgba(0, 0, 0, 0.15); border-radius: 8px; flex-direction: column; gap: 0.5rem; border-left: 3px solid #EB8F69;';
 
       let buttonsHtml = '<div style="font-size: 0.75rem; font-weight: bold; color: var(--text-muted); margin-bottom: 0.15rem;">DARK PRESETS</div>';
       buttonsHtml += '<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.4rem;">';
@@ -4312,7 +4312,7 @@ function setupEventListeners() {
       const sub = document.createElement('div');
       sub.id = 'afro-light-submenu';
       sub.className = 'theme-submenu';
-      sub.style.cssText = 'padding: 0.5rem 0.5rem 0.5rem 2rem; margin-top: 0.25rem; margin-bottom: 0.5rem; background: rgba(0, 0, 0, 0.08); border-radius: 8px; flex-direction: column; gap: 0.5rem; border-left: 3px solid #85af97;';
+      sub.style.cssText = 'background: rgba(0, 0, 0, 0.08); border-radius: 8px; flex-direction: column; gap: 0.5rem; border-left: 3px solid #85af97;';
 
       let buttonsHtml = '<div style="font-size: 0.75rem; font-weight: bold; color: #5B4A39; margin-bottom: 0.15rem;">LIGHT PRESETS</div>';
       buttonsHtml += '<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.4rem;">';
@@ -4363,24 +4363,24 @@ function setupEventListeners() {
     modal.className = 'modal-overlay';
 
     modal.innerHTML = `
-      <div class="modal-content" style="max-width: 380px; width: 92%; height: 500px; max-height: 90vh; overflow: hidden; padding: 1.2rem; border-radius: 16px; background: rgba(30, 20, 15, 0.98); border: 1px solid #622908; box-shadow: 0 20px 40px rgba(0,0,0,0.9); color: #FFFDF2; display: flex; flex-direction: column; gap: 0.8rem; position: relative; font-family: 'Outfit', sans-serif;">
+      <div class="modal-content" style="max-width: 380px; width: 92%; height: 590px; max-height: 90vh; overflow: hidden; padding: 1.2rem; border-radius: 16px; background: rgba(30, 20, 15, 0.98); border: 1px solid #622908; box-shadow: 0 20px 40px rgba(0,0,0,0.9); color: #FFFDF2; display: flex; flex-direction: column; gap: 0.5rem; position: relative; font-family: 'Outfit', sans-serif;">
         <div class="modal-header" style="font-size: 1.25rem; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
           <span>Theme Designer</span>
           <button id="designer-btn-close-header" style="background: none; border: none; color: #FFFDF2; opacity: 0.7; cursor: pointer; font-size: 1.25rem;">&times;</button>
         </div>
 
-        <div class="modal-body" style="display: flex; flex-direction: column; gap: 0.8rem; flex-grow: 1; overflow-y: auto;">
+        <div class="modal-body" style="display: flex; flex-direction: column; gap: 0.5rem; flex-grow: 1; overflow-y: auto;">
           <!-- Visual Preview Map Title -->
           <div style="font-weight: bold; color: #EFCD91; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase;">Visual Preview Map</div>
           
           <!-- Interactive Visual Preview Map -->
-          <div id="designer-preview-map" style="background: #281507; border: 1px solid #622908; border-radius: 12px; padding: 0.6rem; display: flex; flex-direction: column; gap: 0.4rem; position: relative; overflow: hidden; height: 160px; min-height: 160px; box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);">
+          <div id="designer-preview-map" style="background: #281507; border: 1px solid #622908; border-radius: 12px; padding: 0.4rem; display: flex; flex-direction: column; gap: 0.25rem; position: relative; overflow: hidden; height: 138px; min-height: 138px; box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);">
             <!-- Background pattern layer inside preview -->
             <div id="designer-preview-pattern-layer" style="position: absolute; top:0; left:0; right:0; bottom:0; pointer-events:none; opacity: 0.15; z-index: 0; background-repeat: repeat; background-position: center;"></div>
             
             <!-- Mini Header -->
-            <div id="designer-preview-header" style="background: #1C1008; padding: 0.4rem 0.5rem; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; z-index: 1; height: 26px;">
-              <span style="font-weight: 700; font-size: 0.65rem; color: #EFCD91; letter-spacing: 0.05em;">TAP ANY PART TO EDIT</span>
+            <div id="designer-preview-header" style="background: #1C1008; padding: 0.2rem 0.4rem; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; z-index: 1; height: 20px;">
+              <span style="font-weight: 700; font-size: 0.6rem; color: #EFCD91; letter-spacing: 0.05em;">TAP ANY PART TO EDIT</span>
               <div style="display: flex; gap: 0.2rem;">
                 <div style="width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.35);"></div>
                 <div style="width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.35);"></div>
@@ -4389,9 +4389,9 @@ function setupEventListeners() {
             </div>
 
             <!-- Preview Rows -->
-            <div id="designer-preview-rows-container" style="display: flex; flex-direction: column; gap: 0.35rem; z-index: 1; flex-grow: 1; justify-content: center;">
+            <div id="designer-preview-rows-container" style="display: flex; flex-direction: column; gap: 0.2rem; z-index: 1; flex-grow: 1; justify-content: center;">
               <!-- Djembe Row -->
-              <div class="designer-preview-row" data-target="djembe" style="display: flex; align-items: center; border-radius: 8px; padding: 0.25rem 0.35rem; gap: 0.4rem; position: relative; cursor: pointer; transition: transform 0.15s ease;">
+              <div class="designer-preview-row" data-target="djembe" style="display: flex; align-items: center; border-radius: 8px; padding: 0.15rem 0.35rem; gap: 0.4rem; position: relative; cursor: pointer; transition: transform 0.15s ease;">
                 <div class="designer-preview-icon" style="border-radius: 4px; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: bold; pointer-events: none;">🪘</div>
                 <div style="display: flex; gap: 0.3rem; flex-grow: 1; pointer-events: none;">
                   <div class="designer-preview-cell" data-target="djembe" style="width: 20px; height: 20px; border-radius: 4px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); cursor: pointer; pointer-events: auto;"></div>
@@ -4406,7 +4406,7 @@ function setupEventListeners() {
               </div>
 
               <!-- Kenkeni Row -->
-              <div class="designer-preview-row" data-target="kenkeni" style="display: flex; align-items: center; border-radius: 8px; padding: 0.25rem 0.35rem; gap: 0.4rem; position: relative; cursor: pointer; transition: transform 0.15s ease;">
+              <div class="designer-preview-row" data-target="kenkeni" style="display: flex; align-items: center; border-radius: 8px; padding: 0.15rem 0.35rem; gap: 0.4rem; position: relative; cursor: pointer; transition: transform 0.15s ease;">
                 <div class="designer-preview-icon" style="border-radius: 4px; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: bold; pointer-events: none;">🥁</div>
                 <div style="display: flex; gap: 0.3rem; flex-grow: 1; pointer-events: none;">
                   <div class="designer-preview-cell has-note" data-target="kenkeni" style="width: 20px; height: 20px; border-radius: 4px; display: flex; align-items: center; justify-content: center; cursor: pointer; pointer-events: auto;">
@@ -4421,7 +4421,7 @@ function setupEventListeners() {
               </div>
 
               <!-- Dundunba Row -->
-              <div class="designer-preview-row" data-target="dundunba" style="display: flex; align-items: center; border-radius: 8px; padding: 0.25rem 0.35rem; gap: 0.4rem; position: relative; cursor: pointer; transition: transform 0.15s ease;">
+              <div class="designer-preview-row" data-target="dundunba" style="display: flex; align-items: center; border-radius: 8px; padding: 0.15rem 0.35rem; gap: 0.4rem; position: relative; cursor: pointer; transition: transform 0.15s ease;">
                 <div class="designer-preview-icon" style="border-radius: 4px; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: bold; pointer-events: none;">🔊</div>
                 <div style="display: flex; gap: 0.3rem; flex-grow: 1; pointer-events: none;">
                   <div class="designer-preview-cell" data-target="dundunba" style="width: 20px; height: 20px; border-radius: 4px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); cursor: pointer; pointer-events: auto;"></div>
@@ -4443,18 +4443,18 @@ function setupEventListeners() {
         </div>
 
         <!-- AREA SETTINGS POPUP (DRAWER) -->
-        <div id="designer-area-popup" style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(24, 15, 10, 0.98); border-top: 2.5px solid #EB8F69; border-radius: 16px 16px 0 0; padding: 1rem; transform: translateY(100%); transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1); z-index: 10; display: flex; flex-direction: column; gap: 0.6rem; box-shadow: 0 -12px 30px rgba(0,0,0,0.9); height: 280px;">
-          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.4rem; min-height: 24px;">
+        <div id="designer-area-popup" style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(24, 15, 10, 0.98); border-top: 2.5px solid #EB8F69; border-radius: 16px 16px 0 0; padding: 0.8rem; transform: translateY(100%); transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1); z-index: 10; display: flex; flex-direction: column; gap: 0.4rem; box-shadow: 0 -12px 30px rgba(0,0,0,0.9); height: 370px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.3rem; min-height: 20px;">
             <span id="designer-popup-title" style="font-weight: bold; color: #EFCD91; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Area Settings</span>
             <button id="designer-popup-close" style="background: none; border: none; color: #FFFDF2; font-size: 1.25rem; cursor: pointer; padding: 0.1rem 0.3rem; line-height: 1; opacity: 0.7;">&times;</button>
           </div>
-          <div id="designer-popup-body" style="flex-grow: 1; overflow-y: auto; font-size: 0.8rem; display: flex; flex-direction: column; gap: 0.6rem; padding-right: 0.15rem;">
+          <div id="designer-popup-body" style="flex-grow: 1; overflow-y: auto; font-size: 0.8rem; display: flex; flex-direction: column; gap: 0.4rem; padding-right: 0.15rem;">
             <!-- Populated dynamically -->
           </div>
         </div>
 
-        <div class="modal-footer" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.6rem; display: flex; justify-content: flex-end; gap: 0.5rem; min-height: 40px; background: rgba(30, 20, 15, 0.98); z-index: 2;">
-          <button id="designer-btn-close" class="btn btn-primary" style="width: 100%; font-weight: bold; font-size: 0.85rem; padding: 0.55rem; border-radius: 8px;">Save & Close</button>
+        <div class="modal-footer" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.4rem; display: flex; justify-content: flex-end; gap: 0.5rem; min-height: 34px; background: rgba(30, 20, 15, 0.98); z-index: 2;">
+          <button id="designer-btn-close" class="btn btn-primary" style="width: 100%; font-weight: bold; font-size: 0.85rem; padding: 0.45rem; border-radius: 8px;">Save & Close</button>
         </div>
       </div>
     `;
@@ -5123,6 +5123,17 @@ function setupEventListeners() {
       try {
         const saved = localStorage.getItem("djembe-theme") || "studio";
         applyTheme(saved, false);
+        
+        // Collapse submenus by default when opening the modal
+        const afroSub = document.getElementById("afro-submenu");
+        const afroLightSub = document.getElementById("afro-light-submenu");
+        if (afroSub) afroSub.classList.remove("expanded");
+        if (afroLightSub) afroLightSub.classList.remove("expanded");
+        
+        // Deactivate category header buttons when submenus are collapsed
+        themesModal.querySelectorAll('.theme-option-btn[data-theme="afro"], .theme-option-btn[data-theme="afro-light"]').forEach(btn => {
+          btn.classList.remove("active");
+        });
       } catch(e) {}
 
       if (window.gsap && !perfLite) {
