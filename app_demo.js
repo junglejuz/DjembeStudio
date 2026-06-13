@@ -301,6 +301,26 @@ function getInstrumentSVG(instrument, type) {
 }
 
 function getInstrumentHSL(instrument, type, isCall) {
+  if (document.body) {
+    if (document.body.classList.contains("theme-afro")) {
+      if (isCall) return "44, 57%, 57%"; // Ochre Gold
+      if (type === "djembe" || (instrument && instrument.startsWith("djembe"))) return "44, 57%, 57%"; // Ochre Gold
+      if (type === "dunun" || (instrument && (instrument.includes("kenkeni") || instrument.includes("sangban") || instrument.includes("dundunba")))) {
+        return "168, 29%, 32%"; // Sage Green
+      }
+      if (type === "bell" || (instrument && instrument.includes("bell"))) return "22, 56%, 36%"; // Burnt Sienna
+      if (type === "shekere" || instrument === "shekere") return "19, 64%, 50%"; // Terracotta Orange
+    } else if (document.body.classList.contains("theme-afro-light")) {
+      if (isCall) return "44, 57%, 57%"; // Ochre Gold
+      if (type === "djembe" || (instrument && instrument.startsWith("djembe"))) return "44, 57%, 57%"; // Ochre Gold
+      if (type === "dunun" || (instrument && (instrument.includes("kenkeni") || instrument.includes("sangban") || instrument.includes("dundunba")))) {
+        return "170, 35%, 20%"; // Dark Teal Green
+      }
+      if (type === "bell" || (instrument && instrument.includes("bell"))) return "22, 56%, 36%"; // Burnt Sienna
+      if (type === "shekere" || instrument === "shekere") return "19, 64%, 50%"; // Terracotta Orange
+    }
+  }
+
   let hsl = getInstrumentHSLRaw(instrument, type, isCall);
   if (document.body && document.body.classList.contains("light-theme")) {
     const parts = hsl.split(",").map(p => p.trim());
