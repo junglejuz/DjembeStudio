@@ -3894,3 +3894,219 @@ body:not(.theme-studio) .step-cell.has-note.note-play-flash {
   }
 }
 
+/* ============================================================
+   DYNAMIC CSS-VARIABLE THEME ENGINE
+   ============================================================ */
+:root {
+  /* Default baseline values */
+  --djembe-card-bg: rgba(62, 22, 5, 0.65);
+  --djembe-border: #622908;
+  --djembe-icon-color: #EB8F69;
+  --djembe-icon-bg: #281507;
+  --djembe-note-bg: #8A2E0F;
+  --djembe-note-color: #F7EFC2;
+  --djembe-blend-note: #D4622E;
+
+  --kenkeni-card-bg: rgba(178, 162, 104, 0.15);
+  --kenkeni-border: #9CA681;
+  --kenkeni-icon-color: #D0AD54;
+  --kenkeni-icon-bg: rgba(178, 162, 104, 0.1);
+  --kenkeni-note-bg: #B2A268;
+  --kenkeni-note-color: #ffffff;
+  --kenkeni-blend-note: #DBAB3D;
+
+  --sangban-card-bg: rgba(127, 115, 80, 0.18);
+  --sangban-border: #7F7350;
+  --sangban-icon-color: #B2A268;
+  --sangban-icon-bg: rgba(127, 115, 80, 0.1);
+  --sangban-note-bg: #C07F28;
+  --sangban-note-color: #ffffff;
+  --sangban-blend-note: #F3983C;
+
+  --doundounba-card-bg: rgba(91, 74, 57, 0.22);
+  --doundounba-border: #5B4A39;
+  --doundounba-icon-color: #8F502A;
+  --doundounba-icon-bg: rgba(91, 74, 57, 0.1);
+  --doundounba-note-bg: #784617;
+  --doundounba-note-color: #ffffff;
+  --doundounba-blend-note: #622908;
+
+  --app-canvas-bg: #281507;
+  --app-phone-bg: #130a04;
+  --app-bar-bg: #1c1008;
+}
+
+/* Background layers */
+.app-container {
+  position: relative !important;
+  background-color: var(--app-canvas-bg) !important;
+  z-index: 1;
+}
+
+#app-background-layer {
+  position: absolute !important;
+  top: 0; left: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-repeat: repeat;
+  background-position: center;
+}
+
+/* Base style mapping rules */
+.track-djembe {
+  background-color: var(--djembe-card-bg) !important;
+  border-color: var(--djembe-border) !important;
+  background-image: none !important;
+}
+.track-djembe .track-icon-wrapper {
+  color: var(--djembe-icon-color) !important;
+  background-color: var(--djembe-icon-bg) !important;
+  border-color: var(--djembe-border) !important;
+}
+
+.track-kenkeni {
+  background-color: var(--kenkeni-card-bg) !important;
+  border-color: var(--kenkeni-border) !important;
+  background-image: none !important;
+}
+.track-kenkeni .track-icon-wrapper {
+  color: var(--kenkeni-icon-color) !important;
+  background-color: var(--kenkeni-icon-bg) !important;
+  border-color: var(--kenkeni-border) !important;
+}
+
+.track-sangban {
+  background-color: var(--sangban-card-bg) !important;
+  border-color: var(--sangban-border) !important;
+  background-image: none !important;
+}
+.track-sangban .track-icon-wrapper {
+  color: var(--sangban-icon-color) !important;
+  background-color: var(--sangban-icon-bg) !important;
+  border-color: var(--sangban-border) !important;
+}
+
+.track-doundounba {
+  background-color: var(--doundounba-card-bg) !important;
+  border-color: var(--doundounba-border) !important;
+  background-image: none !important;
+}
+.track-doundounba .track-icon-wrapper {
+  color: var(--doundounba-icon-color) !important;
+  background-color: var(--doundounba-icon-bg) !important;
+  border-color: var(--doundounba-border) !important;
+}
+
+/* Scaling and styling notes:
+   - Blend Mode OFF: backgrounds shown, icons scaled down to be smaller
+   - Blend Mode ON: backgrounds hidden, icons scaled up to fill step container */
+
+/* BLEND NOTE FILL OFF */
+body:not(.blend-note-fill) .track-djembe .step-cell.has-note {
+  background-color: var(--djembe-note-bg) !important;
+  border-color: var(--djembe-border) !important;
+}
+body:not(.blend-note-fill) .track-djembe .step-cell.has-note svg {
+  color: var(--djembe-note-color) !important;
+  transform: scale(0.68) !important;
+}
+
+body:not(.blend-note-fill) .track-kenkeni .step-cell.has-note {
+  background-color: var(--kenkeni-note-bg) !important;
+  border-color: var(--kenkeni-border) !important;
+}
+body:not(.blend-note-fill) .track-kenkeni .step-cell.has-note svg {
+  color: var(--kenkeni-note-color) !important;
+  transform: scale(0.68) !important;
+}
+
+body:not(.blend-note-fill) .track-sangban .step-cell.has-note {
+  background-color: var(--sangban-note-bg) !important;
+  border-color: var(--sangban-border) !important;
+}
+body:not(.blend-note-fill) .track-sangban .step-cell.has-note svg {
+  color: var(--sangban-note-color) !important;
+  transform: scale(0.68) !important;
+}
+
+body:not(.blend-note-fill) .track-doundounba .step-cell.has-note {
+  background-color: var(--doundounba-note-bg) !important;
+  border-color: var(--doundounba-border) !important;
+}
+body:not(.blend-note-fill) .track-doundounba .step-cell.has-note svg {
+  color: var(--doundounba-note-color) !important;
+  transform: scale(0.68) !important;
+}
+
+/* BLEND NOTE FILL ON */
+body.blend-note-fill .track-row .step-cell.has-note {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+body.blend-note-fill .track-djembe .step-cell.has-note svg {
+  color: var(--djembe-blend-note) !important;
+  transform: scale(1.0) !important;
+}
+body.blend-note-fill .track-kenkeni .step-cell.has-note svg {
+  color: var(--kenkeni-blend-note) !important;
+  transform: scale(1.0) !important;
+}
+body.blend-note-fill .track-sangban .step-cell.has-note svg {
+  color: var(--sangban-blend-note) !important;
+  transform: scale(1.0) !important;
+}
+body.blend-note-fill .track-doundounba .step-cell.has-note svg {
+  color: var(--doundounba-blend-note) !important;
+  transform: scale(1.0) !important;
+}
+
+/* Ensure note icons display block and scale properly */
+body.theme-afro .step-cell svg,
+body.theme-afro-light .step-cell svg,
+body.theme-custom .step-cell svg {
+  display: block !important;
+  width: 92% !important;
+  height: 92% !important;
+  margin: auto;
+}
+
+/* Clean Bars Option: header and footer bars have solid background and no transparency */
+body.clean-bars .mobile-header,
+body.clean-bars .controls-bar {
+  background-image: none !important;
+  background-color: var(--app-bar-bg) !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+/* Isolate Pattern Option: adds an opaque background to tracks to mask pattern behind them */
+body.isolate-pattern .track-row::before {
+  content: "" !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  background-color: var(--app-canvas-bg) !important;
+  z-index: -1 !important;
+  border-radius: inherit !important;
+}
+.track-row {
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+/* Custom Theme support class on body */
+body.theme-custom {
+  background-color: var(--app-canvas-bg) !important;
+}
+body.theme-custom .demo-device-frame {
+  background-color: var(--app-phone-bg) !important;
+}
+body.theme-custom .mobile-header {
+  background-color: var(--app-bar-bg) !important;
+}
+
+

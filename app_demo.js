@@ -510,21 +510,242 @@ function getHitGlowColor(type, hit, instrument = "") {
 
 // True when the icon-based "Studio" theme is active (new default theme)
 function isIconTheme() {
-  return document.body.classList.contains("theme-studio");
+  return document.body.classList.contains("theme-studio") ||
+         document.body.classList.contains("theme-afro") ||
+         document.body.classList.contains("theme-afro-light") ||
+         document.body.classList.contains("theme-custom");
 }
 
 // Apply the persisted theme class immediately so the very first render is themed
 (function () {
   try {
     const saved = localStorage.getItem("djembe-theme");
+    const isPresetDark = ["segou_mudcloth", "niger_delta", "ebony_fire", "sahel_midnight"].includes(saved);
+    const isPresetLight = ["dakar_sunrise", "sahel_harvest", "savanna_daybreak", "kente_festival"].includes(saved);
+    const isCustom = (saved === "custom");
+
     const name = (saved === "light" || saved === "tinted" || saved === "afro" || saved === "afro-light") ? saved : ((saved === "classic" || saved === "dark") ? "classic" : "studio");
-    document.body.classList.toggle("theme-studio", name === "studio" || name === "tinted" || name === "light" || name === "afro" || name === "afro-light");
-    document.body.classList.toggle("theme-tinted", name === "tinted");
-    document.body.classList.toggle("light-theme", name === "light");
-    document.body.classList.toggle("theme-afro", name === "afro");
-    document.body.classList.toggle("theme-afro-light", name === "afro-light");
+    
+    if (isPresetDark || saved === "afro") {
+      document.body.classList.add("theme-afro", "theme-studio");
+    } else if (isPresetLight || saved === "afro-light") {
+      document.body.classList.add("theme-afro-light", "theme-studio");
+    } else if (isCustom) {
+      document.body.classList.add("theme-custom", "theme-studio");
+    } else {
+      document.body.classList.toggle("theme-studio", name === "studio" || name === "tinted" || name === "light" || name === "afro" || name === "afro-light");
+      document.body.classList.toggle("theme-tinted", name === "tinted");
+      document.body.classList.toggle("light-theme", name === "light");
+      document.body.classList.toggle("theme-afro", name === "afro");
+      document.body.classList.toggle("theme-afro-light", name === "afro-light");
+    }
   } catch (e) { }
 })();
+
+// ============================================================
+// DYNAMIC CSS-VARIABLE THEME ENGINE CONSTANTS & HELPERS
+// ============================================================
+const THEME_PRESETS = [
+  // --- AFRO DARK PRESETS ---
+  {
+    id: 'segou_mudcloth', name: 'Ségou Mudcloth', isDark: true, background: '#281507', phoneBg: '#130a04', barBg: '#1c1008', patternType: 'mudcloth', patternOpacity: 0.18,
+    tracks: {
+      djembes: { cardBg: 'rgba(62, 22, 5, 0.65)', border: '#622908', iconColor: '#EB8F69', iconBg: '#281507', noteBg: '#8A2E0F', noteColor: '#F7EFC2', blendNoteColor: '#D4622E' },
+      kenkeni: { cardBg: 'rgba(178, 162, 104, 0.15)', border: '#9CA681', iconColor: '#D0AD54', iconBg: 'rgba(178, 162, 104, 0.1)', noteBg: '#B2A268', noteColor: '#ffffff', blendNoteColor: '#DBAB3D' },
+      sangban: { cardBg: 'rgba(127, 115, 80, 0.18)', border: '#7F7350', iconColor: '#B2A268', iconBg: 'rgba(127, 115, 80, 0.1)', noteBg: '#C07F28', noteColor: '#ffffff', blendNoteColor: '#F3983C' },
+      doundounba: { cardBg: 'rgba(91, 74, 57, 0.22)', border: '#5B4A39', iconColor: '#8F502A', iconBg: 'rgba(91, 74, 57, 0.1)', noteBg: '#784617', noteColor: '#ffffff', blendNoteColor: '#622908' }
+    }
+  },
+  {
+    id: 'niger_delta', name: 'Niger Delta Savanna', isDark: true, background: '#15221B', phoneBg: '#090e0b', barBg: '#111d17', patternType: 'linen', patternOpacity: 0.15,
+    tracks: {
+      djembes: { cardBg: 'rgba(33, 68, 62, 0.65)', border: '#39675D', iconColor: '#85AF97', iconBg: '#15221B', noteBg: '#8A2E0F', noteColor: '#FFFDF5', blendNoteColor: '#EB8F69' },
+      kenkeni: { cardBg: 'rgba(94, 140, 123, 0.15)', border: '#5E8C7B', iconColor: '#85AF97', iconBg: 'rgba(94, 140, 123, 0.1)', noteBg: '#39675D', noteColor: '#FFFDF5', blendNoteColor: '#85AF97' },
+      sangban: { cardBg: 'rgba(156, 166, 129, 0.15)', border: '#9CA681', iconColor: '#B2A268', iconBg: 'rgba(156, 166, 129, 0.1)', noteBg: '#DBAB3D', noteColor: '#ffffff', blendNoteColor: '#D0AD54' },
+      doundounba: { cardBg: 'rgba(127, 115, 80, 0.15)', border: '#7F7350', iconColor: '#B08248', iconBg: 'rgba(127, 115, 80, 0.1)', noteBg: '#784617', noteColor: '#ffffff', blendNoteColor: '#8F502A' }
+    }
+  },
+  {
+    id: 'ebony_fire', name: 'Ebony Campfire', isDark: true, background: '#3E1605', phoneBg: '#1a0902', barBg: '#250f05', patternType: 'kente', patternOpacity: 0.14,
+    tracks: {
+      djembes: { cardBg: 'rgba(138, 46, 15, 0.25)', border: '#8A2E0F', iconColor: '#D4622E', iconBg: '#3E1605', noteBg: '#A72305', noteColor: '#F7EFC2', blendNoteColor: '#F3983C' },
+      kenkeni: { cardBg: 'rgba(218, 171, 61, 0.15)', border: '#DBAB3D', iconColor: '#E5A827', iconBg: 'rgba(218, 171, 61, 0.1)', noteBg: '#D0AD54', noteColor: '#ffffff', blendNoteColor: '#E5A827' },
+      sangban: { cardBg: 'rgba(243, 152, 60, 0.12)', border: '#F3983C', iconColor: '#EB8F69', iconBg: 'rgba(243, 152, 60, 0.1)', noteBg: '#D4622E', noteColor: '#ffffff', blendNoteColor: '#EB8F69' },
+      doundounba: { cardBg: 'rgba(181, 58, 22, 0.15)', border: '#B53A16', iconColor: '#B53A16', iconBg: 'rgba(181, 58, 22, 0.1)', noteBg: '#8A2E0F', noteColor: '#ffffff', blendNoteColor: '#B53A16' }
+    }
+  },
+  {
+    id: 'sahel_midnight', name: 'Sahel Oasis', isDark: true, background: '#21443E', phoneBg: '#0f221e', barBg: '#17332d', patternType: 'mudcloth', patternOpacity: 0.12,
+    tracks: {
+      djembes: { cardBg: 'rgba(94, 140, 123, 0.35)', border: '#5E8C7B', iconColor: '#C5D0B2', iconBg: '#21443E', noteBg: '#39675D', noteColor: '#FFFDF5', blendNoteColor: '#85AF97' },
+      kenkeni: { cardBg: 'rgba(247, 239, 194, 0.15)', border: '#F7EFC2', iconColor: '#EFCD91', iconBg: 'rgba(247, 239, 194, 0.1)', noteBg: '#DAB980', noteColor: '#0f221e', blendNoteColor: '#F7EFC2' },
+      sangban: { cardBg: 'rgba(239, 205, 145, 0.18)', border: '#EFCD91', iconColor: '#DAB980', iconBg: 'rgba(239, 205, 145, 0.1)', noteBg: '#B08248', noteColor: '#0f221e', blendNoteColor: '#EFCD91' },
+      doundounba: { cardBg: 'rgba(91, 74, 57, 0.22)', border: '#5B4A39', iconColor: '#7F7350', iconBg: 'rgba(91, 74, 57, 0.1)', noteBg: '#5B4A39', noteColor: '#FFFDF5', blendNoteColor: '#B08248' }
+    }
+  },
+  // --- AFRO LIGHT PRESETS ---
+  {
+    id: 'dakar_sunrise', name: 'Dakar Sunrise', isDark: false, background: '#F7EFC2', phoneBg: '#FFFDF5', barBg: '#F3E9C4', patternType: 'kente', patternOpacity: 0.16,
+    tracks: {
+      djembes: { cardBg: '#fdece6', border: '#eb8f69', iconColor: '#8A2E0F', iconBg: '#f3caac', noteBg: '#A72305', noteColor: '#ffffff', blendNoteColor: '#A72305' },
+      kenkeni: { cardBg: '#e6f0ec', border: '#85af97', iconColor: '#21443E', iconBg: '#c5d0b2', noteBg: '#39675D', noteColor: '#ffffff', blendNoteColor: '#21443E' },
+      sangban: { cardBg: '#fcf6e6', border: '#dab980', iconColor: '#784617', iconBg: '#efcd91', noteBg: '#b08248', noteColor: '#ffffff', blendNoteColor: '#784617' },
+      doundounba: { cardBg: '#f4eae0', border: '#b08248', iconColor: '#3e1605', iconBg: '#dab980', noteBg: '#622908', noteColor: '#ffffff', blendNoteColor: '#3e1605' }
+    }
+  },
+  {
+    id: 'sahel_harvest', name: 'Sahel Harvest', isDark: false, background: '#EFCD91', phoneBg: '#FFFDF2', barBg: '#EAD2AA', patternType: 'mudcloth', patternOpacity: 0.12,
+    tracks: {
+      djembes: { cardBg: '#fdf2eb', border: '#d4622e', iconColor: '#8A2E0F', iconBg: '#eb8f69', noteBg: '#8A2E0F', noteColor: '#ffffff', blendNoteColor: '#8A2E0F' },
+      kenkeni: { cardBg: '#eef4f1', border: '#85af97', iconColor: '#15221B', iconBg: '#c5d0b2', noteBg: '#21443E', noteColor: '#ffffff', blendNoteColor: '#21443E' },
+      sangban: { cardBg: '#faf6eb', border: '#dab980', iconColor: '#7f7350', iconBg: '#efcd91', noteBg: '#784617', noteColor: '#ffffff', blendNoteColor: '#784617' },
+      doundounba: { cardBg: '#f6f0ea', border: '#b08248', iconColor: '#281507', iconBg: '#dab980', noteBg: '#5B4A39', noteColor: '#ffffff', blendNoteColor: '#281507' }
+    }
+  },
+  {
+    id: 'savanna_daybreak', name: 'Savanna Daybreak', isDark: false, background: '#C5D0B2', phoneBg: '#F7F9F3', barBg: '#B8C7A3', patternType: 'linen', patternOpacity: 0.15,
+    tracks: {
+      djembes: { cardBg: '#f5ece2', border: '#dab980', iconColor: '#784617', iconBg: '#efcd91', noteBg: '#8A2E0F', noteColor: '#ffffff', blendNoteColor: '#8A2E0F' },
+      kenkeni: { cardBg: '#eaf2ee', border: '#85af97', iconColor: '#15221B', iconBg: '#c5d0b2', noteBg: '#21443E', noteColor: '#ffffff', blendNoteColor: '#21443E' },
+      sangban: { cardBg: '#f7f4e9', border: '#dab980', iconColor: '#7f7350', iconBg: '#efcd91', noteBg: '#784617', noteColor: '#ffffff', blendNoteColor: '#784617' },
+      doundounba: { cardBg: '#f5e9df', border: '#b08248', iconColor: '#281507', iconBg: '#dab980', noteBg: '#5B4A39', noteColor: '#ffffff', blendNoteColor: '#281507' }
+    }
+  },
+  {
+    id: 'kente_festival', name: 'Kente Festival', isDark: false, background: '#EB8F69', phoneBg: '#FFFDFB', barBg: '#F2D8D0', patternType: 'kente', patternOpacity: 0.18,
+    tracks: {
+      djembes: { cardBg: '#fef2ed', border: '#d4622e', iconColor: '#8A2E0F', iconBg: '#eb8f69', noteBg: '#A72305', noteColor: '#ffffff', blendNoteColor: '#A72305' },
+      kenkeni: { cardBg: '#ecf4f1', border: '#85af97', iconColor: '#21443E', iconBg: '#c5d0b2', noteBg: '#21443E', noteColor: '#ffffff', blendNoteColor: '#21443E' },
+      sangban: { cardBg: '#fdf6e7', border: '#dab980', iconColor: '#784617', iconBg: '#efcd91', noteBg: '#784617', noteColor: '#ffffff', blendNoteColor: '#784617' },
+      doundounba: { cardBg: '#fdf2e8', border: '#b08248', iconColor: '#281507', iconBg: '#dab980', noteBg: '#3E1605', noteColor: '#ffffff', blendNoteColor: '#3E1605' }
+    }
+  }
+];
+
+const SVG_PATTERNS = {
+  mudcloth: (color) => `data:image/svg+xml;utf8,<svg width="60" height="60" xmlns="http://www.w3.org/2000/svg"><path d="M5 5 L15 15 M15 5 L5 15" stroke="${encodeURIComponent(color)}" stroke-width="1" stroke-linecap="round" fill="none"/><circle cx="30" cy="10" r="1.5" fill="${encodeURIComponent(color)}"/><path d="M45 5 H55 M50 5 V15" stroke="${encodeURIComponent(color)}" stroke-width="1" stroke-linecap="round" fill="none"/><path d="M5 35 H25 M15 30 V40" stroke="${encodeURIComponent(color)}" stroke-width="1" stroke-linecap="round" fill="none"/><path d="M45 45 L55 55 M55 45 L45 55" stroke="${encodeURIComponent(color)}" stroke-width="1" stroke-linecap="round" fill="none"/><circle cx="30" cy="50" r="1.5" fill="${encodeURIComponent(color)}"/></svg>`,
+  kente: (c1, c2) => `data:image/svg+xml;utf8,<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg"><path d="M0 10 H40 M0 20 H40 M0 30 H40" stroke="${encodeURIComponent(c1)}" stroke-width="0.5" stroke-dasharray="1 2" fill="none"/><path d="M0 0 L10 10 M10 0 L20 10 M20 0 L30 10" stroke="${encodeURIComponent(c2)}" stroke-width="1" fill="none"/><path d="M0 20 L10 30 M10 20 L20 30" stroke="${encodeURIComponent(c2)}" stroke-width="1" fill="none"/></svg>`,
+  linen: (color) => `data:image/svg+xml;utf8,<svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M 0,0 L 20,20 M 10,0 L 20,10 M 0,10 L 10,20" stroke="${encodeURIComponent(color)}" stroke-width="0.5" opacity="0.15" fill="none"/></svg>`
+};
+
+const WEST_AFRICAN_PALETTE = [
+  "#8A2E0F", "#A72305", "#B53A16", "#D4622E", "#EB8F69", "#F3983C",
+  "#EFCD91", "#DBAB3D", "#D0AD54", "#E5A827", "#F7EFC2", "#B2A268",
+  "#7F7350", "#9CA681", "#C5D0B2", "#85AF97", "#5E8C7B", "#39675D",
+  "#21443E", "#15221B", "#C07F28", "#B08248", "#8F502A", "#784617",
+  "#622908", "#5B4A39", "#3E1605", "#281507", "#1C1008", "#FFFDF2"
+];
+
+// Custom theme state configuration
+let customThemeConfig = {
+  canvasBg: '#281507',
+  phoneBg: '#130a04',
+  barBg: '#1c1008',
+  isolatePattern: false,
+  cleanBars: false,
+  blendNoteFill: false,
+  patternType: 'none',
+  patternOpacity: 0.15,
+  linkedDununFamilies: true,
+  familyColors: {
+    djembe: { cardBg: 'rgba(62, 22, 5, 0.65)', border: '#622908', iconColor: '#EB8F69', iconBg: '#281507', noteBg: '#8A2E0F', noteColor: '#F7EFC2', blendNoteColor: '#D4622E' },
+    kenkeni: { cardBg: 'rgba(178, 162, 104, 0.15)', border: '#9CA681', iconColor: '#D0AD54', iconBg: 'rgba(178, 162, 104, 0.1)', noteBg: '#B2A268', noteColor: '#ffffff', blendNoteColor: '#DBAB3D' },
+    sangban: { cardBg: 'rgba(127, 115, 80, 0.18)', border: '#7F7350', iconColor: '#B2A268', iconBg: 'rgba(127, 115, 80, 0.1)', noteBg: '#C07F28', noteColor: '#ffffff', blendNoteColor: '#F3983C' },
+    doundounba: { cardBg: 'rgba(91, 74, 57, 0.22)', border: '#5B4A39', iconColor: '#8F502A', iconBg: 'rgba(91, 74, 57, 0.1)', noteBg: '#784617', noteColor: '#ffffff', blendNoteColor: '#622908' }
+  },
+  individualColors: {}
+};
+
+// State variables for designer tracking
+let selectedTrackTarget = 'djembe';
+let selectedRole = 'noteBg';
+let blendNoteFill = false;
+let isolatePattern = false;
+let cleanBars = false;
+let selectedPattern = 'none';
+let patternIntensity = 0.15;
+
+// Load customThemeConfig on startup if saved
+try {
+  const savedConfig = localStorage.getItem("djembeCustomTheme");
+  if (savedConfig) {
+    customThemeConfig = JSON.parse(savedConfig);
+  }
+} catch (e) {}
+
+// Color conversion and shifting helpers for unlinked auto-gradient generation
+function hexToHsl(hex) {
+  hex = hex.replace(/^#/, '');
+  if (hex.length === 3) {
+    hex = hex.split('').map(c => c + c).join('');
+  }
+  let r = parseInt(hex.substring(0, 2), 16) / 255;
+  let g = parseInt(hex.substring(2, 4), 16) / 255;
+  let b = parseInt(hex.substring(4, 6), 16) / 255;
+  let max = Math.max(r, g, b), min = Math.min(r, g, b);
+  let h, s, l = (max + min) / 2;
+  if (max === min) {
+    h = s = 0;
+  } else {
+    let d = max - min;
+    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+    switch (max) {
+      case r: h = (g - b) / d + (g < b ? 6 : 0); break;
+      case g: h = (b - r) / d + 2; break;
+      case b: h = (r - g) / d + 4; break;
+    }
+    h /= 6;
+  }
+  return [Math.round(h * 360), Math.round(s * 100), Math.round(l * 100)];
+}
+
+function hslToHex(h, s, l) {
+  s /= 100;
+  l /= 100;
+  let c = (1 - Math.abs(2 * l - 1)) * s;
+  let x = c * (1 - Math.abs((h / 60) % 2 - 1));
+  let m = l - c / 2;
+  let r = 0, g = 0, b = 0;
+  if (0 <= h && h < 60) { r = c; g = x; b = 0; }
+  else if (60 <= h && h < 120) { r = x; g = c; b = 0; }
+  else if (120 <= h && h < 180) { r = 0; g = c; b = x; }
+  else if (180 <= h && h < 240) { r = 0; g = x; b = c; }
+  else if (240 <= h && h < 300) { r = x; g = 0; b = c; }
+  else if (300 <= h && h < 360) { r = c; g = 0; b = x; }
+  let rHex = Math.round((r + m) * 255).toString(16).padStart(2, '0');
+  let gHex = Math.round((g + m) * 255).toString(16).padStart(2, '0');
+  let bHex = Math.round((b + m) * 255).toString(16).padStart(2, '0');
+  return `#${rHex}${gHex}${bHex}`;
+}
+
+function shiftHue(hex, degree) {
+  try {
+    const [h, s, l] = hexToHsl(hex);
+    const newH = (h + degree + 360) % 360;
+    return hslToHex(newH, s, l);
+  } catch(e) {
+    return hex;
+  }
+}
+
+function getTrackFamily(track) {
+  if (track.type === "djembe" || track.type === "shekere") return "djembe";
+  if (track.instrument) {
+    const inst = track.instrument.toLowerCase();
+    if (inst.includes("kenkeni")) return "kenkeni";
+    if (inst.includes("sangban")) return "sangban";
+    if (inst.includes("dundunba") || inst.includes("doundounba")) return "doundounba";
+  }
+  return "djembe";
+}
+
+function getTrackFamilyFromClass(row) {
+  if (row.classList.contains("track-djembe")) return "djembe";
+  if (row.classList.contains("track-kenkeni")) return "kenkeni";
+  if (row.classList.contains("track-sangban")) return "sangban";
+  if (row.classList.contains("track-doundounba")) return "doundounba";
+  return null;
+}
 
 // --- Performance mode -------------------------------------------------------
 // Older/slower phones get a "lite" rendering path: solid backdrops instead of
@@ -3846,22 +4067,129 @@ function setupEventListeners() {
   const themesModal = document.getElementById("themes-modal");
 
   function applyTheme(name, rerender = true) {
-    if (name !== "studio" && name !== "tinted" && name !== "classic" && name !== "light" && name !== "afro" && name !== "afro-light") name = "studio";
-    document.body.classList.toggle("theme-studio", name === "studio" || name === "tinted" || name === "light" || name === "afro" || name === "afro-light");
+    // If afro/afro-light, default to first preset of that type
+    if (name === "afro") name = "segou_mudcloth";
+    if (name === "afro-light") name = "dakar_sunrise";
+
+    const isPreset = THEME_PRESETS.some(p => p.id === name);
+    const isCustom = (name === "custom");
+    const isStandard = ["studio", "tinted", "classic", "light"].includes(name);
+
+    if (name !== "studio" && name !== "tinted" && name !== "classic" && name !== "light" && !isPreset && !isCustom) {
+      name = "studio";
+    }
+
+    // Toggle base body theme classes
+    document.body.classList.toggle("theme-studio", name === "studio" || name === "tinted" || name === "light" || isPreset || isCustom);
     document.body.classList.toggle("theme-tinted", name === "tinted");
     document.body.classList.toggle("light-theme", name === "light");
-    document.body.classList.toggle("theme-afro", name === "afro");
-    document.body.classList.toggle("theme-afro-light", name === "afro-light");
+    document.body.classList.toggle("theme-custom", isCustom);
+
+    const preset = THEME_PRESETS.find(p => p.id === name);
+    if (preset) {
+      document.body.classList.toggle("theme-afro", preset.isDark);
+      document.body.classList.toggle("theme-afro-light", !preset.isDark);
+    } else {
+      if (name !== "custom") {
+        document.body.classList.remove("theme-afro", "theme-afro-light");
+      }
+    }
+
+    // Set up variables or reset depending on the theme type
+    const root = document.documentElement;
+    const appBg = document.getElementById("app-background-layer");
+
+    if (isStandard) {
+      document.body.classList.remove("blend-note-fill", "clean-bars", "isolate-pattern", "theme-custom");
+      if (appBg) {
+        appBg.style.backgroundImage = "none";
+        appBg.style.opacity = 0;
+      }
+      // Clear variables on root
+      const families = ["djembe", "kenkeni", "sangban", "doundounba"];
+      families.forEach(f => {
+        root.style.removeProperty(`--${f}-card-bg`);
+        root.style.removeProperty(`--${f}-border`);
+        root.style.removeProperty(`--${f}-icon-color`);
+        root.style.removeProperty(`--${f}-icon-bg`);
+        root.style.removeProperty(`--${f}-note-bg`);
+        root.style.removeProperty(`--${f}-note-color`);
+        root.style.removeProperty(`--${f}-blend-note`);
+      });
+      root.style.removeProperty("--app-canvas-bg");
+      root.style.removeProperty("--app-phone-bg");
+      root.style.removeProperty("--app-bar-bg");
+
+      // Remove track inline styles
+      document.querySelectorAll(".track-row").forEach(row => {
+        row.style.removeProperty(`--djembe-card-bg`);
+        row.style.removeProperty(`--djembe-border`);
+        row.style.removeProperty(`--djembe-icon-color`);
+        row.style.removeProperty(`--djembe-icon-bg`);
+        row.style.removeProperty(`--djembe-note-bg`);
+        row.style.removeProperty(`--djembe-note-color`);
+        row.style.removeProperty(`--djembe-blend-note`);
+
+        row.style.removeProperty(`--kenkeni-card-bg`);
+        row.style.removeProperty(`--kenkeni-border`);
+        row.style.removeProperty(`--kenkeni-icon-color`);
+        row.style.removeProperty(`--kenkeni-icon-bg`);
+        row.style.removeProperty(`--kenkeni-note-bg`);
+        row.style.removeProperty(`--kenkeni-note-color`);
+        row.style.removeProperty(`--kenkeni-blend-note`);
+
+        row.style.removeProperty(`--sangban-card-bg`);
+        row.style.removeProperty(`--sangban-border`);
+        row.style.removeProperty(`--sangban-icon-color`);
+        row.style.removeProperty(`--sangban-icon-bg`);
+        row.style.removeProperty(`--sangban-note-bg`);
+        row.style.removeProperty(`--sangban-note-color`);
+        row.style.removeProperty(`--sangban-blend-note`);
+
+        row.style.removeProperty(`--doundounba-card-bg`);
+        row.style.removeProperty(`--doundounba-border`);
+        row.style.removeProperty(`--doundounba-icon-color`);
+        row.style.removeProperty(`--doundounba-icon-bg`);
+        row.style.removeProperty(`--doundounba-note-bg`);
+        row.style.removeProperty(`--doundounba-note-color`);
+        row.style.removeProperty(`--doundounba-blend-note`);
+      });
+    } else if (preset) {
+      blendNoteFill = false;
+      isolatePattern = false;
+      cleanBars = false;
+      selectedPattern = preset.patternType;
+      patternIntensity = preset.patternOpacity;
+
+      document.body.classList.toggle("blend-note-fill", blendNoteFill);
+      document.body.classList.toggle("isolate-pattern", isolatePattern);
+      document.body.classList.toggle("clean-bars", cleanBars);
+
+      applyThemePreset(preset.id);
+    } else if (isCustom) {
+      applyCustomTheme();
+    }
+
     try { localStorage.setItem("djembe-theme", name); } catch (e) { }
 
     // Sync checkmarks in the themes modal
     if (themesModal) {
       themesModal.querySelectorAll(".theme-option-btn").forEach(btn => {
-        btn.classList.toggle("active", btn.getAttribute("data-theme") === name);
+        const btnTheme = btn.getAttribute("data-theme");
+        let active = (btnTheme === name);
+        if (btnTheme === "afro" && preset && preset.isDark) active = true;
+        if (btnTheme === "afro-light" && preset && !preset.isDark) active = true;
+        btn.classList.toggle("active", active);
       });
+
+      // Toggle submenu display
+      const afroSub = document.getElementById("afro-submenu");
+      const afroLightSub = document.getElementById("afro-light-submenu");
+      if (afroSub) afroSub.style.display = (preset && preset.isDark) ? "flex" : "none";
+      if (afroLightSub) afroLightSub.style.display = (preset && !preset.isDark) ? "flex" : "none";
     }
 
-    // Re-render the grid so note markup matches the theme (icons vs coloured squares)
+    // Re-render the grid so note markup matches the theme
     if (rerender) {
       try {
         if (typeof renderGrid === "function" && state && state.tracks && state.tracks.length) {
@@ -3874,15 +4202,511 @@ function setupEventListeners() {
   }
   window.applyTheme = applyTheme;
 
-  // Restore saved preference (legacy values: "dark" was the old default look)
+  // Apply a theme preset ID to root CSS variables and background pattern
+  function applyThemePreset(presetId) {
+    const theme = THEME_PRESETS.find(p => p.id === presetId) || THEME_PRESETS[0];
+    const root = document.documentElement;
+
+    root.style.setProperty('--app-canvas-bg', theme.background);
+    root.style.setProperty('--app-phone-bg', theme.phoneBg);
+    root.style.setProperty('--app-bar-bg', theme.barBg);
+
+    const appContainer = document.getElementById('app-background-layer');
+    if (appContainer && theme.patternType !== 'none') {
+      let patternUrl = '';
+      if (theme.patternType === 'mudcloth') patternUrl = SVG_PATTERNS.mudcloth(theme.isDark ? '#F7EFC2' : '#3E1605');
+      if (theme.patternType === 'linen') patternUrl = SVG_PATTERNS.linen(theme.isDark ? '#ffffff' : '#000000');
+      if (theme.patternType === 'kente') patternUrl = SVG_PATTERNS.kente(theme.isDark ? '#F3983C' : '#8A2E0F', theme.isDark ? '#D4622E' : '#A72305');
+
+      appContainer.style.backgroundImage = `url('${patternUrl}')`;
+      appContainer.style.opacity = theme.patternOpacity;
+    } else if (appContainer) {
+      appContainer.style.backgroundImage = 'none';
+      appContainer.style.opacity = 0;
+    }
+
+    Object.keys(theme.tracks).forEach(family => {
+      const data = theme.tracks[family];
+      const varFamily = (family === 'djembes') ? 'djembe' : family;
+      root.style.setProperty(`--${varFamily}-card-bg`, data.cardBg);
+      root.style.setProperty(`--${varFamily}-border`, data.border);
+      root.style.setProperty(`--${varFamily}-icon-color`, data.iconColor);
+      root.style.setProperty(`--${varFamily}-icon-bg`, data.iconBg);
+      root.style.setProperty(`--${varFamily}-note-bg`, data.noteBg);
+      root.style.setProperty(`--${varFamily}-note-color`, data.noteColor);
+      root.style.setProperty(`--${varFamily}-blend-note`, data.blendNoteColor);
+    });
+
+    localStorage.setItem('djembeStudioTheme', presetId);
+  }
+
+  // Apply custom theme settings to body classes, background patterns, and CSS variables
+  function applyCustomTheme() {
+    const root = document.documentElement;
+
+    document.body.classList.toggle("blend-note-fill", customThemeConfig.blendNoteFill);
+    document.body.classList.toggle("isolate-pattern", customThemeConfig.isolatePattern);
+    document.body.classList.toggle("clean-bars", customThemeConfig.cleanBars);
+
+    root.style.setProperty('--app-canvas-bg', customThemeConfig.canvasBg);
+    root.style.setProperty('--app-phone-bg', customThemeConfig.phoneBg);
+    root.style.setProperty('--app-bar-bg', customThemeConfig.barBg);
+
+    const appContainer = document.getElementById('app-background-layer');
+    if (appContainer && customThemeConfig.patternType !== 'none') {
+      let patternUrl = '';
+      if (customThemeConfig.patternType === 'mudcloth') patternUrl = SVG_PATTERNS.mudcloth('#F7EFC2');
+      if (customThemeConfig.patternType === 'linen') patternUrl = SVG_PATTERNS.linen('#ffffff');
+      if (customThemeConfig.patternType === 'kente') patternUrl = SVG_PATTERNS.kente('#F3983C', '#D4622E');
+
+      appContainer.style.backgroundImage = `url('${patternUrl}')`;
+      appContainer.style.opacity = customThemeConfig.patternOpacity;
+    } else if (appContainer) {
+      appContainer.style.backgroundImage = 'none';
+      appContainer.style.opacity = 0;
+    }
+
+    Object.keys(customThemeConfig.familyColors).forEach(family => {
+      const data = customThemeConfig.familyColors[family];
+      root.style.setProperty(`--${family}-card-bg`, data.cardBg);
+      root.style.setProperty(`--${family}-border`, data.border);
+      root.style.setProperty(`--${family}-icon-color`, data.iconColor);
+      root.style.setProperty(`--${family}-icon-bg`, data.iconBg);
+      root.style.setProperty(`--${family}-note-bg`, data.noteBg);
+      root.style.setProperty(`--${family}-note-color`, data.noteColor);
+      root.style.setProperty(`--${family}-blend-note`, data.blendNoteColor);
+    });
+
+    localStorage.setItem('djembeStudioTheme', 'custom');
+    localStorage.setItem('djembeCustomTheme', JSON.stringify(customThemeConfig));
+  }
+
+  // Populate submenus underneath Afro and Afro Light inside theme dialog
+  function initThemeMenuSubmenus() {
+    const afroBtn = document.querySelector('.theme-option-btn[data-theme="afro"]');
+    const afroLightBtn = document.querySelector('.theme-option-btn[data-theme="afro-light"]');
+
+    if (afroBtn && !document.getElementById('afro-submenu')) {
+      const sub = document.createElement('div');
+      sub.id = 'afro-submenu';
+      sub.className = 'theme-submenu';
+      sub.style.cssText = 'display: none; padding: 0.5rem 0.5rem 0.5rem 2rem; margin-top: 0.25rem; margin-bottom: 0.5rem; background: rgba(0, 0, 0, 0.15); border-radius: 8px; flex-direction: column; gap: 0.5rem; border-left: 3px solid #EB8F69;';
+
+      let buttonsHtml = '<div style="font-size: 0.75rem; font-weight: bold; color: var(--text-muted); margin-bottom: 0.15rem;">DARK PRESETS</div>';
+      buttonsHtml += '<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.4rem;">';
+      const darkPresets = THEME_PRESETS.filter(p => p.isDark);
+      darkPresets.forEach(preset => {
+        buttonsHtml += `
+          <button class="preset-select-btn" data-preset="${preset.id}" style="background: ${preset.background}; border: 1px solid ${preset.tracks.djembes.border}; color: ${preset.tracks.djembes.iconColor}; font-size: 0.75rem; padding: 0.4rem; border-radius: 6px; cursor: pointer; font-weight: bold; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+            ${preset.name}
+          </button>
+        `;
+      });
+      buttonsHtml += '</div>';
+      buttonsHtml += '<button class="btn btn-secondary btn-custom-designer" style="margin-top: 0.4rem; font-size: 0.75rem; padding: 0.4rem; width: 100%; font-weight: bold; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff;">Custom Designer</button>';
+
+      sub.innerHTML = buttonsHtml;
+      afroBtn.parentNode.insertBefore(sub, afroBtn.nextSibling);
+    }
+
+    if (afroLightBtn && !document.getElementById('afro-light-submenu')) {
+      const sub = document.createElement('div');
+      sub.id = 'afro-light-submenu';
+      sub.className = 'theme-submenu';
+      sub.style.cssText = 'display: none; padding: 0.5rem 0.5rem 0.5rem 2rem; margin-top: 0.25rem; margin-bottom: 0.5rem; background: rgba(0, 0, 0, 0.08); border-radius: 8px; flex-direction: column; gap: 0.5rem; border-left: 3px solid #85af97;';
+
+      let buttonsHtml = '<div style="font-size: 0.75rem; font-weight: bold; color: #5B4A39; margin-bottom: 0.15rem;">LIGHT PRESETS</div>';
+      buttonsHtml += '<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.4rem;">';
+      const lightPresets = THEME_PRESETS.filter(p => !p.isDark);
+      lightPresets.forEach(preset => {
+        buttonsHtml += `
+          <button class="preset-select-btn" data-preset="${preset.id}" style="background: ${preset.background}; border: 1px solid ${preset.tracks.djembes.border}; color: ${preset.tracks.djembes.iconColor}; font-size: 0.75rem; padding: 0.4rem; border-radius: 6px; cursor: pointer; font-weight: bold; text-align: center; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">
+            ${preset.name}
+          </button>
+        `;
+      });
+      buttonsHtml += '</div>';
+      buttonsHtml += '<button class="btn btn-secondary btn-custom-designer" style="margin-top: 0.4rem; font-size: 0.75rem; padding: 0.4rem; width: 100%; font-weight: bold; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff;">Custom Designer</button>';
+
+      sub.innerHTML = buttonsHtml;
+      afroLightBtn.parentNode.insertBefore(sub, afroLightBtn.nextSibling);
+    }
+
+    // Setup click event handlers for presets
+    document.querySelectorAll('.preset-select-btn').forEach(btn => {
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        const presetId = btn.getAttribute('data-preset');
+        applyTheme(presetId);
+        if (window.gsap && !perfLite) {
+          gsap.fromTo(".app-container", { opacity: 0.6 }, { opacity: 1, duration: 0.35, ease: "power2.out" });
+        }
+      };
+    });
+
+    // Setup click event handlers for custom designer buttons
+    document.querySelectorAll('.btn-custom-designer').forEach(btn => {
+      btn.onclick = (e) => {
+        e.stopPropagation();
+        document.getElementById('themes-modal').classList.remove('active');
+        openCustomDesignerModal();
+      };
+    });
+  }
+
+  // Construct Custom Theme Designer Modal DOM
+  function injectCustomDesignerModal() {
+    if (document.getElementById('custom-designer-modal')) return;
+
+    const modal = document.createElement('div');
+    modal.id = 'custom-designer-modal';
+    modal.className = 'modal-overlay';
+
+    modal.innerHTML = `
+      <div class="modal-content" style="max-width: 380px; width: 92%; max-height: 90vh; overflow-y: auto; padding: 1.2rem; border-radius: 16px; background: rgba(30, 20, 15, 0.98); border: 1px solid #622908; box-shadow: 0 20px 40px rgba(0,0,0,0.9); color: #FFFDF2; display: flex; flex-direction: column; gap: 0.8rem;">
+        <div class="modal-header" style="font-size: 1.25rem; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center; font-family: 'Outfit', sans-serif;">
+          <span>Theme Designer</span>
+          <button id="designer-btn-close-header" style="background: none; border: none; color: #FFFDF2; opacity: 0.7; cursor: pointer; font-size: 1.25rem;">&times;</button>
+        </div>
+
+        <div class="modal-body" style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.85rem; padding-right: 0.2rem;">
+          
+          <!-- PATTERN TOGGLES -->
+          <div style="background: rgba(0,0,0,0.25); padding: 0.6rem; border-radius: 8px; display: flex; flex-direction: column; gap: 0.5rem;">
+            <div style="font-weight: bold; color: #EFCD91; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase;">Pattern & Notes</div>
+            
+            <label style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+              <span>Isolate pattern (mask behind tracks)</span>
+              <input type="checkbox" id="designer-toggle-isolate" style="cursor: pointer;">
+            </label>
+            
+            <label style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+              <span>Clean Bars (clear header/footer)</span>
+              <input type="checkbox" id="designer-toggle-cleanbars" style="cursor: pointer;">
+            </label>
+            
+            <label style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+              <span>Blend Note fill with Container</span>
+              <input type="checkbox" id="designer-toggle-blendnote" style="cursor: pointer;">
+            </label>
+          </div>
+
+          <!-- PATTERN SELECTOR -->
+          <div style="background: rgba(0,0,0,0.25); padding: 0.6rem; border-radius: 8px; display: flex; flex-direction: column; gap: 0.5rem;">
+            <div style="font-weight: bold; color: #EFCD91; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase;">Background Pattern</div>
+            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.3rem;">
+              <button class="pattern-btn btn" data-pattern="mudcloth" style="font-size: 0.7rem; padding: 0.35rem 0.2rem; font-weight: bold;">Mudcloth</button>
+              <button class="pattern-btn btn" data-pattern="kente" style="font-size: 0.7rem; padding: 0.35rem 0.2rem; font-weight: bold;">Kente</button>
+              <button class="pattern-btn btn" data-pattern="linen" style="font-size: 0.7rem; padding: 0.35rem 0.2rem; font-weight: bold;">Linen</button>
+              <button class="pattern-btn btn" data-pattern="none" style="font-size: 0.7rem; padding: 0.35rem 0.2rem; font-weight: bold;">None</button>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 0.2rem; margin-top: 0.2rem;">
+              <div style="display: flex; justify-content: space-between;">
+                <span>Pattern Intensity:</span>
+                <span id="designer-intensity-val">15%</span>
+              </div>
+              <input type="range" id="designer-pattern-intensity" min="0" max="100" step="5" value="15" style="width: 100%; cursor: pointer;">
+            </div>
+          </div>
+
+          <!-- LINKING -->
+          <div style="background: rgba(0,0,0,0.25); padding: 0.6rem; border-radius: 8px; display: flex; flex-direction: column; gap: 0.4rem;">
+            <label style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: bold; color: #EFCD91;">
+              <span>LINK DUNUN FAMILIES</span>
+              <input type="checkbox" id="designer-toggle-linking" style="cursor: pointer;">
+            </label>
+          </div>
+
+          <!-- BASE COLORS -->
+          <div style="background: rgba(0,0,0,0.25); padding: 0.6rem; border-radius: 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem;">
+            <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+              <span style="font-weight: bold; color: #EFCD91; font-size: 0.75rem;">Canvas Color</span>
+              <div style="display: flex; align-items: center; gap: 0.3rem;">
+                <input type="color" id="designer-canvas-color" style="width: 32px; height: 26px; border: none; cursor: pointer; background: transparent; padding: 0;">
+                <span id="designer-canvas-hex" style="font-family: monospace; font-size: 0.75rem;">#281507</span>
+              </div>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+              <span style="font-weight: bold; color: #EFCD91; font-size: 0.75rem;">Bars Color</span>
+              <div style="display: flex; align-items: center; gap: 0.3rem;">
+                <input type="color" id="designer-bar-color" style="width: 32px; height: 26px; border: none; cursor: pointer; background: transparent; padding: 0;">
+                <span id="designer-bar-hex" style="font-family: monospace; font-size: 0.75rem;">#1C1008</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- TRACK & COLOR ROLE TARGETER -->
+          <div style="background: rgba(0,0,0,0.25); padding: 0.6rem; border-radius: 8px; display: flex; flex-direction: column; gap: 0.5rem;">
+            <div style="font-weight: bold; color: #EFCD91; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase;">Track Styling Target</div>
+            
+            <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+              <span>Target Track:</span>
+              <select id="designer-track-target" style="width: 100%; padding: 0.45rem; border-radius: 6px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: #fff; outline: none; cursor: pointer;">
+                <!-- Options populated dynamically -->
+              </select>
+            </div>
+
+            <div style="display: flex; flex-direction: column; gap: 0.25rem; margin-top: 0.2rem;">
+              <span>Color Role:</span>
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.3rem;" id="designer-role-container">
+                <button class="role-btn btn" data-role="iconColor" style="font-size: 0.7rem; padding: 0.35rem 0.1rem; font-weight: 500;">Icon Accent</button>
+                <button class="role-btn btn" data-role="iconBg" style="font-size: 0.7rem; padding: 0.35rem 0.1rem; font-weight: 500;">Icon Background</button>
+                <button class="role-btn btn" data-role="cardBg" style="font-size: 0.7rem; padding: 0.35rem 0.1rem; font-weight: 500;">Container Bg</button>
+                <button class="role-btn btn" data-role="border" style="font-size: 0.7rem; padding: 0.35rem 0.1rem; font-weight: 500;">Border</button>
+                <button class="role-btn btn" data-role="noteBg" style="font-size: 0.7rem; padding: 0.35rem 0.1rem; font-weight: 500;">Active Step Fill</button>
+                <button class="role-btn btn" data-role="noteColor" style="font-size: 0.7rem; padding: 0.35rem 0.1rem; font-weight: 500;">Active Note Glyph</button>
+                <button class="role-btn btn" data-role="blendNoteColor" style="font-size: 0.7rem; padding: 0.35rem 0.1rem; grid-column: span 2; font-weight: 500;">Blended Note Glyph</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- PALETTE GRID -->
+          <div style="background: rgba(0,0,0,0.25); padding: 0.6rem; border-radius: 8px; display: flex; flex-direction: column; gap: 0.4rem;">
+            <div style="font-weight: bold; color: #EFCD91; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase;">West African Palette</div>
+            <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.25rem;" id="designer-palette-grid">
+              <!-- Populated dynamically -->
+            </div>
+          </div>
+
+        </div>
+
+        <div class="modal-footer" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.6rem; display: flex; justify-content: flex-end; gap: 0.5rem;">
+          <button id="designer-btn-close" class="btn btn-primary" style="width: 100%; font-weight: bold; font-size: 0.85rem; padding: 0.55rem;">Save & Close</button>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(modal);
+    setupDesignerListeners();
+  }
+
+  // Populate dropdown based on Linking toggle state
+  function updateDesignerTrackDropdown() {
+    const select = document.getElementById('designer-track-target');
+    if (!select) return;
+
+    const prevVal = select.value;
+    select.innerHTML = '';
+
+    if (customThemeConfig.linkedDununFamilies) {
+      select.innerHTML = `
+        <option value="djembe">Djembe (All Djembes + Shekere)</option>
+        <option value="kenkeni">Kenkeni Family</option>
+        <option value="sangban">Sangban Family</option>
+        <option value="doundounba">Doundounba Family</option>
+      `;
+    } else {
+      select.innerHTML = `
+        <option value="djembe1">Djembe 1</option>
+        <option value="djembe2">Djembe 2</option>
+        <option value="djembe3">Djembe 3</option>
+        <option value="kenkeni">Kenkeni Drum & Bell</option>
+        <option value="sangban">Sangban Drum & Bell</option>
+        <option value="dundunba">Dundunba Drum & Bell</option>
+        <option value="shekere">Shekere</option>
+      `;
+    }
+
+    if (Array.from(select.options).some(opt => opt.value === prevVal)) {
+      select.value = prevVal;
+    } else {
+      select.value = select.options[0].value;
+    }
+    selectedTrackTarget = select.value;
+  }
+
+  // Synchronise and open the Designer modal panel
+  function openCustomDesignerModal() {
+    injectCustomDesignerModal();
+    const modal = document.getElementById('custom-designer-modal');
+    if (modal) {
+      modal.classList.add('active');
+
+      document.getElementById('designer-toggle-isolate').checked = customThemeConfig.isolatePattern;
+      document.getElementById('designer-toggle-cleanbars').checked = customThemeConfig.cleanBars;
+      document.getElementById('designer-toggle-blendnote').checked = customThemeConfig.blendNoteFill;
+      document.getElementById('designer-toggle-linking').checked = customThemeConfig.linkedDununFamilies;
+
+      modal.querySelectorAll('.pattern-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-pattern') === customThemeConfig.patternType);
+      });
+
+      const intensity = Math.round((customThemeConfig.patternOpacity || 0.15) * 100);
+      document.getElementById('designer-pattern-intensity').value = intensity;
+      document.getElementById('designer-intensity-val').textContent = `${intensity}%`;
+
+      document.getElementById('designer-canvas-color').value = customThemeConfig.canvasBg;
+      document.getElementById('designer-canvas-hex').textContent = customThemeConfig.canvasBg.toUpperCase();
+      document.getElementById('designer-bar-color').value = customThemeConfig.barBg;
+      document.getElementById('designer-bar-hex').textContent = customThemeConfig.barBg.toUpperCase();
+
+      updateDesignerTrackDropdown();
+
+      modal.querySelectorAll('.role-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-role') === selectedRole);
+      });
+
+      if (window.gsap && !perfLite) {
+        const content = modal.querySelector(".modal-content");
+        if (content) gsap.fromTo(content, { scale: 0.92, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.28, ease: "back.out(1.6)" });
+      }
+    }
+  }
+
+  // Register listeners on custom designer UI widgets
+  function setupDesignerListeners() {
+    const modal = document.getElementById('custom-designer-modal');
+    if (!modal) return;
+
+    document.getElementById('designer-btn-close-header').onclick = () => {
+      modal.classList.remove('active');
+    };
+
+    document.getElementById('designer-btn-close').onclick = () => {
+      modal.classList.remove('active');
+    };
+
+    document.getElementById('designer-toggle-isolate').onchange = (e) => {
+      customThemeConfig.isolatePattern = e.target.checked;
+      applyCustomTheme();
+    };
+
+    document.getElementById('designer-toggle-cleanbars').onchange = (e) => {
+      customThemeConfig.cleanBars = e.target.checked;
+      applyCustomTheme();
+    };
+
+    document.getElementById('designer-toggle-blendnote').onchange = (e) => {
+      customThemeConfig.blendNoteFill = e.target.checked;
+      applyCustomTheme();
+      if (typeof renderGrid === "function") renderGrid();
+    };
+
+    modal.querySelectorAll('.pattern-btn').forEach(btn => {
+      btn.onclick = () => {
+        modal.querySelectorAll('.pattern-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        customThemeConfig.patternType = btn.getAttribute('data-pattern');
+        applyCustomTheme();
+      };
+    });
+
+    document.getElementById('designer-pattern-intensity').oninput = (e) => {
+      const intensity = e.target.value;
+      document.getElementById('designer-intensity-val').textContent = `${intensity}%`;
+      customThemeConfig.patternOpacity = intensity / 100;
+      applyCustomTheme();
+    };
+
+    document.getElementById('designer-toggle-linking').onchange = (e) => {
+      customThemeConfig.linkedDununFamilies = e.target.checked;
+
+      if (!customThemeConfig.linkedDununFamilies) {
+        const baseDjembe = customThemeConfig.familyColors.djembe;
+        ["djembe1", "djembe2", "djembe3"].forEach((inst, index) => {
+          if (!customThemeConfig.individualColors[inst]) {
+            const shift = index * 18;
+            customThemeConfig.individualColors[inst] = {
+              cardBg: baseDjembe.cardBg,
+              border: shiftHue(baseDjembe.border, shift),
+              iconColor: shiftHue(baseDjembe.iconColor, shift),
+              iconBg: baseDjembe.iconBg,
+              noteBg: shiftHue(baseDjembe.noteBg, shift),
+              noteColor: baseDjembe.noteColor,
+              blendNoteColor: shiftHue(baseDjembe.blendNoteColor, shift)
+            };
+          }
+        });
+        if (!customThemeConfig.individualColors.shekere) {
+          customThemeConfig.individualColors.shekere = { ...baseDjembe };
+        }
+        const baseK = customThemeConfig.familyColors.kenkeni;
+        if (!customThemeConfig.individualColors.kenkeni) {
+          customThemeConfig.individualColors.kenkeni = { ...baseK };
+        }
+        const baseS = customThemeConfig.familyColors.sangban;
+        if (!customThemeConfig.individualColors.sangban) {
+          customThemeConfig.individualColors.sangban = { ...baseS };
+        }
+        const baseD = customThemeConfig.familyColors.doundounba;
+        if (!customThemeConfig.individualColors.dundunba) {
+          customThemeConfig.individualColors.dundunba = { ...baseD };
+        }
+      }
+
+      updateDesignerTrackDropdown();
+      applyCustomTheme();
+      if (typeof renderGrid === "function") renderGrid();
+    };
+
+    const canvasInput = document.getElementById('designer-canvas-color');
+    canvasInput.oninput = (e) => {
+      const val = e.target.value;
+      document.getElementById('designer-canvas-hex').textContent = val.toUpperCase();
+      customThemeConfig.canvasBg = val;
+      const [h, s, l] = hexToHsl(val);
+      customThemeConfig.phoneBg = hslToHex(h, s, Math.max(2, l - 10));
+      applyCustomTheme();
+    };
+
+    const barInput = document.getElementById('designer-bar-color');
+    barInput.oninput = (e) => {
+      const val = e.target.value;
+      document.getElementById('designer-bar-hex').textContent = val.toUpperCase();
+      customThemeConfig.barBg = val;
+      applyCustomTheme();
+    };
+
+    document.getElementById('designer-track-target').onchange = (e) => {
+      selectedTrackTarget = e.target.value;
+    };
+
+    modal.querySelectorAll('.role-btn').forEach(btn => {
+      btn.onclick = () => {
+        modal.querySelectorAll('.role-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        selectedRole = btn.getAttribute('data-role');
+      };
+    });
+
+    const paletteGrid = document.getElementById('designer-palette-grid');
+    paletteGrid.innerHTML = '';
+    WEST_AFRICAN_PALETTE.forEach(color => {
+      const cell = document.createElement('button');
+      cell.style.cssText = `background: ${color}; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; height: 26px; cursor: pointer; transition: transform 0.1s ease;`;
+      cell.title = color;
+
+      cell.onmouseover = () => cell.style.transform = 'scale(1.15)';
+      cell.onmouseout = () => cell.style.transform = 'scale(1.0)';
+
+      cell.onclick = () => {
+        if (customThemeConfig.linkedDununFamilies) {
+          if (customThemeConfig.familyColors[selectedTrackTarget]) {
+            customThemeConfig.familyColors[selectedTrackTarget][selectedRole] = color;
+          }
+        } else {
+          if (!customThemeConfig.individualColors[selectedTrackTarget]) {
+            const family = getTrackFamily({ instrument: selectedTrackTarget });
+            customThemeConfig.individualColors[selectedTrackTarget] = { ...customThemeConfig.familyColors[family] };
+          }
+          customThemeConfig.individualColors[selectedTrackTarget][selectedRole] = color;
+        }
+        applyCustomTheme();
+        if (typeof renderGrid === "function") renderGrid();
+      };
+
+      paletteGrid.appendChild(cell);
+    });
+  }
+
+  // Restore saved preference
   try {
     const saved = localStorage.getItem("djembe-theme");
-    if (saved === "light") applyTheme("light", false);
-    else if (saved === "tinted") applyTheme("tinted", false);
-    else if (saved === "afro") applyTheme("afro", false);
-    else if (saved === "afro-light") applyTheme("afro-light", false);
-    else if (saved === "classic" || saved === "dark") applyTheme("classic", false);
-    else applyTheme("studio", false);
+    if (saved) {
+      applyTheme(saved, false);
+    } else {
+      applyTheme("studio", false);
+    }
   } catch (e) {
     applyTheme("studio", false);
   }
@@ -3905,6 +4729,14 @@ function setupEventListeners() {
       if (hamburgerMenu) hamburgerMenu.classList.remove("active");
       themesModal.classList.add("active");
       updatePlayheadOptionUI();
+      initThemeMenuSubmenus(); // Ensure submenus are rendered
+      
+      // Update checkmarks and active submenus
+      try {
+        const saved = localStorage.getItem("djembe-theme") || "studio";
+        applyTheme(saved, false);
+      } catch(e) {}
+
       if (window.gsap && !perfLite) {
         const content = themesModal.querySelector(".modal-content");
         if (content) gsap.fromTo(content, { scale: 0.92, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.28, ease: "back.out(1.6)" });
@@ -6064,6 +6896,30 @@ function renderGrid() {
     const row = document.createElement("div");
     row.className = "track-row";
     row.setAttribute("data-track-id", track.id);
+
+    // Apply theme engine track classes
+    const family = getTrackFamily(track);
+    row.classList.add(`track-${family}`);
+    row.classList.add(`track-inst-${track.instrument}`);
+
+    // If custom theme is active and unlinked, apply individual styles from config
+    try {
+      const savedTheme = localStorage.getItem("djembe-theme");
+      if (savedTheme === "custom" && typeof customThemeConfig !== "undefined" && !customThemeConfig.linkedDununFamilies) {
+        let lookupKey = track.instrument;
+        if (lookupKey.endsWith("_bell")) lookupKey = lookupKey.replace("_bell", "");
+        const colors = customThemeConfig.individualColors[lookupKey];
+        if (colors) {
+          row.style.setProperty(`--${family}-card-bg`, colors.cardBg);
+          row.style.setProperty(`--${family}-border`, colors.border);
+          row.style.setProperty(`--${family}-icon-color`, colors.iconColor);
+          row.style.setProperty(`--${family}-icon-bg`, colors.iconBg);
+          row.style.setProperty(`--${family}-note-bg`, colors.noteBg);
+          row.style.setProperty(`--${family}-note-color`, colors.noteColor);
+          row.style.setProperty(`--${family}-blend-note`, colors.blendNoteColor);
+        }
+      }
+    } catch(e) { }
 
     // Instruments playing a call/échauffement adopt its colour
     if (state.callIntroActive && isCall && !isEchTrack(track)) row.classList.add("part-call-active");
