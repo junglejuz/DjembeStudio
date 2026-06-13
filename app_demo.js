@@ -5278,10 +5278,10 @@ function triggerStepVisualFlash(trackId, stepIndex, velocity = 1.0) {
     void cell.offsetWidth; // Force reflow to restart animation if already active
     cell.classList.add("note-play-flash");
     
-    // Clean up class after animation ends (250ms duration + buffer)
+    // Clean up class after animation ends (120ms duration + buffer)
     setTimeout(() => {
       cell.classList.remove("note-play-flash");
-    }, 280);
+    }, 150);
   }
 }
 

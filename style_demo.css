@@ -3810,7 +3810,7 @@ body.theme-afro-light input[type="range"]::-webkit-slider-runnable-track {
 
 /* Dark themes flash */
 body .step-cell.note-play-flash {
-  animation: notePlayFlashAnim 0.25s cubic-bezier(0.1, 0.8, 0.3, 1) !important;
+  animation: notePlayFlashAnim 0.12s cubic-bezier(0.1, 0.8, 0.3, 1) !important;
 }
 
 @keyframes notePlayFlashAnim {
@@ -3824,33 +3824,60 @@ body .step-cell.note-play-flash {
   100% {
     transform: translateY(-50%) scale(var(--current-scale, 1)) !important;
     filter: brightness(1.0) !important;
+    background-color: rgba(255, 255, 255, 0.035) !important;
+    border-color: rgba(255, 255, 255, 0.08) !important;
+    box-shadow: none !important;
   }
 }
 
-/* Light & Afro Light themes flash */
+/* Light themes flash */
 body.light-theme .step-cell.note-play-flash,
-body.theme-studio.light-theme .step-cell.note-play-flash,
-body.theme-afro-light .step-cell.note-play-flash {
-  animation: notePlayFlashLightAnim 0.25s cubic-bezier(0.1, 0.8, 0.3, 1) !important;
+body.theme-studio.light-theme .step-cell.note-play-flash {
+  animation: notePlayFlashLightAnim 0.12s cubic-bezier(0.1, 0.8, 0.3, 1) !important;
 }
 
 @keyframes notePlayFlashLightAnim {
   0% {
     transform: translateY(-50%) scale(calc(var(--current-scale, 1) * 1.35)) !important;
-    filter: brightness(1.4) !important;
-    background-color: hsla(var(--part-color-hsl, 243, 75%, 59%), 0.45) !important;
-    border-color: hsla(var(--part-color-hsl, 243, 75%, 59%), 0.9) !important;
-    box-shadow: 0 0 12px hsla(var(--part-color-hsl, 243, 75%, 59%), 0.5) !important;
+    filter: brightness(1.2) !important;
+    background-color: rgba(217, 119, 6, 0.45) !important;
+    border-color: rgba(217, 119, 6, 0.9) !important;
+    box-shadow: 0 0 12px rgba(217, 119, 6, 0.6) !important;
   }
   100% {
     transform: translateY(-50%) scale(var(--current-scale, 1)) !important;
     filter: brightness(1.0) !important;
+    background-color: rgba(0, 0, 0, 0.04) !important;
+    border-color: rgba(0, 0, 0, 0.08) !important;
+    box-shadow: none !important;
+  }
+}
+
+/* Afro Light theme flash */
+body.theme-afro-light .step-cell.note-play-flash {
+  animation: notePlayFlashAfroLightAnim 0.12s cubic-bezier(0.1, 0.8, 0.3, 1) !important;
+}
+
+@keyframes notePlayFlashAfroLightAnim {
+  0% {
+    transform: translateY(-50%) scale(calc(var(--current-scale, 1) * 1.35)) !important;
+    filter: brightness(1.2) !important;
+    background-color: rgba(212, 98, 46, 0.45) !important;
+    border-color: rgba(212, 98, 46, 0.9) !important;
+    box-shadow: 0 0 12px rgba(212, 98, 46, 0.6) !important;
+  }
+  100% {
+    transform: translateY(-50%) scale(var(--current-scale, 1)) !important;
+    filter: brightness(1.0) !important;
+    background-color: rgba(0, 0, 0, 0.01) !important;
+    border-color: rgba(0, 0, 0, 0.06) !important;
+    box-shadow: none !important;
   }
 }
 
 /* Disco (Classic) theme flash */
 body:not(.theme-studio) .step-cell.has-note.note-play-flash {
-  animation: notePlayFlashClassicAnim 0.25s cubic-bezier(0.1, 0.8, 0.3, 1) !important;
+  animation: notePlayFlashClassicAnim 0.12s cubic-bezier(0.1, 0.8, 0.3, 1) !important;
 }
 
 @keyframes notePlayFlashClassicAnim {
@@ -3862,6 +3889,8 @@ body:not(.theme-studio) .step-cell.has-note.note-play-flash {
   }
   100% {
     transform: translateY(-50%) scale(var(--current-scale, 1)) !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
   }
 }
 
