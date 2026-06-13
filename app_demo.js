@@ -4185,8 +4185,8 @@ function setupEventListeners() {
       // Toggle submenu display
       const afroSub = document.getElementById("afro-submenu");
       const afroLightSub = document.getElementById("afro-light-submenu");
-      if (afroSub) afroSub.style.display = (preset && preset.isDark) ? "flex" : "none";
-      if (afroLightSub) afroLightSub.style.display = (preset && !preset.isDark) ? "flex" : "none";
+      if (afroSub) afroSub.classList.toggle("expanded", !!(preset && preset.isDark));
+      if (afroLightSub) afroLightSub.classList.toggle("expanded", !!(preset && !preset.isDark));
     }
 
     // Re-render the grid so note markup matches the theme
@@ -4290,7 +4290,7 @@ function setupEventListeners() {
       const sub = document.createElement('div');
       sub.id = 'afro-submenu';
       sub.className = 'theme-submenu';
-      sub.style.cssText = 'display: none; padding: 0.5rem 0.5rem 0.5rem 2rem; margin-top: 0.25rem; margin-bottom: 0.5rem; background: rgba(0, 0, 0, 0.15); border-radius: 8px; flex-direction: column; gap: 0.5rem; border-left: 3px solid #EB8F69;';
+      sub.style.cssText = 'padding: 0.5rem 0.5rem 0.5rem 2rem; margin-top: 0.25rem; margin-bottom: 0.5rem; background: rgba(0, 0, 0, 0.15); border-radius: 8px; flex-direction: column; gap: 0.5rem; border-left: 3px solid #EB8F69;';
 
       let buttonsHtml = '<div style="font-size: 0.75rem; font-weight: bold; color: var(--text-muted); margin-bottom: 0.15rem;">DARK PRESETS</div>';
       buttonsHtml += '<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.4rem;">';
@@ -4303,7 +4303,6 @@ function setupEventListeners() {
         `;
       });
       buttonsHtml += '</div>';
-      buttonsHtml += '<button class="btn btn-secondary btn-custom-designer" style="margin-top: 0.4rem; font-size: 0.75rem; padding: 0.4rem; width: 100%; font-weight: bold; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff;">Custom Designer</button>';
 
       sub.innerHTML = buttonsHtml;
       afroBtn.parentNode.insertBefore(sub, afroBtn.nextSibling);
@@ -4313,7 +4312,7 @@ function setupEventListeners() {
       const sub = document.createElement('div');
       sub.id = 'afro-light-submenu';
       sub.className = 'theme-submenu';
-      sub.style.cssText = 'display: none; padding: 0.5rem 0.5rem 0.5rem 2rem; margin-top: 0.25rem; margin-bottom: 0.5rem; background: rgba(0, 0, 0, 0.08); border-radius: 8px; flex-direction: column; gap: 0.5rem; border-left: 3px solid #85af97;';
+      sub.style.cssText = 'padding: 0.5rem 0.5rem 0.5rem 2rem; margin-top: 0.25rem; margin-bottom: 0.5rem; background: rgba(0, 0, 0, 0.08); border-radius: 8px; flex-direction: column; gap: 0.5rem; border-left: 3px solid #85af97;';
 
       let buttonsHtml = '<div style="font-size: 0.75rem; font-weight: bold; color: #5B4A39; margin-bottom: 0.15rem;">LIGHT PRESETS</div>';
       buttonsHtml += '<div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.4rem;">';
@@ -4326,7 +4325,6 @@ function setupEventListeners() {
         `;
       });
       buttonsHtml += '</div>';
-      buttonsHtml += '<button class="btn btn-secondary btn-custom-designer" style="margin-top: 0.4rem; font-size: 0.75rem; padding: 0.4rem; width: 100%; font-weight: bold; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); color: #fff;">Custom Designer</button>';
 
       sub.innerHTML = buttonsHtml;
       afroLightBtn.parentNode.insertBefore(sub, afroLightBtn.nextSibling);
@@ -4338,21 +4336,23 @@ function setupEventListeners() {
         e.stopPropagation();
         const presetId = btn.getAttribute('data-preset');
         applyTheme(presetId);
+        const modal = document.getElementById('themes-modal');
+        if (modal) modal.classList.remove('active');
         if (window.gsap && !perfLite) {
           gsap.fromTo(".app-container", { opacity: 0.6 }, { opacity: 1, duration: 0.35, ease: "power2.out" });
         }
       };
     });
-
-    // Setup click event handlers for custom designer buttons
-    document.querySelectorAll('.btn-custom-designer').forEach(btn => {
-      btn.onclick = (e) => {
-        e.stopPropagation();
-        document.getElementById('themes-modal').classList.remove('active');
-        openCustomDesignerModal();
-      };
-    });
   }
+
+  // Selected area for custom designer editing ("canvas", "track", "note")
+  let designerSelectedArea = "";
+  // Selected track target specifically (e.g. "djembe" or "kenkeni")
+  let designerSelectedTrackTarget = "djembe";
+  // Selected note target specifically
+  let designerSelectedNoteTarget = "djembe";
+  // Selected styling role (e.g. "cardBg", "border", etc.)
+  let designerSelectedRole = "cardBg";
 
   // Construct Custom Theme Designer Modal DOM
   function injectCustomDesignerModal() {
@@ -4363,242 +4363,479 @@ function setupEventListeners() {
     modal.className = 'modal-overlay';
 
     modal.innerHTML = `
-      <div class="modal-content" style="max-width: 380px; width: 92%; max-height: 90vh; overflow-y: auto; padding: 1.2rem; border-radius: 16px; background: rgba(30, 20, 15, 0.98); border: 1px solid #622908; box-shadow: 0 20px 40px rgba(0,0,0,0.9); color: #FFFDF2; display: flex; flex-direction: column; gap: 0.8rem;">
-        <div class="modal-header" style="font-size: 1.25rem; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center; font-family: 'Outfit', sans-serif;">
+      <div class="modal-content" style="max-width: 380px; width: 92%; height: 500px; max-height: 90vh; overflow: hidden; padding: 1.2rem; border-radius: 16px; background: rgba(30, 20, 15, 0.98); border: 1px solid #622908; box-shadow: 0 20px 40px rgba(0,0,0,0.9); color: #FFFDF2; display: flex; flex-direction: column; gap: 0.8rem; position: relative; font-family: 'Outfit', sans-serif;">
+        <div class="modal-header" style="font-size: 1.25rem; font-weight: 700; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.5rem; display: flex; justify-content: space-between; align-items: center;">
           <span>Theme Designer</span>
           <button id="designer-btn-close-header" style="background: none; border: none; color: #FFFDF2; opacity: 0.7; cursor: pointer; font-size: 1.25rem;">&times;</button>
         </div>
 
-        <div class="modal-body" style="display: flex; flex-direction: column; gap: 0.75rem; font-size: 0.85rem; padding-right: 0.2rem;">
+        <div class="modal-body" style="display: flex; flex-direction: column; gap: 0.8rem; flex-grow: 1; overflow-y: auto;">
+          <!-- Visual Preview Map Title -->
+          <div style="font-weight: bold; color: #EFCD91; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase;">Visual Preview Map</div>
           
-          <!-- PATTERN TOGGLES -->
-          <div style="background: rgba(0,0,0,0.25); padding: 0.6rem; border-radius: 8px; display: flex; flex-direction: column; gap: 0.5rem;">
-            <div style="font-weight: bold; color: #EFCD91; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase;">Pattern & Notes</div>
+          <!-- Interactive Visual Preview Map -->
+          <div id="designer-preview-map" style="background: #281507; border: 1px solid #622908; border-radius: 12px; padding: 0.6rem; display: flex; flex-direction: column; gap: 0.4rem; position: relative; overflow: hidden; height: 160px; min-height: 160px; box-shadow: inset 0 2px 10px rgba(0,0,0,0.5);">
+            <!-- Background pattern layer inside preview -->
+            <div id="designer-preview-pattern-layer" style="position: absolute; top:0; left:0; right:0; bottom:0; pointer-events:none; opacity: 0.15; z-index: 0; background-repeat: repeat; background-position: center;"></div>
             
-            <label style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-              <span>Isolate pattern (mask behind tracks)</span>
-              <input type="checkbox" id="designer-toggle-isolate" style="cursor: pointer;">
-            </label>
-            
-            <label style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-              <span>Clean Bars (clear header/footer)</span>
-              <input type="checkbox" id="designer-toggle-cleanbars" style="cursor: pointer;">
-            </label>
-            
-            <label style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
-              <span>Blend Note fill with Container</span>
-              <input type="checkbox" id="designer-toggle-blendnote" style="cursor: pointer;">
-            </label>
-          </div>
-
-          <!-- PATTERN SELECTOR -->
-          <div style="background: rgba(0,0,0,0.25); padding: 0.6rem; border-radius: 8px; display: flex; flex-direction: column; gap: 0.5rem;">
-            <div style="font-weight: bold; color: #EFCD91; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase;">Background Pattern</div>
-            <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.3rem;">
-              <button class="pattern-btn btn" data-pattern="mudcloth" style="font-size: 0.7rem; padding: 0.35rem 0.2rem; font-weight: bold;">Mudcloth</button>
-              <button class="pattern-btn btn" data-pattern="kente" style="font-size: 0.7rem; padding: 0.35rem 0.2rem; font-weight: bold;">Kente</button>
-              <button class="pattern-btn btn" data-pattern="linen" style="font-size: 0.7rem; padding: 0.35rem 0.2rem; font-weight: bold;">Linen</button>
-              <button class="pattern-btn btn" data-pattern="none" style="font-size: 0.7rem; padding: 0.35rem 0.2rem; font-weight: bold;">None</button>
-            </div>
-            <div style="display: flex; flex-direction: column; gap: 0.2rem; margin-top: 0.2rem;">
-              <div style="display: flex; justify-content: space-between;">
-                <span>Pattern Intensity:</span>
-                <span id="designer-intensity-val">15%</span>
-              </div>
-              <input type="range" id="designer-pattern-intensity" min="0" max="100" step="5" value="15" style="width: 100%; cursor: pointer;">
-            </div>
-          </div>
-
-          <!-- LINKING -->
-          <div style="background: rgba(0,0,0,0.25); padding: 0.6rem; border-radius: 8px; display: flex; flex-direction: column; gap: 0.4rem;">
-            <label style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-weight: bold; color: #EFCD91;">
-              <span>LINK DUNUN FAMILIES</span>
-              <input type="checkbox" id="designer-toggle-linking" style="cursor: pointer;">
-            </label>
-          </div>
-
-          <!-- BASE COLORS -->
-          <div style="background: rgba(0,0,0,0.25); padding: 0.6rem; border-radius: 8px; display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem;">
-            <div style="display: flex; flex-direction: column; gap: 0.2rem;">
-              <span style="font-weight: bold; color: #EFCD91; font-size: 0.75rem;">Canvas Color</span>
-              <div style="display: flex; align-items: center; gap: 0.3rem;">
-                <input type="color" id="designer-canvas-color" style="width: 32px; height: 26px; border: none; cursor: pointer; background: transparent; padding: 0;">
-                <span id="designer-canvas-hex" style="font-family: monospace; font-size: 0.75rem;">#281507</span>
+            <!-- Mini Header -->
+            <div id="designer-preview-header" style="background: #1C1008; padding: 0.4rem 0.5rem; border-radius: 6px; display: flex; justify-content: space-between; align-items: center; z-index: 1; height: 26px;">
+              <span style="font-weight: 700; font-size: 0.65rem; color: #EFCD91; letter-spacing: 0.05em;">TAP ANY PART TO EDIT</span>
+              <div style="display: flex; gap: 0.2rem;">
+                <div style="width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.35);"></div>
+                <div style="width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.35);"></div>
+                <div style="width: 5px; height: 5px; border-radius: 50%; background: rgba(255,255,255,0.35);"></div>
               </div>
             </div>
-            <div style="display: flex; flex-direction: column; gap: 0.2rem;">
-              <span style="font-weight: bold; color: #EFCD91; font-size: 0.75rem;">Bars Color</span>
-              <div style="display: flex; align-items: center; gap: 0.3rem;">
-                <input type="color" id="designer-bar-color" style="width: 32px; height: 26px; border: none; cursor: pointer; background: transparent; padding: 0;">
-                <span id="designer-bar-hex" style="font-family: monospace; font-size: 0.75rem;">#1C1008</span>
+
+            <!-- Preview Rows -->
+            <div id="designer-preview-rows-container" style="display: flex; flex-direction: column; gap: 0.35rem; z-index: 1; flex-grow: 1; justify-content: center;">
+              <!-- Djembe Row -->
+              <div class="designer-preview-row" data-target="djembe" style="display: flex; align-items: center; border-radius: 8px; padding: 0.25rem 0.35rem; gap: 0.4rem; position: relative; cursor: pointer; transition: transform 0.15s ease;">
+                <div class="designer-preview-icon" style="border-radius: 4px; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: bold; pointer-events: none;">🪘</div>
+                <div style="display: flex; gap: 0.3rem; flex-grow: 1; pointer-events: none;">
+                  <div class="designer-preview-cell" data-target="djembe" style="width: 20px; height: 20px; border-radius: 4px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); cursor: pointer; pointer-events: auto;"></div>
+                  <div class="designer-preview-cell has-note" data-target="djembe" style="width: 20px; height: 20px; border-radius: 4px; display: flex; align-items: center; justify-content: center; cursor: pointer; pointer-events: auto;">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+                  </div>
+                  <div class="designer-preview-cell" data-target="djembe" style="width: 20px; height: 20px; border-radius: 4px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); cursor: pointer; pointer-events: auto;"></div>
+                  <div class="designer-preview-cell has-note" data-target="djembe" style="width: 20px; height: 20px; border-radius: 4px; display: flex; align-items: center; justify-content: center; cursor: pointer; pointer-events: auto;">
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Kenkeni Row -->
+              <div class="designer-preview-row" data-target="kenkeni" style="display: flex; align-items: center; border-radius: 8px; padding: 0.25rem 0.35rem; gap: 0.4rem; position: relative; cursor: pointer; transition: transform 0.15s ease;">
+                <div class="designer-preview-icon" style="border-radius: 4px; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: bold; pointer-events: none;">🥁</div>
+                <div style="display: flex; gap: 0.3rem; flex-grow: 1; pointer-events: none;">
+                  <div class="designer-preview-cell has-note" data-target="kenkeni" style="width: 20px; height: 20px; border-radius: 4px; display: flex; align-items: center; justify-content: center; cursor: pointer; pointer-events: auto;">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 22h20L12 2z"/></svg>
+                  </div>
+                  <div class="designer-preview-cell" data-target="kenkeni" style="width: 20px; height: 20px; border-radius: 4px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); cursor: pointer; pointer-events: auto;"></div>
+                  <div class="designer-preview-cell has-note" data-target="kenkeni" style="width: 20px; height: 20px; border-radius: 4px; display: flex; align-items: center; justify-content: center; cursor: pointer; pointer-events: auto;">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L2 22h20L12 2z"/></svg>
+                  </div>
+                  <div class="designer-preview-cell" data-target="kenkeni" style="width: 20px; height: 20px; border-radius: 4px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); cursor: pointer; pointer-events: auto;"></div>
+                </div>
+              </div>
+
+              <!-- Dundunba Row -->
+              <div class="designer-preview-row" data-target="dundunba" style="display: flex; align-items: center; border-radius: 8px; padding: 0.25rem 0.35rem; gap: 0.4rem; position: relative; cursor: pointer; transition: transform 0.15s ease;">
+                <div class="designer-preview-icon" style="border-radius: 4px; width: 22px; height: 22px; display: flex; align-items: center; justify-content: center; font-size: 0.75rem; font-weight: bold; pointer-events: none;">🔊</div>
+                <div style="display: flex; gap: 0.3rem; flex-grow: 1; pointer-events: none;">
+                  <div class="designer-preview-cell" data-target="dundunba" style="width: 20px; height: 20px; border-radius: 4px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); cursor: pointer; pointer-events: auto;"></div>
+                  <div class="designer-preview-cell has-note" data-target="dundunba" style="width: 20px; height: 20px; border-radius: 4px; display: flex; align-items: center; justify-content: center; cursor: pointer; pointer-events: auto;">
+                    <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="2"/></svg>
+                  </div>
+                  <div class="designer-preview-cell" data-target="dundunba" style="width: 20px; height: 20px; border-radius: 4px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); cursor: pointer; pointer-events: auto;"></div>
+                  <div class="designer-preview-cell" data-target="dundunba" style="width: 20px; height: 20px; border-radius: 4px; background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.06); cursor: pointer; pointer-events: auto;"></div>
+                </div>
               </div>
             </div>
           </div>
 
-          <!-- TRACK & COLOR ROLE TARGETER -->
-          <div style="background: rgba(0,0,0,0.25); padding: 0.6rem; border-radius: 8px; display: flex; flex-direction: column; gap: 0.5rem;">
-            <div style="font-weight: bold; color: #EFCD91; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase;">Track Styling Target</div>
-            
-            <div style="display: flex; flex-direction: column; gap: 0.2rem;">
-              <span>Target Track:</span>
-              <select id="designer-track-target" style="width: 100%; padding: 0.45rem; border-radius: 6px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: #fff; outline: none; cursor: pointer;">
-                <!-- Options populated dynamically -->
-              </select>
-            </div>
-
-            <div style="display: flex; flex-direction: column; gap: 0.25rem; margin-top: 0.2rem;">
-              <span>Color Role:</span>
-              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.3rem;" id="designer-role-container">
-                <button class="role-btn btn" data-role="iconColor" style="font-size: 0.7rem; padding: 0.35rem 0.1rem; font-weight: 500;">Icon Accent</button>
-                <button class="role-btn btn" data-role="iconBg" style="font-size: 0.7rem; padding: 0.35rem 0.1rem; font-weight: 500;">Icon Background</button>
-                <button class="role-btn btn" data-role="cardBg" style="font-size: 0.7rem; padding: 0.35rem 0.1rem; font-weight: 500;">Container Bg</button>
-                <button class="role-btn btn" data-role="border" style="font-size: 0.7rem; padding: 0.35rem 0.1rem; font-weight: 500;">Border</button>
-                <button class="role-btn btn" data-role="noteBg" style="font-size: 0.7rem; padding: 0.35rem 0.1rem; font-weight: 500;">Active Step Fill</button>
-                <button class="role-btn btn" data-role="noteColor" style="font-size: 0.7rem; padding: 0.35rem 0.1rem; font-weight: 500;">Active Note Glyph</button>
-                <button class="role-btn btn" data-role="blendNoteColor" style="font-size: 0.7rem; padding: 0.35rem 0.1rem; grid-column: span 2; font-weight: 500;">Blended Note Glyph</button>
-              </div>
-            </div>
+          <!-- Helper instructions -->
+          <div id="designer-helper-text" style="text-align: center; color: #EFCD91; font-size: 0.8rem; margin: 1.5rem 1rem; line-height: 1.4; background: rgba(0,0,0,0.2); padding: 0.8rem; border-radius: 8px; border: 1px solid rgba(239, 205, 145, 0.15);">
+            💡 <strong>Interactive UI Map</strong><br>
+            Tap anywhere on the preview grid above to open editor controls for that specific element.
           </div>
-
-          <!-- PALETTE GRID -->
-          <div style="background: rgba(0,0,0,0.25); padding: 0.6rem; border-radius: 8px; display: flex; flex-direction: column; gap: 0.4rem;">
-            <div style="font-weight: bold; color: #EFCD91; font-size: 0.75rem; letter-spacing: 0.05em; text-transform: uppercase;">West African Palette</div>
-            <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.25rem;" id="designer-palette-grid">
-              <!-- Populated dynamically -->
-            </div>
-          </div>
-
         </div>
 
-        <div class="modal-footer" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.6rem; display: flex; justify-content: flex-end; gap: 0.5rem;">
-          <button id="designer-btn-close" class="btn btn-primary" style="width: 100%; font-weight: bold; font-size: 0.85rem; padding: 0.55rem;">Save & Close</button>
+        <!-- AREA SETTINGS POPUP (DRAWER) -->
+        <div id="designer-area-popup" style="position: absolute; bottom: 0; left: 0; right: 0; background: rgba(24, 15, 10, 0.98); border-top: 2.5px solid #EB8F69; border-radius: 16px 16px 0 0; padding: 1rem; transform: translateY(100%); transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1); z-index: 10; display: flex; flex-direction: column; gap: 0.6rem; box-shadow: 0 -12px 30px rgba(0,0,0,0.9); height: 280px;">
+          <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 0.4rem; min-height: 24px;">
+            <span id="designer-popup-title" style="font-weight: bold; color: #EFCD91; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.05em;">Area Settings</span>
+            <button id="designer-popup-close" style="background: none; border: none; color: #FFFDF2; font-size: 1.25rem; cursor: pointer; padding: 0.1rem 0.3rem; line-height: 1; opacity: 0.7;">&times;</button>
+          </div>
+          <div id="designer-popup-body" style="flex-grow: 1; overflow-y: auto; font-size: 0.8rem; display: flex; flex-direction: column; gap: 0.6rem; padding-right: 0.15rem;">
+            <!-- Populated dynamically -->
+          </div>
+        </div>
+
+        <div class="modal-footer" style="border-top: 1px solid rgba(255,255,255,0.1); padding-top: 0.6rem; display: flex; justify-content: flex-end; gap: 0.5rem; min-height: 40px; background: rgba(30, 20, 15, 0.98); z-index: 2;">
+          <button id="designer-btn-close" class="btn btn-primary" style="width: 100%; font-weight: bold; font-size: 0.85rem; padding: 0.55rem; border-radius: 8px;">Save & Close</button>
         </div>
       </div>
     `;
 
-    document.body.appendChild(modal);
+    const frame = document.querySelector('.demo-device-frame');
+    if (frame) {
+      frame.appendChild(modal);
+    } else {
+      document.body.appendChild(modal);
+    }
+
     setupDesignerListeners();
   }
 
-  // Populate dropdown based on Linking toggle state
-  function updateDesignerTrackDropdown() {
-    const select = document.getElementById('designer-track-target');
-    if (!select) return;
-
-    const prevVal = select.value;
-    select.innerHTML = '';
-
+  // Helper to get active track style from config (checking linked state)
+  function getCustomTrackStyle(instrumentKey) {
     if (customThemeConfig.linkedDununFamilies) {
-      select.innerHTML = `
-        <option value="djembe">Djembe (All Djembes + Shekere)</option>
+      let family = getTrackFamily({ instrument: instrumentKey });
+      if (family === 'djembes') family = 'djembe';
+      return customThemeConfig.familyColors[family];
+    } else {
+      let lookupKey = instrumentKey;
+      if (lookupKey.endsWith("_bell")) lookupKey = lookupKey.replace("_bell", "");
+      if (!customThemeConfig.individualColors[lookupKey]) {
+        let family = getTrackFamily({ instrument: instrumentKey });
+        if (family === 'djembes') family = 'djembe';
+        customThemeConfig.individualColors[lookupKey] = { ...customThemeConfig.familyColors[family === 'djembes' ? 'djembe' : family] };
+      }
+      return customThemeConfig.individualColors[lookupKey];
+    }
+  }
+
+  // Update the mini-map preview to reflect current customization values in real time
+  function updateDesignerPreview() {
+    const map = document.getElementById('designer-preview-map');
+    if (!map) return;
+
+    // 1. Canvas Bg
+    map.style.backgroundColor = customThemeConfig.canvasBg;
+
+    // 2. Pattern Layer
+    const patternLayer = document.getElementById('designer-preview-pattern-layer');
+    if (patternLayer) {
+      if (customThemeConfig.patternType !== 'none') {
+        let patternUrl = '';
+        if (customThemeConfig.patternType === 'mudcloth') patternUrl = SVG_PATTERNS.mudcloth('#F7EFC2');
+        if (customThemeConfig.patternType === 'linen') patternUrl = SVG_PATTERNS.linen('#ffffff');
+        if (customThemeConfig.patternType === 'kente') patternUrl = SVG_PATTERNS.kente('#F3983C', '#D4622E');
+        patternLayer.style.backgroundImage = `url('${patternUrl}')`;
+        patternLayer.style.opacity = customThemeConfig.patternOpacity;
+      } else {
+        patternLayer.style.backgroundImage = 'none';
+        patternLayer.style.opacity = 0;
+      }
+    }
+
+    // 3. Header Bg
+    const header = document.getElementById('designer-preview-header');
+    if (header) {
+      header.style.backgroundColor = customThemeConfig.barBg;
+    }
+
+    // 4. Track Rows & Note Cells
+    const rowTargets = ['djembe', 'kenkeni', 'dundunba'];
+    rowTargets.forEach(targetKey => {
+      // Find row element
+      const row = map.querySelector(`.designer-preview-row[data-target="${targetKey === 'dundunba' ? 'dundunba' : targetKey}"]`);
+      if (!row) return;
+
+      const style = getCustomTrackStyle(targetKey);
+      if (style) {
+        row.style.backgroundColor = style.cardBg;
+        row.style.borderColor = style.border;
+
+        // Icon
+        const icon = row.querySelector('.designer-preview-icon');
+        if (icon) {
+          icon.style.color = style.iconColor;
+          icon.style.backgroundColor = style.iconBg;
+          icon.style.borderColor = style.border;
+        }
+
+        // Active Note Cells
+        row.querySelectorAll('.designer-preview-cell.has-note').forEach(cell => {
+          const svg = cell.querySelector('svg');
+          if (customThemeConfig.blendNoteFill) {
+            cell.style.backgroundColor = 'transparent';
+            cell.style.borderColor = 'transparent';
+            if (svg) {
+              svg.style.color = style.blendNoteColor;
+              svg.style.transform = 'scale(1.0)';
+            }
+          } else {
+            cell.style.backgroundColor = style.noteBg;
+            cell.style.borderColor = style.border;
+            if (svg) {
+              svg.style.color = style.noteColor;
+              svg.style.transform = 'scale(0.68)';
+            }
+          }
+        });
+
+        // Inactive Cells
+        row.querySelectorAll('.designer-preview-cell:not(.has-note)').forEach(cell => {
+          cell.style.backgroundColor = 'rgba(255,255,255,0.02)';
+          cell.style.borderColor = 'rgba(255,255,255,0.08)';
+        });
+      }
+    });
+  }
+
+  // Open the slide-up drawer for settings
+  function openDesignerAreaPopup(area, targetKey) {
+    const popup = document.getElementById('designer-area-popup');
+    if (!popup) return;
+
+    // Hide helper text when drawer is open
+    const helper = document.getElementById('designer-helper-text');
+    if (helper) helper.style.display = 'none';
+
+    popup.classList.add('active');
+    designerSelectedArea = area;
+
+    if (area === 'canvas') {
+      renderCanvasSettings();
+    } else if (area === 'track') {
+      renderTrackSettings(targetKey);
+    } else if (area === 'note') {
+      renderNoteSettings(targetKey);
+    }
+  }
+
+  // Render Canvas editor view
+  function renderCanvasSettings() {
+    const titleEl = document.getElementById('designer-popup-title');
+    const bodyEl = document.getElementById('designer-popup-body');
+    if (!titleEl || !bodyEl) return;
+
+    titleEl.textContent = "Canvas & Background Settings";
+    bodyEl.innerHTML = `
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+        <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+          <span style="font-weight: bold; color: #EFCD91; font-size: 0.75rem;">Canvas Color</span>
+          <div style="display: flex; align-items: center; gap: 0.3rem;">
+            <input type="color" id="popup-canvas-color" value="${customThemeConfig.canvasBg}" style="width: 32px; height: 26px; border: none; cursor: pointer; background: transparent; padding: 0;">
+            <span style="font-family: monospace; font-size: 0.75rem; text-transform: uppercase;">${customThemeConfig.canvasBg}</span>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+          <span style="font-weight: bold; color: #EFCD91; font-size: 0.75rem;">Bars Color</span>
+          <div style="display: flex; align-items: center; gap: 0.3rem;">
+            <input type="color" id="popup-bar-color" value="${customThemeConfig.barBg}" style="width: 32px; height: 26px; border: none; cursor: pointer; background: transparent; padding: 0;">
+            <span style="font-family: monospace; font-size: 0.75rem; text-transform: uppercase;">${customThemeConfig.barBg}</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 0.3rem;">
+        <span style="font-weight: bold; color: #EFCD91; font-size: 0.75rem;">Pattern Type</span>
+        <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.25rem;">
+          <button class="popup-pattern-btn btn" data-pattern="mudcloth" style="font-size: 0.7rem; padding: 0.3rem; border-radius: 4px;">Mudcloth</button>
+          <button class="popup-pattern-btn btn" data-pattern="kente" style="font-size: 0.7rem; padding: 0.3rem; border-radius: 4px;">Kente</button>
+          <button class="popup-pattern-btn btn" data-pattern="linen" style="font-size: 0.7rem; padding: 0.3rem; border-radius: 4px;">Linen</button>
+          <button class="popup-pattern-btn btn" data-pattern="none" style="font-size: 0.7rem; padding: 0.3rem; border-radius: 4px;">None</button>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+        <div style="display: flex; justify-content: space-between; font-size: 0.75rem;">
+          <span>Pattern Intensity:</span>
+          <span id="popup-intensity-val">${Math.round((customThemeConfig.patternOpacity || 0.15) * 100)}%</span>
+        </div>
+        <input type="range" id="popup-pattern-intensity" min="0" max="100" step="5" value="${Math.round((customThemeConfig.patternOpacity || 0.15) * 100)}" style="width: 100%; cursor: pointer;">
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 0.4rem; background: rgba(0,0,0,0.15); padding: 0.4rem; border-radius: 6px; font-size: 0.75rem;">
+        <label style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+          <span>Isolate Pattern (mask behind tracks)</span>
+          <input type="checkbox" id="popup-toggle-isolate" ${customThemeConfig.isolatePattern ? 'checked' : ''} style="cursor: pointer;">
+        </label>
+        <label style="display: flex; justify-content: space-between; align-items: center; cursor: pointer;">
+          <span>Clean Bars (clear header/footer)</span>
+          <input type="checkbox" id="popup-toggle-cleanbars" ${customThemeConfig.cleanBars ? 'checked' : ''} style="cursor: pointer;">
+        </label>
+      </div>
+    `;
+
+    // Highlight active pattern button
+    bodyEl.querySelectorAll('.popup-pattern-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-pattern') === customThemeConfig.patternType);
+    });
+
+    // Listeners
+    document.getElementById('popup-canvas-color').oninput = (e) => {
+      const val = e.target.value;
+      e.target.nextElementSibling.textContent = val.toUpperCase();
+      customThemeConfig.canvasBg = val;
+      const [h, s, l] = hexToHsl(val);
+      customThemeConfig.phoneBg = hslToHex(h, s, Math.max(2, l - 10));
+      applyCustomTheme();
+      updateDesignerPreview();
+    };
+
+    document.getElementById('popup-bar-color').oninput = (e) => {
+      const val = e.target.value;
+      e.target.nextElementSibling.textContent = val.toUpperCase();
+      customThemeConfig.barBg = val;
+      applyCustomTheme();
+      updateDesignerPreview();
+    };
+
+    bodyEl.querySelectorAll('.popup-pattern-btn').forEach(btn => {
+      btn.onclick = () => {
+        bodyEl.querySelectorAll('.popup-pattern-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        customThemeConfig.patternType = btn.getAttribute('data-pattern');
+        applyCustomTheme();
+        updateDesignerPreview();
+      };
+    });
+
+    document.getElementById('popup-pattern-intensity').oninput = (e) => {
+      const val = e.target.value;
+      document.getElementById('popup-intensity-val').textContent = `${val}%`;
+      customThemeConfig.patternOpacity = val / 100;
+      applyCustomTheme();
+      updateDesignerPreview();
+    };
+
+    document.getElementById('popup-toggle-isolate').onchange = (e) => {
+      customThemeConfig.isolatePattern = e.target.checked;
+      applyCustomTheme();
+      updateDesignerPreview();
+    };
+
+    document.getElementById('popup-toggle-cleanbars').onchange = (e) => {
+      customThemeConfig.cleanBars = e.target.checked;
+      applyCustomTheme();
+      updateDesignerPreview();
+    };
+  }
+
+  // Render Track Row editor view
+  function renderTrackSettings(targetKey) {
+    if (targetKey) {
+      if (targetKey === 'dundunba') designerSelectedTrackTarget = 'dundunba';
+      else designerSelectedTrackTarget = targetKey;
+    }
+
+    const titleEl = document.getElementById('designer-popup-title');
+    const bodyEl = document.getElementById('designer-popup-body');
+    if (!titleEl || !bodyEl) return;
+
+    const currentStyle = getCustomTrackStyle(designerSelectedTrackTarget);
+    let displayName = designerSelectedTrackTarget.toUpperCase();
+    if (designerSelectedTrackTarget === 'djembe') displayName = 'DJEMBE (ALL)';
+    if (designerSelectedTrackTarget === 'dundunba') displayName = 'DUNDUNBA';
+
+    titleEl.textContent = `Track Styling: ${displayName}`;
+
+    // Fix fallback for selected role if not track-focused
+    const trackRoles = ['cardBg', 'border', 'iconColor', 'iconBg'];
+    if (!trackRoles.includes(designerSelectedRole)) {
+      designerSelectedRole = 'cardBg';
+    }
+
+    let optionsHtml = `
+      <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+        <label style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 0.75rem; background: rgba(255,255,255,0.05); padding: 0.35rem 0.5rem; border-radius: 4px;">
+          <span style="font-weight: bold; color: #EFCD91;">LINK DUNUN FAMILIES</span>
+          <input type="checkbox" id="popup-toggle-linking" ${customThemeConfig.linkedDununFamilies ? 'checked' : ''} style="cursor: pointer;">
+        </label>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.2fr 1.8fr; gap: 0.6rem; align-items: center;">
+        <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+          <span style="font-size: 0.7rem; color: #EFCD91; font-weight: bold;">Style Target:</span>
+          <select id="popup-track-target" style="width: 100%; padding: 0.3rem; border-radius: 4px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-size: 0.75rem; cursor: pointer;">
+            <!-- Options populated dynamically -->
+          </select>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+          <span style="font-size: 0.7rem; color: #EFCD91; font-weight: bold;">Active Color Role:</span>
+          <select id="popup-track-role" style="width: 100%; padding: 0.3rem; border-radius: 4px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-size: 0.75rem; cursor: pointer;">
+            <option value="cardBg">Container Bg</option>
+            <option value="border">Border Color</option>
+            <option value="iconColor">Icon Accent</option>
+            <option value="iconBg">Icon Background</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Palette Grid -->
+      <div style="display: flex; flex-direction: column; gap: 0.3rem; margin-top: 0.1rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.7rem; color: #EFCD91; font-weight: bold; text-transform: uppercase;">Palette</span>
+          <input type="color" id="popup-custom-role-color" value="${currentStyle[designerSelectedRole] || '#ff0000'}" style="width: 28px; height: 20px; border: none; cursor: pointer; background: transparent; padding: 0;">
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.25rem;" id="popup-palette-grid">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    `;
+
+    bodyEl.innerHTML = optionsHtml;
+
+    // Populate dropdown
+    const selectTarget = document.getElementById('popup-track-target');
+    if (customThemeConfig.linkedDununFamilies) {
+      selectTarget.innerHTML = `
+        <option value="djembe">Djembe (All)</option>
         <option value="kenkeni">Kenkeni Family</option>
         <option value="sangban">Sangban Family</option>
         <option value="doundounba">Doundounba Family</option>
       `;
     } else {
-      select.innerHTML = `
+      selectTarget.innerHTML = `
         <option value="djembe1">Djembe 1</option>
         <option value="djembe2">Djembe 2</option>
         <option value="djembe3">Djembe 3</option>
-        <option value="kenkeni">Kenkeni Drum & Bell</option>
-        <option value="sangban">Sangban Drum & Bell</option>
-        <option value="dundunba">Dundunba Drum & Bell</option>
+        <option value="kenkeni">Kenkeni</option>
+        <option value="sangban">Sangban</option>
+        <option value="dundunba">Dundunba</option>
         <option value="shekere">Shekere</option>
       `;
     }
+    selectTarget.value = designerSelectedTrackTarget;
+    
+    const selectRole = document.getElementById('popup-track-role');
+    selectRole.value = designerSelectedRole;
 
-    if (Array.from(select.options).some(opt => opt.value === prevVal)) {
-      select.value = prevVal;
-    } else {
-      select.value = select.options[0].value;
-    }
-    selectedTrackTarget = select.value;
-  }
-
-  // Synchronise and open the Designer modal panel
-  function openCustomDesignerModal() {
-    injectCustomDesignerModal();
-    const modal = document.getElementById('custom-designer-modal');
-    if (modal) {
-      modal.classList.add('active');
-
-      document.getElementById('designer-toggle-isolate').checked = customThemeConfig.isolatePattern;
-      document.getElementById('designer-toggle-cleanbars').checked = customThemeConfig.cleanBars;
-      document.getElementById('designer-toggle-blendnote').checked = customThemeConfig.blendNoteFill;
-      document.getElementById('designer-toggle-linking').checked = customThemeConfig.linkedDununFamilies;
-
-      modal.querySelectorAll('.pattern-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-pattern') === customThemeConfig.patternType);
-      });
-
-      const intensity = Math.round((customThemeConfig.patternOpacity || 0.15) * 100);
-      document.getElementById('designer-pattern-intensity').value = intensity;
-      document.getElementById('designer-intensity-val').textContent = `${intensity}%`;
-
-      document.getElementById('designer-canvas-color').value = customThemeConfig.canvasBg;
-      document.getElementById('designer-canvas-hex').textContent = customThemeConfig.canvasBg.toUpperCase();
-      document.getElementById('designer-bar-color').value = customThemeConfig.barBg;
-      document.getElementById('designer-bar-hex').textContent = customThemeConfig.barBg.toUpperCase();
-
-      updateDesignerTrackDropdown();
-
-      modal.querySelectorAll('.role-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.getAttribute('data-role') === selectedRole);
-      });
-
-      if (window.gsap && !perfLite) {
-        const content = modal.querySelector(".modal-content");
-        if (content) gsap.fromTo(content, { scale: 0.92, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.28, ease: "back.out(1.6)" });
-      }
-    }
-  }
-
-  // Register listeners on custom designer UI widgets
-  function setupDesignerListeners() {
-    const modal = document.getElementById('custom-designer-modal');
-    if (!modal) return;
-
-    document.getElementById('designer-btn-close-header').onclick = () => {
-      modal.classList.remove('active');
-    };
-
-    document.getElementById('designer-btn-close').onclick = () => {
-      modal.classList.remove('active');
-    };
-
-    document.getElementById('designer-toggle-isolate').onchange = (e) => {
-      customThemeConfig.isolatePattern = e.target.checked;
-      applyCustomTheme();
-    };
-
-    document.getElementById('designer-toggle-cleanbars').onchange = (e) => {
-      customThemeConfig.cleanBars = e.target.checked;
-      applyCustomTheme();
-    };
-
-    document.getElementById('designer-toggle-blendnote').onchange = (e) => {
-      customThemeConfig.blendNoteFill = e.target.checked;
-      applyCustomTheme();
-      if (typeof renderGrid === "function") renderGrid();
-    };
-
-    modal.querySelectorAll('.pattern-btn').forEach(btn => {
-      btn.onclick = () => {
-        modal.querySelectorAll('.pattern-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        customThemeConfig.patternType = btn.getAttribute('data-pattern');
-        applyCustomTheme();
+    // Palette
+    const paletteGrid = document.getElementById('popup-palette-grid');
+    WEST_AFRICAN_PALETTE.forEach(color => {
+      const cell = document.createElement('button');
+      cell.style.cssText = `background: ${color}; border: 1px solid rgba(255,255,255,0.25); border-radius: 4px; height: 24px; cursor: pointer; transition: transform 0.1s ease;`;
+      cell.title = color;
+      cell.onclick = () => {
+        applyColorToRole(color);
       };
+      paletteGrid.appendChild(cell);
     });
 
-    document.getElementById('designer-pattern-intensity').oninput = (e) => {
-      const intensity = e.target.value;
-      document.getElementById('designer-intensity-val').textContent = `${intensity}%`;
-      customThemeConfig.patternOpacity = intensity / 100;
+    function applyColorToRole(color) {
+      document.getElementById('popup-custom-role-color').value = color;
+      const target = designerSelectedTrackTarget;
+      const role = designerSelectedRole;
+      if (customThemeConfig.linkedDununFamilies) {
+        if (customThemeConfig.familyColors[target]) {
+          customThemeConfig.familyColors[target][role] = color;
+        }
+      } else {
+        if (!customThemeConfig.individualColors[target]) {
+          const family = getTrackFamily({ instrument: target });
+          customThemeConfig.individualColors[target] = { ...customThemeConfig.familyColors[family === 'djembes' ? 'djembe' : family] };
+        }
+        customThemeConfig.individualColors[target][role] = color;
+      }
       applyCustomTheme();
+      updateDesignerPreview();
+    }
+
+    // Listeners
+    selectTarget.onchange = (e) => {
+      designerSelectedTrackTarget = e.target.value;
+      const newStyle = getCustomTrackStyle(designerSelectedTrackTarget);
+      document.getElementById('popup-custom-role-color').value = newStyle[designerSelectedRole] || '#ff0000';
     };
 
-    document.getElementById('designer-toggle-linking').onchange = (e) => {
+    selectRole.onchange = (e) => {
+      designerSelectedRole = e.target.value;
+      const newStyle = getCustomTrackStyle(designerSelectedTrackTarget);
+      document.getElementById('popup-custom-role-color').value = newStyle[designerSelectedRole] || '#ff0000';
+    };
+
+    document.getElementById('popup-custom-role-color').oninput = (e) => {
+      applyColorToRole(e.target.value);
+    };
+
+    document.getElementById('popup-toggle-linking').onchange = (e) => {
       customThemeConfig.linkedDununFamilies = e.target.checked;
 
       if (!customThemeConfig.linkedDununFamilies) {
@@ -4634,69 +4871,220 @@ function setupEventListeners() {
         }
       }
 
-      updateDesignerTrackDropdown();
       applyCustomTheme();
       if (typeof renderGrid === "function") renderGrid();
+      renderTrackSettings();
     };
+  }
 
-    const canvasInput = document.getElementById('designer-canvas-color');
-    canvasInput.oninput = (e) => {
-      const val = e.target.value;
-      document.getElementById('designer-canvas-hex').textContent = val.toUpperCase();
-      customThemeConfig.canvasBg = val;
-      const [h, s, l] = hexToHsl(val);
-      customThemeConfig.phoneBg = hslToHex(h, s, Math.max(2, l - 10));
-      applyCustomTheme();
-    };
+  // Render Note Cell editor view
+  function renderNoteSettings(targetKey) {
+    if (targetKey) {
+      if (targetKey === 'dundunba') designerSelectedNoteTarget = 'dundunba';
+      else designerSelectedNoteTarget = targetKey;
+    }
 
-    const barInput = document.getElementById('designer-bar-color');
-    barInput.oninput = (e) => {
-      const val = e.target.value;
-      document.getElementById('designer-bar-hex').textContent = val.toUpperCase();
-      customThemeConfig.barBg = val;
-      applyCustomTheme();
-    };
+    const titleEl = document.getElementById('designer-popup-title');
+    const bodyEl = document.getElementById('designer-popup-body');
+    if (!titleEl || !bodyEl) return;
 
-    document.getElementById('designer-track-target').onchange = (e) => {
-      selectedTrackTarget = e.target.value;
-    };
+    const currentStyle = getCustomTrackStyle(designerSelectedNoteTarget);
+    let displayName = designerSelectedNoteTarget.toUpperCase();
+    if (designerSelectedNoteTarget === 'djembe') displayName = 'DJEMBE (ALL)';
+    if (designerSelectedNoteTarget === 'dundunba') displayName = 'DUNDUNBA';
 
-    modal.querySelectorAll('.role-btn').forEach(btn => {
-      btn.onclick = () => {
-        modal.querySelectorAll('.role-btn').forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        selectedRole = btn.getAttribute('data-role');
-      };
-    });
+    titleEl.textContent = `Note & Active Step: ${displayName}`;
 
-    const paletteGrid = document.getElementById('designer-palette-grid');
-    paletteGrid.innerHTML = '';
+    // Populate role selectors
+    let roleSelectOptionsHtml = '';
+    if (customThemeConfig.blendNoteFill) {
+      roleSelectOptionsHtml = `<option value="blendNoteColor">Blended Note Glyph</option>`;
+      if (designerSelectedRole !== 'blendNoteColor') designerSelectedRole = 'blendNoteColor';
+    } else {
+      roleSelectOptionsHtml = `
+        <option value="noteBg">Active Step Fill</option>
+        <option value="noteColor">Active Note Glyph</option>
+      `;
+      if (designerSelectedRole === 'blendNoteColor') designerSelectedRole = 'noteBg';
+    }
+
+    let optionsHtml = `
+      <div style="display: flex; flex-direction: column; gap: 0.4rem;">
+        <label style="display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 0.75rem; background: rgba(255,255,255,0.05); padding: 0.35rem 0.5rem; border-radius: 4px;">
+          <span style="font-weight: bold; color: #EFCD91;">BLEND NOTE WITH CONTAINER</span>
+          <input type="checkbox" id="popup-toggle-blendnote" ${customThemeConfig.blendNoteFill ? 'checked' : ''} style="cursor: pointer;">
+        </label>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.2fr 1.8fr; gap: 0.6rem; align-items: center;">
+        <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+          <span style="font-size: 0.7rem; color: #EFCD91; font-weight: bold;">Note Target:</span>
+          <select id="popup-note-target" style="width: 100%; padding: 0.3rem; border-radius: 4px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-size: 0.75rem; cursor: pointer;">
+            <!-- Options populated dynamically -->
+          </select>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 0.2rem;">
+          <span style="font-size: 0.7rem; color: #EFCD91; font-weight: bold;">Color Role:</span>
+          <select id="popup-note-role" style="width: 100%; padding: 0.3rem; border-radius: 4px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.1); color: #fff; font-size: 0.75rem; cursor: pointer;">
+            ${roleSelectOptionsHtml}
+          </select>
+        </div>
+      </div>
+
+      <!-- Palette Grid -->
+      <div style="display: flex; flex-direction: column; gap: 0.3rem; margin-top: 0.1rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <span style="font-size: 0.7rem; color: #EFCD91; font-weight: bold; text-transform: uppercase;">Palette</span>
+          <input type="color" id="popup-custom-note-color" value="${currentStyle[designerSelectedRole] || '#ff0000'}" style="width: 28px; height: 20px; border: none; cursor: pointer; background: transparent; padding: 0;">
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.25rem;" id="popup-note-palette-grid">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    `;
+
+    bodyEl.innerHTML = optionsHtml;
+
+    const selectTarget = document.getElementById('popup-note-target');
+    if (customThemeConfig.linkedDununFamilies) {
+      selectTarget.innerHTML = `
+        <option value="djembe">Djembe (All)</option>
+        <option value="kenkeni">Kenkeni Family</option>
+        <option value="sangban">Sangban Family</option>
+        <option value="doundounba">Doundounba Family</option>
+      `;
+    } else {
+      selectTarget.innerHTML = `
+        <option value="djembe1">Djembe 1</option>
+        <option value="djembe2">Djembe 2</option>
+        <option value="djembe3">Djembe 3</option>
+        <option value="kenkeni">Kenkeni</option>
+        <option value="sangban">Sangban</option>
+        <option value="dundunba">Dundunba</option>
+        <option value="shekere">Shekere</option>
+      `;
+    }
+    selectTarget.value = designerSelectedNoteTarget;
+
+    const selectRole = document.getElementById('popup-note-role');
+    selectRole.value = designerSelectedRole;
+
+    const paletteGrid = document.getElementById('popup-note-palette-grid');
     WEST_AFRICAN_PALETTE.forEach(color => {
       const cell = document.createElement('button');
-      cell.style.cssText = `background: ${color}; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; height: 26px; cursor: pointer; transition: transform 0.1s ease;`;
+      cell.style.cssText = `background: ${color}; border: 1px solid rgba(255,255,255,0.25); border-radius: 4px; height: 24px; cursor: pointer; transition: transform 0.1s ease;`;
       cell.title = color;
-
-      cell.onmouseover = () => cell.style.transform = 'scale(1.15)';
-      cell.onmouseout = () => cell.style.transform = 'scale(1.0)';
-
       cell.onclick = () => {
-        if (customThemeConfig.linkedDununFamilies) {
-          if (customThemeConfig.familyColors[selectedTrackTarget]) {
-            customThemeConfig.familyColors[selectedTrackTarget][selectedRole] = color;
-          }
-        } else {
-          if (!customThemeConfig.individualColors[selectedTrackTarget]) {
-            const family = getTrackFamily({ instrument: selectedTrackTarget });
-            customThemeConfig.individualColors[selectedTrackTarget] = { ...customThemeConfig.familyColors[family] };
-          }
-          customThemeConfig.individualColors[selectedTrackTarget][selectedRole] = color;
-        }
-        applyCustomTheme();
-        if (typeof renderGrid === "function") renderGrid();
+        applyColorToNoteRole(color);
       };
-
       paletteGrid.appendChild(cell);
     });
+
+    function applyColorToNoteRole(color) {
+      document.getElementById('popup-custom-note-color').value = color;
+      const target = designerSelectedNoteTarget;
+      const role = designerSelectedRole;
+      if (customThemeConfig.linkedDununFamilies) {
+        if (customThemeConfig.familyColors[target]) {
+          customThemeConfig.familyColors[target][role] = color;
+        }
+      } else {
+        if (!customThemeConfig.individualColors[target]) {
+          const family = getTrackFamily({ instrument: target });
+          customThemeConfig.individualColors[target] = { ...customThemeConfig.familyColors[family === 'djembes' ? 'djembe' : family] };
+        }
+        customThemeConfig.individualColors[target][role] = color;
+      }
+      applyCustomTheme();
+      updateDesignerPreview();
+    }
+
+    selectTarget.onchange = (e) => {
+      designerSelectedNoteTarget = e.target.value;
+      const newStyle = getCustomTrackStyle(designerSelectedNoteTarget);
+      document.getElementById('popup-custom-note-color').value = newStyle[designerSelectedRole] || '#ff0000';
+    };
+
+    selectRole.onchange = (e) => {
+      designerSelectedRole = e.target.value;
+      const newStyle = getCustomTrackStyle(designerSelectedNoteTarget);
+      document.getElementById('popup-custom-note-color').value = newStyle[designerSelectedRole] || '#ff0000';
+    };
+
+    document.getElementById('popup-custom-note-color').oninput = (e) => {
+      applyColorToNoteRole(e.target.value);
+    };
+
+    document.getElementById('popup-toggle-blendnote').onchange = (e) => {
+      customThemeConfig.blendNoteFill = e.target.checked;
+      applyCustomTheme();
+      if (typeof renderGrid === "function") renderGrid();
+      renderNoteSettings();
+      updateDesignerPreview();
+    };
+  }
+
+  // Synchronise and open the Designer modal panel
+  function openCustomDesignerModal() {
+    injectCustomDesignerModal();
+    const modal = document.getElementById('custom-designer-modal');
+    if (modal) {
+      modal.classList.add('active');
+
+      const popup = document.getElementById('designer-area-popup');
+      if (popup) popup.classList.remove('active');
+
+      const helper = document.getElementById('designer-helper-text');
+      if (helper) helper.style.display = 'block';
+
+      updateDesignerPreview();
+
+      if (window.gsap && !perfLite) {
+        const content = modal.querySelector(".modal-content");
+        if (content) gsap.fromTo(content, { scale: 0.92, opacity: 0 }, { scale: 1, opacity: 1, duration: 0.28, ease: "back.out(1.6)" });
+      }
+    }
+  }
+
+  // Register listeners on custom designer UI widgets
+  function setupDesignerListeners() {
+    const modal = document.getElementById('custom-designer-modal');
+    if (!modal) return;
+
+    document.getElementById('designer-btn-close-header').onclick = () => {
+      modal.classList.remove('active');
+    };
+
+    document.getElementById('designer-btn-close').onclick = () => {
+      modal.classList.remove('active');
+    };
+
+    document.getElementById('designer-popup-close').onclick = () => {
+      const popup = document.getElementById('designer-area-popup');
+      if (popup) popup.classList.remove('active');
+      const helper = document.getElementById('designer-helper-text');
+      if (helper) helper.style.display = 'block';
+      designerSelectedArea = "";
+    };
+
+    const map = document.getElementById('designer-preview-map');
+    if (map) {
+      map.onclick = (e) => {
+        const cell = e.target.closest('.designer-preview-cell');
+        const row = e.target.closest('.designer-preview-row');
+
+        if (cell) {
+          e.stopPropagation();
+          openDesignerAreaPopup('note', cell.getAttribute('data-target'));
+        } else if (row) {
+          e.stopPropagation();
+          openDesignerAreaPopup('track', row.getAttribute('data-target'));
+        } else {
+          openDesignerAreaPopup('canvas');
+        }
+      };
+    }
   }
 
   // Restore saved preference
@@ -4744,13 +5132,47 @@ function setupEventListeners() {
     });
 
     themesModal.querySelectorAll(".theme-option-btn").forEach(btn => {
-      btn.addEventListener("click", () => {
-        applyTheme(btn.getAttribute("data-theme"));
+      btn.addEventListener("click", (e) => {
+        const themeName = btn.getAttribute("data-theme");
+        if (themeName === "afro" || themeName === "afro-light") {
+          e.preventDefault();
+          e.stopPropagation();
+          const isAfro = (themeName === "afro");
+          const targetSub = document.getElementById(isAfro ? "afro-submenu" : "afro-light-submenu");
+          const otherSub = document.getElementById(isAfro ? "afro-light-submenu" : "afro-submenu");
+          
+          if (targetSub) {
+            const isExpanded = targetSub.classList.contains("expanded");
+            if (isExpanded) {
+              targetSub.classList.remove("expanded");
+              btn.classList.remove("active");
+            } else {
+              targetSub.classList.add("expanded");
+              btn.classList.add("active");
+              if (otherSub) {
+                otherSub.classList.remove("expanded");
+                const otherBtn = themesModal.querySelector(`.theme-option-btn[data-theme="${isAfro ? 'afro-light' : 'afro'}"]`);
+                if (otherBtn) otherBtn.classList.remove("active");
+              }
+            }
+          }
+          return;
+        }
+
+        applyTheme(themeName);
         if (window.gsap && !perfLite) {
           gsap.fromTo(".app-container", { opacity: 0.6 }, { opacity: 1, duration: 0.35, ease: "power2.out" });
         }
       });
     });
+
+    const customiseBtn = document.getElementById("menu-btn-customise");
+    if (customiseBtn) {
+      customiseBtn.addEventListener("click", () => {
+        themesModal.classList.remove("active");
+        openCustomDesignerModal();
+      });
+    }
 
     playheadBtns.forEach(btn => {
       btn.addEventListener("click", () => {

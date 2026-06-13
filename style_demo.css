@@ -3937,13 +3937,17 @@ body:not(.theme-studio) .step-cell.has-note.note-play-flash {
 }
 
 /* Background layers */
-.app-container {
+body.theme-afro .app-container,
+body.theme-afro-light .app-container,
+body.theme-custom .app-container {
   position: relative !important;
   background-color: var(--app-canvas-bg) !important;
   z-index: 1;
 }
 
-#app-background-layer {
+body.theme-afro #app-background-layer,
+body.theme-afro-light #app-background-layer,
+body.theme-custom #app-background-layer {
   position: absolute !important;
   top: 0; left: 0; right: 0; bottom: 0;
   pointer-events: none;
@@ -3952,46 +3956,62 @@ body:not(.theme-studio) .step-cell.has-note.note-play-flash {
   background-position: center;
 }
 
-/* Base style mapping rules */
-.track-djembe {
+/* Base style mapping rules scoped to Afro and Custom themes */
+body.theme-afro .track-djembe,
+body.theme-afro-light .track-djembe,
+body.theme-custom .track-djembe {
   background-color: var(--djembe-card-bg) !important;
   border-color: var(--djembe-border) !important;
   background-image: none !important;
 }
-.track-djembe .track-icon-wrapper {
+body.theme-afro .track-djembe .track-icon-wrapper,
+body.theme-afro-light .track-djembe .track-icon-wrapper,
+body.theme-custom .track-djembe .track-icon-wrapper {
   color: var(--djembe-icon-color) !important;
   background-color: var(--djembe-icon-bg) !important;
   border-color: var(--djembe-border) !important;
 }
 
-.track-kenkeni {
+body.theme-afro .track-kenkeni,
+body.theme-afro-light .track-kenkeni,
+body.theme-custom .track-kenkeni {
   background-color: var(--kenkeni-card-bg) !important;
   border-color: var(--kenkeni-border) !important;
   background-image: none !important;
 }
-.track-kenkeni .track-icon-wrapper {
+body.theme-afro .track-kenkeni .track-icon-wrapper,
+body.theme-afro-light .track-kenkeni .track-icon-wrapper,
+body.theme-custom .track-kenkeni .track-icon-wrapper {
   color: var(--kenkeni-icon-color) !important;
   background-color: var(--kenkeni-icon-bg) !important;
   border-color: var(--kenkeni-border) !important;
 }
 
-.track-sangban {
+body.theme-afro .track-sangban,
+body.theme-afro-light .track-sangban,
+body.theme-custom .track-sangban {
   background-color: var(--sangban-card-bg) !important;
   border-color: var(--sangban-border) !important;
   background-image: none !important;
 }
-.track-sangban .track-icon-wrapper {
+body.theme-afro .track-sangban .track-icon-wrapper,
+body.theme-afro-light .track-sangban .track-icon-wrapper,
+body.theme-custom .track-sangban .track-icon-wrapper {
   color: var(--sangban-icon-color) !important;
   background-color: var(--sangban-icon-bg) !important;
   border-color: var(--sangban-border) !important;
 }
 
-.track-doundounba {
+body.theme-afro .track-doundounba,
+body.theme-afro-light .track-doundounba,
+body.theme-custom .track-doundounba {
   background-color: var(--doundounba-card-bg) !important;
   border-color: var(--doundounba-border) !important;
   background-image: none !important;
 }
-.track-doundounba .track-icon-wrapper {
+body.theme-afro .track-doundounba .track-icon-wrapper,
+body.theme-afro-light .track-doundounba .track-icon-wrapper,
+body.theme-custom .track-doundounba .track-icon-wrapper {
   color: var(--doundounba-icon-color) !important;
   background-color: var(--doundounba-icon-bg) !important;
   border-color: var(--doundounba-border) !important;
@@ -4002,62 +4022,88 @@ body:not(.theme-studio) .step-cell.has-note.note-play-flash {
    - Blend Mode ON: backgrounds hidden, icons scaled up to fill step container */
 
 /* BLEND NOTE FILL OFF */
-body:not(.blend-note-fill) .track-djembe .step-cell.has-note {
+body.theme-afro:not(.blend-note-fill) .track-djembe .step-cell.has-note,
+body.theme-afro-light:not(.blend-note-fill) .track-djembe .step-cell.has-note,
+body.theme-custom:not(.blend-note-fill) .track-djembe .step-cell.has-note {
   background-color: var(--djembe-note-bg) !important;
   border-color: var(--djembe-border) !important;
 }
-body:not(.blend-note-fill) .track-djembe .step-cell.has-note svg {
+body.theme-afro:not(.blend-note-fill) .track-djembe .step-cell.has-note svg,
+body.theme-afro-light:not(.blend-note-fill) .track-djembe .step-cell.has-note svg,
+body.theme-custom:not(.blend-note-fill) .track-djembe .step-cell.has-note svg {
   color: var(--djembe-note-color) !important;
   transform: scale(0.68) !important;
 }
 
-body:not(.blend-note-fill) .track-kenkeni .step-cell.has-note {
+body.theme-afro:not(.blend-note-fill) .track-kenkeni .step-cell.has-note,
+body.theme-afro-light:not(.blend-note-fill) .track-kenkeni .step-cell.has-note,
+body.theme-custom:not(.blend-note-fill) .track-kenkeni .step-cell.has-note {
   background-color: var(--kenkeni-note-bg) !important;
   border-color: var(--kenkeni-border) !important;
 }
-body:not(.blend-note-fill) .track-kenkeni .step-cell.has-note svg {
+body.theme-afro:not(.blend-note-fill) .track-kenkeni .step-cell.has-note svg,
+body.theme-afro-light:not(.blend-note-fill) .track-kenkeni .step-cell.has-note svg,
+body.theme-custom:not(.blend-note-fill) .track-kenkeni .step-cell.has-note svg {
   color: var(--kenkeni-note-color) !important;
   transform: scale(0.68) !important;
 }
 
-body:not(.blend-note-fill) .track-sangban .step-cell.has-note {
+body.theme-afro:not(.blend-note-fill) .track-sangban .step-cell.has-note,
+body.theme-afro-light:not(.blend-note-fill) .track-sangban .step-cell.has-note,
+body.theme-custom:not(.blend-note-fill) .track-sangban .step-cell.has-note {
   background-color: var(--sangban-note-bg) !important;
   border-color: var(--sangban-border) !important;
 }
-body:not(.blend-note-fill) .track-sangban .step-cell.has-note svg {
+body.theme-afro:not(.blend-note-fill) .track-sangban .step-cell.has-note svg,
+body.theme-afro-light:not(.blend-note-fill) .track-sangban .step-cell.has-note svg,
+body.theme-custom:not(.blend-note-fill) .track-sangban .step-cell.has-note svg {
   color: var(--sangban-note-color) !important;
   transform: scale(0.68) !important;
 }
 
-body:not(.blend-note-fill) .track-doundounba .step-cell.has-note {
+body.theme-afro:not(.blend-note-fill) .track-doundounba .step-cell.has-note,
+body.theme-afro-light:not(.blend-note-fill) .track-doundounba .step-cell.has-note,
+body.theme-custom:not(.blend-note-fill) .track-doundounba .step-cell.has-note {
   background-color: var(--doundounba-note-bg) !important;
   border-color: var(--doundounba-border) !important;
 }
-body:not(.blend-note-fill) .track-doundounba .step-cell.has-note svg {
+body.theme-afro:not(.blend-note-fill) .track-doundounba .step-cell.has-note svg,
+body.theme-afro-light:not(.blend-note-fill) .track-doundounba .step-cell.has-note svg,
+body.theme-custom:not(.blend-note-fill) .track-doundounba .step-cell.has-note svg {
   color: var(--doundounba-note-color) !important;
   transform: scale(0.68) !important;
 }
 
 /* BLEND NOTE FILL ON */
-body.blend-note-fill .track-row .step-cell.has-note {
+body.theme-afro.blend-note-fill .track-row .step-cell.has-note,
+body.theme-afro-light.blend-note-fill .track-row .step-cell.has-note,
+body.theme-custom.blend-note-fill .track-row .step-cell.has-note {
   background-color: transparent !important;
   border-color: transparent !important;
   background-image: none !important;
   box-shadow: none !important;
 }
-body.blend-note-fill .track-djembe .step-cell.has-note svg {
+body.theme-afro.blend-note-fill .track-djembe .step-cell.has-note svg,
+body.theme-afro-light.blend-note-fill .track-djembe .step-cell.has-note svg,
+body.theme-custom.blend-note-fill .track-djembe .step-cell.has-note svg {
   color: var(--djembe-blend-note) !important;
   transform: scale(1.0) !important;
 }
-body.blend-note-fill .track-kenkeni .step-cell.has-note svg {
+body.theme-afro.blend-note-fill .track-kenkeni .step-cell.has-note svg,
+body.theme-afro-light.blend-note-fill .track-kenkeni .step-cell.has-note svg,
+body.theme-custom.blend-note-fill .track-kenkeni .step-cell.has-note svg {
   color: var(--kenkeni-blend-note) !important;
   transform: scale(1.0) !important;
 }
-body.blend-note-fill .track-sangban .step-cell.has-note svg {
+body.theme-afro.blend-note-fill .track-sangban .step-cell.has-note svg,
+body.theme-afro-light.blend-note-fill .track-sangban .step-cell.has-note svg,
+body.theme-custom.blend-note-fill .track-sangban .step-cell.has-note svg {
   color: var(--sangban-blend-note) !important;
   transform: scale(1.0) !important;
 }
-body.blend-note-fill .track-doundounba .step-cell.has-note svg {
+body.theme-afro.blend-note-fill .track-doundounba .step-cell.has-note svg,
+body.theme-afro-light.blend-note-fill .track-doundounba .step-cell.has-note svg,
+body.theme-custom.blend-note-fill .track-doundounba .step-cell.has-note svg {
   color: var(--doundounba-blend-note) !important;
   transform: scale(1.0) !important;
 }
@@ -4073,8 +4119,12 @@ body.theme-custom .step-cell svg {
 }
 
 /* Clean Bars Option: header and footer bars have solid background and no transparency */
-body.clean-bars .mobile-header,
-body.clean-bars .controls-bar {
+body.theme-afro.clean-bars .mobile-header,
+body.theme-afro.clean-bars .controls-bar,
+body.theme-afro-light.clean-bars .mobile-header,
+body.theme-afro-light.clean-bars .controls-bar,
+body.theme-custom.clean-bars .mobile-header,
+body.theme-custom.clean-bars .controls-bar {
   background-image: none !important;
   background-color: var(--app-bar-bg) !important;
   backdrop-filter: none !important;
@@ -4082,7 +4132,9 @@ body.clean-bars .controls-bar {
 }
 
 /* Isolate Pattern Option: adds an opaque background to tracks to mask pattern behind them */
-body.isolate-pattern .track-row::before {
+body.theme-afro.isolate-pattern .track-row::before,
+body.theme-afro-light.isolate-pattern .track-row::before,
+body.theme-custom.isolate-pattern .track-row::before {
   content: "" !important;
   position: absolute !important;
   top: 0 !important;
@@ -4093,7 +4145,9 @@ body.isolate-pattern .track-row::before {
   z-index: -1 !important;
   border-radius: inherit !important;
 }
-.track-row {
+body.theme-afro .track-row,
+body.theme-afro-light .track-row,
+body.theme-custom .track-row {
   position: relative !important;
   z-index: 1 !important;
 }
@@ -4108,5 +4162,68 @@ body.theme-custom .demo-device-frame {
 body.theme-custom .mobile-header {
   background-color: var(--app-bar-bg) !important;
 }
+
+/* Theme submenu drawer animation */
+.theme-submenu {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+  display: flex !important;
+  flex-direction: column;
+}
+.theme-submenu.expanded {
+  max-height: 140px;
+  opacity: 1;
+}
+
+/* Custom Theme Designer Styling */
+#designer-area-popup.active {
+  transform: translateY(0) !important;
+}
+
+.designer-preview-cell {
+  transition: transform 0.1s ease, border-color 0.15s ease, background-color 0.15s ease;
+}
+.designer-preview-cell:hover {
+  transform: scale(1.15);
+  border-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.designer-preview-row {
+  transition: transform 0.15s ease, filter 0.15s ease;
+}
+.designer-preview-row:hover {
+  filter: brightness(1.15);
+  transform: scale(1.015);
+}
+
+#popup-palette-grid button,
+#popup-note-palette-grid button {
+  transition: transform 0.12s ease, border-color 0.12s ease;
+}
+#popup-palette-grid button:hover,
+#popup-note-palette-grid button:hover {
+  transform: scale(1.15);
+  border-color: #EFCD91 !important;
+}
+
+.popup-pattern-btn {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  color: #fff !important;
+  transition: background-color 0.15s, border-color 0.15s;
+}
+.popup-pattern-btn:hover {
+  background: rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+.popup-pattern-btn.active {
+  background: rgba(235, 143, 105, 0.2) !important;
+  border-color: #EB8F69 !important;
+  color: #EB8F69 !important;
+}
+
+
 
 
