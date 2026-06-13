@@ -3444,3 +3444,330 @@ body.light-theme .popup-tuning-header {
 body.light-theme .popup-delete-text {
   color: #374151 !important;
 }
+
+/* ============================================================
+   THEME: AFRO (DARK)
+   ============================================================ */
+body.theme-afro {
+  --bg-base: #0c0f16; /* Deep dark slate-charcoal (like grid) */
+  --bg-card: rgba(18, 22, 30, 0.85); /* Slightly lighter card background */
+  --bg-card-hover: rgba(26, 32, 44, 0.95);
+  --bg-glass: rgba(18, 22, 30, 0.65);
+  --border-color: rgba(217, 119, 6, 0.15); /* Saffron tint */
+  --border-glow: rgba(234, 88, 12, 0.12); /* Terracotta tint */
+
+  --text-main: #f4ece1; /* Soft woven cotton white */
+  --text-muted: #a3b1c6; /* Muted sand-gray */
+  --text-dim: #6b7c96; /* Dim slate */
+
+  --primary: #d97706; /* Saffron Gold */
+  --primary-glow: rgba(217, 119, 6, 0.25);
+  --accent: #c2410c; /* Terracotta Orange */
+  --accent-glow: rgba(194, 65, 12, 0.25);
+
+  /* Note Colors */
+  --color-bass: #eab308; /* Saffron / Sun Gold */
+  --color-bass-glow: rgba(234, 179, 8, 0.3);
+  --color-tone: #ea580c; /* Terracotta Red-Orange */
+  --color-tone-glow: rgba(234, 88, 12, 0.3);
+  --color-slap: #729e2e; /* Savanna Olive Green (plant/biome) */
+  --color-slap-glow: rgba(114, 158, 46, 0.3);
+  --color-muffled: #7888a5; /* Muted Indigo/Slate Gray */
+  --color-muffled-glow: rgba(120, 136, 165, 0.25);
+
+  --color-open: #5c6bc0; /* Traditional Indigo Resist Blue */
+  --color-open-glow: rgba(92, 107, 192, 0.25);
+  --color-mute: #7a6a5e; /* Dry Bark Brown */
+  --color-mute-glow: rgba(122, 106, 94, 0.2);
+
+  --color-bell-open: #d97706; /* Bronze Bell Open */
+  --color-bell-open-glow: rgba(217, 119, 6, 0.25);
+  --color-bell-mute: #b45309; /* Bronze Bell Mute */
+  --color-bell-mute-glow: rgba(180, 83, 9, 0.2);
+
+  --color-shekere-open: #eae3d2; /* Cowrie shell white */
+  --color-shekere-open-glow: rgba(234, 227, 210, 0.25);
+  --color-shekere-tap: #c2410c; /* Terracotta bead tap */
+  --color-shekere-tap-glow: rgba(194, 65, 12, 0.2);
+
+  background-color: var(--bg-base) !important;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M20 0L40 20L20 40L0 20Z' fill='none' stroke='%23d97706' stroke-width='1' stroke-opacity='0.015'/%3E%3C/svg%3E"),
+    radial-gradient(at 0% 0%, rgba(217, 119, 6, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(194, 65, 12, 0.04) 0px, transparent 50%) !important;
+  color: var(--text-main) !important;
+}
+
+body.theme-afro .demo-device-frame {
+  background: #080a0f !important;
+  border-color: #1a1e26 !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.8), 0 0 40px rgba(217, 119, 6, 0.05) !important;
+}
+
+body.theme-afro .mobile-header {
+  background: #080a0f !important;
+  border-bottom-color: rgba(217, 119, 6, 0.15) !important;
+}
+
+body.theme-afro .track-row {
+  background:
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 35, 80%, 45%), 0.08) 0%, hsla(var(--part-color-hsl, 35, 80%, 45%), 0.015) 100%) padding-box,
+    linear-gradient(rgba(14, 18, 25, 0.75), rgba(14, 18, 25, 0.75)) padding-box,
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 35, 80%, 45%), 0.25) 0%, rgba(255, 255, 255, 0.05) 100%) border-box !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.35) !important;
+}
+
+body.theme-afro .track-row.focused-track {
+  background:
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 35, 80%, 45%), 0.15) 0%, hsla(var(--part-color-hsl, 35, 80%, 45%), 0.03) 100%) padding-box,
+    linear-gradient(rgba(20, 25, 35, 0.85), rgba(20, 25, 35, 0.85)) padding-box,
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 35, 80%, 45%), 0.55) 0%, rgba(255, 255, 255, 0.12) 100%) border-box !important;
+  box-shadow: 0 0 15px hsla(var(--part-color-hsl, 35, 80%, 45%), 0.15) !important;
+}
+
+body.theme-afro .track-icon-wrapper {
+  background: rgba(0, 0, 0, 0.5) !important;
+  border-color: hsla(var(--part-color-hsl, 35, 80%, 45%), 0.4) !important;
+  color: var(--primary) !important;
+}
+
+body.theme-afro .step-cell {
+  background: rgba(255, 255, 255, 0.01) !important;
+  border-color: rgba(255, 255, 255, 0.06) !important;
+}
+
+body.theme-afro .step-cell.beat-start-empty {
+  background: rgba(255, 255, 255, 0.035) !important;
+  border-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+body.theme-afro .step-cell.has-note {
+  background: rgba(255, 255, 255, 0.05) !important;
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+/* Coloured SVG overrides for notes in Afro Theme */
+body.theme-afro .step-cell.djembe-B, body.theme-afro .note-svg-djembe-B { color: var(--color-bass) !important; }
+body.theme-afro .step-cell.djembe-T, body.theme-afro .note-svg-djembe-T { color: var(--color-tone) !important; }
+body.theme-afro .step-cell.djembe-S, body.theme-afro .note-svg-djembe-S { color: var(--color-slap) !important; }
+body.theme-afro .step-cell.djembe-M, body.theme-afro .note-svg-djembe-M { color: var(--color-muffled) !important; }
+body.theme-afro .step-cell.dunun-O, body.theme-afro .note-svg-dunun-O { color: var(--color-open) !important; }
+body.theme-afro .step-cell.dunun-C, body.theme-afro .note-svg-dunun-C,
+body.theme-afro .step-cell.dunun-X, body.theme-afro .note-svg-dunun-X { color: var(--color-mute) !important; }
+body.theme-afro .step-cell.bell-O, body.theme-afro .note-svg-bell-O,
+body.theme-afro .step-cell.bell-X, body.theme-afro .note-svg-bell-X { color: var(--color-bell-open) !important; }
+body.theme-afro .step-cell.bell-C, body.theme-afro .note-svg-bell-C { color: var(--color-bell-mute) !important; }
+body.theme-afro .step-cell.shekere-O, body.theme-afro .note-svg-shekere-O { color: var(--color-shekere-open) !important; }
+body.theme-afro .step-cell.shekere-X, body.theme-afro .note-svg-shekere-X { color: var(--color-shekere-tap) !important; }
+
+body.theme-afro .step-cell.step-cell-composite {
+  color: hsla(var(--part-color-hsl, 35, 30%, 75%), 0.85) !important;
+}
+
+body.theme-afro .glass-panel {
+  background: var(--bg-card) !important;
+  border-color: rgba(217, 119, 6, 0.15) !important;
+}
+
+body.theme-afro .hamburger-menu {
+  background: rgba(14, 18, 25, 0.95) !important;
+  border-color: rgba(217, 119, 6, 0.2) !important;
+}
+
+body.theme-afro .menu-item-btn {
+  color: var(--text-main) !important;
+}
+
+body.theme-afro .menu-item-btn:hover {
+  background: rgba(217, 119, 6, 0.12) !important;
+}
+
+body.theme-afro .modal-content {
+  background: rgba(18, 22, 30, 0.95) !important;
+  border-color: rgba(217, 119, 6, 0.25) !important;
+  color: var(--text-main) !important;
+}
+
+body.theme-afro .playhead-line {
+  background: var(--primary) !important;
+  box-shadow: 0 0 10px var(--primary) !important;
+}
+
+body.theme-afro select,
+body.theme-afro input[type="text"] {
+  background: rgba(0, 0, 0, 0.3) !important;
+  border-color: rgba(217, 119, 6, 0.25) !important;
+  color: var(--text-main) !important;
+}
+
+body.theme-afro input[type="range"] {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+body.theme-afro input[type="range"]::-webkit-slider-runnable-track {
+  background: rgba(255, 255, 255, 0.08) !important;
+}
+
+/* ============================================================
+   THEME: AFRO LIGHT
+   ============================================================ */
+body.theme-afro-light {
+  --bg-base: #f7f4eb; /* Warm Sahel Sand / Cotton canvas */
+  --bg-card: rgba(255, 253, 250, 0.85); /* Alabaster cream */
+  --bg-card-hover: rgba(245, 240, 230, 0.95);
+  --bg-glass: rgba(255, 253, 250, 0.65);
+  --border-color: rgba(194, 65, 12, 0.15); /* Terracotta tint */
+  --border-glow: rgba(217, 119, 6, 0.1);
+
+  --text-main: #2b221a; /* Dark espresso brown */
+  --text-muted: #786b5f; /* Muted savanna sand */
+  --text-dim: #9d8d7f; /* Muted light sand */
+
+  --primary: #c2410c; /* Terracotta */
+  --primary-glow: rgba(194, 65, 12, 0.15);
+  --accent: #d97706; /* Saffron */
+  --accent-glow: rgba(217, 119, 6, 0.15);
+
+  /* Note Colors */
+  --color-bass: #b45309; /* Saffron/Amber Gold */
+  --color-bass-glow: rgba(180, 83, 9, 0.25);
+  --color-tone: #c2410c; /* Terracotta Clay */
+  --color-tone-glow: rgba(194, 65, 12, 0.25);
+  --color-slap: #2e7d32; /* Rich Forest Green */
+  --color-slap-glow: rgba(46, 125, 50, 0.25);
+  --color-muffled: #5c6bc0; /* Indigo Resist Blue */
+  --color-muffled-glow: rgba(92, 107, 192, 0.2);
+
+  --color-open: #1a237e; /* Royal Indigo */
+  --color-open-glow: rgba(26, 35, 126, 0.25);
+  --color-mute: #795548; /* Warm Wood Bark */
+  --color-mute-glow: rgba(121, 85, 72, 0.15);
+
+  --color-bell-open: #c2410c; /* Terracotta Bell */
+  --color-bell-open-glow: rgba(194, 65, 12, 0.2);
+  --color-bell-mute: #8c7b70; /* Muted Sand Bell */
+  --color-bell-mute-glow: rgba(140, 123, 112, 0.15);
+
+  --color-shekere-open: #4e342e; /* Dark Cocoa Seed */
+  --color-shekere-open-glow: rgba(78, 52, 46, 0.15);
+  --color-shekere-tap: #d97706; /* Warm Amber Bead */
+  --color-shekere-tap-glow: rgba(217, 119, 6, 0.15);
+
+  background-color: var(--bg-base) !important;
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M20 0L40 20L20 40L0 20Z' fill='none' stroke='%237c2d12' stroke-width='1' stroke-opacity='0.02'/%3E%3C/svg%3E"),
+    radial-gradient(at 0% 0%, rgba(194, 65, 12, 0.05) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, rgba(217, 119, 6, 0.03) 0px, transparent 50%) !important;
+  color: var(--text-main) !important;
+}
+
+body.theme-afro-light .demo-device-frame {
+  background: #fdfcf9 !important;
+  border-color: #e2dcd0 !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.15), 0 0 40px rgba(194, 65, 12, 0.03) !important;
+}
+
+body.theme-afro-light .mobile-header {
+  background: #f2ede0 !important;
+  border-bottom-color: rgba(194, 65, 12, 0.15) !important;
+}
+
+body.theme-afro-light .track-row {
+  background:
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 25, 75%, 40%), 0.06) 0%, hsla(var(--part-color-hsl, 25, 75%, 40%), 0.01) 100%) padding-box,
+    linear-gradient(rgba(255, 253, 250, 0.8), rgba(255, 253, 250, 0.8)) padding-box,
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 25, 75%, 40%), 0.22) 0%, rgba(0, 0, 0, 0.06) 100%) border-box !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06) !important;
+}
+
+body.theme-afro-light .track-row.focused-track {
+  background:
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 25, 75%, 40%), 0.1) 0%, hsla(var(--part-color-hsl, 25, 75%, 40%), 0.02) 100%) padding-box,
+    linear-gradient(rgba(255, 253, 250, 0.95), rgba(255, 253, 250, 0.95)) padding-box,
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 25, 75%, 40%), 0.45) 0%, rgba(0, 0, 0, 0.12) 100%) border-box !important;
+  box-shadow: 0 0 10px hsla(var(--part-color-hsl, 25, 75%, 40%), 0.08) !important;
+}
+
+body.theme-afro-light .track-icon-wrapper {
+  background: rgba(255, 255, 255, 0.9) !important;
+  border-color: hsla(var(--part-color-hsl, 25, 75%, 40%), 0.3) !important;
+  color: var(--primary) !important;
+}
+
+body.theme-afro-light .step-cell {
+  background: rgba(0, 0, 0, 0.015) !important;
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+body.theme-afro-light .step-cell.beat-start-empty {
+  background: rgba(0, 0, 0, 0.045) !important;
+  border-color: rgba(0, 0, 0, 0.14) !important;
+}
+
+body.theme-afro-light .step-cell.has-note {
+  background: rgba(0, 0, 0, 0.06) !important;
+  border-color: rgba(0, 0, 0, 0.18) !important;
+}
+
+/* Coloured SVG overrides for notes in Afro Light Theme */
+body.theme-afro-light .step-cell.djembe-B, body.theme-afro-light .note-svg-djembe-B { color: var(--color-bass) !important; }
+body.theme-afro-light .step-cell.djembe-T, body.theme-afro-light .note-svg-djembe-T { color: var(--color-tone) !important; }
+body.theme-afro-light .step-cell.djembe-S, body.theme-afro-light .note-svg-djembe-S { color: var(--color-slap) !important; }
+body.theme-afro-light .step-cell.djembe-M, body.theme-afro-light .note-svg-djembe-M { color: var(--color-muffled) !important; }
+body.theme-afro-light .step-cell.dunun-O, body.theme-afro-light .note-svg-dunun-O { color: var(--color-open) !important; }
+body.theme-afro-light .step-cell.dunun-C, body.theme-afro-light .note-svg-dunun-C,
+body.theme-afro-light .step-cell.dunun-X, body.theme-afro-light .note-svg-dunun-X { color: var(--color-mute) !important; }
+body.theme-afro-light .step-cell.bell-O, body.theme-afro-light .note-svg-bell-O,
+body.theme-afro-light .step-cell.bell-X, body.theme-afro-light .note-svg-bell-X { color: var(--color-bell-open) !important; }
+body.theme-afro-light .step-cell.bell-C, body.theme-afro-light .note-svg-bell-C { color: var(--color-bell-mute) !important; }
+body.theme-afro-light .step-cell.shekere-O, body.theme-afro-light .note-svg-shekere-O { color: var(--color-shekere-open) !important; }
+body.theme-afro-light .step-cell.shekere-X, body.theme-afro-light .note-svg-shekere-X { color: var(--color-shekere-tap) !important; }
+
+body.theme-afro-light .step-cell.step-cell-composite {
+  color: hsla(var(--part-color-hsl, 25, 30%, 35%), 0.85) !important;
+}
+
+body.theme-afro-light .glass-panel {
+  background: var(--bg-card) !important;
+  border-color: rgba(194, 65, 12, 0.15) !important;
+}
+
+body.theme-afro-light .hamburger-menu {
+  background: rgba(255, 253, 250, 0.98) !important;
+  border-color: rgba(194, 65, 12, 0.18) !important;
+}
+
+body.theme-afro-light .menu-item-btn {
+  color: var(--text-main) !important;
+}
+
+body.theme-afro-light .menu-item-btn:hover {
+  background: rgba(194, 65, 12, 0.08) !important;
+}
+
+body.theme-afro-light .modal-content {
+  background: rgba(255, 253, 250, 0.98) !important;
+  border-color: rgba(194, 65, 12, 0.2) !important;
+  color: var(--text-main) !important;
+}
+
+body.theme-afro-light .playhead-line {
+  background: var(--primary) !important;
+  box-shadow: 0 0 10px var(--primary) !important;
+}
+
+body.theme-afro-light select,
+body.theme-afro-light input[type="text"] {
+  background: rgba(255, 255, 255, 0.8) !important;
+  border-color: rgba(194, 65, 12, 0.25) !important;
+  color: var(--text-main) !important;
+}
+
+body.theme-afro-light input[type="range"] {
+  background: rgba(0, 0, 0, 0.06) !important;
+}
+
+body.theme-afro-light input[type="range"]::-webkit-slider-runnable-track {
+  background: rgba(0, 0, 0, 0.06) !important;
+}
+

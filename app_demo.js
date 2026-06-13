@@ -497,10 +497,12 @@ function isIconTheme() {
 (function () {
   try {
     const saved = localStorage.getItem("djembe-theme");
-    const name = (saved === "light" || saved === "tinted") ? saved : ((saved === "classic" || saved === "dark") ? "classic" : "studio");
-    document.body.classList.toggle("theme-studio", name === "studio" || name === "tinted" || name === "light");
+    const name = (saved === "light" || saved === "tinted" || saved === "afro" || saved === "afro-light") ? saved : ((saved === "classic" || saved === "dark") ? "classic" : "studio");
+    document.body.classList.toggle("theme-studio", name === "studio" || name === "tinted" || name === "light" || name === "afro" || name === "afro-light");
     document.body.classList.toggle("theme-tinted", name === "tinted");
     document.body.classList.toggle("light-theme", name === "light");
+    document.body.classList.toggle("theme-afro", name === "afro");
+    document.body.classList.toggle("theme-afro-light", name === "afro-light");
   } catch (e) { }
 })();
 
@@ -3824,10 +3826,12 @@ function setupEventListeners() {
   const themesModal = document.getElementById("themes-modal");
 
   function applyTheme(name, rerender = true) {
-    if (name !== "studio" && name !== "tinted" && name !== "classic" && name !== "light") name = "studio";
-    document.body.classList.toggle("theme-studio", name === "studio" || name === "tinted" || name === "light");
+    if (name !== "studio" && name !== "tinted" && name !== "classic" && name !== "light" && name !== "afro" && name !== "afro-light") name = "studio";
+    document.body.classList.toggle("theme-studio", name === "studio" || name === "tinted" || name === "light" || name === "afro" || name === "afro-light");
     document.body.classList.toggle("theme-tinted", name === "tinted");
     document.body.classList.toggle("light-theme", name === "light");
+    document.body.classList.toggle("theme-afro", name === "afro");
+    document.body.classList.toggle("theme-afro-light", name === "afro-light");
     try { localStorage.setItem("djembe-theme", name); } catch (e) { }
 
     // Sync checkmarks in the themes modal
@@ -3855,6 +3859,8 @@ function setupEventListeners() {
     const saved = localStorage.getItem("djembe-theme");
     if (saved === "light") applyTheme("light", false);
     else if (saved === "tinted") applyTheme("tinted", false);
+    else if (saved === "afro") applyTheme("afro", false);
+    else if (saved === "afro-light") applyTheme("afro-light", false);
     else if (saved === "classic" || saved === "dark") applyTheme("classic", false);
     else applyTheme("studio", false);
   } catch (e) {
