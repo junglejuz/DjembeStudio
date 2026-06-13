@@ -2385,22 +2385,27 @@ body.perf-lite .playhead-line {
   display: none !important;
 }
 
-body.perf-lite .step-cell.current-beat-highlight,
-body.theme-studio.perf-lite .step-cell.current-beat-highlight,
-body.perf-lite .step-cell.has-note.current-beat-highlight,
+body.perf-lite .step-cell.current-beat-highlight:not(.has-note),
+body.theme-studio.perf-lite .step-cell.has-note.current-beat-highlight,
 body.perf-lite .step-cell.step-cell-composite.current-beat-highlight {
   background-color: rgba(99, 102, 241, 0.35) !important;
   border-color: rgba(129, 140, 248, 0.75) !important;
   box-shadow: 0 0 8px rgba(99, 102, 241, 0.3) !important;
 }
 
-body.perf-lite.light-theme .step-cell.current-beat-highlight,
-body.theme-studio.perf-lite.light-theme .step-cell.current-beat-highlight,
-body.perf-lite.light-theme .step-cell.has-note.current-beat-highlight,
+body.perf-lite.light-theme .step-cell.current-beat-highlight:not(.has-note),
+body.theme-studio.perf-lite.light-theme .step-cell.has-note.current-beat-highlight,
 body.perf-lite.light-theme .step-cell.step-cell-composite.current-beat-highlight {
   background-color: rgba(217, 119, 6, 0.26) !important;
   border-color: rgba(217, 119, 6, 0.7) !important;
   box-shadow: 0 0 8px rgba(217, 119, 6, 0.2) !important;
+}
+
+/* For Disco (Classic) theme note cells under beat group highlight, keep original note background color, but overlay a bright border, glow, and brightness boost */
+body:not(.theme-studio).perf-lite .step-cell.has-note.current-beat-highlight {
+  border-color: rgba(255, 255, 255, 0.95) !important;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.6), inset 0 0 6px rgba(255, 255, 255, 0.3) !important;
+  filter: brightness(1.35) !important;
 }
 
 /* Active line is no longer boxed/highlighted... */
