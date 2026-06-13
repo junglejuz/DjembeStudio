@@ -402,7 +402,8 @@ body {
   transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
     border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
     box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.3s ease !important;
+    opacity 0.3s ease,
+    filter 0.3s ease !important;
 }
 
 .track-row:hover {
@@ -1267,21 +1268,30 @@ body.theme-studio.light-theme .demo-device-frame {
 
 body.light-theme .track-row,
 body.theme-studio.light-theme .track-row {
-  background: #f2eee2 !important; /* Lighter beige to contrast gently with base beige (#f3efe6) */
-  border: 1px solid rgba(0, 0, 0, 0.06) !important;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02) !important;
+  background:
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.10) 0%, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.02) 100%) padding-box,
+    linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)) padding-box,
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.35) 0%, rgba(120, 120, 120, 0.15) 100%) border-box !important;
+  border: 1px solid transparent !important;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
 }
 
 body.light-theme .track-row:hover,
 body.theme-studio.light-theme .track-row:hover {
-  background: #ebe7da !important;
-  border-color: rgba(0, 0, 0, 0.1) !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04) !important;
+  background:
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.14) 0%, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.03) 100%) padding-box,
+    linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)) padding-box,
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.45) 0%, rgba(120, 120, 120, 0.20) 100%) border-box !important;
+  border-color: transparent !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05) !important;
 }
 
 body.light-theme .track-row.focused-track,
 body.theme-studio.light-theme .track-row.focused-track {
-  background: #e6e2d4 !important;
+  background:
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.18) 0%, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.04) 100%) padding-box,
+    linear-gradient(rgba(248, 246, 238, 0.95), rgba(248, 246, 238, 0.95)) padding-box,
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.55) 0%, rgba(120, 120, 120, 0.25) 100%) border-box !important;
   border-color: rgba(99, 102, 241, 0.25) !important;
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.06) !important;
 }
@@ -2011,10 +2021,7 @@ body.theme-studio #sequencer-grid-title {
   text-shadow: none !important;
 }
 
-/* --- Track containers: keep the colour identity, drop the glow --- */
-body.theme-studio .track-row {
-  background:
-    linear-gradie
+
 /* ============================================================
    COMPACT NOTE LAYOUT (phones + demo frame)
    Bigger step boxes and icons without extra vertical space:
@@ -2942,13 +2949,7 @@ body.theme-studio.light-theme #sequencer-grid-title {
   -webkit-text-fill-color: #8a6a3a !important;
 }
 
-body.theme-studio.light-theme .track-row {
-  background:
-    linear-gradient(105deg, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.10) 0%, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.02) 100%) padding-box,
-    linear-gradient(rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.85)) padding-box,
-    linear-gradient(105deg, hsla(var(--part-color-hsl, 243, 75%, 59%), 0.35) 0%, rgba(120, 120, 120, 0.15) 100%) border-box !important;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
-}
+
 
 body.theme-studio.light-theme .steps-container {
   background: repeating-linear-gradient(90deg,
@@ -3697,6 +3698,14 @@ body.theme-afro-light .track-row {
     linear-gradient(rgba(253, 248, 230, 0.85), rgba(253, 248, 230, 0.85)) padding-box,
     linear-gradient(105deg, hsla(var(--part-color-hsl, 44, 57%, 57%), 0.2) 0%, rgba(0, 0, 0, 0.05) 100%) border-box !important;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04) !important;
+}
+
+body.theme-afro-light .track-row:hover {
+  background:
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 44, 57%, 57%), 0.06) 0%, hsla(var(--part-color-hsl, 44, 57%, 57%), 0.012) 100%) padding-box,
+    linear-gradient(rgba(248, 243, 224, 0.9), rgba(248, 243, 224, 0.9)) padding-box,
+    linear-gradient(105deg, hsla(var(--part-color-hsl, 44, 57%, 57%), 0.3) 0%, rgba(0, 0, 0, 0.06) 100%) border-box !important;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.06) !important;
 }
 
 body.theme-afro-light .track-row.focused-track {
