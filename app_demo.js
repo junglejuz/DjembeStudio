@@ -5419,30 +5419,21 @@ function animatePlayhead() {
               // Full mode: GPU-composited glide, updated every frame (transform = no layout)
               playheadLine.style.transform = `translate3d(${progress * lineWidth}px, 0, 0)`;
             } else {
-              // Slower device performance mode: highlight whole beat groups instead of animating the playhead line
-              const is12or6 = (state.timeSignature === "12/8" || state.timeSignature === "6/8");
-              const beatInterval = (is12or6 && track.subdivision === 6) ? 3 : track.subdivision;
-              const curBeatInLine = Math.floor(curStepInLine / beatInterval);
-              
-              if (container._currentHighlightBeat !== curBeatInLine) {
+              // Highlight only the current active step cell instead of the whole beat group
+              if (container._currentHighlightStep !== curStepInLine) {
                 // Clear previous highlights
                 if (container._highlightedCells) {
                   container._highlightedCells.forEach(cell => cell.classList.remove("current-beat-highlight"));
                 }
                 
-                // Add highlights to current beat's step cells
                 const newHighlighted = [];
-                const startIndex = curBeatInLine * beatInterval;
-                const endIndex = Math.min(stepsPerLineCount, startIndex + beatInterval);
-                for (let i = startIndex; i < endIndex; i++) {
-                  const cell = cellCache.get(trackId + ":" + (lineIdx * stepsPerLineCount + i));
-                  if (cell) {
-                    cell.classList.add("current-beat-highlight");
-                    newHighlighted.push(cell);
-                  }
+                const cell = cellCache.get(trackId + ":" + (lineIdx * stepsPerLineCount + curStepInLine));
+                if (cell) {
+                  cell.classList.add("current-beat-highlight");
+                  newHighlighted.push(cell);
                 }
                 container._highlightedCells = newHighlighted;
-                container._currentHighlightBeat = curBeatInLine;
+                container._currentHighlightStep = curStepInLine;
               }
             }
             container.classList.add("active-line");
@@ -5462,6 +5453,7 @@ function animatePlayhead() {
               container._highlightedCells.forEach(cell => cell.classList.remove("current-beat-highlight"));
               container._highlightedCells = null;
               container._currentHighlightBeat = undefined;
+              container._currentHighlightStep = undefined;
             }
           }
         }
@@ -5487,6 +5479,7 @@ function animatePlayhead() {
         container._highlightedCells.forEach(cell => cell.classList.remove("current-beat-highlight"));
         container._highlightedCells = null;
         container._currentHighlightBeat = undefined;
+        container._currentHighlightStep = undefined;
       }
     });
   }
@@ -6177,7 +6170,23 @@ function renderGrid() {
       const allRows = sequencerGrid.querySelectorAll(".track-row");
       allRows.forEach(r => {
         const rId = r.getAttribute("data-track-id");
-        r.classList.remove("focused-track", "dimmed-track");
+        
+        let targetFocused = false;
+        let targetDimmed = false;
+        if (state.focusedTrackId !== null) {
+          if (rId === state.focusedTrackId) {
+            targetFocused = true;
+          } else {
+            targetDimmed = true;
+          }
+        }
+
+        if (r.classList.contains("focused-track") !== targetFocused) {
+          r.classList.toggle("focused-track", targetFocused);
+        }
+        if (r.classList.contains("dimmed-track") !== targetDimmed) {
+          r.classList.toggle("dimmed-track", targetDimmed);
+        }
 
         // Find the volume slider inside this row's drawer and sync its value
         const rTrack = state.tracks.find(t => t.id === rId);
@@ -6193,14 +6202,6 @@ function renderGrid() {
           const rSoloBtn = r.querySelector(".drawer-btn.btn-solo");
           if (rSoloBtn) {
             rSoloBtn.classList.toggle("active", rTrack.soloed);
-          }
-        }
-
-        if (state.focusedTrackId !== null) {
-          if (rId === state.focusedTrackId) {
-            r.classList.add("focused-track");
-          } else {
-            r.classList.add("dimmed-track");
           }
         }
       });

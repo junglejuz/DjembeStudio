@@ -1286,6 +1286,12 @@ body.theme-studio.light-theme .track-row.focused-track {
   box-shadow: 0 4px 12px rgba(99, 102, 241, 0.06) !important;
 }
 
+body.light-theme .track-row.dimmed-track,
+body.theme-studio.light-theme .track-row.dimmed-track {
+  opacity: 0.52 !important;
+  filter: contrast(0.8) brightness(0.9) !important;
+}
+
 body.light-theme .track-icon-wrapper,
 body.theme-studio.light-theme .track-icon-wrapper {
   background: transparent !important;
@@ -3699,6 +3705,11 @@ body.theme-afro-light .track-row.focused-track {
     linear-gradient(rgba(253, 248, 230, 0.95), rgba(253, 248, 230, 0.95)) padding-box,
     linear-gradient(105deg, hsla(var(--part-color-hsl, 44, 57%, 57%), 0.4) 0%, rgba(0, 0, 0, 0.08) 100%) border-box !important;
   box-shadow: 0 0 10px hsla(var(--part-color-hsl, 44, 57%, 57%), 0.06) !important;
+}
+
+body.theme-afro-light .track-row.dimmed-track {
+  opacity: 0.52 !important;
+  filter: contrast(0.8) brightness(0.9) !important;
 }
 
 body.theme-afro-light .track-icon-wrapper {
